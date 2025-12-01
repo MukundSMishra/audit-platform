@@ -3,18 +3,15 @@
     "audit_item_id": "FACT-06-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "Section 6 & Rules",
+      "section_reference": "Section 6",
       "category": "General Administration"
     },
-    "audit_content": {
-      "question_text": "Is the Factory License valid and current for the present year?",
-      "simplified_guidance": "Ask for the original 'Factory License' (Form 4 or State equivalent). Check the 'Valid Until' date. If expired, ask for proof of renewal application.",
-      "options": ["Compliant", "Non-Compliant", "Delayed", "Not Applicable"]
-    },
+    "question_text": "Is the Factory License valid and current for the present year?",
+    "applicability_criteria": "All factories employing 10 or more workers (with power) or 20 or more (without power).",
+    "simplified_guidance": "1. Ask for the original 'Factory License' (Form 4). \n2. Check the 'Valid Until' date.",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
-        "description": "Operating without a license is a criminal offence.",
         "fine_amount_max_inr": 100000,
         "imprisonment_term": "Up to 2 years",
         "liability_type": "Criminal"
@@ -22,26 +19,25 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": ["document"],
-      "instruction": "Upload the current Factory License or Renewal Receipt."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload valid Form 4 License or Renewal Receipt.",
+      "delay_proof": "Upload challan showing renewal fees paid."
+    },
+    "legal_text": "Section 6(1)(d): The State Government may make rules requiring the registration and licensing of factories... and prescribing the fees payable for such registration and licensing and for the renewal of licences."
   },
   {
-    "audit_item_id": "FACT-108(1)-01",
+    "audit_item_id": "FACT-07-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "Section 108(1)",
+      "section_reference": "Section 7",
       "category": "General Administration"
     },
-    "audit_content": {
-      "question_text": "Is the Abstract of the Factories Act and Rules displayed at the main entrance?",
-      "simplified_guidance": "Look for the large official poster (Form 20 equivalent). It must be in English AND the local language understood by the majority. Check if it is clean and legible.",
-      "options": ["Compliant", "Non-Compliant", "Delayed", "Not Applicable"]
-    },
+    "question_text": "Has the Occupier sent a written notice to the Chief Inspector at least 15 days before occupying the premises?",
+    "applicability_criteria": "New factories or factories resuming work after >180 days shutdown.",
+    "simplified_guidance": "1. Ask for the 'Notice of Occupation' (Form 2). \n2. Check the date of submission vs date of start.",
     "risk_profile": {
-      "severity_level": "Low",
+      "severity_level": "High",
       "penalty_details": {
-        "description": "General penalty for contravention under Section 92.",
         "fine_amount_max_inr": 100000,
         "imprisonment_term": "Up to 2 years",
         "liability_type": "Criminal"
@@ -49,54 +45,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": ["image"],
-      "instruction": "Upload a clear photo of the Notice Board at the main entrance."
-    }
-  },
-  {
-    "audit_item_id": "FACT-108(1)-02",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "Section 108(1)",
-      "category": "General Administration"
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload stamped copy of Form 2 (Notice of Occupation).",
+      "delay_proof": "Draft notice or proof of dispatch."
     },
-    "audit_content": {
-      "question_text": "Are the names and addresses of the Inspector and Certifying Surgeon displayed?",
-      "simplified_guidance": "Check the notice board for specific contact details of the Area Inspector and the Factory Medical Officer (Certifying Surgeon). These must be current.",
-      "options": ["Compliant", "Non-Compliant", "Delayed", "Not Applicable"]
-    },
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "description": "General penalty for contravention under Section 92.",
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": ["image"],
-      "instruction": "Upload a close-up photo of the contact details section on the notice board."
-    }
+    "legal_text": "Section 7(1): The occupier shall, at least fifteen days before he begins to occupy or use any premises as a factory, send to the Chief Inspector a written notice containing... the name and situation of the factory, the name and address of the occupier..."
   },
   {
     "audit_item_id": "FACT-11(1)(a)-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "11(1)(a)",
+      "section_reference": "Section 11(1)(a)",
       "category": "Health - Cleanliness"
     },
-    "audit_content": {
-      "question_text": "Are dirt and refuse removed daily from floors, benches, staircases, and passages?",
-      "simplified_guidance": "Check if the sweeping schedule confirms daily cleaning. Visually inspect corners and under benches for old dust accumulation.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are dirt and refuse removed daily from floors, benches, staircases, and passages?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Walk through the shop floor. \n2. Check corners, under benches, and staircases for accumulated dust/waste.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -106,28 +70,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the cleaning register or a clean workroom floor."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Wide angle photo of clean floor/aisle.",
+      "delay_proof": "Photo of cleaning schedule/roster."
+    },
+    "legal_text": "Section 11(1)(a): Accumulation of dirt and refuse shall be removed daily by sweeping or by any other effective method from the floors and benches of workrooms and from staircases and passages."
   },
   {
     "audit_item_id": "FACT-11(1)(b)-02",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "11(1)(b)",
+      "section_reference": "Section 11(1)(b)",
       "category": "Health - Cleanliness"
     },
-    "audit_content": {
-      "question_text": "Is the floor of every workroom washed with disinfectant at least once a week?",
-      "simplified_guidance": "Ask for the cleaning log. Look for entries specifying 'washing' or 'wet mopping' with disinfectant, not just sweeping.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is the floor of every workroom washed with disinfectant at least once a week?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Ask for the Housekeeping Register. \n2. Check for weekly entries of 'Washing with Disinfectant'.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -138,213 +97,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload a copy of the weekly washing log."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload copy of the weekly washing log.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 11(1)(b): The floor of every workroom shall be cleaned at least once in every week by washing, using disinfectant, where necessary, or by some other effective method."
   },
   {
-    "audit_item_id": "FACT-11(1)(c)-03",
+    "audit_item_id": "FACT-11(1)(d)-03",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "11(1)(c)",
-      "category": "Health - Drainage"
+      "section_reference": "Section 11(1)(d)",
+      "category": "Health - Cleanliness"
     },
-    "audit_content": {
-      "question_text": "Are effective drainage means provided where floors become wet during manufacturing?",
-      "simplified_guidance": "If the process involves water (e.g., dyeing, washing), check if the floor slopes toward a drain and if the drain is unblocked.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the drainage system in wet areas."
-    }
-  },
-  {
-    "audit_item_id": "FACT-13(1)(a)-04",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "13(1)(a)",
-      "category": "Health - Ventilation"
-    },
-    "audit_content": {
-      "question_text": "Is there adequate ventilation by fresh air circulation in workrooms?",
-      "simplified_guidance": "Check if windows open, or if fans/ACs are working. The air shouldn't feel stagnant or suffocating.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of ventilation equipment (fans/vents)."
-    }
-  },
-  {
-    "audit_item_id": "FACT-14(1)-05",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "14(1)",
-      "category": "Health - Dust & Fume"
-    },
-    "audit_content": {
-      "question_text": "Are effective measures taken to prevent the inhalation of dust or fumes?",
-      "simplified_guidance": "Look for exhaust hoods near machines that create dust. Check if workers are coughing or if there is visible haze.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of local exhaust ventilation (LEV) systems."
-    }
-  },
-  {
-    "audit_item_id": "FACT-16(2)-06",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "16(2)",
-      "category": "Health - Overcrowding"
-    },
-    "audit_content": {
-      "question_text": "Is there at least 14.2 cubic meters of space for every worker employed in the room?",
-      "simplified_guidance": "Visually assess if workers are packed too tightly. If it looks crowded, we need measurements. (Note: 9.9 cubic meters for pre-1948 factories).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": false,
-      "type": "measurement",
-      "instruction": "Calculate Room Volume / Max Workers."
-    }
-  },
-  {
-    "audit_item_id": "FACT-17(2)-07",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "17(2)",
-      "category": "Health - Lighting"
-    },
-    "audit_content": {
-      "question_text": "Are glazed windows and skylights kept clean and free from obstruction?",
-      "simplified_guidance": "Check if windows are painted over, blocked by stacks of boxes, or covered in grime that blocks light.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of windows."
-    }
-  },
-  {
-    "audit_item_id": "FACT-18(1)-08",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "18(1)",
-      "category": "Health - Drinking Water"
-    },
-    "audit_content": {
-      "question_text": "Is there a sufficient supply of wholesome drinking water provided?",
-      "simplified_guidance": "Check if the water dispensers are working and if the water looks clean. Ask for the latest water quality test report.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload latest water potability test certificate."
-    }
-  },
-  {
-    "audit_item_id": "FACT-18(2)-09",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "18(2)",
-      "category": "Health - Drinking Water"
-    },
-    "audit_content": {
-      "question_text": "Are drinking water points legibly marked 'Drinking Water' in a language understood by the majority?",
-      "simplified_guidance": "Look for signs. It must not just be in English if the workers speak Hindi/Tamil/etc.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are walls and ceilings repainted or varnished at least once every 5 years?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Check the 'Lime Washing Register' (Form 7). \n2. Verify the last date of painting/varnishing. \n3. Look for peeling paint on walls.",
     "risk_profile": {
       "severity_level": "Low",
       "penalty_details": {
@@ -355,27 +123,178 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Drinking Water signage."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Form 7 (Record of Lime Washing/Painting).",
+      "delay_proof": "Work order for painting contractor."
+    },
+    "legal_text": "Section 11(1)(d): All inside walls and partitions... where they are painted... be repainted or revarnished at least once in every period of five years."
+  },
+  {
+    "audit_item_id": "FACT-12(1)-04",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 12(1)",
+      "category": "Health - Waste Disposal"
+    },
+    "question_text": "Are effective arrangements made for the treatment and disposal of wastes and effluents?",
+    "applicability_criteria": "Factories generating industrial waste/effluent.",
+    "simplified_guidance": "1. Inspect the Effluent Treatment Plant (ETP) if applicable. \n2. Check for overflow or leakage. \n3. Verify connection to authorized disposal channels.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of ETP or waste disposal area.",
+      "delay_proof": "N/A (Immediate Environmental Risk)."
+    },
+    "legal_text": "Section 12(1): Effective arrangements shall be made in every factory for the treatment of wastes and effluents due to the manufacturing process carried on therein, so as to render them innocuous, and for their disposal."
+  },
+  {
+    "audit_item_id": "FACT-13(1)-05",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 13(1)",
+      "category": "Health - Ventilation"
+    },
+    "question_text": "Is there adequate ventilation and temperature control?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Walk the floor. Does it feel suffocating? \n2. Are exhaust fans running? \n3. Check if workers are visibly sweating excessively due to lack of airflow.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of ventilation fans/ducts.",
+      "delay_proof": "Temperature log records."
+    },
+    "legal_text": "Section 13(1): Effective and suitable provision shall be made... for securing and maintaining... adequate ventilation by the circulation of fresh air, and such a temperature as will secure to workers therein reasonable conditions of comfort."
+  },
+  {
+    "audit_item_id": "FACT-14(1)-06",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 14(1)",
+      "category": "Health - Dust & Fume"
+    },
+    "question_text": "Are measures taken to prevent inhalation of dust and fumes?",
+    "applicability_criteria": "Factories with dust/fume generating processes.",
+    "simplified_guidance": "1. Identify dust sources (Grinding/Mixing). \n2. Check if Local Exhaust Ventilation (hoods) is installed AT THE SOURCE. \n3. Ensure it is switched on.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of extraction hood near the machine.",
+      "delay_proof": "Design plan for new ventilation system."
+    },
+    "legal_text": "Section 14(1): In every factory in which... there is given off any dust or fume... effective measures shall be taken to prevent its inhalation... and if any exhaust appliance is necessary for this purpose, it shall be applied as near as possible to the point of origin."
+  },
+  {
+    "audit_item_id": "FACT-16(1)-07",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 16(1)",
+      "category": "Health - Overcrowding"
+    },
+    "question_text": "Is the room free from overcrowding injurious to health?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. General observation: Are workers bumping into each other? \n2. Minimum space: 14.2 cubic meters per worker (for post-1948 factories).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Physical Verification",
+      "compliance_proof": "Wide photo of the work floor showing spacing.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 16(1): No room in any factory shall be overcrowded to an extent injurious to the health of the workers employed therein."
+  },
+  {
+    "audit_item_id": "FACT-17(1)-08",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 17(1)",
+      "category": "Health - Lighting"
+    },
+    "question_text": "Is sufficient and suitable lighting provided in all work areas?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Check for dark corners or flickering lights. \n2. Ensure no glare on screens/worktables. \n3. Verify emergency lights are present.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of illuminated work area.",
+      "delay_proof": "Lux meter reading report."
+    },
+    "legal_text": "Section 17(1): In every part of a factory where workers are working or passing there shall be provided and maintained sufficient and suitable lighting, natural or artificial, or both."
+  },
+  {
+    "audit_item_id": "FACT-18(1)-09",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 18(1)",
+      "category": "Health - Drinking Water"
+    },
+    "question_text": "Is sufficient wholesome drinking water provided?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Check water coolers/taps. \n2. Are they working? \n3. Is the area clean? \n4. Ask for Water Test Report.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload water potability test certificate.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 18(1): In every factory effective arrangements shall be made to provide and maintain at suitable points conveniently situated for all workers employed therein a sufficient supply of wholesome drinking water."
   },
   {
     "audit_item_id": "FACT-18(2)-10",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "18(2)",
+      "section_reference": "Section 18(2)",
       "category": "Health - Drinking Water"
     },
-    "audit_content": {
-      "question_text": "Is the drinking water point situated more than 6 meters away from any latrine, urinal, or washing place?",
-      "simplified_guidance": "Measure the distance between the water cooler and the nearest toilet door. If < 6m, check if they have a Chief Inspector's exemption.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is the drinking water point at least 6 meters away from latrines/urinals?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Measure distance between Water Cooler and Toilet Door. \n2. Must be > 6 meters. \n3. If closer, check if it's enclosed and clearly marked.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -385,28 +304,49 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "measurement",
-      "instruction": "Photo showing distance or proximity."
-    }
+      "mandatory": false,
+      "methodology": "Physical Verification",
+      "compliance_proof": "Photo showing distance or proximity.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 18(2): ...no such point shall be situated within six metres of any washing place, urinal, latrine, spittoon, open drain carrying sullage or effluent or any other source of contamination unless a shorter distance is approved in writing by the Chief Inspector."
   },
   {
-    "audit_item_id": "FACT-19(1)(b)-11",
+    "audit_item_id": "FACT-19(1)(a)-11",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "19(1)(b)",
+      "section_reference": "Section 19(1)(a)",
       "category": "Health - Sanitation"
     },
-    "audit_content": {
-      "question_text": "Is separate enclosed accommodation provided for male and female workers?",
-      "simplified_guidance": "Check for separate rooms with doors. Signs (Men/Women) must be visible. No common entrances without screening.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
+    "question_text": "Are sufficient latrines and urinals provided?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Count toilets. \n2. Rule of thumb: 1 per 25 males, 1 per 25 females. \n3. Check if they are accessible and not locked.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
     },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of toilet block.",
+      "delay_proof": "Layout for new toilet block construction."
+    },
+    "legal_text": "Section 19(1)(a): In every factory sufficient latrine and urinal accommodation of prescribed types shall be provided conveniently situated and accessible to workers at all times while they are at factory."
+  },
+  {
+    "audit_item_id": "FACT-19(1)(b)-12",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 19(1)(b)",
+      "category": "Health - Sanitation"
+    },
+    "question_text": "Are separate enclosed accommodation provided for male and female workers?",
+    "applicability_criteria": "Factories with both male and female workers.",
+    "simplified_guidance": "1. Check for 'Men' and 'Women' signs. \n2. Ensure entrances are separate. \n3. Ensure privacy (doors, partitions).",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -416,90 +356,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of male and female toilet entrances."
-    }
-  },
-  {
-    "audit_item_id": "FACT-19(1)(c)-12",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "19(1)(c)",
-      "category": "Health - Sanitation"
-    },
-    "audit_content": {
-      "question_text": "Are latrines and urinals adequately lighted?",
-      "simplified_guidance": "Enter the toilet and close the door. Is it too dark to see clearly? Lights must be functional.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
       "mandatory": false,
-      "type": "image",
-      "instruction": "Photo of lighting inside the facility."
-    }
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of separate male/female entrances.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 19(1)(b): Separate enclosed accommodation shall be provided for male and female workers."
   },
   {
-    "audit_item_id": "FACT-19(1)(c)-13",
+    "audit_item_id": "FACT-20(3)-13",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "19(1)(c)",
-      "category": "Health - Sanitation"
-    },
-    "audit_content": {
-      "question_text": "Are latrines and urinals adequately ventilated?",
-      "simplified_guidance": "Check for exhaust fans or windows. There should be no strong foul odors.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": false,
-      "type": "image",
-      "instruction": "Photo of exhaust fan or vents."
-    }
-  },
-  {
-    "audit_item_id": "FACT-20(3)-14",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "20(3)",
+      "section_reference": "Section 20(3)",
       "category": "Health - Hygiene"
     },
-    "audit_content": {
-      "question_text": "Is a notice specifying the penalty for spitting prominently displayed?",
-      "simplified_guidance": "Look for 'No Spitting' signs that mention a fine (usually up to 5 Rupees).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is a notice regarding penalty for spitting displayed?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Look for 'No Spitting' signs. \n2. The sign MUST mention the penalty (e.g., Fine Rs. 5).",
     "risk_profile": {
       "severity_level": "Low",
       "penalty_details": {
@@ -509,121 +382,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the No Spitting signage."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the notice.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 20(3): No person shall spit within the premises of a factory... and a notice containing this provision and the penalty for its violation shall be prominently displayed at suitable places."
   },
   {
     "audit_item_id": "FACT-21(1)-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "21(1)(i)-(ii)",
+      "section_reference": "Section 21(1)",
       "category": "Safety - Fencing"
     },
-    "audit_content": {
-      "question_text": "Are all moving parts of prime movers and flywheels securely fenced?",
-      "simplified_guidance": "Check engines, motors, and flywheels. There must be a substantial guard preventing anyone from touching moving parts.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the guard installed on the prime mover/flywheel."
-    }
-  },
-  {
-    "audit_item_id": "FACT-21(1)-02",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "21(1)(iv)(b)",
-      "category": "Safety - Fencing"
-    },
-    "audit_content": {
-      "question_text": "Is every part of the transmission machinery (belts, pulleys, shafts) securely fenced?",
-      "simplified_guidance": "Walk through the floor. Are there exposed belts or spinning shafts? They must be enclosed in cages or guards.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of guards on transmission belts/shafts."
-    }
-  },
-  {
-    "audit_item_id": "FACT-22(1)-03",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "22(1)",
-      "category": "Safety - Operations"
-    },
-    "audit_content": {
-      "question_text": "Do workers examining or lubricating moving machinery wear tight-fitting clothing?",
-      "simplified_guidance": "Observe the maintenance staff. Loose shirts, dhotis, or unbuttoned sleeves are prohibited near moving machinery.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of maintenance worker's uniform/clothing."
-    }
-  },
-  {
-    "audit_item_id": "FACT-22(2)-04",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "22(2)",
-      "category": "Safety - Vulnerable Groups"
-    },
-    "audit_content": {
-      "question_text": "Are women and young persons prohibited from cleaning or lubricating machinery while it is in motion?",
-      "simplified_guidance": "Verify policy and practice. Ensure no woman or adolescent is assigned maintenance tasks on running machines.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are all moving parts of prime movers and flywheels securely fenced?",
+    "applicability_criteria": "All Factories using power (engines, motors, generators).",
+    "simplified_guidance": "1. Identify the 'Prime Mover' (Main Engine/Motor). \n2. Check if the flywheel and moving parts are covered by a solid guard. \n3. Shake the guard to ensure it is not loose.",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -634,27 +409,100 @@
     },
     "evidence_requirements": {
       "mandatory": false,
-      "type": "document",
-      "instruction": "Upload job description or safety policy prohibiting this."
-    }
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the secure guard installed.",
+      "delay_proof": "Purchase order for fabrication of guards."
+    },
+    "legal_text": "Section 21(1): In every factory the following, namely... (i) every moving part of a prime mover and every flywheel connected to a prime mover... shall be securely fenced by safeguards of substantial construction."
+  },
+  {
+    "audit_item_id": "FACT-21(1)-02",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 21(1)(iv)",
+      "category": "Safety - Fencing"
+    },
+    "question_text": "Is every part of the transmission machinery (belts, pulleys, shafts) securely fenced?",
+    "applicability_criteria": "Factories with transmission systems (belts, pulleys, shafts).",
+    "simplified_guidance": "1. Look for exposed spinning shafts or belts. \n2. Ensure they are fully enclosed (mesh or solid). \n3. No nip-points should be accessible to a hand.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of belt/pulley guards.",
+      "delay_proof": "Work order for guard installation."
+    },
+    "legal_text": "Section 21(1)(iv): ...every part of transmission machinery... and every dangerous part of any other machinery... shall be securely fenced."
+  },
+  {
+    "audit_item_id": "FACT-22(1)-03",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 22(1)",
+      "category": "Safety - Operations"
+    },
+    "question_text": "Do workers examining or lubricating moving machinery wear tight-fitting clothing?",
+    "applicability_criteria": "All Factories where maintenance on running machines is permitted.",
+    "simplified_guidance": "1. Observe maintenance staff. \n2. Ensure NO loose shirts, dhotis, or unbuttoned sleeves near moving parts. \n3. They must wear tight-fitting dungarees.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of maintenance worker in proper uniform.",
+      "delay_proof": "Invoice for purchase of safety uniforms."
+    },
+    "legal_text": "Section 22(1): ...such examination or operation shall be made or carried out only by a specially trained adult male worker wearing tight fitting clothing (which shall be supplied by the occupier)."
+  },
+  {
+    "audit_item_id": "FACT-22(2)-04",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 22(2)",
+      "category": "Safety - Vulnerable Groups"
+    },
+    "question_text": "Are women and young persons prohibited from cleaning or lubricating machinery in motion?",
+    "applicability_criteria": "Factories employing women or adolescents.",
+    "simplified_guidance": "1. Verify company policy. \n2. Interview a supervisor. \n3. Ensure no woman or young person (15-18) is assigned dangerous maintenance tasks.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Safety Policy/SOP prohibiting this practice.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 22(2): No woman or young person shall be allowed to clean, lubricate or adjust any part of a prime mover or of any transmission machinery while... in motion."
   },
   {
     "audit_item_id": "FACT-23(1)-05",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "23(1)",
+      "section_reference": "Section 23(1)",
       "category": "Safety - Training"
     },
-    "audit_content": {
-      "question_text": "Have young persons working on dangerous machines received sufficient training and supervision?",
-      "simplified_guidance": "If adolescents work on presses, saws, or milling machines, check their training records and supervision logs.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Have young persons working on dangerous machines received sufficient training and supervision?",
+    "applicability_criteria": "Factories employing Young Persons (15-18) on dangerous machines (Presses, Saws, etc.).",
+    "simplified_guidance": "1. Identify 'Dangerous Machines' (as per State Rules). \n2. If a young person is operating one, ask for their Training Record. \n3. Check for supervision.",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -665,27 +513,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload training certificate for the young person."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Training Certificate/Log for the young person.",
+      "delay_proof": "Training schedule."
+    },
+    "legal_text": "Section 23(1): No young person shall be required or allowed to work at any machine to which this section applies, unless he has been fully instructed... and has received sufficient training... or is under adequate supervision."
   },
   {
     "audit_item_id": "FACT-24(1)-06",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "24(1)(a)",
+      "section_reference": "Section 24(1)",
       "category": "Safety - Emergency Devices"
     },
-    "audit_content": {
-      "question_text": "Is suitable striking gear provided to move driving belts between fast and loose pulleys?",
-      "simplified_guidance": "Check belt-driven machines. There must be a lever (striking gear) to shift the belt safely, not done by hand.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is suitable striking gear provided to move driving belts?",
+    "applicability_criteria": "Factories with belt-driven machinery.",
+    "simplified_guidance": "1. Check machines with belts. \n2. Is there a mechanical lever/gear to shift the belt? \n3. Workers MUST NOT shift belts by hand.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -695,28 +538,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the striking gear mechanism."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the striking gear mechanism.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 24(1)(a): Suitable striking gear or other efficient mechanical appliance shall be provided and maintained and used to move driving belts to and from fast and loose pulleys."
   },
   {
     "audit_item_id": "FACT-24(2)-07",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "24(2)",
+      "section_reference": "Section 24(2)",
       "category": "Safety - Emergency Devices"
     },
-    "audit_content": {
-      "question_text": "Are devices for cutting off power in emergencies provided in every workroom?",
-      "simplified_guidance": "Look for the red 'Emergency Stop' button or switch. It must be accessible in the room where the machine is running.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are devices for cutting off power in emergencies provided in every workroom?",
+    "applicability_criteria": "All Factories using power.",
+    "simplified_guidance": "1. Locate the Red 'Emergency Stop' button (Mushroom head). \n2. Is it accessible? \n3. Is it clearly marked?",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -726,28 +564,49 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Emergency Stop button/switch."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the Emergency Stop button/switch.",
+      "delay_proof": "N/A (Immediate hazard)."
+    },
+    "legal_text": "Section 24(2): In every factory suitable devices for cutting off power in emergencies from running machinery shall be provided and maintained in every workroom."
   },
   {
     "audit_item_id": "FACT-26(1)-08",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "26(1)(a)",
+      "section_reference": "Section 26(1)",
       "category": "Safety - Machinery Parts"
     },
-    "audit_content": {
-      "question_text": "Are all set screws, bolts, and keys on revolving shafts sunk, encased, or guarded?",
-      "simplified_guidance": "Inspect rotating shafts. Protruding bolts can catch clothing. They must be recessed (sunk) or covered.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
+    "question_text": "Are all set screws, bolts, and keys on revolving shafts sunk, encased, or guarded?",
+    "applicability_criteria": "All Factories with revolving machinery.",
+    "simplified_guidance": "1. Inspect rotating shafts. \n2. Look for protruding bolts/screws that could catch clothing. \n3. They must be sunk (flush) or covered.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
     },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Close-up photo of a revolving shaft showing sunk/guarded bolts.",
+      "delay_proof": "Work order for casing."
+    },
+    "legal_text": "Section 26(1)(a): In all machinery driven by power... every set screw, bolt or key on any revolving shaft, spindle, wheel or pinion shall be so sunk, encased or otherwise effectively guarded as to prevent danger."
+  },
+  {
+    "audit_item_id": "FACT-28(1)-09",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 28(1)(a)",
+      "category": "Safety - Hoists & Lifts"
+    },
+    "question_text": "Are hoists and lifts examined by a competent person at least once every 6 months?",
+    "applicability_criteria": "Factories with Hoists or Lifts.",
+    "simplified_guidance": "1. Ask for 'Form 11' (Register of Examination of Hoist). \n2. Check the last inspection date. \n3. Must be < 6 months ago.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -758,58 +617,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Close-up photo of a revolving shaft showing sunk/guarded bolts."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload the latest Form 11 certificate.",
+      "delay_proof": "Booking confirmation with Competent Person."
+    },
+    "legal_text": "Section 28(1)(a)(ii): ...shall be thoroughly examined by a competent person at least once in every period of six months, and a register shall be kept containing the prescribed particulars."
   },
   {
-    "audit_item_id": "FACT-28(1)(a)-09",
+    "audit_item_id": "FACT-28(1)-10",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "28(1)(a)(ii)",
+      "section_reference": "Section 28(1)(b)",
       "category": "Safety - Hoists & Lifts"
     },
-    "audit_content": {
-      "question_text": "Are hoists and lifts examined by a competent person at least once every 6 months?",
-      "simplified_guidance": "Ask for the 'Hoist Examination Register' (usually Form 11 or similar). Check the last date of inspection.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the last examination certificate for the hoist."
-    }
-  },
-  {
-    "audit_item_id": "FACT-28(1)(b)-10",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "28(1)(b)",
-      "category": "Safety - Hoists & Lifts"
-    },
-    "audit_content": {
-      "question_text": "Are hoistways and liftways protected by an enclosure fitted with gates?",
-      "simplified_guidance": "The lift shaft must be fully enclosed so no one can fall in. Gates must be present at every landing.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are hoistway gates fitted with interlocking devices?",
+    "applicability_criteria": "Factories with Hoists/Lifts.",
+    "simplified_guidance": "1. Test the gate: Can you open it when the lift is NOT there? (Should be NO). \n2. Test the lift: Can it move if the gate is OPEN? (Should be NO).",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -819,59 +642,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the hoistway enclosure and gates."
-    }
+      "mandatory": false,
+      "methodology": "Physical Verification",
+      "compliance_proof": "Photo of the interlocking mechanism.",
+      "delay_proof": "N/A (Critical Safety Feature)."
+    },
+    "legal_text": "Section 28(1)(e): Every gate... shall be fitted with interlocking or other efficient device to secure that the gate cannot be opened except when the cage is at the landing and that the cage cannot be moved unless the gate is closed."
   },
   {
-    "audit_item_id": "FACT-28(1)(e)-11",
+    "audit_item_id": "FACT-29(1)-11",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "28(1)(e)",
-      "category": "Safety - Hoists & Lifts"
-    },
-    "audit_content": {
-      "question_text": "Are hoist gates fitted with interlocking devices?",
-      "simplified_guidance": "Try to open the gate when the lift is NOT there. It should not open. Try to move the lift when the gate is open. It should not move.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the interlocking mechanism on the gate."
-    }
-  },
-  {
-    "audit_item_id": "FACT-29(1)(a)-12",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "29(1)(a)(iii)",
+      "section_reference": "Section 29(1)(a)",
       "category": "Safety - Lifting Machines"
     },
-    "audit_content": {
-      "question_text": "Are lifting machines, chains, and ropes examined by a competent person every 12 months?",
-      "simplified_guidance": "Check records for Cranes, Chain Pulley Blocks, etc. Frequency is 12 months (unlike Hoists which is 6).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are lifting machines, chains, and ropes examined by a competent person every 12 months?",
+    "applicability_criteria": "Factories with Cranes, Chain Pulley Blocks, Slings.",
+    "simplified_guidance": "1. Identify Lifting Gear. \n2. Ask for the Examination Register. \n3. Verify last inspection was < 12 months ago.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -882,27 +669,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the 12-monthly examination register."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload 12-monthly examination certificate.",
+      "delay_proof": "Booking confirmation."
+    },
+    "legal_text": "Section 29(1)(a)(iii): ...thoroughly examined by a competent person at least once in every period of twelve months, or at such intervals as the Chief Inspector may specify."
   },
   {
-    "audit_item_id": "FACT-29(1)(b)-13",
+    "audit_item_id": "FACT-29(1)-12",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "29(1)(b)",
+      "section_reference": "Section 29(1)(b)",
       "category": "Safety - Lifting Machines"
     },
-    "audit_content": {
-      "question_text": "Is the Safe Working Load (SWL) plainly marked on every lifting machine and tackle?",
-      "simplified_guidance": "Look at the crane or pulley. It must say something like 'SWL 5 TON'.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is the Safe Working Load (SWL) plainly marked on every lifting machine?",
+    "applicability_criteria": "Factories with Cranes/Lifting Tackles.",
+    "simplified_guidance": "1. Look at the Crane or Pulley Block. \n2. Is 'SWL 5 TON' (or similar) painted clearly on it? \n3. It must be visible from the floor.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -912,28 +694,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the SWL marking on the machine."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the SWL marking on the machine.",
+      "delay_proof": "Work order for painting SWL."
+    },
+    "legal_text": "Section 29(1)(b): No lifting machine and no chain, rope or lifting tackle shall... be loaded beyond the safe working load which shall be plainly marked thereon."
   },
   {
-    "audit_item_id": "FACT-30(1)-14",
+    "audit_item_id": "FACT-30(1)-13",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "30(1)",
+      "section_reference": "Section 30(1)",
       "category": "Safety - Revolving Machinery"
     },
-    "audit_content": {
-      "question_text": "Is a notice indicating the maximum safe working peripheral speed affixed near grinding machines?",
-      "simplified_guidance": "Go to the grinding wheel area. There must be a plate or notice stating the max RPM or speed.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is a notice indicating the maximum safe working peripheral speed affixed near grinding machines?",
+    "applicability_criteria": "Factories with Grinding Machines / Abrasive Wheels.",
+    "simplified_guidance": "1. Go to the grinding machine. \n2. Look for a plate/sticker stating 'Max RPM' or 'Peripheral Speed'. \n3. It must be permanently affixed.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -943,28 +720,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the speed notice on/near the grinding machine."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the speed notice on the grinding machine.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 30(1): In every factory in which the process of grinding is carried on there shall be permanently affixed to or placed near each machine... a notice indicating the maximum safe working peripheral speed."
   },
   {
     "audit_item_id": "FACT-31(1)-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "31(1) & Rules",
+      "section_reference": "Section 31(1)",
       "category": "Safety - Pressure Plant"
     },
-    "audit_content": {
-      "question_text": "Is a valid Hydrostatic Test Certificate available for all pressure vessels?",
-      "simplified_guidance": "Ask for the 'Form 13' (Report of Examination of Pressure Vessel). Check if the test date is within the prescribed limit (usually external every 6 months, internal every 12 months, hydrostatic every 2-4 years depending on state rules).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is a valid Hydrostatic Test Certificate available for all pressure vessels?",
+    "applicability_criteria": "Factories with Boilers, Air Receivers, Autoclaves, or Steam Pipelines.",
+    "simplified_guidance": "1. Identify pressure vessels (Air tanks, Boilers). \n2. Ask for 'Form 13' (Report of Examination). \n3. Check validity (External: 6m, Internal: 1y, Hydrostatic: 2-4y).",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -975,27 +747,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the latest Hydrostatic Test Certificate signed by a Competent Person."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload valid Form 13/Hydrostatic Test Certificate signed by Competent Person.",
+      "delay_proof": "Evidence of shutdown scheduled for testing."
+    },
+    "legal_text": "Section 31(1): If in any factory, any plant or machinery or any part thereof is operated at a pressure above atmospheric pressure, effective measures shall be taken to ensure that the safe working pressure of such plant or machinery or part is not exceeded."
   },
   {
-    "audit_item_id": "FACT-31(1)-02",
+    "audit_item_id": "FACT-31(2)-02",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "31(1)",
+      "section_reference": "Section 31(1)",
       "category": "Safety - Pressure Plant"
     },
-    "audit_content": {
-      "question_text": "Is the safe working pressure (SWP) marked on the pressure plant?",
-      "simplified_guidance": "Look at the boiler, compressor tank, or autoclave. There should be a red line on the pressure gauge or a plate stating the max pressure.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is the Safe Working Pressure (SWP) marked on the pressure plant?",
+    "applicability_criteria": "Factories with Pressure Vessels.",
+    "simplified_guidance": "1. Look at the pressure gauge on the vessel. \n2. Is there a Red Line marking the max pressure? \n3. Is there a metal plate stating 'SWP'?",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1005,28 +772,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the pressure gauge or identification plate."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the pressure gauge with red marking or SWP plate.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 31(1): ...effective measures shall be taken to ensure that the safe working pressure of such plant or machinery or part is not exceeded."
   },
   {
     "audit_item_id": "FACT-32(a)-03",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "32(a)",
+      "section_reference": "Section 32(a)",
       "category": "Safety - Floors & Stairs"
     },
-    "audit_content": {
-      "question_text": "Are floors, steps, and passages kept free from obstruction and slipping hazards?",
-      "simplified_guidance": "Walk the walkways. Are there oil spills, loose wires, or boxes blocking the path?",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are floors, steps, and passages sound and free from obstruction?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Walk the main aisles. \n2. Check for oil spills, loose wires, or broken tiles. \n3. Ensure paths are not blocked by raw material.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1036,28 +798,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of a clear or obstructed walkway."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of clear, well-maintained walkway.",
+      "delay_proof": "Maintenance request for floor repair."
+    },
+    "legal_text": "Section 32(a): All floors, steps, stairs, passages and gangways shall be of sound construction and properly maintained and shall be kept free from obstructions and substances likely to cause persons to slip."
   },
   {
-    "audit_item_id": "FACT-32(a)-04",
+    "audit_item_id": "FACT-32(b)-04",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "32(a)",
+      "section_reference": "Section 32(a)",
       "category": "Safety - Floors & Stairs"
     },
-    "audit_content": {
-      "question_text": "Are substantial handrails provided for all stairs?",
-      "simplified_guidance": "Check any staircase. It must have a railing. Shake it gently to ensure it is 'substantial' and not loose.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are substantial handrails provided for all stairs?",
+    "applicability_criteria": "Factories with staircases.",
+    "simplified_guidance": "1. Check every staircase. \n2. Is there a handrail? \n3. Shake it - is it substantial (firm) or loose?",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1067,30 +824,25 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the staircase handrails."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the staircase showing handrails.",
+      "delay_proof": "Work order for handrail installation."
+    },
+    "legal_text": "Section 32(a): ...and where it is necessary to ensure safety, steps, stairs, passages and gangways shall be provided with substantial handrails."
   },
   {
     "audit_item_id": "FACT-33(1)-05",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "33(1)",
+      "section_reference": "Section 33(1)",
       "category": "Safety - Pits & Sumps"
     },
-    "audit_content": {
-      "question_text": "Are all pits, sumps, and floor openings securely covered or fenced?",
-      "simplified_guidance": "Look for holes in the ground for maintenance or drainage. They must have a heavy cover or a fence around them so no one falls in.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are all pits, sumps, and floor openings securely covered or fenced?",
+    "applicability_criteria": "Factories with underground tanks, drainage pits, or floor openings.",
+    "simplified_guidance": "1. Look for holes/pits in the floor. \n2. Are they open? (Danger). \n3. They must have a heavy metal cover or a rigid fence around them.",
     "risk_profile": {
-      "severity_level": "High",
+      "severity_level": "Critical",
       "penalty_details": {
         "fine_amount_max_inr": 100000,
         "imprisonment_term": "Up to 2 years",
@@ -1098,28 +850,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the pit cover or fencing."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the pit securely covered or fenced.",
+      "delay_proof": "N/A (Immediate hazard)."
+    },
+    "legal_text": "Section 33(1): In every factory every fixed vessel, sump, tank, pit or opening in the ground or in a floor... shall be either securely covered or securely fenced."
   },
   {
     "audit_item_id": "FACT-35-06",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "35",
+      "section_reference": "Section 35",
       "category": "Safety - PPE"
     },
-    "audit_content": {
-      "question_text": "Are suitable goggles or effective screens provided for protection of eyes?",
-      "simplified_guidance": "Check areas with welding, grinding, or chemical splashing. Verify that the company has actually purchased and distributed eye protection.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are suitable goggles provided and used for eye protection?",
+    "applicability_criteria": "Factories with Welding, Grinding, or Chemical handling.",
+    "simplified_guidance": "1. Visit the welding/grinding station. \n2. Are workers wearing goggles/face shields? \n3. Verify stock of PPE in store.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1129,59 +876,101 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the goggles available at the station."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of worker performing task wearing eye protection.",
+      "delay_proof": "Purchase order for PPE."
+    },
+    "legal_text": "Section 35: The State Government may by rules require that effective screens or suitable goggles shall be provided for the protection of persons employed on, or in the immediate vicinity of, the process."
   },
   {
-    "audit_item_id": "FACT-35-07",
+    "audit_item_id": "FACT-36A(a)-07",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "35",
-      "category": "Safety - PPE"
-    },
-    "audit_content": {
-      "question_text": "Are workers actually using the provided eye protection?",
-      "simplified_guidance": "Observe the workers engaged in grinding/welding. Are they wearing the goggles, or are the goggles sitting on the bench?",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of worker performing task (face view)."
-    }
-  },
-  {
-    "audit_item_id": "FACT-36A(a)-08",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "36A(a)",
+      "section_reference": "Section 36A(a)",
       "category": "Safety - Electrical"
     },
-    "audit_content": {
-      "question_text": "Is portable electric light used inside confined spaces limited to 24 volts?",
-      "simplified_guidance": "If workers enter tanks/pits, check their inspection lamp. It must be low voltage (24V) to prevent electrocution.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
+    "question_text": "Is portable electric light used inside confined spaces limited to 24 volts?",
+    "applicability_criteria": "Factories where workers enter tanks, pits, or flues.",
+    "simplified_guidance": "1. Check the 'Inspection Lamp' used for tank cleaning. \n2. Check the transformer rating. \n3. It MUST be 24V (Low Voltage) to prevent electrocution.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
     },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the 24V transformer or lamp specs.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 36A(a): No portable electric light or any other electric appliance of voltage exceeding twenty-four volts shall be permitted for use inside any chamber, tank, vat, pit, pipe, flue or other confined space."
+  },
+  {
+    "audit_item_id": "FACT-38(1)(a)-08",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 38(1)(a)",
+      "category": "Safety - Fire"
+    },
+    "question_text": "Are safe means of escape provided and kept unlocked/unobstructed?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Walk to all Emergency Exits. \n2. Try to open them (Must NOT be locked). \n3. Ensure the path is not blocked by boxes/machines.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of clear, unlocked Emergency Exit door.",
+      "delay_proof": "N/A (Immediate rectification required)."
+    },
+    "legal_text": "Section 38(1)(a): In every factory... safe means of escape for all persons in the event of a fire [shall be provided and maintained]."
+  },
+  {
+    "audit_item_id": "FACT-38(1)(b)-09",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 38(1)(b)",
+      "category": "Safety - Fire"
+    },
+    "question_text": "Is necessary fire extinguishing equipment provided and maintained?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Check Fire Extinguishers. \n2. Are they present? \n3. Check the yellow tag: Is the 'Next Refill Date' in the future?",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of extinguisher showing valid refill tag.",
+      "delay_proof": "PO for refill."
+    },
+    "legal_text": "Section 38(1)(b): ...the necessary equipment and facilities for extinguishing fire [shall be provided]."
+  },
+  {
+    "audit_item_id": "FACT-38(2)-10",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 38(2)",
+      "category": "Safety - Fire"
+    },
+    "question_text": "Are workers trained in fire escape routines (Mock Drills)?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Ask for the 'Mock Drill Register'. \n2. Verify a drill was conducted in the last 6 months (or as per state rules). \n3. Ask a random worker 'What do you do if the alarm rings?'.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1192,120 +981,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the lamp specifications or transformer."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload report/photos of the last Fire Mock Drill.",
+      "delay_proof": "Schedule for upcoming drill."
+    },
+    "legal_text": "Section 38(2): Effective measures shall be taken to ensure that in every factory all the workers are familiar with the means of escape in case of fire and have been adequately trained in the routine to be followed."
   },
   {
-    "audit_item_id": "FACT-38(1)(a)-09",
+    "audit_item_id": "FACT-40B(1)-11",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "38(1)(a)",
-      "category": "Safety - Fire"
-    },
-    "audit_content": {
-      "question_text": "Are safe means of escape provided and kept unlocked/unobstructed?",
-      "simplified_guidance": "Check all Emergency Exits. They must NOT be locked. The path to them must NOT be blocked by materials.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Emergency Exit door."
-    }
-  },
-  {
-    "audit_item_id": "FACT-38(1)(b)-10",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "38(1)(b)",
-      "category": "Safety - Fire"
-    },
-    "audit_content": {
-      "question_text": "Is necessary fire extinguishing equipment provided and maintained?",
-      "simplified_guidance": "Look for fire extinguishers. Check the tag - is the 'Next Refill Date' in the future? Is the pressure gauge in the green?",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the fire extinguisher tag/gauge."
-    }
-  },
-  {
-    "audit_item_id": "FACT-38(2)-11",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "38(2)",
-      "category": "Safety - Fire"
-    },
-    "audit_content": {
-      "question_text": "Are workers familiar with means of escape and adequately trained (mock drills)?",
-      "simplified_guidance": "Ask a random worker: 'If the alarm rings, where do you go?'. Also, check the register for the last Fire Mock Drill.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload records of the last Fire Mock Drill."
-    }
-  },
-  {
-    "audit_item_id": "FACT-40B(1)-12",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "40B(1)",
+      "section_reference": "Section 40B(1)",
       "category": "Safety - Management"
     },
-    "audit_content": {
-      "question_text": "If 1000+ workers are employed (or hazardous process), are Safety Officers appointed?",
-      "simplified_guidance": "If the factory is large (1000+) or handles dangerous chemicals, check the payroll for 'Safety Officer'.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are Safety Officers appointed?",
+    "applicability_criteria": "Factories with > 1000 workers OR involved in hazardous processes.",
+    "simplified_guidance": "1. Verify worker count (>1000). \n2. If applicable, ask for the appointment letter and qualification of the Safety Officer.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1316,27 +1007,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload appointment letter/qualification of Safety Officer."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Appointment Letter of Safety Officer.",
+      "delay_proof": "Job posting for Safety Officer."
+    },
+    "legal_text": "Section 40B(1): In every factory wherein one thousand or more workers are ordinarily employed... the occupier shall... employ such number of Safety Officers as may be specified."
   },
   {
     "audit_item_id": "FACT-41B(1)-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "41B(1)",
+      "section_reference": "Section 41B(1)",
       "category": "Hazardous - Disclosure"
     },
-    "audit_content": {
-      "question_text": "Has information regarding dangers and health hazards been disclosed to the workers?",
-      "simplified_guidance": "Check if workers handling chemicals know the risks. Look for Material Safety Data Sheets (MSDS) displayed in local languages.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Has information regarding dangers and health hazards been disclosed to the workers?",
+    "applicability_criteria": "Factories involving Hazardous Processes (First Schedule).",
+    "simplified_guidance": "1. Check for Material Safety Data Sheets (MSDS). \n2. Are they displayed in English AND local language? \n3. Interview a worker: Do they know the risks?",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -1347,58 +1033,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of displayed safety information/MSDS."
-    }
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of MSDS displayed on shop floor.",
+      "delay_proof": "Draft copy of MSDS pending translation."
+    },
+    "legal_text": "Section 41B(1): The occupier of every factory involving a hazardous process shall disclose in the manner prescribed all information regarding dangers, including health hazards... to the workers employed in the factory."
   },
   {
-    "audit_item_id": "FACT-41B(4)-02",
+    "audit_item_id": "FACT-41C(a)-02",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "41B(4)",
-      "category": "Hazardous - Emergency"
-    },
-    "audit_content": {
-      "question_text": "Is there a drawn-up On-Site Emergency Plan and Disaster Control Measure?",
-      "simplified_guidance": "Ask for the 'On-Site Emergency Plan' document. It must be approved by the Chief Inspector.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 200000,
-        "imprisonment_term": "Up to 7 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the cover page of the approved Emergency Plan."
-    }
-  },
-  {
-    "audit_item_id": "FACT-41C(a)-03",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "41C(a)",
+      "section_reference": "Section 41C(a)",
       "category": "Hazardous - Medical"
     },
-    "audit_content": {
-      "question_text": "Are accurate and up-to-date health/medical records maintained for workers exposed to chemical/toxic substances?",
-      "simplified_guidance": "Verify medical files. Every worker in the hazardous process must have a health record (Form 7 or similar) updated yearly.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are accurate medical records maintained for workers exposed to hazardous substances?",
+    "applicability_criteria": "Factories handling chemicals/toxic substances.",
+    "simplified_guidance": "1. Ask for 'Health Register' (Form 7). \n2. Check if medical exams are updated yearly. \n3. Ensure records are accessible to workers.",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -1409,27 +1059,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload a sample anonymized health record page."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload a sample anonymized page of Health Register.",
+      "delay_proof": "Appointment confirmation with Certifying Surgeon."
+    },
+    "legal_text": "Section 41C(a): Every occupier of a factory involving any hazardous process shall maintain accurate and up-to-date health records... of the workers in the factory who are exposed to any chemical, toxic or any other harmful substances."
   },
   {
-    "audit_item_id": "FACT-42(1)(b)-04",
+    "audit_item_id": "FACT-42(1)(b)-03",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "42(1)(b)",
+      "section_reference": "Section 42(1)(b)",
       "category": "Welfare - Washing"
     },
-    "audit_content": {
-      "question_text": "Are separate and adequately screened washing facilities provided for male and female workers?",
-      "simplified_guidance": "Check washing areas (sinks/showers). Men and Women must have separate, enclosed areas. Signage must be clear.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are separate and adequately screened washing facilities provided for male and female workers?",
+    "applicability_criteria": "All Factories employing both men and women.",
+    "simplified_guidance": "1. Check washing area (not just toilets). \n2. Are they separate? \n3. Are they screened for privacy?",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -1439,28 +1084,75 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the entrances to male/female washing facilities."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of entrances to washing facilities.",
+      "delay_proof": "Construction plan for partition."
+    },
+    "legal_text": "Section 42(1)(b): Separate and adequately screened facilities shall be provided for the use of male and female workers."
   },
   {
-    "audit_item_id": "FACT-45(1)-05",
+    "audit_item_id": "FACT-43-04",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "45(1)",
+      "section_reference": "Section 43",
+      "category": "Welfare - Clothing"
+    },
+    "question_text": "Are facilities provided for storing and drying clothing?",
+    "applicability_criteria": "Factories where workers change clothes (e.g. Uniforms needed).",
+    "simplified_guidance": "1. Look for lockers or cloakrooms. \n2. Check if there is a place to dry wet clothing (if applicable).",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of locker room / drying stands.",
+      "delay_proof": "PO for lockers."
+    },
+    "legal_text": "Section 43: The State Government may... make rules requiring the provision therein of suitable places for keeping clothing not worn during working hours and for the drying of wet clothing."
+  },
+  {
+    "audit_item_id": "FACT-44(1)-05",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 44(1)",
+      "category": "Welfare - Sitting"
+    },
+    "question_text": "Are sitting arrangements provided for workers obliged to work in a standing position?",
+    "applicability_criteria": "Factories where work is done standing.",
+    "simplified_guidance": "1. Identify standing jobs (e.g., Assembly line). \n2. Are there chairs/stools nearby for rest intervals? \n3. Check if workers actually use them.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of chairs/stools near standing workstations.",
+      "delay_proof": "PO for ergonomic chairs."
+    },
+    "legal_text": "Section 44(1): In every factory suitable arrangements for sitting shall be provided and maintained for all workers obliged to work in a standing position."
+  },
+  {
+    "audit_item_id": "FACT-45(1)-06",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 45(1)",
       "category": "Welfare - First Aid"
     },
-    "audit_content": {
-      "question_text": "Is there at least one first-aid box for every 150 workers?",
-      "simplified_guidance": "Count the boxes and the workers. Open a box: Does it contain the prescribed items (bandages, antiseptic, burn cream, etc.)?",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is there at least one first-aid box for every 150 workers?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Count total workers. \n2. Count First Aid Boxes. \n3. Ratio must be >= 1 box per 150 workers. \n4. Check contents (Must not be empty).",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1471,58 +1163,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the open first-aid box showing contents."
-    }
-  },
-  {
-    "audit_item_id": "FACT-45(3)-06",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "45(3)",
-      "category": "Welfare - First Aid"
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of open first-aid box showing contents.",
+      "delay_proof": "PO for medical supplies replenishment."
     },
-    "audit_content": {
-      "question_text": "Is the first-aid box kept in charge of a person holding a recognized certificate in first-aid treatment?",
-      "simplified_guidance": "Ask who is in charge of the box. Do they have a valid First Aid certificate (e.g., St. John Ambulance)? Is this person available during working hours?",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the First Aid Certificate of the responsible person."
-    }
+    "legal_text": "Section 45(1): There shall in every factory be provided... first-aid boxes... not less than one for every one hundred and fifty workers ordinarily employed."
   },
   {
     "audit_item_id": "FACT-45(4)-07",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "45(4)",
+      "section_reference": "Section 45(4)",
       "category": "Welfare - Ambulance Room"
     },
-    "audit_content": {
-      "question_text": "If more than 500 workers are employed, is an ambulance room provided?",
-      "simplified_guidance": "If Total Workers > 500: Check for a dedicated room with medical staff (nurse/doctor) and equipment (stretcher, oxygen, etc.).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is an ambulance room provided (if >500 workers)?",
+    "applicability_criteria": "Factories with > 500 Workers.",
+    "simplified_guidance": "1. Verify headcount (>500). \n2. If yes, check for a dedicated room with a bed, stretcher, and medical staff.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1533,27 +1189,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Ambulance Room entrance/interior."
-    }
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of Ambulance Room interior.",
+      "delay_proof": "Construction plan for ambulance room."
+    },
+    "legal_text": "Section 45(4): In every factory wherein more than five hundred workers are ordinarily employed there shall be provided and maintained an ambulance room."
   },
   {
     "audit_item_id": "FACT-46(1)-08",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "46(1)",
+      "section_reference": "Section 46(1)",
       "category": "Welfare - Canteen"
     },
-    "audit_content": {
-      "question_text": "If more than 250 workers are employed, is a canteen provided?",
-      "simplified_guidance": "If Total Workers > 250: There must be a functioning canteen serving food/tea. A simple lunch room is not enough.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is a canteen provided and maintained (if >250 workers)?",
+    "applicability_criteria": "Factories with > 250 Workers.",
+    "simplified_guidance": "1. Verify headcount (>250). \n2. Check for a functioning canteen serving cooked food/tea. \n3. Check hygiene.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1563,28 +1214,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Canteen facility."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of the Canteen hall/kitchen.",
+      "delay_proof": "Contract with catering agency."
+    },
+    "legal_text": "Section 46(1): The State Government may make rules requiring that in any specified factory wherein more than two hundred and fifty workers are ordinarily employed, a canteen... shall be provided."
   },
   {
     "audit_item_id": "FACT-47(1)-09",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "47(1)",
+      "section_reference": "Section 47(1)",
       "category": "Welfare - Shelter"
     },
-    "audit_content": {
-      "question_text": "If more than 150 workers are employed, are adequate shelters, rest rooms, or a lunch room provided?",
-      "simplified_guidance": "If Total Workers > 150: Workers need a place to eat packed lunch or rest. A canteen fulfills this requirement.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are shelters, rest rooms, or lunch rooms provided (if >150 workers)?",
+    "applicability_criteria": "Factories with > 150 Workers.",
+    "simplified_guidance": "1. Verify headcount (>150). \n2. Workers must have a place to eat packed lunch or rest. \n3. A Canteen fulfills this requirement.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1594,28 +1240,23 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Rest Room/Lunch Room."
-    }
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of Rest Room / Lunch Room.",
+      "delay_proof": "Space allocation plan."
+    },
+    "legal_text": "Section 47(1): In every factory wherein more than one hundred and fifty workers are ordinarily employed, adequate and suitable shelters or rest rooms and a suitable lunch room... shall be provided."
   },
   {
     "audit_item_id": "FACT-48(1)-10",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "48(1)",
+      "section_reference": "Section 48(1)",
       "category": "Welfare - Crèche"
     },
-    "audit_content": {
-      "question_text": "If more than 30 women workers are employed, is a crèche provided for children under 6 years?",
-      "simplified_guidance": "Check payroll. If Women > 30, a room for children (crèche) is mandatory, even if no children are currently present (unless exempted).",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is a crèche provided for children under 6 years (if >30 women)?",
+    "applicability_criteria": "Factories with > 30 Women Workers.",
+    "simplified_guidance": "1. Verify female worker count (>30). \n2. Check for a dedicated Crèche room. \n3. Must be clean, lighted, and under charge of a trained woman.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1626,27 +1267,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the Crèche facility."
-    }
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of Crèche room with facilities (milk/toys).",
+      "delay_proof": "Exemption letter from Chief Inspector."
+    },
+    "legal_text": "Section 48(1): In every factory wherein more than thirty women workers are ordinarily employed there shall be provided and maintained a suitable room or rooms for the use of children under the age of six years."
   },
   {
     "audit_item_id": "FACT-49(1)-11",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "49(1)",
+      "section_reference": "Section 49(1)",
       "category": "Welfare - Officers"
     },
-    "audit_content": {
-      "question_text": "If 500 or more workers are employed, are Welfare Officers employed?",
-      "simplified_guidance": "If Total Workers >= 500: Check HR records for the appointment of a designated 'Welfare Officer'.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are Welfare Officers employed (if >500 workers)?",
+    "applicability_criteria": "Factories with > 500 Workers.",
+    "simplified_guidance": "1. Verify total worker count (>500). \n2. Ask for the name and appointment letter of the Welfare Officer.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1657,27 +1293,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload appointment letter of the Welfare Officer."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Appointment Letter of Welfare Officer.",
+      "delay_proof": "Job posting for Welfare Officer."
+    },
+    "legal_text": "Section 49(1): In every factory wherein five hundred or more workers are ordinarily employed the occupier shall employ in the factory such number of welfare officers as may be prescribed."
   },
   {
     "audit_item_id": "FACT-51-01",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "51",
+      "section_reference": "Section 51",
       "category": "Working Hours"
     },
-    "audit_content": {
-      "question_text": "Do adult workers work no more than 48 hours in any week?",
-      "simplified_guidance": "Check the attendance register or time cards. Total hours worked (excluding rest intervals) must not exceed 48 per week.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Do adult workers work no more than 48 hours in any week?",
+    "applicability_criteria": "All Adult Workers.",
+    "simplified_guidance": "1. Pick 3 random workers. \n2. Check their attendance register/time cards for the last month. \n3. Ensure weekly total (excluding breaks) is <= 48 hours.",
     "risk_profile": {
       "severity_level": "High",
       "penalty_details": {
@@ -1688,58 +1319,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload a sample of the weekly time-sheet/attendance log."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload a sample weekly time-sheet or attendance log.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 51: No adult worker shall be required or allowed to work in a factory for more than forty-eight hours in any week."
   },
   {
-    "audit_item_id": "FACT-59(1)-02",
+    "audit_item_id": "FACT-52(1)-02",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "59(1)",
-      "category": "Working Hours - Overtime"
+      "section_reference": "Section 52(1)",
+      "category": "Working Hours"
     },
-    "audit_content": {
-      "question_text": "Are workers paid twice their ordinary rate of wages for overtime work?",
-      "simplified_guidance": "If anyone worked >9 hours/day or >48 hours/week, check their pay slip. The OT rate must be double the normal rate.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload an Overtime Slip or Payroll sheet showing OT calculation."
-    }
-  },
-  {
-    "audit_item_id": "FACT-62(1)-03",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "62(1)",
-      "category": "Working Hours - Documentation"
-    },
-    "audit_content": {
-      "question_text": "Is the Register of Adult Workers maintained and available during working hours?",
-      "simplified_guidance": "Ask for 'Form 12' (or state equivalent). It must list every adult worker currently in the factory. Verify if recent joiners are added.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Are workers given a weekly holiday (First day of the week/Sunday)?",
+    "applicability_criteria": "All Adult Workers.",
+    "simplified_guidance": "1. Verify if Sunday is the off day. \n2. If they work on Sunday, check if they get a substitute holiday within 3 days before/after. \n3. Check if notice is sent to Inspector.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1749,28 +1344,49 @@
       }
     },
     "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload the Register of Adult Workers."
-    }
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload roster showing weekly offs.",
+      "delay_proof": "Copy of notice sent to Inspector regarding substitution."
+    },
+    "legal_text": "Section 52(1): No adult worker shall be required or allowed to work in a factory on the first day of the week... unless he has or will have a holiday for a whole day on one of the three days immediately before or after the said day."
   },
   {
-    "audit_item_id": "FACT-67-04",
+    "audit_item_id": "FACT-54-03",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "67",
-      "category": "Young Persons - Child Labor"
+      "section_reference": "Section 54",
+      "category": "Working Hours"
     },
-    "audit_content": {
-      "question_text": "Is the factory free of any child worker who has not completed their 14th year?",
-      "simplified_guidance": "Visually scan the floor. If any worker looks under 14, verify their age proof immediately. This is a zero-tolerance item.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
+    "question_text": "Is the daily working period limited to 9 hours?",
+    "applicability_criteria": "All Adult Workers.",
+    "simplified_guidance": "1. Check time-in and time-out records. \n2. Ensure actual work time does not exceed 9 hours per day (excluding rest intervals).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
     },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload daily time card sample.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 54: Subject to the provisions of section 51, no adult worker shall be required or allowed to work in a factory for more than nine hours in any day."
+  },
+  {
+    "audit_item_id": "FACT-59(1)-04",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 59(1)",
+      "category": "Working Hours - Overtime"
+    },
+    "question_text": "Are workers paid twice their ordinary rate of wages for overtime work?",
+    "applicability_criteria": "Workers working >9 hours/day or >48 hours/week.",
+    "simplified_guidance": "1. Identify workers who did OT. \n2. Check their pay slips. \n3. Rate calculation must be: (Basic + DA) x 2. \n4. Single rate OT is a violation.",
     "risk_profile": {
       "severity_level": "Critical",
       "penalty_details": {
@@ -1781,58 +1397,22 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "image",
-      "instruction": "Photo of the work floor (general view) or Age Proof documents if questionable."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload Pay Slip showing OT rate calculation.",
+      "delay_proof": "N/A (Financial Non-compliance)."
+    },
+    "legal_text": "Section 59(1): Where a worker works in a factory for more than nine hours in any day or for more than forty-eight hours in any week, he shall, in respect of overtime work, be entitled to wages at the rate of twice his ordinary rate of wages."
   },
   {
-    "audit_item_id": "FACT-68-05",
+    "audit_item_id": "FACT-62(1)-05",
     "meta_data": {
       "source_act": "The Factories Act, 1948",
-      "section_reference": "68",
-      "category": "Young Persons - Adolescents"
+      "section_reference": "Section 62(1)",
+      "category": "Working Hours - Documentation"
     },
-    "audit_content": {
-      "question_text": "Do adolescent workers (15-18 years) carry a 'Certificate of Fitness' and wear a token?",
-      "simplified_guidance": "If you see young workers (15-18), ask to see their 'Form 5' Certificate of Fitness and the metal token they should be wearing.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 2 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "type": "document",
-      "instruction": "Upload a copy of a Certificate of Fitness (Form 5)."
-    }
-  },
-  {
-    "audit_item_id": "FACT-83-06",
-    "meta_data": {
-      "source_act": "The Factories Act, 1948",
-      "section_reference": "83",
-      "category": "Annual Leave"
-    },
-    "audit_content": {
-      "question_text": "Is a Register of Leave with Wages maintained?",
-      "simplified_guidance": "Ask for 'Form 15' (Leave Register). It must track earned leave (1 day per 20 days work) for every worker.",
-      "options": [
-        "Compliant",
-        "Non-Compliant",
-        "Delayed",
-        "Not Applicable"
-      ]
-    },
+    "question_text": "Is the Register of Adult Workers maintained and available?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Ask for 'Form 12' (Register of Adult Workers). \n2. Check if it lists ALL current workers. \n3. Verify if entries match the actual people on the floor.",
     "risk_profile": {
       "severity_level": "Medium",
       "penalty_details": {
@@ -1843,8 +1423,88 @@
     },
     "evidence_requirements": {
       "mandatory": true,
-      "type": "document",
-      "instruction": "Upload a page from the Leave with Wages register."
-    }
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload a page of the Register of Adult Workers (Form 12).",
+      "delay_proof": "Draft register pending update."
+    },
+    "legal_text": "Section 62(1): The manager of every factory shall maintain a register of adult workers, to be available to the Inspector at all times... showing the name of each adult worker, the nature of his work, the group..."
+  },
+  {
+    "audit_item_id": "FACT-67-06",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 67",
+      "category": "Young Persons - Child Labor"
+    },
+    "question_text": "Is the factory free of any child worker (under 14 years)?",
+    "applicability_criteria": "All Factories.",
+    "simplified_guidance": "1. Visually scan the floor for young children. \n2. If suspicious, ask for Age Proof (Aadhar/School Cert). \n3. ZERO TOLERANCE.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of general workforce (showing no children).",
+      "delay_proof": "N/A (Immediate termination required)."
+    },
+    "legal_text": "Section 67: No child who has not completed his fourteenth year shall be required or allowed to work in any factory."
+  },
+  {
+    "audit_item_id": "FACT-68-07",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 68",
+      "category": "Young Persons - Adolescents"
+    },
+    "question_text": "Do adolescent workers (15-18 years) carry a 'Certificate of Fitness' and wear a token?",
+    "applicability_criteria": "Factories employing young persons (15-18 years).",
+    "simplified_guidance": "1. If young workers are present, ask for 'Form 5' (Certificate of Fitness). \n2. Check if they are wearing the metal token 'P' (Protected).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload a copy of a Certificate of Fitness (Form 5).",
+      "delay_proof": "Application for medical exam."
+    },
+    "legal_text": "Section 68: A child who has completed his fourteenth year or an adolescent shall not be required or allowed to work in any factory unless (a) a certificate of fitness... is in the custody of the manager... and (b) such child or adolescent carries... a token."
+  },
+  {
+    "audit_item_id": "FACT-79(1)-08",
+    "meta_data": {
+      "source_act": "The Factories Act, 1948",
+      "section_reference": "Section 79(1)",
+      "category": "Annual Leave"
+    },
+    "question_text": "Is annual leave with wages provided (1 day for every 20 days worked)?",
+    "applicability_criteria": "Workers who have worked > 240 days in a calendar year.",
+    "simplified_guidance": "1. Check the Leave Register (Form 15). \n2. Pick a worker with >1 year service. \n3. Verify leave balance calculation (Total Days / 20).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Upload a page from the Leave with Wages register (Form 15).",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Section 79(1): Every worker who has worked for a period of 240 days or more in a factory during a calendar year shall be allowed during the subsequent calendar year, leave with wages... (i) if an adult, one day for every twenty days of work performed."
   }
 ]

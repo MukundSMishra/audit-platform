@@ -5,3 +5,41 @@
 body {
   background-color: #f3f4f6;
 }
+
+/* Custom Toggle Switch */
+.toggle-checkbox:checked {
+  right: 0;
+  border-color: #2563eb; /* Blue-600 */
+}
+.toggle-checkbox:checked + .toggle-label {
+  background-color: #2563eb; /* Blue-600 */
+}
+.toggle-checkbox {
+  right: 0;
+  z-index: 1;
+  border-color: #e5e7eb;
+}
+.toggle-label {
+  width: 44px;
+  height: 24px;
+  background-color: #e5e7eb;
+  border-radius: 9999px;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.toggle-label:after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+.toggle-checkbox:checked + .toggle-label:after {
+  transform: translateX(20px);
+}
