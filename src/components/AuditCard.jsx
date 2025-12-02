@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { Camera, Info, Check, X, Clock, Ban, Loader2, BookOpen, MessageSquare, ChevronDown, ChevronUp, AlertCircle, FileCheck, Paperclip, CheckCircle, XCircle, FileText } from 'lucide-react';
 import { uploadEvidence } from '../services/storageClient';
+import { computeQuestionWeight, getStatusFactor } from '../utils/riskScoring';
+import riskWeights from '../config/riskWeights.json';
 
 const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const fileInputRef = useRef(null);
@@ -11,9 +13,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const currentStatus = answerData?.status || null;
   const evidenceUrl = answerData?.evidenceUrl || null;
   const comment = answerData?.comment || "";
-  
   // Toggle Logic
   const isApplicable = currentStatus !== 'Not Applicable';
+
+  // Computed risk weight and contribution (after applicability known)
+  const baseWeight = computeQuestionWeight(item, riskWeights);
+  const statusFactor = getStatusFactor(currentStatus, riskWeights.statusFactors);
+  const contribution = isApplicable ? Math.round(baseWeight * statusFactor * 100) / 100 : 0;
 
   const handleToggle = () => {
     if (isApplicable) {
@@ -209,6 +215,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   Observation Status
                 </h4>
                 <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+                  {/* Risk badges */}
+                  <div className="flex items-center gap-2">
+                    <span className="px-2 py-1 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">Weight: {baseWeight}</span>
+                    <span className={`px-2 py-1 rounded-md text-[10px] font-bold border ${
+                      contribution > 0 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                    }`}>Contribution: {contribution}</span>
+                  </div>
               </div>
               
               <div className="grid grid-cols-3 gap-3">

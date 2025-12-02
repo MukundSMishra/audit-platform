@@ -9,6 +9,9 @@ import { supabase } from './services/supabaseClient';
 import AuditCard from './components/AuditCard';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+// Risk scoring
+import { computeSessionScore } from './utils/riskScoring';
+import riskWeights from './config/riskWeights.json';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -23,6 +26,7 @@ function App() {
   const [auditData, setAuditData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [answers, setAnswers] = useState({}); 
+  const [riskScore, setRiskScore] = useState(0);
 
   // 0. AUTH Check
   useEffect(() => {
@@ -73,6 +77,12 @@ function App() {
     };
     fetchAuditSession();
   }, [session, currentSessionId]);
+
+  // Recompute risk score whenever answers or questions change
+  useEffect(() => {
+    if (!auditData || auditData.length === 0) { setRiskScore(0); return; }
+    setRiskScore(computeSessionScore(auditData, answers, riskWeights));
+  }, [auditData, answers]);
 
   // 2. UPDATE ANSWER
   const handleUpdateAnswer = async (questionId, newAnswerData) => {
@@ -201,7 +211,14 @@ function App() {
               </span>
             </div>
           </div>
-          <div className="flex gap-3">
+            <div className="flex gap-3 items-center">
+               {/* Risk Score Badge */}
+               <div className={`px-3 py-1.5 rounded-lg text-xs font-bold border shadow-sm hidden sm:flex items-center gap-2
+                 ${riskScore >= 67 ? 'bg-rose-50 text-rose-700 border-rose-200' : riskScore >= 34 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'}`}
+               >
+                 <span>Risk Score:</span>
+                 <span className="font-extrabold">{riskScore} / 100</span>
+               </div>
              <button onClick={generatePDF} className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold shadow hover:bg-black transition-all active:scale-95 flex items-center gap-2">
                <FileText size={16}/> Report
              </button>

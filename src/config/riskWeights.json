@@ -1,0 +1,16 @@
+{
+  "Critical": 5,
+  "High": 4,
+  "Medium": 3,
+  "Low": 2,
+  "statusFactors": {
+    "Non-Compliant": 1,
+    "Delayed": 0.5,
+    "Compliant": 0,
+    "Not Applicable": 0
+  },
+  "penalty": {
+    "usePenaltyModulation": true,
+    "maxFactor": 2
+  }
+}
