@@ -162,7 +162,11 @@ function App() {
                   className={`h-10 w-10 rounded-lg text-xs font-bold transition-all flex items-center justify-center
                     ${isActive ? 'ring-2 ring-blue-600 ring-offset-1 z-10 scale-105' : 'hover:scale-105'}
                     ${isAnswered 
-                      ? (answers[q.id].status === 'Non-Compliant' ? 'bg-red-100 text-red-700 border border-red-200' : 'bg-emerald-100 text-emerald-700 border border-emerald-200') 
+                      ? (answers[q.id].status === 'Non-Compliant' 
+                          ? 'bg-red-100 text-red-700 border border-red-200' 
+                          : answers[q.id].status === 'Delayed'
+                            ? 'bg-orange-100 text-orange-700 border border-orange-200'
+                            : 'bg-emerald-100 text-emerald-700 border border-emerald-200') 
                       : 'bg-white text-gray-400 border border-gray-200 hover:border-gray-300'
                     }
                   `}
