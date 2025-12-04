@@ -20,6 +20,19 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const baseWeight = computeQuestionWeight(item, riskWeights);
   const statusFactor = getStatusFactor(currentStatus, riskWeights.statusFactors);
   const contribution = isApplicable ? Math.round(baseWeight * statusFactor * 100) / 100 : 0;
+  
+  // Verify risk level and log
+  const riskLevel = item?.risk_level || item?.risk_profile?.severity_level || 'Unknown';
+  const displayRiskLevel = String(riskLevel).trim();
+  
+  // Log verification info on first render of this item
+  React.useMemo(() => {
+    if (!item?.id || !window.__auditCardLog) window.__auditCardLog = new Set();
+    if (!window.__auditCardLog.has(item.id) && window.__auditCardLog.size < 5) {
+      console.log(`[AuditCard Verification] ID:${item.id} | Risk Label:"${displayRiskLevel}" | Base Weight:${baseWeight} | Status:"${currentStatus}" | Contribution:${contribution}`);
+      window.__auditCardLog.add(item.id);
+    }
+  }, [item?.id]);
 
   const handleToggle = () => {
     if (isApplicable) {
@@ -68,8 +81,25 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
             {item.category}
           </span>
         </div>
-        <div className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wide shadow-sm ${riskColors[item.risk_level]}`}>
-          {item.risk_level} Risk
+        <div className="flex items-center gap-4">
+          {/* Weight Badge - Enhanced Visibility */}
+          <div className={`flex items-center gap-2 px-4 py-2 rounded-xl font-bold shadow-md ring-2 transition-all ${
+            baseWeight === 5 ? 'bg-rose-50 text-rose-700 ring-rose-200' :
+            baseWeight === 4 ? 'bg-orange-50 text-orange-700 ring-orange-200' :
+            baseWeight === 3 ? 'bg-amber-50 text-amber-700 ring-amber-200' :
+            'bg-blue-50 text-blue-700 ring-blue-200'
+          }`}>
+            <span className="text-xs font-black">⚖️</span>
+            <div className="flex flex-col items-start gap-0.5">
+              <span className="text-[9px] font-semibold uppercase tracking-widest text-opacity-75">Risk Weight</span>
+              <span className="text-lg font-black">{baseWeight}</span>
+            </div>
+          </div>
+
+          {/* Risk Level Badge */}
+          <div className={`px-3 py-2 rounded-lg text-[11px] font-black uppercase tracking-wide shadow-md ring-1 transition-all ${riskColors[displayRiskLevel]}`}>
+            {displayRiskLevel} Risk
+          </div>
         </div>
       </div>
 
@@ -88,6 +118,25 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                 </span>
               </div>
               <span className="text-[10px] font-extrabold text-slate-400 uppercase mt-2 tracking-wider">Query</span>
+              {/* Weight Indicator Bar */}
+              <div className="mt-3 w-12 flex flex-col gap-1">
+                <div className="flex gap-0.5">
+                  {[1, 2, 3, 4, 5].map((level) => (
+                    <div
+                      key={level}
+                      className={`h-1.5 flex-1 rounded-full transition-all ${
+                        level <= baseWeight
+                          ? baseWeight === 5 ? 'bg-rose-500' :
+                            baseWeight === 4 ? 'bg-orange-500' :
+                            baseWeight === 3 ? 'bg-amber-500' :
+                            'bg-blue-500'
+                          : 'bg-gray-200'
+                      }`}
+                    />
+                  ))}
+                </div>
+                <span className="text-[7px] font-bold text-slate-400 uppercase text-center">Weight</span>
+              </div>
             </div>
             
             <div className="flex-1 pt-1">
@@ -215,12 +264,25 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   Observation Status
                 </h4>
                 <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
-                  {/* Risk badges */}
-                  <div className="flex items-center gap-2">
-                    <span className="px-2 py-1 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700 border border-slate-200">Weight: {baseWeight}</span>
-                    <span className={`px-2 py-1 rounded-md text-[10px] font-bold border ${
-                      contribution > 0 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                    }`}>Contribution: {contribution}</span>
+                  {/* Weight & Contribution Badges - Enhanced */}
+                  <div className="flex items-center gap-3">
+                    {/* Weight Badge */}
+                    <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold shadow-md ring-1 ${
+                      baseWeight === 5 ? 'bg-rose-50 text-rose-700 ring-rose-200' :
+                      baseWeight === 4 ? 'bg-orange-50 text-orange-700 ring-orange-200' :
+                      baseWeight === 3 ? 'bg-amber-50 text-amber-700 ring-amber-200' :
+                      'bg-blue-50 text-blue-700 ring-blue-200'
+                    }`}>
+                      <span className="font-black">#</span>
+                      <span>Weight: {baseWeight}</span>
+                    </div>
+                    {/* Contribution Badge */}
+                    <div className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-[10px] font-bold shadow-md ring-1 ${
+                      contribution > 0 ? 'bg-red-50 text-red-700 ring-red-200' : 'bg-emerald-50 text-emerald-700 ring-emerald-200'
+                    }`}>
+                      <span className="font-black">📊</span>
+                      <span>Contribution: {contribution}</span>
+                    </div>
                   </div>
               </div>
               
