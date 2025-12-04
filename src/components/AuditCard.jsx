@@ -82,23 +82,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
           </span>
         </div>
         <div className="flex items-center gap-4">
-          {/* Weight Badge - Enhanced Visibility */}
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-xl font-bold shadow-md ring-2 transition-all ${
-            baseWeight === 5 ? 'bg-rose-50 text-rose-700 ring-rose-200' :
-            baseWeight === 4 ? 'bg-orange-50 text-orange-700 ring-orange-200' :
-            baseWeight === 3 ? 'bg-amber-50 text-amber-700 ring-amber-200' :
-            'bg-blue-50 text-blue-700 ring-blue-200'
-          }`}>
-            <span className="text-xs font-black">⚖️</span>
-            <div className="flex flex-col items-start gap-0.5">
-              <span className="text-[9px] font-semibold uppercase tracking-widest text-opacity-75">Risk Weight</span>
-              <span className="text-lg font-black">{baseWeight}</span>
-            </div>
-          </div>
-
-          {/* Risk Level Badge */}
-          <div className={`px-3 py-2 rounded-lg text-[11px] font-black uppercase tracking-wide shadow-md ring-1 transition-all ${riskColors[displayRiskLevel]}`}>
-            {displayRiskLevel} Risk
+          {/* Merged Risk Level & Weight Badge */}
+          <div className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[11px] font-black uppercase tracking-wide shadow-md ring-1 transition-all ${riskColors[displayRiskLevel]}`}>
+            <span>{displayRiskLevel} Risk</span>
+            <span className="text-xs">|</span>
+            <span className="flex items-center gap-1">
+              <span>Risk Score: {baseWeight}</span>
+            </span>
           </div>
         </div>
       </div>
