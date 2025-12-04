@@ -286,7 +286,15 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   return (
                     <button
                       key={opt.label}
-                      onClick={() => handleStatusClick(opt.label)}
+                      onClick={() => {
+                        if (isSelected) {
+                          // If clicking the same option, deselect it
+                          onUpdateAnswer(item.id, { ...answerData, status: null });
+                        } else {
+                          // Otherwise, select it
+                          handleStatusClick(opt.label);
+                        }
+                      }}
                       className={`relative flex flex-col items-center justify-center gap-2 py-4 px-2 rounded-lg border-2 transition-all duration-300 group overflow-hidden
                         ${isSelected
                           ? `border-${opt.color}-400 shadow-md scale-105` 
