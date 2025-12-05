@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import { Plus, Building, MapPin, ArrowRight, Loader2, Calendar, FileText, ChevronRight } from 'lucide-react';
+import { Plus, Building, MapPin, ArrowRight, Loader2, Calendar, FileText, ChevronRight, Shield } from 'lucide-react';
+import { AVAILABLE_ACTS } from '../data/actRegistry';
 
 const Dashboard = ({ onStartAudit, userEmail }) => {
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [newFactory, setNewFactory] = useState({ name: '', location: '', license: '' });
+  const [newFactory, setNewFactory] = useState({ name: '', location: '', license: '', act_id: '' });
 
   useEffect(() => {
     const fetchHistory = async () => {
@@ -34,13 +35,14 @@ const Dashboard = ({ onStartAudit, userEmail }) => {
           factory_name: newFactory.name,
           location: newFactory.location,
           license_number: newFactory.license,
+          act_id: newFactory.act_id,
           status: 'In Progress'
         }])
         .select()
         .single();
 
       if (error) throw error;
-      onStartAudit(data.id, data.factory_name);
+      onStartAudit(data.id, data.factory_name, data.act_id);
 
     } catch (error) {
       alert("Error starting audit: " + error.message);
@@ -101,6 +103,32 @@ const Dashboard = ({ onStartAudit, userEmail }) => {
           </div>
           
           <form onSubmit={handleCreate} className="space-y-6">
+            {/* Act Selection - FIRST FIELD */}
+            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border-2 border-blue-200">
+              <label className="block text-sm font-bold text-blue-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <Shield size={18} className="text-blue-600"/>
+                Select Compliance Act
+              </label>
+              <select
+                required
+                value={newFactory.act_id}
+                onChange={e => setNewFactory({...newFactory, act_id: e.target.value})}
+                className="w-full p-4 bg-white border-2 border-blue-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all font-semibold text-gray-700 cursor-pointer hover:border-blue-400"
+              >
+                <option value="">-- Choose Act / Rules to Audit --</option>
+                {AVAILABLE_ACTS.map(act => (
+                  <option key={act.id} value={act.id}>
+                    {act.name} ({act.data.length} audit items)
+                  </option>
+                ))}
+              </select>
+              {newFactory.act_id && (
+                <p className="mt-3 text-sm text-blue-700 bg-blue-100 p-3 rounded-lg border border-blue-200">
+                  📋 {AVAILABLE_ACTS.find(a => a.id === newFactory.act_id)?.description}
+                </p>
+              )}
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
                 <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">Factory Name</label>
@@ -159,21 +187,28 @@ const Dashboard = ({ onStartAudit, userEmail }) => {
       </div>
       
       <div className="grid gap-4">
-        {history.map(session => (
-          <div 
-            key={session.id} 
-            onClick={() => onStartAudit(session.id, session.factory_name)}
-            className="group bg-white p-5 rounded-xl border border-gray-100 hover:border-blue-200 flex justify-between items-center cursor-pointer transition-all hover:shadow-md"
-          >
-            <div className="flex items-center gap-4">
-              <div className={`w-2 h-12 rounded-full ${session.status === 'Completed' ? 'bg-green-500' : 'bg-yellow-400'}`}></div>
-              <div>
-                <div className="font-bold text-gray-900 text-lg">{session.factory_name}</div>
-                <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
-                  <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
-                  <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
+        {history.map(session => {
+          const actInfo = AVAILABLE_ACTS.find(act => act.id === session.act_id);
+          return (
+            <div 
+              key={session.id} 
+              onClick={() => onStartAudit(session.id, session.factory_name, session.act_id)}
+              className="group bg-white p-5 rounded-xl border border-gray-100 hover:border-blue-200 flex justify-between items-center cursor-pointer transition-all hover:shadow-md"
+            >
+              <div className="flex items-center gap-4">
+                <div className={`w-2 h-12 rounded-full ${session.status === 'Completed' ? 'bg-green-500' : 'bg-yellow-400'}`}></div>
+                <div>
+                  <div className="font-bold text-gray-900 text-lg">{session.factory_name}</div>
+                  <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
+                    <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
+                    <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
+                    {actInfo && (
+                      <span className="flex items-center gap-1 text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                        <Shield size={12}/> {actInfo.shortName}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
             </div>
             
             <div className="flex items-center gap-6">
@@ -187,7 +222,8 @@ const Dashboard = ({ onStartAudit, userEmail }) => {
                 </div>
             </div>
           </div>
-        ))}
+          );
+        })}
         
         {history.length === 0 && (
             <div className="text-center py-16 bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200">

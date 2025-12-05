@@ -12,6 +12,8 @@ import Dashboard from './components/Dashboard';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
+// Act registry
+import { getActData, getActById } from './data/actRegistry';
 
 function App() {
   const [session, setSession] = useState(null);
@@ -19,6 +21,7 @@ function App() {
   // Navigation State
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
+  const [selectedActId, setSelectedActId] = useState(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
@@ -33,22 +36,24 @@ function App() {
     supabase.auth.getSession().then(({ data: { session } }) => setSession(session));
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
-      if (!session) { setCurrentSessionId(null); setFactoryName(null); }
+      if (!session) { 
+        setCurrentSessionId(null); 
+        setFactoryName(null);
+        setSelectedActId(null);
+      }
     });
     return () => subscription.unsubscribe();
   }, []);
 
-  // 1. FETCH DATA
+  // 1. FETCH DATA - Load from JSON based on selected act
   useEffect(() => {
-    if (!session || !currentSessionId) return;
+    if (!session || !currentSessionId || !selectedActId) return;
 
     const fetchAuditSession = async () => {
       setLoading(true);
       try {
-        const { data: questions } = await supabase
-          .from('factories_act_checklist')
-          .select('*')
-          .order('id', { ascending: true });
+        // Load questions from the appropriate JSON file based on act_id
+        const questions = getActData(selectedActId);
 
         const { data: savedAnswers } = await supabase
           .from('session_answers')
@@ -76,7 +81,7 @@ function App() {
       }
     };
     fetchAuditSession();
-  }, [session, currentSessionId]);
+  }, [session, currentSessionId, selectedActId]);
 
   // Recompute risk score whenever answers or questions change
   useEffect(() => {
@@ -140,7 +145,14 @@ function App() {
         <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
         <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
       </div>
-      <Dashboard userEmail={session.user.email} onStartAudit={(id, name) => { setCurrentSessionId(id); setFactoryName(name); }} />
+      <Dashboard 
+        userEmail={session.user.email} 
+        onStartAudit={(id, name, actId) => { 
+          setCurrentSessionId(id); 
+          setFactoryName(name);
+          setSelectedActId(actId);
+        }} 
+      />
     </div>
   );
 
@@ -206,9 +218,16 @@ function App() {
             </button>
             <div>
               <h1 className="font-bold text-gray-900 text-lg leading-none">{factoryName}</h1>
-              <span className="text-xs text-green-600 font-medium flex items-center gap-1 mt-1">
-                <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div> Live Session
-              </span>
+              <div className="flex items-center gap-3 mt-1">
+                <span className="text-xs text-green-600 font-medium flex items-center gap-1">
+                  <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div> Live Session
+                </span>
+                {selectedActId && (
+                  <span className="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                    {getActById(selectedActId)?.shortName}
+                  </span>
+                )}
+              </div>
             </div>
           </div>
             <div className="flex gap-3 items-center">
