@@ -28,6 +28,7 @@ function App() {
   const [currentActIndex, setCurrentActIndex] = useState(0); // Which act we're currently auditing
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
+  const [migrationComplete, setMigrationComplete] = useState(false); // Track if DB migration is done
 
   // Audit State
   const [auditData, setAuditData] = useState([]);
@@ -51,6 +52,32 @@ function App() {
     });
     return () => subscription.unsubscribe();
   }, []);
+
+  // Check if database migration is complete
+  useEffect(() => {
+    const checkMigration = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('audit_sessions')
+          .select('current_act_index')
+          .limit(1);
+        
+        if (error) {
+          if (error.message.includes('column') || error.message.includes('current_act_index')) {
+            setMigrationComplete(false);
+            console.warn('🚨 Database migration required. Progress saving will not work until migration is complete.');
+          }
+        } else {
+          setMigrationComplete(true);
+        }
+      } catch (err) {
+        console.error('Migration check failed:', err);
+        setMigrationComplete(false);
+      }
+    };
+    
+    if (session) checkMigration();
+  }, [session]);
 
   // 1. FETCH DATA - Load from JSON based on current act
   useEffect(() => {
@@ -187,7 +214,10 @@ function App() {
 
   // 5. SAVE PROGRESS
   const saveProgress = async (showNotification = true) => {
-    if (!currentSessionId) return;
+    if (!currentSessionId) {
+      if (showNotification) alert('No active session found. Please start an audit first.');
+      return false;
+    }
 
     try {
       const { error } = await supabase
@@ -201,19 +231,23 @@ function App() {
 
       if (error) {
         console.error('Error saving progress:', error);
-        if (showNotification) alert('Error saving progress. Please try again.');
+        const errorMessage = error.message.includes('column') 
+          ? 'Database not updated. Please run the migration SQL first. Check console for details.'
+          : `Save failed: ${error.message}`;
+        if (showNotification) alert(errorMessage);
+        console.log('🚨 MIGRATION REQUIRED: Run this SQL in Supabase:\n\nALTER TABLE audit_sessions \nADD COLUMN current_act_index INTEGER DEFAULT 0,\nADD COLUMN current_question_index INTEGER DEFAULT 0,\nADD COLUMN last_saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;');
         return false;
       }
 
       if (showNotification) {
         // Show success message briefly
         const message = document.createElement('div');
-        message.innerHTML = '✅ Progress saved successfully!';
+        message.innerHTML = `✅ Progress saved successfully!<br><small>Question ${currentQuestionIndex + 1}, Act ${currentActIndex + 1}</small>`;
         message.style.cssText = `
           position: fixed; top: 20px; right: 20px; z-index: 9999;
           background: #10B981; color: white; padding: 12px 20px;
           border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          animation: slideIn 0.3s ease-out;
+          line-height: 1.4; font-size: 14px;
         `;
         document.body.appendChild(message);
         setTimeout(() => message.remove(), 3000);
@@ -446,12 +480,21 @@ function App() {
                </div>
                
                {/* Save Progress Button */}
-               <button 
-                 onClick={() => saveProgress(true)} 
-                 className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-2"
-               >
-                 <Save size={16}/> Save Progress
-               </button>
+               {migrationComplete ? (
+                 <button 
+                   onClick={() => saveProgress(true)} 
+                   className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-2"
+                 >
+                   <Save size={16}/> Save Progress
+                 </button>
+               ) : (
+                 <button 
+                   onClick={() => alert('Database migration required. Please run the SQL migration first. Check browser console for instructions.')} 
+                   className="bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow hover:bg-orange-700 transition-all active:scale-95 flex items-center gap-2"
+                 >
+                   <Save size={16}/> Migration Needed
+                 </button>
+               )}
                
              <button onClick={generatePDF} className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold shadow hover:bg-black transition-all active:scale-95 flex items-center gap-2">
                <FileText size={16}/> Report
