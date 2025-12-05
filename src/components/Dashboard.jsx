@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
-import { Plus, Building, MapPin, ArrowRight, Loader2, Calendar, FileText, ChevronRight, Shield } from 'lucide-react';
+import { Plus, Building, MapPin, ArrowRight, Loader2, Calendar, FileText, ChevronRight, Shield, Clock, PlayCircle } from 'lucide-react';
 
 const Dashboard = ({ onCompanyCreated, userEmail }) => {
   const [loading, setLoading] = useState(false);
@@ -10,14 +10,14 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
 
   useEffect(() => {
     const fetchHistory = async () => {
-      // Get unique factories (companies) from sessions
+      // Get unique factories (companies) from sessions with progress info
       const { data } = await supabase
         .from('audit_sessions')
-        .select('id, factory_name, location, created_at, status')
+        .select('id, factory_name, location, created_at, status, current_act_index, current_question_index, last_saved_at, act_id')
         .order('created_at', { ascending: false });
       
       if (data) {
-        // Group by factory to get unique companies
+        // Group by factory to get unique companies with their latest session info
         const uniqueFactories = [];
         const seen = new Set();
         data.forEach(session => {
@@ -178,6 +178,15 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
       
       <div className="grid gap-4">
         {history.map(session => {
+          const hasProgress = session.current_act_index !== null || session.current_question_index !== null;
+          const progressText = hasProgress 
+            ? `Resume from Question ${(session.current_question_index || 0) + 1}`
+            : 'Start audit';
+          
+          const lastSavedText = session.last_saved_at 
+            ? `Last saved: ${new Date(session.last_saved_at).toLocaleDateString()} ${new Date(session.last_saved_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`
+            : '';
+
           return (
             <div 
               key={session.id} 
@@ -185,22 +194,34 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
               className="group bg-white p-5 rounded-xl border border-gray-100 hover:border-blue-200 flex justify-between items-center cursor-pointer transition-all hover:shadow-md"
             >
               <div className="flex items-center gap-4">
-                <div className="w-2 h-12 rounded-full bg-blue-400"></div>
+                <div className={`w-2 h-12 rounded-full ${hasProgress ? 'bg-orange-400' : 'bg-blue-400'}`}></div>
                 <div>
                   <div className="font-bold text-gray-900 text-lg">{session.factory_name}</div>
                   <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
                     <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
                     <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
+                    {hasProgress && (
+                      <span className="flex items-center gap-1 text-orange-600">
+                        <Clock size={12}/> {progressText}
+                      </span>
+                    )}
                   </div>
+                  {lastSavedText && (
+                    <div className="text-xs text-gray-400 mt-1">{lastSavedText}</div>
+                  )}
                 </div>
             </div>
             
             <div className="flex items-center gap-6">
-                <span className={`text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide bg-blue-50 text-blue-700 border border-blue-200`}>
-                  {session.status || 'Registered'}
+                <span className={`text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide ${
+                  hasProgress 
+                    ? 'bg-orange-50 text-orange-700 border border-orange-200' 
+                    : 'bg-blue-50 text-blue-700 border border-blue-200'
+                }`}>
+                  {hasProgress ? 'In Progress' : (session.status || 'Registered')}
                 </span>
                 <div className="p-2 rounded-full text-gray-300 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
-                  <ChevronRight size={20}/>
+                  {hasProgress ? <PlayCircle size={20}/> : <ChevronRight size={20}/>}
                 </div>
             </div>
           </div>

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable';
 // FIX: Added 'FileText' to the imports
-import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ChevronLeft, ChevronRight, Menu, FileText, SkipBack } from 'lucide-react';
+import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save } from 'lucide-react';
 
 // Services
 import { supabase } from './services/supabaseClient';
@@ -64,6 +64,13 @@ function App() {
         // Load questions from the appropriate JSON file based on current act_id
         const questions = getActData(currentActId);
 
+        // Fetch saved progress from audit_sessions
+        const { data: sessionData } = await supabase
+          .from('audit_sessions')
+          .select('current_act_index, current_question_index, last_saved_at')
+          .eq('id', currentSessionId)
+          .single();
+
         const { data: savedAnswers } = await supabase
           .from('session_answers')
           .select('*')
@@ -72,7 +79,16 @@ function App() {
 
         if (questions) {
           setAuditData(questions);
-          setCurrentQuestionIndex(0); // Reset to first question for new act
+          
+          // Restore progress if resuming session
+          if (sessionData && sessionData.current_question_index !== null) {
+            setCurrentQuestionIndex(sessionData.current_question_index || 0);
+            // Note: currentActIndex is already set correctly from parent component
+            console.log(`[Progress Restore] Resuming from Question ${sessionData.current_question_index + 1}, Act ${sessionData.current_act_index + 1}`);
+          } else {
+            setCurrentQuestionIndex(0); // Reset to first question for new sessions
+          }
+
           const answerMap = {};
           if (savedAnswers) {
             savedAnswers.forEach(row => {
@@ -169,6 +185,103 @@ function App() {
     doc.save('Report.pdf');
   };
 
+  // 5. SAVE PROGRESS
+  const saveProgress = async (showNotification = true) => {
+    if (!currentSessionId) return;
+
+    try {
+      const { error } = await supabase
+        .from('audit_sessions')
+        .update({
+          current_act_index: currentActIndex,
+          current_question_index: currentQuestionIndex,
+          last_saved_at: new Date().toISOString()
+        })
+        .eq('id', currentSessionId);
+
+      if (error) {
+        console.error('Error saving progress:', error);
+        if (showNotification) alert('Error saving progress. Please try again.');
+        return false;
+      }
+
+      if (showNotification) {
+        // Show success message briefly
+        const message = document.createElement('div');
+        message.innerHTML = '✅ Progress saved successfully!';
+        message.style.cssText = `
+          position: fixed; top: 20px; right: 20px; z-index: 9999;
+          background: #10B981; color: white; padding: 12px 20px;
+          border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+          animation: slideIn 0.3s ease-out;
+        `;
+        document.body.appendChild(message);
+        setTimeout(() => message.remove(), 3000);
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Save progress error:', error);
+      if (showNotification) alert('Error saving progress. Please try again.');
+      return false;
+    }
+  };
+
+  // Auto-save progress every 30 seconds and on answer changes
+  useEffect(() => {
+    if (currentScreen !== 'audit' || !currentSessionId) return;
+
+    const autoSaveInterval = setInterval(() => {
+      saveProgress(false); // Silent auto-save
+    }, 30000); // 30 seconds
+
+    return () => clearInterval(autoSaveInterval);
+  }, [currentScreen, currentSessionId, currentActIndex, currentQuestionIndex]);
+
+  // Save progress when answer is updated
+  const handleUpdateAnswerWithProgress = async (questionId, newAnswerData) => {
+    await handleUpdateAnswer(questionId, newAnswerData);
+    // Auto-save progress after answer (silent)
+    setTimeout(() => saveProgress(false), 500);
+  };
+
+  // Handle company selection and progress restoration
+  const handleCompanyCreated = async (id, name, location) => {
+    setCurrentSessionId(id); 
+    setFactoryName(name);
+    setFactoryLocation(location);
+
+    // Check if this session has saved progress
+    try {
+      const { data: sessionData } = await supabase
+        .from('audit_sessions')
+        .select('current_act_index, current_question_index, act_id')
+        .eq('id', id)
+        .single();
+
+      if (sessionData && sessionData.act_id) {
+        // Session has saved progress and act selections
+        // Try to determine selected acts from the session
+        // For now, assume single act workflow, but this can be enhanced
+        setSelectedActIds([sessionData.act_id]);
+        setCurrentActIndex(sessionData.current_act_index || 0);
+        setCurrentScreen('audit'); // Go directly to audit
+        console.log(`[Resume] Restored session with act: ${sessionData.act_id}, act index: ${sessionData.current_act_index}, question: ${sessionData.current_question_index}`);
+      } else {
+        // New session or no saved progress - go to act selector
+        setCurrentScreen('act-selector');
+        setSelectedActIds([]);
+        setCurrentActIndex(0);
+      }
+    } catch (error) {
+      console.error('Error checking session progress:', error);
+      // Fallback to act selector
+      setCurrentScreen('act-selector');
+      setSelectedActIds([]);
+      setCurrentActIndex(0);
+    }
+  };
+
   if (!session) return <Login />;
   
   // SCREEN 1: Dashboard - Choose Company
@@ -181,14 +294,7 @@ function App() {
         </div>
         <Dashboard 
           userEmail={session.user.email} 
-          onCompanyCreated={(id, name, location) => { 
-            setCurrentSessionId(id); 
-            setFactoryName(name);
-            setFactoryLocation(location);
-            setCurrentScreen('act-selector');
-            setSelectedActIds([]);
-            setCurrentActIndex(0);
-          }} 
+          onCompanyCreated={handleCompanyCreated} 
         />
       </div>
     );
@@ -213,9 +319,27 @@ function App() {
         <ActSelector 
           factoryName={factoryName}
           location={factoryLocation}
-          onActsSelected={(actIds) => {
+          onActsSelected={async (actIds) => {
             setSelectedActIds(actIds);
             setCurrentActIndex(0);
+            
+            // Save selected acts to session for progress tracking
+            try {
+              const { error } = await supabase
+                .from('audit_sessions')
+                .update({ 
+                  act_id: actIds[0], // Primary act
+                  status: 'In Progress',
+                  current_act_index: 0,
+                  current_question_index: 0
+                })
+                .eq('id', currentSessionId);
+              
+              if (error) console.error('Error saving act selection:', error);
+            } catch (error) {
+              console.error('Act selection save error:', error);
+            }
+            
             setCurrentScreen('audit');
           }}
         />
@@ -320,6 +444,15 @@ function App() {
                  <span>Risk Score:</span>
                  <span className="font-extrabold">{riskScore} / 100</span>
                </div>
+               
+               {/* Save Progress Button */}
+               <button 
+                 onClick={() => saveProgress(true)} 
+                 className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-bold shadow hover:bg-blue-700 transition-all active:scale-95 flex items-center gap-2"
+               >
+                 <Save size={16}/> Save Progress
+               </button>
+               
              <button onClick={generatePDF} className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold shadow hover:bg-black transition-all active:scale-95 flex items-center gap-2">
                <FileText size={16}/> Report
              </button>
@@ -335,7 +468,7 @@ function App() {
                 item={currentQuestion}
                 index={currentQuestionIndex}
                 answerData={answers[currentQuestion.id]}
-                onUpdateAnswer={handleUpdateAnswer}
+                onUpdateAnswer={handleUpdateAnswerWithProgress}
               />
             )}
           </div>
