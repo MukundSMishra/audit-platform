@@ -98,11 +98,31 @@ function App() {
           .eq('id', currentSessionId)
           .single();
 
-        const { data: savedAnswers } = await supabase
-          .from('session_answers')
-          .select('*')
-          .eq('session_id', currentSessionId)
-          .eq('act_id', currentActId);
+        let savedAnswers;
+        let answersError;
+        
+        try {
+          const result = await supabase
+            .from('session_answers')
+            .select('*')
+            .eq('session_id', currentSessionId)
+            .eq('act_id', currentActId);
+          
+          savedAnswers = result.data;
+          answersError = result.error;
+        } catch (err) {
+          answersError = err;
+        }
+
+        // Handle case where act_id column doesn't exist yet
+        if (answersError && answersError.message.includes('act_id')) {
+          console.warn('[Data Fetch] act_id column missing, falling back to legacy query');
+          const { data: legacyAnswers } = await supabase
+            .from('session_answers')
+            .select('*')
+            .eq('session_id', currentSessionId);
+          savedAnswers = legacyAnswers;
+        }
 
         console.log(`[Data Fetch] Query: session_id=${currentSessionId}, act_id=${currentActId}`);
 
@@ -161,10 +181,9 @@ function App() {
 
     const currentActId = selectedActIds[currentActIndex];
     
-    // Prepare data for saving
+    // Prepare data for saving - handle missing act_id column gracefully
     const saveData = {
       session_id: currentSessionId,
-      act_id: currentActId,
       question_id: questionId, 
       status: newAnswerData.status || null,
       evidence_url: newAnswerData.evidenceUrl || null,
@@ -172,16 +191,35 @@ function App() {
       updated_at: new Date().toISOString()
     };
     
+    // Add act_id only if we're in multi-act mode
+    if (currentActId) {
+      saveData.act_id = currentActId;
+    }
+    
     console.log(`[Answer Save] Saving to DB:`, saveData);
 
-    const { error } = await supabase
-      .from('session_answers')
-      .upsert(saveData, { onConflict: 'session_id,question_id,act_id' });
+    try {
+      const { error } = await supabase
+        .from('session_answers')
+        .upsert(saveData, { 
+          onConflict: currentActId ? 'session_id,question_id,act_id' : 'session_id,question_id'
+        });
 
-    if (error) {
-      console.error("[Answer Save] Error:", error);
-    } else {
-      console.log(`[Answer Save] Success for Q${questionId}`);
+      if (error) {
+        console.error("[Answer Save] Error:", error);
+        
+        // Handle specific missing column error
+        if (error.message.includes("act_id") && error.message.includes("schema cache")) {
+          alert("Database migration required! The 'act_id' column is missing from session_answers table. Please run the COMPLETE_MIGRATION.sql script.");
+          console.error("🚨 MIGRATION REQUIRED: Run COMPLETE_MIGRATION.sql in Supabase to add missing act_id column");
+        } else {
+          console.error("Save failed:", error.message);
+        }
+      } else {
+        console.log(`[Answer Save] Success for Q${questionId}`);
+      }
+    } catch (err) {
+      console.error("[Answer Save] Exception:", err);
     }
   };
 
