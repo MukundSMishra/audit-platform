@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable';
 // FIX: Added 'FileText' to the imports
-import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ChevronLeft, ChevronRight, Menu, FileText } from 'lucide-react';
+import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ChevronLeft, ChevronRight, Menu, FileText, SkipBack } from 'lucide-react';
 
 // Services
 import { supabase } from './services/supabaseClient';
 import AuditCard from './components/AuditCard';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
+import ActSelector from './components/ActSelector';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -19,9 +20,12 @@ function App() {
   const [session, setSession] = useState(null);
   
   // Navigation State
+  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'act-selector' | 'audit'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
-  const [selectedActId, setSelectedActId] = useState(null);
+  const [factoryLocation, setFactoryLocation] = useState(null);
+  const [selectedActIds, setSelectedActIds] = useState([]); // Multiple acts
+  const [currentActIndex, setCurrentActIndex] = useState(0); // Which act we're currently auditing
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); 
   const [isSidebarOpen, setSidebarOpen] = useState(true);
 
@@ -37,31 +41,38 @@ function App() {
     const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session);
       if (!session) { 
+        setCurrentScreen('dashboard');
         setCurrentSessionId(null); 
         setFactoryName(null);
-        setSelectedActId(null);
+        setFactoryLocation(null);
+        setSelectedActIds([]);
+        setCurrentActIndex(0);
       }
     });
     return () => subscription.unsubscribe();
   }, []);
 
-  // 1. FETCH DATA - Load from JSON based on selected act
+  // 1. FETCH DATA - Load from JSON based on current act
   useEffect(() => {
-    if (!session || !currentSessionId || !selectedActId) return;
+    if (!session || !currentSessionId || selectedActIds.length === 0 || currentScreen !== 'audit') return;
+
+    const currentActId = selectedActIds[currentActIndex];
 
     const fetchAuditSession = async () => {
       setLoading(true);
       try {
-        // Load questions from the appropriate JSON file based on act_id
-        const questions = getActData(selectedActId);
+        // Load questions from the appropriate JSON file based on current act_id
+        const questions = getActData(currentActId);
 
         const { data: savedAnswers } = await supabase
           .from('session_answers')
           .select('*')
-          .eq('session_id', currentSessionId);
+          .eq('session_id', currentSessionId)
+          .eq('act_id', currentActId);
 
         if (questions) {
           setAuditData(questions);
+          setCurrentQuestionIndex(0); // Reset to first question for new act
           const answerMap = {};
           if (savedAnswers) {
             savedAnswers.forEach(row => {
@@ -81,7 +92,7 @@ function App() {
       }
     };
     fetchAuditSession();
-  }, [session, currentSessionId, selectedActId]);
+  }, [session, currentSessionId, selectedActIds, currentActIndex, currentScreen]);
 
   // Recompute risk score whenever answers or questions change
   useEffect(() => {
@@ -96,16 +107,19 @@ function App() {
       [questionId]: newAnswerData
     }));
 
+    const currentActId = selectedActIds[currentActIndex];
+
     const { error } = await supabase
       .from('session_answers')
       .upsert({ 
         session_id: currentSessionId,
+        act_id: currentActId,
         question_id: questionId, 
         status: newAnswerData.status,
         evidence_url: newAnswerData.evidenceUrl,
         remarks: newAnswerData.comment,
         updated_at: new Date()
-      }, { onConflict: 'session_id, question_id' });
+      }, { onConflict: 'session_id, question_id, act_id' });
 
     if (error) console.error("Save error:", error);
   };
@@ -125,6 +139,24 @@ function App() {
     }
   };
 
+  const nextAct = () => {
+    if (currentActIndex < selectedActIds.length - 1) {
+      setCurrentActIndex(prev => prev + 1);
+      setAnswers({});
+    } else {
+      // All acts completed
+      alert('All audits completed!');
+      setCurrentScreen('dashboard');
+      setCurrentSessionId(null);
+      setSelectedActIds([]);
+      setCurrentActIndex(0);
+    }
+  };
+
+  const goBackToActSelector = () => {
+    setCurrentScreen('act-selector');
+  };
+
   // 4. GENERATE REPORT
   const generatePDF = () => {
     const doc = new jsPDF();
@@ -139,25 +171,65 @@ function App() {
 
   if (!session) return <Login />;
   
-  if (!currentSessionId) return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
-        <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
-        <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+  // SCREEN 1: Dashboard - Choose Company
+  if (currentScreen === 'dashboard') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
+          <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+        </div>
+        <Dashboard 
+          userEmail={session.user.email} 
+          onCompanyCreated={(id, name, location) => { 
+            setCurrentSessionId(id); 
+            setFactoryName(name);
+            setFactoryLocation(location);
+            setCurrentScreen('act-selector');
+            setSelectedActIds([]);
+            setCurrentActIndex(0);
+          }} 
+        />
       </div>
-      <Dashboard 
-        userEmail={session.user.email} 
-        onStartAudit={(id, name, actId) => { 
-          setCurrentSessionId(id); 
-          setFactoryName(name);
-          setSelectedActId(actId);
-        }} 
-      />
-    </div>
-  );
+    );
+  }
 
-  if (loading) return <div className="flex h-screen items-center justify-center gap-3 text-blue-600"><Loader2 className="animate-spin" size={32} /><span className="font-bold text-lg">Loading Exam Mode...</span></div>;
+  // SCREEN 2: Act Selector - Choose which acts to audit
+  if (currentScreen === 'act-selector') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setCurrentScreen('dashboard')}
+              className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
+          </div>
+          <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+        </div>
+        <ActSelector 
+          factoryName={factoryName}
+          location={factoryLocation}
+          onActsSelected={(actIds) => {
+            setSelectedActIds(actIds);
+            setCurrentActIndex(0);
+            setCurrentScreen('audit');
+          }}
+        />
+      </div>
+    );
+  }
 
+  // SCREEN 3: Audit - Conduct the actual audit
+  if (currentScreen !== 'audit') return null;
+
+  if (loading) return <div className="flex h-screen items-center justify-center gap-3 text-blue-600"><Loader2 className="animate-spin" size={32} /><span className="font-bold text-lg">Loading Audit Questions...</span></div>;
+
+  const currentActId = selectedActIds[currentActIndex];
+  const currentActData = getActById(currentActId);
   const currentQuestion = auditData[currentQuestionIndex];
 
   return (
@@ -165,10 +237,20 @@ function App() {
       
       {/* SIDEBAR NAVIGATION */}
       <div className={`${isSidebarOpen ? 'w-80' : 'w-0'} bg-white border-r border-gray-200 flex-shrink-0 transition-all duration-300 flex flex-col overflow-hidden`}>
-        <div className="p-4 border-b border-gray-200 flex justify-between items-center bg-gray-50">
-          <h2 className="font-bold text-gray-700 text-sm uppercase tracking-wide">Question Map</h2>
-          <div className="text-xs font-mono bg-white px-2 py-1 rounded border border-gray-200 text-gray-500">
-            {Object.keys(answers).length} / {auditData.length}
+        <div className="p-4 border-b border-gray-200 bg-gray-50">
+          <div className="mb-3">
+            <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Current Act</p>
+            <p className="text-sm font-bold text-gray-900 mt-1">{currentActData?.shortName}</p>
+            <p className="text-xs text-gray-500 mt-1">
+              {currentActIndex + 1} of {selectedActIds.length} acts
+            </p>
+          </div>
+          <div className="h-px bg-gray-200 mb-3"></div>
+          <div className="flex justify-between items-center">
+            <h2 className="font-bold text-gray-700 text-sm uppercase tracking-wide">Question Map</h2>
+            <div className="text-xs font-mono bg-white px-2 py-1 rounded border border-gray-200 text-gray-500">
+              {Object.keys(answers).length} / {auditData.length}
+            </div>
           </div>
         </div>
         
@@ -201,8 +283,8 @@ function App() {
         </div>
         
         <div className="p-4 border-t border-gray-200 bg-gray-50">
-           <button onClick={() => setCurrentSessionId(null)} className="w-full py-2 text-gray-500 hover:text-gray-900 text-sm flex items-center justify-center gap-2 transition-colors">
-             <ArrowLeft size={16}/> Exit to Dashboard
+           <button onClick={goBackToActSelector} className="w-full py-2 text-gray-500 hover:text-gray-900 text-sm flex items-center justify-center gap-2 transition-colors border border-gray-200 rounded-lg hover:border-gray-400">
+             <SkipBack size={16}/> Back to Acts
            </button>
         </div>
       </div>
@@ -222,9 +304,9 @@ function App() {
                 <span className="text-xs text-green-600 font-medium flex items-center gap-1">
                   <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></div> Live Session
                 </span>
-                {selectedActId && (
+                {currentActData && (
                   <span className="text-xs text-blue-600 font-semibold bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
-                    {getActById(selectedActId)?.shortName}
+                    {currentActData.shortName} ({currentActIndex + 1}/{selectedActIds.length})
                   </span>
                 )}
               </div>
@@ -275,11 +357,36 @@ function App() {
           </div>
 
           <button 
-            onClick={nextQuestion}
-            disabled={currentQuestionIndex === auditData.length - 1}
-            className={`flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white transition-all shadow-md hover:shadow-lg ${currentQuestionIndex === auditData.length - 1 ? 'bg-gray-300 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700 hover:-translate-y-0.5'}`}
+            onClick={() => {
+              if (currentQuestionIndex === auditData.length - 1) {
+                // Last question of this act
+                if (currentActIndex === selectedActIds.length - 1) {
+                  // Last act
+                  if (window.confirm('You have completed all audit questions. Review your answers?')) {
+                    // Could show summary here
+                  }
+                } else {
+                  // More acts to audit
+                  if (window.confirm(`${currentActData?.shortName} audit complete. Ready to audit the next act?`)) {
+                    nextAct();
+                  }
+                }
+              } else {
+                nextQuestion();
+              }
+            }}
+            className={`flex items-center gap-2 px-8 py-3 rounded-xl font-bold text-white transition-all shadow-md hover:shadow-lg ${
+              currentQuestionIndex === auditData.length - 1 
+                ? 'bg-green-600 hover:bg-green-700 hover:-translate-y-0.5' 
+                : 'bg-blue-600 hover:bg-blue-700 hover:-translate-y-0.5'
+            }`}
           >
-            Next <ChevronRight size={20} />
+            {currentQuestionIndex === auditData.length - 1 
+              ? (currentActIndex === selectedActIds.length - 1 
+                ? <>Complete All <FileText size={20} /></> 
+                : <>Next Act <ArrowLeft size={20} /></>)
+              : <>Next <ChevronRight size={20} /></>
+            }
           </button>
         </div>
 
