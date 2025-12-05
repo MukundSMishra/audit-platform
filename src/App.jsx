@@ -10,6 +10,7 @@ import AuditCard from './components/AuditCard';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import ActSelector from './components/ActSelector';
+import AuditProgress from './components/AuditProgress';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -20,7 +21,7 @@ function App() {
   const [session, setSession] = useState(null);
   
   // Navigation State
-  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'act-selector' | 'audit'
+  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'act-selector' | 'progress' | 'audit'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
   const [factoryLocation, setFactoryLocation] = useState(null);
@@ -253,7 +254,8 @@ function App() {
   };
 
   const goBackToActSelector = () => {
-    setCurrentScreen('act-selector');
+    // Show progress screen when going back from audit (not act-selector)
+    setCurrentScreen('progress');
   };
 
   // 4. GENERATE REPORT
@@ -390,7 +392,37 @@ function App() {
     );
   }
 
-  // SCREEN 2: Act Selector - Choose which acts to audit
+  // SCREEN 2: Progress Overview - Show completion status with percentage bars
+  if (currentScreen === 'progress') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
+          <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+        </div>
+        <AuditProgress
+          company={{ company_name: factoryName, location: factoryLocation }}
+          sessionId={currentSessionId}
+          selectedActs={selectedActIds.map(actId => {
+            const actData = getActById(actId);
+            return {
+              id: actId,
+              name: actData.name,
+              shortName: actData.shortName,
+              questions: actData.questions
+            };
+          })}
+          onContinueAudit={(actIndex) => {
+            setCurrentActIndex(actIndex);
+            setCurrentScreen('audit');
+          }}
+          onBackToDashboard={() => setCurrentScreen('dashboard')}
+        />
+      </div>
+    );
+  }
+
+  // SCREEN 3: Act Selector - Choose which acts to audit (only for new sessions)
   if (currentScreen === 'act-selector') {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -437,7 +469,7 @@ function App() {
     );
   }
 
-  // SCREEN 3: Audit - Conduct the actual audit
+  // SCREEN 4: Audit - Conduct the actual audit
   if (currentScreen !== 'audit') return null;
 
   if (loading) return <div className="flex h-screen items-center justify-center gap-3 text-blue-600"><Loader2 className="animate-spin" size={32} /><span className="font-bold text-lg">Loading Audit Questions...</span></div>;
