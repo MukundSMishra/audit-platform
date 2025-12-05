@@ -1,0 +1,2756 @@
+[
+  {
+    "audit_item_id": "MFR-R03-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 3(1)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Has the occupier obtained previous permission from the Chief Inspector of Factories for the site, construction, or extension of the factory using Form 1?",
+    "applicability_criteria": "All factories proposing new construction, extension, or use of existing premises",
+    "simplified_guidance": "1. Submit an application in Form 1 to the Chief Inspector of Factories.\n2. Attach a flow chart of the manufacturing process and list of raw materials/products.\n3. Attach plans in duplicate showing the site, immediate surroundings, and building details.\n4. Ensure plans indicate lighting, ventilation, and means of escape.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Approved building plans signed by the Chief Inspector; Copy of submitted Form 1",
+      "delay_proof": "Acknowledgement of submission of Form 1"
+    },
+    "legal_text": "An application for obtaining previous permission for the site on which the factory is to be situated and for the construction or extension of a factory shall be made to the Chief Inspector of Factories. Application for such permission shall be made in Form I..."
+  },
+  {
+    "audit_item_id": "MFR-R03A-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 3A(1)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Is a valid Certificate of Stability in Form 1-A available for all factory buildings and engineering constructions, approved by the Chief Inspector?",
+    "applicability_criteria": "All factories carrying out manufacturing processes in constructed, reconstructed, or extended premises",
+    "simplified_guidance": "1. Obtain a Certificate of Stability in Form 1-A from a competent person (e.g., Structural Engineer).\n2. Submit the certificate to the Chief Inspector of Factories for approval.\n3. Ensure the certificate covers all buildings, tanks, silos, chimneys, and supporting structures.\n4. Renew this certificate every 5 years or after any extension/alteration/repair.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certificate of Stability in Form 1-A signed by a competent person and approved by the Chief Inspector",
+      "delay_proof": "Correspondence with a competent person regarding structural assessment"
+    },
+    "legal_text": "No manufacturing process shall be carried out in any premises of a factory constructed, reconstructed or extended or in any premises which has been taken into use as a factory or part of a factory until a certificate of stability issued by a competent person in respect of every work of engineering construction in the Form 1-A has been sent by the Occupier of the factory to the Chief Inspector of Factories, and approved by him... Provided further that no manufacturing process shall be carried out in any premises of a factory unless a fresh certificate of stability in Form 1-A is obtained from a competent person once in each period of 5 years..."
+  },
+  {
+    "audit_item_id": "MFR-R04-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 4",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Does the occupier possess a valid licence obtained under Rule 6 or renewed under Rule 8 prior to using the premises as a factory?",
+    "applicability_criteria": "All occupiers using any premises as a factory",
+    "simplified_guidance": "1. Ensure plans are approved regarding site, buildings, and layout.\n2. Ensure factory construction conforms to approved plans.\n3. Pay necessary fees and obtain the licence from the Chief Inspector.\n4. Ensure the licence covers the correct number of workers and installed power.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original Factory Licence (Form 4) valid for the current period",
+      "delay_proof": "Proof of application for licence submitted prior to commencement"
+    },
+    "legal_text": "No occupier shall use any premises as a factory unless... A licence is obtained under rule 6 from the Chief Inspector of Factories or renewed under rule 8 by the Deputy Chief Inspector of Factories and the said licence is valid at the relevant time..."
+  },
+  {
+    "audit_item_id": "MFR-R05-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 5(1)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Has the application for registration (Form 2) and grant of licence (Form 3) been submitted with the appropriate fees?",
+    "applicability_criteria": "New factories or factories seeking initial registration/licensing",
+    "simplified_guidance": "1. Submit Form 2 (Application for Registration and Notice of Occupation) in triplicate.\n2. Submit Form 3 (Application for Licence).\n3. Pay fees as per the Schedule (based on Horse Power and number of workers) via treasury receipt or cheque.\n4. Ensure the period applied for does not exceed 10 years.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of Form 2 and Form 3; Fee payment receipts (Treasury challan or Cheque)",
+      "delay_proof": "Acknowledgement of application submission"
+    },
+    "legal_text": "The occupier or manager of every factory coming within this scope of this Act after its commencement shall submit to the Chief Inspector an application in triplicate in Form 2 for the registration of the factory accompanied by an application in Form 3 for the grant of licence therefor..."
+  },
+  {
+    "audit_item_id": "MFR-R07-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 7(2)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Has the licence been amended for any changes in factory name, site, installed power, or number of employees exceeding current limits?",
+    "applicability_criteria": "Factories where changes in name, location, HP installed, or manpower limits occurred",
+    "simplified_guidance": "1. Identify if current parameters exceed limits specified in the existing licence.\n2. Submit the original licence to the Chief Inspector with an application stating the nature of the amendment.\n3. Pay the difference in fees if the change involves a higher bracket of workers or power.\n4. Obtain the amended licence.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Amended Licence (Form 4) reflecting current operational status; Fee payment receipt for amendment",
+      "delay_proof": "Application for amendment submitted to Chief Inspector"
+    },
+    "legal_text": "A licensee shall be required to have his licence amended if there is change in the name of the factory or in the site on which the factory is situated or if the factory for which the licence is granted exceeds the limits specified in the licence in regard to horse-power or the number of persons employed..."
+  },
+  {
+    "audit_item_id": "MFR-R08-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 8(1)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Is the application for renewal of licence submitted in Form 3 at least two months before expiry?",
+    "applicability_criteria": "All licensed factories (Annual or periodic requirement)",
+    "simplified_guidance": "1. Fill out Form 3 for renewal.\n2. Attach the original licence and treasury receipt/cheque for fees.\n3. Submit to the Chief Inspector not later than two months before the expiry date (usually by Oct 31st).\n4. If submitted late, pay the additional graded fees (5% to 25%) as per the Schedule.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of Form 3; Proof of fee payment; Endorsed Licence (Form 4)",
+      "delay_proof": "Challan showing payment of additional fee for late renewal"
+    },
+    "legal_text": "An application for the renewal of licence... shall be made to Chief Inspector... in Form 3 accompanied by a treasury receipt... so as to reach him not later than two months before the date on which the licence is due to expire..."
+  },
+  {
+    "audit_item_id": "MFR-R14-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 14",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Has the Notice of Occupation been submitted in Form 2 correctly?",
+    "applicability_criteria": "All factories (at least 15 days before occupying premises or using as factory)",
+    "simplified_guidance": "1. Complete Form 2 containing details of occupier, manager, and process.\n2. Submit to the Chief Inspector of Factories.\n3. Ensure this is done before occupying the premises for use as a factory.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 2 with acknowledgment of receipt",
+      "delay_proof": "Proof of dispatch (Registered Post/Courier) of Form 2"
+    },
+    "legal_text": "The notice of occupation shall be in Form 2."
+  },
+  {
+    "audit_item_id": "MFR-R15-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 15",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "Has the Notice of Change of Manager been submitted in Form 5 within the prescribed time?",
+    "applicability_criteria": "Factories where the designated Manager has changed",
+    "simplified_guidance": "1. Complete Form 5 upon the appointment of a new Manager.\n2. Submit the form to the Inspectorate.\n3. Ensure submission is within 7 days of the change (as per Section 7(4) of the Act).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 5 submitted to the Inspectorate",
+      "delay_proof": "Internal appointment letter of the new manager"
+    },
+    "legal_text": "Notice of change of Manager shall be in Form 5."
+  },
+  {
+    "audit_item_id": "MFR-R13-001",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 13(1)",
+      "category": "Licensing and Registration"
+    },
+    "question_text": "If the factory operations are suspended, has the written intention to suspend the licence been notified before October 31st?",
+    "applicability_criteria": "Factories intending to suspend operations/use of premises for the following year",
+    "simplified_guidance": "1. Determine if the factory will not be used in the coming year.\n2. Notify the Chief Inspector in writing before 31st October.\n3. Request suspension of the licence to avoid full renewal fees.\n4. Note that reactivation requires Form 3 and a 10% surcharge.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written notice of suspension submitted before Oct 31st",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "If before the 31st October of any year an occupier notifies his intention in writing... that during the following year the premises... will not be used for the working of the factory, the Chief Inspector... may suspend the licence..."
+  },
+  {
+    "audit_item_id": "MFR-R20-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 20",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Is the Register of lime-washing, painting, and varnishing maintained in Form 8 with up-to-date entries?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Maintain a register in Form 8.\n2. Record the dates on which lime-washing, color-washing, painting, or varnishing is carried out.\n3. Ensure entries correspond to the frequency required (e.g., white-washing every 14 months, painting every 5 years).\n4. Keep the register available for inspection.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 8 (Record of lime-washing, painting, etc.) with recent entries",
+      "delay_proof": "Work orders or invoices for painting/whitewashing services"
+    },
+    "legal_text": "The record of dates on which white-washing, colour-washing, varnishing, etc., are carried out shall be entered in a Register maintained in Form 8."
+  },
+  {
+    "audit_item_id": "MFR-R22-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 22(2)",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Has approval been obtained from the Maharashtra Pollution Control Board for the treatment and disposal of trade waste and effluents?",
+    "applicability_criteria": "Factories located in areas notified under the Water (Prevention and Control of Pollution) Act",
+    "simplified_guidance": "1. Identify if the factory generates trade waste or effluents.\n2. Apply to the Maharashtra Pollution Control Board (MPCB) for approval.\n3. Implement the approved treatment and disposal arrangements.\n4. Maintain valid consent to operate documentation.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Consent to Operate / Approval letter from Maharashtra Pollution Control Board",
+      "delay_proof": "Application submitted for consent renewal"
+    },
+    "legal_text": "For the areas notified under Water (Prevention and Control of Pollution) Act, (6 of 1974) necessary approval to arrangements made for the treatment and disposal of all types of trade-waste and effluents shall be obtained from Maharashtra Water (Prevention and Control of Pollution) Board, constituted under that Act."
+  },
+  {
+    "audit_item_id": "MFR-R22A-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 22-A(1)",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Is the wet-bulb temperature in workrooms maintained below 30°C with adequate air movement?",
+    "applicability_criteria": "All factories (except those specifically exempted or covered by Section 15)",
+    "simplified_guidance": "1. Measure the wet-bulb temperature in workrooms at a height of 1.5 meters.\n2. Ensure it does not exceed 30°C.\n3. Ensure air movement is at least 30 meters per minute.\n4. If outside wet-bulb temp exceeds 27°C, apply the schedule allowances.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Temperature records; Hygrometer readings; Presence of adequate fans/ventilation",
+      "delay_proof": "Installation records of cooling systems"
+    },
+    "legal_text": "In any factory the maximum wet-bulb temperature of air in a work-room at a height of 1.5 metres above the floor level shall not exceed 30 degrees C and adequate air movement of at least 30 meters per minute shall be provided..."
+  },
+  {
+    "audit_item_id": "MFR-R22A-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 22-A(3)(a)",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Does the aggregate area of ventilation openings in workrooms meet the minimum requirement of 15% of the floor area?",
+    "applicability_criteria": "All factories (unless mechanically ventilated or air-conditioned)",
+    "simplified_guidance": "1. Calculate the floor area of the workroom.\n2. Measure the area of windows, ventilators, and other openings.\n3. Ensure the total opening area is at least 15% of the floor area.\n4. If natural ventilation is insufficient, provide mechanical ventilation.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Building plans showing ventilation calculations; Physical verification of openings",
+      "delay_proof": "Plan for installing additional ventilation or mechanical systems"
+    },
+    "legal_text": "In every factory the number of ventilation openings in the workroom below the caves shall, except where mechanical means of ventilation... are provided be of an aggregate area of not less than 15 per cent of the floor area and so located as to afford a continued supply of fresh air..."
+  },
+  {
+    "audit_item_id": "MFR-R27-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 27",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "In factories using artificial humidification, is the Humidity Register in Form 9 maintained with daily readings?",
+    "applicability_criteria": "Cotton spinning and weaving mills using artificial humidification",
+    "simplified_guidance": "1. Record wet and dry bulb temperatures daily.\n2. Take readings between 7-9 am, 11 am-2 pm, and 4-5:30 pm.\n3. Enter readings in Form 9.\n4. Ensure the person taking readings signs the register monthly.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 9 (Humidity Register) with daily entries",
+      "delay_proof": "Logbook of hygrometer readings"
+    },
+    "legal_text": "At each hygrometer... correct wet and dry bulb temperatures shall be recorded daily during working hours... The temperatures shall be entered in a Humidity Register in Form 9 maintained in the factory."
+  },
+  {
+    "audit_item_id": "MFR-R24-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 24",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Are sufficient hygrometers provided and maintained in departments using artificial humidification?",
+    "applicability_criteria": "Cotton spinning and weaving mills with artificial humidification",
+    "simplified_guidance": "1. Install hygrometers in all departments with artificial humidification.\n2. Follow the scale: One per 500 looms (weaving) or one per 8,500 cu. meters (other depts).\n3. Ensure one hygrometer is provided outside for shade readings.\n4. Keep hygrometers in efficient working order.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Presence of functional hygrometers in specified locations",
+      "delay_proof": "Purchase order for hygrometers"
+    },
+    "legal_text": "In all departments of cotton spinning and weaving mills wherein artificial humidification is adopted, hygrometers shall be provided and maintained... The number of hygrometers shall be regulated according to the following scale..."
+  },
+  {
+    "audit_item_id": "MFR-R35-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 35",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Is the lighting intensity in all parts of the factory maintained as per the minimum Lux levels specified in Schedule A?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Measure illumination levels in various work areas.\n2. Compare against Schedule A (e.g., 20 Lux for stockyards, 50 Lux for passageways, 100 Lux for engine rooms).\n3. Ensure lighting is uniform and free from glare.\n4. Install additional lighting if daylight is insufficient.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Lux meter survey report; Visual inspection of lighting",
+      "delay_proof": "Proposal for lighting upgrade"
+    },
+    "legal_text": "The minimum intensity of illumination for the different areas and work-rooms of the type given under column No.2 shall be as given under column No.3 of the Schedule 'A' appended hereto..."
+  },
+  {
+    "audit_item_id": "MFR-R36-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 36(2)",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Are local lights provided with suitable shades to prevent glare to the eyes of the workers?",
+    "applicability_criteria": "Workstations using local/focused artificial lighting",
+    "simplified_guidance": "1. Identify local lights used for specific tasks.\n2. Check if they have opaque shades or screens.\n3. Ensure the light source is screened from the eyes of the worker at the normal working position.\n4. Adjust positioning to avoid direct glare.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Presence of shades on task lighting",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Any local light... shall be provided with a suitable shade of opaque material to prevent glare or with other effective means by which the light source is completely screened from the eyes of every person employed at a normal working place..."
+  },
+  {
+    "audit_item_id": "MFR-R21-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 21",
+      "category": "Health - Environment and Hygiene"
+    },
+    "question_text": "Is the compound surrounding the factory maintained in a clean and sanitary condition?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Inspect the factory compound/surroundings.\n2. Ensure it is free from rubbish, filth, or debris.\n3. Establish a routine cleaning schedule for outdoor areas.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Visual cleanliness of the premises",
+      "delay_proof": "Cleaning contract or schedule"
+    },
+    "legal_text": "The compound surrounding every factory shall be maintained in a sanitary and clean condition free of rubbish, filth or debris."
+  },
+  {
+    "audit_item_id": "MFR-R39-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 39",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Is drinking water provided at a rate of at least five liters per day per worker and readily available during working hours?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Calculate the total number of workers.\n2. Ensure the drinking water supply capacity meets the minimum of 5 liters per worker per day.\n3. Ensure water is available at all times during working hours.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Water storage capacity records; Visual verification of supply",
+      "delay_proof": "Purchase orders for additional water supply"
+    },
+    "legal_text": "The quantity of drinking water to be provided for the workers in every factory shall be at least five litres a day per worker employed in the factory and such drinking water shall be readily available at all times during working hours."
+  },
+  {
+    "audit_item_id": "MFR-R42-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 42(2)",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "If drinking water is supplied from a well or reservoir, is it sterilized at least once a week?",
+    "applicability_criteria": "Factories supplying drinking water from wells or reservoirs (not treated/filtered to Health Officer satisfaction)",
+    "simplified_guidance": "1. Identify the source of drinking water.\n2. If from a well/reservoir, sterilize the water once a week.\n3. Maintain a record of the dates on which sterilization is carried out.\n4. This is not required if water is filtered/treated to the satisfaction of the Health Officer.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Sterilization logbook/register",
+      "delay_proof": "Invoice for sterilization chemicals/services"
+    },
+    "legal_text": "Where drinking water is supplied from such well or reservoir the water in it shall be sterilised once a week or more frequently if the Inspector by written order so requires, and the date on which sterilising is carried out shall be recorded..."
+  },
+  {
+    "audit_item_id": "MFR-R44-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 44(a)",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Is the drinking water supplied to workers cooled by ice or other effective methods from 1st March to 30th November?",
+    "applicability_criteria": "Factories ordinarily employing more than 250 workers",
+    "simplified_guidance": "1. Verify if the factory employs more than 250 workers.\n2. Ensure cooling arrangements (water coolers, ice, etc.) are active between March 1 and November 30.\n3. Establish 'Water Centers' in canteens, lunchrooms, and accessible points.\n4. Ensure ice, if used, is from an approved source.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functioning water coolers; Temperature check log; Source approval for ice",
+      "delay_proof": "Maintenance records for cooling equipment"
+    },
+    "legal_text": "In every factory wherein more than 250 workers are ordinarily employed... the drinking water supplied to the workers shall from the 1st of March to 30th of November in every year be cooled by ice or other effective method..."
+  },
+  {
+    "audit_item_id": "MFR-R45-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 45",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Is adequate latrine accommodation provided separately for males and females according to the prescribed scale?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Count workers by gender.\n2. Provide 1 latrine per 25 females.\n3. Provide 1 latrine per 25 males (up to 100 males), then 1 per 50 thereafter.\n4. Count odd numbers less than 25/50 as a full unit.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical count of functional latrines; Layout plan",
+      "delay_proof": "Construction plan for additional facilities"
+    },
+    "legal_text": "Latrine accommodation shall be provided in every factory on the following scale: (a) where females are employed, there shall be at least one latrine for every 25 females; (b) where males are employed... one latrine for 25 males up to the first 100, and one for every 50 thereafter."
+  },
+  {
+    "audit_item_id": "MFR-R48-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 48",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Is adequate urinal accommodation provided for male workers according to the prescribed scale?",
+    "applicability_criteria": "All factories employing male workers",
+    "simplified_guidance": "1. Count male workers employed at a time.\n2. Provide 1 urinal for every 50 males (up to 500 males).\n3. Provide 1 urinal for every 100 males thereafter.\n4. Ensure urinals are connected to the drainage system.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical count of urinals",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "There shall be at least one urinal for every 50 male workers or part thereof employed at a time; provided that where the number of males employed exceeds 500 it shall be sufficient if there is one urinal for every 50 males up to the first 500 and one for every 100 or part thereof thereafter."
+  },
+  {
+    "audit_item_id": "MFR-R51-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 51",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Are latrines and urinals white-washed or color-washed at least once every four months, and is the record maintained in Form 8?",
+    "applicability_criteria": "All factories (Except those with glazed tile walls/ceilings washed with detergents)",
+    "simplified_guidance": "1. White-wash or color-wash latrine/urinal walls, ceilings, and partitions.\n2. Repeat this at least once every four months.\n3. Record the dates of washing in Form 8.\n4. Exemption applies if walls/ceilings are glazed tiles and washed with disinfectants.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 8 Register with entries every 4 months",
+      "delay_proof": "Work order for painting/whitewashing"
+    },
+    "legal_text": "The walls, ceiling and partition of every latrine and urinal shall be white-washed or colour washed and the white-washing or colour-washing shall be repeated at least once in every period of four months. The dates on which the white-washing or colour-washing is carried out shall be entered in the prescribed Register in Form 8..."
+  },
+  {
+    "audit_item_id": "MFR-R53-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 53",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Are water taps provided in or near latrine accommodation at the rate of one tap for every ten latrines?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Provide conveniently accessible water taps near latrines.\n2. Ensure the ratio is at least 1 tap per 10 latrines.\n3. Connect taps to a continuous water supply or overhead tank.\n4. Ensure water is available during all working hours.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visual verification of taps and water flow",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Water taps, conveniently accessible, shall be provided in or near such latrine accommodation. There shall be at least one tap for every ten latrines or part thereof."
+  },
+  {
+    "audit_item_id": "MFR-R53A-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 53-A",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Are sufficient sweepers employed to maintain latrines, urinals, and wash places in a clean condition as per the prescribed schedule?",
+    "applicability_criteria": "All factories (Scale based on workers per shift)",
+    "simplified_guidance": "1. Check the number of workers in each shift.\n2. Employ sweepers as per Schedule: \n   - Upto 100 workers: 1 part-time\n   - 101-250: 1 full-time\n   - 251-500: 2 full-time\n   - 501-1000: 3 full-time\n3. Ensure they clean latrines, urinals, and wash places.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Muster roll showing employment of sweepers; Cleaning schedule/log",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "In every factory employing number of workers in any shift as shown in column No. 2 of the Schedule... there shall be employed at least a number of full time/part time sweepers as shown in column No.3... to clean the latrines, urinals and wash places..."
+  },
+  {
+    "audit_item_id": "MFR-R54-001",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 54",
+      "category": "Health - Water and Sanitation"
+    },
+    "question_text": "Are sufficient spittoons provided in convenient locations and maintained in a clean and hygienic condition?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Install spittoons on stands/brackets 90cm high.\n2. Use galvanized iron containers with disinfectant or sand-filled containers.\n3. Ensure they are cleaned/emptied daily.\n4. Verify locations are sufficient to the satisfaction of the Inspector.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Presence of clean spittoons; Cleaning log (optional)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The number and location of the spittoons to be provided shall be to the satisfaction of the Inspector. Such spittoons shall be placed on a stand or a bracket 90 centimetres high... The spittoons... shall be emptied, cleaned and disinfected at least once every day..."
+  },
+  {
+    "audit_item_id": "MFR-R57-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 57, Schedule I",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "In textile factories, are openers, scutchers, and carding machines provided with effective interlocking arrangements to prevent access to dangerous parts while in motion?",
+    "applicability_criteria": "Textile factories (Cotton, Silk, Asbestos, Fibre, Jute) using openers, scutchers, or carding machines",
+    "simplified_guidance": "1. Inspect covers and doors of openers, scutchers, and lap machines.\n2. Verify that the machine cannot start if the cover is open.\n3. Verify that the cover cannot be opened until the machine comes to a complete rest.\n4. Check carding machines for similar automatic locking devices on cylinder doors.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional interlocking system on specified machines",
+      "delay_proof": "Maintenance log showing repair of interlocks"
+    },
+    "legal_text": "In all openers, scutchers, combined openers and scutchers, scutcher lap machines... the beater covers and doors which give access to any dangerous part of the machine shall be fitted with effective interlocking arrangements, which shall prevent the covers and doors being opened till the dangerous parts of the machine come to rest and also prevent the machine being restarted till the covers and doors are closed."
+  },
+  {
+    "audit_item_id": "MFR-R57-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 57, Schedule III",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are circular saws equipped with a riving knife, a top guard, and push sticks to prevent injury?",
+    "applicability_criteria": "Factories using wood-working machinery (Circular Saws)",
+    "simplified_guidance": "1. Ensure a riving knife is placed behind the saw in direct line.\n2. Check that the top guard covers the saw and extends below the roots of the teeth.\n3. Verify push sticks are available for use.\n4. Ensure the floor around the machine is not slippery.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Presence of riving knife, guard, and push sticks on circular saws",
+      "delay_proof": "Purchase order for safety guards"
+    },
+    "legal_text": "Every circular saw shall be fenced as follows:-(a) Behind and in direct line with the saw there shall be an arriving knife... (b) The top of the saw shall be covered by a strong and easily adjustable guard... A push stick or other suitable appliance shall be provided for use at every circular saw..."
+  },
+  {
+    "audit_item_id": "MFR-R57-003",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 57, Schedule IV",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are rubber and plastic mills equipped with safety trip rods or tight wire cables to instantly stop the machine?",
+    "applicability_criteria": "Factories using Rubber or Plastic Mills",
+    "simplified_guidance": "1. Locate the safety trip rods or tight wire cables across the front and rear of the rolls.\n2. Ensure they are within reach of the operator (not more than 170 cm above floor).\n3. Test the device to ensure it instantly disconnects power and applies brakes.\n4. Maintain a daily record of these tests.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional safety trip wires; Daily examination log",
+      "delay_proof": "Maintenance request for safety device repair"
+    },
+    "legal_text": "Rubber and Plastic Mills shall be equipped with... Horizontal Safety - trip rods or tight wire cable across both front and rear, which will when pushed or pulled operate instantly to disconnect the power and apply the brakes or to reverse the rolls."
+  },
+  {
+    "audit_item_id": "MFR-R57-004",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 57, Schedule V",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are centrifugal machines provided with interlocking lids that prevent opening while the drum is in motion?",
+    "applicability_criteria": "Factories using Centrifugal Machines (extractors, separators, driers)",
+    "simplified_guidance": "1. Check if the lid is interlocked with the drive mechanism.\n2. Attempt to open the lid while the drum is rotating (it should not open).\n3. Attempt to start the machine with the lid open (it should not start).\n4. Ensure the safe working speed is stamped on the machine.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional interlock on centrifugal machine lids",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Centrifugal machines shall be provided with efficient inter locking devices that will physically prevent the lids from being opened whilst the rotating drums or brackets are in motion... and would also prevent the starting of the drums or baskets under power while the lids are open."
+  },
+  {
+    "audit_item_id": "MFR-R57-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 57, Schedule VI",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are shears, slitters, and guillotine machines provided with barrier guards or suitable starting devices to protect the operator's hands?",
+    "applicability_criteria": "Factories using shears, slitters, or guillotine machines (metal, paper, leather, etc.)",
+    "simplified_guidance": "1. Inspect the front of the knife/blade.\n2. Ensure a barrier metal guard prevents hands from reaching the blade.\n3. Alternatively, check for simultaneous two-hand controls or automatic sweep devices.\n4. Ensure the back end is also guarded to prevent access.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installed barrier guards or functional two-hand controls",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A barrier metal guard of adequate strength shall be provided at the front of the knife... and shall be so fixed as would prevent any part of the operator's body to reach the descending blade... or there shall be provided suitable starting devices which require simultaneous action of both the hands of the operator..."
+  },
+  {
+    "audit_item_id": "MFR-R58-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 58",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Is the register of specially trained adult workers attending to machinery maintained in Form 10?",
+    "applicability_criteria": "Factories where workers are required to examine, lubricate, or adjust machinery while in motion",
+    "simplified_guidance": "1. Identify workers authorized to attend to moving machinery (as per Section 22).\n2. Ensure their names are entered in Form 10.\n3. Verify they have received specific training.\n4. Ensure they are adult males.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 10 (Register of workers attending to machinery) updated",
+      "delay_proof": "Training records for authorized workers"
+    },
+    "legal_text": "Register of workers attending to machinery as provided in sub-section (1) of section 22 shall be in Form 10."
+  },
+  {
+    "audit_item_id": "MFR-R59-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 59",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are workers who attend to moving machinery provided with and wearing tight-fitting clothing?",
+    "applicability_criteria": "Workers required to attend to machinery in motion (lubrication, adjustment)",
+    "simplified_guidance": "1. Verify provision of tight-fitting clothing (shorts/vests/shirts) by the occupier.\n2. Ensure clothing fits closely to prevent entanglement.\n3. Observe workers during operations to ensure compliance.\n4. Ensure clothing is returned/replaced as necessary.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Workers wearing tight-fitting clothing; Stock records of clothing issued",
+      "delay_proof": "Purchase orders for safety clothing"
+    },
+    "legal_text": "A worker required to wear tight fitting clothing under sub-section (1) of section 22 shall be provided by the occupier with such clothing which shall consist of at least a pair of closely fitting shorts and a closely fitting half sleeves shirt or vest."
+  },
+  {
+    "audit_item_id": "MFR-R61-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 61",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are young persons prohibited from working on dangerous machines unless fully instructed and supervised?",
+    "applicability_criteria": "Factories employing young persons",
+    "simplified_guidance": "1. Identify 'dangerous machines' (Power presses, Milling machines, Guillotines, Circular saws, Platen printing).\n2. Ensure no young person works at these unless fully instructed on dangers/precautions.\n3. Ensure they have received sufficient training or are under adequate supervision.\n4. Verify records of training for young persons.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Training records for young persons; Supervision logs",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The machines specified in sections 28, 29 and 30 and the following machines shall be deemed to be of such dangerous character that young persons shall not work at them unless the provisions of section 23(1) are complied with:- Power presses other than hydraulic presses; Milling machines used in the metal trades; Guillotine machines; Circular saws; Platen printing machines."
+  },
+  {
+    "audit_item_id": "MFR-R60-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 60",
+      "category": "Safety - Machinery Guarding"
+    },
+    "question_text": "Are all belts examined regularly to ensure joints are safe and tension is proper?",
+    "applicability_criteria": "Factories using belt drives",
+    "simplified_guidance": "1. Implement a schedule for belt examination.\n2. Check for safe joints (no protruding metal fasteners for overhead belts).\n3. Ensure proper tension to prevent slippage or breakage.\n4. Maintain a record of examinations.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Belt examination maintenance records",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "All belts shall be regularly examined to ensure that joints are safe and the belts are at proper tension."
+  },
+  {
+    "audit_item_id": "MFR-R62-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 62",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is the register for recording particulars of examinations of hoists and lifts maintained in Form 11?",
+    "applicability_criteria": "Factories using hoists or lifts",
+    "simplified_guidance": "1. Maintain a register in Form 11 for all hoists and lifts.\n2. Ensure a competent person examines the hoist/lift periodically (typically every 6 months as per Act section 28).\n3. Record the details of examinations, defects found, and repairs in the register.\n4. Keep the register available for inspection.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 11 Register with up-to-date entries signed by a competent person",
+      "delay_proof": "Maintenance logs or service contracts for lifts"
+    },
+    "legal_text": "A Register shall be maintained to record particulars of examinations of hoists or lifts and shall give particulars as shown in Form 11."
+  },
+  {
+    "audit_item_id": "MFR-R64-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 64(1)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Has every lifting machine, chain, rope, and lifting tackle been tested and examined by a competent person before being taken into use for the first time?",
+    "applicability_criteria": "Factories using lifting machines, chains, ropes, or lifting tackles",
+    "simplified_guidance": "1. Identify all new lifting gears and machines.\n2. Ensure they are tested by a competent person before first use.\n3. Obtain a certificate specifying the safe working load.\n4. Ensure the certificate is signed by the person making the test.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Test certificates for all lifting gears signed by a competent person",
+      "delay_proof": "Purchase records of lifting gear"
+    },
+    "legal_text": "No lifting machine and no chain, rope of lifting tackle except a fibre rope or fibre rope sling shall be taken in use in any factory, for the first time therein unless it has been tested and all parts have been thoroughly examined by a competent person and a certificate of such test examination specifying the safe working load or loads... has been obtained..."
+  },
+  {
+    "audit_item_id": "MFR-R64-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 64(2)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is the Register of examinations for lifting machines, chains, ropes, and lifting tackles maintained in Form 12?",
+    "applicability_criteria": "Factories using lifting machines and tackles",
+    "simplified_guidance": "1. Keep a register in Form 12.\n2. Record details of every examination made under Rule 64.\n3. Ensure entries include dates of testing, annealing, and safe working loads.\n4. Keep the register readily available for inspection.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 12 Register with regular entries",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A Register in Form 12 containing the particulars, therein specified shall be kept of every examination made under sub-rule (1). The Register shall be readily available for inspection."
+  },
+  {
+    "audit_item_id": "MFR-R64-003",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 64(3)(b)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is the safe working load (SWL) plainly marked on every lifting machine, chain, rope, and lifting tackle?",
+    "applicability_criteria": "Factories using lifting gears",
+    "simplified_guidance": "1. Check every lifting machine and tackle for SWL markings.\n2. Ensure the marking is legible and plainly visible.\n3. For multiple slings, ensure the table shows SWL at different angles.\n4. Post a table of SWL in the store-room for chains/ropes not individually marked.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visible SWL markings on equipment; Displayed SWL charts",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No rope, chain or lifting tackle not shown in the table shall be used in a factory unless in the case of lifting tackle, the safe working load thereof, or in the case of a multiple sling, the safe working load at different angles of the legs, is plainly marked upto it."
+  },
+  {
+    "audit_item_id": "MFR-R64-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 64(5)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Are chains and lifting tackles annealed under competent supervision at the prescribed intervals?",
+    "applicability_criteria": "Factories using chains/lifting tackles (except those exempt under sub-rule 6)",
+    "simplified_guidance": "1. Anneal chains/slings used with molten metal or of 1/2 inch bar or smaller every 6 months.\n2. Anneal all other general use chains/rings/hooks every 12 months.\n3. Ensure annealing is done under the supervision of a competent person.\n4. Record particulars in Form 12.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 12 entries regarding annealing dates and supervisor signature",
+      "delay_proof": "Work order for heat treatment/annealing"
+    },
+    "legal_text": "All chains and lifting tackle, except a rope sling, shall, unless they have been subjected to such other heat treatment as may be approved by the State Government be effectively annealed under the supervision of a competent person at the following intervals..."
+  },
+  {
+    "audit_item_id": "MFR-R65-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 65(3)(i)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Are pressure vessels fitted with a suitable safety valve, pressure gauge, stop valve, and drain cock?",
+    "applicability_criteria": "Factories operating pressure plants/vessels above atmospheric pressure",
+    "simplified_guidance": "1. Inspect each pressure vessel.\n2. Verify presence of a suitable safety valve to prevent over-pressure.\n3. Verify presence of a pressure gauge (dial range 1.5 to 2 times max pressure).\n4. Ensure stop valves and drain cocks are fitted.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installed and functional safety fittings on vessels",
+      "delay_proof": "Maintenance requisition for replacement of faulty gauges/valves"
+    },
+    "legal_text": "Every pressure plant or pressure vessel shall be fitted with-(a) a suitable safety valve... (b) a suitable pressure gauge... (c) a suitable stop valve... (e) a suitable drain cock or valve..."
+  },
+  {
+    "audit_item_id": "MFR-R65-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 65(4)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is every pressure plant thoroughly examined by a competent person at the prescribed intervals (External, Internal, Hydraulic)?",
+    "applicability_criteria": "Factories with pressure plants in service",
+    "simplified_guidance": "1. Ensure external examination every 6 months.\n2. Ensure internal examination every 12 months.\n3. Ensure hydraulic test once every 4 years.\n4. If internal exam is not possible, ensure hydraulic test every 2 years.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Examination reports signed by a competent person",
+      "delay_proof": "Schedule for upcoming hydraulic tests"
+    },
+    "legal_text": "Ever pressure plant in service shall be thoroughly examined by a competent person,-(a) externally once in every period of six months; (b) internally, once in every period of twelve months, and (c) hydraulic test once in a period of four years."
+  },
+  {
+    "audit_item_id": "MFR-R65-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 65(6)(i)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is the maximum safe working pressure and the date of the last examination marked on every pressure vessel?",
+    "applicability_criteria": "All pressure vessels/plants",
+    "simplified_guidance": "1. Check the body/plate of the pressure vessel.\n2. Verify that the maximum safe working pressure is legible.\n3. Verify that the date of the last examination is marked.\n4. Ensure the vessel is not operated above this pressure.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visible markings on pressure vessels",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The maximum safe working pressure and the date of the last examination shall be plainly marked on every pressure vessel or pressure plant and no pressure plant or pressure vessel shall be operated or used at a pressure higher than the maximum safe working pressure."
+  },
+  {
+    "audit_item_id": "MFR-R65-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 65(7)(b)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Is the report of the result of every examination of pressure vessels completed in Form 13?",
+    "applicability_criteria": "Factories with pressure plants",
+    "simplified_guidance": "1. Obtain the report from the competent person after examination.\n2. Ensure it is in the prescribed Form 13.\n3. Check that it is signed by the competent person.\n4. Maintain these reports in the factory register.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 13 reports",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The report of the result of every examination made shall be completed in Form 13."
+  },
+  {
+    "audit_item_id": "MFR-R65-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 65(3)(iii)",
+      "category": "Safety - Lifting Gear and Pressure Plant"
+    },
+    "question_text": "Where source pressure is higher than the safe working pressure of the vessel, is a suitable reducing valve and pressure gauge provided?",
+    "applicability_criteria": "Pressure vessels connected to a supply source with higher pressure",
+    "simplified_guidance": "1. Identify vessels connected to high-pressure supply lines.\n2. Check for a reducing valve between the source and the vessel.\n3. Ensure a pressure gauge is provided close to the reducing valve.\n4. Ensure an automatic device prevents safe working pressure from being exceeded.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installation of reducing valves and gauges",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Every pressure plant or pressure vessel not constructed to withstand the maximum possible working pressure at the source of supply... shall be fitted with a suitable reducing valve or other suitable automatic device... Suitable pressure guages shall be provided close to the reducing valve..."
+  },
+  {
+    "audit_item_id": "MFR-R70-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 70(9)(j) and (o)",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are there at least two ways of escape from every room, and does the travel distance to the nearest exit not exceed 30 meters?",
+    "applicability_criteria": "All factory buildings",
+    "simplified_guidance": "1. Verify that every room has at least two exits remotely located from each other.\n2. Measure the travel distance from the furthest point in the room to the exit.\n3. Ensure the distance is 30 meters or less (22.5 meters for high hazard areas).\n4. Ensure exits lead continuously to the exterior.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Floor plans showing exit routes; Physical measurement of travel distances",
+      "delay_proof": "Architectural modification plans for additional exits"
+    },
+    "legal_text": "Exit shall be so located that the travel distance to reach at least one of them on the floor shall not exceed 30 metres... There shall not be less than two exits serving every floor area above and below the ground floors..."
+  },
+  {
+    "audit_item_id": "MFR-R71B-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 71-B(7)",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are portable fire extinguishers provided at a rate of one for every 500 square meters of floor area?",
+    "applicability_criteria": "Factories with more than 100 square meters floor area",
+    "simplified_guidance": "1. Calculate the total floor area.\n2. Ensure at least one extinguisher is provided for every 500 sq. meters.\n3. Verify extinguishers are spaced not more than 30 meters apart.\n4. Ensure appropriate types (CO2, Foam, Powder) are used based on fire class.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Extinguisher inventory and location map",
+      "delay_proof": "Purchase order for new extinguishers"
+    },
+    "legal_text": "In factories having more than 100 square metres floor area... portable extinguishers at the rate of one for every 500 squ. metres of area spaced at not more than 30 metres apart subject to a minimum of one extinguisher shall be provided..."
+  },
+  {
+    "audit_item_id": "MFR-R71B-002",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 71-B(1)",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are fire buckets provided at the rate of two buckets for every 100 square meters of floor area?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Ensure 2 fire buckets (9 liters capacity) are provided per 100 sq. meters.\n2. Ensure a minimum of 4 buckets per floor.\n3. Check if they are painted red and kept full of water or sand (for oil/chemical risks).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Presence of filled fire buckets in designated positions",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Two fire buckets of not less than 9 litres capacity for every 100 square metres of floor area subject to a minimum of four buckets on each floor."
+  },
+  {
+    "audit_item_id": "MFR-R66-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 66(2)",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are workers prevented from lifting or carrying loads exceeding the maximum prescribed weight limits?",
+    "applicability_criteria": "All factories where manual transport of loads occurs",
+    "simplified_guidance": "1. Verify that adult males do not lift more than 55 kg.\n2. Verify that adult females do not lift more than 30 kg.\n3. Ensure young persons (15-18 years) do not lift more than 30 kg (male) or 20 kg (female).\n4. Provide mechanical aids for heavier loads.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Observation of manual handling practices; Weighing records of standard packages",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No person, unaided by another person, or mechanical aid, be required or allowed to lift, put down, carry or move any load... exceeding the maximum limit in weight, as set out in the following SCHEDULE... (A) Adult male 55.00..."
+  },
+  {
+    "audit_item_id": "MFR-R67-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 67",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are effective screens or suitable goggles provided for protection of eyes in specified processes?",
+    "applicability_criteria": "Processes involving welding, grinding, cutting, or exposure to excessive light/heat (Schedules I & II)",
+    "simplified_guidance": "1. Identify processes like welding, fettling, grinding, or chemical handling.\n2. Verify provision of goggles or screens for workers.\n3. Ensure workers are actually using them.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Workers wearing PPE; Stock records of eye protection gear",
+      "delay_proof": "Purchase orders for PPE"
+    },
+    "legal_text": "Effective screens or suitable goggles shall be provided for the protection of persons employed in or in the immediate vicinity of the following processes..."
+  },
+  {
+    "audit_item_id": "MFR-R68-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 68",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Do manholes for confined spaces conform to the minimum dimension requirements?",
+    "applicability_criteria": "Factories with confined spaces like tanks, vats, pipes, flues",
+    "simplified_guidance": "1. Measure manhole openings.\n2. Ensure rectangular/oval shapes are at least 40cm x 30cm (approx based on shoulder width + 8cm).\n3. Ensure circular shapes are at least 40cm diameter (approx based on shoulder width + 8cm).\n4. Ensure compliance before allowing entry.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical measurement of manhole dimensions",
+      "delay_proof": "Modification plan for non-compliant vessels"
+    },
+    "legal_text": "In any factory no person shall be allowed or required to enter in any chamber... unless the said chamber... is provided with a man-hole... (a) in the case of rectangular or oval shape, be not less than shoulder width of the person concerned plus 8 c.m. in length and 30 c.m. wide..."
+  },
+  {
+    "audit_item_id": "MFR-R73C-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-C",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Is a work permit system implemented for opening equipment or pipelines containing inflammable materials?",
+    "applicability_criteria": "Factories where equipment/pipelines containing inflammable liquids/gases are opened",
+    "simplified_guidance": "1. Ensure no line is opened without a work permit.\n2. Check for blanking and flushing operations certified by a supervisor.\n3. Ensure permits are signed by Process and Engineering supervisors.\n4. Verify gas testing before opening.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Completed Work Permits; Records of gas tests",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The system of work permits shall be introduced and unless the equipment or the pipeline is certified to be free of inflammable gas or liquid, no person shall be allowed to enter or open the same."
+  },
+  {
+    "audit_item_id": "MFR-R73F-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-F",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are crawling boards used and work permits issued for work on fragile roofs?",
+    "applicability_criteria": "Factories with fragile roofs (Asbestos cement, perspex, etc.)",
+    "simplified_guidance": "1. Identify roofs with fragile materials.\n2. Ensure crawling boards or duck ladders are provided for work on such roofs.\n3. Verify that a permit to work is issued each time work is required.\n4. Ensure warning notices are displayed.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Fragile roof work permits; Inventory of crawling boards",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "In any factory, no person shall be required to stand or pass over or work on or near any roof or ceiling covered with fragile material... unless-(a) suitable and sufficient ladders, duck ladders or crawling boards... are provided and used; and (b) a permit to work on the fragile roof is issued..."
+  },
+  {
+    "audit_item_id": "MFR-R73A-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-A",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Is the water-sealed gas holder examined externally and internally by a competent person at prescribed intervals?",
+    "applicability_criteria": "Factories with water-sealed gas holders (Capacity >140 cu.m)",
+    "simplified_guidance": "1. Verify external examination every 2 years.\n2. Verify internal examination every 12 months.\n3. Ensure internal examination includes thickness testing every 4 years.\n4. Maintain Register in Form 13A and Report in Form 13B.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 13-B Examination Reports; Form 13-A Register",
+      "delay_proof": "Schedule for upcoming thickness tests"
+    },
+    "legal_text": "No gas-holder shall be taken into use in any factory for the first time unless... certificate of its internal and external examination in Form 13B is obtained... Every gas-holder shall be thoroughly examined internally by a person competent to conduct such examination once in every period of twelve months."
+  },
+  {
+    "audit_item_id": "MFR-R72-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 72",
+      "category": "Safety - Fire and General Precautions"
+    },
+    "question_text": "Are ladders used for replacing belts provided with hooks or non-skid devices?",
+    "applicability_criteria": "Factories where ladders are used for belt replacement work",
+    "simplified_guidance": "1. Inspect ladders used for maintenance/belt replacement.\n2. Ensure they have hooks to rest on the shaft.\n3. Ensure they have non-skid devices at the bottom.\n4. Designate specific ladders for this work.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Ladders equipped with safety hooks/feet",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "All ladders used in replacing belts shall be specially made and reserved for that work and provided with hooks or an effective nonkid device."
+  },
+  {
+    "audit_item_id": "MFR-R73K-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-K(3)",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Has the application for site appraisal been submitted to the Site Appraisal Committee for factories covered under section 2(cb)?",
+    "applicability_criteria": "Factories covered under section 2(cb) (Hazardous Processes) seeking initial site appraisal",
+    "simplified_guidance": "1. Prepare the application in the format annexed to Rule 73-K.\n2. Submit 15 copies to the Chairman of the Site Appraisal Committee.\n3. Include details of the site, manufacturing process, hazardous materials, and emergency preparedness.\n4. Ensure clearance is obtained before commencing operations.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledgement of application submission; Site Appraisal Committee approval letter",
+      "delay_proof": "Correspondence with the Committee Secretary"
+    },
+    "legal_text": "Applications for appraisal of sites in respect of the factories covered under section 2(cb) of the Act shall be submitted to the Chairman of the Site Appraisal Committee... The application for site appraisal alongwith 15 copies thereof shall be submitted in the Form annexed to this rule."
+  },
+  {
+    "audit_item_id": "MFR-R73L-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-L",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Has a written Health and Safety Policy been prepared, signed by the occupier, and made available to workers and the Inspector?",
+    "applicability_criteria": "Factories covered under Section 2(cb), or dangerous operations under Section 87, or employing 50+ workers",
+    "simplified_guidance": "1. Prepare a written statement of policy regarding health and safety.\n2. Ensure it covers organizational set-up, worker involvement, and accountability.\n3. Sign the policy (Occupier).\n4. Display copies in conspicuous places and provide to workers.\n5. Revise whenever significant changes or expansions occur.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Signed Health and Safety Policy; Proof of distribution/display",
+      "delay_proof": "Draft policy under review"
+    },
+    "legal_text": "Occupier of every factory... shall prepare a written statement of his policy in respect of health and safety of workers at work... A copy of the declared Health and Safety Policy signed by the Occupier shall be made available to the inspector having jurisdiction over the factory and to the Chief Inspector."
+  },
+  {
+    "audit_item_id": "MFR-R73M-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-M",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Are Material Safety Data Sheets (MSDS) available for every hazardous substance handled, and are containers properly labeled?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. Obtain or develop MSDS for every hazardous substance used, stored, or transported.\n2. Ensure MSDS follows the Schedule format (12 standard items).\n3. Make MSDS accessible to workers.\n4. Label every container with contents, manufacturer details, hazards, and PPE requirements.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Collection of MSDS; Visible labels on containers",
+      "delay_proof": "Request letters to suppliers for MSDS"
+    },
+    "legal_text": "The occupier of every factory carrying on a 'hazardous process' shall arrange to obtain or develop information in the form of Material Safety Data Sheet in respect of every hazardous substance or material handled... Every container of a hazardous substance shall be clearly labelled or marked..."
+  },
+  {
+    "audit_item_id": "MFR-R73N-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-N",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Has information regarding hazardous processes and safety measures been disclosed to all workers?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. Compile information on hazards, safety measures, PPE, and emergency roles.\n2. Supply this information to workers via booklets or leaflets.\n3. Display cautionary notices at workplaces.\n4. Ensure information is in a language understood by the majority of workers.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Copies of booklets/leaflets issued; Photos of displayed notices; Worker acknowledgement records",
+      "delay_proof": "Draft of information material"
+    },
+    "legal_text": "The occupier of a factory carrying on a 'Hazardous process' shall supply to all workers the following information in relation to handlings of hazardous materials... The information... shall be complied and made known to workers individually through supply of booklets or leaflets and display of cautionary notices..."
+  },
+  {
+    "audit_item_id": "MFR-R73Q-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-Q",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Has the necessary information for the on-site emergency plan been disclosed to the District Emergency Authority?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. Prepare a report on risk assessment, environmental impact, and possible accident sources.\n2. Compile MSDS and resources available for emergencies.\n3. Submit this information to the District Emergency Authority designated by the State Government.\n4. Update this information annually or upon process changes.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of submission to District Emergency Authority",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The occupier of a factory carrying on a hazardous process, shall intimate the District Emergency Authority designated by the State Government, all information having a bearing on preparation of an on-site emergency plan and a disaster control and management plan..."
+  },
+  {
+    "audit_item_id": "MFR-R73J-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-J",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Is a Safety Committee constituted with equal representation from management and workers, meeting at least once every quarter?",
+    "applicability_criteria": "Factories with 250+ workers OR 'hazardous process'/'dangerous operations' factories with 50+ workers",
+    "simplified_guidance": "1. Constitute a Safety Committee with equal representatives from management and workers.\n2. Ensure the Chairman is a senior official and the Secretary is the Safety Officer (if available).\n3. Ensure the committee meets at least once per quarter.\n4. Record minutes of meetings.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Minutes of Safety Committee meetings; Constitution document",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "In every factory... there shall be a Safety Committee... Safety Committee shall meet as often as necessary but at least once in every quarter. The minutes of the meeting shall be recorded and produced to the Inspector on demand."
+  },
+  {
+    "audit_item_id": "MFR-R73V-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-V",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Are workers in hazardous processes medically examined before employment and every 6 months thereafter, with records in Form 7?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. Appoint a Factory Medical Officer.\n2. Conduct pre-employment medical exams for fitness.\n3. Conduct periodical exams every 6 months.\n4. Maintain the Health Register in Form 7.\n5. Ensure no one is employed without a Certificate of Fitness in Form 6.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Health Register (Form 7); Certificates of Fitness (Form 6)",
+      "delay_proof": "Appointment letter with medical clinic for upcoming exams"
+    },
+    "legal_text": "Workers employed in a 'hazardous process' shall be medically examined... once before employment... once in a period of 6 months... the details of pre-employment and periodical medical examinations carried out as aforesaid shall be recorded in the Health Register in Form 7."
+  },
+  {
+    "audit_item_id": "MFR-R73W-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-W",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Is an Occupational Health Centre (OHC) provided and maintained with the required staff and equipment?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. For up to 50 workers: Retainership with Factory Medical Officer + 5 trained first-aiders.\n2. For 51-200 workers: OHC room (15 sq.m), part-time Medical Officer, dresser-cum-compounder.\n3. For >200 workers: OHC (2 rooms), full-time Medical Officer (1 per 500), nurse, dresser, sweeper.\n4. Ensure equipment is as per Schedule.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical verification of OHC and equipment; Staff attendance records",
+      "delay_proof": "Contract with Medical Officer"
+    },
+    "legal_text": "In respect of any factory carrying on 'Hazardous Process' there shall be provided and maintained in good order an Occupational Health Centre with the services and facilities as per scale laid down hereunder..."
+  },
+  {
+    "audit_item_id": "MFR-R73X-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-X",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Is a suitably equipped ambulance van provided and maintained for factories carrying on hazardous processes?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process' (Usually 200+ workers, or arrangement for <200)",
+    "simplified_guidance": "1. Provide an ambulance van equipped with oxygen, resuscitation unit, stretcher, etc.\n2. Ensure it is manned by a full-time Driver-cum-Mechanic and Helper trained in first-aid.\n3. Ensure it is stationed near the OHC.\n4. For <200 workers, ensure valid arrangements with a nearby hospital/service are in place.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Ambulance van on premises; List of equipment inside; Agreement with hospital (if applicable)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "In any factory carrying on 'hazardous process', there shall be provided and maintained in good condition, a suitably constructed ambulance van equipped with items as per sub-rule (2) and manned by the full-time Driver-cum-Mechanic and Helper trained in first-aid..."
+  },
+  {
+    "audit_item_id": "MFR-R73Y-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 73-Y",
+      "category": "Hazardous Processes (Chapter IV-A)"
+    },
+    "question_text": "Are decontamination facilities, including drenching showers and eye wash bottles, provided and accessible?",
+    "applicability_criteria": "Factories carrying on a 'hazardous process'",
+    "simplified_guidance": "1. Provide fully equipped first-aid boxes.\n2. Install drenching showers as per scale (2 for up to 50 workers, +1 for every additional 50/100).\n3. Provide eye wash bottles/fountains in convenient locations.\n4. Ensure clear signage for these facilities.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "Up to 7 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional showers and eye wash stations; Signage",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "In every factory, carrying out 'hazardous process' the following provisions shall be made to meet emergency... readily accessible means of drenching with water... a sufficient number of eye wash bottle..."
+  },
+  {
+    "audit_item_id": "MFR-R74-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 74",
+      "category": "Welfare - Basic Facilities"
+    },
+    "question_text": "Are adequate washing facilities provided for workers, including separate enclosed facilities for female workers with proper signage?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Provide washing facilities at the scale of 1 for every 20 workers (up to 200) and 1 for every 50 thereafter.\n2. Ensure facilities include soap, nail brushes, and water supply (30 liters/day/person).\n3. Ensure separate, screened facilities for women with 'For Women Only' signage.\n4. Maintain facilities in a clean and orderly condition.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visual inspection of washing areas; Water supply records",
+      "delay_proof": "Plumbing diagrams or work orders for facility upgrades"
+    },
+    "legal_text": "There shall be provided and maintained in every factory for the use of employed persons adequate and suitable facilities for washing which shall include soap and nail brushes... If female workers are employed, separate washing facilities shall be provided and so enclosed of screened... The entrance to such facilities shall bear conspicuous notice... 'For Women Only'..."
+  },
+  {
+    "audit_item_id": "MFR-R75-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 75",
+      "category": "Welfare - Basic Facilities"
+    },
+    "question_text": "Are facilities for storing street clothing and drying wet working clothing provided for workers in specified industries?",
+    "applicability_criteria": "Factories listed in the Schedule (Engineering, Chemical, Iron/Steel, Oil Mills, Tanneries, etc.)",
+    "simplified_guidance": "1. Identify if the factory falls under the scheduled list (e.g., Engineering, Chemical).\n2. Provide lockers, pegs, or separate rooms for keeping clothing not worn during work.\n3. Provide facilities for drying wet clothing.\n4. Ensure arrangements are approved by the Chief Inspector.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Presence of lockers/pegs/drying rooms",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "All classes of factories mentioned in the schedule annexed hereto shall provide facilities for keeping clothing not worn during working hours and for the drying of wet clothing. Such facilities shall include the provisions of separate rooms, pegs, lockers or other arrangement approved by the Chief Inspector."
+  },
+  {
+    "audit_item_id": "MFR-R76-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 76",
+      "category": "Welfare - Basic Facilities"
+    },
+    "question_text": "Are first-aid boxes provided at the correct scale and stocked with the prescribed contents based on the number of workers?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Determine the number of workers to select the correct standard (Scale A: <=10, B: 11-50, C: >50).\n2. Ensure at least one box is provided for every 150 workers.\n3. Check contents against the list in Rule 76 (dressings, antiseptics, scissors, eye-pads, etc.).\n4. Mark the box with a red cross on a white background.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Fully stocked first-aid boxes in designated locations",
+      "delay_proof": "Inventory/replenishment logs for first-aid supplies"
+    },
+    "legal_text": "The first aid boxes or cupboards shall be distinctively marked with a red cross on a white background and shall contain the following equipment... (A) For factories in which the number of persons employed does not exceed ten... (C) For factories employing more than fifty persons..."
+  },
+  {
+    "audit_item_id": "MFR-R77-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 77",
+      "category": "Welfare - Basic Facilities"
+    },
+    "question_text": "Is a notice containing the names of first-aid trained personnel and the nearest hospital details displayed near every first-aid box?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Prepare a notice listing the names of persons trained in first-aid.\n2. Include the workroom location where they are available.\n3. Include the name and telephone number of the nearest hospital.\n4. Paste this notice conspicuously near every first-aid box.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Notice displayed near first-aid boxes",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A notice containing the names of the persons working within the precincts of the factory who are trained in first-aid treatment and who are in-charge of the first-aid boxes or cupboards shall be pasted in every factory at a conspicuous place and near each such box or cupboard."
+  },
+  {
+    "audit_item_id": "MFR-R78-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 78",
+      "category": "Welfare - Basic Facilities"
+    },
+    "question_text": "Is an ambulance room provided with the prescribed equipment and medical staff in factories employing more than 500 workers?",
+    "applicability_criteria": "Factories employing more than 500 workers",
+    "simplified_guidance": "1. Verify worker count exceeds 500.\n2. Provide a separate ambulance room (min 24 sq. meters).\n3. Ensure it is in charge of a qualified medical practitioner and nurse.\n4. Equip it with the items listed in Rule 78(3) (couch, stretcher, oxygen, surgical instruments, etc.).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical existence of Ambulance Room; Staff qualification certificates",
+      "delay_proof": "Construction plans for ambulance room"
+    },
+    "legal_text": "The ambulance room or dispensary shall be in-charge of a qualified medical practitioner assisted by at least one qualified nurse... It shall have a floor area of at least 24 square metres... and the room shall contain at least... [items listed i to xliv]..."
+  },
+  {
+    "audit_item_id": "MFR-R79-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 79(1)",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Is an adequate canteen provided and maintained for the use of workers in factories employing more than 250 workers?",
+    "applicability_criteria": "Factories employing more than 250 workers",
+    "simplified_guidance": "1. Verify worker count exceeds 250.\n2. Ensure a canteen is constructed in accordance with approved plans.\n3. Check that it accommodates at least 30% of workers at a time.\n4. Ensure it is operational within 6 months of notification.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical existence of canteen; Approved plans",
+      "delay_proof": "Construction timeline approved by Chief Inspector"
+    },
+    "legal_text": "The occupier of every factory wherein more than 250 workers are ordinarily employed and which is specified by the State Government by a notification in this behalf shall provide, in or near the factory, an adequate canteen according to the standards prescribed in the Rules."
+  },
+  {
+    "audit_item_id": "MFR-R79-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 79(3)",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Is the canteen building situated at least 15 meters away from sources of dust, smoke, or obnoxious fumes (e.g., latrines, boiler house)?",
+    "applicability_criteria": "Factories with a canteen",
+    "simplified_guidance": "1. Measure the distance from the canteen to latrines, urinals, boiler house, coal stacks, etc.\n2. Ensure the distance is not less than 15 meters.\n3. If closer, check for relaxation approval from the Chief Inspector.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Site plan showing distances; Visual verification",
+      "delay_proof": "Approval letter for relaxation of distance"
+    },
+    "legal_text": "The canteen building shall be situated not less than 15 metres from the latrine, urinal, boiler house, coal stacks, ash dumps and any other source of dust, smoke or obnoxious fumes..."
+  },
+  {
+    "audit_item_id": "MFR-R79-003",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 79(8)",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Are the inside walls of the canteen kitchen lime-washed at least once every four months, and other areas annually/triennially?",
+    "applicability_criteria": "All factory canteens",
+    "simplified_guidance": "1. Check the maintenance schedule.\n2. Ensure kitchen walls are lime-washed every 4 months.\n3. Ensure dining hall walls are lime-washed annually or painted every 3 years.\n4. Verify entries in the Register in Form 8.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 8 (Record of lime-washing) with specific entries for canteen",
+      "delay_proof": "Work order for painting/whitewashing"
+    },
+    "legal_text": "All inside walls or rooms and all ceilings... shall be lime-washed or colour-washed at least once in each year... Provided that inside walls of the kitchen shall be lime-washed once every four months. Records of dates... shall be maintained in the prescribed Register in Form 8."
+  },
+  {
+    "audit_item_id": "MFR-R84-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 84",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Has a Canteen Managing Committee been constituted with equal representation from management and workers?",
+    "applicability_criteria": "Factories with a canteen (unless managed by a Co-operative Society)",
+    "simplified_guidance": "1. Verify constitution of the committee.\n2. Ensure equal number of members from occupier and workers.\n3. Verify worker members are elected.\n4. Check that the committee is consulted on menu, quality, and prices.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Minutes of Canteen Managing Committee meetings; List of members",
+      "delay_proof": "Election notice for worker representatives"
+    },
+    "legal_text": "The Manager shall appoint a Canteen Managing Committee which shall be consulted from time to time... The Canteen Managing Committee shall consist of an equal number of persons nominated by the occupier and elected... by the workers..."
+  },
+  {
+    "audit_item_id": "MFR-R85-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 85(2)",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Are food and items in the canteen sold on a non-profit basis, excluding costs of rent, depreciation, and utilities?",
+    "applicability_criteria": "All factory canteens",
+    "simplified_guidance": "1. Review the pricing policy of the canteen.\n2. Ensure prices do not include rent, building maintenance, equipment cost, or utilities (water/lighting).\n3. Check if prices are displayed conspicuously.\n4. If Co-op society managed, profit up to 5% is allowed.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Audited accounts; Price list displayed",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Food, drink and other items served in the canteen shall be sold on non-profit basis and in computing the charges... the following items shall not be taken into consideration... rent... depreciation... cost of purchase... water charges..."
+  },
+  {
+    "audit_item_id": "MFR-R86-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 86",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Are shelters, rest-rooms, and lunch-rooms provided for workers in factories employing more than 150 workers?",
+    "applicability_criteria": "Factories employing more than 150 workers",
+    "simplified_guidance": "1. Verify worker count exceeds 150.\n2. Ensure adequate shelters or rest-rooms are provided.\n3. Check standards: sound construction, 1.1 sq. meter floor area per person.\n4. Ensure rooms are furnished with chairs/benches with back-rests.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical existence of rest-rooms/lunch-rooms with furniture",
+      "delay_proof": "Plan for construction of shelter"
+    },
+    "legal_text": "The shelters, or rest- rooms and lunch-rooms shall conform to the following standards... height... not be less than 3.75 metres... at least 11,000 square centimetres of floor area for every person employed... adequately furnished with chairs or benches with back-rests."
+  },
+  {
+    "audit_item_id": "MFR-R87-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 87",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Is a creche provided and maintained in factories employing more than 30 women workers?",
+    "applicability_criteria": "Factories employing more than 30 women workers",
+    "simplified_guidance": "1. Count women workers.\n2. If >30, provide a creche.\n3. Ensure it is well-lighted, ventilated, and soundly constructed.\n4. Ensure floor area is at least 2 sq. meters per child (min 10 sq. meters total).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical creche facility; Attendance register of children",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The building in which the creche is situated shall be soundly constructed... The height... not less than 3.75 metres... and there shall be not less than 2 square metres of floor area for each child... [subject to the condition that the area of the creche shall not be less than 10 square metres]"
+  },
+  {
+    "audit_item_id": "MFR-R89-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 89",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Are children in the creche provided with at least 300ml of milk daily and wholesome refreshment?",
+    "applicability_criteria": "Factories with a creche",
+    "simplified_guidance": "1. Verify supply of 300ml pure milk per child per day.\n2. For children above 2 years, ensure additional refreshment is provided.\n3. Allow mothers 2 intervals of 15 mins to feed children.\n4. Maintain records of supplies.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Purchase records for milk/snacks; Feeding logs",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "At least 300 millitres of clean pure milk shall be available for each child on every day it is accommodated in the creche... For children above two years of age there shall be provided in addition an adequate supply of wholesome refreshment."
+  },
+  {
+    "audit_item_id": "MFR-R90-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 90",
+      "category": "Welfare - Special Amenities"
+    },
+    "question_text": "Is the creche managed by a qualified woman in-charge and assisted by female attendants?",
+    "applicability_criteria": "Factories with a creche",
+    "simplified_guidance": "1. Check qualifications of the woman in-charge (Midwife or trained pre-primary teacher).\n2. Verify employment of adequate female attendants.\n3. Ensure staff wears clean clothes while on duty.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Staff qualification certificates; Muster roll",
+      "delay_proof": "Recruitment records"
+    },
+    "legal_text": "For each creche there shall be appointed a woman in-charge and adequate number of female-attendants to help the woman in-charge... no woman shall be appointed... as a woman in-charge of a creche unless she possesses the qualifications prescribed for a mid-wife..."
+  },
+  {
+    "audit_item_id": "MFR-R93-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 93(2)",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is a notice displayed regarding compensatory holidays for workers who lost weekly holidays, showing the dates of the allowed holidays?",
+    "applicability_criteria": "Factories where workers are deprived of weekly holidays due to exemptions",
+    "simplified_guidance": "1. Identify workers who lost weekly holidays in the previous month.\n2. Prepare a notice showing the dates of compensatory holidays to be allowed.\n3. Display this notice before the end of the month in which holidays were lost.\n4. Ensure the notice is displayed at the place where the Notice of Periods of Work is displayed.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Displayed Notice of Compensatory Holidays",
+      "delay_proof": "Records of holidays lost and due"
+    },
+    "legal_text": "The manager of the factory shall display, on or before the end of the month in which holidays are lost, a notice in respect of workers allowed compensatory holidays during the following month and of the dates thereof, at the place at which the Notice of Periods of Work prescribed under section 61 is displayed."
+  },
+  {
+    "audit_item_id": "MFR-R96-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 96",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Are overtime slips issued in duplicate to workers immediately after the completion of overtime work?",
+    "applicability_criteria": "Factories where workers perform overtime work",
+    "simplified_guidance": "1. Record any work done beyond normal periods in overtime slips.\n2. Prepare slips in duplicate.\n3. Ensure the slip indicates the actual period of overtime worked.\n4. Provide one signed copy to the worker immediately after the work (or weekly if approved by Chief Inspector).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Counterfoils/Copies of issued overtime slips signed by manager",
+      "delay_proof": "Overtime register correlating with slips"
+    },
+    "legal_text": "Any work done by a worker beyond the normal specified period of work shall be entered in the overtime slips in duplicate indicating therein the actual period of overtime worked by him. A copy of such overtime slip... shall be given to the worker immediately after completion of the overtime work..."
+  },
+  {
+    "audit_item_id": "MFR-R98-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 98",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is the Notice of Periods of Work for adult workers displayed in Form 16?",
+    "applicability_criteria": "All factories employing adult workers",
+    "simplified_guidance": "1. Prepare Form 16 indicating starting, stopping, and rest intervals.\n2. Ensure it covers all groups and relays.\n3. Display it conspicuously at the factory entrance.\n4. Ensure strict adherence to the displayed timings.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Form 16 displayed at the main entrance",
+      "delay_proof": "Draft notice awaiting approval (if changes pending)"
+    },
+    "legal_text": "The notice of periods of work for adult workers shall be in Form 16."
+  },
+  {
+    "audit_item_id": "MFR-R99-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 99",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is the Register of Adult Workers maintained in Form 17 and written up afresh each year?",
+    "applicability_criteria": "All factories employing adult workers",
+    "simplified_guidance": "1. Maintain a register in Form 17.\n2. Ensure details of every adult worker are entered.\n3. Write up the register afresh every calendar year.\n4. Preserve the register for 12 months after the last entry.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Current year's Form 17 Register",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The register of adult workers shall be in Form 17. This register shall be written up afresh each year and shall be preserved for a period of twelve months."
+  },
+  {
+    "audit_item_id": "MFR-R101-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 101(1)",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is a list maintained showing the names and designations of persons holding positions of supervision, management, or confidential positions?",
+    "applicability_criteria": "All factories claiming exemptions for supervisory/confidential staff (under Section 64)",
+    "simplified_guidance": "1. Identify staff defined under Rule 100 (Managers, Engineers, Foremen, etc.).\n2. Prepare a list of their names and designations.\n3. Maintain this list and make it available for inspection.\n4. Ensure these persons meet the criteria of not performing manual/clerical work as a regular duty.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "List of exempt persons (Supervisory/Confidential)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A list showing the names and designations of all persons defined in rule 100 shall be maintained in every factory and it shall be made available for inspection to the Inspector at all times when work is being carried on in any factory."
+  },
+  {
+    "audit_item_id": "MFR-R103-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 103",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is the Notice of Periods of Work for child workers displayed in Form 18?",
+    "applicability_criteria": "Factories employing child workers (young persons under 15)",
+    "simplified_guidance": "1. If children are employed, prepare Form 18.\n2. Ensure working hours comply with Section 71 (max 4.5 hours).\n3. Display the notice clearly.\n4. Ensure strict compliance with the displayed periods.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Form 18 displayed (if children employed); OR Statement of non-employment of children",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The notice of periods of work for child workers shall be in Form 18."
+  },
+  {
+    "audit_item_id": "MFR-R104-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 104",
+      "category": "Working Hours and Overtime"
+    },
+    "question_text": "Is the Register of Child Workers maintained in Form 19?",
+    "applicability_criteria": "Factories employing child workers",
+    "simplified_guidance": "1. Maintain a register in Form 19 for all child workers.\n2. Record details including nature of work, group, and certificate of fitness number.\n3. Write up the register afresh each year.\n4. Preserve it for 12 months.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 19 Register",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The Register of child-workers shall be in Form 19. This register shall be written up afresh each year and shall be preserved for a period of twelve months."
+  },
+  {
+    "audit_item_id": "MFR-R105-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 105(1)",
+      "category": "Leave with Wages"
+    },
+    "question_text": "Is the Leave with Wages Register maintained in Form 20 for all eligible workers?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Maintain a register in Form 20 called the Leave with Wages Register.\n2. Ensure it is preserved for 3 years after the last entry.\n3. Verify that entries regarding earned leave, leave taken, and wages paid are updated.\n4. Ensure the register is readily available for inspection.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 20 Register (physical or digital if approved)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The manager shall keep a Register in Form 20 hereinafter called the Leave with Wages Register: Provided that if the Chief Inspector is of the opinion that any duly maintained Leave Register or Muster Roll... gives the particulars required... he may, by order in writing, allow such Leave Register or Muster Roll to be maintained in place of the Register in Form 20."
+  },
+  {
+    "audit_item_id": "MFR-R106-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 106(1)",
+      "category": "Leave with Wages"
+    },
+    "question_text": "Is a Leave Book in Form 20 provided to every worker who has become entitled to leave?",
+    "applicability_criteria": "All factories (for workers entitled to leave)",
+    "simplified_guidance": "1. Provide each eligible worker with a Leave Book (Form 20).\n2. Ensure the book is a thick bound copy or in a durable format.\n3. Make the property of the worker and ensure the manager (or agent) does not demand it except to make entries.\n4. Update entries within one week of leave being taken.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Workers confirming possession of Leave Books; Inspection of Leave Books",
+      "delay_proof": "Log of Leave Books issued"
+    },
+    "legal_text": "The manager shall provide each worker who has become entitled to leave during a calendar year, with a book in Form 20 (hereinafter called the Leave Book) not later than the 31st January of the following calendar year. The Leave Book shall be the property of the worker..."
+  },
+  {
+    "audit_item_id": "MFR-R108-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 108",
+      "category": "Leave with Wages"
+    },
+    "question_text": "Is a notice sent to the Inspector in every case of lay-off, and are entries made in the Leave Registers?",
+    "applicability_criteria": "Factories where lay-off of workers occurs",
+    "simplified_guidance": "1. Identify cases of lay-off (by agreement, contract, or standing orders).\n2. Send a notice to the Inspector as soon as possible.\n3. Include the number of workers and reasons for lay-off in the notice.\n4. Record the lay-off details in the Leave with Wages Register and the worker's Leave Book.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Lay-off Notice sent to Inspector; Form 20 entries",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The manager shall give, as soon as possible, a notice to the Inspector of every case of lay- off of workers by agreement or contract or as permissible under the standing orders, giving the number of such workers and the reasons for the lay-off. Entries to this effect shall be made in the Leave with Wages Register and the Leave Book in respect of each worker concerned."
+  },
+  {
+    "audit_item_id": "MFR-R110-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 110",
+      "category": "Leave with Wages"
+    },
+    "question_text": "In cases where leave is refused or postponed, is the fact and reason recorded in the Leave with Wages Register and Leave Book?",
+    "applicability_criteria": "Factories where worker leave requests are refused or postponed",
+    "simplified_guidance": "1. Review leave applications (Form 15 or written request).\n2. If leave is refused or postponed, record the decision.\n3. Enter the reasons for refusal/postponement in the Leave with Wages Register (Form 20).\n4. Enter the same in the worker's Leave Book.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 20 Register showing reasons for refused leave",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where a worker is refused leave... or where his leave is postponed, a record of the fact and of the reason of such refusal or postponement shall be made in the Leave with Wages Register and in the Leave Book."
+  },
+  {
+    "audit_item_id": "MFR-R112-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 112",
+      "category": "Leave with Wages"
+    },
+    "question_text": "In case of a worker's death, are the balance of leave wages paid to the nominee or legal heir within one week?",
+    "applicability_criteria": "Factories where a worker has died while in service",
+    "simplified_guidance": "1. Identify any worker deaths in the audit period.\n2. Calculate the balance of wages due for the period of leave.\n3. Pay the amount to the nominee or legal heir.\n4. Ensure payment is made within one week of intimation of death.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payment receipt signed by nominee/heir; Bank transfer record",
+      "delay_proof": "Correspondence regarding legal heir verification"
+    },
+    "legal_text": "In case a worker dies while he is in service, the manager shall pay the balance of wages due for the period of leave... to his nominee... within one week of the intimation of the death of the worker."
+  },
+  {
+    "audit_item_id": "MFR-R113-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 113",
+      "category": "Leave with Wages"
+    },
+    "question_text": "If the factory is exempted under section 84, is a register maintained showing full particulars of leave?",
+    "applicability_criteria": "Factories granted exemption from Chapter VIII (Leave with Wages)",
+    "simplified_guidance": "1. Verify if the factory has an exemption order under Section 84.\n2. Maintain a register showing leave due, taken, and wages paid.\n3. Ensure it contains all particulars necessary to establish compliance with the exemption order.\n4. Keep it available for inspection.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Register maintained as per exemption conditions",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an exemption is granted under section 84, the manager shall maintain a Register showing the position of each worker as regards leave due, leave taken and wages granted."
+  },
+  {
+    "audit_item_id": "MFR-R119-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 119(1)",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is the Annual Return in Form 27 submitted to the Inspector on or before the 1st of February each year?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Compile data regarding workers, leave, accidents, and canteen facilities.\n2. Complete Form 27 in duplicate.\n3. Submit to the Inspector or designated officer by 1st February.\n4. Retain acknowledgement of submission.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of submitted Form 27 with acknowledgement",
+      "delay_proof": "Proof of late submission fee payment (if applicable)"
+    },
+    "legal_text": "The manager of every factory shall furnish to the Inspector... the following returns, namely:- (1) Annual returns - On or before the 1st February of each year, an annual return in duplicate in Form 27 relating to the following matters..."
+  },
+  {
+    "audit_item_id": "MFR-R122-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 122",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is a muster-roll of all workers employed in the factory maintained in Form 29?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Maintain a muster-roll in Form 29 for all workers.\n2. Ensure entries include name, nature of work, and daily attendance.\n3. Verify that entries are made at the commencement of each period of work.\n4. Keep the roll available for inspection for 3 years.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 29 Muster Roll updated daily",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The manager of every factory shall maintain a muster-roll of all the workers employed in the factory in Form 29 showing (a) the name of each worker, (b) the nature of his work, and (c) the daily attendance of the worker."
+  },
+  {
+    "audit_item_id": "MFR-R123-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 123",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is the Register of Accidents and Dangerous Occurrences maintained in Form 30?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Maintain Form 30 (Register of Accidents).\n2. Record details of every accident or dangerous occurrence.\n3. Ensure entries match the notifications sent in Forms 24/24A.\n4. Preserve the register for 3 years.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 30 Register with up-to-date entries",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The manager of every factory shall maintain a Register of all accidents and dangerous occurrences which occur in the factory in Form 30..."
+  },
+  {
+    "audit_item_id": "MFR-R115-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 115",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Are fatal or serious accidents reported to the Inspector within 4 hours via telephone, followed by a written report in Form 24 within 12 hours?",
+    "applicability_criteria": "Factories where a fatal or serious accident occurs",
+    "simplified_guidance": "1. In case of death or serious injury, notify the Inspector within 4 hours by telephone/telegram.\n2. Also notify the District Magistrate and Police Station.\n3. Submit written report in Form 24 within 12 hours.\n4. 'Serious nature' includes loss of limb, unconsciousness, or severe burns.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 24 submitted; Proof of telephone/telegram intimation",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where any accident specified in sub-clause (a) of clause 1 of the Schedule... occurs in a factory, the manager of the factory shall within 4 hours of the occurrence of the accident give notice... by telephone, telegram... and... send a written report in Form 24 within 12 hours..."
+  },
+  {
+    "audit_item_id": "MFR-R115-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 115 (Schedule)",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Are dangerous occurrences (e.g., vessel bursting, fire, explosion) reported to the Inspector in Form 24A within 24 hours?",
+    "applicability_criteria": "Factories where a dangerous occurrence (as per Schedule) takes place",
+    "simplified_guidance": "1. Identify if the event falls under the Schedule (bursting of vessel, collapse of hoist, fire/explosion, etc.).\n2. Notify the Inspector within 4 hours (if required by severity) or standard 24 hours.\n3. Submit written report in Form 24A within 24 hours.\n4. Record in Form 30.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 24A submitted; Incident investigation report",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The following classes of dangerous occurrences, whether or not they are attended by personal injury or disablement... Bursting of a vessel... Collapse or failure of a crane... Explosion or fire... [require notification]."
+  },
+  {
+    "audit_item_id": "MFR-R116-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 116",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is the Notice of Poisoning or Disease submitted in Form 25 upon detection of any notifiable disease?",
+    "applicability_criteria": "Factories where workers contract notifiable diseases (Third Schedule of the Act)",
+    "simplified_guidance": "1. Monitor health records for signs of notifiable diseases (e.g., lead poisoning, silicosis).\n2. If a case is detected/suspected, complete Form 25.\n3. Send the notice to the Chief Inspector and Certifying Surgeon.\n4. Take corrective measures to prevent spread.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 25 submitted",
+      "delay_proof": "Medical reports confirming diagnosis"
+    },
+    "legal_text": "Notice of poisoning or disease... shall be in Form 25."
+  },
+  {
+    "audit_item_id": "MFR-R118-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 118",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is the Abstract of the Factories Act and Rules displayed in Form 26 at a conspicuous place?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Obtain the Abstract in Form 26 (English and local language).\n2. Display it near the main entrance or a conspicuous location.\n3. Ensure it is legible and not torn/defaced.\n4. Replace if damaged.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Form 26 displayed prominently",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The abstract of the Act and of the Rules required to be displayed in every factory shall be in Form 26."
+  },
+  {
+    "audit_item_id": "MFR-R124-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 124",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is the Inspection Book maintained in Form 31 and produced for the Inspector/Certifying Surgeon?",
+    "applicability_criteria": "All factories",
+    "simplified_guidance": "1. Maintain an Inspection Book in Form 31.\n2. Ensure it is bound and pages are consecutively numbered.\n3. Produce it whenever an Inspector or Certifying Surgeon visits.\n4. Report loss of the book immediately to the Inspector.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical Inspection Book (Form 31)",
+      "delay_proof": "Letter reporting loss of book"
+    },
+    "legal_text": "The Manager of every factory shall maintain a bound Inspection Book in Form 31... The Inspection Book shall be produced to the Inspector or Certifying Surgeon when required by him."
+  },
+  {
+    "audit_item_id": "MFR-R125-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Maharashtra Factories Rules, 1963",
+      "section_reference": "Rule 125",
+      "category": "Returns, Notices and Accidents"
+    },
+    "question_text": "Is information regarding intended closure of the factory (or department) sent to the Inspector prior to closure?",
+    "applicability_criteria": "Factories intending to close or suspend work (other than temporary)",
+    "simplified_guidance": "1. Decide on the closure date.\n2. Send information in duplicate to the Inspector immediately after decision and before closure.\n3. State date, reasons, workers affected, and probable period.\n4. Also report re-opening in the annual return.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of closure notice submitted to Inspector",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The occupier and the manager shall be jointly or severally responsible for sending information in duplicate to the Inspector, of any intended closure of the factory or any shift, section or department thereof... before the closure takes place..."
+  }
+]
