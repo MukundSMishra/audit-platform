@@ -104,6 +104,8 @@ function App() {
           .eq('session_id', currentSessionId)
           .eq('act_id', currentActId);
 
+        console.log(`[Data Fetch] Query: session_id=${currentSessionId}, act_id=${currentActId}`);
+
         if (questions) {
           setAuditData(questions);
           
@@ -118,13 +120,18 @@ function App() {
 
           const answerMap = {};
           if (savedAnswers) {
+            console.log(`[Answer Restore] Loading ${savedAnswers.length} saved answers for act: ${currentActId}`);
             savedAnswers.forEach(row => {
               answerMap[row.question_id] = { 
                 status: row.status, 
                 evidenceUrl: row.evidence_url,
                 comment: row.remarks 
               };
+              console.log(`[Answer Restore] Q${row.question_id}: ${row.status || 'null'}`);
             });
+            console.log(`[Answer Restore] Loaded answers:`, answerMap);
+          } else {
+            console.log(`[Answer Restore] No saved answers found for act: ${currentActId}`);
           }
           setAnswers(answerMap);
         }
@@ -145,26 +152,37 @@ function App() {
 
   // 2. UPDATE ANSWER
   const handleUpdateAnswer = async (questionId, newAnswerData) => {
+    console.log(`[Answer Save] Saving Q${questionId}:`, newAnswerData);
+    
     setAnswers(prev => ({
       ...prev,
       [questionId]: newAnswerData
     }));
 
     const currentActId = selectedActIds[currentActIndex];
+    
+    // Prepare data for saving
+    const saveData = {
+      session_id: currentSessionId,
+      act_id: currentActId,
+      question_id: questionId, 
+      status: newAnswerData.status || null,
+      evidence_url: newAnswerData.evidenceUrl || null,
+      remarks: newAnswerData.comment || null,
+      updated_at: new Date().toISOString()
+    };
+    
+    console.log(`[Answer Save] Saving to DB:`, saveData);
 
     const { error } = await supabase
       .from('session_answers')
-      .upsert({ 
-        session_id: currentSessionId,
-        act_id: currentActId,
-        question_id: questionId, 
-        status: newAnswerData.status,
-        evidence_url: newAnswerData.evidenceUrl,
-        remarks: newAnswerData.comment,
-        updated_at: new Date()
-      }, { onConflict: 'session_id, question_id, act_id' });
+      .upsert(saveData, { onConflict: 'session_id,question_id,act_id' });
 
-    if (error) console.error("Save error:", error);
+    if (error) {
+      console.error("[Answer Save] Error:", error);
+    } else {
+      console.log(`[Answer Save] Success for Q${questionId}`);
+    }
   };
 
   // 3. NAVIGATION HELPERS
@@ -495,6 +513,23 @@ function App() {
                    <Save size={16}/> Migration Needed
                  </button>
                )}
+               
+               {/* Debug: Check Saved Answers */}
+               <button 
+                 onClick={async () => {
+                   const currentActId = selectedActIds[currentActIndex];
+                   const { data } = await supabase
+                     .from('session_answers')
+                     .select('*')
+                     .eq('session_id', currentSessionId)
+                     .eq('act_id', currentActId);
+                   console.log('🔍 Current saved answers:', data);
+                   alert(`Found ${data?.length || 0} saved answers. Check console for details.`);
+                 }}
+                 className="bg-gray-600 text-white px-3 py-2 rounded-lg text-xs font-bold shadow hover:bg-gray-700 transition-all"
+               >
+                 🔍 Debug
+               </button>
                
              <button onClick={generatePDF} className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold shadow hover:bg-black transition-all active:scale-95 flex items-center gap-2">
                <FileText size={16}/> Report
