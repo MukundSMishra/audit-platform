@@ -92,10 +92,10 @@ function App() {
         // Load questions from the appropriate JSON file based on current act_id
         const questions = getActData(currentActId);
 
-        // Fetch saved progress from audit_sessions
+        // Fetch saved progress from audit_sessions (including per-act question indices)
         const { data: sessionData } = await supabase
           .from('audit_sessions')
-          .select('current_act_index, current_question_index, last_saved_at')
+          .select('current_act_index, current_question_index, last_saved_at, act_question_indices')
           .eq('id', currentSessionId)
           .single();
 
@@ -132,9 +132,18 @@ function App() {
           
           // Restore progress if resuming session
           if (sessionData && sessionData.current_question_index !== null) {
-            setCurrentQuestionIndex(sessionData.current_question_index || 0);
-            // Note: currentActIndex is already set correctly from parent component
-            console.log(`[Progress Restore] Resuming from Question ${sessionData.current_question_index + 1}, Act ${sessionData.current_act_index + 1}`);
+            // Use per-act question index if available, otherwise fall back to global
+            let questionIndexToRestore = sessionData.current_question_index || 0;
+            
+            if (sessionData.act_question_indices && sessionData.act_question_indices[currentActId] !== undefined) {
+              questionIndexToRestore = sessionData.act_question_indices[currentActId];
+              console.log(`[Progress Restore] Using per-act index for ${currentActId}: Question ${questionIndexToRestore + 1}`);
+            } else {
+              console.log(`[Progress Restore] No per-act index found, using global: Question ${questionIndexToRestore + 1}`);
+            }
+            
+            setCurrentQuestionIndex(questionIndexToRestore);
+            console.log(`[Progress Restore] Resuming from Question ${questionIndexToRestore + 1}, Act ${currentActIndex + 1}`);
           } else {
             setCurrentQuestionIndex(0); // Reset to first question for new sessions
           }
