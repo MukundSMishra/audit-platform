@@ -278,23 +278,41 @@ function App() {
     }
 
     try {
-      const { error } = await supabase
-        .from('audit_sessions')
-        .update({
-          act_ids: selectedActIds,
-          current_act_index: currentActIndex,
-          current_question_index: currentQuestionIndex,
-          last_saved_at: new Date().toISOString()
-        })
-        .eq('id', currentSessionId);
+      // Try to save with act_ids first
+      let error;
+      try {
+        const result = await supabase
+          .from('audit_sessions')
+          .update({
+            act_ids: selectedActIds,
+            current_act_index: currentActIndex,
+            current_question_index: currentQuestionIndex,
+            last_saved_at: new Date().toISOString()
+          })
+          .eq('id', currentSessionId);
+        error = result.error;
+      } catch (err) {
+        error = err;
+      }
+
+      // If act_ids column doesn't exist, fall back to saving without it
+      if (error && error.message?.includes('act_ids')) {
+        console.warn('[Save Progress] act_ids column not found, saving without it');
+        const fallbackResult = await supabase
+          .from('audit_sessions')
+          .update({
+            current_act_index: currentActIndex,
+            current_question_index: currentQuestionIndex,
+            last_saved_at: new Date().toISOString()
+          })
+          .eq('id', currentSessionId);
+        error = fallbackResult.error;
+      }
 
       if (error) {
         console.error('Error saving progress:', error);
-        const errorMessage = error.message.includes('column') 
-          ? 'Database not updated. Please run the migration SQL first. Check console for details.'
-          : `Save failed: ${error.message}`;
-        if (showNotification) alert(errorMessage);
-        console.log('🚨 MIGRATION REQUIRED: Run this SQL in Supabase:\n\nALTER TABLE audit_sessions \nADD COLUMN current_act_index INTEGER DEFAULT 0,\nADD COLUMN current_question_index INTEGER DEFAULT 0,\nADD COLUMN last_saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;');
+        if (showNotification) alert('Database not updated. Please run the migration SQL first. Check console for details.');
+        console.log('🚨 MIGRATION REQUIRED: Run this SQL in Supabase SQL Editor:\n\nALTER TABLE audit_sessions ADD COLUMN IF NOT EXISTS act_ids TEXT[];\nALTER TABLE audit_sessions ADD COLUMN IF NOT EXISTS current_act_index INTEGER DEFAULT 0;\nALTER TABLE audit_sessions ADD COLUMN IF NOT EXISTS current_question_index INTEGER DEFAULT 0;\nALTER TABLE audit_sessions ADD COLUMN IF NOT EXISTS last_saved_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP;');
         return false;
       }
 
