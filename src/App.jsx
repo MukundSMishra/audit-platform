@@ -278,11 +278,20 @@ function App() {
     }
 
     try {
-      // Build per-act question index tracking
-      const act_question_indices = {};
+      // Fetch existing act_question_indices to preserve progress for all acts
+      const { data: existingSession } = await supabase
+        .from('audit_sessions')
+        .select('act_question_indices')
+        .eq('id', currentSessionId)
+        .single();
+
+      // Build per-act question index tracking - MERGE with existing data
+      const act_question_indices = existingSession?.act_question_indices || {};
       if (currentActIndex < selectedActIds.length) {
         act_question_indices[selectedActIds[currentActIndex]] = currentQuestionIndex;
       }
+
+      console.log('[Save Progress] Saving act_question_indices:', act_question_indices);
 
       // Try to save with act_ids and per-act tracking first
       let error;
@@ -476,8 +485,34 @@ function App() {
               questions: actQuestions
             };
           })}
-          onContinueAudit={(actIndex) => {
+          onContinueAudit={async (actIndex) => {
             setCurrentActIndex(actIndex);
+            
+            // Fetch saved question index for this specific act
+            try {
+              const { data: sessionData } = await supabase
+                .from('audit_sessions')
+                .select('act_question_indices')
+                .eq('id', currentSessionId)
+                .single();
+              
+              if (sessionData?.act_question_indices && selectedActIds[actIndex]) {
+                const actId = selectedActIds[actIndex];
+                const savedQuestionIndex = sessionData.act_question_indices[actId];
+                if (savedQuestionIndex !== undefined && savedQuestionIndex !== null) {
+                  setCurrentQuestionIndex(savedQuestionIndex);
+                  console.log(`[Continue Audit] Restored question index for act ${actId}: ${savedQuestionIndex}`);
+                } else {
+                  setCurrentQuestionIndex(0);
+                }
+              } else {
+                setCurrentQuestionIndex(0);
+              }
+            } catch (error) {
+              console.error('[Continue Audit] Error loading question index:', error);
+              setCurrentQuestionIndex(0);
+            }
+            
             setCurrentScreen('audit');
           }}
           onBackToDashboard={() => setCurrentScreen('dashboard')}
