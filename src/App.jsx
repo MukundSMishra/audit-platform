@@ -278,7 +278,13 @@ function App() {
     }
 
     try {
-      // Try to save with act_ids first
+      // Build per-act question index tracking
+      const act_question_indices = {};
+      if (currentActIndex < selectedActIds.length) {
+        act_question_indices[selectedActIds[currentActIndex]] = currentQuestionIndex;
+      }
+
+      // Try to save with act_ids and per-act tracking first
       let error;
       try {
         const result = await supabase
@@ -287,6 +293,7 @@ function App() {
             act_ids: selectedActIds,
             current_act_index: currentActIndex,
             current_question_index: currentQuestionIndex,
+            act_question_indices: act_question_indices,
             last_saved_at: new Date().toISOString()
           })
           .eq('id', currentSessionId);
@@ -295,10 +302,25 @@ function App() {
         error = err;
       }
 
-      // If act_ids column doesn't exist, fall back to saving without it
+      // If act_question_indices column doesn't exist, fall back to saving without it
+      if (error && error.message?.includes('act_question_indices')) {
+        console.warn('[Save Progress] act_question_indices column not found, saving without it');
+        const fallbackResult = await supabase
+          .from('audit_sessions')
+          .update({
+            act_ids: selectedActIds,
+            current_act_index: currentActIndex,
+            current_question_index: currentQuestionIndex,
+            last_saved_at: new Date().toISOString()
+          })
+          .eq('id', currentSessionId);
+        error = fallbackResult.error;
+      }
+
+      // If act_ids column doesn't exist, fall back further
       if (error && error.message?.includes('act_ids')) {
         console.warn('[Save Progress] act_ids column not found, saving without it');
-        const fallbackResult = await supabase
+        const fallbackResult2 = await supabase
           .from('audit_sessions')
           .update({
             current_act_index: currentActIndex,
@@ -306,7 +328,7 @@ function App() {
             last_saved_at: new Date().toISOString()
           })
           .eq('id', currentSessionId);
-        error = fallbackResult.error;
+        error = fallbackResult2.error;
       }
 
       if (error) {
@@ -377,8 +399,23 @@ function App() {
           // Session has saved progress - ALWAYS go to progress screen first
           setSelectedActIds(actIdsToLoad);
           setCurrentActIndex(sessionData.current_act_index || 0);
+          
+          // Restore per-act question index if available
+          if (sessionData.act_question_indices && actIdsToLoad[sessionData.current_act_index]) {
+            const currentActId = actIdsToLoad[sessionData.current_act_index];
+            const savedQuestionIndex = sessionData.act_question_indices[currentActId];
+            if (savedQuestionIndex !== undefined && savedQuestionIndex !== null) {
+              setCurrentQuestionIndex(savedQuestionIndex);
+              console.log(`[Resume] Restored per-act question index: Act ${currentActId} at question ${savedQuestionIndex}`);
+            } else {
+              setCurrentQuestionIndex(sessionData.current_question_index || 0);
+            }
+          } else {
+            setCurrentQuestionIndex(sessionData.current_question_index || 0);
+          }
+          
           setCurrentScreen('progress');
-          console.log(`[Resume] Restored session with ${actIdsToLoad.length} acts: ${actIdsToLoad.join(', ')}, at act ${sessionData.current_act_index}, question ${sessionData.current_question_index}`);
+          console.log(`[Resume] Restored session with ${actIdsToLoad.length} acts: ${actIdsToLoad.join(', ')}, at act index ${sessionData.current_act_index}`);
         } else {
           // New session or no saved progress - go to act selector
           setCurrentScreen('act-selector');
@@ -479,6 +516,7 @@ function App() {
                 .update({ 
                   act_id: actIds[0], // Keep for backward compatibility
                   act_ids: actIds,   // Save the full array
+                  act_question_indices: {}, // Initialize empty per-act tracking
                   status: 'In Progress',
                   current_act_index: 0,
                   current_question_index: 0
