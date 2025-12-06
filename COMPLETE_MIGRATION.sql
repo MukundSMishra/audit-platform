@@ -25,15 +25,25 @@ SET current_act_index = 0,
 WHERE current_act_index IS NULL;
 
 -- Step 5: Fix unique constraints for session_answers
--- Remove old constraint if it exists
+-- Remove all old constraints if they exist
 ALTER TABLE session_answers DROP CONSTRAINT IF EXISTS unique_session_question;
 ALTER TABLE session_answers DROP CONSTRAINT IF EXISTS unique_session_question_act;
 ALTER TABLE session_answers DROP CONSTRAINT IF EXISTS session_answers_session_id_question_id_act_id_key;
+ALTER TABLE session_answers DROP CONSTRAINT IF EXISTS session_answers_unique_key;
 
--- Add the correct unique constraint
-ALTER TABLE session_answers
-ADD CONSTRAINT session_answers_unique_key 
-UNIQUE(session_id, question_id, act_id);
+-- Add the correct unique constraint (only if not exists)
+DO $$ 
+BEGIN
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint 
+        WHERE conname = 'session_answers_unique_key'
+        AND conrelid = 'session_answers'::regclass
+    ) THEN
+        ALTER TABLE session_answers
+        ADD CONSTRAINT session_answers_unique_key 
+        UNIQUE(session_id, question_id, act_id);
+    END IF;
+END $$;
 
 -- Step 6: Verify all columns exist
 SELECT 'session_answers columns:' as table_info;

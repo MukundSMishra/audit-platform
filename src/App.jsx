@@ -281,6 +281,7 @@ function App() {
       const { error } = await supabase
         .from('audit_sessions')
         .update({
+          act_ids: selectedActIds,
           current_act_index: currentActIndex,
           current_question_index: currentQuestionIndex,
           last_saved_at: new Date().toISOString()
@@ -347,20 +348,27 @@ function App() {
     try {
       const { data: sessionData } = await supabase
         .from('audit_sessions')
-        .select('current_act_index, current_question_index, act_id')
+        .select('current_act_index, current_question_index, act_id, act_ids') // Fetch both old and new fields
         .eq('id', id)
         .single();
 
-      if (sessionData && sessionData.act_id) {
-        // Session has saved progress and act selections
-        // Try to determine selected acts from the session
-        // For now, assume single act workflow, but this can be enhanced
-        setSelectedActIds([sessionData.act_id]);
-        setCurrentActIndex(sessionData.current_act_index || 0);
-        setCurrentScreen('audit'); // Go directly to audit
-        console.log(`[Resume] Restored session with act: ${sessionData.act_id}, act index: ${sessionData.current_act_index}, question: ${sessionData.current_question_index}`);
+      if (sessionData) {
+        const actIdsToLoad = sessionData.act_ids || (sessionData.act_id ? [sessionData.act_id] : []);
+
+        if (actIdsToLoad.length > 0 && sessionData.current_question_index !== null) {
+          // Session has saved progress - ALWAYS go to progress screen first
+          setSelectedActIds(actIdsToLoad);
+          setCurrentActIndex(sessionData.current_act_index || 0);
+          setCurrentScreen('progress');
+          console.log(`[Resume] Restored session with ${actIdsToLoad.length} acts: ${actIdsToLoad.join(', ')}, at act ${sessionData.current_act_index}, question ${sessionData.current_question_index}`);
+        } else {
+          // New session or no saved progress - go to act selector
+          setCurrentScreen('act-selector');
+          setSelectedActIds([]);
+          setCurrentActIndex(0);
+        }
       } else {
-        // New session or no saved progress - go to act selector
+        // Fallback if sessionData is null
         setCurrentScreen('act-selector');
         setSelectedActIds([]);
         setCurrentActIndex(0);
@@ -404,12 +412,13 @@ function App() {
           company={{ company_name: factoryName, location: factoryLocation }}
           sessionId={currentSessionId}
           selectedActs={selectedActIds.map(actId => {
-            const actData = getActById(actId);
+            const actMetadata = getActById(actId);
+            const actQuestions = getActData(actId);
             return {
               id: actId,
-              name: actData.name,
-              shortName: actData.shortName,
-              questions: actData.questions
+              name: actMetadata.name,
+              shortName: actMetadata.shortName,
+              questions: actQuestions
             };
           })}
           onContinueAudit={(actIndex) => {
@@ -450,14 +459,18 @@ function App() {
               const { error } = await supabase
                 .from('audit_sessions')
                 .update({ 
-                  act_id: actIds[0], // Primary act
+                  act_id: actIds[0], // Keep for backward compatibility
+                  act_ids: actIds,   // Save the full array
                   status: 'In Progress',
                   current_act_index: 0,
                   current_question_index: 0
                 })
                 .eq('id', currentSessionId);
               
-              if (error) console.error('Error saving act selection:', error);
+              if (error) {
+                console.error('Error saving act selection:', error);
+                alert(`Error saving session: ${error.message}`);
+              }
             } catch (error) {
               console.error('Act selection save error:', error);
             }

@@ -20,6 +20,9 @@ export default function AuditProgress({
     setLoading(true);
     
     try {
+      console.log('[AuditProgress] Loading progress for session:', sessionId);
+      console.log('[AuditProgress] Selected acts:', selectedActs);
+      
       // Fetch all answers for this session
       const { data: answers, error } = await supabase
         .from('session_answers')
@@ -27,24 +30,43 @@ export default function AuditProgress({
         .eq('session_id', sessionId);
 
       if (error) {
-        console.error('Error loading progress:', error);
+        console.error('[AuditProgress] Error loading answers:', error);
         setLoading(false);
         return;
       }
 
+      console.log('[AuditProgress] Fetched answers:', answers);
+
       // Calculate progress for each act
       const progressByAct = selectedActs.map(act => {
+        console.log('[AuditProgress] Processing act:', act.id, 'with', act.questions?.length, 'questions');
         const actAnswers = answers?.filter(a => a.act_id === act.id) || [];
-        const totalQuestions = act.questions.length;
+        console.log('[AuditProgress] Found', actAnswers.length, 'answers for act:', act.id);
+        
+        const totalQuestions = act.questions?.length || 0;
         const answeredQuestions = actAnswers.length;
         const completionPercentage = totalQuestions > 0 
           ? Math.round((answeredQuestions / totalQuestions) * 100) 
           : 0;
 
-        // Count status types
-        const compliant = actAnswers.filter(a => a.status === 'compliant').length;
-        const nonCompliant = actAnswers.filter(a => a.status === 'non_compliant').length;
-        const notApplicable = actAnswers.filter(a => a.status === 'not_applicable').length;
+        // Count status types - handle both formats (Compliant/compliant, Non-Compliant/non_compliant)
+        const compliant = actAnswers.filter(a => 
+          a.status?.toLowerCase() === 'compliant'
+        ).length;
+        const nonCompliant = actAnswers.filter(a => 
+          a.status?.toLowerCase() === 'non-compliant' || 
+          a.status?.toLowerCase() === 'non_compliant'
+        ).length;
+        const notApplicable = actAnswers.filter(a => 
+          a.status?.toLowerCase() === 'not applicable' || 
+          a.status?.toLowerCase() === 'not_applicable' ||
+          a.status?.toLowerCase() === 'n/a'
+        ).length;
+        const delayed = actAnswers.filter(a => 
+          a.status?.toLowerCase() === 'delayed'
+        ).length;
+
+        console.log('[AuditProgress] Status counts:', { compliant, nonCompliant, notApplicable, delayed });
 
         return {
           actId: act.id,
@@ -56,10 +78,12 @@ export default function AuditProgress({
           compliant,
           nonCompliant,
           notApplicable,
+          delayed,
           isComplete: answeredQuestions === totalQuestions
         };
       });
 
+      console.log('[AuditProgress] Progress by act:', progressByAct);
       setProgressData(progressByAct);
 
       // Calculate overall progress
@@ -178,7 +202,7 @@ export default function AuditProgress({
 
               {/* Statistics */}
               {act.answeredQuestions > 0 && (
-                <div className="flex gap-4 mb-4 text-sm">
+                <div className="flex flex-wrap gap-4 mb-4 text-sm">
                   <div className="flex items-center gap-1">
                     <span className="w-3 h-3 bg-green-500 rounded-full"></span>
                     <span className="text-gray-600">Compliant: {act.compliant}</span>
@@ -186,6 +210,10 @@ export default function AuditProgress({
                   <div className="flex items-center gap-1">
                     <span className="w-3 h-3 bg-red-500 rounded-full"></span>
                     <span className="text-gray-600">Non-Compliant: {act.nonCompliant}</span>
+                  </div>
+                  <div className="flex items-center gap-1">
+                    <span className="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                    <span className="text-gray-600">Delayed: {act.delayed || 0}</span>
                   </div>
                   <div className="flex items-center gap-1">
                     <span className="w-3 h-3 bg-gray-400 rounded-full"></span>
