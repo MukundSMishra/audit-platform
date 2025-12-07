@@ -340,159 +340,235 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
               </div>
             </div>
 
-            {/* 6. EVIDENCE GUIDELINES */}
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center shadow-md">
-                  <FileText size={18} className="text-white" strokeWidth={2.5} />
+            {/* 6. EVIDENCE GUIDELINES - Status-Driven Display */}
+            {(currentStatus === 'Compliant' || currentStatus === 'Delayed') && (
+              <div className="relative animate-in fade-in slide-in-from-top-2 duration-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shadow-md ${
+                    currentStatus === 'Compliant' 
+                      ? 'bg-gradient-to-br from-emerald-400 to-teal-500'
+                      : 'bg-gradient-to-br from-amber-400 to-orange-500'
+                  }`}>
+                    <FileText size={18} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-sm font-extrabold text-slate-800 uppercase tracking-wide">
+                    Evidence Required
+                  </h4>
+                  <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
                 </div>
-                <h4 className="text-sm font-extrabold text-slate-800 uppercase tracking-wide">
-                  Evidence Guidelines
-                </h4>
-                <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
-              </div>
-              
-              <div className="bg-gradient-to-br from-slate-50 to-slate-100/50 p-6 rounded-xl border border-slate-200 shadow-md space-y-4 hover:shadow-lg transition-all duration-300">
                 
-                {/* Methodology */}
-                <div className="flex gap-4 items-center p-4 bg-white rounded-lg border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 group">
-                  <div className="flex items-center gap-3 flex-1">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-500 to-slate-600 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-300">
-                      <AlertCircle size={18} className="text-white" strokeWidth={2.5} />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <span className="text-[10px] font-extrabold text-slate-500 uppercase tracking-wider">Methodology</span>
-                      <span className="text-sm font-extrabold text-slate-900">
-                        {item.evidence_required?.methodology || "Direct Observation"}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Compliance Proof */}
-                <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-emerald-50/80 to-teal-50/50 rounded-lg border border-emerald-200 hover:border-emerald-300 transition-all duration-300 group">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
-                    <CheckCircle size={18} className="text-white" strokeWidth={2.5} />
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-bold text-emerald-700 uppercase tracking-wide">If Compliant</span>
-                      <div className="h-px flex-1 bg-emerald-200"></div>
-                    </div>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                      {item.evidence_required?.compliance_proof || "Upload photo of compliant condition."}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Delay Proof */}
-                <div className="flex gap-4 items-start p-4 bg-gradient-to-br from-amber-50/80 to-orange-50/50 rounded-lg border border-amber-200 hover:border-amber-300 transition-all duration-300 group">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-sm shrink-0 group-hover:scale-105 transition-transform duration-300">
-                    <Clock size={18} className="text-white" strokeWidth={2.5} />
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-xs font-bold text-amber-700 uppercase tracking-wide">If Delayed</span>
-                      <div className="h-px flex-1 bg-amber-200"></div>
-                    </div>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium">
-                      {item.evidence_required?.delay_proof || "Upload proof of work order or application."}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* 7. UPLOAD INTERFACE */}
-            <div className="relative">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-400 to-blue-500 flex items-center justify-center shadow-md">
-                  <Camera size={18} className="text-white" strokeWidth={2.5} />
-                </div>
-                <h4 className="text-sm font-extrabold text-slate-800 uppercase tracking-wide">
-                  {item.evidence_required?.mandatory ? (
-                    <span className="flex items-center gap-2">
-                      Evidence Upload
-                      <span className="text-xs bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full font-bold border border-rose-200">Required</span>
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-2">
-                      Evidence Upload
-                      <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-bold">Optional</span>
-                    </span>
-                  )}
-                </h4>
-                <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
-              </div>
-              
-              <div className={`relative border-2 border-dashed rounded-lg transition-all overflow-hidden group cursor-pointer shadow-sm hover:shadow-md duration-300
-                ${evidenceUrl 
-                  ? 'border-emerald-300 bg-gradient-to-br from-emerald-50/70 to-teal-50/70' 
-                  : 'border-slate-300 hover:border-blue-400 bg-gradient-to-br from-slate-50 to-blue-50/30 hover:from-blue-50/40 hover:to-indigo-50/40'
-                }`}>
-                
-                <input type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} accept="image/*,.pdf" />
-                
-                <div className="p-6 flex flex-col items-center justify-center text-center" onClick={() => fileInputRef.current.click()}>
-                  {evidenceUrl ? (
-                    <div className="animate-in zoom-in duration-500">
-                      <div className="relative mb-3">
-                        <div className="absolute inset-0 bg-emerald-300 blur-lg opacity-20"></div>
-                        <div className="relative bg-gradient-to-br from-emerald-400 to-teal-500 p-3 rounded-lg w-fit mx-auto text-white shadow-md">
-                          <Check size={24} strokeWidth={2.5} />
+                {/* Compliant Evidence */}
+                {currentStatus === 'Compliant' && (
+                  <div className="bg-gradient-to-br from-emerald-50/80 to-teal-50/50 p-6 rounded-xl border border-emerald-200 shadow-md space-y-4 hover:shadow-lg transition-all duration-300">
+                    
+                    {/* Methodology Banner */}
+                    <div className="flex gap-4 items-center p-4 bg-white rounded-lg border border-emerald-200 shadow-sm">
+                      <div className="flex items-center gap-3 flex-1">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-sm">
+                          <CheckCircle size={18} className="text-white" strokeWidth={2.5} />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] font-extrabold text-emerald-600 uppercase tracking-wider">Verification Method</span>
+                          <span className="text-sm font-extrabold text-slate-900">
+                            {item.evidence_requirements?.methodology || item.evidence_required?.methodology || "Direct Observation"}
+                          </span>
                         </div>
                       </div>
-                      <p className="text-emerald-800 font-bold text-sm mb-1.5 uppercase tracking-wide">Evidence Secured</p>
-                      <p className="text-slate-600 text-xs mb-4 font-medium">File successfully uploaded and attached</p>
-                      <div className="flex gap-2 justify-center">
-                        <a 
-                          href={evidenceUrl} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          className="flex items-center gap-1.5 text-xs bg-white border border-emerald-300 text-emerald-700 px-3 py-1.5 rounded-md font-bold hover:bg-emerald-50 hover:border-emerald-400 shadow-sm hover:shadow-md transition-all duration-300" 
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <FileText size={14} />
-                          View File
-                        </a>
-                        <button className="flex items-center gap-1.5 text-xs bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-3 py-1.5 rounded-md font-bold hover:from-emerald-600 hover:to-teal-700 shadow-sm hover:shadow-md transition-all duration-300">
-                          <Paperclip size={14} />
-                          Replace
-                        </button>
+                    </div>
+
+                    {/* Compliance Proof Instructions */}
+                    <div className="flex gap-4 items-start p-4 bg-white rounded-lg border border-emerald-200">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center shadow-sm shrink-0">
+                        <Camera size={18} className="text-white" strokeWidth={2.5} />
+                      </div>
+                      <div className="flex-1 pt-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-bold text-emerald-700 uppercase tracking-wide">What to Upload</span>
+                          <div className="h-px flex-1 bg-emerald-200"></div>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                          {item.evidence_requirements?.compliance_proof || item.evidence_required?.compliance_proof || "Upload photo showing compliant condition or required document."}
+                        </p>
                       </div>
                     </div>
-                  ) : (
-                    <>
-                      <div className="relative mb-3">
-                        {uploading ? (
-                          <>
-                            <div className="absolute inset-0 bg-blue-300 blur-lg opacity-20"></div>
-                            <div className="relative bg-gradient-to-br from-blue-400 to-indigo-500 p-3 rounded-lg shadow-md">
-                              <Loader2 size={24} className="animate-spin text-white"/>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <div className="absolute inset-0 bg-slate-300 blur-lg opacity-10 group-hover:bg-blue-300 group-hover:opacity-20 transition-all duration-300"></div>
-                            <div className="relative bg-white p-3 rounded-lg text-slate-400 shadow-sm border border-slate-200 group-hover:border-blue-300 group-hover:text-blue-500 group-hover:scale-105 transition-all duration-300">
-                              <Paperclip size={24} strokeWidth={2.5} />
-                            </div>
-                          </>
-                        )}
+                  </div>
+                )}
+
+                {/* Delayed Evidence */}
+                {currentStatus === 'Delayed' && (
+                  <div className="bg-gradient-to-br from-amber-50/80 to-orange-50/50 p-6 rounded-xl border border-amber-200 shadow-md space-y-4 hover:shadow-lg transition-all duration-300">
+                    
+                    {/* Methodology Banner */}
+                    <div className="flex gap-4 items-center p-4 bg-white rounded-lg border border-amber-200 shadow-sm">
+                      <div className="flex items-center gap-3 flex-1">
+                        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-sm">
+                          <Clock size={18} className="text-white" strokeWidth={2.5} />
+                        </div>
+                        <div className="flex flex-col gap-1">
+                          <span className="text-[10px] font-extrabold text-amber-600 uppercase tracking-wider">Proof Required</span>
+                          <span className="text-sm font-extrabold text-slate-900">
+                            Delay Documentation
+                          </span>
+                        </div>
                       </div>
-                      <p className="text-sm font-bold text-slate-700 mb-1.5 group-hover:text-blue-600 transition-colors uppercase tracking-wide">
-                        {uploading ? 'Uploading...' : 'Click to Attach Evidence'}
-                      </p>
-                      <p className="text-xs text-slate-500 font-medium mb-3">Drag & drop or click to browse</p>
-                      <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-white/80 px-3 py-1.5 rounded-md border border-slate-200">
-                        <FileText size={12} />
-                        <span className="font-medium">Supports: Images & PDF files</span>
+                    </div>
+
+                    {/* Delay Proof Instructions */}
+                    <div className="flex gap-4 items-start p-4 bg-white rounded-lg border border-amber-200">
+                      <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center shadow-sm shrink-0">
+                        <FileText size={18} className="text-white" strokeWidth={2.5} />
                       </div>
-                    </>
-                  )}
+                      <div className="flex-1 pt-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-xs font-bold text-amber-700 uppercase tracking-wide">What to Upload</span>
+                          <div className="h-px flex-1 bg-amber-200"></div>
+                        </div>
+                        <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                          {item.evidence_requirements?.delay_proof || item.evidence_required?.delay_proof || "Upload proof of work order, application, or pending approval documentation."}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* 7. UPLOAD INTERFACE - Only for Compliant/Delayed */}
+            {(currentStatus === 'Compliant' || currentStatus === 'Delayed') && (
+              <div className="relative animate-in fade-in slide-in-from-top-2 duration-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center shadow-md ${
+                    currentStatus === 'Compliant'
+                      ? 'bg-gradient-to-br from-emerald-400 to-teal-500'
+                      : 'bg-gradient-to-br from-amber-400 to-orange-500'
+                  }`}>
+                    <Camera size={18} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <h4 className="text-sm font-extrabold text-slate-800 uppercase tracking-wide">
+                    {(item.evidence_requirements?.mandatory || item.evidence_required?.mandatory) ? (
+                      <span className="flex items-center gap-2">
+                        Evidence Upload
+                        <span className={`text-xs px-2 py-0.5 rounded-full font-bold border ${
+                          currentStatus === 'Compliant'
+                            ? 'bg-emerald-100 text-emerald-700 border-emerald-200'
+                            : 'bg-amber-100 text-amber-700 border-amber-200'
+                        }`}>Required</span>
+                      </span>
+                    ) : (
+                      <span className="flex items-center gap-2">
+                        Evidence Upload
+                        <span className="text-xs bg-slate-100 text-slate-600 px-2 py-0.5 rounded-full font-bold">Optional</span>
+                      </span>
+                    )}
+                  </h4>
+                  <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent"></div>
+                </div>
+                
+                <div className={`relative border-2 border-dashed rounded-lg transition-all overflow-hidden group cursor-pointer shadow-sm hover:shadow-md duration-300
+                  ${evidenceUrl 
+                    ? currentStatus === 'Compliant'
+                      ? 'border-emerald-300 bg-gradient-to-br from-emerald-50/70 to-teal-50/70'
+                      : 'border-amber-300 bg-gradient-to-br from-amber-50/70 to-orange-50/70'
+                    : currentStatus === 'Compliant'
+                      ? 'border-emerald-300 hover:border-emerald-400 bg-gradient-to-br from-emerald-50/30 to-teal-50/30 hover:from-emerald-50/40 hover:to-teal-50/40'
+                      : 'border-amber-300 hover:border-amber-400 bg-gradient-to-br from-amber-50/30 to-orange-50/30 hover:from-amber-50/40 hover:to-orange-50/40'
+                  }`}>
+                  
+                  <input type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} accept="image/*,.pdf" />
+                  
+                  <div className="p-6 flex flex-col items-center justify-center text-center" onClick={() => fileInputRef.current.click()}>
+                    {evidenceUrl ? (
+                      <div className="animate-in zoom-in duration-500">
+                        <div className="relative mb-3">
+                          <div className={`absolute inset-0 blur-lg opacity-20 ${
+                            currentStatus === 'Compliant' ? 'bg-emerald-300' : 'bg-amber-300'
+                          }`}></div>
+                          <div className={`relative p-3 rounded-lg w-fit mx-auto text-white shadow-md ${
+                            currentStatus === 'Compliant'
+                              ? 'bg-gradient-to-br from-emerald-400 to-teal-500'
+                              : 'bg-gradient-to-br from-amber-400 to-orange-500'
+                          }`}>
+                            <Check size={24} strokeWidth={2.5} />
+                          </div>
+                        </div>
+                        <p className={`font-bold text-sm mb-1.5 uppercase tracking-wide ${
+                          currentStatus === 'Compliant' ? 'text-emerald-800' : 'text-amber-800'
+                        }`}>Evidence Secured</p>
+                        <p className="text-slate-600 text-xs mb-4 font-medium">File successfully uploaded and attached</p>
+                        <div className="flex gap-2 justify-center">
+                          <a 
+                            href={evidenceUrl} 
+                            target="_blank" 
+                            rel="noreferrer" 
+                            className={`flex items-center gap-1.5 text-xs bg-white px-3 py-1.5 rounded-md font-bold shadow-sm hover:shadow-md transition-all duration-300 ${
+                              currentStatus === 'Compliant'
+                                ? 'border border-emerald-300 text-emerald-700 hover:bg-emerald-50 hover:border-emerald-400'
+                                : 'border border-amber-300 text-amber-700 hover:bg-amber-50 hover:border-amber-400'
+                            }`}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <FileText size={14} />
+                            View File
+                          </a>
+                          <button className={`flex items-center gap-1.5 text-xs text-white px-3 py-1.5 rounded-md font-bold shadow-sm hover:shadow-md transition-all duration-300 ${
+                            currentStatus === 'Compliant'
+                              ? 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700'
+                              : 'bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700'
+                          }`}>
+                            <Paperclip size={14} />
+                            Replace
+                          </button>
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <div className="relative mb-3">
+                          {uploading ? (
+                            <>
+                              <div className={`absolute inset-0 blur-lg opacity-20 ${
+                                currentStatus === 'Compliant' ? 'bg-emerald-300' : 'bg-amber-300'
+                              }`}></div>
+                              <div className={`relative p-3 rounded-lg shadow-md ${
+                                currentStatus === 'Compliant'
+                                  ? 'bg-gradient-to-br from-emerald-400 to-teal-500'
+                                  : 'bg-gradient-to-br from-amber-400 to-orange-500'
+                              }`}>
+                                <Loader2 size={24} className="animate-spin text-white"/>
+                              </div>
+                            </>
+                          ) : (
+                            <>
+                              <div className={`absolute inset-0 blur-lg opacity-10 group-hover:opacity-20 transition-all duration-300 ${
+                                currentStatus === 'Compliant' ? 'bg-emerald-300 group-hover:bg-emerald-300' : 'bg-amber-300 group-hover:bg-amber-300'
+                              }`}></div>
+                              <div className={`relative bg-white p-3 rounded-lg shadow-sm border transition-all duration-300 group-hover:scale-105 ${
+                                currentStatus === 'Compliant'
+                                  ? 'text-emerald-400 border-emerald-200 group-hover:border-emerald-300 group-hover:text-emerald-500'
+                                  : 'text-amber-400 border-amber-200 group-hover:border-amber-300 group-hover:text-amber-500'
+                              }`}>
+                                <Paperclip size={24} strokeWidth={2.5} />
+                              </div>
+                            </>
+                          )}
+                        </div>
+                        <p className={`text-sm font-bold mb-1.5 transition-colors uppercase tracking-wide ${
+                          currentStatus === 'Compliant'
+                            ? 'text-slate-700 group-hover:text-emerald-600'
+                            : 'text-slate-700 group-hover:text-amber-600'
+                        }`}>
+                          {uploading ? 'Uploading...' : 'Click to Attach Evidence'}
+                        </p>
+                        <p className="text-xs text-slate-500 font-medium mb-3">Drag & drop or click to browse</p>
+                        <div className="flex items-center gap-1.5 text-xs text-slate-500 bg-white/80 px-3 py-1.5 rounded-md border border-slate-200">
+                          <FileText size={12} />
+                          <span className="font-medium">Supports: Images & PDF files</span>
+                        </div>
+                      </>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
+            )}
 
           </div>
         )}

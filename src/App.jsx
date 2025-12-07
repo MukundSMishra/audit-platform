@@ -11,14 +11,19 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import ActSelector from './components/ActSelector';
 import AuditProgress from './components/AuditProgress';
+import AdminPortal from './components/admin/AdminPortal';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
 // Act registry
 import { getActData, getActById } from './data/actRegistry';
+// Admin helpers
+import { checkUserRole } from './utils/authHelpers';
 
 function App() {
   const [session, setSession] = useState(null);
+  const [userRole, setUserRole] = useState(null);
+  const [roleLoading, setRoleLoading] = useState(true);
   
   // Navigation State
   const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'act-selector' | 'progress' | 'audit'
@@ -49,10 +54,28 @@ function App() {
         setFactoryLocation(null);
         setSelectedActIds([]);
         setCurrentActIndex(0);
+        setUserRole(null);
       }
     });
     return () => subscription.unsubscribe();
   }, []);
+
+  // Check user role after authentication
+  useEffect(() => {
+    const checkRole = async () => {
+      if (session) {
+        setRoleLoading(true);
+        const role = await checkUserRole();
+        setUserRole(role);
+        console.log('User role:', role);
+        setRoleLoading(false);
+      } else {
+        setUserRole(null);
+        setRoleLoading(false);
+      }
+    };
+    checkRole();
+  }, [session]);
 
   // Check if database migration is complete
   useEffect(() => {
@@ -455,7 +478,34 @@ function App() {
     }
   };
 
+  // Logout handler
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    setSession(null);
+    setUserRole(null);
+  };
+
   if (!session) return <Login />;
+  
+  // Show loading while checking role
+  if (roleLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="text-center">
+          <Loader2 className="w-8 h-8 animate-spin text-blue-600 mx-auto mb-2" />
+          <p className="text-gray-600">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+  
+  // Show Admin Portal for admin users
+  if (session && userRole === 'admin') {
+    return <AdminPortal 
+      userEmail={session.user.email} 
+      onLogout={handleLogout} 
+    />;
+  }
   
   // SCREEN 1: Dashboard - Choose Company
   if (currentScreen === 'dashboard') {
@@ -463,7 +513,7 @@ function App() {
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
           <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
-          <button onClick={() => { supabase.auth.signOut(); setSession(null); }} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+          <button onClick={handleLogout} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
         </div>
         <Dashboard 
           userEmail={session.user.email} 

@@ -179,9 +179,6 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
       <div className="grid gap-4">
         {history.map(session => {
           const hasProgress = session.current_act_index !== null || session.current_question_index !== null;
-          const progressText = hasProgress 
-            ? `Resume from Question ${(session.current_question_index || 0) + 1}`
-            : 'Start audit';
           
           const lastSavedText = session.last_saved_at 
             ? `Last saved: ${new Date(session.last_saved_at).toLocaleDateString()} ${new Date(session.last_saved_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`
@@ -200,11 +197,6 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
                   <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
                     <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
                     <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
-                    {hasProgress && (
-                      <span className="flex items-center gap-1 text-orange-600">
-                        <Clock size={12}/> {progressText}
-                      </span>
-                    )}
                   </div>
                   {lastSavedText && (
                     <div className="text-xs text-gray-400 mt-1">{lastSavedText}</div>
