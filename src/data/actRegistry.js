@@ -1,6 +1,7 @@
 // Central registry for all available acts
 import factoriesActData from './factoriesAct.json';
 import maharashtraFactoriesRulesData from './factoriesRule.json';
+import codeOnWagesData from './codeOnWages.json';
 
 export const AVAILABLE_ACTS = [
   {
@@ -18,6 +19,14 @@ export const AVAILABLE_ACTS = [
     table: 'maharashtra_factories_rules_checklist',
     data: maharashtraFactoriesRulesData,
     shortName: 'MH Factory Rules'
+  },
+  {
+    id: 'code_on_wages_2019',
+    name: 'The Code on Wages, 2019',
+    description: 'Central Act for wage standards, equal remuneration, and payment regulations',
+    table: 'code_on_wages_checklist',
+    data: codeOnWagesData,
+    shortName: 'Code on Wages'
   }
 ];
 

@@ -1,0 +1,1541 @@
+[
+  {
+    "audit_item_id": "SS_CODE-SEC-03-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 3(1)",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "Has the establishment obtained valid registration under the Code on Social Security, or does it hold a valid deemed registration from previous central labour laws?",
+    "applicability_criteria": "All establishments to which the Code applies (typically employing 10 or more persons, or 20 for EPF)",
+    "simplified_guidance": "1. Verify if the establishment has a new registration certificate under the Code 2020.\n2. If not, verify if it holds a valid registration under previous acts (EPF Act, ESI Act) which is deemed valid.\n3. Ensure the registration is active and not suspended.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Registration Certificate or valid LIN (Labour Identification Number)",
+      "delay_proof": "Application for registration acknowledgment"
+    },
+    "legal_text": "Every establishment to which this Code applies shall be electronically or otherwise, registered within such time and in such manner as may be prescribed by the Central Government: Provided that the establishment which is already registered under any other Central labour law for the time being in force shall not be required to obtain registration again under this Code and such registration shall be deemed to be registration for the purposes of this Code."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-03-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 3(2)",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "If the establishment is in the process of closure, has an application for cancellation of registration been submitted?",
+    "applicability_criteria": "Establishments covered under Chapter III (EPF) or Chapter IV (ESIC) whose business activities are closing",
+    "simplified_guidance": "1. Identify if the business activity has ceased or is in the process of closure.\n2. Check if a formal application for cancellation of registration has been filed.\n3. Verify acknowledgement of the cancellation request.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of cancellation application filed electronically",
+      "delay_proof": "Internal closure memos or board resolutions"
+    },
+    "legal_text": "Any establishment to which Chapter III or Chapter IV applies, and whose business activities are in the process of closure, may make an application for cancellation of registration granted under this section."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-142-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 142(1)",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "Has the establishment ensured that employees have established their identity via Aadhaar for registration as members or beneficiaries?",
+    "applicability_criteria": "All employees seeking registration, benefits, or payments under the Code",
+    "simplified_guidance": "1. Review the employee onboarding process.\n2. Verify if Aadhaar numbers are collected and seeded into the social security system (EPF/ESIC portals).\n3. Ensure foreigners have submitted Aadhaar upon becoming residents.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Employee records showing Aadhaar seeding status in UAN/IP accounts",
+      "delay_proof": "Proof of application for Aadhaar enrollment"
+    },
+    "legal_text": "An employee or unorganised worker or any other person, as the case may be, for registration as member or beneficiary... shall establish his identity or, as the case may be, the identity of his family members or dependants through Aadhaar number..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-145-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 145",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "In case of transfer of establishment ownership, has the liability for due amounts up to the transfer date been cleared or jointly acknowledged?",
+    "applicability_criteria": "Establishments undergoing transfer by sale, gift, lease, or license",
+    "simplified_guidance": "1. Review transfer deeds or sale agreements.\n2. Confirm if a 'No Dues Certificate' was obtained regarding social security cess/liabilities.\n3. Verify that the transferee is aware of joint and several liability for pre-transfer dues.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Transfer Deed containing liability clauses; Clearance certificates from PF/ESI authorities",
+      "delay_proof": "Pending application for liability assessment"
+    },
+    "legal_text": "Where an employer transfers his establishment in whole or in part, by sale, gift, lease or licence or in any other manner whatsoever, the employer and the person to whom the establishment is so transferred shall jointly and severally be liable to pay the amount due in respect of any liabilities, cess or any other amount payable under this Code in respect of the periods up to the date of such transfer"
+  },
+  {
+    "audit_item_id": "SS_CODE-SCH-01-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "First Schedule (Applicability)",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "Does the establishment meet the employee threshold for mandatory EPF and ESIC coverage as per the First Schedule?",
+    "applicability_criteria": "All establishments",
+    "simplified_guidance": "1. Calculate total employee headcount (including contract labor).\n2. If count >= 20, EPF Chapter III applies.\n3. If count >= 10, ESIC Chapter IV applies.\n4. Ensure compliance if thresholds are met.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Muster roll; Wage register; EPF/ESIC Challans",
+      "delay_proof": "Voluntary coverage application if below threshold"
+    },
+    "legal_text": "Applicability: Chapter III Employees' Provident Fund: Every establishment in which twenty or more employees are employed. Chapter IV Employees' State Insurance Corporation: Every establishment in which ten or more persons are employed other than a seasonal factory."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-01-08",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 1(8)",
+      "category": "Establishment Registration and Applicability"
+    },
+    "question_text": "Does the establishment continue to maintain compliance even if the employee count has fallen below the statutory threshold?",
+    "applicability_criteria": "Establishments where employee count has dropped below 10 (ESIC) or 20 (EPF)",
+    "simplified_guidance": "1. Check historical employee counts to determine initial coverage date.\n2. Compare with current headcount.\n3. Verify that contributions continue even if current headcount is below the threshold, as coverage is perpetual once applied.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Continuous contribution history despite headcount drop",
+      "delay_proof": "Exemption application (if filed)"
+    },
+    "legal_text": "Notwithstanding anything contained in sub-section (4), an establishment to which any Chapter applies at the first instance shall continue to be applied thereafter even if the number of employees therein at any subsequent time falls below the threshold specified in the First Schedule in respect of that Chapter."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-16-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 16(1)(a)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "Does the employer deposit 10% (or 12% as applicable) of wages as provident fund contribution for every employee, including those employed through contractors?",
+    "applicability_criteria": "Establishments covered under Chapter III (EPF) employing 20 or more employees",
+    "simplified_guidance": "1. Verify the total wages payable to employees (direct and contract).\n2. Confirm if the employer's contribution is at least 10% (or 12% if notified) of wages.\n3. Ensure the employee's matching contribution is deducted and deposited.\n4. Check challans for timely deposit.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1 to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Electronic Challan cum Return (ECR); Wage Register",
+      "delay_proof": "Interest payment receipts for delayed remittance"
+    },
+    "legal_text": "The contributions paid by the employer to the fund shall be ten per cent. of the wages for the time being payable to each of the employees (whether employed by him directly or by or through a contactor), and the employee's contribution shall be equal to the contribution payable by the employer in respect of him and may, if any employee so desires, be an amount exceeding ten per cent. of the wages, subject to the condition that the employer shall not be under an obligation to pay any contribution over and above his contribution payable under this section..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-16-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 16(1)(b)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "Is the required portion of the employer's contribution (not exceeding 8.33%) correctly diverted to the Pension Fund?",
+    "applicability_criteria": "Establishments covered under the Employees' Pension Scheme",
+    "simplified_guidance": "1. Review the breakdown of the employer's contribution.\n2. Ensure the specific percentage (typically 8.33%) is allocated to the Pension Fund.\n3. Verify the remaining balance is credited to the Provident Fund.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "2 to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "ECR statement showing Pension Fund allocation",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The Pension Scheme, establish a Pension Fund in the manner specified in that scheme by that Government into which there shall be paid, from time to time, in respect of every employee who is a member of the Pension Scheme, such sums from the employer's contribution under clause (a) not exceeding eight and one-third per cent. of the wages or such per cent. of wages as may be notified by the Central Government..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-16-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 16(1)(c)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "Does the employer contribute the prescribed percentage (not exceeding 1%) of wages to the Deposit-Linked Insurance Fund?",
+    "applicability_criteria": "Establishments covered under the Employees' Deposit Linked Insurance Scheme (EDLI)",
+    "simplified_guidance": "1. Check the wages on which EDLI contribution is calculated.\n2. Verify the rate applied (currently capped at 0.5% or 1% as per notification).\n3. Ensure this is paid by the employer and not deducted from the employee.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "2 to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "ECR Challan showing EDLI payment",
+      "delay_proof": "Notice of default from PF department"
+    },
+    "legal_text": "The Insurance Scheme, establish a Deposit-Linked Insurance Fund in the manner specified in that scheme by that Government into which there shall be paid by the employer from time to time in respect of every such employee in relation to whom he is the employer, such amount, not being more than one per cent. of the wages or such per cent. of wages as may be notified by the Central Government for the time being payable in relation to such employee..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-17-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 17(1)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "Has the principal employer paid the contributions and administrative charges for employees engaged through contractors?",
+    "applicability_criteria": "Principal employers engaging contract labor",
+    "simplified_guidance": "1. Identify all contractors and their employees deployed.\n2. Verify proof of EPF payment by the principal employer for these employees.\n3. If paid by the contractor, ensure the principal employer has validated the payment proofs.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "2 to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Contractor monthly bills with attached EPF challans",
+      "delay_proof": "Audit report of contractor compliance"
+    },
+    "legal_text": "The amount of contribution (that is to say, the employer's contribution as well as the employee's contribution in pursuance of any scheme and the employer's contribution in pursuance of the Insurance Scheme) and any charge for meeting the cost of administering the fund paid or payable by an employer in respect of an employee employed by or through a contractor may be recovered by such employer from the contractor..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-17-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 17(3)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "Is there evidence that the contractor has illegally deducted the employer's contribution or administrative charges from the employee's wages?",
+    "applicability_criteria": "Establishments engaging contractors",
+    "simplified_guidance": "1. Inspect a sample of contract worker wage slips.\n2. Verify that only the employee's share (matching contribution) is deducted.\n3. Ensure employer share and admin charges are not recovered from the worker.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Wage slips of contract employees",
+      "delay_proof": "Complaint records or grievance logs"
+    },
+    "legal_text": "Notwithstanding any contract to the contrary, no contractor shall be entitled to deduct the employer's contribution or the charges... from the wages payable to an employee employed by or through him or otherwise to recover such contribution or charges from such employee."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-21-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 21(1)",
+      "category": "EPF Compliance and Provident Fund"
+    },
+    "question_text": "If the establishment maintains its own provident fund account (Exempted Establishment), is the authorization valid and are accounts maintained as prescribed?",
+    "applicability_criteria": "Establishments employing 100+ persons that have opted out of the central scheme",
+    "simplified_guidance": "1. Verify the authorization order from the Central Government.\n2. Confirm the establishment has not committed default in the last 3 years.\n3. Check if returns and account maintenance comply with the Provident Fund Scheme.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Exemption Authorization Order; Audit Reports of Trust",
+      "delay_proof": "Pending renewal application"
+    },
+    "legal_text": "The Central Government may, on an application made to it in this behalf by the employer and the majority of employees in relation to an establishment employing one hundred or more persons, authorise the employer by an order in writing, to maintain a provident fund account in relation to the establishment, in such manner as may be prescribed by the Central Government..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-28-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 28(1)",
+      "category": "ESIC Compliance and State Insurance"
+    },
+    "question_text": "Has the employer insured every eligible employee (including contract labor) electronically or otherwise as prescribed?",
+    "applicability_criteria": "Establishments covered under Chapter IV (ESIC) employing 10 or more persons",
+    "simplified_guidance": "1. Review the list of all employees (direct and contract) drawing wages within the ESI ceiling.\n2. Verify against the insurance numbers (IP Numbers) generated in the ESIC portal.\n3. Ensure new joiners are registered within the prescribed timeline.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "ESI Return of Contribution (RC); IP Registration Reports",
+      "delay_proof": "Pending registration queue screenshots"
+    },
+    "legal_text": "Subject to the provisions of this Code, every employee in an establishment to which this Chapter applies shall be insured in such manner whether electronically or otherwise, as may be prescribed by the Central Government."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-31-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 31(1)",
+      "category": "ESIC Compliance and State Insurance"
+    },
+    "question_text": "Does the employer deposit both the employer's and employee's contribution for every employee, including those employed through contractors?",
+    "applicability_criteria": "All covered establishments",
+    "simplified_guidance": "1. Check the total contribution liability calculated on monthly wages.\n2. Verify that the employer pays the total amount (Employer Share + Employee Share) to the Corporation.\n3. Confirm this is done for direct and contract employees alike.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1 to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Monthly ESI Challan receipts",
+      "delay_proof": "Interest calculation for late payment"
+    },
+    "legal_text": "The employer shall pay in respect of every employee, whether directly employed by him or by or through a contractor, both the employer's contribution and the employee's contribution."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-31-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 31(2)",
+      "category": "ESIC Compliance and State Insurance"
+    },
+    "question_text": "Are employee contribution deductions strictly limited to the wages of the specific period for which the contribution is payable?",
+    "applicability_criteria": "All covered establishments deducting employee share",
+    "simplified_guidance": "1. Audit wage slips and deduction registers.\n2. Ensure no 'back-dated' deductions are made from current wages for past periods (unless allowed by specific regulation).\n3. Verify deductions match the wages earned in that specific month.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Wage slips; Register of Wages",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that no such deduction shall be made from any wages other than such as relates to the period or part of the period in respect of which the contribution is payable or in excess of the sum representing the employee's contribution for the period."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-31-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 31(3)",
+      "category": "ESIC Compliance and State Insurance"
+    },
+    "question_text": "Has the employer ensured that the employer's share of the contribution is NOT recovered from the employee's wages?",
+    "applicability_criteria": "All covered establishments",
+    "simplified_guidance": "1. Compare the total contribution rate with the deduction rate on wage slips.\n2. Confirm only the employee share (e.g., 0.75% or as notified) is deducted.\n3. Ensure the employer share (e.g., 3.25%) is borne as a business expense.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Wage Sheet showing gross vs net pay; Contribution breakdown",
+      "delay_proof": "Refund records if accidental deduction occurred"
+    },
+    "legal_text": "Notwithstanding any contract to the contrary, neither the employer nor the contractor shall be entitled to deduct the employer's contribution from any wages payable to an employee or otherwise to recover it from him."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-31-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 31(7)",
+      "category": "ESIC Compliance and State Insurance"
+    },
+    "question_text": "Does the contractor maintain a register of employees and submit it to the principal employer before settlement of dues?",
+    "applicability_criteria": "Principal employers engaging contractors",
+    "simplified_guidance": "1. Request the 'Register of Employees' from the contractor.\n2. Verify the principal employer reviews this before releasing payments to the contractor.\n3. Ensure the register lists all contract workers covered under ESIC.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Contractor's Employee Register; Proof of submission to Principal Employer",
+      "delay_proof": "Correspondence demanding registers"
+    },
+    "legal_text": "The contractor shall maintain a register of employees employed by or through him as provided in the regulations and submit the same to the employer before the settlement of any amount payable under sub-section (6)."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-53-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 53(1)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Does the employer pay gratuity to eligible employees upon termination of employment after five years of continuous service?",
+    "applicability_criteria": "All establishments where gratuity is applicable",
+    "simplified_guidance": "1. Identify employees separated due to superannuation, retirement, resignation, death, or disablement.\n2. Verify if they completed 5 years of continuous service (except in case of death/disablement/fixed term).\n3. Check proof of payment of gratuity within the statutory timeline.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Full & Final Settlement records; Bank transfer receipts",
+      "delay_proof": "Interest payment records"
+    },
+    "legal_text": "Gratuity shall be payable to an employee on the termination of his employment after he has rendered continuous service for not less than five years,- (a) on his superannuation; or (b) on his retirement or resignation; or (c) on his death or disablement due to accident or disease; or (d) on termination of his contract period under fixed term employment; or (e) on happening of any such event as may be notified by the Central Government..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-53-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 53(2)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Is gratuity calculated correctly at the rate of 15 days' wages for every completed year of service (or part thereof exceeding six months)?",
+    "applicability_criteria": "All establishments paying gratuity",
+    "simplified_guidance": "1. Check the calculation sheet for separated employees.\n2. Ensure the rate is based on the last drawn wage.\n3. Verify the formula: (Monthly Wage / 26) * 15 * Years of Service.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Gratuity calculation worksheets",
+      "delay_proof": "Correction memos for underpayment"
+    },
+    "legal_text": "For every completed year of service or part thereof in excess of six months, the employer shall pay gratuity to an employee at the rate of fifteen days' wages or such number of days as may be notified by the Central Government, based on the rate of wages last drawn by the employee concerned..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-53-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 53(2) Proviso",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Has the employer paid gratuity on a pro rata basis to fixed-term employees, regardless of the five-year continuous service requirement?",
+    "applicability_criteria": "Establishments employing Fixed Term Employment (FTE) staff",
+    "simplified_guidance": "1. Identify fixed-term employees whose contracts ended.\n2. Ensure they received gratuity proportional to their service period even if less than 5 years.\n3. Verify payment records.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "FTE Contracts; Final Settlement Statements",
+      "delay_proof": "Grievance records from FTE staff"
+    },
+    "legal_text": "Provided also that in the case of an employee employed on fixed term employment or a deceased employee, the employer shall pay gratuity on pro rata basis."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-55-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 55(1)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Has every employee who completed one year of service made a nomination for gratuity?",
+    "applicability_criteria": "All employees with >1 year service",
+    "simplified_guidance": "1. Request the file of gratuity nominations (Form F/relevant form).\n2. Check if employees with >1 year service have submitted nominations.\n3. Ensure nominations are updated if the employee acquires a family later.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Safe custody of Nomination Forms",
+      "delay_proof": "Circulars asking employees to submit nominations"
+    },
+    "legal_text": "Each employee, who has completed one year of service, shall make, a nomination within such time, in such form and in such manner, as may be prescribed by the appropriate Government."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-56-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 56(2)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Does the employer determine the gratuity amount and issue a written notice to the payee and competent authority as soon as it becomes payable?",
+    "applicability_criteria": "Upon any termination of employment where gratuity applies",
+    "simplified_guidance": "1. Check records of recent exits.\n2. Look for the 'Notice of Determination' of gratuity amount sent to the employee.\n3. Verify if a copy was sent to the Competent Authority (if required by state rules).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Notice of Determination (Form L equivalent)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "As soon as gratuity becomes payable, the employer shall, whether an application referred to in sub-section (1) has been made or not, determine the amount of gratuity and give notice in writing to the person to whom the gratuity is payable and also to the competent authority specifying the amount of gratuity so determined."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-56-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 56(3)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Is the gratuity amount paid within thirty days from the date it becomes payable?",
+    "applicability_criteria": "All gratuity payments",
+    "simplified_guidance": "1. Compare the 'Date of Leaving' with the 'Date of Gratuity Payment'.\n2. Ensure the gap is <= 30 days.\n3. If delayed, check if simple interest was paid for the delay.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Bank transaction logs; Payment receipts",
+      "delay_proof": "Proof of interest payment calculated at notified rates"
+    },
+    "legal_text": "The employer shall arrange to pay the amount of gratuity within thirty days from the date it becomes payable to the person to whom the gratuity is payable."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-57-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 57(1)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Has the employer obtained compulsory insurance from a regulated insurance company for liability towards gratuity payment?",
+    "applicability_criteria": "All employers (except Central/State Govt controlled) once notified",
+    "simplified_guidance": "1. Verify if the appropriate Government has notified the date for compulsory insurance.\n2. If notified, check the valid insurance policy document from an IRDA-regulated insurer.\n3. Ensure the policy covers the actuarial gratuity liability.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Gratuity Insurance Policy Certificate",
+      "delay_proof": "Application for Approved Gratuity Fund (if opting for exemption)"
+    },
+    "legal_text": "With effect from such date as may be notified by the appropriate Government in this behalf, every employer... shall... obtain an insurance in the manner prescribed by the Central Government, for his liability for payment towards the gratuity under this Chapter..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-57-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 57(3)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Has the employer registered the establishment with the competent authority regarding the gratuity fund/insurance?",
+    "applicability_criteria": "All employers subject to compulsory gratuity insurance",
+    "simplified_guidance": "1. Check if the establishment is registered specifically for Gratuity purposes under Section 57.\n2. Ensure registration was done within the prescribed time after obtaining insurance or setting up an approved fund.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Registration Certificate from Competent Authority",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "For the purposes of effectively implementing the provisions of this section, every employer shall within such time as may be prescribed by the Central Government get his establishment registered with the competent authority in the manner prescribed by the appropriate Government..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-57-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 57(5)",
+      "category": "Gratuity Management"
+    },
+    "question_text": "Is the employer ensuring timely payment of insurance premiums or contributions to the approved gratuity fund?",
+    "applicability_criteria": "Employers with Gratuity Insurance or Approved Gratuity Fund",
+    "simplified_guidance": "1. Check premium payment receipts to the insurance company.\n2. If maintaining a Trust Fund, check contribution records.\n3. Failure to pay premium makes the employer personally liable for the gratuity plus interest.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Premium Receipts; Fund Contribution Challans",
+      "delay_proof": "Notices from Insurer regarding lapse"
+    },
+    "legal_text": "Where an employer fails to make any payment by way of premium in respect of the insurance referred to in sub-section (1) or by way of contribution to an approved gratuity fund... he shall be liable to pay the amount of gratuity due under this Chapter (including interest, if any, for delayed payments) forthwith to the competent authority."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-60-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 60(1) & 60(2)",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Does the employer pay maternity benefit at the rate of average daily wage to eligible women for the period of actual absence (up to 26 weeks)?",
+    "applicability_criteria": "Establishments employing women who have worked for at least 80 days in the 12 months preceding delivery",
+    "simplified_guidance": "1. Verify the list of women who claimed maternity leave.\n2. Check if they worked for at least 80 days in the preceding 12 months.\n3. Confirm payment is calculated at the average daily wage rate.\n4. Ensure payment covers the actual absence period, subject to the maximum of 26 weeks (or 12 weeks for mothers with 2+ surviving children).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Maternity Benefit Payment Register; Bank transfer records",
+      "delay_proof": "Medical certificates proving delivery date vs payment date"
+    },
+    "legal_text": "Subject to the other provisions of this Code, every woman shall be entitled to, and her employer shall be liable for, the payment of maternity benefit at the rate of the average daily wage for the period of her actual absence, that is to say, the period immediately preceding the day of her delivery, and any period immediately following that day... No woman shall be entitled to maternity benefit unless she has actually worked in an establishment of the employer from whom she claims maternity benefit, for a period of not less than eighty days in the twelve months immediately preceding the date of her expected delivery."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-64-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 64",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Does the employer pay the medical bonus of Rs. 3,500 (or as notified) to women entitled to maternity benefit, if no free pre-natal and post-natal care is provided?",
+    "applicability_criteria": "Employers who do not provide free pre-natal confinement and post-natal care",
+    "simplified_guidance": "1. Identify women receiving maternity benefits.\n2. Determine if the employer provided free medical care (pre/post-natal).\n3. If not, verify payment of the medical bonus (currently Rs. 3,500 unless notified otherwise).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payment vouchers/receipts for Medical Bonus",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Every woman entitled to maternity benefit under this Chapter shall also be entitled to receive from her employer a medical bonus of three thousand five hundred rupees or such amount as may be notified by the Central Government, if no pre-natal confinement and post-natal care is provided for by the employer free of charge."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-67-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 67(1)",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "If the establishment has fifty or more employees, has a creche facility been provided within the prescribed distance?",
+    "applicability_criteria": "Establishments with 50 or more employees",
+    "simplified_guidance": "1. Check the total employee count (including contract workers).\n2. If 50+, inspect the premises for a functional creche.\n3. If no internal creche, verify an agreement/arrangement with a common facility within the prescribed distance.\n4. Confirm women are allowed 4 visits daily.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Photographs of Creche; Agreement with external Creche facility",
+      "delay_proof": "Layout plans approved for creche construction"
+    },
+    "legal_text": "Every establishment to which this Chapter applies, in which fifty employees or such number of employees as may be prescribed by the Central Government, are employed shall have the facility of crèche within such distance as may be prescribed by the Central Government, either separately or along with common facilities... Provided that the employer shall allow four visits a day to the crèche by the woman, which shall also include the intervals of rest allowed to her."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-68-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 68(1)",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Has the employer ensured that no woman is discharged or dismissed during her absence on maternity leave?",
+    "applicability_criteria": "Establishments with women employees availing maternity leave",
+    "simplified_guidance": "1. Review termination/dismissal records.\n2. Cross-reference with the list of women on maternity leave.\n3. Ensure no termination notices were served during the leave period (except for gross misconduct as prescribed).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Employee Exit Records; Maternity Leave Log",
+      "delay_proof": "Disciplinary proceedings records for gross misconduct"
+    },
+    "legal_text": "When a woman absents herself from work in accordance with the provisions of this Chapter, it shall be unlawful for her employer to discharge or dismiss her during or on account of such absence or to give notice of discharge or dismissal on such a day that the notice will expire during such absence, or to vary to her disadvantage any of the conditions of her service"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-59-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 59(1) & 59(2)",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Does the employer strictly prohibit employing women during the six weeks immediately following their delivery or miscarriage?",
+    "applicability_criteria": "All establishments employing women",
+    "simplified_guidance": "1. Check records of women who recently delivered a child or had a miscarriage.\n2. Verify attendance registers to ensure they did not work during the 6 weeks post-event.\n3. Confirm no wages were paid for 'work done' during this prohibited period (maternity benefit is separate).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Attendance Register; Leave Records",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer shall knowingly employ a woman in any establishment during the six weeks immediately following the day of her delivery, miscarriage or medical termination of pregnancy. No woman shall work in any establishment during the six weeks immediately following the day of her delivery, miscarriage or medical termination of pregnancy."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-66-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 66",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Are nursing breaks provided to women returning to duty after delivery until the child attains fifteen months of age?",
+    "applicability_criteria": "Establishments with women employees who have children < 15 months old",
+    "simplified_guidance": "1. Identify women who returned from maternity leave.\n2. Verify if they are granted two additional breaks daily for nursing.\n3. Ensure these breaks are in addition to standard rest intervals.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Internal Policy on Nursing Breaks; Employee confirmation",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Every woman delivered of a child who returns to duty after such delivery shall, in addition to the interval for rest allowed to her, be allowed in the course of her daily work two breaks of such duration as may be prescribed by the Central Government, for nursing the child until the child attains the age of fifteen months."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-71-01",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 71",
+      "category": "Maternity Benefits and Facilities"
+    },
+    "question_text": "Is an abstract of the maternity benefit provisions displayed in the local language at a conspicuous place?",
+    "applicability_criteria": "All establishments employing women",
+    "simplified_guidance": "1. Inspect the notice board of the establishment.\n2. Check for the abstract of Maternity Benefit provisions.\n3. Ensure it is in the language understood by the majority of workers (local language).",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Photographs of Notice Board",
+      "delay_proof": "Print order for notices"
+    },
+    "legal_text": "An abstract of the provisions of this Chapter and the rules relating thereto in the language or languages of the locality shall be exhibited in a conspicuous place by the employer in every part of the establishment in which women are employed."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-82-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 82(4)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "Does the employer maintain a notice-book at the premises to record accidents, and is it readily accessible to employees?",
+    "applicability_criteria": "Establishments notified by the appropriate Government (generally factories, mines, construction)",
+    "simplified_guidance": "1. Verify if the establishment is required to maintain an accident notice-book.\n2. Inspect the notice-book to ensure it allows entry of accident details.\n3. Ensure it is accessible to employees or their representatives at all reasonable times.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical or Electronic Accident Notice Book",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The appropriate Government may require that any class of employers as may be prescribed by that Government shall maintain, at their premises at which employees are employed, a notice-book, in such form as may be prescribed by that Government, which shall be readily accessible at all reasonable times to any injured employee employed on the premises and to any person acting bona fide on his behalf."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-73-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 73(1)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "Has the employer sent a report to the competent authority within seven days of any death or serious bodily injury occurring on the premises?",
+    "applicability_criteria": "All employers where an accident results in death or serious bodily injury",
+    "simplified_guidance": "1. Check accident records for any fatalities or 'serious bodily injuries' (involving loss of limb/sight/hearing or 20+ days absence).\n2. Verify if a report was sent to the Competent Authority within 7 days of the incident.\n3. Confirm acknowledgment of receipt.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Accident Report submitted to Authority; Postal/Digital receipt",
+      "delay_proof": "Late submission records"
+    },
+    "legal_text": "Where, by any law for the time being in force, notice is required to be given to any authority, by or on behalf of an employer, of any accident occurring in his premises which results in death or serious bodily injury, the person required to give the notice shall, within seven days of the death or serious bodily injury, send a report to the competent authority giving the circumstances attending the death or serious bodily injury"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-81-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 81(1)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "In case of fatal accidents or lump sum payments to legal disabilities/women, has the compensation been deposited with the competent authority instead of direct payment?",
+    "applicability_criteria": "Cases involving death of employee or lump sum compensation to women/persons under legal disability",
+    "simplified_guidance": "1. Identify cases of fatal accidents.\n2. Ensure compensation was NOT paid directly to family members (except small advances).\n3. Verify proof of deposit with the Competent Authority (Commissioner).\n4. Direct payments are not recognized as valid compensation discharge.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Challan/Receipt of deposit with Competent Authority",
+      "delay_proof": "Correspondence regarding delay in deposit"
+    },
+    "legal_text": "No payment of compensation in respect of an employee whose injury has resulted in death, and no payment of a lump sum as compensation to a woman or a person under a legal disability, shall be made otherwise than by deposit with the competent authority, and no such payment made directly by an employer shall be deemed to be a payment of compensation"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-76-07",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 76(7)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "If an injury resulted in death, has the employer deposited the funeral expense amount (minimum Rs. 15,000) with the competent authority?",
+    "applicability_criteria": "Establishments where an employment injury resulted in death",
+    "simplified_guidance": "1. Identify fatal accident cases.\n2. Check if the funeral expense amount (Rs. 15,000 or as notified) was deposited.\n3. This is in addition to the standard compensation calculation.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of deposit for funeral expenses",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "If the injury of the employee results in his death, the employer shall, in addition to the compensation under sub-section (1), deposit with the competent authority a sum of not less than fifteen thousand rupees or such amount as may be prescribed by the State Government, for payment of the same to the eldest surviving dependant of the employee towards the expenditure of the funeral of such employee..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-77-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 77(1) & 77(3)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "Has the employer paid interest and damages for any compensation not paid within one month of the due date?",
+    "applicability_criteria": "Cases where compensation payment was delayed beyond 1 month",
+    "simplified_guidance": "1. Check the date the compensation fell due (date of accident/injury).\n2. Check the actual date of payment/deposit.\n3. If the gap > 1 month, verify if interest and damages (up to 50% of arrears) were paid.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Order from Competent Authority; Payment receipt for interest/damages",
+      "delay_proof": "Show cause notice for delay"
+    },
+    "legal_text": "Compensation under section 76 shall be paid as soon as it falls due... Where any employer is in default in paying the compensation due under this Chapter within one month from the date it fell due, the competent authority shall... direct that the employer shall, in addition to the amount of the arrears, pay interest... and... pay a further sum not exceeding fifty per cent. of such amount of arrears by way of damages"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-88-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 88(1)",
+      "category": "Employee Compensation and Accidents"
+    },
+    "question_text": "Has the employer submitted the required statement regarding fatal accidents within 30 days of receiving a notice from the competent authority?",
+    "applicability_criteria": "Employers receiving notice from Authority regarding a fatal accident",
+    "simplified_guidance": "1. Check if any notice was received from the Competent Authority regarding a death.\n2. Verify if the employer submitted the statement (Form) admitting or denying liability.\n3. Ensure submission was within 30 days of service of notice.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Statement sent to Authority; Postal/Digital receipt",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where a competent authority receives information from any source that an employee has died as a result of an accident... he may send... a notice to the employee's employer requiring him to submit, within thirty days of the service of the notice, a statement... giving the circumstances attending the death of the employee, and indicating whether, in the opinion of the employer, he is or is not liable to deposit compensation..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-100-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 100(1)",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "Has the employer paid the welfare cess at the notified rate (between 1% and 2%) of the cost of construction?",
+    "applicability_criteria": "Employers undertaking building or other construction work",
+    "simplified_guidance": "1. Calculate the total cost of construction (excluding land cost and compensation paid).\n2. Apply the notified cess rate (typically 1%).\n3. Verify proof of deposit to the Building Workers' Welfare Board.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Cess payment challans; Bank receipts",
+      "delay_proof": "Assessment order from Cess Collector"
+    },
+    "legal_text": "There shall be levied and collected a cess for the purposes of social security and welfare of building workers at such rate not exceeding two per cent. but not less than one per cent. of the cost of construction incurred by an employer, as the Central Government may, by notification, from time to time, specify."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-100-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 100(2)",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "For Government or Public Sector Undertaking projects, has the cess been deducted at source from the bills paid to the contractor?",
+    "applicability_criteria": "Construction projects involving Govt/PSU or Local Authority approval",
+    "simplified_guidance": "1. Review contract agreements for Govt/PSU projects.\n2. Check payment vouchers/bills for deduction of cess at source.\n3. Ensure the deducted amount is deposited to the Welfare Board.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "TDS Certificates; Bill payment records showing deduction",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The cess levied under sub-section (1) shall be collected from every employer... including deduction at source in relation to a building or other construction work of a Government or of a public sector undertaking or advance collection through a local authority..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-103-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 103(1)",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "Has the employer filed the self-assessment return and paid the remaining cess within sixty days of completion of the construction work?",
+    "applicability_criteria": "Employers upon completion of each building/construction work",
+    "simplified_guidance": "1. Identify the date of completion of the construction project.\n2. Verify if the self-assessment return was filed within 60 days (or notified period).\n3. Confirm payment of any balance cess amount after adjusting advance payments.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Self-Assessment Return (Form I); Final Payment Receipt",
+      "delay_proof": "Notice for assessment from Authority"
+    },
+    "legal_text": "The employer shall, within sixty days or such period as may be notified by the Central Government of the completion of his each building and other construction work, pay such cess (adjusting the advance cess already paid under section 100) payable under this Chapter on the basis of his self-assessment... and after such payment of cess, he shall file a return under clause (d) of section 123."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-101-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 101",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "If cess payment was delayed, has the employer paid the applicable interest for the period of delay?",
+    "applicability_criteria": "Employers who failed to pay cess within the prescribed time",
+    "simplified_guidance": "1. Identify any late payments of cess.\n2. Calculate the period of delay from due date to actual payment date.\n3. Verify if interest at the prescribed rate (typically 2% per month or as notified) was paid.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Interest payment challan",
+      "delay_proof": "Demand notice for interest"
+    },
+    "legal_text": "If any employer fails to pay any amount of cess payable under section 100 within such time as may be prescribed by the appropriate Government, such employer shall be liable to pay interest at such rate as may be prescribed by the Central Government, on the amount of cess, to be paid, for the period from the date on which such payment is due till such amount is actually paid."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-123-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 123(a)(viii)",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "Does the employer maintain records containing details as to the cess paid in respect of building and other construction work?",
+    "applicability_criteria": "All employers liable to pay BOCW Cess",
+    "simplified_guidance": "1. Inspect the statutory registers maintained by the establishment.\n2. Check for a specific section or register recording cess calculations and payments.\n3. Ensure details match the filed returns.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Register of Cess Payment",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer of an establishment shall... maintain records and registers... containing... details as to cess paid in respect of building and other construction work"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-104-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 104",
+      "category": "Building and Construction Workers (BOCW) Cess"
+    },
+    "question_text": "Has the employer avoided penalties by ensuring all cess payments assessed under Section 103 are paid within the date specified in the order?",
+    "applicability_criteria": "Employers who have received an assessment order",
+    "simplified_guidance": "1. Check for any assessment orders received from the Authority.\n2. Verify if the assessed amount was paid by the specified date.\n3. Failure to pay attracts a penalty up to the amount of cess (100% penalty).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payment receipt against Assessment Order",
+      "delay_proof": "Appeal filed against the order"
+    },
+    "legal_text": "If any amount of cess payable by any employer under section 103 is not paid within the date specified in the order of assessment... the authority... may... impose on such employer a penalty not exceeding the amount of cess"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-114-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 114(4)",
+      "category": "Gig and Platform Worker Obligations"
+    },
+    "question_text": "Does the aggregator pay the social security contribution at the notified rate (between 1% and 2% of annual turnover) to the Social Security Fund?",
+    "applicability_criteria": "Aggregators falling under categories specified in the Seventh Schedule (e.g., Ride sharing, Food delivery)",
+    "simplified_guidance": "1. Identify if the business falls under the Seventh Schedule (Ride sharing, Food delivery, Logistics, e-Marketplace, etc.).\n2. Calculate the annual turnover.\n3. Verify if the contribution (1-2% as notified) has been remitted to the Social Security Fund.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1 to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Challan of Contribution Payment; Audited Financial Statements",
+      "delay_proof": "Interest payment records"
+    },
+    "legal_text": "The contribution to be paid by the aggregators for the funding referred to in clause (ii) of sub-section (1) of section 141, shall be at such rate not exceeding two per cent., but not less than one per cent., as may be notified by the Central Government, of the annual turnover of every such aggregator who falls within a category of aggregators, as are specified in the Seventh Schedule"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-114-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 114(4) Proviso",
+      "category": "Gig and Platform Worker Obligations"
+    },
+    "question_text": "Does the aggregator ensure that the social security contribution does not exceed five per cent of the amount paid or payable to gig and platform workers?",
+    "applicability_criteria": "Aggregators liable to pay contribution",
+    "simplified_guidance": "1. Calculate the total amount paid/payable to gig workers during the financial year.\n2. Compare 5% of this amount with the calculated turnover-based contribution.\n3. Ensure the actual contribution paid is capped at this 5% limit if the turnover-based amount is higher.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Computation sheet comparing Turnover vs Worker Payouts",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that the contribution by an aggregator shall not exceed five per cent. of the amount paid or payable by an aggregator to gig workers and platform workers."
+  },
+  {
+    "audit_item_id": "SS_CODE-SCH-07-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Seventh Schedule & Section 114(4)",
+      "category": "Gig and Platform Worker Obligations"
+    },
+    "question_text": "Has the entity correctly classified itself as an aggregator under the specific categories listed in the Seventh Schedule?",
+    "applicability_criteria": "Entities operating digital platforms for services/goods",
+    "simplified_guidance": "1. Review the business model against the Seventh Schedule list (Ride sharing, Food/Grocery delivery, Logistics, e-Marketplace, Professional services, Healthcare, Travel, Content/Media, etc.).\n2. Ensure the entity is registered as an aggregator if it falls into these categories.\n3. Check if multiple distinct businesses are treated as separate aggregators.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Business Registration Documents; Self-Declaration",
+      "delay_proof": "Legal opinion on classification"
+    },
+    "legal_text": "The contribution to be paid by the aggregators... of every such aggregator who falls within a category of aggregators, as are specified in the Seventh Schedule... Explanation. For the purposes of this section, an aggregator having more than one business shall be treated as a separate business entity or aggregator."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-113-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 113(1) & 113(2)",
+      "category": "Gig and Platform Worker Obligations"
+    },
+    "question_text": "Are the gig workers and platform workers engaged by the aggregator registered with the appropriate Government portal using their Aadhaar?",
+    "applicability_criteria": "Aggregators engaging gig/platform workers",
+    "simplified_guidance": "1. Verify if the platform requires workers to submit Aadhaar and self-declaration during onboarding.\n2. Check if the aggregator facilitates the linking of workers to the government portal for unique ID generation.\n3. Ensure workers are 16 years of age or older.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Onboarding records; Worker unique IDs",
+      "delay_proof": "API integration logs with Govt portal"
+    },
+    "legal_text": "Every unorganised worker, gig worker or platform worker shall be required to be registered for the purposes of this Chapter... subject to... he has submitted a self-declaration electronically or otherwise... Every eligible unorganised worker, gig worker or platform worker... shall make an application for registration in such form along with such documents including Aadhaar number..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-123-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 123(a)",
+      "category": "Statutory Registers, Returns and Notices"
+    },
+    "question_text": "Does the employer maintain registers (electronically or otherwise) containing details of employees, muster roll, wages, overtime, leave, and other statutory particulars?",
+    "applicability_criteria": "All employers of an establishment to which the Code applies",
+    "simplified_guidance": "1. Verify existence of registers for: Muster Roll, Wages, Overtime, and Leave.\n2. Check if they contain specific details like Employee ID, days worked, hours worked, and deductions.\n3. Ensure records cover regular, contractual, and fixed-term employees.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Master Register; Wage Register (Form X equivalent)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer of an establishment shall maintain records and registers in the form prescribed by the appropriate Government, electronically or otherwise, containing such particulars and details with regard to persons employed, muster roll, wages and such other particulars and details... including... number of days for which work performed... wages paid... leave... overtime work and attendance..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-123-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 123(c)",
+      "category": "Statutory Registers, Returns and Notices"
+    },
+    "question_text": "Does the employer issue wage slips to all employees, in electronic forms or otherwise, before the payment of wages?",
+    "applicability_criteria": "All employers paying wages",
+    "simplified_guidance": "1. Select a sample of employees (including contract labor).\n2. Request copies of issued wage slips for the last 3 months.\n3. Confirm receipts or digital logs showing issuance to the employee.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Wage Slips; Email logs of distribution",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer of an establishment shall... issue wage slips to the employees, in electronic forms or otherwise"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-123-03",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 123(b)",
+      "category": "Statutory Registers, Returns and Notices"
+    },
+    "question_text": "Are statutory notices regarding social security provisions displayed at the workplace in a manner understood by the majority of employees?",
+    "applicability_criteria": "All physical workplaces/establishments",
+    "simplified_guidance": "1. Walk through the main entrance or notice board area.\n2. Check for abstracts of the Code/Schemes (EPF, ESIC, Gratuity, Maternity).\n3. Ensure they are in the local language or language understood by the majority.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photos of Notice Board",
+      "delay_proof": "Purchase order for signage"
+    },
+    "legal_text": "An employer of an establishment shall... display notices at the workplaces of the employees in such manner and form as may be prescribed by the appropriate Government"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-123-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 123(d)",
+      "category": "Statutory Registers, Returns and Notices"
+    },
+    "question_text": "Has the employer filed the required returns electronically to the specified authority within the prescribed period?",
+    "applicability_criteria": "All registered establishments",
+    "simplified_guidance": "1. Log into the Shram Suvidha Portal or relevant state portal.\n2. Verify the filing status of the Unified Annual Return or periodic returns.\n3. Check for acknowledgement receipts.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Return Acknowledgement Receipt (Form XIV equivalent)",
+      "delay_proof": "System error logs if filing failed"
+    },
+    "legal_text": "An employer of an establishment shall... file such return electronically or otherwise to such officer or authority in such manner and during such periods as may be prescribed by the appropriate Government"
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-124-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 124",
+      "category": "Statutory Registers, Returns and Notices"
+    },
+    "question_text": "Has the employer reduced the wages or benefits of any employee solely to offset the liability of social security contributions?",
+    "applicability_criteria": "All employers liable for contributions (EPF/ESIC)",
+    "simplified_guidance": "1. Compare wage structures before and after Code implementation or coverage.\n2. Check for reductions in 'Basic Wage' or removal of allowances that correspond to the employer's contribution cost.\n3. Interview employees regarding changes in total take-home pay vs gross pay.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Historical Wage Data comparison",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer in relation to an establishment to which this Code or any scheme framed thereunder applies shall, by reason only of his liability for the payment of any contribution under this Code... reduce whether directly or indirectly, the wages of any employee... or the total quantum of benefits to which such employee is entitled..."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-139-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 139(1)",
+      "category": "Vacancy Notification and Career Centers"
+    },
+    "question_text": "Does the employer report vacancies to the specified career center electronically or otherwise before filling them?",
+    "applicability_criteria": "All establishments (except Agriculture, Domestic Service, or those with <20 employees unless notified otherwise)",
+    "simplified_guidance": "1. Identify vacancies arising in the establishment.\n2. Verify if the vacancy was notified to the Career Center (e.g., National Career Service portal) before recruitment.\n3. Check acknowledgement receipt or posting confirmation.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of vacancy notification (CNV-1 or digital equivalent)",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The appropriate Government may, by notification, require that from such date as may be specified in the notification, the employer in every establishment or any class or category of establishments, before filling up any vacancy in any employment in that establishment or such class or category of establishments, as the case may be, shall report or cause to be reported, that vacancy to such career centre as may be specified in the notification, and the employer shall thereupon comply with such requisition."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-139-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 139(2)",
+      "category": "Vacancy Notification and Career Centers"
+    },
+    "question_text": "Does the employer file the required return regarding vacancies and employment to the concerned career center?",
+    "applicability_criteria": "Covered establishments under Chapter XIII",
+    "simplified_guidance": "1. Check the schedule for filing employment returns (quarterly/biennial).\n2. Verify submission of Form ER-I (Quarterly) and ER-II (Biennial) or their digital equivalents under the Code.\n3. Ensure returns are filed even if there are no new vacancies.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Filed Employment Returns (ER-I / ER-II); Submission Receipt",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "For the purposes of sub-section (1), the appropriate Government may prescribe... the manner and form of filing the return by the employer, to the concerned career centre."
+  },
+  {
+    "audit_item_id": "SS_CODE-SEC-140-01",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "Code on Social Security, 2020",
+      "section_reference": "Section 140",
+      "category": "Vacancy Notification and Career Centers"
+    },
+    "question_text": "Does the employer correctly identify vacancies that are excluded from mandatory reporting (e.g., duration less than 90 days, promotions)?",
+    "applicability_criteria": "Employers claiming exemption from reporting specific vacancies",
+    "simplified_guidance": "1. Review list of vacancies filled without reporting.\n2. Confirm if they fall under exclusions: duration < 90 days, internal promotion, absorption of surplus staff, or domestic service.\n3. Ensure standard vacancies are not misclassified to avoid reporting.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Appointment letters showing temporary duration (<90 days) or Promotion letters",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The provisions of section 139 shall not apply in relation to vacancies... in any employment the total duration of which is less than ninety days... vacancies which are proposed to be filled through promotion or by absorption of surplus staff of any branch or department of the same establishment"
+  }
+]

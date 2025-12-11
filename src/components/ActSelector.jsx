@@ -41,56 +41,58 @@ const ActSelector = ({ factoryName, location, onActsSelected }) => {
       </div>
 
       {/* Acts Selection Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+      <div className="space-y-4 mb-8">
         {AVAILABLE_ACTS.map(act => {
           const isSelected = selectedActs.includes(act.id);
           return (
             <div
               key={act.id}
               onClick={() => toggleAct(act.id)}
-              className={`p-6 rounded-xl border-2 transition-all cursor-pointer transform hover:scale-105 ${
+              className={`p-5 rounded-xl border-2 transition-all cursor-pointer hover:shadow-md ${
                 isSelected
-                  ? 'border-blue-500 bg-blue-50 shadow-lg shadow-blue-200'
-                  : 'border-gray-200 bg-white hover:border-blue-300 hover:shadow-md'
+                  ? 'border-blue-500 bg-blue-50 shadow-lg shadow-blue-100'
+                  : 'border-gray-200 bg-white hover:border-blue-300'
               }`}
             >
               {/* Selection Checkbox */}
-              <div className="flex items-start gap-4">
+              <div className="flex items-center gap-4">
                 <div className={`w-6 h-6 rounded-lg border-2 flex items-center justify-center flex-shrink-0 transition-all ${
                   isSelected
                     ? 'border-blue-600 bg-blue-600'
-                    : 'border-gray-300 bg-white group-hover:border-blue-400'
+                    : 'border-gray-300 bg-white'
                 }`}>
                   {isSelected && <Check size={16} className="text-white" strokeWidth={3} />}
                 </div>
 
-                <div className="flex-1">
-                  {/* Act Name */}
-                  <h3 className={`font-bold text-lg transition-colors ${
-                    isSelected ? 'text-blue-900' : 'text-gray-900'
-                  }`}>
-                    {act.name}
-                  </h3>
+                <div className="flex-1 flex items-center justify-between">
+                  <div className="flex-1">
+                    {/* Act Name and Badge on same line */}
+                    <div className="flex items-center gap-3 mb-2">
+                      <h3 className={`font-bold text-lg transition-colors ${
+                        isSelected ? 'text-blue-900' : 'text-gray-900'
+                      }`}>
+                        {act.name}
+                      </h3>
+                      <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-2 py-1 bg-gray-100 rounded">
+                        {act.shortName}
+                      </span>
+                    </div>
 
-                  {/* Short Name Badge */}
-                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mt-1 mb-3">
-                    {act.shortName}
-                  </p>
-
-                  {/* Description */}
-                  <p className={`text-sm leading-relaxed mb-3 ${
-                    isSelected ? 'text-blue-800' : 'text-gray-600'
-                  }`}>
-                    {act.description}
-                  </p>
+                    {/* Description */}
+                    <p className={`text-sm leading-relaxed ${
+                      isSelected ? 'text-blue-800' : 'text-gray-600'
+                    }`}>
+                      {act.description}
+                    </p>
+                  </div>
 
                   {/* Items Count */}
-                  <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-bold ${
+                  <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-bold ml-6 ${
                     isSelected
                       ? 'bg-blue-100 text-blue-700'
                       : 'bg-gray-100 text-gray-700'
                   }`}>
-                    <AlertCircle size={14} />
+                    <AlertCircle size={16} />
                     <span>{act.data.length} audit items</span>
                   </div>
                 </div>
