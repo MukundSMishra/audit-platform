@@ -11,7 +11,6 @@ import codeOnIndustrialDisputeData from './codeONIndustrialDispute.json';
 // ============================================
 // CENTRAL LABOUR ACTS (Chronological)
 // ============================================
-import factoriesActData from './factoriesAct.json';
 import childLabourActData from './childLabourAct.json';
 import sexualHarassmentActData from './sexualHarrasement.json';
 
@@ -79,16 +78,6 @@ export const AVAILABLE_ACTS = [
   // ============================================
   // CENTRAL LABOUR ACTS (Chronological)
   // ============================================
-  {
-    id: 'factories_act_1948',
-    name: 'The Factories Act, 1948',
-    description: 'Central Act for factory safety, health, welfare, and working conditions',
-    table: 'factories_act_checklist',
-    data: factoriesActData,
-    shortName: 'Factories Act',
-    year: 1948,
-    type: 'act'
-  },
   {
     id: 'child_labour_act_1986',
     name: 'The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986',
