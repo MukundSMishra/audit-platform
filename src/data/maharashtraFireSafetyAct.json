@@ -1,0 +1,1244 @@
+[
+  {
+    "audit_item_id": "MFPALSMA-S03-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Has the owner or occupier obtained the 'Provisional Fire Safety Approval' from the Chief Fire Officer or Director prior to the construction of the building?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I proposing new construction",
+    "simplified_guidance": "1. Verify if the building construction plans were submitted to the Fire Department.\\n2. Check for the 'Provisional Fire Safety Approval' document issued by the Chief Fire Officer (CFO) or Director.\\n3. Ensure this approval was obtained at the time of building plan approval and before the commencement of construction.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Provisional Fire Safety Approval Certificate",
+      "delay_proof": "Application acknowledgement for approval"
+    },
+    "legal_text": "The owner, or where the owner is not traceable, the occupier of any building as classified in Schedule-I or part of any such building, shall obtain necessary Provisional Fire Safety Approval or Final Fire Safety Approval or Renewal of Fire Safety Approval, as the case may be, from the Chief Fire Officer of the concerned local authority or planning authority... Explanation (a) 'Provisional Fire Safety Approval' means the recommendation given by the Director or Chief Fire Officer... at the time of building plan approval and before the construction thereof."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Has the owner or occupier obtained the 'Final Fire Safety Approval' upon completion of construction and before the building completion certificate was granted?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I upon completion of construction",
+    "simplified_guidance": "1. Confirm that construction is complete.\\n2. Request the 'Final Fire Safety Approval' certificate issued by the CFO or Director.\\n3. Verify that this approval was issued after the authority ascertained that fire safety measures were installed according to the Provisional Approval.\\n4. Ensure this certificate predates the Building Completion Certificate.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Final Fire Safety Approval Certificate",
+      "delay_proof": "Correspondence regarding final inspection"
+    },
+    "legal_text": "The owner... shall obtain necessary Provisional Fire Safety Approval or Final Fire Safety Approval... Explanation (b) 'Final Fire Safety Approval' means the certificate issued by the Director of Chief Fire Officer... after ascertaining that the fire prevention and life safety measures are in accordance with Provisional Fire Safety Approval before granting building completion certificate by the appropriate authority."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Is a valid 'Renewal of Fire Safety Approval' maintained for the building if required by relevant municipal acts or rules?",
+    "applicability_criteria": "Buildings where renewal is mandatory under relevant local Acts or Rules",
+    "simplified_guidance": "1. Check the date of the Final Fire Safety Approval.\\n2. Determine if the local municipal rules require periodic renewal of this certificate.\\n3. If required, inspect the current valid 'Renewal of Fire Safety Approval' certificate.\\n4. Ensure the renewal was issued by the Director or Chief Fire Officer.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Renewal of Fire Safety Approval Certificate",
+      "delay_proof": "Application for renewal"
+    },
+    "legal_text": "Explanation (c) 'Renewal of Fire Safety Approval' means the renewal of a certificate issued by the Director or Chief Fire Officer of the concerned local authority or planning authority: Provided that, renewal certificate shall be issued by the said authority, if required or mandatory as per the relevant Acts, Rules, etc."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-04",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Are the installed fire prevention and life safety measures in compliance with the minimum requirements of the National Building Code of India (Part 4) and Schedule-I?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I",
+    "simplified_guidance": "1. Access Schedule-I of the Act and Part 4 of the National Building Code.\\n2. Compare installed systems (hydrants, sprinklers, alarms) against these minimum standards.\\n3. Confirm that the measures provided are not less than these minimum requirements.\\n4. Verify that measures recommended in the Fire Safety Approval have been fully implemented.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installation audit report compared against NBC Part 4",
+      "delay_proof": "Plan for retrofitting or upgrading systems"
+    },
+    "legal_text": "The owner or occupier shall provide fire prevention and life safety measures as recommended in the respective Fire Safety Approval, which shall not be less than the minimum requirements of fire safety installations prescribed in Part 4 of the National Building Code of India or any relevant Part thereof and as specified against such building in Schedule-I as applicable from time to time."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-05",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(2)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Was the completion certificate for the building issued only after satisfying the compliance of Schedule-I requirements?",
+    "applicability_criteria": "All buildings requiring a completion certificate from the planning authority",
+    "simplified_guidance": "1. Review the Building Completion Certificate.\\n2. Verify there is a corresponding Final Fire Safety Approval that predates it.\\n3. Ensure the planning authority did not issue the completion certificate without satisfaction of Schedule-I compliance.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Building Completion Certificate accompanied by Final Fire NOC",
+      "delay_proof": "None (Cannot occupy without certificate)"
+    },
+    "legal_text": "Notwithstanding anything contained in any law for the time being in force, no authority empowered to sanction the construction plan of any building or part of a building and to issue certificate of completion thereof, shall issue any certificate of completion or part completion thereof, unless it is satisfied that the owner has complied with the requirements specified in Schedule-I."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-06",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1A)",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "For Hospitals/Nursing Homes (C-1 Occupancy) between 30m and 45m in height, has the building fulfilled the minimum fire fighting installations specified in Schedule-I?",
+    "applicability_criteria": "Hospitals, Sanatoria, and Nursing Homes exceeding 30 meters but not exceeding 45 meters in height",
+    "simplified_guidance": "1. Identify if the building is a Hospital/Nursing Home between 30m-45m height.\\n2. If yes, verify that specific permission was granted for this height.\\n3. Inspect if the building strictly fulfills the fire fighting installations listed in Schedule-I for this category.\\n4. Confirm compliance to allow the height exception.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Specific Fire Safety Approval for High Rise Hospital",
+      "delay_proof": "None"
+    },
+    "legal_text": "Building above 30 meters in height but not exceeding 45 meters in height may be permitted, in case of occupancies specified as (C-1) in Schedule-I, that is to say, Hospitals, Sanatoria and Nursing Homes, if such building fulfills the minimum requirement of fire fighting installations specified in Schedule-I."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S46-07",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 46",
+      "category": "Statutory Approvals and Validity"
+    },
+    "question_text": "Does the facility maintain fire safety approvals independently of other legal permissions?",
+    "applicability_criteria": "All facilities subject to multiple statutory regulations",
+    "simplified_guidance": "1. Review all statutory permissions held by the facility (e.g., Factory License, Shop Act).\\n2. Ensure that possession of other licenses is not being used as a substitute for Fire Safety Approval.\\n3. Confirm that fire safety measures are approved specifically under this Act, regardless of other approvals.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Separate and distinct Fire Safety Approval documents",
+      "delay_proof": "None"
+    },
+    "legal_text": "Notwithstanding anything contained in any other law for the time being in force, when anything in relation to the fire prevention and life safety measures is required to be done or approved under this Act, any such thing shall not be deemed to have been lawfully done or approved by reason only of the fact that permission, approval or sanction required under such other law therefor has been obtained."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-08",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Are the fire prevention and life safety measures installed in the building at least equivalent to the minimum requirements prescribed in Schedule-I?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I",
+    "simplified_guidance": "1. Identify the building classification (e.g., Residential, Educational, Industrial) and height.\\n2. Refer to Schedule-I of the Act to determine the specific minimum installations required (e.g., Extinguishers, Hose Reels, Tanks).\\n3. Verify that the actual installations meet or exceed these specified requirements.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical presence of all Schedule-listed equipment",
+      "delay_proof": "Purchase orders or installation contracts"
+    },
+    "legal_text": "The owner or occupier shall provide fire prevention and life safety measures as recommended in the respective Fire Safety Approval, which shall not be less than the minimum requirements of fire safety installations prescribed in Part 4 of the National Building Code of India or any relevant Part thereof and as specified against such building in Schedule-I as applicable from time to time"
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-09",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 3",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Are Fire Extinguishers installed throughout the premises as required by the occupancy classification?",
+    "applicability_criteria": "All buildings where 'R' (Required) is marked in Column 3 of Schedule-I",
+    "simplified_guidance": "1. Check Column 3 of Schedule-I for the specific building type.\\n2. If marked 'R' (Required), inspect the premises to ensure extinguishers are present.\\n3. Ensure they are appropriate for the type of fire risk (Class A, B, C, etc.) present.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Installed Fire Extinguishers with valid tags",
+      "delay_proof": "None"
+    },
+    "legal_text": "Minimum Requirements for Fire Fighting Installations... Fire Extinguisher... R [Required]"
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-10",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 4",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is the First Aid Hose Reel system installed and functional where required?",
+    "applicability_criteria": "All buildings where 'R' (Required) is marked in Column 4 of Schedule-I",
+    "simplified_guidance": "1. Check Column 4 of Schedule-I for the building type.\\n2. Verify the installation of Hose Reels connected to a water supply.\\n3. Ensure hose reels are accessible and not obstructed.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional First Aid Hose Reel assembly",
+      "delay_proof": "None"
+    },
+    "legal_text": "Minimum Requirements for Fire Fighting Installations... First Aid Hose Reel... R [Required]"
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-11",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Columns 5 & 6",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Are Wet Risers or Down Comers installed in the building as per height and occupancy regulations?",
+    "applicability_criteria": "Buildings exceeding specific heights (typically 15m+) or occupancy risks as per Schedule-I",
+    "simplified_guidance": "1. Refer to Schedule-I Columns 5 (Wet Riser) and 6 (Down Comer).\\n2. Identify which system is required for the building's height.\\n3. Verify the physical installation of the vertical water supply pipe system with landing valves.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installed Wet Riser or Down Comer system",
+      "delay_proof": "None"
+    },
+    "legal_text": "Minimum Requirements for Fire Fighting Installations... Wet Riser... Down Comer... R [Required]"
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-12",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 8",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is an Automatic Sprinkler System installed in the required areas?",
+    "applicability_criteria": "High-rise buildings, basements >200sqm, or specific occupancies (e.g., Hotels, Hospitals) as per Schedule-I",
+    "simplified_guidance": "1. Check Column 8 of Schedule-I.\\n2. Verify if 'R' applies to the entire building or specific areas (like basements).\\n3. Note 15(b) often requires entire buildings to be protected for certain high-rise categories.\\n4. Inspect ceiling areas for sprinkler heads.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installed Automatic Sprinkler System",
+      "delay_proof": "None"
+    },
+    "legal_text": "Minimum Requirements for Fire Fighting Installations... Automatic Sprinkler System... R [Required]... Note 15(b): Entire building(s) i.e. Common areas as well as Livable areas within shall be protected as per relevant Indian standards for automatic sprinkler system."
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-13",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 9 & Note 1",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is a Manually Operated Electronic Fire Alarm (MOEFA) System, including talk-back and public address systems, installed where mandatory?",
+    "applicability_criteria": "Buildings 15m+ in height (24m+ for A-3/A-4), car parks >300sqm, and MLCPs",
+    "simplified_guidance": "1. Verify presence of manual call points (break glass units).\\n2. For buildings >15m, ensure the system includes talk-back and public address capability.\\n3. Check specifically in car parking areas >300sqm or multi-level car parks.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Functional MOEFA system with PA/Talk-back",
+      "delay_proof": "None"
+    },
+    "legal_text": "Manually Operated Electronic Fire Alarm System (MOEFA) System shall also include talk-back system and public address system in all buildings 15m and above in height... These shall also be provided in car parking areas more than 300m2 and in multi-level car parking irrespective of their areas."
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-14",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 10 & Note 2",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is an Automatic Detection and Alarm System installed in required areas (excluding car parking areas)?",
+    "applicability_criteria": "Occupancies marked 'R' in Column 10 of Schedule-I",
+    "simplified_guidance": "1. Check Schedule-I Column 10 for the requirement.\\n2. Inspect for smoke/heat detectors in corridors, cabins, and electrical rooms.\\n3. Note that car parking areas generally do not require automatic detection, except for enclosed cabins/storage within them.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Installed smoke/heat detectors",
+      "delay_proof": "None"
+    },
+    "legal_text": "Automatic Detection and Alarm Systems... Note 2: Automatic detection and alarm system is not required to be provided in car parking area. Such detection system shall however be required in other areas of car parking such as electrical rooms, cabins and other storage areas."
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-15",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 11",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is an Underground Static Water Storage Tank provided with the minimum specified capacity?",
+    "applicability_criteria": "Buildings requiring water storage as per Schedule-I Column 11",
+    "simplified_guidance": "1. Determine the required capacity (in liters) from Schedule-I Column 11 based on building type/height.\\n2. Inspect the underground tank location.\\n3. Verify the capacity markings or engineering drawings to confirm it meets the minimum volume (e.g., 50,000L, 75,000L).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Tank capacity certificate or physical measurement",
+      "delay_proof": "Construction plans for tank expansion"
+    },
+    "legal_text": "Underground Static Water Storage Tank Capacity for one set of pumps... [Specific values in liters per building type]"
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-16",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Column 12",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is a Terrace Tank provided with the minimum specified capacity?",
+    "applicability_criteria": "Buildings requiring terrace water storage as per Schedule-I Column 12",
+    "simplified_guidance": "1. Refer to Schedule-I Column 12 for the required terrace tank capacity.\\n2. Access the terrace/roof.\\n3. Verify the tank exists and holds the required volume of water exclusively for fire fighting.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Tank capacity verification",
+      "delay_proof": "None"
+    },
+    "legal_text": "Terrace Tank (Note 9)... [Specific values in liters per building type]... Note 9: Overhead tank of specified capacity... shall be provided for each building/tower."
+  },
+  {
+    "audit_item_id": "MFPALSMA-SCH1-17",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Schedule-I, Columns 13 & 14",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Are Fire Pumps (Terrace and/or Underground) installed with the required discharge capacity in LPM?",
+    "applicability_criteria": "Buildings requiring fire pumps as per Schedule-I",
+    "simplified_guidance": "1. Check Columns 13 and 14 of Schedule-I for pump capacity (e.g., 450 LPM, 900 LPM, 2280 LPM).\\n2. Inspect the pump room.\\n3. Verify the nameplate details on the pumps match or exceed the statutory requirements.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Pump nameplate details and performance test report",
+      "delay_proof": "None"
+    },
+    "legal_text": "Pump Capacity (in l/min)... Pump at the Terrace Tank Level... Fire Pump Near Underground Static Water Storage Tank"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-18",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(4)",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Is all fire prevention and life safety equipment free from tampering, alteration, or removal?",
+    "applicability_criteria": "All premises with fire safety installations",
+    "simplified_guidance": "1. Inspect installed equipment (alarms, extinguishers, valves).\\n2. Look for signs of damage, disconnected wires, missing parts, or unauthorized removal.\\n3. Verify that no equipment has been altered in a way that reduces its effectiveness.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Intact equipment seals and operational status",
+      "delay_proof": "None"
+    },
+    "legal_text": "No person shall tamper with, alter, remove or cause any injury or damage to any fire prevention and life safety equipment installed in any such building or part thereof or instigate any other person to do so."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S04-19",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 4(2)",
+      "category": "Fire Prevention and Safety Installations"
+    },
+    "question_text": "Has the occupier removed any objects or goods designated by the Director or Chief Fire Officer as likely to cause a risk of fire?",
+    "applicability_criteria": "Premises receiving directions to remove hazardous objects",
+    "simplified_guidance": "1. Check if any notification or direction has been received regarding removal of hazardous goods.\\n2. Verify that such objects (e.g., combustible storage in corridors/staircases) have been removed.\\n3. Ensure common areas are free of obstacles that increase fire risk.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Clear passages and absence of prohibited goods",
+      "delay_proof": "None"
+    },
+    "legal_text": "Where such notification has been issued, it shall be lawful for the Director or Chief Fire Officer... to direct the removal of objects or goods likely to cause the risk of fire, to a place of safety and on failure by the owner or occupier to do so, the Director or any Chief Fire Officer... may... seize, detain or remove such objects or goods."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-20",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(1)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Are all fire prevention and life safety measures maintained in good repair and efficient condition at all times?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I",
+    "simplified_guidance": "1. Conduct a physical verification of the fire safety systems.\\n2. Ensure systems are operational and not just installed.\\n3. Verify maintenance logs to confirm regular upkeep is performed.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Maintenance logs and functional test reports",
+      "delay_proof": "Work orders for repair"
+    },
+    "legal_text": "The owner or occupier shall... maintain the fire prevention and life safety measures in good repair and efficient condition at all times, in accordance with the provisions of this Act and the rules made thereunder"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-21",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(3)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Has the owner or occupier submitted the mandatory fire safety maintenance certificate (Form B) in the month of January?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I",
+    "simplified_guidance": "1. Verify submission of the 'Form B' certificate to the Chief Fire Officer or Nominated Officer.\\n2. Ensure the submission date falls within January of the current year.\\n3. Confirm the certificate covers maintenance status of safety measures.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of Form B submitted in January",
+      "delay_proof": "None"
+    },
+    "legal_text": "The owner or occupier... shall also furnish to the Chief Fire Officer or a nominated officer, a certificate in the prescribed form, twice a year in the months of January and July regarding the maintenance of fire prevention and life safety measures in good repair and efficient condition as specified in sub-section (1)."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-22",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(3)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Has the owner or occupier submitted the mandatory fire safety maintenance certificate (Form B) in the month of July?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-I",
+    "simplified_guidance": "1. Verify submission of the 'Form B' certificate to the Chief Fire Officer or Nominated Officer.\\n2. Ensure the submission date falls within July of the current year.\\n3. Confirm the certificate attests to the efficient condition of safety measures.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of Form B submitted in July",
+      "delay_proof": "None"
+    },
+    "legal_text": "The owner or occupier... shall also furnish to the Chief Fire Officer or a nominated officer, a certificate in the prescribed form, twice a year in the months of January and July regarding the maintenance of fire prevention and life safety measures in good repair and efficient condition as specified in sub-section (1)."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-23",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(3)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Is the maintenance certificate (Form B) issued by a Licensed Agency?",
+    "applicability_criteria": "All owners or occupiers submitting biannual certificates",
+    "simplified_guidance": "1. Check the 'Form B' certificate submitted.\\n2. Verify the seal and signature of the issuing agency.\\n3. Confirm that the agency holds a valid license from the Director/Chief Fire Officer at the time of issuance.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form B with valid Licensed Agency License Number",
+      "delay_proof": "None"
+    },
+    "legal_text": "The owner or occupier, as the case may be, shall furnish... a certificate in the prescribed form issued by a Licensed Agency regarding the compliance of the fire prevention and life safety measures in his such building or part thereof"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-24",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(3A)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Is an automated continuous monitoring system provided for fire fighting systems in high-risk buildings?",
+    "applicability_criteria": "Buildings specified under Section 45 (e.g., Hotels/Hospitals/Business >30m, Residential >70m, Large Industrial)",
+    "simplified_guidance": "1. Identify if the building falls under Section 45 categories (e.g., height >30m for commercial, >70m for residential).\\n2. If yes, verify installation of an automated continuous monitoring system (IoT/SCADA).\\n3. Ensure this system monitors the 'good repair and efficient working condition' of fire fighting systems.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Operational automated monitoring system dashboard or logs",
+      "delay_proof": "None"
+    },
+    "legal_text": "For the building as specified under section 45, the owner, or where the owner is not traceable, the occupier of a building, shall ensure that the fire fighting systems as recommended in the relevant Fire Safety Approval, is provided with automated continuous monitoring system as may be prescribed for ensuring that the fire fighting systems are in good repair and efficient working condition"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S03-25",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 3(3A)",
+      "category": "Maintenance and Biannual Certification"
+    },
+    "question_text": "Is the automated continuous monitoring system certified by a Licensed Agency?",
+    "applicability_criteria": "Buildings specified under Section 45 requiring automated monitoring",
+    "simplified_guidance": "1. Review records for the automated monitoring system.\\n2. Look for a certification issued by a Licensed Agency in the prescribed form.\\n3. Ensure this certification confirms the system is functioning correctly.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certificate for Automated Monitoring System from Licensed Agency",
+      "delay_proof": "None"
+    },
+    "legal_text": "these shall be certified by the Licensed Agency in the prescribed form and the manner and shall submit the same to the concerned authority in the manner as may be prescribed."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S45-26",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 45(1)",
+      "category": "Specialized Personnel and Safety Audits"
+    },
+    "question_text": "Has a qualified Fire Officer or Fire Supervisor been appointed for the building?",
+    "applicability_criteria": "Buildings >30m (Hotel, Hospital, Business, Mercantile, Mixed), Residential >70m, Large Industrial (>30k sqm), Hazardous Industrial (>10k sqm), or Oil/Gas installations",
+    "simplified_guidance": "1. Determine if the building meets the criteria in Section 45 (e.g., height >30m for commercial, >70m for residential).\\n2. If applicable, check employment records for the appointment of a Fire Officer or Supervisor.\\n3. Verify that the appointed person meets the qualifications specified by the Director.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Appointment letter and qualification certificates of Fire Officer",
+      "delay_proof": "Recruitment advertisement or interview records"
+    },
+    "legal_text": "There shall be appointed by every owner or occupier, a fire officer or fire supervisor for every building of the following description, namely: (a) Building with height more than 30 metres and used for hotel, hospital, business, mercantile, mixed occupancy... (b) Building used as residential building with height more than 70 meters; large oil and natural gas installation... industrial building with moderate hazardous activities in nature having built up area 30,000 square meters or more..."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S45A-27",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 45A(1)(a)",
+      "category": "Specialized Personnel and Safety Audits"
+    },
+    "question_text": "Has a Fire and Life Safety Audit been carried out for the building within the last two years?",
+    "applicability_criteria": "All occupancies mentioned in Section 45(1) (High-rise, Large Industrial, Hazardous)",
+    "simplified_guidance": "1. Check the date of the last Fire and Life Safety Audit.\\n2. Ensure the audit is conducted at least once every two years.\\n3. Confirm that the audit covers all occupancies mentioned in Section 45.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Fire and Life Safety Audit Report dated within last 2 years",
+      "delay_proof": "Appointment letter for auditor"
+    },
+    "legal_text": "Fire and Life Safety Audit shall be carried out by the owner, or where the owner is not traceable, the occupier of a building, for all the occupancies mentioned in sub-section (1) of section 45... and thereafter, once in every two years."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S45A-28",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 45A(7)",
+      "category": "Specialized Personnel and Safety Audits"
+    },
+    "question_text": "Was the Fire and Life Safety Audit conducted by a licensed Fire and Life Safety Auditor?",
+    "applicability_criteria": "All buildings required to undergo audit under Section 45A",
+    "simplified_guidance": "1. Review the Fire and Life Safety Audit Report.\\n2. Verify the credentials of the auditor who signed the report.\\n3. Ensure the auditor holds a valid license from the Director to act as a Fire and Life Safety Auditor.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Auditor's License copy attached to Audit Report",
+      "delay_proof": "None"
+    },
+    "legal_text": "No person other than a licensed Fire and Life Safety Auditor shall carry out the work of fire audit or perform such other related activities required to be carried out in any place or building or part thereof."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S45A-29",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 45A(1)(b)",
+      "category": "Specialized Personnel and Safety Audits"
+    },
+    "question_text": "Has the Fire and Life Safety Audit certificate been furnished to the Director or Chief Fire Officer?",
+    "applicability_criteria": "All buildings required to undergo audit under Section 45A",
+    "simplified_guidance": "1. Verify proof of submission of the audit certificate.\\n2. Ensure the certificate is in the prescribed form.\\n3. Confirm acknowledgment from the Director or Chief Fire Officer (or nominated officer).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged submission copy of Audit Certificate",
+      "delay_proof": "None"
+    },
+    "legal_text": "The owner or occupier, as the case may be, shall furnish to the Director or Chief Fire Officer or the nominated officer, a certificate in the prescribed form issued by a licensed Fire and Life Safety Auditor regarding the evaluation of the fire prevention and life safety measures in his such building or part thereof, as required by or under the provisions of this Act or rules made thereunder."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S04-30",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 4(1)",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Has the owner or occupier implemented all precautions specified in State Government notifications for premises likely to cause fire risk?",
+    "applicability_criteria": "Owners or occupiers of premises in areas or classes specified by government notification as high risk",
+    "simplified_guidance": "1. Check if the State Government has issued any specific notification regarding fire risk for your type of premises.\\n2. Verify that all precautions listed in such notifications have been taken.\\n3. Maintain records of these preventive measures.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Implementation of specific precautions listed in gazette notifications",
+      "delay_proof": "Action plan for implementation"
+    },
+    "legal_text": "The State Government may, by notification in the Official Gazette, require owner or occupier of premises in any area or of any class of premises used, which in its opinion, are likely to cause risk of fire, to take such precautions as may be specified in such notification."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S05-31",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 5(2)",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Does the owner or occupier provide all possible assistance to the Director or Chief Fire Officer during inspections?",
+    "applicability_criteria": "All owners or occupiers during an official inspection",
+    "simplified_guidance": "1. Ensure relevant personnel are available to assist inspectors.\\n2. Provide access to all areas of the building.\\n3. Make documents and records available upon request during the inspection.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Inspection reports indicating cooperation",
+      "delay_proof": "None"
+    },
+    "legal_text": "The Director or the Chief Fire Officer or the nominated officer shall be provided with all possible assistance by the owner or occupier, as the case may be, of such place or building or part thereof for carrying out the inspection under sub-section (1)."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S05-32",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 5(3)",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Is entry for inspection granted without obstruction or molestation of the authorized officer?",
+    "applicability_criteria": "All owners, occupiers, or persons on the premises",
+    "simplified_guidance": "1. Do not block entry to authorized officers (Director, CFO, Nominated Officer).\\n2. Ensure no staff members obstruct or harass the inspection team.\\n3. Note that entry can be demanded at any time if industry is working or entertainment is ongoing.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Absence of obstruction complaints in inspection reports",
+      "delay_proof": "None"
+    },
+    "legal_text": "The owner or occupier or any other person shall not obstruct or cause any obstruction to the entry of a person empowered or authorised under this section into or upon any land or building or shall not molest such person after such entry for inspection."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S06-33",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 6",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Has the owner or occupier undertaken measures directed in any notice issued regarding deviations or contraventions?",
+    "applicability_criteria": "Premises that have received a notice of deficiency/contravention",
+    "simplified_guidance": "1. Review any notices received under Section 6 regarding fire safety deviations.\\n2. Verify that the corrective measures specified in the notice have been completed.\\n3. Ensure compliance was achieved within the time limit specified in the notice.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Compliance report submitted to Authority regarding the Section 6 notice",
+      "delay_proof": "Request for extension of time (if applicable)"
+    },
+    "legal_text": "The Director or the Chief Fire Officer or the nominated officer shall... issue a notice to the owner or occupier of such building or part thereof directing him to undertake such measures within such time as may be specified in the notice."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S07-34",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 7(2)",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Have expenses incurred by the Authority for enforcing compliance been paid within 15 days of demand?",
+    "applicability_criteria": "Owners/Occupiers where the Authority had to intervene to fix non-compliance",
+    "simplified_guidance": "1. If the Authority stepped in to fix issues due to your non-compliance, check for a demand notice.\\n2. Verify proof of payment of these expenses.\\n3. Ensure payment was made within 15 days to avoid recovery as tax arrears.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Receipt of payment for expenses incurred by Authority",
+      "delay_proof": "None"
+    },
+    "legal_text": "All expenses incurred by the Director or the Chief Fire Officer in relation to any steps taken by him under sub-section (1) shall be payable on demand, by the owner or occupier on whom such notice is served and shall, if not paid within fifteen days after such demand be recoverable... as if it were the arrears of tax on property"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S08-35",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 8(4)",
+      "category": "Inspections, Notices and Preventive Measures"
+    },
+    "question_text": "Has any seal applied to the building by the Authority been preserved intact until a written removal order was obtained?",
+    "applicability_criteria": "Buildings that have been sealed by the Authority due to imminent danger",
+    "simplified_guidance": "1. If the building was sealed under Section 8, ensure the seal was not broken or removed.\\n2. Verify that a written order from the Director or Chief Fire Officer was obtained before any seal removal.\\n3. Unauthorized removal is a cognizable and non-bailable offence.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written order from Director/CFO authorizing removal of seal",
+      "delay_proof": "None"
+    },
+    "legal_text": "No person shall remove such seal except under a written order made by the Director or the Chief Fire Officer suo motu or on an application of the owner or occupier."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S10-36",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 10(1)",
+      "category": "Licensed Agency Management"
+    },
+    "question_text": "Is the work of providing fire prevention and life safety measures carried out exclusively by a Licensed Agency?",
+    "applicability_criteria": "All owners or occupiers requiring fire safety installations or maintenance",
+    "simplified_guidance": "1. Verify the identity of the contractor/agency performing fire safety work.\\n2. Request proof of their valid license issued under this Act.\\n3. Ensure no unauthorized person or unlicensed agency has performed installation or maintenance work.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Work orders and License copy of the agency",
+      "delay_proof": "None"
+    },
+    "legal_text": "No person other than a Licensed Agency shall carry out the work of providing fire prevention and life safety measures or performing such other related activities required to be carried out in any place or building or part thereof"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S10-37",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 10(2)",
+      "category": "Licensed Agency Management"
+    },
+    "question_text": "Are compliance certificates issued by the Licensed Agency based on actual verification of maintenance and repair?",
+    "applicability_criteria": "All instances where a Licensed Agency issues a Form B or compliance certificate",
+    "simplified_guidance": "1. Review certificates issued by the Licensed Agency.\\n2. Correlate dates of certificates with actual site visit logs or maintenance records.\\n3. Ensure certificates were not issued blindly without physical verification of the systems.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Site visit logs matching certificate dates",
+      "delay_proof": "None"
+    },
+    "legal_text": "No Licensed Agency or any other person claiming to be such Licensed Agency shall give a certificate under sub-section (3) of section 3 regarding the compliance of the fire prevention and life safety measures or maintenance thereof in good repair and efficient condition, without there being actual such compliance or maintenance."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S09-38",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 9(3)",
+      "category": "Licensed Agency Management"
+    },
+    "question_text": "Does the engaged Licensed Agency hold a current, valid license for the specific period of work?",
+    "applicability_criteria": "All owners or occupiers engaging an agency",
+    "simplified_guidance": "1. Check the validity period on the Licensed Agency's license.\\n2. Note that licenses are typically granted for a period of two years.\\n3. Ensure the license was valid active during the specific dates when work was performed.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid License Document from Director/Chief Fire Officer",
+      "delay_proof": "Renewal application of the agency"
+    },
+    "legal_text": "On receipt of such application, the Chief Fire Officer may... grant the licence in the prescribed form for a period of two year or renew the same for a like period"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S10-39",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 10(1)",
+      "category": "Licensed Agency Management"
+    },
+    "question_text": "If a non-licensed entity performed the work, was specific written authorization obtained from the Director?",
+    "applicability_criteria": "Cases where work was NOT done by a Licensed Agency",
+    "simplified_guidance": "1. If the entity performing work is not a standard Licensed Agency, ask for authorization letters.\\n2. Verify if the Director issued a written order authorizing that specific person/entity.\\n3. Confirm this was due to the owner/occupier's inability to engage a standard Licensed Agency.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Director's written authorization letter",
+      "delay_proof": "None"
+    },
+    "legal_text": "Provided that, if the Director is satisfied that, for any reason, to be recorded in writing, the owner or occupier is not able to carry out the fire prevention and fire safety measures in any such place or building or part thereof through a Licensed Agency, he may authorise any person or persons he thinks fit to carry out such work, and any work carried out by such authorized person or persons shall be deemed to be carried out by a Licensed Agency."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S11-40",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 11(1)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "Has the Fire and Emergency Service Fee been paid to the Authority or Director for the building?",
+    "applicability_criteria": "All owners or occupiers of buildings classified in Schedule-II constructing or having constructed a building",
+    "simplified_guidance": "1. Verify if the building falls under Schedule-II classification.\\n2. Check receipts for the 'Fire and Emergency Service Fee' payment.\\n3. Ensure the amount paid matches the rates specified in Schedule-II based on the Annual Statement of Rates (ASR).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Official Fee Receipt from the Authority/Director",
+      "delay_proof": "Challan or Demand Draft generation slip"
+    },
+    "legal_text": "With effect from the date of commencement of the Maharashtra Fire Prevention and Life Safety Measures (Amendment) Act, 2023... there shall be levied a Fire and Emergency Service Fee, for the purposes of this Act on all owners or occupiers, as the case may be, of buildings as classified in Schedule-II... within the areas of a local authority or a planning authority... or other areas, to which this Act applies."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S13-41",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 13(1)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "Is the Annual Fee (at 1% of the initial fee) paid annually for the maintenance of installations?",
+    "applicability_criteria": "Owners or occupiers of existing buildings liable for fees",
+    "simplified_guidance": "1. Identify the base Fire Service Fee applicable to the building.\\n2. Calculate 1% of this amount.\\n3. Verify that this annual fee is paid to the Authority/Director to cover inspection and incidental expenses.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Annual Fee Payment Receipts",
+      "delay_proof": "None"
+    },
+    "legal_text": "There shall also be levied annually a further fee at the rate of one per cent of the fees specified against each type of building in the said Schedule for providing the amount to defray the expenses... and also for regular check and inspection and other incidental expenses so as to require and cause the owner or occupier thereof to keep the necessary installations in fit condition."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S14-42",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 14(1)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "Did the owner apply for the assessment of fees prior to or upon commencing construction?",
+    "applicability_criteria": "Any person intending to construct a building requiring permission",
+    "simplified_guidance": "1. Check the date of construction commencement.\\n2. Verify the date of application submitted to the Authority/Director for fee assessment.\\n3. Ensure the application was made within the prescribed time and manner.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Application for Assessment acknowledgment",
+      "delay_proof": "None"
+    },
+    "legal_text": "Any person who, after the commencement of this Act, intends to construct a building... or who has commenced construction of a building, shall apply to The Authority, and in the areas outside the limits of the Authorities to which this Act applies, the Director within such time and in such manner as may be prescribed, for the assessment of fees payable in respect thereof."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S14-43",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 14(5)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "Are assessed fees paid within 30 days of receiving the notice of assessment?",
+    "applicability_criteria": "Owners/Occupiers who have received a notice of assessment",
+    "simplified_guidance": "1. Locate the Notice of Assessment issued by the Authority.\\n2. Check the date of receipt of this notice.\\n3. Verify payment records to ensure the full amount was paid within 30 days of that receipt date.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Bank statement or receipt showing timely payment",
+      "delay_proof": "None"
+    },
+    "legal_text": "The amount of fee as shown in the notice of assessment shall be paid within thirty days of the date of receipt thereof by such person as aforesaid"
+  },
+  {
+    "audit_item_id": "MFPALSMA-S14-44",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 14(5)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "If fees were not paid within 30 days, has interest at 18% per annum been paid on the outstanding amount?",
+    "applicability_criteria": "Cases where fee payment was delayed beyond 30 days",
+    "simplified_guidance": "1. Identify any payments made after the 30-day window.\\n2. Calculate the interest due at 18% per annum for the delayed period.\\n3. Check if this interest amount has been remitted to the Authority.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Receipt including interest payment",
+      "delay_proof": "None"
+    },
+    "legal_text": "where the amount has not been so paid or has been partly paid, an interest at the rate of eighteen per cent. per annum upon any amount outstanding shall be payable from the date immediately following the date on which the period of thirty days as aforesaid expires till the date of payment of such amount."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S14-45",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 14(8)",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "For flats or apartments, has the promoter discharged the liability for fees and interest prior to the execution of conveyance?",
+    "applicability_criteria": "Promoters constructing buildings of flats/apartments",
+    "simplified_guidance": "1. Verify if the building constitutes flats/apartments under the Ownership Flats Act.\\n2. Ensure the promoter paid all Fire Service fees and interest.\\n3. Confirm these payments were made before the conveyance was executed under Section 11 of the 1963 Act.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 3 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "No Dues Certificate or Receipts prior to conveyance date",
+      "delay_proof": "None"
+    },
+    "legal_text": "Provided that, the liability of the Promoter to pay such fee and interest, if any, shall extend to and be limited to the date of execution of the conveyance by the promoter under section 11 of the said Act of 1963."
+  },
+  {
+    "audit_item_id": "MFPALSMA-S15-46",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "The Maharashtra Fire Prevention and Life Safety Measures Act, 2006",
+      "section_reference": "Section 15",
+      "category": "Fees, Assessments and Financial Liability"
+    },
+    "question_text": "If no fee is paid, is there documentation proving the building is vested in or under the control of the Central or State Government?",
+    "applicability_criteria": "Buildings claiming exemption from Fire Service Fees",
+    "simplified_guidance": "1. If fees are not paid based on exemption, verify the ownership documents.\\n2. Confirm the building is vested in the Central or State Government or an Authority.\\n3. Private buildings used by government under lease may not qualify if not 'vested in or under control' as defined.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Government ownership records",
+      "delay_proof": "None"
+    },
+    "legal_text": "No fee shall be levied on any building vested in or under the control or possession of the Central or State Government or any Authority."
+  }
+]

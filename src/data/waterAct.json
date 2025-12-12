@@ -1,0 +1,704 @@
+[
+  {
+    "audit_item_id": "WATER_ACT-S24_1_a-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 24(1)(a)",
+      "category": "Prohibitions and Discharge Restrictions"
+    },
+    "question_text": "Does the facility ensure that no poisonous, noxious, or polluting matter is knowingly caused or permitted to enter any stream, well, sewer, or land?",
+    "applicability_criteria": "All industrial establishments and operations generating sewage or trade effluent",
+    "simplified_guidance": "1. Identify all discharge points (drains, outlets) within the premises.\n2. Verify that effluent is treated to meet State Board standards before discharge.\n3. Ensure no untreated chemicals, waste, or sewage bypass the treatment plant.\n4. Review recent effluent analysis reports to confirm compliance with pollution standards.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Effluent analysis reports, ETP logbooks, and visual inspection of discharge points",
+      "delay_proof": "Evidence of ETP maintenance or upgrade works in progress"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall knowingly cause or permit any poisonous, noxious or polluting matter determined in accordance with such standards as may be laid down by the State Board to enter (whether directly or indirectly) into any stream or well or sewer or on land."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S24_1_b-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 24(1)(b)",
+      "category": "Prohibitions and Discharge Restrictions"
+    },
+    "question_text": "Is the facility free from any sewer or drain constructed or used for discharging treated or untreated effluent into a stream or well without consent or in contravention of standards?",
+    "applicability_criteria": "All industrial establishments constructing or maintaining drainage systems",
+    "simplified_guidance": "1. Review the facility drainage map against the actual physical layout.\n2. Confirm no unauthorized or 'hidden' bypass drains exist.\n3. Ensure all active discharge pipes/drains are declared in the Consent to Operate (CTO).\n4. Inspect stream/well proximity for unmonitored outlet pipes.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Approved drainage map and Consent to Operate (CTO) listing authorized outlets",
+      "delay_proof": "Application for regularization of existing outlets"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall knowingly cause or permit to enter into any stream any other matter which may tend, either directly or in combination with similar matters, to impede the proper flow of the water of the stream in a manner leading or likely to lead to a substantial aggravation of pollution due to other causes or of its consequences."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S24_1_c-003",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 24(1)(c)",
+      "category": "Prohibitions and Discharge Restrictions"
+    },
+    "question_text": "Does the facility ensure that no matter is deposited on the bed of a stream or sewer that impedes proper flow or aggravates pollution?",
+    "applicability_criteria": "Facilities located adjacent to streams, rivers, or public sewers",
+    "simplified_guidance": "1. Inspect the banks and beds of any nearby streams or sewers.\n2. Ensure no solid waste, sludge, or construction debris is dumped in the water body.\n3. Verify that discharge velocity or volume does not cause silting or obstruction.\n4. Remove any existing impediments caused by facility operations.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photographs of clean stream banks/sewers and waste disposal records",
+      "delay_proof": "Contract for dredging or waste removal services"
+    },
+    "legal_text": "No person shall knowingly cause or permit to enter into any stream any other matter which may tend, either directly or in combination with similar matters, to impede the proper flow of the water of the stream in a manner leading or likely to lead to a substantial aggravation of pollution due to other causes or of its consequences."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S24_2-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 24(2)",
+      "category": "Prohibitions and Discharge Restrictions"
+    },
+    "question_text": "Does the facility refrain from constructing any new outlet or discharging effluent without ensuring it meets the exemptions or consent conditions?",
+    "applicability_criteria": "Facilities planning new outlets or modifications to discharge",
+    "simplified_guidance": "1. Identify if any new outlets have been constructed recently.\n2. Check if the discharge is purely domestic sewage or exempt trade effluent.\n3. If not exempt, ensure specific Consent to Establish/Operate covers this outlet.\n4. Document the purpose and source of every outlet.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Consent to Establish (CTE) documents and layout plans",
+      "delay_proof": "Pending application with State Board"
+    },
+    "legal_text": "A person shall not be guilty of an offence under sub-section (1), by reason only of having done or caused to be done any of the following acts, namely:— (a) constructing, improving or maintaining in or across or on the bank or bed of any stream any building, bridge, weir, dam, sluice, dock, pier, drain or sewer or other permanent works which he has a right to construct, improve or maintain..."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S24_3-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 24(3)",
+      "category": "Prohibitions and Discharge Restrictions"
+    },
+    "question_text": "Has the State Board issued any specific orders prohibiting discharge into a particular stream or well, and is the facility complying with such orders?",
+    "applicability_criteria": "Facilities in areas with specific State Board prohibition notifications",
+    "simplified_guidance": "1. Check for any gazette notifications or direct orders from the State Board regarding the local water body.\n2. Verify if the facility falls within the prohibited zone or scope.\n3. Ensure immediate cessation of discharge if such a prohibition is active.\n4. Maintain a file of all regulatory correspondence.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Correspondence file and compliance reports submitted to the Board",
+      "delay_proof": "Legal stay order or time extension approval"
+    },
+    "legal_text": "The State Board may, after giving the person concerned an opportunity of being heard, by order, direct that any person who has caused or permitted... any matter to enter into any stream or well or on land... shall stop or prevent such matter from entering into such stream or well or on land."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S25_1_a-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 25(1)(a)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Has the facility obtained the previous consent (Consent to Establish) of the State Board before establishing or taking any steps to establish any industry, operation, or process likely to discharge sewage or trade effluent?",
+    "applicability_criteria": "Any person establishing an industry or operation likely to discharge effluent",
+    "simplified_guidance": "1. Verify if the 'Consent to Establish' (CTE) was obtained prior to starting construction or setup.\n2. Check the date of the CTE against the project start date.\n3. Ensure the CTE covers the specific industry type and capacity being established.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original Consent to Establish (CTE) certificate from State Pollution Control Board",
+      "delay_proof": "Application acknowledgement receipt if consent is pending"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall, without the previous consent of the State Board, establish or take any steps to establish any industry, operation or process, or any treatment and disposal system or any extension or addition thereto, which is likely to discharge sewage or trade effluent into a stream or well or sewer or on land."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S25_1_b-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 25(1)(b)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Has the facility obtained previous consent before bringing into use any new or altered outlet for the discharge of sewage or trade effluent?",
+    "applicability_criteria": "Facilities modifying existing discharge outlets or creating new ones",
+    "simplified_guidance": "1. Identify if any new outlets have been created since the original consent.\n2. Check if existing outlets have been altered (e.g., increased size, changed location).\n3. Verify that a specific application was made and consent granted for these changes.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Updated Consent to Operate reflecting all current outlets; Physical verification of outlet count",
+      "delay_proof": "Application for amendment of consent"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall, without the previous consent of the State Board, bring into use any new or altered outlet for the discharge of sewage or trade effluent into a stream or well or sewer or on land."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S25_1_c-003",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 25(1)(c)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Has the facility obtained previous consent before making any new discharge of sewage or trade effluent?",
+    "applicability_criteria": "Facilities introducing new types or volumes of discharge",
+    "simplified_guidance": "1. Compare current discharge composition and volume with the consented limits.\n2. If a new production line or process has started, ensure the resulting effluent is covered by a consent amendment.\n3. Verify consent for any new discharge points not previously declared.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Consent to Operate (CTO) specifying authorized discharge types",
+      "delay_proof": "Pending application for new discharge approval"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall, without the previous consent of the State Board, make any new discharge of sewage or trade effluent into a stream or well or sewer or on land."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S25_4_a-004",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 25(4)(a)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Does the facility comply with all conditions imposed by the State Board regarding the location, construction, and use of outlets?",
+    "applicability_criteria": "All facilities with a valid Consent to Establish or Operate",
+    "simplified_guidance": "1. Review the 'Conditions' section of the Consent order carefully.\n2. Verify that the outlet is located exactly where approved.\n3. Ensure construction specifications (material, size, monitoring mechanisms) match the consent order.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical measurement of outlets matching Consent Order specifications",
+      "delay_proof": "N/A - Strict Liability"
+    },
+    "legal_text": "The State Board may grant its consent referred to in sub-section (1) subject to such conditions as it may impose, being... conditions as to the point of discharge of sewage or trade effluent or to the use of that outlet or any other outlet for sewage or trade effluent."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S26-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 26",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Does the facility hold a valid Consent to Operate (CTO) for continuing the discharge of sewage or trade effluent?",
+    "applicability_criteria": "All operational industries discharging effluent",
+    "simplified_guidance": "1. Check the validity expiry date on the current Consent to Operate (CTO).\n2. Ensure a renewal application is submitted before the expiry date (typically 60-120 days prior).\n3. If the facility was established before the Act applied, ensure original consent was obtained.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Consent to Operate (CTO) certificate",
+      "delay_proof": "Renewal application acknowledgement showing submission before expiry"
+    },
+    "legal_text": "Where immediately before the commencement of this Act any person was discharging any sewage or trade effluent... the provisions of section 25 shall, so far as may be, apply in relation to such person as they apply in relation to the person referred to in that section subject to the modification that the application for consent to be made under sub-section (2) of that section shall be made on or before such date as may be specified by the State Government."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S25_5-006",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 25(5)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "If the facility claims 'Deemed Consent', can it prove that the application was made more than four months ago without refusal or grant from the Board?",
+    "applicability_criteria": "Facilities operating without a physical consent certificate claiming deemed approval",
+    "simplified_guidance": "1. Verify the date of the original application submission.\n2. Confirm that 4 months have passed since that date.\n3. Check correspondence to ensure no 'Refusal' or 'Query' letter was received from the Board during this period.\n4. Ensure the application was complete and accompanied by the correct fee.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of application receipt dated 4+ months prior with no Board response",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where the State Board... neither has given nor refused its consent within a period of four months of the making of an application in this behalf complete in all respects to the State Board, such consent shall be deemed to have been given unconditionally on the expiration of the said period of four months."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S27_2-007",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 27(2)",
+      "category": "Consent Management and Authorization"
+    },
+    "question_text": "Has the facility implemented any variations to consent conditions that were required by the State Board upon review?",
+    "applicability_criteria": "Facilities that have received notices varying their consent conditions",
+    "simplified_guidance": "1. Check if the State Board has issued any notices altering previous consent conditions.\n2. Verify if the facility has adjusted its treatment or discharge methods to align with these new conditions.\n3. Ensure any revoked conditions are no longer being relied upon.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Amended Consent Order and implementation reports",
+      "delay_proof": "Correspondence regarding reasonable time requests"
+    },
+    "legal_text": "The State Board may from time to time review any condition imposed under section 25... or under section 26 and may serve on the person to whom a consent under section 25 or section 26 is granted a notice making any reasonable variation of or revoking any such condition."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S31_1-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 31(1)",
+      "category": "Reporting, Information and Emergencies"
+    },
+    "question_text": "Does the facility immediately intimate the State Board and other designated authorities of any accident or unforeseen event causing discharge of polluting matter beyond standards?",
+    "applicability_criteria": "All facilities where an accident or unforeseen event has caused excess pollution",
+    "simplified_guidance": "1. Verify if any accidents (e.g., pipe bursts, tank leaks) occurred in the audit period.\n2. Check the incident log for the date and time of the event.\n3. Confirm that a formal intimation was sent 'forthwith' (immediately) to the State Board.\n4. Ensure proof of receipt/dispatch of this intimation is available.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Incident Register and copies of intimation letters/emails sent to State Board",
+      "delay_proof": "Late reporting logs"
+    },
+    "legal_text": "Where in any place an industry, operation or process... is being carried on, and due to any accident or other unforeseen act or event, any poisonous, noxious or polluting matter is being discharged, or is likely to be discharged into a stream or well or sewer or on land and, as a result of such discharge, the water in any stream or well is being polluted, or is likely to be polluted, then the person in charge of such place shall forthwith intimate the occurrence of such accident, act or event to the State Board and to such other authorities or agencies as may be prescribed."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S20_2-002",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 20(2)",
+      "category": "Reporting, Information and Emergencies"
+    },
+    "question_text": "Does the facility provide information regarding the abstraction of water or discharge of effluent when required by the State Board?",
+    "applicability_criteria": "All facilities receiving a direction/request for information from the State Board",
+    "simplified_guidance": "1. Review correspondence from the State Board requesting data on water usage or effluent.\n2. Verify that the facility submitted the required reports or returns within the specified timeline.\n3. Ensure the data provided matches internal logbooks.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of submitted returns/reports and acknowledgement receipts",
+      "delay_proof": "Reminder notices from the Board"
+    },
+    "legal_text": "The State Board may give directions to any person who in its opinion is abstracting water from any such stream or well... or is discharging sewage or trade effluent into any stream or well, to give such information as to the abstraction or the discharge at such times and in such form as may be specified in the directions."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S20_3-003",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 20(3)",
+      "category": "Reporting, Information and Emergencies"
+    },
+    "question_text": "Does the facility furnish details regarding the construction, installation, or operation of its establishment or disposal system when demanded?",
+    "applicability_criteria": "Facilities required by the Board to furnish technical details",
+    "simplified_guidance": "1. Identify if the Board has requested technical details about the plant or ETP.\n2. Check if the 'person in charge' has provided these details accurately.\n3. Ensure drawings, specifications, and operational manuals submitted are current.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Submission records of technical documents/drawings",
+      "delay_proof": "Correspondence regarding extensions"
+    },
+    "legal_text": "Without prejudice to the provisions of sub-section (2), the State Board may... give directions to the person in charge of any establishment... to furnish to it information regarding the construction, installation or operation of such establishment or of any disposal system or of any extension or addition thereto in such establishment and such other particulars as may be prescribed."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S20_1-004",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 20(1)",
+      "category": "Reporting, Information and Emergencies"
+    },
+    "question_text": "Does the facility allow and assist the State Board in conducting surveys, measurements, or gauging of streams and wells?",
+    "applicability_criteria": "Facilities located on or near streams/wells subject to Board surveys",
+    "simplified_guidance": "1. Confirm if State Board officials visited for surveys or gauging.\n2. Verify that facility staff provided access and necessary assistance.\n3. Ensure no obstruction was caused to the officials during these duties.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Visitor logbook recording Board official visits; Inspection reports",
+      "delay_proof": "Notes on refusal of entry"
+    },
+    "legal_text": "For the purpose of enabling a State Board to perform the function... the State Board or any officer empowered by it in that behalf, may make surveys of any area and gauge and keep records of the flow or volume and other characteristics of any stream or well in such area, and may take steps for the measurement and recording of the rainfall in such area or any part thereof..."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S23_1-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 23(1)",
+      "category": "Inspection, Entry and Sampling Procedures"
+    },
+    "question_text": "Does the facility grant access to any person empowered by the State Board to enter the premises at any time for the purpose of performing entrusted functions?",
+    "applicability_criteria": "All facilities subject to State Board jurisdiction",
+    "simplified_guidance": "1. Ensure security staff are briefed not to deny entry to authorized State Board officers.\n2. Verify the identity card of the visiting officer.\n3. Allow access for inspection of plant, records, registers, or documents.\n4. Maintain a 'Visit Book' or 'Inspection Register' to record such entries.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Security gate logs and Inspection Register recording official visits",
+      "delay_proof": "Internal memos briefing security on statutory access protocols"
+    },
+    "legal_text": "Subject to the provisions of this section, any person empowered by a State Board in this behalf shall have a right at any time to enter, with such assistance as he considers necessary, any place... for the purpose of performing any of the functions of the State Board entrusted to him."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S21_1-002",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 21(1)",
+      "category": "Inspection, Entry and Sampling Procedures"
+    },
+    "question_text": "Does the facility permit the State Board or its empowered officer to take samples of water, sewage, or trade effluent for analysis?",
+    "applicability_criteria": "All facilities discharging effluent or sewage",
+    "simplified_guidance": "1. Establish a clear internal protocol for handling sample collection requests.\n2. Ensure designated staff accompany the officer to the sampling point.\n3. Do not obstruct or delay the sampling process.\n4. Facilitate safe access to the discharge point for the officer.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Sampling records or chain of custody forms signed by facility representatives",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A State Board or any officer empowered by it in this behalf shall have power to take for the purpose of analysis samples of water from any stream or well or samples of any sewage or trade effluent which is passing from any plant or vessel or from or over any place into any such stream or well."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S21_3-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 21(3)",
+      "category": "Inspection, Entry and Sampling Procedures"
+    },
+    "question_text": "Does the facility representative ensure they receive a 'Notice of Intention' to analyze the sample and sign the sample containers during an official collection?",
+    "applicability_criteria": "Facilities undergoing official effluent sampling by the Board",
+    "simplified_guidance": "1. Ensure the officer serves a notice of intention to have the sample analyzed.\n2. Verify the sample is divided into two parts in your presence.\n3. Sign both parts of the sealed sample containers as the occupier's representative.\n4. Retain one part of the sample for your own independent analysis/record.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the 'Notice of Intention' (Form) and the facility's retained sample portion",
+      "delay_proof": "Record of refusal to sign if procedure was violated"
+    },
+    "legal_text": "The person taking the sample shall... serve on the person in charge of, or having control over, the plant or vessel... a notice, then and there, in such form as may be prescribed, of his intention to have it so analysed; in the presence of the occupier or his agent, divide the sample into two parts; ...and shall sign both the parts... and shall also permit the occupier or his agent to sign both the parts."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S22_3-004",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 22(3)",
+      "category": "Inspection, Entry and Sampling Procedures"
+    },
+    "question_text": "Does the facility review the Government Analyst's report to ensure it corresponds accurately to the sample collected?",
+    "applicability_criteria": "Facilities that have had samples analyzed by the Government Analyst",
+    "simplified_guidance": "1. Upon receiving the analysis report, check the sample codes against your retained sample.\n2. Compare the results with your internal lab results of the retained sample.\n3. If discrepancies exist, raise a dispute or request re-verification immediately.\n4. Store these reports as critical compliance evidence.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "File containing Government Analyst reports and internal comparison notes",
+      "delay_proof": "Correspondence challenging the report findings"
+    },
+    "legal_text": "Any document purporting to be a report signed by a Government analyst may be used as evidence of the facts stated therein in any proceeding under this Act."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S42_e-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 42(e)",
+      "category": "Inspection, Entry and Sampling Procedures"
+    },
+    "question_text": "Does the facility ensure that no employee willfully delays or obstructs any person empowered by the Board in the discharge of their duties?",
+    "applicability_criteria": "All employees and management of the facility",
+    "simplified_guidance": "1. Train staff on the legal obligation to cooperate with Board officials.\n2. Ensure no purposeful delays occur at the gate or reception during a surprise inspection.\n3. Provide requested documents promptly without concealment.\n4. Avoid any hostile or non-cooperative behavior during inspections.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Clean inspection reports with no adverse remarks regarding cooperation",
+      "delay_proof": "Show cause notices regarding obstruction"
+    },
+    "legal_text": "Whoever... wilfully delays or obstructs any person empowered by the Board in the discharge of any duty conferred or imposed on him by or under this Act... shall be punishable with imprisonment for a term which may extend to three months or with fine which may extend to ten thousand rupees or with both."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S33A-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 33A",
+      "category": "Regulatory Directions and Corporate Liability"
+    },
+    "question_text": "Has the facility fully complied with any written directions issued by the Board, including orders for closure, prohibition, or regulation of any industry, operation, or process?",
+    "applicability_criteria": "Facilities that have received specific directions under Section 33A from the Board",
+    "simplified_guidance": "1. Check if the facility has received any 'Closure Notice' or 'Show Cause Notice' with directions.\n2. Verify immediate implementation of directions (e.g., stopping specific processes, cutting power/water to polluting sections).\n3. Ensure written compliance reports were submitted to the Board within the deadline.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Compliance Report acknowledged by the Board and evidence of operational changes",
+      "delay_proof": "Stay order from National Green Tribunal (NGT) or Appellate Authority"
+    },
+    "legal_text": "Notwithstanding anything contained in any other law but subject to the provisions of this Act, and to any directions that the Central Government may give in this behalf, a Board may, in the exercise of its powers and performance of its functions under this Act, issue any directions in writing to any person, officer or authority, and such person, officer or authority shall be bound to comply with such directions."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S47_1-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 47(1)",
+      "category": "Regulatory Directions and Corporate Liability"
+    },
+    "question_text": "Does the company maintain evidence of 'due diligence' by Directors and Managers to prevent environmental contraventions, mitigating their personal liability?",
+    "applicability_criteria": "All corporate entities (Companies)",
+    "simplified_guidance": "1. Review Board Meeting minutes for discussions on environmental compliance.\n2. detailed roles and responsibilities matrix assigning environmental compliance to specific qualified personnel.\n3. Ensure internal audits or checks are conducted to prove that management was not negligent.\n4. Verify that the 'person in charge' is clearly identified to insulate non-executive directors.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Same as the offence committed",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Board resolution on environmental policy, appointment letters of EHS heads, and internal audit reports",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an offence under this Act has been committed by a company, every person who at the time the offence was committed was in charge of, and was responsible to the company for the conduct of, the business of the company, as well as the company, shall be deemed to be guilty of the offence and shall be liable to be proceeded against and punished accordingly."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S33_1-003",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 33(1)",
+      "category": "Regulatory Directions and Corporate Liability"
+    },
+    "question_text": "Is the facility compliant with any court orders restraining it from discharging polluting matter likely to cause stream or well pollution?",
+    "applicability_criteria": "Facilities against which the Board has sought and obtained a court injunction",
+    "simplified_guidance": "1. Identify if the State Board has filed any application to the court regarding apprehended pollution.\n2. Check for any resulting court orders or injunctions restraining discharge.\n3. Verify strict adherence to the limitations set by the court.\n4. Ensure legal counsel has cleared the current operational status.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Court Orders and sworn affidavits of compliance",
+      "delay_proof": "Appeal filings in higher courts"
+    },
+    "legal_text": "Where it is apprehended by a Board that the water in any stream or well is likely to be polluted by reason of the disposal or likely disposal of any matter... the Board may make an application to a court... for restraining the person who causes or is likely to cause such pollution from so causing."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S32_1_c-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 32(1)(c)",
+      "category": "Regulatory Directions and Corporate Liability"
+    },
+    "question_text": "If the State Board has conducted emergency operations to remove pollution caused by the facility, has the facility reimbursed the costs incurred?",
+    "applicability_criteria": "Facilities where the Board intervened to remove/mitigate pollution",
+    "simplified_guidance": "1. Check if an emergency pollution event occurred where the Board had to intervene directly.\n2. Look for demand notices from the Board for cost recovery (remediation costs).\n3. Verify proof of payment for these costs/interest.\n4. Ensure the root cause of the emergency has been rectified.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payment receipts for cost recovery demands issued by the Board",
+      "delay_proof": "Dispute filing regarding the cost calculation"
+    },
+    "legal_text": "Where it appears to the State Board that any poisonous, noxious or polluting matter is present in any stream or well... the State Board may... issue orders to the persons who may have caused or permitted the discharge... to remove the matter... or... may take measures to... remove the matter... and recover the cost incurred."
+  },
+  {
+    "audit_item_id": "WATER_ACT-S48-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Water (Prevention and Control of Pollution) Act, 1974",
+      "section_reference": "Section 48",
+      "category": "Regulatory Directions and Corporate Liability"
+    },
+    "question_text": "For Government Departments: Can the Head of Department demonstrate that any offense committed was without their knowledge or that they exercised all due diligence to prevent it?",
+    "applicability_criteria": "Government Departments/Public Sector Undertakings only",
+    "simplified_guidance": "1. If the auditee is a Government Department, identify the Head of Department.\n2. Review internal memos or circulars instructing staff on pollution control.\n3. Verify if the HOD has delegated powers effectively to ensure compliance on the ground.\n4. Check for any prior notices served to the Department.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Same as the offence committed",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Internal departmental orders and compliance reports submitted by subordinate officers",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an offence under this Act has been committed by any Department of Government, the Head of the Department shall be deemed to be guilty of the offence and shall be liable to be proceeded against and punished accordingly: Provided that nothing contained in this section shall render such Head of the Department liable to any punishment if he proves that the offence was committed without his knowledge or that he exercised all due diligence to prevent the commission of such offence."
+  }
+]

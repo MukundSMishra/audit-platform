@@ -1,0 +1,731 @@
+[
+  {
+    "audit_item_id": "MLWF-SEC-02-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 2(4)(iii)",
+      "category": "Applicability and Establishment Profile"
+    },
+    "question_text": "Has the establishment determined its coverage under the Act based on employing five or more persons on any working day during the preceding twelve months?",
+    "applicability_criteria": "Establishments within the meaning of the Bombay Shops and Establishments Act, 1948",
+    "simplified_guidance": "1. Review attendance registers for the preceding 12 months.\n2. Identify the maximum number of persons employed on any single day.\n3. If the count reached 5 or more, the Act is applicable.\n4. Note that once covered, the Act continues to apply even if numbers drop.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Attendance Register or Muster Roll showing employment count; Shop Act License",
+      "delay_proof": "Documentation of employee count history"
+    },
+    "legal_text": "any establishment within the meaning of the Bombay Shops and Establishments Act, 1948 (Bom. LXXIX of 1948), which employs, or on any working day during the preceding twelve months, employed five or more persons including the establishments which have been granted exemption partly or wholly under the proviso to section 4 of that Act"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-02-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 2(4) Proviso 1",
+      "category": "Applicability and Establishment Profile"
+    },
+    "question_text": "Does the establishment continue to maintain compliance with the Act even if the number of employees has temporarily reduced to less than five?",
+    "applicability_criteria": "Establishments previously covered under the Act where employee count has dropped below five",
+    "simplified_guidance": "1. Verify if the establishment was previously covered under the Act.\n2. Check current employee count.\n3. Ensure contributions are still being deducted and paid even if current count is < 5.\n4. Confirm that compliance has not been stopped without formal cessation procedures.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of continued contribution payments (Challans/Receipts) during low employment periods",
+      "delay_proof": "Internal memos regarding applicability status"
+    },
+    "legal_text": "Provided that, any such establishment shall continue to be an establishment for the purposes of this Act, notwithstanding a reduction in the number of persons to less than five at any subsequent time"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-02-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 2(4) Proviso 2",
+      "category": "Applicability and Establishment Profile"
+    },
+    "question_text": "If the employee count has remained below five for three continuous months, has the employer sent a registered post intimation to the authority to officially cease applicability?",
+    "applicability_criteria": "Establishments seeking to exit Act coverage due to low employment",
+    "simplified_guidance": "1. Confirm employee count has been < 5 for 3 consecutive months.\n2. Verify that an intimation letter was drafted.\n3. Ensure the letter was sent by Registered Post within one month of the 3-month period expiring.\n4. Retain the postal receipt as proof of cessation.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of cessation letter and Registered Post receipt",
+      "delay_proof": "None (Compliance ceases only upon valid notice)"
+    },
+    "legal_text": "Provided further that, where for a continuous period of not less than three months, the number of persons employed therein has been less than five such establishments shall cease to be an establishment for the purposes of this Act... but the employer shall within one month from the date of such cessation, intimate by registered post the fact thereof to such authority as the State Government may specify in this behalf"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-02-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 2(4) Explanation",
+      "category": "Applicability and Establishment Profile"
+    },
+    "question_text": "Are all branches or departments of the establishment treated as parts of the same single establishment for the purpose of coverage and compliance?",
+    "applicability_criteria": "Establishments with multiple branches or departments",
+    "simplified_guidance": "1. List all branches and departments, even if at different addresses.\n2. Aggregate the employee count across all locations.\n3. Ensure the entity is registered as a single establishment or that all branches comply uniformly.\n4. Verify that branches are not artificially split to avoid the 5-employee threshold.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Consolidated employee register; Organization chart showing branch structure",
+      "delay_proof": "Correspondence with head office regarding branch compliance"
+    },
+    "legal_text": "Explanation. For the removal of doubt, it is hereby declared that where an establishment has different branches or departments, all such branches or departments, whether situated in the same premises or different premises, shall be treated as parts of the same establishment"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-02-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 2(2)",
+      "category": "Applicability and Establishment Profile"
+    },
+    "question_text": "Has the establishment correctly classified eligible employees by excluding only those in managerial capacities or supervisors drawing wages exceeding ₹3,500 per month?",
+    "applicability_criteria": "All establishments covered under the Act",
+    "simplified_guidance": "1. Review the list of excluded employees.\n2. Verify that excluded supervisors earn > ₹3,500/month.\n3. Verify that other excluded staff are strictly 'managerial' in function.\n4. Ensure all other skilled, unskilled, manual, clerical, and technical staff are included.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payroll records; Job descriptions of excluded staff; Salary slips of supervisors",
+      "delay_proof": "Draft classification list"
+    },
+    "legal_text": "Employee means any person who is employed for hire or reward to do any work... but does not include any person (i) who is employed mainly in a managerial capacity, (ii) who, being employed in a supervisory capacity, draws wages exceeding three thousand and five hundred rupees per mensem, or exercises powers... mainly of a managerial nature, or (iii) who is employed as an apprentice"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(2)(a)",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "Does the establishment calculate contributions for every employee whose name appears on the register as of 30th June and 31st December respectively?",
+    "applicability_criteria": "All establishments covered under the Act",
+    "simplified_guidance": "1. Review the employee register/muster roll for 30th June and 31st December.\n2. Identify all employees on the roll, regardless of whether they were present or absent on that specific day.\n3. Ensure the contribution (currently ₹25) is assessed for every listed name.\n4. Do not exclude employees on leave if their names are still on the register.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Muster Roll for June and December; Contribution Calculation Sheet",
+      "delay_proof": "Reconciliation of employee count vs contribution paid"
+    },
+    "legal_text": "The amount of contribution payable every six months in respect of every employee... whose name appears in the register of an establishment on the 30th June and 31st December, respectively, shall be at the rate of twenty-five rupees"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(4) Proviso 1",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "Are employee contributions deducted strictly from the wages of June and December only?",
+    "applicability_criteria": "All establishments making deductions",
+    "simplified_guidance": "1. Check payroll records for June and December.\n2. Verify that the deduction appears in these specific months.\n3. Check payrolls for other months (e.g., July, January) to ensure no unauthorized welfare deductions are made.\n4. Ensure the deduction does not exceed the prescribed employee rate.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Wage Register/Salary Slips for June and December",
+      "delay_proof": "Correction entries in payroll"
+    },
+    "legal_text": "Provided that, no such deduction shall be made in excess of the amount of the contribution payable by such employee, nor shall it be made from any wages other than the wages for the months of June and December"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(2)(b)",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "Does the employer contribute an amount equal to three times the employee's contribution for each eligible employee?",
+    "applicability_criteria": "All employers covered under the Act",
+    "simplified_guidance": "1. Calculate the total employee share (e.g., Number of employees × ₹25).\n2. Calculate the mandatory employer share (Number of employees × ₹75).\n3. Verify that the total remittance equals the sum of both shares.\n4. Ensure the employer is not paying less than the 1:3 ratio.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Challan/Receipt showing total amount paid; Calculation worksheet",
+      "delay_proof": "Accounting vouchers showing expense allocation"
+    },
+    "legal_text": "in respect of an employer, for each employee referred to in clause (a), thrice the amount of contribution payable by an employee."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-04",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(3)",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "Are the total contributions (employer + employee share) remitted to the Board before the 15th of July and 15th of January respectively?",
+    "applicability_criteria": "All establishments",
+    "simplified_guidance": "1. Identify the due date: 15th July for June period, 15th Jan for Dec period.\n2. Check the date on the payment receipt or bank challan.\n3. If paid after the 15th, verify if penal interest has been calculated.\n4. Ensure payment covers the full liability for that six-month period.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Bank Challan/Online Payment Receipt with date stamp",
+      "delay_proof": "Proof of payment of penal interest for late remittance"
+    },
+    "legal_text": "Every employer shall pay to the Board both the employer's contribution and the employee's contribution in accordance with the provisions of sub-section (2) before the 15th day of July and 15th day of January, as the case may be."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-05",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(5)",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "Is the employer's share of the contribution paid directly by the employer without recovering it from the employee's wages?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Audit payroll deductions for June and December.\n2. Ensure the deduction amount matches exactly the employee share (e.g., ₹25).\n3. If the deduction is higher (e.g., ₹100), investigate if the employer is illegally recovering their share.\n4. Verify compliance with the contract of employment regarding deductions.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Salary slips; Payroll Register",
+      "delay_proof": "Employee grievance records"
+    },
+    "legal_text": "Notwithstanding any contract to the contrary, no employer shall deduct the employer's contribution from any wages payable to an employee or otherwise recover it from the employee."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-06",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(4) Proviso 2",
+      "category": "Contribution Calculation and Deductions"
+    },
+    "question_text": "If a deduction was missed in June or December, was written permission obtained from the Inspector before deducting it in a subsequent month?",
+    "applicability_criteria": "Cases where the employer failed to deduct contributions in the designated month",
+    "simplified_guidance": "1. Identify any deductions made in months other than June or December.\n2. If found, request the written permission letter from the Inspector.\n3. Verify the date of permission vs date of deduction.\n4. Without permission, subsequent deductions are unauthorized.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written permission letter from the Labour Welfare Inspector",
+      "delay_proof": "Application submitted for permission"
+    },
+    "legal_text": "Provided further that, if through inadvertence or otherwise, no deduction has been made from the wages of an employee for the months aforesaid, such deduction may be made from the wages of such employee for any subsequent month or months with the permission in writing of the Inspector appointed under this Act."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-07",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(7)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "Are the employer's and employees' contributions remitted to the Board using the authorized modes of payment?",
+    "applicability_criteria": "All establishments remitting contributions",
+    "simplified_guidance": "1. Verify the mode of payment used for the last remittance.\n2. Ensure it was paid by Cheque, Money-order, or Cash.\n3. Retain the counterfoil, receipt, or bank acknowledgement as proof.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Bank Challan; Cheque Stubs; Money Order Receipts",
+      "delay_proof": "None"
+    },
+    "legal_text": "An employer shall pay the employer's and the employee's contribution to the Board by cheque, money-order or in cash"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6BB-07-EXP",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6BB(7)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "Does the employer bear the full expense of remitting contributions to the Board?",
+    "applicability_criteria": "All establishments remitting contributions",
+    "simplified_guidance": "1. Review accounting vouchers for remittance expenses (e.g., Money Order fees, Bank Charges).\n2. Ensure these costs are booked to the employer's account.\n3. Verify that no part of the remittance cost is recovered from employees.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Accounting Vouchers; Expense Reports",
+      "delay_proof": "None"
+    },
+    "legal_text": "and he shall bear the expenses of remitting to the Board such contributions."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-03-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 3(1)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "Are all unpaid accumulations (wages or gratuity due for over three years) transferred to the Board?",
+    "applicability_criteria": "Establishments with unpaid employee dues older than 3 years",
+    "simplified_guidance": "1. Identify 'unpaid accumulations' (payments due but not made within 3 years).\n2. Exclude Provident Fund contributions.\n3. Transfer these amounts to the Board at prescribed intervals.\n4. Maintain a separate account until claims are decided.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Ledger of Unpaid Accumulations; Proof of Transfer to Board",
+      "delay_proof": "Correspondence regarding disputed claims"
+    },
+    "legal_text": "notwithstanding anything contained in any other law for the time being in force or in any contract or instrument, all unpaid accumulations shall be paid at such intervals as may be prescribed to the Board, which shall keep a separate account therefor"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-03-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 3(2)(a)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "Are all fines realized from employees remitted to the Fund?",
+    "applicability_criteria": "Establishments where fines are imposed on employees",
+    "simplified_guidance": "1. Check the Register of Fines.\n2. Calculate the total fines realized during the period.\n3. Verify that the full amount has been transferred to the Labour Welfare Fund.\n4. Ensure no fines are retained by the employer.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Fines Register; Payment Receipt/Challan",
+      "delay_proof": "None"
+    },
+    "legal_text": "The Fund shall consist of... all fines realised from the employees"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6B-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6B(1)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "If a notice of demand for unpaid dues is served by the Welfare Commissioner, is payment made within the specified period?",
+    "applicability_criteria": "Employers receiving a specific demand notice for default",
+    "simplified_guidance": "1. Check incoming correspondence for Demand Notices from the Welfare Commissioner.\n2. Verify the deadline specified in the notice (minimum 30 days).\n3. Ensure payment is made strictly within this period.\n4. Retain proof of payment against the notice.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Demand Notice; Proof of Payment",
+      "delay_proof": "Appeal or representation against the notice"
+    },
+    "legal_text": "the Welfare Commissioner may cause to be served a notice on such employer to pay the amount within the period specified therein which shall not be less than thirty days from the date of service of such notice."
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6B-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6B(2)(b)",
+      "category": "Fund Remittance and Statements"
+    },
+    "question_text": "Has the employer paid the applicable penal interest for any contributions not paid by the 15th of July or January?",
+    "applicability_criteria": "Employers who have delayed contribution payments",
+    "simplified_guidance": "1. Identify late payments (paid after 15th July/Jan).\n2. Calculate interest: 1.5% per month for the first 3 months.\n3. Calculate interest: 2% per month for subsequent months.\n4. Verify that this interest amount was added to the remittance.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Interest Calculation Sheet; Challan showing interest component",
+      "delay_proof": "Application for remission of penalty (if applicable)"
+    },
+    "legal_text": "pay to the Board simple interest... (i) for the first three months, at one and a half percent. of the said amount for each completed month... (ii) thereafter, at two per cent. of that amount for each completed month"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-03-01-UA",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 3(1)",
+      "category": "Unpaid Accumulations and Fines Management"
+    },
+    "question_text": "Has the employer identified and paid all 'unpaid accumulations' (wages/gratuity due for over 3 years) to the Welfare Board?",
+    "applicability_criteria": "Establishments with wages or gratuity remaining unpaid for more than 3 years",
+    "simplified_guidance": "1. Review the Register of Unpaid Wages/Wages Register.\n2. Identify payments that became due more than 3 years ago but were not paid.\n3. Verify that these specific amounts have been transferred to the Board.\n4. Ensure payment is made notwithstanding other laws like Payment of Wages Act.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of transfer (Challan/Receipt); Register of Unpaid Accumulations",
+      "delay_proof": "Reconciliation statement of unpaid dues"
+    },
+    "legal_text": "notwithstanding anything contained in any other law for the time being in force or in any contract or instrument, all unpaid accumulations shall be paid at such intervals as may be prescribed to the Board"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-03-02-F",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 3(2)(a)",
+      "category": "Unpaid Accumulations and Fines Management"
+    },
+    "question_text": "Are all fines realized from employees during the period transferred to the Labour Welfare Fund?",
+    "applicability_criteria": "Establishments that impose fines on employees",
+    "simplified_guidance": "1. Check the 'Register of Fines' maintained under Factories Act or Shops Act.\n2. Sum up the total fines realized in the accounting period.\n3. Verify the remittance challan to the Board covers this exact amount.\n4. Ensure fines are not used for other internal welfare activities unless authorized.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Register of Fines; Bank Challan showing transfer to LWF",
+      "delay_proof": "None"
+    },
+    "legal_text": "The Fund shall consist of... all fines realised from the employees"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6B-02-UA",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6B(2)(a)",
+      "category": "Unpaid Accumulations and Fines Management"
+    },
+    "question_text": "If unpaid accumulations or fines were paid late, has the employer paid the mandatory penal interest?",
+    "applicability_criteria": "Employers who defaulted on timely payment of unpaid accumulations or fines",
+    "simplified_guidance": "1. Determine the due date for the payment of unpaid accumulations/fines.\n2. Calculate the delay period.\n3. Apply interest: 1.5% per month for the first 3 months.\n4. Apply interest: 2% per month for months thereafter.\n5. Verify proof of interest payment.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Interest calculation sheet; Payment receipt",
+      "delay_proof": "None"
+    },
+    "legal_text": "in the case of failure to pay any amount of unpaid accumulations or fines realised from the employees... (i) for the first three months, at one and a half per cent. of the said amount... (ii) thereafter, at two per cent. of that amount"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-03-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 3(1)",
+      "category": "Unpaid Accumulations and Fines Management"
+    },
+    "question_text": "Does the establishment maintain a separate account for unpaid accumulations until they are transferred to the Board?",
+    "applicability_criteria": "All establishments with unpaid accumulations",
+    "simplified_guidance": "1. Verify the chart of accounts or ledger.\n2. Ensure a specific liability account exists for 'Unpaid Accumulations'.\n3. Confirm that funds are not commingled with general working capital in a way that prevents tracing.\n4. This account helps track the 3-year aging for transfer.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Accounting Ledger; Balance Sheet Schedule",
+      "delay_proof": "Internal accounting memo"
+    },
+    "legal_text": "Board, which shall keep a separate account therefor until claims thereto have been decided in the manner provided in section 6A"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-6A-02",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 6A(2)",
+      "category": "Unpaid Accumulations and Fines Management"
+    },
+    "question_text": "Does the employer retain records of payments made to the Board to act as a valid discharge of liability towards employees?",
+    "applicability_criteria": "All employers transferring funds to the Board",
+    "simplified_guidance": "1. Retain the receipt/acknowledgment from the Board for all transfers of unpaid accumulations.\n2. If an employee claims these old dues later, use this receipt to prove liability was transferred.\n3. Note: The discharge of liability is only to the extent of the amount paid.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Board Receipts; Transfer Challans",
+      "delay_proof": "None"
+    },
+    "legal_text": "Any unpaid accumulations paid to the Board in accordance with the provision of section 3 shall on such payment, discharge an employer of the liability to make payment to an employee in respect thereof, but to the extent only of the amount paid to the Board"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-17A-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 17A",
+      "category": "Inspections, Interest and Penalties"
+    },
+    "question_text": "Does the establishment ensure that Inspectors are not obstructed in the exercise of their powers or discharge of duties?",
+    "applicability_criteria": "All establishments subject to inspection",
+    "simplified_guidance": "1. Ensure security staff are aware of Inspector entry rights.\n2. Allow Inspectors to enter premises at any reasonable time.\n3. Do not delay or refuse entry to authorized officers.\n4. Cooperate during the physical verification of staff or premises.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Inspection Book/Visit Remarks",
+      "delay_proof": "None"
+    },
+    "legal_text": "Any person who wilfully obstruct an Inspector in the exercise of his powers or discharge of his duties under this Act... shall, on conviction, be punished"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-17A-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 17A",
+      "category": "Inspections, Interest and Penalties"
+    },
+    "question_text": "Are all registers, records, and documents maintained under the Act produced immediately upon demand by the Inspector?",
+    "applicability_criteria": "All establishments maintaining records",
+    "simplified_guidance": "1. Keep MLWF records (registers, challans, notices) readily accessible.\n2. Produce them immediately when requested by an Inspector.\n3. Ensure that the absence of a senior manager does not prevent record production.\n4. Failure to produce documents is a specific punishable offence.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Acknowledgement of produced records in Inspection Report",
+      "delay_proof": "Written explanation for missing records"
+    },
+    "legal_text": "or fails to produce for inspection on demand by an Inspector any registers, records or other documents maintained in pursuance of the provisions of this Act or the rules made thereunder"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-17A-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 17A",
+      "category": "Inspections, Interest and Penalties"
+    },
+    "question_text": "Does the employer supply true copies of any documents demanded by the Inspector?",
+    "applicability_criteria": "All establishments",
+    "simplified_guidance": "1. If an Inspector requests copies of registers or challans, provide them.\n2. Certify them as 'True Copies' if required.\n3. Ensure the copies are legible and complete.\n4. Submit them within the timeline specified by the Inspector.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Cover letter submitting documents; Receipt from Inspector",
+      "delay_proof": "None"
+    },
+    "legal_text": "or to supply to him on demand true copies of any such documents shall, on conviction, be punished"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-12-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 12(1)",
+      "category": "Inspections, Interest and Penalties"
+    },
+    "question_text": "Does the establishment recognize and cooperate with Shop Act Inspectors acting as Inspectors for the Labour Welfare Fund?",
+    "applicability_criteria": "Establishments covered under Bombay Shops and Establishments Act",
+    "simplified_guidance": "1. Note that Inspectors appointed under the Bombay Shops and Establishments Act are deemed Inspectors for MLWF.\n2. Do not deny them access on the grounds that they are not from the Welfare Board.\n3. Their jurisdiction for MLWF is the same as their Shop Act area.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Security Protocol; Management Awareness",
+      "delay_proof": "None"
+    },
+    "legal_text": "Inspectors appointed, whether by a local authority or the State Government under the Bombay Shops and Establishments Act, 1948... shall be deemed to be also Inspectors for the purposes of this Act"
+  },
+  {
+    "audit_item_id": "MLWF-SEC-17A-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Labour Welfare Fund Act, 1953",
+      "section_reference": "Section 17A Proviso",
+      "category": "Inspections, Interest and Penalties"
+    },
+    "question_text": "Is the management aware that for second or subsequent offences involving obstruction or failure to produce records, the fine cannot be less than fifty rupees?",
+    "applicability_criteria": "Establishments with prior convictions under the Act",
+    "simplified_guidance": "1. Review history of non-compliance.\n2. Note that for repeat offences, the court has mandatory minimum fine instructions.\n3. Ensure strict compliance to avoid triggering 'subsequent offence' clauses.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Legal Register updating penalty clauses",
+      "delay_proof": "None"
+    },
+    "legal_text": "Provided that, in the absence of special and adequate reasons to the contrary to be mentioned in the judgement of the Court, in any case where the offender is sentenced to a fine only, the amount of fine shall not be less than fifty rupees."
+  }
+]

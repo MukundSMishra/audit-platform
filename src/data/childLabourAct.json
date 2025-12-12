@@ -1,0 +1,677 @@
+[
+  {
+    "audit_item_id": "CLPRA-S3-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 3(1)",
+      "category": "Employment Prohibitions and Zero Tolerance"
+    },
+    "question_text": "Is the establishment completely free from employing or permitting any child (person under 14 years of age) to work in any occupation or process?",
+    "applicability_criteria": "All establishments, occupations, and processes",
+    "simplified_guidance": "1. Verify that no person under the age of 14 is working on the premises.\n2. Request age proof documents (Aadhaar, Birth Certificate, School Record) for any young-looking workers.\n3. Ensure no informal or casual engagement of children exists, even for support tasks.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Absence of children on premises; Age proof records for young workers",
+      "delay_proof": "N/A (Zero Tolerance)"
+    },
+    "legal_text": "No child shall be employed or permitted to work in any occupation or process."
+  },
+  {
+    "audit_item_id": "CLPRA-S3A-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 3A",
+      "category": "Employment Prohibitions and Zero Tolerance"
+    },
+    "question_text": "Does the establishment ensure that no adolescent (14-18 years) is employed or permitted to work in any hazardous occupations or processes listed in the Schedule?",
+    "applicability_criteria": "Establishments involving mines, inflammable substances, explosives, or hazardous processes defined under the Factories Act",
+    "simplified_guidance": "1. Identify if the establishment involves mines, explosives, or 'hazardous processes' as per Factories Act.\n2. If yes, verify that no person between 14-18 years is employed in these specific areas.\n3. Check roster and role descriptions of adolescent workers to ensure separation from hazardous zones.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Employee roster with age details; Job descriptions; Site inspection of hazardous areas",
+      "delay_proof": "N/A (Zero Tolerance)"
+    },
+    "legal_text": "No adolescent shall be employed or permitted to work in any of the hazardous occupations or processes set forth in the Schedule."
+  },
+  {
+    "audit_item_id": "CLPRA-S3-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 3(2)(a)",
+      "category": "Employment Prohibitions and Zero Tolerance"
+    },
+    "question_text": "If a child is helping in a family enterprise, is it ensured that the work is non-hazardous and performed only after school hours or during vacations?",
+    "applicability_criteria": "Family enterprises where children assist",
+    "simplified_guidance": "1. Confirm the relationship of the child to the occupier (must be family).\n2. Verify school attendance records to ensure work does not overlap with school hours.\n3. Inspect the nature of work to ensure it is not listed in the hazardous Schedule.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "School attendance records; Statement from parents/guardians; Verification of work timing",
+      "delay_proof": "Evidence of current school enrollment"
+    },
+    "legal_text": "Nothing in sub-section (1) shall apply where the child helps his family or family enterprise, which is other than any hazardous occupations or processes set forth in the Schedule, after his school hours or during vacations."
+  },
+  {
+    "audit_item_id": "CLPRA-S3-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 3(2)(b)",
+      "category": "Employment Prohibitions and Zero Tolerance"
+    },
+    "question_text": "If children are working as artists in audio-visual entertainment or sports, are prescribed safety measures implemented and is school education protected?",
+    "applicability_criteria": "Audio-visual entertainment industry (films, TV, ads) and sports activities",
+    "simplified_guidance": "1. Verify that the work does not affect school attendance.\n2. Check for implementation of prescribed safety measures during production/activity.\n3. Ensure the child is not involved in a circus (which is excluded from this exception).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Permission records; Safety guidelines checklist; Schooling continuity proof",
+      "delay_proof": "Production schedules showing non-school timing"
+    },
+    "legal_text": "Nothing in sub-section (1) shall apply where the child... works as an artist in an audio-visual entertainment industry... subject to such conditions and safely measures, as may be prescribed: Provided that no such work under this clause shall effect the school education of the Child."
+  },
+  {
+    "audit_item_id": "CLPRA-SCH-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "The Schedule",
+      "category": "Employment Prohibitions and Zero Tolerance"
+    },
+    "question_text": "Has the establishment verified its processes against the Schedule to confirm if they fall under 'hazardous processes' as defined in the Factories Act?",
+    "applicability_criteria": "Industrial establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Review the Schedule of the Act which lists Mines, Inflammable substances, and Hazardous processes.\n2. Cross-reference with Section 2(cb) of the Factories Act, 1948 for 'hazardous process' definition.\n3. If processes match, ensure zero employment of adolescents in those specific roles.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 2 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Process flow charts; List of hazardous chemicals/machines; Employee age records for these areas",
+      "delay_proof": "Corrective action plan to remove adolescents from identified hazardous zones"
+    },
+    "legal_text": "THE SCHEDULE... (1) Mines. (2) Inflammable substances or explosives. (3) Hazardous process. Explanation. For the purposes of this Schedule, hazardous process has the meaning assigned to it in clause (cb) of the Factories Act, 1948"
+  },
+  {
+    "audit_item_id": "CLPRA-S7-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 7(2)",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Is the work period for every adolescent fixed such that they do not work for more than three hours continuously without a rest interval of at least one hour?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Review the work schedule or roster for adolescent employees.\n2. Verify that no continuous work shift exceeds 3 hours.\n3. Ensure a break of at least 1 full hour is provided after every 3-hour block.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Attendance registers showing in/out times and break times; Shift rosters",
+      "delay_proof": "Updated rosters incorporating required breaks"
+    },
+    "legal_text": "The period of work on each day shall be so fixed that no period shall exceed three hours and that no adolescent shall work for more than three hours before he has had an interval for rest for at least one hour."
+  },
+  {
+    "audit_item_id": "CLPRA-S7-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 7(3)",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Is the daily spread-over of work for adolescents limited to a maximum of six hours, inclusive of rest intervals and waiting time?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Calculate the total time between the start and end of the work day (spread-over).\n2. Include all rest breaks and time spent waiting for work.\n3. Confirm this total duration does not exceed 6 hours.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Time cards or attendance logs showing total spread-over",
+      "delay_proof": "Revised shift timings"
+    },
+    "legal_text": "The period of work of a adolescent shall be so arranged that inclusive of his interval for rest, under sub-section (2), it shall not be spread over more than six hours, including the time spent in waiting for work on any day."
+  },
+  {
+    "audit_item_id": "CLPRA-S7-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 7(4)",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Does the establishment ensure that no adolescent is required or permitted to work between 7 P.M. and 8 A.M.?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. check the daily attendance logs for clock-out times.\n2. Confirm no adolescent is working after 7:00 PM or before 8:00 AM.\n3. Interview workers to ensure no off-the-record late work occurs.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Shift schedule; Attendance records; Gate entry/exit logs",
+      "delay_proof": "Policy document prohibiting night shifts for adolescents"
+    },
+    "legal_text": "No adolescent shall be permitted or required to work between 7 p. m and 8 a.m."
+  },
+  {
+    "audit_item_id": "CLPRA-S7-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 7(5)",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Is the establishment strictly free from requiring or permitting adolescents to work overtime?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Review payroll records for any overtime payments to adolescent workers.\n2. Cross-reference attendance hours with standard working hours.\n3. Ensure strict policy against OT for this age group.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payroll/Wage slips showing zero overtime; Attendance registers",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No adolescent shall be required or permitted to work overtime."
+  },
+  {
+    "audit_item_id": "CLPRA-S7-05",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 7(6)",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Is it ensured that no adolescent works in the establishment on a day where they have already worked in another establishment?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Obtain a declaration from adolescent employees regarding other employment.\n2. Ensure shift timings do not encourage double employment.\n3. Monitor fatigue levels or late arrivals that might indicate double shifts.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Employee declarations; Interview notes",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No adolescent shall be required or permitted to work in any establishment on any day on which he has already been working in another establishment."
+  },
+  {
+    "audit_item_id": "CLPRA-S8-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 8",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Is every adolescent allowed a whole day holiday each week, specified by a permanently exhibited notice?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Identify the specific day of the week designated as the holiday.\n2. Verify attendance records to ensure no work is performed on that day.\n3. Check if a notice specifying this day is displayed conspicuously.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Displayed notice of weekly holiday; Attendance register showing 'Off' or 'Holiday'",
+      "delay_proof": "Photo of displayed notice"
+    },
+    "legal_text": "Every adolescent employed in an establishment shall be allowed in each week, a holiday of one whole day, which day shall be specified by the occupier in a notice permanently exhibited in a conspicuous place in the establishment..."
+  },
+  {
+    "audit_item_id": "CLPRA-S8-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 8",
+      "category": "Regulation of Work Hours"
+    },
+    "question_text": "Has the specified weekly holiday day remained unaltered for at least three months, unless a change was necessary?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Check the history of the weekly holiday notices.\n2. Ensure the designated day is not changed more frequently than once in three months.\n3. Review internal memos or circulars regarding holiday changes.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Log of holiday notices; Past records",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "...and the day so specified shall not be altered by the occupier more than once in three months."
+  },
+  {
+    "audit_item_id": "CLPRA-S11-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 11",
+      "category": "Statutory Registers and Records"
+    },
+    "question_text": "Is a dedicated register maintained for every adolescent employed and kept available for inspection at all times during working hours?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Create a physical or digital register specifically for adolescent employees.\n2. Ensure this register is accessible at the workplace whenever work is in progress.\n3. Produce it immediately upon request by an Inspector.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical/Digital Register available on-site",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "There shall be maintained by every occupier in respect of adolescent employed or permitted to work in any establishment, a register to be available for inspection by an Inspector at all times during working hours or when work is being carried on in any such establishment..."
+  },
+  {
+    "audit_item_id": "CLPRA-S11-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 11(a)",
+      "category": "Statutory Registers and Records"
+    },
+    "question_text": "Does the register record the correct name and date of birth of every adolescent employed?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Verify the date of birth using valid age proof (e.g., medical certificate, school record).\n2. Enter the full name and DOB into the register for every adolescent worker.\n3. Update this immediately upon hiring.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Register entries matching age proof documents",
+      "delay_proof": "Draft entries pending verification"
+    },
+    "legal_text": "showing (a) the name and date of birth of every adolescent so employed or permitted to work;"
+  },
+  {
+    "audit_item_id": "CLPRA-S11-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 11(b)",
+      "category": "Statutory Registers and Records"
+    },
+    "question_text": "Does the register detail the daily hours of work, periods of work, and rest intervals for each adolescent?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Record the start and end times of work daily.\n2. Explicitly log the duration and timing of the rest interval (minimum 1 hour).\n3. Ensure entries reflect actual working conditions.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Register columns for 'Hours of Work', 'Periods of Work', and 'Intervals of Rest'",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "showing... (b) hours and periods of work of any such adolescent and the intervals of rest to which he is entitled:"
+  },
+  {
+    "audit_item_id": "CLPRA-S11-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 11(c)",
+      "category": "Statutory Registers and Records"
+    },
+    "question_text": "Does the register clearly specify the nature of work performed by each adolescent?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Describe the specific job role or tasks assigned to the adolescent.\n2. Ensure the description confirms the work is non-hazardous.\n3. Avoid generic terms; be specific (e.g., 'Packing Assistant' instead of 'Helper').",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Register column 'Nature of Work' filled for all entries",
+      "delay_proof": "Job description documents"
+    },
+    "legal_text": "showing... (c) the nature of work of any such adolescent;"
+  },
+  {
+    "audit_item_id": "CLPRA-S9-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 9(1)",
+      "category": "Notices to Authorities and Workplace Displays"
+    },
+    "question_text": "Has the occupier sent a written notice to the local Inspector within 30 days of employing any adolescent in the establishment?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Draft a notice containing establishment details and management info.\n2. Send this notice to the jurisdictional Inspector within 30 days of the adolescent's start date.\n3. Retain the acknowledgment receipt as proof of compliance.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of the notice sent to the Inspector",
+      "delay_proof": "Proof of dispatch if acknowledgment is pending"
+    },
+    "legal_text": "Every occupier in relation to an establishment... shall, within a period of thirty days from such commencement, send to the Inspector within whose local limits the establishment is situated, a written notice..."
+  },
+  {
+    "audit_item_id": "CLPRA-S9-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 9(1)",
+      "category": "Notices to Authorities and Workplace Displays"
+    },
+    "question_text": "Does the notice sent to the Inspector contain all mandatory particulars regarding the establishment and its management?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Ensure the notice includes: Name and situation of the establishment.\n2. Include: Name of the person in actual management.\n3. Include: Address for communications and nature of occupation/process.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the notice with all 4 required fields filled",
+      "delay_proof": "Correction letter sent to Inspector"
+    },
+    "legal_text": "containing the following particulars, namely:- (a) the name and situation of the establishment; (b) the name of the person in actual management of the establishment; (c) the address to which communications relating to the establishment should be sent; and (d) the nature of the occupation or process carried on in the establishment."
+  },
+  {
+    "audit_item_id": "CLPRA-S12-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 12",
+      "category": "Notices to Authorities and Workplace Displays"
+    },
+    "question_text": "Is an abstract of Sections 3A and 14 displayed in a conspicuous and accessible place at the establishment?",
+    "applicability_criteria": "All establishments (including Railways and Ports)",
+    "simplified_guidance": "1. Prepare a notice containing the text/summary of Section 3A (Prohibition of adolescent labour in hazardous work) and Section 14 (Penalties).\n2. Affix this notice in a high-visibility area (e.g., entrance, notice board).\n3. Ensure it is accessible to all workers.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photographic evidence of the display board",
+      "delay_proof": "Work order for signage printing"
+    },
+    "legal_text": "Every railway administration, every port authority and every occupier shall cause to be displayed in a conspicuous and accessible place... a notice... containing an abstract of sections 3A and 14."
+  },
+  {
+    "audit_item_id": "CLPRA-S12-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 12",
+      "category": "Notices to Authorities and Workplace Displays"
+    },
+    "question_text": "Is the displayed abstract of Sections 3A and 14 written in both the local language and English?",
+    "applicability_criteria": "All establishments",
+    "simplified_guidance": "1. Verify the local language of the region/state.\n2. Ensure the notice has two columns or sections: one in English, one in the local language.\n3. Check that the translation is accurate and legible.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photo of notice showing bilingual text",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "a notice in the local language and in the English language containing an abstract of sections 3A and 14."
+  },
+  {
+    "audit_item_id": "CLPRA-S10-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 10",
+      "category": "Medical Certification and Safety Standards"
+    },
+    "question_text": "Does the occupier possess a valid medical certificate of age for every adolescent employed, to resolve any potential disputes with Inspectors?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Require all adolescent employees to provide a medical certificate of age from a prescribed authority upon hiring.\n2. Keep these certificates on file alongside the employment register.\n3. Present this certificate immediately if an Inspector questions the age of an employee.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Medical Certificate of Age issued by prescribed medical authority",
+      "delay_proof": "Proof of appointment for medical examination"
+    },
+    "legal_text": "If any question arises between an Inspector and an occupier as to the age of any adolescent... the question shall, in the absence of a certificate as to the age of such adolescent granted by the prescribed medical authority, be referred by the Inspector for decision to the prescribed medical authority."
+  },
+  {
+    "audit_item_id": "CLPRA-S13-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 13(2)(a)-(i)",
+      "category": "Medical Certification and Safety Standards"
+    },
+    "question_text": "Are basic health and sanitation standards (cleanliness, ventilation, lighting, drinking water, latrines) maintained for employed adolescents as per prescribed rules?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Ensure the workplace is clean, ventilated, and has adequate lighting.\n2. Provide accessible drinking water and hygienic latrines/urinals.\n3. Verify that dust, fumes, and waste disposal are managed to prevent health hazards.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visual confirmation of facilities; Maintenance logs for cleaning/waste disposal",
+      "delay_proof": "Maintenance contracts or work orders"
+    },
+    "legal_text": "rules may provide for... (a) cleanliness... (b) disposal of wastes... (c) ventilation and temperature; (d) dust and fume... (f) lighting; (g) drinking water; (h) latrine and urinals..."
+  },
+  {
+    "audit_item_id": "CLPRA-S13-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 13(2)(j)-(p)",
+      "category": "Medical Certification and Safety Standards"
+    },
+    "question_text": "Are adolescents strictly prohibited from working at or near dangerous machinery unless specifically trained, supervised, and protected?",
+    "applicability_criteria": "Establishments employing adolescents near machinery",
+    "simplified_guidance": "1. Identify all dangerous or moving machinery in the facility.\n2. Ensure proper fencing and safety guards are in place.\n3. Verify that adolescents are not assigned to clean, lubricate, or adjust machinery while in motion.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Safety training records; Machine guarding; Supervisor statements",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "rules may provide for... (j) fencing of machinery; (k) work at or near machinery in motion; (l) employment of adolescent on dangerous machines... (m) instructions, training and supervision..."
+  },
+  {
+    "audit_item_id": "CLPRA-S13-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 13(2)(q)-(x)",
+      "category": "Medical Certification and Safety Standards"
+    },
+    "question_text": "Is the physical infrastructure (floors, stairs, exits) safe and are fire precautions in place for the protection of adolescent workers?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Inspect floors and stairs to ensure they are not slippery or obstructed.\n2. Cover or fence any pits, sumps, or openings.\n3. Ensure fire exits are clear and fire safety equipment is accessible.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Fire safety certificate; Inspection checklist of floors/stairs",
+      "delay_proof": "Corrective action report for infrastructure repairs"
+    },
+    "legal_text": "rules may provide for... (q) floor, stairs and means of access; (r) pits, sumps, openings in floors, etc.... (v) precautions in case of fire... (x) safety of buildings and machinery."
+  },
+  {
+    "audit_item_id": "CLPRA-S13-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Child and Adolescent Labour (Prohibition and Regulation) Act, 1986",
+      "section_reference": "Section 13(2)(s)-(u)",
+      "category": "Medical Certification and Safety Standards"
+    },
+    "question_text": "Are adolescents protected from carrying excessive weights and exposure to explosive or inflammable dust/gas?",
+    "applicability_criteria": "Establishments employing adolescents (14-18 years)",
+    "simplified_guidance": "1. Set limits on the weight loads adolescents can lift or carry.\n2. Ensure eye protection is provided if work involves particles or glare.\n3. Confirm the area is free from explosive dust or gas hazards.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "PPE issuance records (Eye protection); Weight limit signage",
+      "delay_proof": "Purchase orders for PPE"
+    },
+    "legal_text": "rules may provide for... (s) excessive weights; (t) protection of eyes; (u) explosive or inflammable dust, gas, etc."
+  }
+]

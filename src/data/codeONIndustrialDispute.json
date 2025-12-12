@@ -1,0 +1,1676 @@
+[
+  {
+    "audit_item_id": "IRC_2020-SEC_4_1-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 4(1)",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Has the industrial establishment constituted one or more Grievance Redressal Committees for the resolution of disputes arising out of individual grievances?",
+    "applicability_criteria": "Applicable to every industrial establishment employing 20 or more workers.",
+    "simplified_guidance": "1. Verify the total number of workers employed.\\n2. If the count is 20 or more, ensure a Grievance Redressal Committee is formally constituted.\\n3. Document the constitution of the committee with a formal office order or circular.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Office order or circular constituting the Grievance Redressal Committee.",
+      "delay_proof": "Draft proposal for committee constitution if not yet finalized."
+    },
+    "legal_text": "Every industrial establishment employing twenty or more workers shall have one or more Grievance Redressal Committees for resolution of disputes arising out of individual grievances."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_4_2-002",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 4(2) and 4(4)",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Does the Grievance Redressal Committee consist of an equal number of members representing the employer and the workers, without exceeding ten members in total?",
+    "applicability_criteria": "Applicable to establishments required to constitute a Grievance Redressal Committee (20+ workers).",
+    "simplified_guidance": "1. Check the list of committee members.\\n2. Count representatives from the employer and workers to ensure they are equal.\\n3. Ensure the total number of members does not exceed ten.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Committee membership list with designations indicating representation.",
+      "delay_proof": "Minutes of meeting discussing member selection."
+    },
+    "legal_text": "The Grievance Redressal Committee shall consist of equal number of members representing the employer and the workers to be chosen in such manner as may be prescribed. The total number of members of the Grievance Redressal Committee shall not exceed ten."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_4_3-003",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 4(3)",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Is the chairperson of the Grievance Redressal Committee selected from among persons representing the employer and the workers alternatively on a rotational basis every year?",
+    "applicability_criteria": "Applicable to establishments with a Grievance Redressal Committee.",
+    "simplified_guidance": "1. Review committee records for the current and past year.\\n2. Verify the affiliation of the chairperson for each year.\\n3. Ensure the role alternates between employer and worker representatives annually.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Appointment letters or minutes of meetings recording the selection of the Chairperson for the respective years.",
+      "delay_proof": "Internal memos regarding chairperson rotation."
+    },
+    "legal_text": "The chairperson of the Grievance Redressal Committee shall be selected from among persons representing the employer and the workers alternatively on rotational basis every year."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_4_4-004",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 4(4) Proviso",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Is there adequate representation of women workers in the Grievance Redressal Committee proportional to their employment in the establishment?",
+    "applicability_criteria": "Applicable to establishments with women workers constituting a Grievance Redressal Committee.",
+    "simplified_guidance": "1. Calculate the percentage of women workers in the total workforce.\\n2. Calculate the percentage of women members in the committee.\\n3. Ensure the committee percentage is not less than the workforce percentage.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Staffing data showing gender breakdown and Committee membership list.",
+      "delay_proof": "Recruitment or nomination records for women committee members."
+    },
+    "legal_text": "Provided that there shall be adequate representation of women workers in the Grievance Redressal Committee and such representation shall not be less than the proportion of women workers to the total workers employed in the industrial establishment."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_4_6-005",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 4(6)",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Are proceedings of the Grievance Redressal Committee completed within thirty days of receipt of applications?",
+    "applicability_criteria": "Applicable to establishments where grievances have been filed.",
+    "simplified_guidance": "1. Access the register of grievances or application log.\\n2. Compare the 'Date of Receipt' with the 'Date of Disposal' or 'Date of Decision'.\\n3. Ensure the duration does not exceed 30 days.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Grievance register or case files showing dates of receipt and closure.",
+      "delay_proof": "Justification reports for any pending cases exceeding 30 days."
+    },
+    "legal_text": "The Grievance Redressal Committee may complete its proceedings within thirty days of receipt of the application under sub-section (5)."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_3_1-006",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 3(1)",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Has the establishment constituted a Works Committee if employed 100 or more workers and required by a general or special order of the appropriate Government?",
+    "applicability_criteria": "Applicable to establishments with 100+ workers receiving a Government order.",
+    "simplified_guidance": "1. Check if the establishment has 100 or more workers.\\n2. Verify if any general or special order has been issued by the Government.\\n3. If yes to both, confirm the constitution of the Works Committee.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Government Order and the subsequent Office Order constituting the Works Committee.",
+      "delay_proof": "Correspondence with authorities regarding committee formation."
+    },
+    "legal_text": "In the case of any industrial establishment in which one hundred or more workers are employed or have been employed on any day in the preceding twelve months, the appropriate Government may by general or special order require the employer to constitute a Works Committee... consisting of representatives of employer and workers engaged in the establishment."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_3_1_PROVISO-007",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 3(1) Proviso",
+      "category": "Bi-Partite Works and Grievance Committees"
+    },
+    "question_text": "Does the Works Committee (if constituted) ensure that the number of representatives of workers is not less than the number of representatives of the employer?",
+    "applicability_criteria": "Applicable to establishments with a constituted Works Committee.",
+    "simplified_guidance": "1. obtain the constitution document of the Works Committee.\\n2. Count the number of employer representatives.\\n3. Count the number of worker representatives.\\n4. Ensure worker reps are equal to or greater than employer reps.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Committee structure document listing all members and their categories.",
+      "delay_proof": "Amendment records for committee composition."
+    },
+    "legal_text": "Provided that the number of representatives of workers in such Committee shall not be less than the number of representatives of the employer."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_14_2-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 14(2)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "Where only one registered Trade Union functions in the establishment, has the employer recognized it as the sole negotiating union?",
+    "applicability_criteria": "Applicable to industrial establishments with exactly one registered Trade Union.",
+    "simplified_guidance": "1. Verify if only one registered Trade Union is operating in the establishment.\\n2. Check for a formal letter or agreement recognizing this union as the sole negotiating union.\\n3. Ensure this recognition follows the criteria prescribed by the appropriate Government.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Letter of Recognition issued to the Trade Union.",
+      "delay_proof": "Internal notes regarding verification of union registration status."
+    },
+    "legal_text": "Where only one Trade Union of workers registered under the provisions of this Chapter is functioning in an industrial establishment, then, the employer of such industrial establishment shall, subject to such criteria as may be prescribed, recognise such Trade Union as sole negotiating union of the workers."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_14_3-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 14(3)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "In establishments with multiple unions, has the employer recognized the union with 51% or more support as the sole negotiating union?",
+    "applicability_criteria": "Applicable to establishments with more than one registered Trade Union.",
+    "simplified_guidance": "1. Review the muster roll verification results.\\n2. Identify if any single union has support of 51% or more of workers.\\n3. Confirm the employer has formally recognized this majority union as the sole negotiating union.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Verification report of union membership and subsequent Recognition Letter.",
+      "delay_proof": "Communication with unions regarding verification of membership strength."
+    },
+    "legal_text": "If more than one Trade Union of workers registered under this Code are functioning in an industrial establishment, then, the Trade Union having fifty-one per cent or more workers on the muster roll of that industrial establishment, verified in such manner as may be prescribed, supporting that Trade Union shall be recognised by the employer of the industrial establishment, as the sole negotiating union of the workers."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_14_4-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 14(4)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "Has a Negotiating Council been constituted by the employer if no single union holds 51% or more support?",
+    "applicability_criteria": "Applicable when multiple unions exist but none have 51% majority support.",
+    "simplified_guidance": "1. Confirm that no single union has 51% support.\\n2. Identify all unions with at least 20% support.\\n3. Verify the employer has constituted a Negotiating Council comprising representatives from these unions (1 rep per 20% block).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Formal constitution document of the Negotiating Council listing representatives.",
+      "delay_proof": "Correspondence inviting unions with >20% support to nominate representatives."
+    },
+    "legal_text": "If more than one Trade Union of workers registered under this Code are functioning in an industrial establishment, and no such Trade Union has fifty-one per cent or more of workers... then, there shall be constituted by the employer of the industrial establishment, a negotiating council... consisting of the representatives of such registered Trade Unions which have the support of not less than twenty per cent of the total workers on the muster roll..."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_14_7-004",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 14(7)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "Does the industrial establishment provide the prescribed facilities to the negotiating union or negotiating council?",
+    "applicability_criteria": "Applicable to all establishments with a recognized negotiating union or council.",
+    "simplified_guidance": "1. Check the rules prescribed by the appropriate Government regarding facilities (e.g., notice boards, meeting space).\\n2. Inspect the premises or interview union representatives.\\n3. Confirm these facilities are actually provided and accessible.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical verification of notice boards/office space provided; Written acknowledgment from union.",
+      "delay_proof": "Pending maintenance requests for union facilities."
+    },
+    "legal_text": "The facilities to be provided by industrial establishment to a negotiating union or negotiating council shall be such as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_15-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(15)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "Does the employer bargain collectively in good faith with the recognised Trade Unions?",
+    "applicability_criteria": "Applicable to all employers interacting with recognized unions.",
+    "simplified_guidance": "1. Review minutes of negotiation meetings.\\n2. Ensure the employer attends meetings and responds to proposals.\\n3. Verify absence of 'refusal to bargain' complaints or Unfair Labour Practice charges.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Minutes of collective bargaining meetings; Settlement agreements.",
+      "delay_proof": "Records of scheduled meetings and correspondence regarding scheduling."
+    },
+    "legal_text": "No employer or worker or a Trade Union... shall commit any unfair labour practice specified in the Second Schedule... To refuse to bargain collectively, in good faith with the recognised Trade Unions."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_4-006",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(4)",
+      "category": "Trade Union Recognition and Facilities"
+    },
+    "question_text": "Is the employer free from any practice of discriminating against workers to encourage or discourage Trade Union membership?",
+    "applicability_criteria": "Applicable to all employers.",
+    "simplified_guidance": "1. Verify that no worker has been discharged or punished for urging others to join a union.\\n2. Ensure no dismissal for participation in legal strikes.\\n3. Check that seniority ratings or promotions are not affected by union activities.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Absence of discrimination complaints; Disciplinary records with clear, non-union related justifications.",
+      "delay_proof": "Investigation reports into discrimination allegations."
+    },
+    "legal_text": "To encourage or discourage membership in any Trade Union by discriminating against any worker... discharging or punishing a worker, because he urged other workers to join or organise a Trade Union... discharging or dismissing a worker for taking part in any strike..."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_28_1-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 28(1)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Does the industrial establishment comply with Standing Orders provisions if it employs 300 or more workers?",
+    "applicability_criteria": "Applicable to every industrial establishment employing 300 or more workers on any day in the preceding 12 months.",
+    "simplified_guidance": "1. Verify the maximum number of workers employed on any day in the last 12 months.\\n2. If the count is 300 or more, ensure Standing Orders are prepared and certified.\\n3. Check if specific exemptions apply under Section 28(2).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certified Standing Orders or Adoption of Model Standing Orders.",
+      "delay_proof": "Draft Standing Orders submitted for certification."
+    },
+    "legal_text": "The provisions of this Chapter shall apply to every industrial establishment wherein three hundred or more than three hundred workers, are employed, or were employed on any day of the preceding twelve months."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_30_1-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 30(1) and 30(2)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Has the employer prepared draft standing orders based on the model standing orders and consulted with Trade Unions/Negotiating Unions before submission?",
+    "applicability_criteria": "Applicable to establishments required to have Standing Orders (300+ workers).",
+    "simplified_guidance": "1. Review the draft standing orders prepared by the employer.\\n2. Verify that they cover all matters in the First Schedule.\\n3. Confirm consultation with Trade Unions or Negotiating Unions prior to submission to the Certifying Officer.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Draft Standing Orders; Proof of consultation (minutes/letters) with Unions; Submission receipt from Certifying Officer.",
+      "delay_proof": "Internal correspondence regarding draft preparation."
+    },
+    "legal_text": "The employer shall prepare draft standing orders... based on the model standing orders... The employer shall consult the Trade Unions or recognised negotiating union or members of the negotiating council... and thereafter forward the draft of the standing order electronically or otherwise to the certifying officer for certification."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_30_3-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 30(3)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "If the employer has adopted the Model Standing Orders completely, has this information been forwarded to the Certifying Officer?",
+    "applicability_criteria": "Applicable to establishments opting to adopt Model Standing Orders without modification.",
+    "simplified_guidance": "1. Determine if the establishment has adopted the Central Government's Model Standing Orders in full.\\n2. If yes, verify that formal information regarding this adoption was sent to the Certifying Officer.\\n3. Check for any observations or directions received from the Certifying Officer.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Letter or electronic submission to the Certifying Officer confirming adoption of Model Standing Orders.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an employer adopts a model standing order of the Central Government... such model standing order shall be deemed to have been certified... and employer shall forward the information in this regard to the concerned certifying officer in such manner as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_30_6-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 30(6) read with First Schedule",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Do the Standing Orders contain provisions for every matter set out in the First Schedule applicable to the establishment?",
+    "applicability_criteria": "Applicable to all certified or draft Standing Orders.",
+    "simplified_guidance": "1. Compare the certified Standing Orders against the First Schedule of the Act.\\n2. Ensure coverage of: classification of workers, shift working, attendance, termination, suspension, and redressal mechanisms.\\n3. Confirm no mandatory items are omitted.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certified Standing Orders containing all First Schedule items.",
+      "delay_proof": "Legal opinion on non-applicability of specific schedule items."
+    },
+    "legal_text": "The standing orders shall be certifiable under this Code, if provision is made therein for every matter set out in the First Schedule which is applicable to the industrial establishment."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_33_2-005",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 33(2)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Is the text of the certified Standing Orders maintained and displayed in a language understood by the majority of workers?",
+    "applicability_criteria": "Applicable to all establishments with certified Standing Orders.",
+    "simplified_guidance": "1. Inspect notice boards or the HR portal.\\n2. Verify that the Standing Orders are displayed.\\n3. Confirm the language is English and the language understood by the majority of workers.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Photographic evidence of notice board; Digital logs if displayed electronically.",
+      "delay_proof": "Work order for printing/translation of Standing Orders."
+    },
+    "legal_text": "The text of a standing order as finally certified under this Code shall be maintained by the employer in such language and in such manner for the information of the concerned workers as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_38_1-006",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 38(1)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Are investigations or inquiries into worker misconduct completed ordinarily within ninety days from the date of suspension?",
+    "applicability_criteria": "Applicable when a worker is suspended pending inquiry.",
+    "simplified_guidance": "1. Review records of suspended workers.\\n2. Check the start date of suspension and end date of inquiry.\\n3. Verify if the process was completed within 90 days.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Disciplinary proceeding files; Suspension orders; Final inquiry reports.",
+      "delay_proof": "Written reasons for delay if inquiry exceeds 90 days."
+    },
+    "legal_text": "Where any worker is suspended by the employer pending investigation or inquiry into complaints or charges of misconduct against him, such investigation or inquiry... shall be completed ordinarily within a period of ninety days from the date of suspension."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_38_3-007",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 38(3)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Is subsistence allowance paid at 50% for the first 90 days and 75% thereafter (if delay is not attributable to the worker) during suspension?",
+    "applicability_criteria": "Applicable to workers under suspension pending inquiry.",
+    "simplified_guidance": "1. Check payroll records for suspended workers.\\n2. Verify payment of 50% wages for the first 90 days.\\n3. Verify payment of 75% wages after 90 days if the worker is not responsible for the delay.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payroll records; Bank transfer receipts; Suspension allowance calculation sheets.",
+      "delay_proof": "Disciplinary records showing worker-caused delays if 75% is denied."
+    },
+    "legal_text": "The amount of subsistence allowance payable... shall be... at the rate of fifty per cent of the wages... for the first ninety days... and at the rate of seventy-five per cent of such wages for the remaining period... if the delay... is not directly attributable to the conduct of such worker."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_35_1-008",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 35(1)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Has the employer refrained from modifying certified standing orders within six months of their operation, except by agreement?",
+    "applicability_criteria": "Applicable to employers seeking to modify Standing Orders.",
+    "simplified_guidance": "1. Check the date the current Standing Orders came into operation.\\n2. Verify the date of any application for modification.\\n3. Ensure at least 6 months have passed, or produce an agreement with workers/union authorizing the change.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Date of certification vs Date of modification application; Copy of agreement with Union if <6 months.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The standing orders certified... shall not, except on an agreement between the employer and the workers, or a negotiating union... be liable to modification until the expiry of six months from the date on which the standing orders or the last modifications thereof came into operation."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_86_11-009",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 86(11)",
+      "category": "Standing Orders Management"
+    },
+    "question_text": "Does the employer strictly adhere to the provisions of the finally certified Standing Orders in daily operations?",
+    "applicability_criteria": "Applicable to all employers with certified Standing Orders.",
+    "simplified_guidance": "1. Conduct a spot check of HR practices (leave, shift changes, discipline).\\n2. Compare actual practice against the certified Standing Orders.\\n3. Identify any deviations or contraventions.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Consistency between Standing Orders and HR policy documents/Employee Handbook.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer who does any act in contravention of the standing orders finally certified under this Code shall be punishable with fine which shall not be less than one lakh rupees, but which may extend to two lakh rupees."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_40_i-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 40(i) read with Third Schedule",
+      "category": "Conditions of Service and Notice of Change"
+    },
+    "question_text": "Has the employer provided a formal notice to affected workers before effecting any change in the conditions of service listed in the Third Schedule?",
+    "applicability_criteria": "Applicable to employers proposing changes to wages, hours, leave, shift working, classification, or customary privileges [cite: 1295-1306].",
+    "simplified_guidance": "1. Identify if any change has occurred in wages, hours, leave, or other Third Schedule items.\\n2. Verify if a formal notice was issued to the workers likely to be affected by this change.\\n3. Ensure the notice format complies with prescribed rules.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Notice of Change issued; Acknowledgement receipts from workers or unions.",
+      "delay_proof": "Draft notice awaiting approval."
+    },
+    "legal_text": "No employer, who proposes to effect any change in the conditions of service applicable to any worker in respect of any matter specified in the Third Schedule, shall effect such change, without giving to the workers likely to be affected by such change a notice in such manner as may be prescribed of the nature of the change proposed to be effected."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_40_ii-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 40(ii)",
+      "category": "Conditions of Service and Notice of Change"
+    },
+    "question_text": "Does the employer wait for at least twenty-one days after giving notice before implementing any change in conditions of service?",
+    "applicability_criteria": "Applicable whenever a Notice of Change is issued under Section 40[cite: 470].",
+    "simplified_guidance": "1. Check the date on the Notice of Change.\\n2. Check the effective date of the actual implementation of the change.\\n3. Confirm that at least 21 days elapsed between the notice date and implementation date.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Dated Notice of Change; Implementation circulars or payroll records showing effective date.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer... shall effect such change... within twenty-one days of giving such notice."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_40_PROVISO_C-003",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 40 Proviso (c)",
+      "category": "Conditions of Service and Notice of Change"
+    },
+    "question_text": "In cases of emergent shift changes implemented without notice, was the Grievance Redressal Committee consulted?",
+    "applicability_criteria": "Applicable when shift working is changed due to emergent situations without the standard 21-day notice[cite: 479].",
+    "simplified_guidance": "1. Identify instances of sudden shift changes due to emergencies.\\n2. Verify that the standard Notice of Change was waived.\\n3. Confirm via minutes that the Grievance Redressal Committee was consulted regarding this change.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Minutes of the Grievance Redressal Committee meeting; Internal memo justifying the emergent situation.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that no notice shall be required for effecting any such change... in case of emergent situation which requires change of shift or shift working, otherwise than in accordance with standing orders, in consultation with Grievance Redressal Committee."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_40_PROVISO_A_D-004",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 40 Proviso (a) and (d)",
+      "category": "Conditions of Service and Notice of Change"
+    },
+    "question_text": "If changes were effected without notice, were they strictly in pursuance of a settlement, award, or Government order?",
+    "applicability_criteria": "Applicable when conditions of service are changed without issuing a Section 40 notice[cite: 474, 480].",
+    "simplified_guidance": "1. Identify changes made to service conditions without notice.\\n2. Map these changes to a specific Settlement, Court Award, or Government Order.\\n3. If no such backing document exists, the lack of notice is a non-compliance.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the relevant Settlement, Award, or Government Order.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that no notice shall be required for effecting any such change... where the change is effected in pursuance of any settlement or award; ... if such change is effected in accordance with the orders of the appropriate Government or in pursuance of any settlement or award."
+  },
+  {
+    "audit_item_id": "IRC_2020-THIRD_SCH_ITEM_8-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Third Schedule Item 8 read with Section 40",
+      "category": "Conditions of Service and Notice of Change"
+    },
+    "question_text": "Has the employer issued notice before withdrawing any customary concession, privilege, or changing usage?",
+    "applicability_criteria": "Applicable when removing non-statutory benefits or customary practices[cite: 1303].",
+    "simplified_guidance": "1. Identify any customary benefits (e.g., festival gifts, transport not part of contract) withdrawn recently.\\n2. Verify if a Notice of Change was issued 21 days prior to withdrawal.\\n3. Ensure this covers 'customary concessions' even if not explicitly in the appointment letter.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Notice of Change specifically mentioning the withdrawal of privilege.",
+      "delay_proof": "Minutes of meeting with union discussing the withdrawal."
+    },
+    "legal_text": "Conditions of Service for change of which notice is to be given... Withdrawal of any customary concession or privilege or change in usage."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_62_2_a-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 62(2)(a)",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Has the employer provided a notice of lock-out to workers at least sixty days before the intended date of locking-out?",
+    "applicability_criteria": "Applicable to any employer intending to declare a lock-out in an industrial establishment.",
+    "simplified_guidance": "1. Verify the date the lock-out commenced.\\n2. Check the date the notice was issued to workers.\\n3. Ensure there is a gap of at least 60 days between the notice issuance and the lock-out start date.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Lock-out Notice; Proof of service to workers/unions.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer of an industrial establishment shall lock-out any of his workers... without giving them notice of lock-out as hereinafter provided, within sixty days before locking-out."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_62_2_b-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 62(2)(b)",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Did the employer observe the mandatory fourteen-day cooling-off period after giving notice before commencing a lock-out?",
+    "applicability_criteria": "Applicable to employers who have issued a lock-out notice.",
+    "simplified_guidance": "1. Identify the date the lock-out notice was given.\\n2. Identify the actual date the lock-out began.\\n3. Confirm that the lock-out did not start within 14 days of the notice date.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Dated Notice of Lock-out; Operational records showing last working day.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer of an industrial establishment shall lock-out any of his workers... within fourteen days of giving such notice."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_62_6-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 62(6)",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Did the employer report the receipt of any strike notices or the giving of any lock-out notices to the appropriate Government and conciliation officer within five days?",
+    "applicability_criteria": "Applicable whenever an employer receives a strike notice from workers or issues a lock-out notice.",
+    "simplified_guidance": "1. Check the 'Date of Receipt' for any strike notices from unions/workers.\\n2. Verify the 'Date of Dispatch' of the report sent to the Government/Conciliation Officer.\\n3. Ensure the report was sent within 5 days of receiving the strike notice or issuing the lock-out notice.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Report (Form) submitted to the Government/Conciliation Officer; Acknowledgement receipt.",
+      "delay_proof": "Draft report prepared but not sent."
+    },
+    "legal_text": "If on any day an employer receives from any person employed by him any such notices... or gives to any person employed by him any such notices... he shall within five days thereof report to the appropriate Government... and to the conciliation officer, the number of such notices received or given on that day."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_62_2_d_e-004",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 62(2)(d) and (e)",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Has the employer refrained from declaring a lock-out during the pendency of conciliation or tribunal proceedings?",
+    "applicability_criteria": "Applicable during active conciliation or adjudication proceedings.",
+    "simplified_guidance": "1. Check if any conciliation or tribunal proceedings were active at the time of lock-out.\\n2. Verify that no lock-out occurred during the proceedings.\\n3. Ensure no lock-out occurred for 7 days after conciliation concluded or 60 days after tribunal proceedings concluded.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Records of legal proceedings; Lock-out timeline.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No employer... shall lock-out... during the pendency of any conciliation proceedings... and seven days after the conclusion of such proceedings; or during the pendency of proceedings before a Tribunal... and sixty days, after the conclusion of such proceedings."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_64-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 64",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Has the employer refrained from knowingly spending or applying money in direct furtherance of any illegal strike or lock-out?",
+    "applicability_criteria": "Applicable to all employers.",
+    "simplified_guidance": "1. Review financial records for payments made to support strikes or lock-outs declared illegal.\\n2. Ensure no funds were diverted to support such activities.\\n3. Check for any internal authorization of such expenditure.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 month",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Financial audit reports; Ledger entries.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No person shall knowingly spend or apply any money in direct furtherance or support of any illegal strike or lock-out."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_42_3-006",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 42(3)",
+      "category": "Strikes, Lock-outs and Dispute Resolution"
+    },
+    "question_text": "Where a dispute is referred to voluntary arbitration, is the agreement in the prescribed form and signed by the parties?",
+    "applicability_criteria": "Applicable when the employer and workers agree to refer a dispute to arbitration voluntarily.",
+    "simplified_guidance": "1. Identify if any dispute was referred to arbitration voluntarily.\\n2. Retrieve the written arbitration agreement.\\n3. Check if it matches the form prescribed by the rules and contains signatures of both parties.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Signed Arbitration Agreement in prescribed format.",
+      "delay_proof": "Draft agreement under negotiation."
+    },
+    "legal_text": "An arbitration agreement referred to in sub-section (1) shall be in such form and shall be signed by the parties thereto in such manner as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_68-001",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 68",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Does the employer maintain a muster roll for the purposes of Chapter IX and provide for entries by workers presenting themselves for work?",
+    "applicability_criteria": "Applicable to industrial establishments where workers have been laid-off (typically 50+ workers).",
+    "simplified_guidance": "1. Inspect the muster roll or electronic attendance system at the establishment.\\n2. Verify that workers presenting themselves for work during normal hours make entries.\\n3. Ensure this record is maintained even during periods of lay-off.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical or digital muster rolls with time-stamped entries.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Notwithstanding that workers in any industrial establishment have been laid-off, it shall be the duty of every employer to maintain for the purposes of this Chapter a muster roll, and to provide for the making of entries therein by workers who may present themselves for work at the establishment at the appointed time during normal working hours."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_67-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 67",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Are laid-off workers paid compensation equal to fifty per cent of the total basic wages and dearness allowance for the period of lay-off?",
+    "applicability_criteria": "Applicable to industrial establishments (factories, mines, plantations) with 50+ workers, for workers with 1+ year continuous service.",
+    "simplified_guidance": "1. Identify workers laid-off in the preceding 12 months.\\n2. Check payroll records for the days of lay-off.\\n3. Verify that the compensation paid is at least 50% of basic wages + DA.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payroll registers; Bank transfer advice showing lay-off compensation.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whenever a worker... whose name is borne on the muster rolls of an industrial establishment and who has completed not less than one year of continuous service under an employer is laid-off... he shall be paid by the employer for all days during which he is so laid-off... compensation which shall be equal to fifty per cent of the total of the basic wages and dearness allowance that would have been payable to him, had he not been so laid-off."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_70_a-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 70(a)",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Has the employer given one month's notice in writing (or pay in lieu) before retrenching a worker with continuous service of one year?",
+    "applicability_criteria": "Applicable to all industries when retrenching workers with >1 year service (subject to Chapter X thresholds).",
+    "simplified_guidance": "1. Review files of retrenched workers.\\n2. Verify the notice copy indicating reasons for retrenchment was served one month prior.\\n3. Alternatively, prove payment of wages in lieu of notice period.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Retrenchment Notice with acknowledgement; Payroll slip showing Notice Pay.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No worker... shall be retrenched by that employer until... the worker has been given one month's notice in writing indicating the reasons for retrenchment and the period of notice has expired, or the worker has been paid in lieu of such notice, wages for the period of the notice."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_70_b-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 70(b)",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Has retrenchment compensation equivalent to fifteen days' average pay for every completed year of continuous service been paid at the time of retrenchment?",
+    "applicability_criteria": "Applicable to all industries when retrenching workers with >1 year service.",
+    "simplified_guidance": "1. Check the calculation of 'Average Pay'.\\n2. Calculate service years (including parts >6 months).\\n3. Confirm payment of 15 days' pay per year of service was made at the time of retrenchment.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Full and Final Settlement statement signed by the worker.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No worker... shall be retrenched by that employer until... the worker has been paid, at the time of retrenchment, compensation which shall be equivalent to fifteen days' average pay... for every completed year of continuous service or any part thereof in excess of six months."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_70_c-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 70(c)",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Was a notice of retrenchment served on the appropriate Government in the prescribed manner?",
+    "applicability_criteria": "Applicable whenever a worker with >1 year service is retrenched.",
+    "simplified_guidance": "1. Verify the 'Date of Retrenchment'.\\n2. Check for the proof of delivery/submission of the prescribed form to the Government authority.\\n3. Ensure this was done as per the timeline in the rules.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledgement receipt from the appropriate Government department.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No worker... shall be retrenched by that employer until... notice in such manner as may be prescribed is served on the appropriate Government or such authority as may be specified by the appropriate Government by notification."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_71-006",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 71",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Did the employer follow the 'Last In First Out' principle when retrenching workers belonging to a particular category, unless recorded reasons exist?",
+    "applicability_criteria": "Applicable to retrenchment of citizens of India.",
+    "simplified_guidance": "1. Obtain the seniority list of the category of workers being retrenched.\\n2. Verify that the retrenched worker was the last person employed in that category.\\n3. If a senior worker was retrenched instead, check for written recorded reasons.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Seniority list; Retrenchment order with recorded reasons (if deviating from LIFO).",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where any worker in an industrial establishment who is a citizen of India, is to be retrenched and he belongs to a particular category of workers in that establishment, then, in the absence of any agreement between the employer and the worker in this behalf, the employer shall ordinarily retrench the worker who was the last person to be employed in that category, unless for reasons to be recorded the employer retrenches any other worker."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_72-007",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 72",
+      "category": "Lay-off, Retrenchment and Muster Rolls (General)"
+    },
+    "question_text": "Does the employer give preference to retrenched workers who offer themselves for re-employment when hiring within one year of retrenchment?",
+    "applicability_criteria": "Applicable when hiring new staff within one year of a previous retrenchment.",
+    "simplified_guidance": "1. Check recruitment records for the period following retrenchment.\\n2. Verify if notice/opportunity was given to retrenched workers to apply.\\n3. Confirm if any retrenched workers applied and were given preference over outsiders.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Job notifications sent to retrenched workers; Recruitment logs.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where any worker is retrenched and the employer proposes to take into his employment any person within one year of such retrenchment, he shall, in such manner as may be prescribed, give an opportunity to the retrenched workers who are citizens of India to offer themselves for re-employment and such retrenched workers who offer themselves for re-employment shall have preference over other persons."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_74_1-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 74(1)",
+      "category": "Closure and Transfer of Undertakings"
+    },
+    "question_text": "Has the employer served a notice to the appropriate Government at least sixty days before the intended date of closing down an undertaking?",
+    "applicability_criteria": "Applicable to industrial establishments employing 50 or more workers (excluding construction projects).",
+    "simplified_guidance": "1. Identify the intended date of closure.\\n2. Verify the date on the notice served to the Government.\\n3. Ensure the gap is at least 60 days.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Closure Notice in prescribed form; Acknowledgement from Government.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer who intends to close down an undertaking shall serve, at least sixty days before the date on which the intended closure is to become effective, a notice, in such manner as may be prescribed, on the appropriate Government stating clearly the reasons for the intended closure of the undertaking."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_73-002",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 73",
+      "category": "Closure and Transfer of Undertakings"
+    },
+    "question_text": "In case of transfer of ownership, has the employer paid notice pay and compensation to workers with one year of service, unless service continuity is guaranteed?",
+    "applicability_criteria": "Applicable when the ownership or management of an establishment is transferred.",
+    "simplified_guidance": "1. Check terms of transfer agreement regarding worker service continuity.\\n2. If service is interrupted or terms are less favorable, verify payment of retrenchment compensation.\\n3. Ensure payments match Section 70 calculation (15 days avg pay/year).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Transfer Agreement (service continuity clause); or Payment vouchers for compensation.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where the ownership or management of an establishment is transferred... every worker who has been in continuous service for not less than one year... shall be entitled to notice and compensation in accordance with the provisions of section 70 as if the worker had been retrenched."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_75_1-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 75(1)",
+      "category": "Closure and Transfer of Undertakings"
+    },
+    "question_text": "Has the employer paid closure compensation to every worker with at least one year of continuous service upon closing the undertaking?",
+    "applicability_criteria": "Applicable to establishments closing down for any reason.",
+    "simplified_guidance": "1. Verify the list of workers with >1 year service at the time of closure.\\n2. Check proof of payment for notice pay and compensation (15 days avg pay/year).\\n3. Confirm payments were made at the time of closure.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Full and final settlement records; Bank transfer receipts.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an establishment is closed down for any reason whatsoever, every worker who has been in continuous service for not less than one year in that undertaking immediately before such closure shall... be entitled to notice and compensation in accordance with the provisions of section 70, as if the worker had been retrenched."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_75_1_EXPL-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 75(1) Explanation",
+      "category": "Closure and Transfer of Undertakings"
+    },
+    "question_text": "Did the employer incorrectly limit closure compensation to three months' pay by claiming 'financial difficulties' or 'undisposed stocks' as unavoidable circumstances?",
+    "applicability_criteria": "Applicable where the employer capped compensation at 3 months due to 'unavoidable circumstances'.",
+    "simplified_guidance": "1. If compensation was capped at 3 months, review the reason for closure.\\n2. If the reason was financial loss, stock accumulation, lease expiry, or mineral exhaustion, the cap is invalid.\\n3. Ensure full compensation (unlimited by the 3-month cap) was paid in such cases.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Closure Notice stating reasons; Compensation calculation sheet.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An industrial establishment which is closed down by reason merely of financial difficulties (including financial losses); or accumulation of un-disposed stocks; or the expiry of the period of the lease... shall not be deemed to be closed down on account of unavoidable circumstances beyond the control of the employer."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_75_4-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 75(4)",
+      "category": "Closure and Transfer of Undertakings"
+    },
+    "question_text": "For construction undertakings closed after two years, was compensation paid for every completed year of continuous service?",
+    "applicability_criteria": "Applicable to construction undertakings (buildings, bridges, dams, etc.) closing after 2 years.",
+    "simplified_guidance": "1. Determine if the project duration exceeded 2 years.\\n2. If yes, verify that workers received notice and compensation per Section 70.\\n3. If closed within 2 years, confirm no compensation liability exists.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Project start/end dates; Payroll records of final settlement.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where any undertaking set up for the construction of buildings... is closed down on account of the completion of the work within two years... no worker employed therein shall be entitled to any compensation... but if the construction work is not so completed within two years, he shall be entitled to notice and compensation under that section."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_77_1-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 77(1)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Does the establishment adhere to Chapter X provisions if it employed 300 or more workers on average in the preceding twelve months?",
+    "applicability_criteria": "Applicable to industrial establishments (factories, mines, plantations) employing 300 or more workers.",
+    "simplified_guidance": "1. Verify attendance records for the preceding 12 months.\\n2. Calculate the average number of workers per working day.\\n3. If the average is 300 or more (or as notified by Government), confirm that special permissions for lay-off/retrenchment are being sought.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 2000000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Attendance registers; Calculation sheet for average daily employment.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The provisions of this Chapter shall apply to an industrial establishment (not being an establishment of a seasonal character or in which work is performed only intermittently) in which not less than three hundred workers, or such higher number of workers as may be notified by the appropriate Government, were employed on an average per working day in the preceding twelve months."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_78_1-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 78(1)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Has the employer obtained prior permission from the appropriate Government before laying off any worker?",
+    "applicability_criteria": "Applicable to establishments with 300+ workers (Chapter X coverage) intending to lay-off workers, except for shortage of power, natural calamity, or mine hazards.",
+    "simplified_guidance": "1. Identify if any lay-off occurred.\\n2. Check the reason: if not power shortage or natural calamity, verify if prior permission was obtained.\\n3. Review the permission order from the appropriate Government.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Order granting permission from the Appropriate Government; Application copy.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No worker (other than a badli worker or a casual worker) whose name is borne on the muster rolls of an industrial establishment to which this Chapter applies shall be laid-off by his employer except with the prior permission of the appropriate Government, obtained on an application made in this behalf, unless such lay-off is due to shortage of power, natural calamity, and in the case of a mine, such lay-off is due to fire, flood, excess of inflammable gas or explosion."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_78_2-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 78(2)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Was the application for lay-off permission served simultaneously to the workers concerned?",
+    "applicability_criteria": "Applicable whenever an application for lay-off permission is made.",
+    "simplified_guidance": "1. Review the application for lay-off permission submitted to the Government.\\n2. Verify proof of service (email, registered post, or hand delivery) to the affected workers.\\n3. Ensure service was simultaneous with the government application.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledgement receipt from workers/Union; Proof of dispatch.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An application for permission under sub-section (1) shall be made by the employer electronically or otherwise in the prescribed manner stating clearly the reasons for the intended lay-off and a copy of such application shall also be served simultaneously on the workers concerned in such manner as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_79_1-004",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 79(1)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Has the employer obtained prior permission and given three months' notice before retrenching any worker?",
+    "applicability_criteria": "Applicable to establishments with 300+ workers when retrenching staff with >1 year service.",
+    "simplified_guidance": "1. Verify if any worker was retrenched.\\n2. Check for a 3-month notice period (or pay in lieu).\\n3. Crucially, verify that prior permission was obtained from the appropriate Government.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Government Permission Order; Copy of 3-month Notice issued to worker.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No worker employed in any industrial establishment to which this Chapter applies... shall be retrenched by that employer until... the worker has been given three month's notice in writing indicating the reasons for retrenchment... and the prior permission of the appropriate Government has been obtained on an application made in this behalf."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_80_1-005",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 80(1)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Did the employer apply for prior permission at least ninety days before the intended date of closing down an undertaking?",
+    "applicability_criteria": "Applicable to establishments with 300+ workers intending to close down (excluding construction projects).",
+    "simplified_guidance": "1. Identify the date of intended closure.\\n2. Verify the date of the application for permission to the Government.\\n3. Ensure the application was submitted at least 90 days prior.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 1000000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Application for Closure Permission with date stamp/acknowledgement.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer who intends to close down an undertaking of an industrial establishment to which this Chapter applies shall, electronically or otherwise, apply in such manner as may be prescribed, for prior permission at least ninety days before the date on which the intended closure is to become effective, to the appropriate Government."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_86_2-006",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 86(2)",
+      "category": "Special Provisions (Large Establishments)"
+    },
+    "question_text": "Has the employer avoided repeat offences regarding illegal lay-off, retrenchment, or closure to prevent enhanced penalties?",
+    "applicability_criteria": "Applicable to employers previously convicted under Section 78, 79, or 80.",
+    "simplified_guidance": "1. Check legal history for prior convictions under Chapter X.\\n2. If a prior conviction exists, ensure strict compliance to avoid enhanced fines (up to ₹20 Lakhs) and imprisonment.\\n3. Verify current compliance status for any ongoing restructuring.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 2000000,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Legal compliance certificate; Absence of repeat violation notices.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An employer who after conviction for an offence under section 78 or section 79 or section 80 again commits the same offence... shall for the second or subsequent offence be punishable with fine which shall not be less than five lakh rupees, but which may extend up to twenty lakh rupees or with imprisonment for a term which may extend to six months, or with both."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_83_2_a-001",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 83(2)(a)",
+      "category": "Worker Re-skilling and Protected Workers"
+    },
+    "question_text": "Has the employer contributed an amount equal to fifteen days' wages last drawn for every retrenched worker to the Worker Re-skilling Fund?",
+    "applicability_criteria": "Applicable to employers of industrial establishments whenever a worker is retrenched.",
+    "simplified_guidance": "1. Identify all workers retrenched in the audit period.\\n2. Calculate 15 days of wages (last drawn) for each worker.\\n3. Verify proof of payment/contribution of this amount to the designated fund.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Bank transfer receipts; Fund contribution challans; Retrenchment compensation calculation sheet.",
+      "delay_proof": "Accounting entries showing liability provision."
+    },
+    "legal_text": "The fund shall consist of... the contribution of the employer of an industrial establishment an amount equal to fifteen days wages last drawn by the worker immediately before the retrenchment, or such other number of days as may be notified by the Central Government, for every retrenched worker in case of retrenchment only."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_83_3-002",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 83(3)",
+      "category": "Worker Re-skilling and Protected Workers"
+    },
+    "question_text": "Is the contribution to the re-skilling fund credited to the retrenched worker's account within forty-five days of retrenchment?",
+    "applicability_criteria": "Applicable whenever a worker is retrenched.",
+    "simplified_guidance": "1. Check the date of retrenchment for affected workers.\\n2. Check the date the re-skilling fund contribution was credited.\\n3. Ensure the duration does not exceed 45 days.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Transaction logs; Worker acknowledgement of receipt.",
+      "delay_proof": "Correspondence regarding bank processing delays."
+    },
+    "legal_text": "The fund shall be utilised by crediting fifteen days wages last drawn by the worker to his account who is retrenched, within forty-five days of such retrenchment, in such manner as may be prescribed."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_90_4-003",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 90(4)",
+      "category": "Worker Re-skilling and Protected Workers"
+    },
+    "question_text": "Has the employer recognized the prescribed number of 'protected workers' (1% of total, minimum 5, maximum 100) connected with Trade Unions?",
+    "applicability_criteria": "Applicable to all industrial establishments with registered Trade Unions.",
+    "simplified_guidance": "1. Calculate 1% of the total workforce (subject to min 5, max 100).\\n2. Verify correspondence with Trade Unions regarding nomination of protected workers.\\n3. Check the final list of recognized protected workers for the year.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "List of Protected Workers signed by management and Union; Annual Return regarding protected workers.",
+      "delay_proof": "Letters requesting nominations from the Union."
+    },
+    "legal_text": "In every establishment, the number of workers to be recognised as protected workers for the purposes of sub-section (3) shall be one per cent. of the total number of workers employed therein subject to a minimum number of five protected workers and a maximum number of one hundred protected workers."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_90_3-004",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 90(3)",
+      "category": "Worker Re-skilling and Protected Workers"
+    },
+    "question_text": "Has the employer refrained from taking action against any 'protected worker' during pending disputes without express written permission?",
+    "applicability_criteria": "Applicable when an industrial dispute is pending before an authority (Conciliation Officer, Arbitrator, or Tribunal).",
+    "simplified_guidance": "1. Check if any 'protected worker' faced discharge, dismissal, or punishment during a pending dispute.\\n2. If yes, check for express written permission from the relevant authority (Tribunal/Arbitrator).\\n3. Absence of permission constitutes a critical violation.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written permission order from the authority; Disciplinary files of union bearers.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Notwithstanding anything contained in sub-section (2), no employer shall, during the pendency of any proceeding in respect of an industrial dispute, take any action against any protected worker... save with the express permission in writing of the authority before which the proceeding is pending."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_90_1-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 90(1)",
+      "category": "Worker Re-skilling and Protected Workers"
+    },
+    "question_text": "During pending proceedings, has the employer refrained from altering service conditions to the prejudice of workers concerned in the dispute without permission?",
+    "applicability_criteria": "Applicable during pending conciliation, arbitration, or tribunal proceedings.",
+    "simplified_guidance": "1. Identify if any conditions of service were altered during a dispute.\\n2. Determine if the alteration prejudiced the workers involved in the dispute.\\n3. Verify if express written permission was obtained from the authority handling the dispute.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Permission order from Conciliation Officer/Tribunal; Notice of Change records.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where an industrial dispute... is already pending... no employer shall... in regard to any matter connected with such dispute, alter to the prejudice of the workers concerned in such dispute the conditions of service applicable to them immediately before the commencement of such proceedings... save with the express permission in writing of the authority before which the proceeding is pending."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_13-001",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(13)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Has the employer fully implemented all valid awards, settlements, or agreements currently in force?",
+    "applicability_criteria": "Applicable to all employers bound by an award, settlement, or agreement.",
+    "simplified_guidance": "1. List all active settlements, court awards, or agreements.\\n2. Compare the terms (wages, benefits, conditions) with actual payroll and HR records.\\n3. Ensure there is no failure or delay in implementation.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Settlement/Award; Proof of payment of arrears; Implementation circulars.",
+      "delay_proof": "Stay order from a higher court if implementation is paused."
+    },
+    "legal_text": "No employer or worker or a Trade Union... shall commit any unfair labour practice specified in the Second Schedule... Failure to implement award, settlement or agreement."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_5_f-002",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(5)(f)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Are principles of natural justice strictly followed in the conduct of domestic enquiries before discharging or dismissing workers?",
+    "applicability_criteria": "Applicable whenever an employer initiates disciplinary action leading to discharge or dismissal.",
+    "simplified_guidance": "1. Review files of dismissed workers.\\n2. Verify that a charge sheet was issued and an opportunity to be heard was given.\\n3. Ensure the enquiry was not conducted with 'undue haste' or in disregard of natural justice.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Domestic Enquiry proceedings; Charge sheet; Worker's defense statement; Final Order.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "To discharge or dismiss workers... in utter disregard of the principles of natural justice in the conduct of domestic enquiry or with undue haste."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_10-003",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(10)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Has the employer refrained from continuing workers as badlis, casuals, or temporaries for years with the object of depriving them of permanent status?",
+    "applicability_criteria": "Applicable to establishments employing casual, temporary, or badli workers.",
+    "simplified_guidance": "1. Review the tenure of casual/temporary workers.\\n2. Identify individuals working continuously for extended periods (e.g., years) on permanent nature jobs.\\n3. Verify if they are denied permanent benefits/status without valid justification.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Muster rolls showing date of joining; Nature of work descriptions.",
+      "delay_proof": "Regularization policy or conversion records."
+    },
+    "legal_text": "To employ workers as badli workers, casuals or temporaries and to continue them as such for years, with the object of depriving them of the status and privileges of permanent workers."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_1-004",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(1)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Does the employer refrain from threatening workers with discharge, dismissal, or lock-out to prevent them from organizing or joining a Trade Union?",
+    "applicability_criteria": "Applicable to all employers.",
+    "simplified_guidance": "1. Interview workers or union representatives regarding any coercion.\\n2. Check for complaints filed with the labor department regarding threats.\\n3. Ensure no circulars or communications imply negative consequences for union participation.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Clean record of complaints; Code of Conduct explicitly permitting union activities.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "To interfere with, restrain from, or coerce, workers in the exercise of their right to organise... threatening workers with discharge or dismissal, if they join a Trade Union; threatening a lock-out or closure, if a Trade Union is organised."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_6-005",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(6)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Has the employer refrained from abolishing regular work and assigning it to contractors specifically as a measure to break a strike?",
+    "applicability_criteria": "Applicable during or immediately after a strike.",
+    "simplified_guidance": "1. Check if any regular department was closed or work outsourced during a strike period.\\n2. Verify if this outsourcing coincided with a strike action.\\n3. Confirm that regular workers were not displaced by contract labor for this specific purpose.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Contractor service agreements; Strike period logs; Departmental manning records.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "To abolish the work of a regular nature being done by workers, and to give such work to contractors as a measure of breaking a strike."
+  },
+  {
+    "audit_item_id": "IRC_2020-SEC_84_SCH2_1_2-006",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Industrial Relations Code, 2020",
+      "section_reference": "Section 84 read with Second Schedule Item 1(2)",
+      "category": "Unfair Labour Practices"
+    },
+    "question_text": "Does the employer maintain neutrality by not dominating, interfering with, or financially supporting any Trade Union?",
+    "applicability_criteria": "Applicable to all employers interacting with Trade Unions.",
+    "simplified_guidance": "1. Verify financial records for any unauthorized payments to unions.\\n2. Ensure the employer does not show partiality to a non-recognized union.\\n3. Confirm no 'company union' is being sponsored or organized by management.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 200000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Financial ledgers; Absence of funding to union accounts.",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "To dominate, interfere with or contribute support, financial or otherwise, to any Trade Union, that is to say, an employer taking an active interest in organising a Trade Union of his workers; and an employer showing partiality or granting favour to one of several Trade Unions..."
+  }
+]

@@ -1,0 +1,623 @@
+[
+  {
+    "audit_item_id": "AIRACT-21-1",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(1)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Has the facility obtained the previous consent of the State Board before establishing or operating the industrial plant in the air pollution control area?",
+    "applicability_criteria": "All industrial plants located in declared air pollution control areas",
+    "simplified_guidance": "1. Identify if the facility is located in a declared air pollution control area.\\n2. Verify possession of a valid 'Consent to Establish' (CTE) or 'Consent to Operate' (CTO) issued by the State Pollution Control Board.\\n3. Ensure the consent covers all operating industrial plants and processes onsite.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original Consent Order (CTO/CTE) from State Pollution Control Board",
+      "delay_proof": "Application acknowledgment receipt if consent is pending"
+    },
+    "legal_text": "Subject to the provisions of this section, no person shall, without the previous consent of the State Board, establish or operate any industrial plant in an air pollution control area."
+  },
+  {
+    "audit_item_id": "AIRACT-21-2",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(2)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Did the facility submit the consent application in the prescribed form accompanied by the required fees and particulars?",
+    "applicability_criteria": "Any person establishing or operating an industrial plant requiring consent",
+    "simplified_guidance": "1. Review the application copy submitted to the State Board.\\n2. Confirm the application was made in the prescribed format with all technical particulars.\\n3. Verify payment proof (challan/receipt) for the prescribed consent fees.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of submitted application form and fee payment receipt",
+      "delay_proof": "Correspondence regarding incomplete application"
+    },
+    "legal_text": "An application for consent of the State Board under sub-section (1) shall be accompanied by such fees as may be prescribed and shall be made in the prescribed form and shall contain the particulars of the industrial plant and such other particulars as may be prescribed."
+  },
+  {
+    "audit_item_id": "AIRACT-21-5-i",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(5)(i)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Has the facility installed and operated control equipment according to the specifications approved by the State Board?",
+    "applicability_criteria": "Facilities where the State Board has mandated specific control equipment in the consent order",
+    "simplified_guidance": "1. Check the specific conditions listed in the Consent to Operate regarding control equipment (e.g., scrubbers, filters).\\n2. Physically inspect the premises to ensure the specified equipment is installed.\\n3. Verify that the equipment is currently operational and matches the approved specifications.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical presence of approved control equipment; Operational logs",
+      "delay_proof": "Purchase orders or installation contracts for equipment"
+    },
+    "legal_text": "Every person to whom consent has been granted by the State Board under sub-section (4), shall comply with the following conditions, namely:-(i) the control equipment of such specifications as the State Board may approve in this behalf shall be installed and operated in the premises where the industry is carried on or proposed to be carried on"
+  },
+  {
+    "audit_item_id": "AIRACT-21-5-iii",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(5)(iii)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Is the air pollution control equipment maintained in good running condition at all times?",
+    "applicability_criteria": "All facilities with installed pollution control equipment",
+    "simplified_guidance": "1. Review maintenance logs and service records for pollution control devices.\\n2. Inspect equipment for signs of bypass, disrepair, or downtime.\\n3. Ensure the equipment is running whenever the associated industrial process is active.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Maintenance registers; AMCs; Real-time monitoring data",
+      "delay_proof": "Breakdown reports or repair schedules"
+    },
+    "legal_text": "The control equipment referred to in clause (i) or clause (ii) shall be kept at all times in good running condition"
+  },
+  {
+    "audit_item_id": "AIRACT-21-5-iv",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(5)(iv)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Are chimneys erected or re-erected in accordance with the specifications approved by the State Board?",
+    "applicability_criteria": "Facilities emitting pollutants through chimneys/stacks",
+    "simplified_guidance": "1. Verify the height and design specifications of chimneys against the Consent Order.\\n2. Ensure sampling portholes and platforms are provided if required by the Board.\\n3. Confirm no unapproved modifications have been made to stack heights or outlets.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Stack monitoring reports indicating height; Structural drawings",
+      "delay_proof": "Construction plans for stack modification"
+    },
+    "legal_text": "Chimney, wherever necessary, of such specifications as the State Board may approve in this behalf shall be erected or re-erected in such premises"
+  },
+  {
+    "audit_item_id": "AIRACT-21-Proviso",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(5) Proviso",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Has the facility obtained previous approval from the State Board before altering, replacing, or erecting any control equipment or chimney?",
+    "applicability_criteria": "Facilities planning modifications to existing pollution control systems or stacks",
+    "simplified_guidance": "1. Identify if any changes were made to scrubbers, filters, or stacks since the last consent.\\n2. Check for a specific approval letter from the State Board authorizing these changes.\\n3. Ensure the changes match the approved design.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Approval letter for modification; Amended Consent Order",
+      "delay_proof": "Application for amendment of consent"
+    },
+    "legal_text": "No control equipment or chimney shall be altered or replaced or, as the case may be, erected or re-erected except with the previous approval of the State Board."
+  },
+  {
+    "audit_item_id": "AIRACT-21-6",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 21(6)",
+      "category": "Regulatory Consent and Authorization"
+    },
+    "question_text": "Has the facility complied with any varied conditions imposed by the State Board due to technological improvements?",
+    "applicability_criteria": "Facilities receiving notices for variation of consent conditions",
+    "simplified_guidance": "1. Check if the State Board has issued any notices varying original consent conditions.\\n2. Verify if the facility was given an opportunity to be heard.\\n3. Confirm implementation of the new conditions (e.g., upgrading technology) within the specified timeline.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years (Min 1.5 yrs)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Compliance report on varied conditions; Updated equipment logs",
+      "delay_proof": "Representation filed against the variation order"
+    },
+    "legal_text": "The State Board shall, after giving the person to whom consent has been granted an opportunity of being heard, vary all or any of such conditions and thereupon such person shall be bound to comply with the conditions as so varied."
+  },
+  {
+    "audit_item_id": "AIRACT-22-1",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 22",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "Does the facility ensure that air pollutant emissions do not exceed the standards laid down by the State Board?",
+    "applicability_criteria": "All industrial plants operating in air pollution control areas",
+    "simplified_guidance": "1. Review the latest stack monitoring/analysis reports.\\n2. Compare the results against the emission standards specified in the Consent to Operate (CTO) or State Board regulations.\\n3. Confirm that no parameter exceeds the permissible limits.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Third-party environmental audit reports; Lab analysis reports",
+      "delay_proof": "Corrective Action Plan (CAP) for exceedances"
+    },
+    "legal_text": "No person operating any industrial plant, in any air pollution control area shall discharge or cause or permit to be discharged the emission of any air pollutant in excess of the standards laid down by the State Board under clause (g) of sub-section (1) of section 17."
+  },
+  {
+    "audit_item_id": "AIRACT-19-3",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 19(3)",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "Does the facility use only 'approved fuels' as notified by the State Government for this air pollution control area?",
+    "applicability_criteria": "Facilities located in areas where specific fuel prohibitions are notified",
+    "simplified_guidance": "1. Identify if the State Government has issued a notification prohibiting certain fuels in the area.\\n2. Inspect fuel storage and boiler feeding systems.\\n3. Verify purchase invoices to confirm only approved fuels are being sourced.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Fuel purchase invoices; Visual inspection of fuel stock",
+      "delay_proof": "Transition plan to approved fuels"
+    },
+    "legal_text": "If the State Government... is of opinion that the use of any fuel, other than an approved fuel, in any air pollution control area or part thereof, may cause or is likely to cause air pollution, it may... prohibit the use of such fuel in such area or part thereof..."
+  },
+  {
+    "audit_item_id": "AIRACT-19-4",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 19(4)",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "Are all appliances used in the premises compliant with the 'approved appliance' mandates for this control area?",
+    "applicability_criteria": "Facilities in areas where appliance usage is regulated by notification",
+    "simplified_guidance": "1. Check for State notifications mandating specific approved appliances (e.g., smokeless chulhas, specific burners).\\n2. Inventory facility appliances falling under the notification.\\n3. Verify that non-approved appliances are not in use.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Asset register; Visual verification of appliance types",
+      "delay_proof": "Replacement orders for non-compliant appliances"
+    },
+    "legal_text": "The State Government may... direct that with effect from such date as may be specified therein, no appliance, other than an approved appliance, shall be used in the premises situated in an air pollution control area"
+  },
+  {
+    "audit_item_id": "AIRACT-19-5",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 19(5)",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "Is the facility complying with prohibitions on burning specific materials (other than fuel) in the open or within the premises?",
+    "applicability_criteria": "Facilities in areas where burning of specific materials (e.g., waste, leaves) is prohibited",
+    "simplified_guidance": "1. Determine if there is a notification prohibiting the burning of specific materials (e.g., garbage, plastic, leaves).\\n2. Inspect the grounds for signs of open burning or incineration of prohibited items.\\n3. Review waste disposal records to ensure materials are hauled away rather than burnt.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Waste disposal manifests; Absence of burn scars/residue",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "If the State Government... is of opinion that the burning of any material (not being fuel) in any air pollution control area or part thereof may cause or is likely to cause air pollution, it may... prohibit the burning of such material in such area or part thereof."
+  },
+  {
+    "audit_item_id": "AIRACT-31A-1",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 31A",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "Has the facility fully complied with all written directions issued by the Board regarding the closure, prohibition, or regulation of any industry, operation, or process?",
+    "applicability_criteria": "Any facility that has received specific directions/notices under Section 31A",
+    "simplified_guidance": "1. Check for any Show Cause Notices or Closure Directions received from the Board.\\n2. Verify immediate compliance with orders such as stopping specific processes or closing operations.\\n3. Ensure no prohibited activities are continuing despite the order.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Compliance Report filed with Board; Proof of process stoppage",
+      "delay_proof": "Stay order from Appellate Authority/Court"
+    },
+    "legal_text": "A Board may, in the exercise of its powers and performance of its functions under this Act, issue any directions in writing to any person, officer or authority, and such person, officer or authority shall be bound to comply with such directions."
+  },
+  {
+    "audit_item_id": "AIRACT-31A-EXP",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 31A Explanation",
+      "category": "Operational Standards and Control Equipment"
+    },
+    "question_text": "If directed, has the facility complied with orders regarding the stoppage or regulation of supply of electricity, water, or other services?",
+    "applicability_criteria": "Facilities where the Board has directed service providers to cut connections",
+    "simplified_guidance": "1. If the Board has ordered a utility cut, verify that the facility has not illegally bypassed this order (e.g., using DG sets when power is cut by order).\\n2. Confirm status of utility connections.\\n3. Ensure compliance with any regulation of service supply mandates.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "1.5 to 6 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Utility bills showing zero consumption; Physical disconnection status",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "For the avoidance of doubts, it is hereby declared that the power to issue directions under this section includes the power to direct- (a) the closure, prohibition or regulation of any industry, operation or process; or (b) the stoppage or regulation of supply of electricity, water or any other service."
+  },
+  {
+    "audit_item_id": "AIRACT-23-1",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 23(1)",
+      "category": "Accident Reporting and Emergency Mitigation"
+    },
+    "question_text": "Did the person in charge immediately intimate the State Board and prescribed authorities regarding any accidental or unforeseen excess emission of air pollutants?",
+    "applicability_criteria": "Facilities where excess emissions occurred due to accidents or unforeseen events",
+    "simplified_guidance": "1. Verify if any accidents or unforeseen events occurred that caused emissions above standard limits.\\n2. Check for proof of immediate intimation (email, letter, fax) sent to the State Board and other prescribed agencies (e.g., District Collector, Health Department).\\n3. Ensure the intimation was sent 'forthwith' upon occurrence/apprehension.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the accident report/intimation letter sent to authorities; Incident register",
+      "delay_proof": "Late submission records"
+    },
+    "legal_text": "Where in any area the emission of any air pollutant into the atmosphere in excess of the standards laid down by the State Board occurs or is apprehended to occur due to accident or other unforeseen act or event, the person in charge of the premises from where such emission occurs or is apprehended to occur shall forthwith intimate the fact of such occurrence or the apprehension of such occurrence to the State Board and to such authorities or agencies as may be prescribed."
+  },
+  {
+    "audit_item_id": "AIRACT-23-2",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 23(2)",
+      "category": "Accident Reporting and Emergency Mitigation"
+    },
+    "question_text": "Were necessary remedial measures taken immediately to mitigate the emission of air pollutants following an accident or unforeseen event?",
+    "applicability_criteria": "Facilities where accidental excess emissions occurred",
+    "simplified_guidance": "1. Review the incident investigation report or corrective action report.\\n2. Confirm that remedial steps were taken 'as early as practicable' to control the emissions.\\n3. Verify effectiveness of the measures through subsequent monitoring data if available.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Corrective Action Report (CAP); Maintenance logs post-accident",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "On receipt of information with respect to the fact or the apprehension of any occurrence of the nature referred to in sub-section (1)... the State Board and the authorities or agencies shall, as early as practicable, cause such remedial measure to be taken as are necessary to mitigate the emission of such air pollutants."
+  },
+  {
+    "audit_item_id": "AIRACT-23-3",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 23(3)",
+      "category": "Accident Reporting and Emergency Mitigation"
+    },
+    "question_text": "Has the facility reimbursed the State Board or authorities for expenses incurred in taking remedial measures during an emergency?",
+    "applicability_criteria": "Facilities where the Board/Authorities intervened to mitigate pollution",
+    "simplified_guidance": "1. Check if the State Board or agencies took direct action to stop/mitigate pollution at the facility.\\n2. Review any demand notices received for recovery of expenses.\\n3. Verify proof of payment for these expenses along with any applicable interest.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Recovery as land revenue arrears",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Payment receipts/challans for reimbursed expenses",
+      "delay_proof": "Dispute filing regarding expense amount"
+    },
+    "legal_text": "Expenses, if any, incurred by the State Board, authority or agency with respect to the remedial measures referred to in sub-section (2) together with interest... from the date when a demand for the expenses is made until it is paid, may be recovered by that Board, authority or agency from the person concerned, as arrears of land revenue, or of public demand."
+  },
+  {
+    "audit_item_id": "AIRACT-38-E",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 38(e)",
+      "category": "Accident Reporting and Emergency Mitigation"
+    },
+    "question_text": "Does the facility have a system to ensure intimation of apprehended excess emissions to the State Board?",
+    "applicability_criteria": "All industrial plants (Preventive Check)",
+    "simplified_guidance": "1. Evaluate the facility's Emergency Response Plan (ERP) or Standard Operating Procedures (SOP).\\n2. Ensure there is a specific clause or protocol for reporting 'apprehended' (likely) excess emissions, not just actual ones.\\n3. Interview safety officers to verify awareness of this reporting requirement.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Standard Operating Procedure (SOP) for Environmental Emergencies",
+      "delay_proof": "Draft ERP"
+    },
+    "legal_text": "Whoever... fails to intimate the occurrence of the emission of air pollutants into the atmosphere in excess of the standards laid down by the State Board or the apprehension of such occurrence, to the State Board and other prescribed authorities or agencies... shall be punishable with imprisonment for a term which may extend to three months or with fine which may extend to ten thousand rupees or with both."
+  },
+  {
+    "audit_item_id": "AIRACT-24-1",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 24(1) & (2)",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Does the facility grant entry and render all assistance to the State Board officers for inspection and testing of control equipment?",
+    "applicability_criteria": "All industrial plants located in air pollution control areas",
+    "simplified_guidance": "1. Verify if State Board officers have visited the facility for inspection.\\n2. Confirm that access was granted to all requested areas, including control equipment and records.\\n3. Ensure facility staff provided necessary assistance (e.g., opening panels, operating equipment) without delay.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Inspection logbook signed by Board officer; Visitor register",
+      "delay_proof": "Record of denied entry or obstruction notice"
+    },
+    "legal_text": "Subject to the provisions of this section, any person empowered by a State Board in this behalf shall have a right to enter, at all reasonable times with such assistance as he considers necessary, any place... Every person operating any control equipment or any industrial plant, in an air pollution control area shall be bound to render all assistance to the person empowered by the State Board... and if he fails to do so without any reasonable cause or excuse, he shall be guilty of an offence under this Act."
+  },
+  {
+    "audit_item_id": "AIRACT-24-3",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 24(3)",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Has the facility ensured that no person willfully delays or obstructs Board officers during the discharge of their duties?",
+    "applicability_criteria": "All facilities subject to inspection",
+    "simplified_guidance": "1. Interview security and EHS personnel regarding inspection protocols.\\n2. Ensure there are no reports or notices from the Board citing obstruction or delay tactics.\\n3. Confirm that standard procedures allow for immediate access to authorized officials.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Internal security policy for regulatory visits; Absence of obstruction notices",
+      "delay_proof": "Show cause notice for obstruction"
+    },
+    "legal_text": "If any person willfully delays or obstructs any person empowered by the State Board under sub-section (1) in the discharge of his duties, he shall be guilty of an offence under this Act."
+  },
+  {
+    "audit_item_id": "AIRACT-25-1",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 25",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Does the facility furnish information regarding air pollutant types and emission levels to the State Board when called for?",
+    "applicability_criteria": "Occupiers of industrial plants or control equipment",
+    "simplified_guidance": "1. Check for any written requisitions from the State Board asking for technical information.\\n2. Verify that the response provided accurate details on pollutant types and emission levels.\\n3. Ensure the information was submitted within the stipulated time.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of submitted information/returns; Acknowledgment of receipt",
+      "delay_proof": "Reminder letters from Board"
+    },
+    "legal_text": "For the purposes of carrying out the functions entrusted to it, the State Board or any officer empowered by it in that behalf may call for any information (including information regarding the types of air pollutants emitted into the atmosphere and the level of the emission of such air pollutants) from the occupier or any other person carrying on any industry or operating any control equipment or industrial plant..."
+  },
+  {
+    "audit_item_id": "AIRACT-26-3",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 26(3)",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Does the occupier or agent witness the taking of emission samples and sign the sealed sample containers?",
+    "applicability_criteria": "When State Board officers take samples for analysis",
+    "simplified_guidance": "1. If samples were taken, check if a notice of intention to analyze was served (Form I/II usually).\\n2. Confirm that the occupier/agent was present during sampling.\\n3. Verify that the sample container was signed by both the officer and the occupier/agent.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "Evidentiary impact",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of sampling notice signed by occupier; Joint inspection report",
+      "delay_proof": "Note of refusal to sign in inspection report"
+    },
+    "legal_text": "Subject to the provisions of sub-section (4), when a sample of emission is taken for analysis under sub-section (1), the person taking the sample shall... (a) serve on the occupier or his agent, a notice... (b) in the presence of the occupier or his agent, collect a sample... (c) cause the sample to be placed in a container... which shall be marked and sealed and shall also be signed both by the person taking the sample and the occupier or his agent"
+  },
+  {
+    "audit_item_id": "AIRACT-26-3-d",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 26(3)(d)",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Did the occupier exercise the right to request that a sample be sent to the State Air Laboratory specifically?",
+    "applicability_criteria": "Occupiers wishing to challenge or verify Board sampling results",
+    "simplified_guidance": "1. Determine if the occupier made a specific request when the sampling notice was served.\\n2. Verify if the sample was sent to the laboratory established under Section 28(1) as requested.\\n3. Check if the occupier paid the requisite costs for this specific analysis request.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "N/A",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Written request on the sampling notice; Payment receipt for analysis cost",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Send, without delay, the container or containers to the laboratory established or recognised by the State Board... or, if a request in that behalf is made by the occupier or his agent when the notice is served on him under clause (a), to the laboratory established or specified under sub-section (1) of section 28."
+  },
+  {
+    "audit_item_id": "AIRACT-27-2",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Air (Prevention and Control of Pollution) Act, 1981",
+      "section_reference": "Section 27(2)",
+      "category": "Inspection Facilitation and Information Management"
+    },
+    "question_text": "Does the facility preserve its copy of the analysis report received from the State Board for production in legal proceedings?",
+    "applicability_criteria": "Facilities that have received analysis reports from the Board",
+    "simplified_guidance": "1. Verify receipt of the analysis report (in triplicate usually, one copy for occupier).\\n2. Check if this report is filed safely in the compliance register.\\n3. Ensure it is available for production if legal proceedings or appeals are initiated.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "Evidentiary impact",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "File containing original analysis reports from Board Analyst/Government Analyst",
+      "delay_proof": "Lost document report"
+    },
+    "legal_text": "On receipt of the report under sub-section (1), one copy of the report shall be sent by the State Board to the occupier or his agent... another copy shall be preserved for production before the court in case any legal proceedings are taken against him..."
+  }
+]
