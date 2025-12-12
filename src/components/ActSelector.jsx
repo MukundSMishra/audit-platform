@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { AVAILABLE_ACTS } from '../data/actRegistry';
-import { ArrowRight, Check, AlertCircle } from 'lucide-react';
+import { AVAILABLE_ACTS, getAllActs, getAllRules } from '../data/actRegistry';
+import { ArrowRight, Check, AlertCircle, ListChecks } from 'lucide-react';
 
 const ActSelector = ({ factoryName, location, onActsSelected }) => {
   const [selectedActs, setSelectedActs] = useState([]);
@@ -25,6 +25,26 @@ const ActSelector = ({ factoryName, location, onActsSelected }) => {
     setLoading(false);
   };
 
+  const selectAllActs = () => {
+    const allActIds = getAllActs().map(act => act.id);
+    setSelectedActs(prev => {
+      const newSet = new Set([...prev, ...allActIds]);
+      return Array.from(newSet);
+    });
+  };
+
+  const selectAllRules = () => {
+    const allRuleIds = getAllRules().map(rule => rule.id);
+    setSelectedActs(prev => {
+      const newSet = new Set([...prev, ...allRuleIds]);
+      return Array.from(newSet);
+    });
+  };
+
+  const deselectAll = () => {
+    setSelectedActs([]);
+  };
+
   return (
     <div className="max-w-4xl mx-auto p-6 animate-fade-in">
       
@@ -38,6 +58,30 @@ const ActSelector = ({ factoryName, location, onActsSelected }) => {
             <p className="text-gray-600">{location}</p>
           </div>
         </div>
+      </div>
+
+      {/* Quick Selection Buttons */}
+      <div className="mb-6 flex gap-3">
+        <button
+          onClick={selectAllActs}
+          className="flex items-center gap-2 px-4 py-2 bg-blue-100 text-blue-700 font-semibold rounded-lg hover:bg-blue-200 transition-colors border border-blue-300"
+        >
+          <ListChecks size={18} />
+          Select All Acts
+        </button>
+        <button
+          onClick={selectAllRules}
+          className="flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-700 font-semibold rounded-lg hover:bg-purple-200 transition-colors border border-purple-300"
+        >
+          <ListChecks size={18} />
+          Select All Rules
+        </button>
+        <button
+          onClick={deselectAll}
+          className="flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 font-semibold rounded-lg hover:bg-gray-200 transition-colors border border-gray-300"
+        >
+          Clear Selection
+        </button>
       </div>
 
       {/* Acts Selection Grid */}
@@ -73,6 +117,13 @@ const ActSelector = ({ factoryName, location, onActsSelected }) => {
                       }`}>
                         {act.name}
                       </h3>
+                      <span className={`text-xs font-semibold uppercase tracking-wider px-2 py-1 rounded ${
+                        act.type === 'rules' 
+                          ? 'bg-purple-100 text-purple-700' 
+                          : 'bg-blue-100 text-blue-700'
+                      }`}>
+                        {act.type === 'rules' ? '📋 RULE' : '📜 ACT'}
+                      </span>
                       <span className="text-xs font-semibold text-gray-500 uppercase tracking-wider px-2 py-1 bg-gray-100 rounded">
                         {act.shortName}
                       </span>

@@ -42,7 +42,8 @@ export const AVAILABLE_ACTS = [
     table: 'code_on_wages_checklist',
     data: codeOnWagesData,
     shortName: 'Code on Wages',
-    year: 2019
+    year: 2019,
+    type: 'act'
   },
   {
     id: 'code_on_social_security_2020',
@@ -51,7 +52,8 @@ export const AVAILABLE_ACTS = [
     table: 'code_on_social_security_checklist',
     data: codeOnSocialSecurityData,
     shortName: 'Social Security Code',
-    year: 2020
+    year: 2020,
+    type: 'act'
   },
   {
     id: 'code_on_occupational_safety_2020',
@@ -60,7 +62,8 @@ export const AVAILABLE_ACTS = [
     table: 'code_on_occupational_safety_checklist',
     data: codeOnOccupationalSafetyData,
     shortName: 'OSH Code',
-    year: 2020
+    year: 2020,
+    type: 'act'
   },
   {
     id: 'code_on_industrial_relations_2020',
@@ -69,7 +72,8 @@ export const AVAILABLE_ACTS = [
     table: 'code_on_industrial_relations_checklist',
     data: codeOnIndustrialDisputeData,
     shortName: 'IR Code',
-    year: 2020
+    year: 2020,
+    type: 'act'
   },
 
   // ============================================
@@ -82,7 +86,8 @@ export const AVAILABLE_ACTS = [
     table: 'factories_act_checklist',
     data: factoriesActData,
     shortName: 'Factories Act',
-    year: 1948
+    year: 1948,
+    type: 'act'
   },
   {
     id: 'child_labour_act_1986',
@@ -91,7 +96,8 @@ export const AVAILABLE_ACTS = [
     table: 'child_labour_act_checklist',
     data: childLabourActData,
     shortName: 'Child Labour Act',
-    year: 1986
+    year: 1986,
+    type: 'act'
   },
   {
     id: 'sexual_harassment_act_2013',
@@ -100,7 +106,8 @@ export const AVAILABLE_ACTS = [
     table: 'sexual_harassment_act_checklist',
     data: sexualHarassmentActData,
     shortName: 'POSH Act',
-    year: 2013
+    year: 2013,
+    type: 'act'
   },
 
   // ============================================
@@ -113,7 +120,8 @@ export const AVAILABLE_ACTS = [
     table: 'water_act_checklist',
     data: waterActData,
     shortName: 'Water Act',
-    year: 1974
+    year: 1974,
+    type: 'act'
   },
   {
     id: 'air_act_1981',
@@ -122,7 +130,8 @@ export const AVAILABLE_ACTS = [
     table: 'air_act_checklist',
     data: airActData,
     shortName: 'Air Act',
-    year: 1981
+    year: 1981,
+    type: 'act'
   },
   {
     id: 'environment_protection_act_1986',
@@ -131,7 +140,8 @@ export const AVAILABLE_ACTS = [
     table: 'environment_protection_act_checklist',
     data: environmentProtectionActData,
     shortName: 'EPA',
-    year: 1986
+    year: 1986,
+    type: 'act'
   },
   {
     id: 'hazardous_waste_rules_2016',
@@ -140,7 +150,8 @@ export const AVAILABLE_ACTS = [
     table: 'hazardous_waste_rules_checklist',
     data: hazardousWasteManagementData,
     shortName: 'Hazardous Waste Rules',
-    year: 2016
+    year: 2016,
+    type: 'rules'
   },
 
   // ============================================
@@ -153,7 +164,8 @@ export const AVAILABLE_ACTS = [
     table: 'maharashtra_labour_welfare_fund_checklist',
     data: maharashtraLabourWelfareFundActData,
     shortName: 'MH Labour Welfare Fund',
-    year: 1953
+    year: 1953,
+    type: 'act'
   },
   {
     id: 'maharashtra_factories_rules_1963',
@@ -162,7 +174,8 @@ export const AVAILABLE_ACTS = [
     table: 'maharashtra_factories_rules_checklist',
     data: maharashtraFactoriesRulesData,
     shortName: 'MH Factory Rules',
-    year: 1963
+    year: 1963,
+    type: 'rules'
   },
   {
     id: 'maharashtra_manual_labour_act_1969',
@@ -171,7 +184,8 @@ export const AVAILABLE_ACTS = [
     table: 'maharashtra_manual_labour_act_checklist',
     data: maharashtraManualLabourActData,
     shortName: 'MH Manual Workers Act',
-    year: 1969
+    year: 1969,
+    type: 'act'
   },
   {
     id: 'maharashtra_fire_safety_act_2006',
@@ -180,9 +194,23 @@ export const AVAILABLE_ACTS = [
     table: 'maharashtra_fire_safety_act_checklist',
     data: maharashtraFireSafetyActData,
     shortName: 'MH Fire Safety Act',
-    year: 2006
+    year: 2006,
+    type: 'act'
   }
 ];
+
+// Helper functions to filter by type
+export const getActsByType = (type) => {
+  return AVAILABLE_ACTS.filter(act => act.type === type);
+};
+
+export const getAllActs = () => {
+  return AVAILABLE_ACTS.filter(act => act.type === 'act');
+};
+
+export const getAllRules = () => {
+  return AVAILABLE_ACTS.filter(act => act.type === 'rules');
+};
 
 export const getActById = (actId) => {
   return AVAILABLE_ACTS.find(act => act.id === actId);

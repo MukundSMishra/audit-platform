@@ -60,6 +60,14 @@ function App() {
     return () => subscription.unsubscribe();
   }, []);
 
+  // Block access to audit screens without authentication
+  useEffect(() => {
+    if (!session && (currentScreen === 'act-selector' || currentScreen === 'audit' || currentScreen === 'progress')) {
+      setCurrentScreen('dashboard');
+      alert('Please login to access the audit portal');
+    }
+  }, [session, currentScreen]);
+
   // Check user role after authentication
   useEffect(() => {
     const checkRole = async () => {
