@@ -1,0 +1,839 @@
+[
+  {
+    "audit_item_id": "POSH_ACT-S04_1-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(1)",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Has the employer constituted an Internal Complaints Committee (ICC) by an official order in writing?",
+    "applicability_criteria": "All workplaces employing 10 or more workers",
+    "simplified_guidance": "1. Draft a formal office order constituting the Internal Complaints Committee (ICC).\\n2. Ensure the order explicitly names the members and their designations.\\n3. Sign and date the order by the highest authority in the organization.\\n4. Circulate this order to all employees and display it on notice boards.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original signed Office Order constituting the ICC",
+      "delay_proof": "Draft order pending signature or internal emails discussing formation"
+    },
+    "legal_text": "Every employer of a workplace shall, by an order in writing, constitute a Committee to be known as the Internal Complaints Committee."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_1-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(1) Proviso",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Is a separate Internal Committee constituted for every administrative unit or office located at different places?",
+    "applicability_criteria": "Workplaces with offices/units at different locations or divisional levels",
+    "simplified_guidance": "1. Identify all distinct physical locations, branches, or divisional units of the organization.\\n2. Issue separate constitution orders for an ICC at each specific location.\\n3. Ensure local members are appointed to handle complaints relevant to that specific unit.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "List of all branches and corresponding ICC constitution orders for each",
+      "delay_proof": "Plan to decentralize the single central committee"
+    },
+    "legal_text": "Provided that where the offices or administrative units of the workplace are located at different places or divisional or sub-divisional level, the Internal Committee shall be constituted at all administrative units or offices."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_2a-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(2)(a)",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Is the Presiding Officer of the ICC a woman employed at a senior level at the workplace?",
+    "applicability_criteria": "All constituted Internal Committees",
+    "simplified_guidance": "1. Review the organizational chart to identify senior-level female employees.\\n2. Appoint a senior female employee as the Presiding Officer.\\n3. If no senior woman is available at the specific workplace, nominate one from other administrative units or departments.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "HR Records/Org Chart showing designation of the Presiding Officer",
+      "delay_proof": "Request for nomination from other branches"
+    },
+    "legal_text": "The Internal Committees shall consist of the following members to be nominated by the employer, namely: (a) a Presiding Officer who shall be a woman employed at a senior level at workplace from amongst the employees."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_2b-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(2)(b)",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Does the ICC include at least two members from amongst employees committed to the cause of women or having legal/social work experience?",
+    "applicability_criteria": "All constituted Internal Committees",
+    "simplified_guidance": "1. Select at least two employees to serve as ICC members.\\n2. Prioritize employees with a background in social work, legal knowledge, or a known commitment to women's causes.\\n3. Document their qualifications or relevant experience in the committee file.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Committee member profiles or resumes verifying background",
+      "delay_proof": "Internal nomination process records"
+    },
+    "legal_text": "not less than two Members from amongst employees preferably committed to the cause of women or who have had experience in social work or have legal knowledge;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_2c-05",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(2)(c)",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Does the ICC include one member from a non-governmental organization (NGO) or an association committed to the cause of women?",
+    "applicability_criteria": "All constituted Internal Committees",
+    "simplified_guidance": "1. Identify an external NGO or association working for women's rights.\\n2. Formally invite and appoint a representative from this organization to the ICC.\\n3. Ensure this member is familiar with issues relating to sexual harassment.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Appointment letter and acceptance from the external NGO member",
+      "delay_proof": "Correspondence with NGOs seeking nomination"
+    },
+    "legal_text": "one member from amongst non-governmental organisations or associations committed to the cause of women or a person familiar with the issues relating to sexual harassment:"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_2-06",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(2) Proviso",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Do women constitute at least one-half (50%) of the total members nominated to the ICC?",
+    "applicability_criteria": "All constituted Internal Committees",
+    "simplified_guidance": "1. Count the total number of ICC members (Presiding Officer + Employees + External Member).\\n2. Count the number of female members.\\n3. Ensure the female count is equal to or greater than 50% of the total count.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Committee constitution order showing names and genders",
+      "delay_proof": "N/A - Immediate compliance required"
+    },
+    "legal_text": "Provided that at least one-half of the total Members so nominated shall be women."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S04_3-07",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 4(3)",
+      "category": "Committee Constitution and Structural Setup"
+    },
+    "question_text": "Is the tenure of the Presiding Officer and every Member limited to a maximum of three years from the date of nomination?",
+    "applicability_criteria": "All ICC members",
+    "simplified_guidance": "1. Check the date of nomination on the ICC constitution order.\\n2. Ensure the order specifies a term not exceeding three years.\\n3. Establish a tracking system to reconstitute or renew the committee before the three-year term expires.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Constitution order specifying tenure dates",
+      "delay_proof": "Re-constitution process documents if tenure expired"
+    },
+    "legal_text": "The Presiding Officer and every Member of the Internal Committee shall hold office for such period, not exceeding three years, from the date of their nomination as may be specified by the employer."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_a-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(a)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Does the employer provide a safe working environment, including safety from third parties coming into contact at the workplace?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Implement security measures like CCTV, security guards, and entry logs.\\n2. Ensure lighting is adequate in all areas, including parking and corridors.\\n3. Establish protocols for visitors and third-party vendors.\\n4. Conduct regular safety walks to identify potential hazards.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Security logs, CCTV coverage maps, Visitor Management System records",
+      "delay_proof": "Safety audit reports identifying gaps"
+    },
+    "legal_text": "provide a safe working environment at the workplace with shall include safety from the persons coming into contact at the workplace;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_b-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(b)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Are the penal consequences of sexual harassment displayed at conspicuous places in the workplace?",
+    "applicability_criteria": "All workplaces",
+    "simplified_guidance": "1. Create posters or notices detailing what constitutes sexual harassment and the penalties (e.g., termination, deduction of wages).\\n2. Identify high-traffic areas like lobbies, canteens, and bulletin boards.\\n3. Affix these notices prominently in English and the local language.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photographic evidence of notices on display boards",
+      "delay_proof": "Draft designs of posters"
+    },
+    "legal_text": "display at any conspicuous place in the workplace, the penal consequences of sexual harassments;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_b-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(b)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Is the official order constituting the Internal Committee (IC) displayed at conspicuous places?",
+    "applicability_criteria": "All workplaces",
+    "simplified_guidance": "1. Print the signed office order listing the IC members and their contact details.\\n2. Display this order alongside the penal consequences notices.\\n3. Ensure contact information (email/phone) for the Presiding Officer is clearly visible.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photographic evidence of the displayed IC constitution order",
+      "delay_proof": "Internal memo regarding updating display boards"
+    },
+    "legal_text": "and the order constituting, the Internal Committee under sub-section (1) of section 4;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_c-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(c)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Does the employer organize workshops and awareness programs at regular intervals to sensitize employees?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Schedule regular training sessions (e.g., quarterly or annually) for all employees.\\n2. Cover the definition of sexual harassment, redressal mechanisms, and employee rights.\\n3. Maintain attendance registers and training material as proof.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Training calendar, attendance sheets, and workshop content/presentation decks",
+      "delay_proof": "Emails scheduling upcoming workshops"
+    },
+    "legal_text": "organise workshops and awareness programmes at regular intervals for sensitising the employees with the provisions of the Act..."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_c-05",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(c)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Does the employer conduct orientation programs specifically for the members of the Internal Committee?",
+    "applicability_criteria": "All employers with an Internal Committee",
+    "simplified_guidance": "1. Organize specialized training for IC members on inquiry procedures and legal aspects.\\n2. Ensure members understand principles of natural justice and confidentiality.\\n3. Document the sessions specifically designed for IC capacity building.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certificates of training for IC members or expert session invoices",
+      "delay_proof": "Planned agenda for IC orientation"
+    },
+    "legal_text": "...and orientation programmes for the members of the Internal Committee in the manner as may be prescribed;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_i-06",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(i)",
+      "category": "Policy, Awareness and Employer Duties"
+    },
+    "question_text": "Has the employer amended service rules to explicitly treat sexual harassment as a misconduct?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Review current Standing Orders, Service Rules, or HR Policy Manual.\\n2. Insert a specific clause defining sexual harassment as major misconduct.\\n3. Clearly outline the disciplinary actions (e.g., suspension, termination) applicable for this misconduct.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certified Standing Orders or Employee Handbook with misconduct clause",
+      "delay_proof": "Draft amendments submitted for certification"
+    },
+    "legal_text": "treat sexual harassment as a misconduct under the service rules and initiate action for such misconduct;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S11_4-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 11(4)",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Is the inquiry into the complaint completed by the Internal Committee within a period of ninety days?",
+    "applicability_criteria": "All inquiries conducted by the Internal Committee",
+    "simplified_guidance": "1. Track the start date of the inquiry (receipt of complaint/reply).\\n2. Monitor the progress to ensure all proceedings, interviews, and evidence collection finish within 90 days.\\n3. Record reasons for any delay, though the Act strictly mandates 90 days.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Case files showing start date and completion date of inquiry",
+      "delay_proof": "Hearing minutes showing dates"
+    },
+    "legal_text": "The inquiry under sub-section (1) shall be completed within a period of ninety days."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S13_4-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 13(4)",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Does the employer implement the recommendations of the Internal Committee within sixty days of receiving the inquiry report?",
+    "applicability_criteria": "All cases where the IC has submitted a report",
+    "simplified_guidance": "1. Note the date the employer received the inquiry report.\\n2. Execute the recommended actions (e.g., misconduct proceedings, salary deduction) immediately.\\n3. Ensure final closure of the matter is documented within 60 days of report receipt.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Action Taken Report or HR letters confirming execution of recommendations",
+      "delay_proof": "Internal notesheets processing the decision"
+    },
+    "legal_text": "The employer or the District Officer shall act upon the recommendation within sixty days of its receipt by him."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S13_1-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 13(1)",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Does the Internal Committee provide the inquiry report to the employer and concerned parties within ten days of completion?",
+    "applicability_criteria": "All completed inquiries",
+    "simplified_guidance": "1. Finalize the inquiry report immediately upon conclusion of hearings.\\n2. Dispatch copies to the employer, the aggrieved woman, and the respondent.\\n3. Retain proof of delivery (email receipts or acknowledgment signatures) dated within 10 days of completion.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledgment receipts from parties receiving the report",
+      "delay_proof": "Dispatch registry logs"
+    },
+    "legal_text": "On the completion of an inquiry under this Act, the Internal Committee or the Local Committee, as the case may be, shall provide a report of its findings to the employer... within a period of ten days from the date of completion of the inquiry and such report be made available to the concerned parties."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S11_1-04",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 11(1) Proviso",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Are both parties given an opportunity to be heard and provided copies of the findings to make representations?",
+    "applicability_criteria": "All inquiries where both parties are employees",
+    "simplified_guidance": "1. Ensure official notices of hearings are sent to both parties.\\n2. Share the findings/evidence with both parties before the final decision.\\n3. Allow them to submit a written representation against the findings if they disagree.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Minutes of meetings signed by parties and proof of document sharing",
+      "delay_proof": "Notices sent for hearing"
+    },
+    "legal_text": "Provided further that where both the parties are employees, the parties shall, during the course of inquiry, be given an opportunity of being heard and a copy of the findings shall be made available to both the parties enabling them to make representation against the findings before the Committee."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S12_1-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 12(1)",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Does the employer grant interim relief (transfer or leave) to the aggrieved woman during the pendency of inquiry if recommended by the Committee?",
+    "applicability_criteria": "Cases where aggrieved woman requests interim relief",
+    "simplified_guidance": "1. Receive recommendation from IC regarding transfer or leave.\\n2. Process the request immediately to separate the complainant from the respondent.\\n3. Ensure this leave (up to 3 months) is in addition to her statutory leave entitlement.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "HR letters granting special leave or transfer orders",
+      "delay_proof": "IC recommendation letter pending action"
+    },
+    "legal_text": "During the pendency of an inquiry... the Internal Committee... may recommend to the employer to... transfer the aggrieved woman or the respondent to any other workplace; or grant leave to the aggrieved woman up to a period of three months..."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S10_1-06",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 10(1)",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Does the Internal Committee take steps to settle the matter through conciliation only at the request of the aggrieved woman?",
+    "applicability_criteria": "Cases where the aggrieved woman opts for conciliation",
+    "simplified_guidance": "1. Inform the woman of the option for conciliation before starting the inquiry.\\n2. If she agrees, facilitate a meeting to reach a mutual settlement.\\n3. Ensure no monetary settlement is the basis of this conciliation.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written request for conciliation from the woman and recorded settlement terms",
+      "delay_proof": "Meeting minutes of conciliation attempt"
+    },
+    "legal_text": "The Internal Committee... may, before initiating an inquiry under section 11 and at the request of the aggrieved woman take steps to settle the matter between her and the respondent through conciliation."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S10_1P-07",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 10(1) Proviso",
+      "category": "Inquiry Process, Timelines and Redressal"
+    },
+    "question_text": "Does the Committee ensure that no monetary settlement is made as a basis of conciliation?",
+    "applicability_criteria": "All conciliation proceedings",
+    "simplified_guidance": "1. Review terms of any settlement arrived at through conciliation.\\n2. Ensure terms involve apology, counseling, or community service, but NOT money.\\n3. Reject any settlement proposal that involves financial transactions.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Settlement agreement document signed by both parties",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that no monetary settlement shall be made as a basis of conciliation."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S21_1-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 21(1)",
+      "category": "Reporting, Records and Confidentiality"
+    },
+    "question_text": "Does the Internal Committee prepare and submit an annual report to the employer and the District Officer in each calendar year?",
+    "applicability_criteria": "All Internal Committees",
+    "simplified_guidance": "1. The Internal Committee must collate data on cases filed, disposed of, and pending.\\n2. Prepare the annual report in the prescribed format at the end of the calendar year.\\n3. Submit the report formally to the Employer and the notified District Officer.\\n4. Retain proof of submission (acknowledgment receipt).",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the Annual Report and acknowledgment of receipt from the District Officer",
+      "delay_proof": "Draft report under review"
+    },
+    "legal_text": "The Internal Committee or the Local Committee, as the case may be, shall in each calendar year prepare, in such form and at such time as may be prescribed, an annual report and submit the same to the employer and the District Officer."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S22-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 22",
+      "category": "Reporting, Records and Confidentiality"
+    },
+    "question_text": "Does the employer include information regarding the number of sexual harassment cases filed and their disposal in the organization's annual report?",
+    "applicability_criteria": "All employers required to prepare an annual report",
+    "simplified_guidance": "1. Aggregate the data from the Internal Committee's report.\\n2. Include a specific section in the Company's Annual Report titled 'Sexual Harassment Cases'.\\n3. Disclose the number of cases filed, disposed of, and pending during the financial year.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Published Company Annual Report containing the specific disclosure",
+      "delay_proof": "Draft version of the Annual Report"
+    },
+    "legal_text": "The employer shall include in its report the number of cases filed, if any, and their disposal under this Act in the annual report of his organisation..."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S22-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 22",
+      "category": "Reporting, Records and Confidentiality"
+    },
+    "question_text": "If the organization is not required to prepare a formal annual report, does the employer intimate the number of cases to the District Officer?",
+    "applicability_criteria": "Employers not legally required to prepare a formal company annual report",
+    "simplified_guidance": "1. Identify if the organization falls under exemptions for preparing formal annual reports.\\n2. If yes, draft a formal letter intimating the number of harassment cases (even if nil).\\n3. Submit this intimation to the District Officer annually.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledgment receipt of intimation letter sent to District Officer",
+      "delay_proof": "Internal approval of the intimation letter"
+    },
+    "legal_text": "...or where no such report is required to be prepared, intimate such number of cases, if any, to the District Officer."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S16-04",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 16",
+      "category": "Reporting, Records and Confidentiality"
+    },
+    "question_text": "Does the organization strictly ensure that the contents of the complaint, inquiry proceedings, and identity of the aggrieved woman and witnesses are NOT published or communicated to the public/media?",
+    "applicability_criteria": "All cases and inquiry proceedings",
+    "simplified_guidance": "1. Redact names and addresses from any reports shared outside the core committee/employer.\\n2. Implement strict non-disclosure agreements for all parties involved in the inquiry.\\n3. Ensure press releases or internal communications regarding justice secured do not contain identifiable details.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Confidentiality undertakings signed by IC members and parties",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Notwithstanding anything contained in the Right to Information Act... the contents of the complaint... identity and addresses of the aggrieved woman, respondent and witnesses... shall not be published, communicated or made known to the public, press and media in any manner."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S17-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 17",
+      "category": "Reporting, Records and Confidentiality"
+    },
+    "question_text": "Has the employer established a penalty mechanism for any person entrusted with the inquiry who contravenes the confidentiality provisions?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Review service rules or the sexual harassment policy.\\n2. Ensure there is a specific clause prescribing penalties for breaching confidentiality (Section 16).\\n3. Penalties should align with service rules or prescribed methods.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Service Rules or Policy Document containing the penalty clause for confidentiality breach",
+      "delay_proof": "Draft policy amendment"
+    },
+    "legal_text": "Where any person entrusted with the duty to handle or deal with the complaint... contravenes the provisions of section 16, he shall be liable for penalty in accordance with the provisions of the service rules applicable to the said person..."
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_d-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(d)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer provide necessary facilities to the Internal Committee for dealing with complaints and conducting inquiries?",
+    "applicability_criteria": "All employers with an Internal Committee",
+    "simplified_guidance": "1. Allocate a private meeting room for committee proceedings to ensure confidentiality.\\n2. Provide necessary administrative support such as stationery, printing, and secure storage for files.\\n3. Allow members sufficient time off from regular duties to conduct inquiries.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Meeting room logs, administrative support records, or minutes of meetings indicating facility usage",
+      "delay_proof": "Requests from IC for facilities"
+    },
+    "legal_text": "provide necessary facilities to the Internal Committee or the Local Committee, as the case may be, for dealing with the complaint and conducting an inquiry;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_e-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(e)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer assist in securing the attendance of the respondent and witnesses before the Internal Committee?",
+    "applicability_criteria": "All inquiry proceedings",
+    "simplified_guidance": "1. Issue internal summons or notices to employees required as witnesses.\\n2. Adjust work schedules or shifts to allow respondents and witnesses to attend hearings.\\n3. Ensure no retaliation or obstruction occurs against those testifying.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Correspondence directing employees to attend hearings",
+      "delay_proof": "Notices sent to witnesses"
+    },
+    "legal_text": "assist in securing the attendance of respondent and witnesses before the Internal Committee or the Local Committee, as the case may be;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_f-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(f)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer make available all necessary information to the Internal Committee regarding the complaint?",
+    "applicability_criteria": "All inquiry proceedings",
+    "simplified_guidance": "1. Provide access to HR records, attendance logs, or CCTV footage if relevant to the inquiry.\\n2. Ensure data privacy protocols are followed while sharing sensitive employee information.\\n3. Respond promptly to data requests filed by the Presiding Officer.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Records of information transfer between HR/Management and the IC",
+      "delay_proof": "Pending data requests"
+    },
+    "legal_text": "make available such information to the Internal Committee or the Local Committee, as the case be, as it may require having regard to the complaint made under sub-section (1) of section 9;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_g-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(g)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer provide assistance to the woman if she chooses to file a complaint under the Indian Penal Code (IPC)?",
+    "applicability_criteria": "Cases where the aggrieved woman chooses to pursue criminal action",
+    "simplified_guidance": "1. Inform the woman of her right to file a police complaint under the IPC.\\n2. If requested, accompany her to the police station or assist in drafting the complaint.\\n3. Provide necessary evidence or documentation to law enforcement as required.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Written record of offer of assistance or correspondence with police",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "provide assistance to the woman if she so chooses to file a complaint in relation to the offence under the Indian Penal Code (45 of 1860) or any other law for the time being in force;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_h-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(h)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer initiate action under the IPC or relevant law against the perpetrator if they are not an employee?",
+    "applicability_criteria": "Incidents involving third-party perpetrators (non-employees) at the workplace",
+    "simplified_guidance": "1. Identify if the harassment was committed by a visitor, vendor, or client.\\n2. If the aggrieved woman desires, file a formal complaint with the police on behalf of the organization.\\n3. Take administrative action such as banning the perpetrator from the premises.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of FIR filed or letter to police regarding third-party harassment",
+      "delay_proof": "Internal incident report"
+    },
+    "legal_text": "cause to initiate action, under the Indian Penal Code (45 of 1860) or any other law for the time being in force, against the perpetrator, or if the aggrieved woman so desires, where the perpetrator is not an employee, in the workplace at which the incident of sexual harassment took place;"
+  },
+  {
+    "audit_item_id": "POSH_ACT-S19_j-06",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013",
+      "section_reference": "Section 19(j)",
+      "category": "Assistance and External Cooperation"
+    },
+    "question_text": "Does the employer monitor the timely submission of reports by the Internal Committee?",
+    "applicability_criteria": "All employers",
+    "simplified_guidance": "1. Maintain a tracking log of active cases and their deadlines.\\n2. Send reminders to the Presiding Officer if inquiry timelines (90 days) are nearing expiry.\\n3. Review the annual report submission status at the end of every calendar year.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "None",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Internal review meeting minutes or email reminders to IC regarding timelines",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "monitor the timely submission of reports by the Internal Committee."
+  }
+]

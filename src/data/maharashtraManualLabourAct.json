@@ -1,0 +1,623 @@
+[
+  {
+    "audit_item_id": "MMHAMW-SCH-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 2(9) read with Schedule",
+      "category": "Registration and Applicability"
+    },
+    "question_text": "Is the establishment engaged in any 'Scheduled Employment' as defined in the Schedule annexed to the Act?",
+    "applicability_criteria": "All establishments in Maharashtra operating in sectors like Iron & Steel, Grocery, Cloth, Transport, Fishing, etc.",
+    "simplified_guidance": "1. Review the 'Schedule' appended to the Act to identify the list of 13+ employment categories.\\n2. Determine if the manual workers (Mathadi/Hamal) are employed for loading, unloading, stacking, carrying, weighing, measuring, or similar operations.\\n3. Confirm if the specific employment type is notified by the State Government for your local area (District/Zone).",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Internal Job Description Analysis Report or Operation Process Charts mapped to the Act's Schedule",
+      "delay_proof": "Legal Opinion or Correspondence with Labor Department regarding applicability clarification"
+    },
+    "legal_text": "Scheduled employment means any employment specified in the Schedule or any process or branch of work forming part of such employment."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(1) and 3(2)(a)",
+      "category": "Registration and Applicability"
+    },
+    "question_text": "Has the employer registered with the specific 'Mathadi Board' constituted for their scheduled employment category?",
+    "applicability_criteria": "Establishments identified as engaging in 'Scheduled Employment' under an active Scheme.",
+    "simplified_guidance": "1. Identify the specific Board relevant to your industry (e.g., The Bombay Iron and Steel Labour Board, The Grocery Markets and Shops Board).\\n2. Submit 'Form A' (Application for Registration) to the Board.\\n3. Pay the requisite registration fee as prescribed by the specific Scheme.\\n4. Obtain the Registration Certificate/Code Number from the Board.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Registration Certificate issued by the Mathadi Board (Form B) and Allotment Letter of Registration Number",
+      "delay_proof": "Acknowledgement copy of Form A submission with fee receipt"
+    },
+    "legal_text": "The State Government may provide a Scheme for the registration of employers and unprotected workers in any scheduled employment or employments, and provide for the terms and conditions of work... and generally for better regulation of the employment of such workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC4-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 4(1)",
+      "category": "Registration and Applicability"
+    },
+    "question_text": "Does the establishment ensure that the Scheme applicable to their employment is valid and currently in force for their specific geographic area?",
+    "applicability_criteria": "Employers with operations in multiple districts or newly notified industrial zones.",
+    "simplified_guidance": "1. Check the official State Government Gazette notifications for the extension of specific Schemes to your area.\\n2. Verify if your specific trade (e.g., Vegetable Market vs. Railway Yard) falls under the jurisdiction of the local Board.\\n3. Note that Schemes may have different commencement dates for different areas or classes of employments.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Legal Register updating applicable notifications or Scheme applicability assessment record",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The State Government may, by notification in the Official Gazette, apply all or any of the provisions of this Act or any Scheme to such scheduled employment in such area as may be specified in the notification."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(d)",
+      "category": "Registration and Applicability"
+    },
+    "question_text": "Is the establishment employing only 'Registered Workers' allotted by the Board for scheduled operations?",
+    "applicability_criteria": "All registered employers under the Act.",
+    "simplified_guidance": "1. Request workers from the Board for loading/unloading tasks rather than hiring directly from the open market.\\n2. Verify that every worker deployed has a valid Identity Card issued by the Board.\\n3. Ensure no 'unprotected worker' (unregistered) is employed in operations covered by the Scheme unless specifically permitted.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Worker Identity Cards issued by the Board and Daily Allocation Sheets",
+      "delay_proof": "Correspondence with Board requesting workers when none were available"
+    },
+    "legal_text": "A Scheme may provide for regulating the employment of unprotected workers... and the terms and conditions of such employment, including rates of wages, hours of work... and prohibiting, restricting or otherwise controlling the employment of unprotected workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC7A-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 7A",
+      "category": "Registration and Applicability"
+    },
+    "question_text": "Has the employer updated the Board regarding any change in establishment details (ownership, address, or closure)?",
+    "applicability_criteria": "Employers undergoing structural changes, relocation, or closure.",
+    "simplified_guidance": "1. Prepare a formal notice detailing the change (e.g., change of partners, shift of factory location).\\n2. Submit this notice to the Board within the timeline prescribed by the specific Scheme (usually 15-30 days).\\n3. Obtain an amended Registration Certificate if the changes affect the details on the certificate.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Change Notice submitted to the Board with acknowledgement",
+      "delay_proof": "Draft notice pending submission"
+    },
+    "legal_text": "There shall be one or more Boards for any scheduled employment in any area. The Board may take such measures as it may deem fit for administering the Scheme."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC24-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 24",
+      "category": "Employment Restrictions and Staffing"
+    },
+    "question_text": "Is the establishment strictly free of child labor (persons under 14 years of age) in any scheduled employment operations?",
+    "applicability_criteria": "All establishments engaged in scheduled employments.",
+    "simplified_guidance": "1. Verify age proof documents for all workers prior to allowing entry.\\n2. Ensure no person under the age of 14 is present in the area where loading/unloading or manual work takes place.\\n3. Maintain a register of workers with recorded dates of birth.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Age proof records (Aadhaar/Birth Certificate) and visual inspection of workforce",
+      "delay_proof": "N/A - Zero Tolerance"
+    },
+    "legal_text": "No child shall be required or allowed to work in any scheduled employment."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(d) read with Clause 30 of Standard Scheme",
+      "category": "Employment Restrictions and Staffing"
+    },
+    "question_text": "Does the employer refrain from directly hiring 'unprotected workers' (unregistered labor) for scheduled tasks without Board permission?",
+    "applicability_criteria": "Employers in areas where a Mathadi Scheme is fully operational.",
+    "simplified_guidance": "1. Identify if the task falls under 'Scheduled Employment' (e.g., loading, stacking).\\n2. Ensure these tasks are performed ONLY by registered workers allocated by the Board.\\n3. If Board labor is unavailable, obtain written permission from the Board before employing outside labor.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Board Allocation Records vs. Actual Muster Roll; Interview with workers regarding their hiring source",
+      "delay_proof": "Written correspondence to Board citing non-availability of registered workers"
+    },
+    "legal_text": "A Scheme may provide for... prohibiting, restricting or otherwise controlling the employment of unprotected workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC25-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 25",
+      "category": "Employment Restrictions and Staffing"
+    },
+    "question_text": "If the establishment uses its own permanent employees for manual work, has it obtained a valid exemption notification from the State Government?",
+    "applicability_criteria": "Establishments claiming they do not need Board workers because they have their own permanent staff.",
+    "simplified_guidance": "1. Apply to the State Government for exemption under Section 25 if you wish to use your own permanent staff.\\n2. Prove that your workers enjoy better or similar benefits compared to Board workers.\\n3. Produce the Official Gazette Notification granting the exemption during audit.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Official Gazette Notification of Exemption under Section 25",
+      "delay_proof": "Proof of application for exemption submitted to State Government (Consultation stage)"
+    },
+    "legal_text": "The State Government may... exempt... any establishment or class of establishments... from all or any of the provisions of this Act or any Scheme."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC21-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 21",
+      "category": "Employment Restrictions and Staffing"
+    },
+    "question_text": "Does the employer ensure no contracts are signed that reduce the rights or privileges conferred upon workers by this Act?",
+    "applicability_criteria": "All contracts or agreements between employers and manual workers.",
+    "simplified_guidance": "1. Review all employment contracts or service agreements.\\n2. Remove any clauses that attempt to bypass the Act (e.g., 'worker agrees not to claim Mathadi benefits').\\n3. Note that such clauses are legally void.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Standard Employment Contract templates free of void clauses",
+      "delay_proof": "Legal review of contracts in progress"
+    },
+    "legal_text": "Any contract or agreement... whereby an unprotected worker relinquishes any right conferred by or any privilege or concession accruing to him under this Act or any Scheme, shall be void."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(c) read with Scheme",
+      "category": "Employment Restrictions and Staffing"
+    },
+    "question_text": "Do all workers deployed for scheduled operations carry valid Identity Cards issued by the Mathadi Board?",
+    "applicability_criteria": "All workers performing Mathadi work on premises.",
+    "simplified_guidance": "1. Instruct security/supervisors to check Identity Cards of all Mathadi workers upon entry.\\n2. Ensure the ID card contains the worker's registration number and photograph.\\n3. Deny entry to individuals claiming to be Board workers without valid ID.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Visual check of Worker Identity Cards during site walkthrough",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A Scheme may provide for... the registration of unprotected workers... and the terms and conditions of such employment."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-06",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(f) read with Scheme",
+      "category": "Wages, Levy and Financial Remittance"
+    },
+    "question_text": "Does the employer remit all wages and allowances for registered workers directly to the Board and NOT to the workers individually?",
+    "applicability_criteria": "All registered employers utilizing Board labor.",
+    "simplified_guidance": "1. Verify that no cash payments for wages are made directly to Mathadi workers.\\n2. Prepare a consolidated cheque or bank transfer for the total wages of all workers deployed during the month.\\n3. Submit this payment to the Board, which acts as the disbursement agency.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Monthly Bank Statements showing transfers to the Mathadi Board and Board Receipts",
+      "delay_proof": "N/A - Direct payment to workers is a violation"
+    },
+    "legal_text": "A Scheme may provide for... the application to the Board of all moneys received by the Board... and for prohibiting, restricting or otherwise controlling the employment of unprotected workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-07",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(j) read with Scheme",
+      "category": "Wages, Levy and Financial Remittance"
+    },
+    "question_text": "Has the employer paid the 'Levy' (administrative surcharge) calculated on the gross wages to the Board?",
+    "applicability_criteria": "All registered employers.",
+    "simplified_guidance": "1. Calculate the 'Levy' percentage (as notified by the specific Board, e.g., 30-40% of wages).\\n2. Ensure this amount is added over and above the gross wages in the remittance to the Board.\\n3. Verify that the Levy covers the cost of operating the Scheme and worker welfare benefits.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Challan or Receipt from the Board explicitly stating 'Levy' payment amount",
+      "delay_proof": "Accounting provision for unpaid levy liability"
+    },
+    "legal_text": "A Scheme may provide for... the collection and recovery of... such other sums as may be recoverable from the employers and unprotected workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC17A-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 17A",
+      "category": "Wages, Levy and Financial Remittance"
+    },
+    "question_text": "Has the employer ensured there are no outstanding defaults in the payment of funds designated for worker welfare schemes?",
+    "applicability_criteria": "Employers required to contribute to welfare funds under the Scheme.",
+    "simplified_guidance": "1. Identify if any part of the remittance is designated for the Provident Fund or Welfare Fund.\\n2. Ensure these contributions are not deducted from the worker's wage but paid by the employer if required by the Scheme.\\n3. Confirm no default exists, as this attracts imprisonment.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "No Outstanding Dues Certificate from the Board or Clear Audit Report",
+      "delay_proof": "Payment plan approved by the Board for arrears"
+    },
+    "legal_text": "Any person who mandates or allows to be deducted any contribution... and fails to pay the contribution... shall be punished with imprisonment for a term which may extend to one year and with fine which shall not be less than five hundred rupees."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC13-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 13",
+      "category": "Wages, Levy and Financial Remittance"
+    },
+    "question_text": "If a Recovery Certificate has been issued by the Board for due amounts, has the employer settled the claim to avoid revenue recovery proceedings?",
+    "applicability_criteria": "Employers with arrears or disputes regarding payments.",
+    "simplified_guidance": "1. Check for any notices received under Section 13 regarding 'Recovery of moneys due'.\\n2. If a certificate is issued to the Collector, the amount is recoverable as land revenue.\\n3. Immediately settle the amount with the Board to stop the recovery process.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Proof of Settlement of Dues",
+      "delay_proof": "Copy of appeal filed against the recovery certificate"
+    },
+    "legal_text": "The Board... shall... issue a certificate for that amount to the Collector... and the Collector shall proceed to recover that amount in the same manner as an arrear of land revenue."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC3-08",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(k) read with Scheme Clauses",
+      "category": "Statutory Records and Returns"
+    },
+    "question_text": "Does the establishment maintain a 'Register of Employers' and 'Register of Workers' as prescribed by the specific Board Scheme?",
+    "applicability_criteria": "All registered establishments employing Mathadi labor.",
+    "simplified_guidance": "1. Maintain a dedicated file or register containing the Registration Certificate details.\\n2. Keep a list of all monthly allocated workers with their Registration Numbers (issued by the Board).\\n3. Update this register whenever there is a change in the allocated gang or set of workers.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical or digital Register of Workers containing Board Registration Numbers",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "A Scheme may provide for... the maintenance of registers and records of employers and workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC15-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 15",
+      "category": "Statutory Records and Returns"
+    },
+    "question_text": "Are all records regarding wages, attendance, and levy payments kept ready for production before the Board or Chairman upon demand?",
+    "applicability_criteria": "All employers subject to the Act.",
+    "simplified_guidance": "1. Organize all monthly challans, wage summaries, and correspondence with the Board in a central compliance file.\\n2. Ensure records are retrievable immediately if an inquiry is initiated under Section 15.\\n3. Retain these records for the period specified in the Scheme (typically 3-5 years).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Central Compliance File containing past 12 months of records",
+      "delay_proof": "Record retention policy document"
+    },
+    "legal_text": "The Board or the Chairman... may call for such records as it or he may consider necessary."
+  },
+  {
+    "audit_item_id": "MMHAMW-SCH-RET-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 3(2)(d) read with Standard Scheme Clause",
+      "category": "Statutory Records and Returns"
+    },
+    "question_text": "Does the employer submit the 'Monthly Return' to the Board detailing worker attendance, gross wages, and levy calculations?",
+    "applicability_criteria": "All registered employers.",
+    "simplified_guidance": "1. Compile the data of days worked and wages earned by each Mathadi worker during the previous month.\\n2. Fill out the Monthly Return form prescribed by your specific Board (often Form IV or similar).\\n3. Submit this return along with the payment remittance by the due date (usually 5th-10th of the following month).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copies of Monthly Returns submitted to the Board",
+      "delay_proof": "Email logs of digital submission"
+    },
+    "legal_text": "A Scheme may provide for... requiring the employers to submit returns... and generally for better regulation of the employment of such workers."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC16-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 16(b)",
+      "category": "Statutory Records and Returns"
+    },
+    "question_text": "Does the employer allow the Inspector to examine and copy any register, record of wages, or notices required to be kept under the Act?",
+    "applicability_criteria": "During an official inspection visit.",
+    "simplified_guidance": "1. Do not restrict the Inspector from accessing relevant employment records.\\n2. Facilitate the taking of copies or extracts if requested.\\n3. Ensure a senior representative accompanies the Inspector to provide explanations.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Inspection Book or Visit Remarks Register",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An Inspector may... examine and take on the spot or otherwise the copy of any register, record of wages or notices required to be kept... and seize or take copies of such registers, record of wages, or notices or portions thereof."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC16-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 16(a)",
+      "category": "Inspection and Enforcement"
+    },
+    "question_text": "Does the establishment ensure that no obstruction is caused to an Inspector during the discharge of their official duties?",
+    "applicability_criteria": "All establishments subject to inspection by the Board or Labor Department.",
+    "simplified_guidance": "1. Issue clear instructions to security and front-office staff regarding Inspector access.\\n2. Ensure the Inspector is not delayed at the gate or prevented from entering work areas.\\n3. Provide a 'reasonable facility' for the Inspector to conduct their examination.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Security Protocol for Government Visits; Absence of obstruction notices",
+      "delay_proof": "N/A - Immediate compliance required"
+    },
+    "legal_text": "Whoever obstructs an Inspector in the discharge of his duties under this Act or any Scheme made thereunder... shall be punishable with imprisonment for a term which may extend to six months, or with fine which may extend to five hundred rupees, or with both."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC15-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 15(c)",
+      "category": "Inspection and Enforcement"
+    },
+    "question_text": "Are relevant personnel (Manager/Supervisor) available and instructed to answer truthfully any interrogations made by the Inspector?",
+    "applicability_criteria": "During an official inspection.",
+    "simplified_guidance": "1. Designate a compliance officer to accompany the Inspector.\\n2. Ensure the officer is authorized to provide information regarding worker identity, wages, and nature of work.\\n3. Instruct staff that refusing to answer or providing false information is a punishable offense.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Inspection Report remarks",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "An Inspector may... examine any person... whom he has reasonable cause to believe to be a worker... and require such person to give information in his possession."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC16-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 16(b)",
+      "category": "Inspection and Enforcement"
+    },
+    "question_text": "Does the employer willfully neglect to afford reasonable facilities to the Inspector for making any inspection, examination, or inquiry?",
+    "applicability_criteria": "All registered employers.",
+    "simplified_guidance": "1. Provide a quiet space for the Inspector to review documents.\\n2. Ensure electricity/lighting is available in the record room.\\n3. Retrieve requested files promptly to facilitate the inquiry.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 500,
+        "imprisonment_term": "Up to 6 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Visitor Log showing entry/exit times of officials; Visit Remarks Book",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever... refuses or wilfully neglects to afford the Inspector any reasonable facility for making any inspection, examination or inquiry... shall be punishable."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC17B-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 17B",
+      "category": "Inspection and Enforcement"
+    },
+    "question_text": "If the employer has previously been convicted of an offense under this Act, have all subsequent contraventions been avoided to prevent enhanced daily penalties?",
+    "applicability_criteria": "Employers with prior convictions under the Act.",
+    "simplified_guidance": "1. Review past legal history for any convictions under the Mathadi Act.\\n2. Note that subsequent offenses carry a daily fine for every day the contravention continues.\\n3. Implement stricter internal controls if a prior conviction exists.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100,
+        "imprisonment_term": "Up to 3 months",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Legal Due Diligence Report; Court Orders from previous cases",
+      "delay_proof": "Corrective Action Plan closing previous non-compliances"
+    },
+    "legal_text": "If any person who has been convicted of any offence punishable under this Act... is again guilty of an offence involving a contravention of the same provision, he shall be punishable... with a further fine which may extend to one hundred rupees for each day."
+  },
+  {
+    "audit_item_id": "MMHAMW-SEC13-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Maharashtra Mathadi, Hamal and Other Manual Workers (Regulation of Employment and Welfare) Act, 1969",
+      "section_reference": "Section 13(2)",
+      "category": "Inspection and Enforcement"
+    },
+    "question_text": "Does the employer comply with the Board's final determination regarding the amount of money due, without forcing recovery through the Collector?",
+    "applicability_criteria": "Employers with disputed payment amounts.",
+    "simplified_guidance": "1. If the Board determines an amount is due after a hearing, pay it within the stipulated time.\\n2. Avoid the issuance of a certificate to the Collector, which escalates the enforcement to land revenue recovery.\\n3. Note that the Board's decision on the amount due is often final pending appeal.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of payment for Determined Dues",
+      "delay_proof": "Copy of Appeal filed with State Government"
+    },
+    "legal_text": "The Board may... determine the amount due from such employer... and if the amount is not paid... issue a certificate for that amount to the Collector."
+  }
+]

@@ -1,0 +1,1298 @@
+[
+  {
+    "audit_item_id": "HWM-RULE06-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(1)",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Has the occupier obtained valid authorization from the State Pollution Control Board (SPCB) for handling hazardous and other wastes using Form 1?",
+    "applicability_criteria": "All occupiers engaged in handling, generation, collection, storage, packaging, transportation, use, treatment, processing, recycling, recovery, pre-processing, co-processing, utilisation, offering for sale, transfer or disposal of hazardous and other wastes",
+    "simplified_guidance": "1. Verify if the facility handles any waste specified in the Schedules of the Rules.\n2. Check for a valid Authorization certificate (Form 2) issued by the SPCB.\n3. Ensure the authorization covers all specific activities performed (e.g., generation, storage, recycling).\n4. Confirm the authorization is currently valid and not expired.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Authorization Order (Form 2) from SPCB",
+      "delay_proof": "Acknowledged copy of Form 1 application submitted to SPCB"
+    },
+    "legal_text": "Every occupier of the facility who is engaged in handling, generation, collection, storage, packaging, transportation, use, treatment, processing, recycling, recovery, pre-processing, co-processing, utilisation, offering for sale, transfer or disposal of the hazardous and other wastes shall be required to make an application in Form 1 to the State Pollution Control Board and obtain an authorisation from the State Pollution Control Board..."
+  },
+  {
+    "audit_item_id": "HWM-RULE06-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(1)(a) and (b)",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Does the facility possess valid Consent to Establish (CTE) and Consent to Operate (CTO) under the Water and Air Acts?",
+    "applicability_criteria": "All occupiers applying for or holding hazardous waste authorization",
+    "simplified_guidance": "1. Ensure the facility has obtained Consent to Establish (CTE) before setting up.\n2. Ensure the facility has a valid Consent to Operate (CTO) under the Water Act, 1974 and Air Act, 1981.\n3. These consents are mandatory prerequisites for obtaining Hazardous Waste Authorization.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Consent to Operate (CTO) and Consent to Establish (CTE) certificates",
+      "delay_proof": "Pending application records for CTO/CTE"
+    },
+    "legal_text": "Such application for authorisation shall be accompanied with a copy each of the following documents, namely:- (a) consent to establish granted by the State Pollution Control Board under the Water (Prevention and Control of Pollution) Act, 1974 and the Air (Prevention and Control of Pollution) Act, 1981; (b) Consent to operate granted by the State Pollution Control Board under the Water (Prevention and Control of Pollution) Act, 1974 and/or Air (Prevention and Control of Pollution) Act, 1981"
+  },
+  {
+    "audit_item_id": "HWM-RULE06-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(1) Proviso",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Is the application for renewal of authorization submitted at least three months before the expiry of the existing authorization?",
+    "applicability_criteria": "Occupiers with an existing authorization nearing expiry",
+    "simplified_guidance": "1. Check the expiry date on the current Authorization (Form 2).\n2. Calculate the date three months prior to expiry.\n3. Verify the submission date of the renewal application (Form 1).\n4. Ensure submission receipts confirm filing within the required timeline.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged Form 1 renewal application with date stamp",
+      "delay_proof": "Late submission receipt or show cause notice for delay"
+    },
+    "legal_text": "Provided that an application for renewal of authorisation may be made three months before the expiry of such authorisation"
+  },
+  {
+    "audit_item_id": "HWM-RULE06-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(1)(c)",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Has a self-certified compliance report been submitted along with the authorization renewal application?",
+    "applicability_criteria": "Occupiers applying for renewal of authorization",
+    "simplified_guidance": "1. Locate the renewal application file.\n2. Look for the self-certified compliance report.\n3. The report must cover effluent standards, emission standards, and specific conditions mentioned in the previous authorization.\n4. Ensure the report is signed by the authorized signatory.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of the self-certified compliance report attached to the renewal application",
+      "delay_proof": "None"
+    },
+    "legal_text": "in case of renewal of authorisation, a self-certified compliance report in respect of effluent, emission standards and the conditions specified in the authorisation for hazardous and other wastes"
+  },
+  {
+    "audit_item_id": "HWM-RULE06-05",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(2)",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Does the facility possess the technical capabilities and equipment complying with Standard Operating Procedures (SOPs) specified by the CPCB?",
+    "applicability_criteria": "Facilities engaged in recycling, pre-processing, co-processing, or utilization of hazardous waste",
+    "simplified_guidance": "1. Identify the specific hazardous waste activities performed.\n2. Refer to CPCB guidelines or SOPs relevant to those activities.\n3. Verify during site inspection if the installed equipment and technical capabilities match the SOP requirements.\n4. Check for any inspection reports from the SPCB verifying these capabilities.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Field inspection report or internal audit of equipment against SOPs",
+      "delay_proof": "Gap analysis report regarding equipment upgrades"
+    },
+    "legal_text": "ensuring technical capabilities and equipment complying with the standard operating procedure or other guidelines specified by the Central Pollution Control Board from time to time"
+  },
+  {
+    "audit_item_id": "HWM-RULE06-06",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(7) and 6(8)",
+      "category": "Authorization and Legal Status"
+    },
+    "question_text": "Does the authorized actual user maintain a passbook issued by the SPCB and record all waste purchases therein?",
+    "applicability_criteria": "Authorized actual users procuring hazardous and other wastes",
+    "simplified_guidance": "1. If the facility is an 'actual user' (recycler/re-processor), ask for the SPCB-issued passbook.\n2. Verify that the passbook is physically available.\n3. Check entries to ensure every receipt of hazardous waste is recorded.\n4. Ensure no waste is handed over or received without entry in this passbook.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original Passbook issued by SPCB with up-to-date entries",
+      "delay_proof": "Request letter to SPCB for issuance of passbook"
+    },
+    "legal_text": "The authorised actual user of hazardous and other wastes shall maintain records of hazardous and other wastes purchased in a passbook issued by the State Pollution Control Board along with the authorisation. Handing over of the hazardous and other wastes to the authorised actual user shall be only after making the entry into the passbook of the actual user."
+  },
+  {
+    "audit_item_id": "HWM-RULE04-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 4(3)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Is all hazardous and other waste generated sent or sold only to an authorized actual user or disposed of in an authorized disposal facility?",
+    "applicability_criteria": "All occupiers generating hazardous and other wastes",
+    "simplified_guidance": "1. Verify the list of hazardous waste receivers (buyers/TSDFs).\n2. Cross-check their names against the valid authorization copies provided by them.\n3. Ensure no waste is sold to unauthorized scrap dealers or unverified third parties.\n4. Check manifests to confirm the destination is an authorized facility.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of valid authorizations of all waste receivers/actual users",
+      "delay_proof": "None (Immediate compliance required)"
+    },
+    "legal_text": "The hazardous and other wastes generated in the establishment of an occupier shall be sent or sold to an authorised actual user or shall be disposed of in an authorised disposal facility."
+  },
+  {
+    "audit_item_id": "HWM-RULE04-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 4(5)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Does the occupier provide specific information needed for safe storage and disposal to the operator of the treatment, storage, and disposal facility (TSDF)?",
+    "applicability_criteria": "Occupiers sending waste to a TSDF",
+    "simplified_guidance": "1. Review the service agreement or waste profile sheets shared with the TSDF.\n2. Verify if technical data (chemical composition, compatibility, hazards) is provided.\n3. Ensure this information is updated if the waste stream characteristics change.\n4. Confirm that the TSDF operator has acknowledged receipt of this information.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Waste Analysis Reports or Waste Profile Sheets acknowledged by TSDF",
+      "delay_proof": "Correspondence regarding waste characterization"
+    },
+    "legal_text": "The occupier who intends to get its hazardous and other wastes treated and disposed of by the operator of a treatment, storage and disposal facility shall give to the operator of that facility, such specific information as may be needed for safe storage and disposal."
+  },
+  {
+    "audit_item_id": "HWM-RULE04-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 4(6)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Has the occupier taken adequate steps to contain contaminants, prevent accidents, and provide safety training and equipment to workers?",
+    "applicability_criteria": "All occupiers handling hazardous waste",
+    "simplified_guidance": "1. Inspect the storage area for containment measures (e.g., dyke walls, impervious flooring).\n2. Verify availability of spill kits and fire suppression systems.\n3. Check training records for workers handling hazardous waste.\n4. Ensure appropriate Personal Protective Equipment (PPE) is provided and used.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Training attendance registers and PPE issuance logs",
+      "delay_proof": "Safety audit reports identifying gaps"
+    },
+    "legal_text": "The occupier shall take all the steps while managing hazardous and other wastes to- (a) contain contaminants and prevent accidents and limit their consequences on human beings and the environment; and (b) provide persons working in the site with appropriate training, equipment and the information necessary to ensure their safety."
+  },
+  {
+    "audit_item_id": "HWM-RULE08-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 8(1)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Is hazardous and other waste stored for a period not exceeding ninety days?",
+    "applicability_criteria": "All occupiers storing hazardous waste (unless specifically exempted)",
+    "simplified_guidance": "1. Check the date labels on waste containers in the storage area.\n2. Review the stock register (Form 3) to track entry and exit dates of waste.\n3. Identify any inventory older than 90 days.\n4. If older than 90 days, check for valid extension or specific exemption.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Form 3 records and physical container labels",
+      "delay_proof": "Application for extension submitted to SPCB"
+    },
+    "legal_text": "The occupiers of facilities may store the hazardous and other wastes for a period not exceeding ninety days..."
+  },
+  {
+    "audit_item_id": "HWM-RULE08-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 8(1) Proviso",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "If waste is stored beyond 90 days, does the facility fall under the exempted categories or hold a valid extension from SPCB?",
+    "applicability_criteria": "Occupiers storing waste > 90 days (Small generators, actual users, or those without access to TSDF)",
+    "simplified_guidance": "1. Verify if the facility is a small generator (<10 tonnes/annum) or actual user (allowed up to 180 days).\n2. Check if the SPCB has granted an extension due to lack of TSDF access.\n3. Ensure total storage does not exceed 180 days even with extension.\n4. Document the justification for any extended storage.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "SPCB Extension Order or production records proving small generator status",
+      "delay_proof": "Pending extension application"
+    },
+    "legal_text": "Provided that the State Pollution Control Board may extend the said period of ninety days in following cases, namely:- (i) small generators (up to ten tonnes per annum) up to one hundred and eighty days of their annual capacity; (ii) actual users and disposal facility operators up to one hundred and eighty days of their annual capacity..."
+  },
+  {
+    "audit_item_id": "HWM-RULE08-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 8(1)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Are records of sale, transfer, storage, recycling, recovery, pre-processing, co-processing, and utilization maintained and made available for inspection?",
+    "applicability_criteria": "All occupiers",
+    "simplified_guidance": "1. Request the daily/periodic records of waste management.\n2. Ensure the records cover all activities: sale, transfer, storage, recycling, etc.\n3. Verify that the records track the quantity and nature of waste.\n4. Confirm these records are readily accessible during the audit.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Maintained Logbooks or Digital Records",
+      "delay_proof": "Incomplete or back-filled records"
+    },
+    "legal_text": "...and shall maintain a record of sale, transfer, storage, recycling, recovery, pre-processing, co-processing and utilisation of such wastes and make these records available for inspection"
+  },
+  {
+    "audit_item_id": "HWM-RULE09-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 9(1)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "Has the facility obtained authorization from SPCB for utilizing hazardous waste as a resource or for co-processing?",
+    "applicability_criteria": "Occupiers utilizing hazardous waste (recycling, recovery, co-processing, etc.)",
+    "simplified_guidance": "1. Identify if any hazardous waste is used as a raw material, fuel, or resource.\n2. Check for specific authorization under Rule 9 from the SPCB.\n3. Verify that the utilization is based on Standard Operating Procedures (SOPs) or guidelines from CPCB.\n4. Ensure the authorization specifically lists the waste types being utilized.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Rule 9 Authorization from SPCB",
+      "delay_proof": "Application for Rule 9 authorization"
+    },
+    "legal_text": "The utilisation of hazardous and other wastes as a resource or after pre-processing either for co-processing or for any other use, including within the premises of the generator (if it is not part of process), shall be carried out only after obtaining authorisation from the State Pollution Control Board in respect of waste on the basis of standard operating procedures or guidelines provided by the Central Pollution Control Board."
+  },
+  {
+    "audit_item_id": "HWM-RULE09-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 9(2)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "If no SOP exists for a specific utilization, has approval been sought from the Central Pollution Control Board (CPCB) based on trial runs?",
+    "applicability_criteria": "Occupiers proposing novel utilization methods where no CPCB SOP exists",
+    "simplified_guidance": "1. Determine if the utilization method has an existing CPCB SOP.\n2. If not, verify if an application was made to CPCB for approval.\n3. Check records of trial runs conducted for CPCB approval.\n4. Ensure no commercial utilization occurs before this approval is granted.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "CPCB Approval Letter for Trial Run or Final SOP",
+      "delay_proof": "Trial run protocols submitted to CPCB"
+    },
+    "legal_text": "Where standard operating procedures or guidelines are not available for specific utilisation, the approval has to be sought from Central Pollution Control Board which shall be granting approval on the basis of trial runs and thereafter, standard operating procedures or guidelines shall be prepared by Central Pollution Control Board"
+  },
+  {
+    "audit_item_id": "HWM-RULE09-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 9(3)",
+      "category": "Operational Management and Storage"
+    },
+    "question_text": "For co-processing in cement plants, are the standards notified under the Environment (Protection) Act, 1986 complied with?",
+    "applicability_criteria": "Cement plants co-processing hazardous waste",
+    "simplified_guidance": "1. Confirm if the facility is a cement plant co-processing waste.\n2. Verify compliance with emission standards notified for cement plants.\n3. Check emission monitoring reports.\n4. Ensure trial runs were not required if guidelines were already available.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Stack Monitoring Reports showing compliance with EP Act standards",
+      "delay_proof": "Corrective action plan for emission deviations"
+    },
+    "legal_text": "No trial runs shall be required for co-processing of waste in cement plants for which guidelines by the Central Pollution Control Board are already available; however, the actual users shall ensure compliance to the standards notified under the Environment (Protection) Act, 1986 (29 of 1986), for cement plant with respect to co-processing of waste"
+  },
+  {
+    "audit_item_id": "HWM-RULE17-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 17(1)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Are hazardous and other wastes packaged in a manner suitable for safe handling, storage, and transport?",
+    "applicability_criteria": "All occupiers handling hazardous or other wastes",
+    "simplified_guidance": "1. Inspect the storage area to check the condition of containers.\n2. Ensure containers are not leaking, bulging, or damaged.\n3. Verify that packaging material is compatible with the waste characteristics.\n4. Confirm compliance with CPCB guidelines for specific waste types.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Photos of properly packaged waste containers",
+      "delay_proof": "Purchase orders for new containment drums"
+    },
+    "legal_text": "Any occupier handling hazardous or other wastes and operator of the treatment, storage and disposal facility shall ensure that the hazardous and other wastes are packaged in a manner suitable for safe handling, storage and transport as per the guidelines issued by the Central Pollution Control Board from time to time."
+  },
+  {
+    "audit_item_id": "HWM-RULE17-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 17(1)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Are all hazardous waste containers properly labeled as per Form 8?",
+    "applicability_criteria": "All hazardous waste containers in storage or transit",
+    "simplified_guidance": "1. Inspect waste containers for Form 8 labels.\n2. The label must include waste category, quantity, date of storage, and safety warnings.\n3. Ensure the background color is fluorescent yellow for hazardous waste.\n4. Check that 'HAZARDOUS WASTES' is written prominently in Red.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visual verification of Form 8 labels on containers",
+      "delay_proof": "Stock of printed Form 8 stickers"
+    },
+    "legal_text": "The labelling shall be done as per Form 8."
+  },
+  {
+    "audit_item_id": "HWM-RULE17-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 17(2)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Are the labels on hazardous waste containers non-washable, weather-proof, and easily visible?",
+    "applicability_criteria": "All labeled hazardous waste containers",
+    "simplified_guidance": "1. Check if labels are peeling off or fading due to weather/sunlight.\n2. Verify that the material used is durable and water-resistant.\n3. Ensure labels are positioned so they are easily visible without moving the containers.\n4. Replace any damaged or illegible labels immediately.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Sample photo of a weather-proof label",
+      "delay_proof": "None"
+    },
+    "legal_text": "The label shall be of non-washable material, weather proof and easily visible."
+  },
+  {
+    "audit_item_id": "HWM-RULE18-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 18(2)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Does the occupier provide the transporter with the Transport Emergency (TREM) Card in Form 9?",
+    "applicability_criteria": "Occupiers handing over waste to transporters",
+    "simplified_guidance": "1. Verify that Form 9 (TREM Card) is prepared for every consignment.\n2. Ensure it contains emergency measures and hazardous nature details.\n3. Check if the transporter/driver has a copy of this card.\n4. Review the acknowledgement or file copy retained by the sender.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of Form 9 handed over to transporters",
+      "delay_proof": "None"
+    },
+    "legal_text": "The occupier shall provide the transporter with the relevant information in Form 9, regarding the hazardous nature of the wastes and measures to be taken in case of an emergency..."
+  },
+  {
+    "audit_item_id": "HWM-RULE18-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 18(3)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Has a 'No Objection Certificate' (NOC) been obtained from the State Pollution Control Boards of both States for inter-state transportation for final disposal?",
+    "applicability_criteria": "Transportation of waste for final disposal to a different State",
+    "simplified_guidance": "1. Identify if any waste is sent to a TSDF in another state.\n2. If yes, check for the NOC from the SPCB of the Origin State.\n3. Check for the NOC from the SPCB of the Destination State.\n4. Ensure transport occurs only after receiving both NOCs.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "NOCs from both State Pollution Control Boards",
+      "delay_proof": "NOC application tracking details"
+    },
+    "legal_text": "In case of transportation of hazardous and other waste for final disposal to a facility existing in a State other than the State where the waste is generated, the sender shall obtain 'No Objection Certificate' from the State Pollution Control Board of both the States."
+  },
+  {
+    "audit_item_id": "HWM-RULE18-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 18(4)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Has the sender intimated both State Pollution Control Boards before handing over waste for inter-state recycling or utilization?",
+    "applicability_criteria": "Transportation of waste for recycling/utilization to a different State",
+    "simplified_guidance": "1. Verify records of waste sent to recyclers in other states.\n2. Check for proof of intimation sent to the Origin State SPCB.\n3. Check for proof of intimation sent to the Destination State SPCB.\n4. Note: Only intimation is required for recycling, unlike NOC for disposal.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of intimation letters/emails with acknowledgement",
+      "delay_proof": "Dispatch proof of intimation letters"
+    },
+    "legal_text": "In case of transportation of hazardous and other waste for recycling or utilisation including co-processing, the sender shall intimate both the State Pollution Control Boards before handing over the waste to the transporter."
+  },
+  {
+    "audit_item_id": "HWM-RULE18-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 18(5)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Has prior intimation been given to the SPCBs of transit States if waste passes through them?",
+    "applicability_criteria": "Transportation of waste passing through states other than origin and destination",
+    "simplified_guidance": "1. Map the transport route for inter-state shipments.\n2. Identify any states the vehicle passes through (Transit States).\n3. Verify if intimation was sent to the SPCBs of these Transit States.\n4. Maintain proof of this intimation along with the manifest.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Intimation letters to Transit State SPCBs",
+      "delay_proof": "None"
+    },
+    "legal_text": "In case of transit of hazardous and other waste for recycling, utilisation including co-processing or disposal through a State other than the States of origin and destination, the sender shall give prior intimation to the concerned State Pollution Control Board of the States of transit before handing over the wastes to the transporter."
+  },
+  {
+    "audit_item_id": "HWM-RULE18-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 18(7)",
+      "category": "Packaging, Labeling and Transportation"
+    },
+    "question_text": "Does the party arranging the transport (sender or receiver) possess valid authorization for transport?",
+    "applicability_criteria": "All shipments of hazardous waste",
+    "simplified_guidance": "1. Determine who is arranging the transport (Sender or Receiver).\n2. Verify that this party holds valid authorization from the SPCB specifically covering transport.\n3. Ensure the responsibility for safe transport is clearly indicated in the manifest.\n4. Check that the transporter used is also authorized/recognized.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Authorization document mentioning 'Transport'",
+      "delay_proof": "None"
+    },
+    "legal_text": "The authorisation for transport shall be obtained either by the sender or the receiver on whose behalf the transport is being arranged."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(1)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Does the sender prepare seven copies of the manifest in Form 10 with the specified color codes for every hazardous waste consignment?",
+    "applicability_criteria": "Senders of hazardous waste",
+    "simplified_guidance": "1. Verify that Form 10 is used for every shipment.\n2. Ensure all 7 copies are generated.\n3. Check if the color coding (White, Yellow, Pink, Orange, Green, Blue, Grey) is followed.\n4. Confirm that the sender signs all seven copies before dispatch.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical copies of Manifests (Form 10)",
+      "delay_proof": "None"
+    },
+    "legal_text": "The sender of the waste shall prepare seven copies of the manifest in Form 10 comprising of colour code indicated below and all seven copies shall be signed by the sender"
+  },
+  {
+    "audit_item_id": "HWM-RULE19-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(2)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Has Copy 1 (White) of the manifest been forwarded to the State Pollution Control Board by the sender?",
+    "applicability_criteria": "Senders of hazardous waste",
+    "simplified_guidance": "1. Locate Copy 1 (White) records in the dispatch file.\n2. Verify the date of dispatch to the SPCB.\n3. Ensure it was sent immediately upon preparing the manifest.\n4. Check for proof of delivery/acknowledgement from SPCB.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Postal receipt or acknowledgement of Copy 1 submission to SPCB",
+      "delay_proof": "None"
+    },
+    "legal_text": "The sender shall forward copy 1 (white) to the State Pollution Control Board, and in case the hazardous or other wastes is likely to be transported through any transit State, the sender shall intimate State Pollution Control Boards of transit States about the movement of the waste."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(1) Table",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Does the sender retain Copy 2 (Yellow) signed by the transporter and hand over the remaining copies to the transporter?",
+    "applicability_criteria": "Senders of hazardous waste",
+    "simplified_guidance": "1. Inspect the sender's manifest records.\n2. Verify presence of Copy 2 (Yellow) for past shipments.\n3. Ensure Copy 2 bears the transporter's signature and date.\n4. Confirm that the transporter was given copies 3 through 7.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Retained Copy 2 (Yellow) with Transporter Signature",
+      "delay_proof": "None"
+    },
+    "legal_text": "Copy 2 (Yellow) To be retained by the sender after taking signature on it from the transporter and the rest of the five signed copies to be carried by the transporter."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-04",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(3)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Does the transporter accept waste only when accompanied by signed copies 3 to 7 of the manifest?",
+    "applicability_criteria": "Transporters of hazardous waste",
+    "simplified_guidance": "1. Interview the transporter or driver.\n2. Check the documents carried with the vehicle during active transport.\n3. Verify presence of Manifest Copies 3 to 7.\n4. Ensure the transporter does not accept waste without these documents.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Driver interview record or spot check of vehicle documents",
+      "delay_proof": "None"
+    },
+    "legal_text": "No transporter shall accept waste from the sender for transport unless it is accompanied by signed copies 3 to 7 of the manifest."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(5)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Does the sender possess Copy 6 (Blue) duly signed by the receiver as proof of final acceptance?",
+    "applicability_criteria": "Senders of hazardous waste",
+    "simplified_guidance": "1. Check the sender's manifest file for completed shipments.\n2. Look for Copy 6 (Blue) returned by the receiver.\n3. Verify that the receiver has signed and dated this copy.\n4. Match Copy 6 details with the initial Copy 2 retained.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "File of Copy 6 (Blue) manifests received from TSDF/Recyclers",
+      "delay_proof": "Correspondence chasing missing manifests"
+    },
+    "legal_text": "The receiver after acceptance of the waste shall... send copy 6 (blue) to the sender..."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-06",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(5)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "Has the receiver forwarded Copy 5 (Green) to their State Pollution Control Board after accepting the waste?",
+    "applicability_criteria": "Receivers (TSDF/Recyclers) of hazardous waste",
+    "simplified_guidance": "1. If auditing a receiver/TSDF, check their dispatch records.\n2. Verify that Copy 5 (Green) is sent to the SPCB upon waste acceptance.\n3. Check postal receipts or acknowledgements.\n4. Ensure this is done promptly after receipt.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Proof of submission of Copy 5 to SPCB",
+      "delay_proof": "None"
+    },
+    "legal_text": "The receiver after acceptance of the waste shall... send copy 5 (green) to his State Pollution Control Board..."
+  },
+  {
+    "audit_item_id": "HWM-RULE19-07",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 19(6)",
+      "category": "Manifest System and Movement Tracking"
+    },
+    "question_text": "In case of inter-state transport, has the receiver sent Copy 7 (Grey) to the Sender's State Pollution Control Board?",
+    "applicability_criteria": "Receivers accepting waste from a different State",
+    "simplified_guidance": "1. Identify shipments received from other states.\n2. Verify that Copy 7 (Grey) was separated.\n3. Confirm dispatch of Copy 7 to the *Sender's* SPCB (not the Receiver's).\n4. Check postal records for compliance.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Postal receipt to Sender's SPCB",
+      "delay_proof": "None"
+    },
+    "legal_text": "The copy 7 (grey) shall only be sent to the State Pollution Control Board of the sender, if the sender is in another State."
+  },
+  {
+    "audit_item_id": "HWM-RULE20-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 20(1)",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "Does the occupier maintain a complete record of hazardous and other waste operations in Form 3?",
+    "applicability_criteria": "All occupiers handling hazardous or other wastes and operators of disposal facilities",
+    "simplified_guidance": "1. Request the Form 3 register.\n2. Verify that it records generation, storage, recycling, transport, and disposal details.\n3. Ensure entries are updated regularly (preferably daily or batch-wise).\n4. Check if the format matches Form 3 as appended to the rules.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical or digital Form 3 Register",
+      "delay_proof": "None"
+    },
+    "legal_text": "The occupier handling hazardous or other wastes and operator of disposal facility shall maintain records of such operations in Form 3."
+  },
+  {
+    "audit_item_id": "HWM-RULE20-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 20(2)",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "Is the annual return in Form 4 submitted to the State Pollution Control Board on or before the 30th day of June?",
+    "applicability_criteria": "All occupiers handling hazardous or other wastes",
+    "simplified_guidance": "1. Check the acknowledgement receipt for the Annual Return (Form 4).\n2. Verify the date of submission is on or before June 30th.\n3. Ensure the return covers the preceding financial year (April to March).\n4. Review the data in Form 4 to ensure consistency with Form 3 records.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of Form 4 Annual Return",
+      "delay_proof": "Proof of dispatch/online submission confirmation"
+    },
+    "legal_text": "The occupier handling hazardous and other wastes and operator of disposal facility shall send annual returns to the State Pollution Control Board in Form 4."
+  },
+  {
+    "audit_item_id": "HWM-RULE22-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 22",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "In the event of an accident, did the occupier immediately intimate the State Pollution Control Board via telephone or email?",
+    "applicability_criteria": "Occupiers where an accident has occurred during handling or transport",
+    "simplified_guidance": "1. Review accident/incident logs at the facility.\n2. If any accident occurred (fire, spillage, etc.), check for immediate communication to SPCB.\n3. Look for email timestamps or call logs verifying immediate reporting.\n4. Failure to report immediately is a serious violation.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Email sent to SPCB or Call Record log",
+      "delay_proof": "None"
+    },
+    "legal_text": "Where an accident occurs at the facility of the occupier handling hazardous or other wastes and operator of the disposal facility or during transportation, the occupier or the operator or the transporter shall immediately intimate the State Pollution Control Board through telephone, e-mail about the accident..."
+  },
+  {
+    "audit_item_id": "HWM-RULE22-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 22",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "Was a formal accident report in Form 11 submitted to the State Pollution Control Board following the initial intimation?",
+    "applicability_criteria": "Occupiers where an accident has occurred",
+    "simplified_guidance": "1. Verify if Form 11 was prepared after any accident.\n2. Ensure it details the sequence of events, waste involved, and emergency measures taken.\n3. Check proof of submission to SPCB.\n4. Confirm that corrective actions mentioned in Form 11 have been implemented.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of submitted Form 11",
+      "delay_proof": "None"
+    },
+    "legal_text": "...and subsequently send a report in Form 11."
+  },
+  {
+    "audit_item_id": "HWM-RULE23-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 23(1)",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "Has the occupier ensured financial coverage for liability towards damages to the environment or third parties?",
+    "applicability_criteria": "Occupiers, importers, exporters, and disposal facility operators",
+    "simplified_guidance": "1. Verify if the facility has Public Liability Insurance (PLI) or equivalent financial guarantees.\n2. Ensure the policy covers environmental damage and third-party claims.\n3. This is crucial for meeting the liability clause in case of improper handling.\n4. Check if the policy is current and valid.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Civil"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Public Liability Insurance Policy copy",
+      "delay_proof": "Proposal form submitted to Insurance Company"
+    },
+    "legal_text": "The occupier, importer or exporter and operator of the disposal facility shall be liable for all damages caused to the environment or third party due to improper handling and management of the hazardous and other waste."
+  },
+  {
+    "audit_item_id": "HWM-RULE06-05",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(5)",
+      "category": "Records, Returns and Reporting"
+    },
+    "question_text": "Is the annual return (Form 4) submitted by June 30th specifically checked for accuracy against the Form 3 records?",
+    "applicability_criteria": "All authorised occupiers",
+    "simplified_guidance": "1. Compare the total waste generated in Form 4 with the sum of daily entries in Form 3.\n2. Compare the total waste disposed/recycled in Form 4 with manifest records.\n3. Any discrepancy indicates poor record-keeping or potential non-compliance.\n4. Ensure the return is signed by the authorized person.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Reconciliation sheet between Form 3 and Form 4",
+      "delay_proof": "None"
+    },
+    "legal_text": "Every occupier authorised under these rules, shall... prepare and submit to the State Pollution Control Board, an annual return containing the details specified in Form 4 on or before the 30th day of June following the financial year to which that return relates."
+  },
+  {
+    "audit_item_id": "HWM-RULE12-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 12(1) and 12(2)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "Is the import of hazardous and other wastes strictly limited to recycling, recovery, reuse, and utilization, and completely prohibited for disposal?",
+    "applicability_criteria": "All importers of hazardous and other wastes",
+    "simplified_guidance": "1. Verify the declared purpose of import in the application documents.\n2. Ensure the purpose is strictly recycling, recovery, reuse, or co-processing.\n3. Confirm that no waste is imported for 'Disposal' (e.g., landfilling, incineration without energy recovery).\n4. Import for disposal is strictly prohibited under Indian law.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Import permission documents specifying end-use",
+      "delay_proof": "None"
+    },
+    "legal_text": "No import of the hazardous and other wastes from any country to India for disposal shall be permitted. The import of hazardous and other wastes from any country shall be permitted only for recycling, recovery, reuse and utilisation including co-processing."
+  },
+  {
+    "audit_item_id": "HWM-RULE13-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 13(1)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "For imports of Schedule III Part A wastes, has the importer obtained permission from the Ministry of Environment, Forest and Climate Change (MoEF&CC) and Prior Informed Consent (PIC) from the exporting country?",
+    "applicability_criteria": "Importers of wastes listed in Part A of Schedule III",
+    "simplified_guidance": "1. Identify if the waste falls under Schedule III Part A.\n2. Check for the permission letter from MoEF&CC.\n3. Verify the Prior Informed Consent (PIC) document from the exporting country's authority.\n4. Ensure a copy was sent to the SPCB simultaneously.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "MoEF&CC Permission Letter and PIC document",
+      "delay_proof": "Application acknowledgement from MoEF&CC"
+    },
+    "legal_text": "Actual users intending to import or transit for transboundary movement of hazardous and other wastes specified in Part A and Part B of Schedule III shall apply in Form 5 along with the documents listed therein, to the Ministry of Environment, Forest and Climate Change... together with the prior informed consent of the exporting country in respect of Part A of Schedule III waste..."
+  },
+  {
+    "audit_item_id": "HWM-RULE13-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 13(2)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "For imports of Schedule III Part D wastes, has the importer furnished Form 6 and required documents to the Customs authorities?",
+    "applicability_criteria": "Importers of wastes listed in Part D of Schedule III",
+    "simplified_guidance": "1. Verify if the waste is listed in Schedule III Part D.\n2. While MoEF&CC permission isn't required, check if Form 6 was submitted to Customs.\n3. Ensure valid Consents (Water/Air Acts) and Authorization are attached.\n4. Confirm submission of documents listed in Schedule VIII where applicable.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copy of Form 6 submitted to Customs with supporting documents",
+      "delay_proof": "None"
+    },
+    "legal_text": "For the import of other wastes listed in Part D of Schedule III, the importer shall not require the permission of the Ministry of Environment, Forest and Climate Change. However, the importer shall furnish the required information as per Form 6 to the Customs authorities, accompanied with the following documents..."
+  },
+  {
+    "audit_item_id": "HWM-RULE13-03",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 13(2)(c)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "If the importer is a trader acting on behalf of actual users, have they obtained a one-time authorization in Form 7?",
+    "applicability_criteria": "Traders importing hazardous or other waste",
+    "simplified_guidance": "1. Determine if the importer is a trader or an actual user.\n2. If a trader, ask for the 'One Time Authorization' in Form 7 issued by the SPCB.\n3. Verify that this authorization copy is appended to Form 6 for Customs clearance.\n4. Ensure the trader is importing on behalf of specific authorized actual users.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Form 7 Authorization from SPCB",
+      "delay_proof": "Application for Form 7 submitted to SPCB"
+    },
+    "legal_text": "importer who is a trader, importing waste on behalf of actual users, shall obtain one time authorisation in Form 7 and copy of this authorisation shall be appended to Form 6."
+  },
+  {
+    "audit_item_id": "HWM-RULE14-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 14(1)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "Has the exporter obtained permission from MoEF&CC and Prior Informed Consent from the importing country before exporting hazardous waste?",
+    "applicability_criteria": "Exporters of wastes in Schedule III Part A/B or Schedule VI",
+    "simplified_guidance": "1. Verify the type of waste intended for export.\n2. Check for the permission letter from MoEF&CC.\n3. For Part A and Schedule VI wastes, verify the written Prior Informed Consent from the importing country.\n4. Ensure insurance cover is attached to the application.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "MoEF&CC Export Permission and Importing Country's Consent",
+      "delay_proof": "None"
+    },
+    "legal_text": "Any occupier intending to export waste specified in Part A of Schedule III, Part B of Schedule III and Schedule VI, shall make an application in Form 5 along with insurance cover to the Ministry of Environment, Forest and Climate Change... together with the prior informed consent in writing from the importing country..."
+  },
+  {
+    "audit_item_id": "HWM-RULE14-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 14(5)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "Is the export shipment accompanied by the Movement Document in Form 6?",
+    "applicability_criteria": "All export consignments of hazardous/other waste",
+    "simplified_guidance": "1. Check the shipping documents for export consignments.\n2. Ensure Form 6 (Movement Document) accompanies the shipment.\n3. Verify that Form 6 is duly filled with exporter, generator, and transporter details.\n4. This document is mandatory for Customs clearance.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Copy of Form 6 attached to shipping bills",
+      "delay_proof": "None"
+    },
+    "legal_text": "The exporter shall also ensure that the shipment is accompanied with movement document in Form 6."
+  },
+  {
+    "audit_item_id": "HWM-RULE15-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 15(2)",
+      "category": "Import and Export Regulations"
+    },
+    "question_text": "In case of illegal import, has the importer re-exported the waste at their own cost within 90 days?",
+    "applicability_criteria": "Importers found guilty of illegal traffic/import",
+    "simplified_guidance": "1. Identify if any import was flagged as illegal (no permission, falsification, etc.).\n2. Verify if the waste was re-exported within 90 days of arrival.\n3. Confirm that the cost was borne by the importer.\n4. Check Customs records for proof of re-export.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Shipping bill proving re-export of illegal waste",
+      "delay_proof": "None"
+    },
+    "legal_text": "In case of illegal import of the hazardous or other waste, the importer shall re-export the waste in question at his cost within a period of ninety days from the date of its arrival into India and its implementation will be ensured by the concerned Port and the Custom authority."
+  },
+  {
+    "audit_item_id": "HWM-RULE16-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 16(2)",
+      "category": "TSDF and Recycler Specifics"
+    },
+    "question_text": "Has the operator of the common or captive facility obtained approval from the State Pollution Control Board (SPCB) for the design and layout of the facility?",
+    "applicability_criteria": "Operators of Common or Captive Treatment, Storage and Disposal Facilities (TSDF)",
+    "simplified_guidance": "1. Verify the initial approval documents from the SPCB.\n2. Check if the approved design and layout plans are available on-site.\n3. Ensure the facility construction matches the approved layout.\n4. Any modifications to the design must have prior SPCB approval.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "SPCB Approval Letter for Design and Layout",
+      "delay_proof": "Application for approval of design changes"
+    },
+    "legal_text": "The operator of common facility or occupier of a captive facility, shall design and set up the treatment, storage and disposal facility as per technical guidelines issued by the Central Pollution Control Board in this regard from time to time and shall obtain approval from the State Pollution Control Board for design and layout in this regard."
+  },
+  {
+    "audit_item_id": "HWM-RULE16-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 16(4)",
+      "category": "TSDF and Recycler Specifics"
+    },
+    "question_text": "Is the facility operated, closed, and managed during the post-closure phase according to CPCB guidelines or Standard Operating Procedures?",
+    "applicability_criteria": "Operators of Common or Captive TSDFs",
+    "simplified_guidance": "1. Review the facility's Standard Operating Procedures (SOPs).\n2. Compare them against the specific guidelines issued by the Central Pollution Control Board (CPCB).\n3. Verify if a closure plan exists for the facility.\n4. For closed cells/sites, check if post-closure monitoring (leachate, gas, etc.) is being conducted.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Operational logs and Closure Plan documents",
+      "delay_proof": "Draft Closure Plan under review"
+    },
+    "legal_text": "The operator of common facility or occupier of a captive facility shall be responsible for safe and environmentally sound operation of the facility and its closure and post closure phase, as per guidelines or standard operating procedures issued by the Central Pollution Control Board from time to time."
+  },
+  {
+    "audit_item_id": "HWM-RULE06-07",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 6(2)",
+      "category": "TSDF and Recycler Specifics"
+    },
+    "question_text": "Does the recycler or pre-processor possess technical capabilities and equipment complying with the Standard Operating Procedures (SOPs) specified by CPCB?",
+    "applicability_criteria": "Recyclers, Pre-processors, Co-processors, and Users of hazardous waste",
+    "simplified_guidance": "1. Identify the specific type of waste recycling/processing activity.\n2. Retrieve the relevant CPCB SOP for that activity.\n3. Inspect the facility to ensure all mandatory equipment (scrubbers, furnaces, storage) mentioned in the SOP are installed.\n4. Verify that the equipment is operational and maintained.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Site Inspection Report verifying SOP compliance",
+      "delay_proof": "Purchase orders for required technology upgrades"
+    },
+    "legal_text": "...and after ensuring technical capabilities and equipment complying with the standard operating procedure or other guidelines specified by the Central Pollution Control Board from time to time and through site inspection..."
+  },
+  {
+    "audit_item_id": "HWM-RULE16-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 16(5)",
+      "category": "TSDF and Recycler Specifics"
+    },
+    "question_text": "Does the operator of the common facility or occupier of a captive facility maintain specific records of hazardous and other wastes handled in Form 3?",
+    "applicability_criteria": "Operators of Common or Captive TSDFs",
+    "simplified_guidance": "1. Access the Form 3 register specifically for the TSDF operations.\n2. Ensure it details every receipt of waste from generators.\n3. Verify records of treatment (incineration, landfilling, etc.) for each batch.\n4. Check if the records reconcile with the manifests received.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Form 3 Register maintained at TSDF",
+      "delay_proof": "None"
+    },
+    "legal_text": "The operator of common facility or occupier of a captive facility shall maintain records of hazardous and other wastes handled by him in Form 3."
+  },
+  {
+    "audit_item_id": "HWM-RULE16-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016",
+      "section_reference": "Rule 16(6)",
+      "category": "TSDF and Recycler Specifics"
+    },
+    "question_text": "Does the TSDF operator file an annual return in Form 4 to the SPCB on or before the 30th day of June?",
+    "applicability_criteria": "Operators of Common or Captive TSDFs",
+    "simplified_guidance": "1. Verify the submission of Form 4 specifically by the TSDF operator.\n2. Ensure the return aggregates all waste treated and disposed of during the financial year.\n3. Check the submission date (deadline: June 30th).\n4. Confirm the return includes details on landfill life remaining and incineration capacity used.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 100000,
+        "imprisonment_term": "Up to 5 years",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged Copy of Form 4 Annual Return",
+      "delay_proof": "None"
+    },
+    "legal_text": "The operator of common facility or occupier of a captive facility shall file an annual return in Form 4 to the State Pollution Control Board on or before the 30th day of June following the financial year to which that return relates."
+  }
+]
