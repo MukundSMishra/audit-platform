@@ -11,6 +11,7 @@ import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import ActSelector from './components/ActSelector';
 import AuditProgress from './components/AuditProgress';
+import AuditTypeSelector from './components/AuditTypeSelector';
 import AdminPortal from './components/admin/AdminPortal';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
@@ -26,10 +27,11 @@ function App() {
   const [roleLoading, setRoleLoading] = useState(true);
   
   // Navigation State
-  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'act-selector' | 'progress' | 'audit'
+  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
   const [factoryLocation, setFactoryLocation] = useState(null);
+  const [auditType, setAuditType] = useState(null); // 'regulatory' | 'business'
   const [selectedActIds, setSelectedActIds] = useState([]); // Multiple acts
   const [currentActIndex, setCurrentActIndex] = useState(0); // Which act we're currently auditing
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); 
@@ -62,7 +64,7 @@ function App() {
 
   // Block access to audit screens without authentication
   useEffect(() => {
-    if (!session && (currentScreen === 'act-selector' || currentScreen === 'audit' || currentScreen === 'progress')) {
+    if (!session && (currentScreen === 'audit-type' || currentScreen === 'act-selector' || currentScreen === 'audit' || currentScreen === 'progress')) {
       setCurrentScreen('dashboard');
       alert('Please login to access the audit portal');
     }
@@ -466,23 +468,26 @@ function App() {
           setCurrentScreen('progress');
           console.log(`[Resume] Restored session with ${actIdsToLoad.length} acts: ${actIdsToLoad.join(', ')}, at act index ${sessionData.current_act_index}`);
         } else {
-          // New session or no saved progress - go to act selector
-          setCurrentScreen('act-selector');
+          // New session or no saved progress - go to audit type selector
+          setCurrentScreen('audit-type');
           setSelectedActIds([]);
           setCurrentActIndex(0);
+          setAuditType(null);
         }
       } else {
         // Fallback if sessionData is null
-        setCurrentScreen('act-selector');
+        setCurrentScreen('audit-type');
         setSelectedActIds([]);
         setCurrentActIndex(0);
+        setAuditType(null);
       }
     } catch (error) {
       console.error('Error checking session progress:', error);
-      // Fallback to act selector
-      setCurrentScreen('act-selector');
+      // Fallback to audit type selector
+      setCurrentScreen('audit-type');
       setSelectedActIds([]);
       setCurrentActIndex(0);
+      setAuditType(null);
     }
   };
 
@@ -588,14 +593,35 @@ function App() {
     );
   }
 
-  // SCREEN 3: Act Selector - Choose which acts to audit (only for new sessions)
+  // SCREEN 3: Audit Type Selector - Choose audit type (Regulatory or Business)
+  if (currentScreen === 'audit-type') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
+          <button onClick={handleLogout} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
+        </div>
+        <AuditTypeSelector 
+          factoryName={factoryName}
+          location={factoryLocation}
+          onTypeSelected={(type) => {
+            setAuditType(type);
+            setCurrentScreen('act-selector');
+          }}
+          onBack={() => setCurrentScreen('dashboard')}
+        />
+      </div>
+    );
+  }
+
+  // SCREEN 4: Act Selector - Choose which acts to audit (only for new sessions)
   if (currentScreen === 'act-selector') {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button 
-              onClick={() => setCurrentScreen('dashboard')}
+              onClick={() => setCurrentScreen('audit-type')}
               className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors"
             >
               <ArrowLeft size={20} />
@@ -640,7 +666,7 @@ function App() {
     );
   }
 
-  // SCREEN 4: Audit - Conduct the actual audit
+  // SCREEN 5: Audit - Conduct the actual audit
   if (currentScreen !== 'audit') return null;
 
   if (loading) return <div className="flex h-screen items-center justify-center gap-3 text-blue-600"><Loader2 className="animate-spin" size={32} /><span className="font-bold text-lg">Loading Audit Questions...</span></div>;

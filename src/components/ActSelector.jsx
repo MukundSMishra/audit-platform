@@ -68,11 +68,21 @@ const ActSelector = ({ factoryName, location, onActsSelected }) => {
       {/* Header */}
       <div className="mb-8">
         <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-600 p-6 rounded-r-xl">
-          <h1 className="text-2xl font-bold text-gray-900">Select Compliance Acts & Rules</h1>
-          <p className="text-gray-600 mt-2">Choose which compliance acts and rules you want to audit for this factory</p>
-          <div className="mt-4 flex flex-col gap-1 text-sm">
-            <p className="text-gray-700 font-semibold">📍 {factoryName}</p>
-            <p className="text-gray-600">{location}</p>
+          <div className="flex items-start justify-between">
+            <div className="flex-1">
+              <h1 className="text-2xl font-bold text-gray-900">Select Compliance Acts & Rules</h1>
+              <p className="text-gray-600 mt-2">Choose which compliance acts and rules you want to audit for this factory</p>
+              <div className="mt-4 flex flex-col gap-1 text-sm">
+                <p className="text-gray-700 font-semibold">📍 {factoryName}</p>
+                <p className="text-gray-600">{location}</p>
+              </div>
+            </div>
+            <div className="ml-6">
+              <div className="bg-white border-2 border-blue-200 rounded-lg px-4 py-2 text-center">
+                <div className="text-xs font-semibold text-gray-500 uppercase tracking-wide">Audit Type</div>
+                <div className="text-lg font-bold text-blue-700 mt-1">Regulatory Risk</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
