@@ -1,0 +1,1109 @@
+[
+  {
+    "audit_item_id": "LMA_2009-S19-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 19",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Is the establishment registered as an importer with the Director of Legal Metrology prior to importing any weight or measure?",
+    "applicability_criteria": "Any person or entity importing weights or measures into India",
+    "simplified_guidance": "1. Identify if the business imports any weights or measuring instruments.\\n2. Apply for registration with the Director of Legal Metrology.\\n3. Pay the prescribed fees.\\n4. Maintain the registration certificate for verification.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 25000,
+        "imprisonment_term": "Up to 6 months (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Registration Certificate issued by the Director of Legal Metrology",
+      "delay_proof": "Application acknowledgement with payment proof if pending"
+    },
+    "legal_text": "No person shall import any weight or measure unless he is registered with the Director in such manner and on payment of such fees, as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S22-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 22",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Has the model of the weight or measure been approved by the prescribed authority before manufacturing or importing?",
+    "applicability_criteria": "Manufacturers and importers of weights or measures (unless specifically exempted)",
+    "simplified_guidance": "1. Submit the model of the weight or measure to the prescribed authority.\\n2. Pay the requisite testing and approval fees.\\n3. Obtain the Model Approval Certificate.\\n4. Ensure the manufactured/imported units match the approved model specifications.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Model Approval Certificate issued by the Competent Authority",
+      "delay_proof": "Proof of model submission and testing fee payment"
+    },
+    "legal_text": "Every person, before manufacturing or importing any weight or measure shall seek the approval of model of such weight or measure in such manner, on payment of such fee and from such authority as may be prescribed..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S23-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 23(1)",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Does the manufacturer hold a valid license issued by the Controller for manufacturing weights or measures?",
+    "applicability_criteria": "Any person or entity manufacturing weights or measures",
+    "simplified_guidance": "1. Apply to the Controller of Legal Metrology for a manufacturing license.\\n2. Ensure premises and equipment meet prescribed standards.\\n3. Pay the license fee.\\n4. Renew the license periodically as per rules.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Manufacturing License issued by the Controller",
+      "delay_proof": "License renewal application acknowledgement"
+    },
+    "legal_text": "No person shall manufacture, repair or sell, or offer, expose or possess for repair or sale, any weight or measure unless he holds a licence issued by the Controller under sub-section (2)..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S23-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 23(1)",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Does the dealer hold a valid license issued by the Controller for selling, distributing, or delivering weights or measures?",
+    "applicability_criteria": "Dealers, distributors, and sellers of weights or measures",
+    "simplified_guidance": "1. Apply for a Dealer License with the State Controller.\\n2. Verify the license covers the specific categories of weights/measures sold.\\n3. Display the license prominently in the premises.\\n4. Ensure timely renewal.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Dealer License issued by the Controller",
+      "delay_proof": "Renewal application filed before expiry"
+    },
+    "legal_text": "No person shall manufacture, repair or sell, or offer, expose or possess for repair or sale, any weight or measure unless he holds a licence issued by the Controller under sub-section (2)..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S23-03",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 23(1)",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Does the repairer hold a valid license issued by the Controller for repairing weights or measures?",
+    "applicability_criteria": "Any person or entity repairing weights or measures",
+    "simplified_guidance": "1. Obtain a Repairer License from the Controller.\\n2. Ensure compliance with repair standards.\\n3. Maintain records of repairs undertaken.\\n4. Note: Manufacturers repairing their own goods in a different state do not need a separate repair license.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Valid Repairer License issued by the Controller",
+      "delay_proof": "Renewal application acknowledgement"
+    },
+    "legal_text": "No person shall manufacture, repair or sell, or offer, expose or possess for repair or sale, any weight or measure unless he holds a licence issued by the Controller under sub-section (2)... Provided that no licence to repair shall be required by a manufacturer for repair of his own weight or measure in a State other than the State of manufacture of the same."
+  },
+  {
+    "audit_item_id": "LMA_2009-S23-04",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 23(2)",
+      "category": "Establishment, Licensing and Model Approval"
+    },
+    "question_text": "Are the conditions of the license regarding area of jurisdiction and validity period strictly adhered to?",
+    "applicability_criteria": "License holders (Manufacturers, Dealers, Repairers)",
+    "simplified_guidance": "1. Check the 'Area of Jurisdiction' specified on the license.\\n2. Ensure business operations are restricted to that area.\\n3. Check the validity dates.\\n4. Apply for renewal before the validity expires.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "License document specifying area and validity",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "For the purpose of sub-section (1), the Controller shall issue a licence in such form and manner, on such conditions, for such period and such area of jurisdiction and on payment of such fee as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S8-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 8(3) & 8(4)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Are all weights, measures, or numerals used in the establishment compliant with the standard units specified under the Act?",
+    "applicability_criteria": "All entities using weights, measures, or numerals for commercial transactions or protection",
+    "simplified_guidance": "1. Ensure no non-standard weight or measure is used.\\n2. Verify that all weights/measures conform to the standards specified in Section 8.\\n3. Prohibit the manufacture or import of non-standard weights.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 25000,
+        "imprisonment_term": "Up to 6 months (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical presence of standard weights/measures",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No weight, measure or numeral, other than the standard weight, measure or numeral, shall be used as a standard weight, measure or numeral. No weight or measure, shall be manufactured or imported unless it conforms to the standards of weight or measure specified under section 8..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(1)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Have all weights and measures intended for use in transactions or protection been verified and stamped before use?",
+    "applicability_criteria": "Any person possessing weights or measures for use in transactions or protection",
+    "simplified_guidance": "1. Identify all weights and measures used for business transactions.\\n2. Take them to the Controller or authorized officer for verification.\\n3. Ensure they are stamped after verification.\\n4. Do not put any weight/measure into use before this process.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visible valid verification stamp on the instruments",
+      "delay_proof": "Receipt of submission for verification"
+    },
+    "legal_text": "Every person having any weight or measure in his possession... shall, before putting such weight or measure into such use, have such weight or measure verified at such place and during such hours as the Controller may... specify in this behalf, on payment of such fees as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S33-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 33",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Is the entity free from selling, distributing, delivering, or using any unverified weight or measure?",
+    "applicability_criteria": "Anyone selling, transferring, or using weights/measures",
+    "simplified_guidance": "1. Conduct regular inventory checks of all measuring instruments.\\n2. Remove any instrument that lacks a valid verification stamp.\\n3. Ensure no unverified instrument is sold or transferred to another party.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Absence of unverified instruments in active use",
+      "delay_proof": "Quarantine logs for unverified items"
+    },
+    "legal_text": "Whoever, sells, distributes, delivers or otherwise transfers or uses any unverified weight or measure shall be punished with fine which shall not be less than two thousand rupees but which may extend to ten thousand rupees..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(1)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Has the prescribed fee been paid for the verification and stamping of weights and measures?",
+    "applicability_criteria": "Entities submitting weights/measures for verification",
+    "simplified_guidance": "1. Calculate the fees based on the type and number of instruments.\\n2. Pay the fees to the Controller or Government approved Test Centre.\\n3. Retain the payment receipt as proof.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Fee payment receipts",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "...have such weight or measure verified at such place and during such hours as the Controller may, by general or special order, specify in this behalf, on payment of such fees as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S55-01",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 55",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "If exemptions are claimed for verification (e.g., scientific research, export), is there valid proof that the weights are used exclusively for that purpose?",
+    "applicability_criteria": "Entities claiming exemption from verification (Research labs, Arms factories, Export-only mfrs)",
+    "simplified_guidance": "1. Identify weights used for research, export, or arms manufacture.\\n2. Segregate them from commercial trade instruments.\\n3. Maintain records proving exclusive use for the exempted purpose.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Usage logs or export documents",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The provisions of this Act, in so far as they relate to verification and stamping of weights and measures, shall not apply to any weight or measure... used for scientific investigation or for research; manufactured exclusively for export."
+  },
+  {
+    "audit_item_id": "LMA_2009-S9-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 9(2) & 9(3)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Are reference, secondary, and working standards verified and stamped as prescribed?",
+    "applicability_criteria": "Entities maintaining reference/secondary/working standards (Test centers, Govt labs)",
+    "simplified_guidance": "1. Ensure all reference standards are verified.\\n2. Ensure stamping is done after payment of fees.\\n3. Do not treat unverified standards as valid for any legal calibration work.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year (for tampering/alteration)",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Verification certificates for standards",
+      "delay_proof": "Re-verification schedule"
+    },
+    "legal_text": "Every reference standard, secondary standard and working standard shall be verified and stamped in such manner and after payment of such fee as may be prescribed. Every... standard which is not verified and stamped... shall not be deemed to be a valid standard."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(2) & 24(4)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "For specified weights and measures, is verification conducted through a Government approved Test Centre?",
+    "applicability_criteria": "Entities possessing specific weights/measures prescribed for Test Centre verification",
+    "simplified_guidance": "1. Check if your instruments fall under the category prescribed for Test Centre verification.\\n2. Engage a Government approved Test Centre.\\n3. Pay the fees and obtain verification documents from the appointed persons.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certificate from Government Approved Test Centre",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The Central Government may prescribe the kinds of weights and measures for which the verification is to be done through the Government approved Test Centre... The Government approved Test Centre shall... verify the weight or measure..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S8-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 8(3) & 8(4)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Are all weights, measures, or numerals used in the establishment compliant with the standard units specified under the Act?",
+    "applicability_criteria": "All entities using weights, measures, or numerals for commercial transactions or protection",
+    "simplified_guidance": "1. Ensure no non-standard weight or measure is used.\\n2. Verify that all weights/measures conform to the standards specified in Section 8.\\n3. Prohibit the manufacture or import of non-standard weights.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 25000,
+        "imprisonment_term": "Up to 6 months (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Physical presence of standard weights/measures",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No weight, measure or numeral, other than the standard weight, measure or numeral, shall be used as a standard weight, measure or numeral. No weight or measure, shall be manufactured or imported unless it conforms to the standards of weight or measure specified under section 8..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(1)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Have all weights and measures intended for use in transactions or protection been verified and stamped before use?",
+    "applicability_criteria": "Any person possessing weights or measures for use in transactions or protection",
+    "simplified_guidance": "1. Identify all weights and measures used for business transactions.\\n2. Take them to the Controller or authorized officer for verification.\\n3. Ensure they are stamped after verification.\\n4. Do not put any weight/measure into use before this process.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Visible valid verification stamp on the instruments",
+      "delay_proof": "Receipt of submission for verification"
+    },
+    "legal_text": "Every person having any weight or measure in his possession... shall, before putting such weight or measure into such use, have such weight or measure verified at such place and during such hours as the Controller may... specify in this behalf, on payment of such fees as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S33-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 33",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Is the entity free from selling, distributing, delivering, or using any unverified weight or measure?",
+    "applicability_criteria": "Anyone selling, transferring, or using weights/measures",
+    "simplified_guidance": "1. Conduct regular inventory checks of all measuring instruments.\\n2. Remove any instrument that lacks a valid verification stamp.\\n3. Ensure no unverified instrument is sold or transferred to another party.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Absence of unverified instruments in active use",
+      "delay_proof": "Quarantine logs for unverified items"
+    },
+    "legal_text": "Whoever, sells, distributes, delivers or otherwise transfers or uses any unverified weight or measure shall be punished with fine which shall not be less than two thousand rupees but which may extend to ten thousand rupees..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(1)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Has the prescribed fee been paid for the verification and stamping of weights and measures?",
+    "applicability_criteria": "Entities submitting weights/measures for verification",
+    "simplified_guidance": "1. Calculate the fees based on the type and number of instruments.\\n2. Pay the fees to the Controller or Government approved Test Centre.\\n3. Retain the payment receipt as proof.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Fee payment receipts",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "...have such weight or measure verified at such place and during such hours as the Controller may, by general or special order, specify in this behalf, on payment of such fees as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S55-01",
+    "risk_level": "Low",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 55",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "If exemptions are claimed for verification (e.g., scientific research, export), is there valid proof that the weights are used exclusively for that purpose?",
+    "applicability_criteria": "Entities claiming exemption from verification (Research labs, Arms factories, Export-only mfrs)",
+    "simplified_guidance": "1. Identify weights used for research, export, or arms manufacture.\\n2. Segregate them from commercial trade instruments.\\n3. Maintain records proving exclusive use for the exempted purpose.",
+    "risk_profile": {
+      "severity_level": "Low",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Usage logs or export documents",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The provisions of this Act, in so far as they relate to verification and stamping of weights and measures, shall not apply to any weight or measure... used for scientific investigation or for research; manufactured exclusively for export."
+  },
+  {
+    "audit_item_id": "LMA_2009-S9-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 9(2) & 9(3)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "Are reference, secondary, and working standards verified and stamped as prescribed?",
+    "applicability_criteria": "Entities maintaining reference/secondary/working standards (Test centers, Govt labs)",
+    "simplified_guidance": "1. Ensure all reference standards are verified.\\n2. Ensure stamping is done after payment of fees.\\n3. Do not treat unverified standards as valid for any legal calibration work.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year (for tampering/alteration)",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Verification certificates for standards",
+      "delay_proof": "Re-verification schedule"
+    },
+    "legal_text": "Every reference standard, secondary standard and working standard shall be verified and stamped in such manner and after payment of such fee as may be prescribed. Every... standard which is not verified and stamped... shall not be deemed to be a valid standard."
+  },
+  {
+    "audit_item_id": "LMA_2009-S24-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 24(2) & 24(4)",
+      "category": "Verification, Stamping and Standards"
+    },
+    "question_text": "For specified weights and measures, is verification conducted through a Government approved Test Centre?",
+    "applicability_criteria": "Entities possessing specific weights/measures prescribed for Test Centre verification",
+    "simplified_guidance": "1. Check if your instruments fall under the category prescribed for Test Centre verification.\\n2. Engage a Government approved Test Centre.\\n3. Pay the fees and obtain verification documents from the appointed persons.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Certificate from Government Approved Test Centre",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The Central Government may prescribe the kinds of weights and measures for which the verification is to be done through the Government approved Test Centre... The Government approved Test Centre shall... verify the weight or measure..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S11-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 11(1)",
+      "category": "Commercial Transactions and Quotations"
+    },
+    "question_text": "Are all price lists, invoices, advertisements, and quotations expressed solely in terms of standard units of weight, measure, or numeration?",
+    "applicability_criteria": "All businesses issuing price lists, invoices, or advertisements",
+    "simplified_guidance": "1. Review all pricing documents, invoices, and advertisements.\\n2. Ensure no non-standard units (e.g., local customary units) are used.\\n3. Verify that all quantities are expressed in standard metric units (e.g., kg, meter, liter).",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Sample invoices, price lists, and marketing materials",
+      "delay_proof": "Correction notices for non-compliant documents"
+    },
+    "legal_text": "No person shall, in relation to any goods, things or service, quote, or make announcement of... any price or charge, or issue or exhibit any price list, invoice, cash memo or other document... otherwise than in accordance with the standard unit of weight, measure or numeration."
+  },
+  {
+    "audit_item_id": "LMA_2009-S10-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 10",
+      "category": "Commercial Transactions and Quotations"
+    },
+    "question_text": "Are all transactions, dealings, or contracts regarding goods made by the prescribed weight, measure, or number?",
+    "applicability_criteria": "All entities engaging in trade, commerce, or contracts involving goods",
+    "simplified_guidance": "1. Identify the prescribed unit of measurement for the specific goods traded.\\n2. Ensure contracts and deal terms specify quantities in these prescribed units.\\n3. Avoid using vague or non-standard terms in commercial agreements.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Sales contracts and purchase orders",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Any transaction, dealing or contract in respect of any goods, class of goods or undertakings shall be made by such weight, measure or number as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S30-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 30(a)",
+      "category": "Commercial Transactions and Quotations"
+    },
+    "question_text": "Does the entity ensure that the quantity delivered to purchasers is not less than the quantity contracted for or paid for?",
+    "applicability_criteria": "Entities selling articles or things by weight, measure, or number",
+    "simplified_guidance": "1. Implement quality control checks to verify outgoing quantities.\\n2. Ensure weighing/measuring equipment is accurate.\\n3. Document weight/quantity checks before delivery to prevent short-delivery.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 10000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Dispatch records and weight check logs",
+      "delay_proof": "Complaint resolution records regarding quantity"
+    },
+    "legal_text": "Whoever in selling any article or thing by weight, measure or number, delivers or causes to be delivered to the purchaser any quantity or number of that article or thing less than the quantity or number contracted for or paid for... shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S34-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 34",
+      "category": "Commercial Transactions and Quotations"
+    },
+    "question_text": "Is the sale or delivery of commodities conducted strictly using standard weights, measures, or numbers, avoiding any non-standard means?",
+    "applicability_criteria": "All sellers and deliverers of commodities",
+    "simplified_guidance": "1. Ensure no rough estimates or non-standard tools (e.g., stones, unmarked vessels) are used for sale.\\n2. Use only verified, standard instruments for determining sale quantities.\\n3. Train staff to strictly adhere to standard measurement practices.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "3 months to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Presence of standard instruments at point of sale",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever sells, or causes to be sold, delivers, or causes to be delivered, any commodity, article or thing by any means other than the standard weight or measure or number, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S35-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 35",
+      "category": "Commercial Transactions and Quotations"
+    },
+    "question_text": "Are services rendered by weight, measure, or number provided strictly in terms of standard units?",
+    "applicability_criteria": "Entities rendering services based on measurement (e.g., logistics, construction)",
+    "simplified_guidance": "1. Verify that service contracts specify standard units (e.g., per km, per kg).\\n2. Ensure the actual service provided matches the standard unit measurement.\\n3. Avoid rendering services using arbitrary or non-standard estimations.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "3 months to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Service agreements and billing records",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever renders or causes to be rendered, any service through means other than the weight or measure or numeration or in terms of any weight, measure or number other than the standard weight or measure, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S17-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 17(1)",
+      "category": "Registers, Records and Returns"
+    },
+    "question_text": "Does the manufacturer, repairer, or dealer maintain all records and registers as prescribed by the rules?",
+    "applicability_criteria": "Manufacturers, Repairers, and Dealers of weights or measures",
+    "simplified_guidance": "1. Identify the specific registers prescribed for your category (Manufacturer/Dealer/Repairer).\\n2. Ensure entries are updated daily or as required.\\n3. Keep records of stock, sales, and repairs organized and accessible.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Physical or digital registers maintained at the premises",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Every manufacturer, repairer or dealer of weight or measure shall maintain such records and registers as may be prescribed."
+  },
+  {
+    "audit_item_id": "LMA_2009-S17-02",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 17(2)",
+      "category": "Registers, Records and Returns"
+    },
+    "question_text": "Are the maintained records and registers produced immediately for inspection when requested by an authorized officer?",
+    "applicability_criteria": "Manufacturers, Repairers, and Dealers subject to inspection",
+    "simplified_guidance": "1. Keep records at the registered premises.\\n2. Ensure authorized personnel have access to these records to present them during a surprise inspection.\\n3. Do not withhold documents when a Legal Metrology Officer demands them.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Inspection report acknowledging production of records",
+      "delay_proof": "Written explanation for any delay in production"
+    },
+    "legal_text": "The records and registers maintained under sub-section (1) shall be produced at the time of inspection to the persons authorised for the said purpose under sub-section (1) of section 15."
+  },
+  {
+    "audit_item_id": "LMA_2009-S31-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 31",
+      "category": "Registers, Records and Returns"
+    },
+    "question_text": "Has the entity submitted all required returns and produced all documents required by the Director or Controller without omission?",
+    "applicability_criteria": "Any entity required to submit returns or produce documents under the Act",
+    "simplified_guidance": "1. Track deadlines for all statutory returns.\\n2. Submit returns to the Director or Controller as per schedule.\\n3. Ensure proof of submission (acknowledgement) is filed.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Copies of submitted returns with acknowledgement receipts",
+      "delay_proof": "Late submission receipts"
+    },
+    "legal_text": "Whoever, being required by or under this Act or the rules made thereunder to submit returns, maintain any record or register... omits or fails without any reasonable excuse, so to do, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S41-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 41(1)",
+      "category": "Registers, Records and Returns"
+    },
+    "question_text": "Is all information provided to the Director, Controller, or legal metrology officer factually correct and free from false statements?",
+    "applicability_criteria": "Any person providing information to authorities",
+    "simplified_guidance": "1. Verify all data before submitting it to authorities.\\n2. Ensure no false or misleading information is given verbally or in writing.\\n3. Correct any inadvertent errors immediately upon discovery.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 6 months (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Internal verification protocols for statutory reporting",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever gives any information to the Director, the Controller or any legal metrology officer... which such person either knows or has reason to believe to be false, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S41-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 41(2)",
+      "category": "Registers, Records and Returns"
+    },
+    "question_text": "Are the returns submitted and registers maintained free from any false material particulars?",
+    "applicability_criteria": "Entities submitting returns or maintaining registers",
+    "simplified_guidance": "1. Audit internal records for accuracy.\\n2. Ensure that inventory, sales, and repair logs match actual physical stock.\\n3. Avoid falsifying entries to hide non-compliance.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 5000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Accurate registers matching physical inventory",
+      "delay_proof": "Correction logs"
+    },
+    "legal_text": "Whoever, being required by or under this Act so to do, submits a return or maintains any record or register which is false in material particulars, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S20-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 20",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Is the import of non-standard weights or measures, whether singly or as part of a machine, strictly prohibited?",
+    "applicability_criteria": "All importers of weights, measures, or machines containing them",
+    "simplified_guidance": "1. Verify that no imported weight or measure deviates from the standards established by the Act.\\n2. Ensure that weights/measures integrated into imported machines also conform to Indian standards.\\n3. Check model approval certificates before importing.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "Up to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Import manifests and Model Approval Certificates",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "No weight or measure, whether singly or as a part or component of any machine shall be imported unless it conforms to the standards of weight or measure established by or under this Act."
+  },
+  {
+    "audit_item_id": "LMA_2009-S26-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 26",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Is the entity free from tampering with, altering, increasing, or decreasing any weight or measure for deceptive purposes?",
+    "applicability_criteria": "All persons possessing or using weights/measures",
+    "simplified_guidance": "1. Inspect weights and measures for signs of physical tampering (e.g., drilled holes, added lead).\\n2. Ensure seals are intact and have not been broken or manipulated.\\n3. Strictly prohibit any alteration of standards unless done for correction during verification.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 50000,
+        "imprisonment_term": "6 months to 1 year (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Intact seals and verification stamps on instruments",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever tampers with, or alters in any way, any reference standard, secondary standard or working standard or increases or decreases or alters any weight or measure with a view to deceiving any person or knowing or having reason to believe that any person is likely to be deceived thereby... shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S27-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 27",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Does the entity refrain from manufacturing, selling, or possessing for sale any weight or measure that does not conform to standards?",
+    "applicability_criteria": "Manufacturers, dealers, and sellers of weights/measures",
+    "simplified_guidance": "1. Check inventory for any non-standard weights or measures.\\n2. Ensure no inscriptions on weights/measures violate the standard units.\\n3. Quarantine and dispose of any non-compliant items immediately.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "Up to 3 years (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Absence of non-standard items in sales inventory",
+      "delay_proof": "Disposal logs for non-standard items"
+    },
+    "legal_text": "Every person who manufactures or causes to be manufactured or sells or offers, exposes or possesses for sale, any weight or measure which does not conform to the standards of weight or measure specified by or under this Act... shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S44-01",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 44(1)",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Is the entity strictly compliant in preventing the counterfeiting, removal, or tampering of any seals or stamps?",
+    "applicability_criteria": "All entities, specifically those handling sealed instruments",
+    "simplified_guidance": "1. Ensure no unauthorized person handles the seals or stamps.\\n2. Verify that stamps on instruments are genuine and not transferred from other devices.\\n3. Report any broken or suspicious seals to the Controller immediately.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "6 months to 5 years (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Inspection",
+      "compliance_proof": "Integrity of all seals on weighing/measuring equipment",
+      "delay_proof": "Police report or notification to Controller if tampering found"
+    },
+    "legal_text": "Whoever counterfeits any seal... or counterfeits or removes or tampers with any stamp... or affixes the stamp so removed on, or inserts the same into, any other weight or measure, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S47-01",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 47",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Is the license issued under this Act free from any unauthorized alteration or tampering?",
+    "applicability_criteria": "License holders (Manufacturers, Dealers, Repairers)",
+    "simplified_guidance": "1. Keep the original license document safe and secure.\\n2. Ensure no details on the license (dates, names, area) are altered manually.\\n3. Apply for a new license or amendment formally if changes are needed.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 20000,
+        "imprisonment_term": "Up to 1 year",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Original, unaltered license document",
+      "delay_proof": "Application for license amendment"
+    },
+    "legal_text": "Whoever alters or otherwise tampers, with any licence issued or renewed under this Act or rules made thereunder, otherwise than in accordance with any authorisation made by the Controller in this behalf, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S44-02",
+    "risk_level": "Critical",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 44(4)",
+      "category": "Prohibitions and Anti-Tampering"
+    },
+    "question_text": "Does the entity ensure it does not sell or expose for sale any weight or measure bearing a counterfeit stamp?",
+    "applicability_criteria": "Dealers and sellers of weights/measures",
+    "simplified_guidance": "1. Source weights and measures only from licensed manufacturers.\\n2. Inspect stamps for authenticity before accepting stock.\\n3. Do not sell any item if the stamp appears fake or tampered with.",
+    "risk_profile": {
+      "severity_level": "Critical",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "6 months to 5 years (for second offence)",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Direct Observation",
+      "compliance_proof": "Procurement records from licensed sources",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Whoever sells or offers or exposes for sale or otherwise disposes of any weight or measure which, he knows or has reason to believe, bears thereon a counterfeit stamp, shall be punished..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S49-01",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 49(2)",
+      "category": "Corporate Liability and Nomination"
+    },
+    "question_text": "Has the company nominated a specific director to be in charge of and responsible for the conduct of the business?",
+    "applicability_criteria": "Companies wishing to limit liability to specific individuals",
+    "simplified_guidance": "1. Pass a board resolution authorizing a specific director to be responsible for Legal Metrology compliance.\\n2. Obtain written consent from the nominated director.\\n3. Submit the nomination notice to the Director of Legal Metrology or the Controller in the prescribed form.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "Acknowledged copy of the nomination form submitted to the Controller/Director",
+      "delay_proof": "Board resolution draft pending submission"
+    },
+    "legal_text": "Any company may, by order in writing, authorise any of its directors to exercise all such powers and take all such steps as may be necessary or expedient to prevent the commission by the company of any offence under this Act and may give notice to the Director or the concerned Controller... that it has nominated such director as the person responsible, along with the written consent of such director for being so nominated."
+  },
+  {
+    "audit_item_id": "LMA_2009-S49-02",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 49(2) Explanation",
+      "category": "Corporate Liability and Nomination"
+    },
+    "question_text": "If the company has multiple establishments or branches, have separate persons been nominated for each distinct unit?",
+    "applicability_criteria": "Companies with multiple branches, units, or establishments",
+    "simplified_guidance": "1. Identify all distinct branches or units of the company.\\n2. Nominate a person responsible for each specific establishment.\\n3. Ensure the nomination notice clearly specifies which unit each person is responsible for.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Document Verification",
+      "compliance_proof": "List of nominated persons mapped to specific branches",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where a company has different establishments or branches or different units in any establishment or branch, different persons may be nominated under this sub-section in relation to different establishments or branches or units and the person nominated in relation to any establishment, branch or unit shall be deemed to be the person responsible in respect of such establishment, branch or unit."
+  },
+  {
+    "audit_item_id": "LMA_2009-S49-03",
+    "risk_level": "Medium",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 49(3)",
+      "category": "Corporate Liability and Nomination"
+    },
+    "question_text": "Is the nomination of the responsible person updated if they cease to be a director or request cancellation?",
+    "applicability_criteria": "Companies where a nominated director resigns or requests removal",
+    "simplified_guidance": "1. Monitor the status of nominated directors.\\n2. If a nominated director resigns or requests cancellation of nomination, inform the Controller/Director immediately.\\n3. Submit a new nomination for a replacement director to maintain compliance coverage.",
+    "risk_profile": {
+      "severity_level": "Medium",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Document Verification",
+      "compliance_proof": "Correspondence with the Controller regarding cancellation or change of nomination",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "The person nominated under sub-section (2) shall... continue to be the person responsible: Provided that where such person ceases to be a director of the company, he shall intimate the fact of such cessation to the Director or the concerned Controller... Provided further that where such person makes a request... to cancel the nomination, which request shall be complied with..."
+  },
+  {
+    "audit_item_id": "LMA_2009-S49-04",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 49(1)",
+      "category": "Corporate Liability and Nomination"
+    },
+    "question_text": "Does the company ensure that persons in charge exercise due diligence to prevent the commission of offences?",
+    "applicability_criteria": "All companies subject to the Act",
+    "simplified_guidance": "1. Establish internal compliance protocols.\\n2. Ensure the nominated person actively monitors adherence to the Act.\\n3. Document training and compliance checks to prove 'due diligence' in case of an offence.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "Varies by offence",
+        "liability_type": "Criminal"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": true,
+      "methodology": "Interview",
+      "compliance_proof": "Internal audit reports and due diligence records",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Provided that nothing contained in this sub-section shall render any such person liable to any punishment provided in this Act if he proves that the offence was committed without his knowledge and that he exercised all due diligence to prevent the commission of such offence."
+  },
+  {
+    "audit_item_id": "LMA_2009-S49-05",
+    "risk_level": "High",
+    "meta_data": {
+      "source_act": "The Legal Metrology Act, 2009",
+      "section_reference": "Section 49(5)",
+      "category": "Corporate Liability and Nomination"
+    },
+    "question_text": "Is the company aware that convictions may be published in newspapers at the company's expense?",
+    "applicability_criteria": "Companies convicted of offences under the Act",
+    "simplified_guidance": "1. Avoid non-compliance to prevent conviction.\\n2. Note that courts can order the publication of the company's name and offence details in newspapers.\\n3. Costs for such publication are recoverable from the company.",
+    "risk_profile": {
+      "severity_level": "High",
+      "penalty_details": {
+        "fine_amount_max_inr": 0,
+        "imprisonment_term": "None",
+        "liability_type": "Administrative"
+      }
+    },
+    "evidence_requirements": {
+      "mandatory": false,
+      "methodology": "Interview",
+      "compliance_proof": "Legal risk assessment documents",
+      "delay_proof": "N/A"
+    },
+    "legal_text": "Where any company is convicted under this Act... it shall be competent for the court convicting the company to cause the name and place of business of the company, nature of the contravention... to be published at the expense of the company in such newspaper or in such other manner as the court may direct."
+  }
+]

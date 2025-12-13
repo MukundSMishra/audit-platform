@@ -12,6 +12,7 @@ import codeOnIndustrialDisputeData from './codeONIndustrialDispute.json';
 // CENTRAL LABOUR ACTS (Chronological)
 // ============================================
 import childLabourActData from './childLabourAct.json';
+import legalMeterologyActData from './legalMeterology.json';
 import sexualHarassmentActData from './sexualHarrasement.json';
 
 // ============================================
@@ -86,6 +87,16 @@ export const AVAILABLE_ACTS = [
     data: childLabourActData,
     shortName: 'Child Labour Act',
     year: 1986,
+    type: 'act'
+  },
+  {
+    id: 'legal_metrology_act_2009',
+    name: 'The Legal Metrology Act, 2009',
+    description: 'Regulates weights, measures and packaged commodities; ensures accuracy in trade and consumer protection',
+    table: 'legal_metrology_act_checklist',
+    data: legalMeterologyActData,
+    shortName: 'Legal Metrology Act',
+    year: 2009,
     type: 'act'
   },
   {
