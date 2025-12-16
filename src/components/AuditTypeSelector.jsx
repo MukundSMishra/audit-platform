@@ -81,7 +81,7 @@ const AuditTypeSelector = ({ factoryName, location, onTypeSelected, onBack }) =>
         {auditTypes.map((type) => {
           const Icon = type.icon;
           const isSelected = selectedType === type.id;
-          const isDisabled = type.id === 'business';
+          const isDisabled = false; // Enable both audit types
           
           return (
             <div
