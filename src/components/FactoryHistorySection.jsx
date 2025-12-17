@@ -69,8 +69,9 @@ const FactoryHistorySection = ({ firmName, onSelectFactory }) => {
     }
   };
 
-  if (history.length === 0 && !showForm) {
-    return null; // Don't show empty section
+  // Always show the section on dashboard, hide on selection screen if empty
+  if (history.length === 0 && !showForm && firmName) {
+    return null; // Don't show empty section on selection screen
   }
 
   return (
@@ -173,7 +174,7 @@ const FactoryHistorySection = ({ firmName, onSelectFactory }) => {
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <div className="h-px bg-gray-200 flex-1"></div>
-            <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">In Progress Factory Audits</span>
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">In Progress Audits</span>
             <div className="h-px bg-gray-200 flex-1"></div>
           </div>
           

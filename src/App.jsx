@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable';
 // FIX: Added 'FileText' to the imports
-import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save, Shield, Briefcase } from 'lucide-react';
+import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save, Shield, Briefcase, Plus } from 'lucide-react';
 
 // Services
 import { supabase } from './services/supabaseClient';
@@ -30,9 +30,9 @@ function App() {
   const [userRole, setUserRole] = useState(null);
   const [roleLoading, setRoleLoading] = useState(true);
   
-  // New Firm Details Flow State
+  // New Unified Flow State
   const [firmDetails, setFirmDetails] = useState({ name: '', location: '', industry: '' });
-  const [currentStep, setCurrentStep] = useState('details'); // 'details' | 'selection' | 'contract-management' | 'business-audit' | 'regulatory-audit'
+  const [currentStep, setCurrentStep] = useState('dashboard'); // 'dashboard' | 'details' | 'selection' | 'contract-management' | 'business-audit' | 'regulatory-audit'
   const [selectedContract, setSelectedContract] = useState(null); // Contract selected for audit
   
   // Navigation State (for regulatory audit flow)
@@ -530,10 +530,75 @@ function App() {
   }
 
   // ============================================================================
-  // NEW FLOW: FIRM DETAILS → AUDIT SELECTION → AUDIT EXECUTION
+  // NEW UNIFIED FLOW: DASHBOARD → FIRM DETAILS → AUDIT SELECTION → EXECUTION
   // ============================================================================
 
-  // STEP 1: Firm Details Form
+  // STEP 1: Dashboard - Start New or Continue Audit
+  if (currentStep === 'dashboard') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="font-bold text-2xl flex items-center gap-2">
+              <ShieldCheck className="text-blue-600"/> AuditAI
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">
+              Logged in as <span className="font-semibold text-gray-900">{session.user.email}</span>
+            </p>
+          </div>
+          <button 
+            onClick={handleLogout} 
+            className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2 px-4 py-2 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            <LogOut size={16}/> Sign Out
+          </button>
+        </div>
+
+        <div className="max-w-6xl mx-auto p-8">
+          {/* Start New Audit Button */}
+          <button 
+            onClick={() => setCurrentStep('details')}
+            className="group relative w-full overflow-hidden rounded-2xl bg-white p-8 text-left shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 mb-8"
+          >
+            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
+              <div className="flex items-start gap-6">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white shadow-inner">
+                  <Plus size={32} strokeWidth={2.5} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">Start New Audit</h3>
+                  <p className="mt-2 text-sm text-gray-500 max-w-lg leading-relaxed">
+                    Begin a new compliance audit session for your organization
+                  </p>
+                </div>
+              </div>
+              
+              <div className="hidden sm:flex items-center gap-2 text-sm font-bold text-blue-600 opacity-60 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+                Begin <ArrowRight size={18} />
+              </div>
+            </div>
+            
+            <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
+          </button>
+
+          {/* In Progress Audits */}
+          <FactoryHistorySection 
+            firmName=""
+            onSelectFactory={(sessionId, factoryName, factoryLocation) => {
+              setFactoryName(factoryName);
+              setFactoryLocation(factoryLocation);
+              setCurrentSessionId(sessionId);
+              setCurrentScreen('audit-type');
+              setCurrentStep('regulatory-audit');
+            }}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  // STEP 2: Firm Details Form
   if (currentStep === 'details') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
@@ -543,8 +608,8 @@ function App() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
               <ShieldCheck className="text-white" size={32} />
             </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to AuditAI</h1>
-            <p className="text-gray-600">Let's start by capturing your firm details</p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Firm Details</h1>
+            <p className="text-gray-600">Tell us about your organization</p>
           </div>
 
           {/* Form */}
@@ -601,10 +666,10 @@ function App() {
             <div className="flex gap-4 pt-4">
               <button
                 type="button"
-                onClick={handleLogout}
+                onClick={() => setCurrentStep('dashboard')}
                 className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all"
               >
-                Sign Out
+                Cancel
               </button>
               <button
                 type="submit"
@@ -620,7 +685,7 @@ function App() {
     );
   }
 
-  // STEP 2: Audit Selection View
+  // STEP 3: Audit Type Selection View
   if (currentStep === 'selection') {
     return (
       <div className="min-h-screen bg-gray-50">
@@ -651,18 +716,6 @@ function App() {
             </button>
           </div>
         </div>
-
-        {/* Factory History */}
-        <FactoryHistorySection 
-          firmName={firmDetails.name}
-          onSelectFactory={(sessionId, factoryName, factoryLocation) => {
-            setFactoryName(factoryName);
-            setFactoryLocation(factoryLocation);
-            setCurrentSessionId(sessionId);
-            setCurrentScreen('audit-type');
-            setCurrentStep('regulatory-audit');
-          }}
-        />
 
         {/* Audit Type Cards */}
         <div className="p-8">
