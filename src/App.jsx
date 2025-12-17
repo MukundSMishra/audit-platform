@@ -844,10 +844,14 @@ function App() {
               </div>
               <div className="p-6 bg-white">
                 <button
-                  onClick={async () => {
+                  onClick={async (e) => {
+                    e.preventDefault();
+                    console.log('Start Factory Audit clicked');
                     // Create audit session and go to act selector
                     try {
                       const { data: { user } } = await supabase.auth.getUser();
+                      console.log('User:', user);
+                      
                       const { data, error } = await supabase
                         .from('audit_sessions')
                         .insert([{
@@ -859,13 +863,17 @@ function App() {
                         .select()
                         .single();
 
+                      console.log('Insert result:', data, error);
+                      
                       if (error) throw error;
                       
                       setFactoryName(firmDetails.name);
                       setFactoryLocation(firmDetails.location);
                       setCurrentSessionId(data.id);
                       setCurrentScreen('audit-type');
+                      console.log('Navigation set to audit-type');
                     } catch (error) {
+                      console.error('Error:', error);
                       alert("Error creating audit session: " + error.message);
                     }
                   }}
