@@ -844,12 +844,30 @@ function App() {
               </div>
               <div className="p-6 bg-white">
                 <button
-                  onClick={() => {
-                    // Set factory details for regulatory flow
-                    setFactoryName(firmDetails.name);
-                    setFactoryLocation(firmDetails.location);
-                    setCurrentScreen('audit-type');
-                    setCurrentStep('regulatory-audit');
+                  onClick={async () => {
+                    // Create audit session and go to act selector
+                    try {
+                      const { data: { user } } = await supabase.auth.getUser();
+                      const { data, error } = await supabase
+                        .from('audit_sessions')
+                        .insert([{
+                          user_id: user.id,
+                          factory_name: firmDetails.name,
+                          location: firmDetails.location,
+                          status: 'Planning'
+                        }])
+                        .select()
+                        .single();
+
+                      if (error) throw error;
+                      
+                      setFactoryName(firmDetails.name);
+                      setFactoryLocation(firmDetails.location);
+                      setCurrentSessionId(data.id);
+                      setCurrentScreen('audit-type');
+                    } catch (error) {
+                      alert("Error creating audit session: " + error.message);
+                    }
                   }}
                   className="group w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center gap-2"
                 >
@@ -897,34 +915,9 @@ function App() {
     );
   }
 
-  // STEP 3 (Alternative): Regulatory Audit Flow - uses existing screens
-  if (currentStep === 'regulatory-audit') {
-    // Continue with existing regulatory audit screens
-  }
-
   // ============================================================================
-  // EXISTING REGULATORY AUDIT FLOW (Kept for backward compatibility)
+  // REGULATORY AUDIT FLOW SCREENS (Act Selection, Progress, Questions)
   // ============================================================================
-  
-  // SCREEN 1: Dashboard - Choose Company
-  if (currentScreen === 'dashboard') {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
-          <h1 className="font-bold text-xl flex items-center gap-2"><ShieldCheck className="text-blue-600"/> AuditAI</h1>
-          <button onClick={handleLogout} className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2"><LogOut size={16}/> Sign Out</button>
-        </div>
-        <Dashboard 
-          userEmail={session.user.email} 
-          onCompanyCreated={handleCompanyCreated}
-          onStartBusinessAudit={() => {
-            // For business audit, we don't need a factory - it's contract-based
-            setCurrentScreen('business-audit');
-          }}
-        />
-      </div>
-    );
-  }
 
   // SCREEN 2: Progress Overview - Show completion status with percentage bars
   if (currentScreen === 'progress') {
