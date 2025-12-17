@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable';
 // FIX: Added 'FileText' to the imports
-import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save } from 'lucide-react';
+import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save, Shield, Briefcase } from 'lucide-react';
 
 // Services
 import { supabase } from './services/supabaseClient';
@@ -14,6 +14,7 @@ import AuditProgress from './components/AuditProgress';
 import AuditTypeSelector from './components/AuditTypeSelector';
 import AdminPortal from './components/admin/AdminPortal';
 import BusinessAuditWizard from './components/BusinessAuditWizard';
+import BusinessAuditCard from './components/BusinessAuditCard';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -27,7 +28,11 @@ function App() {
   const [userRole, setUserRole] = useState(null);
   const [roleLoading, setRoleLoading] = useState(true);
   
-  // Navigation State
+  // New Firm Details Flow State
+  const [firmDetails, setFirmDetails] = useState({ name: '', location: '', industry: '' });
+  const [currentStep, setCurrentStep] = useState('details'); // 'details' | 'selection' | 'business-audit' | 'regulatory-audit'
+  
+  // Navigation State (for regulatory audit flow)
   const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
@@ -520,6 +525,223 @@ function App() {
       onLogout={handleLogout} 
     />;
   }
+
+  // ============================================================================
+  // NEW FLOW: FIRM DETAILS → AUDIT SELECTION → AUDIT EXECUTION
+  // ============================================================================
+
+  // STEP 1: Firm Details Form
+  if (currentStep === 'details') {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 border border-gray-100">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
+              <ShieldCheck className="text-white" size={32} />
+            </div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome to AuditAI</h1>
+            <p className="text-gray-600">Let's start by capturing your firm details</p>
+          </div>
+
+          {/* Form */}
+          <form onSubmit={(e) => {
+            e.preventDefault();
+            if (firmDetails.name && firmDetails.location) {
+              setCurrentStep('selection');
+            } else {
+              alert('Please fill in all required fields');
+            }
+          }} className="space-y-6">
+            
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Firm / Company Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={firmDetails.name}
+                onChange={(e) => setFirmDetails({ ...firmDetails, name: e.target.value })}
+                placeholder="e.g., Tata Steel Ltd."
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Location <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                required
+                value={firmDetails.location}
+                onChange={(e) => setFirmDetails({ ...firmDetails, location: e.target.value })}
+                placeholder="e.g., Mumbai, Maharashtra"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-bold text-gray-700 mb-2">
+                Industry / Sector <span className="text-gray-400 text-xs">(Optional)</span>
+              </label>
+              <input
+                type="text"
+                value={firmDetails.industry}
+                onChange={(e) => setFirmDetails({ ...firmDetails, industry: e.target.value })}
+                placeholder="e.g., Manufacturing, IT Services"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+              />
+            </div>
+
+            <div className="flex gap-4 pt-4">
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all"
+              >
+                Sign Out
+              </button>
+              <button
+                type="submit"
+                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+              >
+                Continue to Audit Selection
+                <ArrowRight size={18} />
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
+  }
+
+  // STEP 2: Audit Selection View
+  if (currentStep === 'selection') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
+        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
+          <div>
+            <h1 className="font-bold text-xl flex items-center gap-2">
+              <ShieldCheck className="text-blue-600"/> AuditAI
+            </h1>
+            <p className="text-sm text-gray-600 mt-1">
+              Auditing for: <span className="font-semibold text-gray-900">{firmDetails.name}</span>
+              {firmDetails.location && <span className="text-gray-400"> • {firmDetails.location}</span>}
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <button 
+              onClick={() => setCurrentStep('details')}
+              className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 px-4 py-2 hover:bg-gray-100 rounded-lg transition-colors"
+            >
+              <ArrowLeft size={16} />
+              Back to Details
+            </button>
+            <button 
+              onClick={handleLogout} 
+              className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2 px-4 py-2 hover:bg-red-50 rounded-lg transition-colors"
+            >
+              <LogOut size={16}/> Sign Out
+            </button>
+          </div>
+        </div>
+
+        {/* Audit Type Cards */}
+        <div className="max-w-6xl mx-auto p-8">
+          <div className="mb-8 text-center">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Select Audit Type</h2>
+            <p className="text-gray-600">Choose the type of audit you want to conduct</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Regulatory Risk Audit Card */}
+            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <div className="relative p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-blue-100">
+                <div className="flex items-start justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg">
+                      <Shield className="text-white" size={32} strokeWidth={2} />
+                    </div>
+                    <div>
+                      <h3 className="text-2xl font-bold text-gray-900 mb-1">Regulatory Risk Audit</h3>
+                      <span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">
+                        Active
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-gray-700 mt-4 leading-relaxed">
+                  Comprehensive compliance assessment across labour laws, environmental regulations, and state-specific requirements.
+                </p>
+              </div>
+              <div className="p-6 border-b border-gray-100">
+                <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Key Coverage Areas</h4>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                    <span className="text-sm font-medium">15 Acts & Rules Coverage</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                    <span className="text-sm font-medium">Labour Code Compliance</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                    <span className="text-sm font-medium">Environmental Standards</span>
+                  </div>
+                  <div className="flex items-center gap-3 text-gray-700">
+                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                    <span className="text-sm font-medium">Legal Risk Assessment</span>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <button
+                  onClick={() => {
+                    // Set factory details for regulatory flow
+                    setFactoryName(firmDetails.name);
+                    setFactoryLocation(firmDetails.location);
+                    setCurrentScreen('audit-type');
+                    setCurrentStep('regulatory-audit');
+                  }}
+                  className="group w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center gap-2"
+                >
+                  Start Factory Audit
+                  <ArrowRight size={20} className="transform transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
+              </div>
+            </div>
+
+            {/* Business Risk Audit Card - Use the component */}
+            <BusinessAuditCard onStart={() => setCurrentStep('business-audit')} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // STEP 3: Business Audit Execution
+  if (currentStep === 'business-audit') {
+    return (
+      <BusinessAuditWizard
+        factoryName={firmDetails.name}
+        location={firmDetails.location}
+        onBack={() => setCurrentStep('selection')}
+      />
+    );
+  }
+
+  // STEP 3 (Alternative): Regulatory Audit Flow - uses existing screens
+  if (currentStep === 'regulatory-audit') {
+    // Continue with existing regulatory audit screens
+  }
+
+  // ============================================================================
+  // EXISTING REGULATORY AUDIT FLOW (Kept for backward compatibility)
+  // ============================================================================
   
   // SCREEN 1: Dashboard - Choose Company
   if (currentScreen === 'dashboard') {
