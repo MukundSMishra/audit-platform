@@ -531,7 +531,11 @@ function App() {
         </div>
         <Dashboard 
           userEmail={session.user.email} 
-          onCompanyCreated={handleCompanyCreated} 
+          onCompanyCreated={handleCompanyCreated}
+          onStartBusinessAudit={() => {
+            // For business audit, we don't need a factory - it's contract-based
+            setCurrentScreen('business-audit');
+          }}
         />
       </div>
     );
@@ -623,8 +627,8 @@ function App() {
   if (currentScreen === 'business-audit') {
     return (
       <BusinessAuditWizard
-        factoryName={factoryName}
-        location={factoryLocation}
+        factoryName={factoryName || 'Contract Audit'}
+        location={factoryLocation || 'Sales & Purchase Contracts'}
         onBack={() => setCurrentScreen('dashboard')}
       />
     );

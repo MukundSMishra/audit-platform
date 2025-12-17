@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../services/supabaseClient';
 import { Plus, Building, MapPin, ArrowRight, Loader2, Calendar, FileText, ChevronRight, Shield, Clock, PlayCircle } from 'lucide-react';
+import BusinessAuditCard from './BusinessAuditCard';
 
-const Dashboard = ({ onCompanyCreated, userEmail }) => {
+const Dashboard = ({ onCompanyCreated, onStartBusinessAudit, userEmail }) => {
   const [loading, setLoading] = useState(false);
   const [history, setHistory] = useState([]);
   const [showForm, setShowForm] = useState(false);
@@ -77,6 +78,72 @@ const Dashboard = ({ onCompanyCreated, userEmail }) => {
           <span className="w-2 h-2 rounded-full bg-green-500"></span>
           Logged in as <span className="font-medium text-gray-700">{userEmail}</span>
         </p>
+      </div>
+
+      {/* Audit Type Cards Section */}
+      <div className="mb-12">
+        <div className="flex items-center gap-4 mb-6">
+          <div className="h-px bg-gray-200 flex-1"></div>
+          <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Available Audit Modules</span>
+          <div className="h-px bg-gray-200 flex-1"></div>
+        </div>
+        
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Regulatory Risk Audit Card */}
+          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+            <div className="relative p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-blue-100">
+              <div className="flex items-start justify-between">
+                <div className="flex items-center gap-4">
+                  <div className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg">
+                    <Shield className="text-white" size={32} strokeWidth={2} />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-1">Regulatory Risk Audit</h3>
+                    <span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">
+                      Active
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <p className="text-gray-700 mt-4 leading-relaxed">
+                Comprehensive compliance assessment across labour laws, environmental regulations, and state-specific requirements.
+              </p>
+            </div>
+            <div className="p-6 border-b border-gray-100">
+              <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Key Coverage Areas</h4>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                  <span className="text-sm font-medium">15 Acts & Rules Coverage</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                  <span className="text-sm font-medium">Labour Code Compliance</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                  <span className="text-sm font-medium">Environmental Standards</span>
+                </div>
+                <div className="flex items-center gap-3 text-gray-700">
+                  <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
+                  <span className="text-sm font-medium">Legal Risk Assessment</span>
+                </div>
+              </div>
+            </div>
+            <div className="p-6 bg-white">
+              <button
+                onClick={() => setShowForm(true)}
+                className="group w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center gap-2"
+              >
+                Start Factory Audit
+                <ArrowRight size={20} className="transform transition-transform duration-300 group-hover:translate-x-1" />
+              </button>
+            </div>
+          </div>
+
+          {/* Business Risk Audit Card */}
+          <BusinessAuditCard onStart={onStartBusinessAudit} />
+        </div>
       </div>
 
       {/* --- THE NEW PROFESSIONAL BUTTON --- */}
