@@ -32,7 +32,7 @@ const ICON_MAP = {
   RefreshCw
 };
 
-const BusinessAuditWizard = ({ factoryName, location, onBack }) => {
+const BusinessAuditWizard = ({ factoryName, location, contractDetails, onBack }) => {
   const [currentSection, setCurrentSection] = useState(0);
   const [auditState, setAuditState] = useState(INITIAL_AUDIT_STATE);
   const [showRiskHeatMap, setShowRiskHeatMap] = useState(false);
@@ -248,6 +248,17 @@ const BusinessAuditWizard = ({ factoryName, location, onBack }) => {
           <h2 className="text-lg font-bold text-gray-900">Business Risk Audit</h2>
           <p className="text-xs text-gray-600 mt-1">{factoryName}</p>
           <p className="text-xs text-gray-500">{location}</p>
+          {contractDetails && (
+            <div className="mt-3 pt-3 border-t border-gray-200">
+              <p className="text-xs font-semibold text-gray-700">Contract Details</p>
+              {contractDetails.contractNumber && (
+                <p className="text-xs text-gray-600 mt-1">Ref: {contractDetails.contractNumber}</p>
+              )}
+              {contractDetails.contractValue && (
+                <p className="text-xs text-gray-600">Value: ₹{contractDetails.contractValue}</p>
+              )}
+            </div>
+          )}
         </div>
 
         <div className="flex-1 overflow-y-auto p-4 space-y-2">

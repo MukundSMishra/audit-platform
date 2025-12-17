@@ -15,6 +15,7 @@ import AuditTypeSelector from './components/AuditTypeSelector';
 import AdminPortal from './components/admin/AdminPortal';
 import BusinessAuditWizard from './components/BusinessAuditWizard';
 import BusinessAuditCard from './components/BusinessAuditCard';
+import ContractManagement from './components/ContractManagement';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -30,7 +31,8 @@ function App() {
   
   // New Firm Details Flow State
   const [firmDetails, setFirmDetails] = useState({ name: '', location: '', industry: '' });
-  const [currentStep, setCurrentStep] = useState('details'); // 'details' | 'selection' | 'business-audit' | 'regulatory-audit'
+  const [currentStep, setCurrentStep] = useState('details'); // 'details' | 'selection' | 'contract-management' | 'business-audit' | 'regulatory-audit'
+  const [selectedContract, setSelectedContract] = useState(null); // Contract selected for audit
   
   // Navigation State (for regulatory audit flow)
   const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit'
@@ -650,7 +652,7 @@ function App() {
         </div>
 
         {/* Audit Type Cards */}
-        <div className="max-w-4xl mx-auto p-8">
+        <div className="p-8">
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Select Audit Type</h2>
             <p className="text-gray-600">Choose the type of audit you want to conduct</p>
@@ -716,20 +718,39 @@ function App() {
             </div>
 
             {/* Business Risk Audit Card - Use the component */}
-            <BusinessAuditCard onStart={() => setCurrentStep('business-audit')} />
+            <BusinessAuditCard onStart={() => setCurrentStep('contract-management')} />
           </div>
         </div>
       </div>
     );
   }
 
-  // STEP 3: Business Audit Execution
+  // STEP 3: Contract Management (Before Business Audit)
+  if (currentStep === 'contract-management') {
+    return (
+      <ContractManagement
+        firmName={firmDetails.name}
+        location={firmDetails.location}
+        onBack={() => setCurrentStep('selection')}
+        onStartAudit={(contract) => {
+          setSelectedContract(contract);
+          setCurrentStep('business-audit');
+        }}
+      />
+    );
+  }
+
+  // STEP 4: Business Audit Execution
   if (currentStep === 'business-audit') {
     return (
       <BusinessAuditWizard
-        factoryName={firmDetails.name}
-        location={firmDetails.location}
-        onBack={() => setCurrentStep('selection')}
+        factoryName={selectedContract?.contractName || firmDetails.name}
+        location={selectedContract?.contractType || firmDetails.location}
+        contractDetails={selectedContract}
+        onBack={() => {
+          setSelectedContract(null);
+          setCurrentStep('contract-management');
+        }}
       />
     );
   }
