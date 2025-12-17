@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { jsPDF } from "jspdf";
 import autoTable from 'jspdf-autotable';
 // FIX: Added 'FileText' to the imports
-import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save, Shield, Briefcase, Plus } from 'lucide-react';
+import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronLeft, ChevronRight, Menu, FileText, SkipBack, Save, Shield, Briefcase, Plus, MapPin, Calendar, PlayCircle } from 'lucide-react';
 
 // Services
 import { supabase } from './services/supabaseClient';
@@ -34,6 +34,7 @@ function App() {
   const [firmDetails, setFirmDetails] = useState({ name: '', location: '', industry: '' });
   const [currentStep, setCurrentStep] = useState('dashboard'); // 'dashboard' | 'details' | 'selection' | 'contract-management' | 'business-audit' | 'regulatory-audit'
   const [selectedContract, setSelectedContract] = useState(null); // Contract selected for audit
+  const [factoryHistory, setFactoryHistory] = useState([]); // In-progress audits
   
   // Navigation State (for regulatory audit flow)
   const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit'
@@ -95,6 +96,32 @@ function App() {
     };
     checkRole();
   }, [session]);
+
+  // Fetch factory history for dashboard
+  useEffect(() => {
+    const fetchHistory = async () => {
+      if (session && currentStep === 'dashboard') {
+        const { data } = await supabase
+          .from('audit_sessions')
+          .select('id, factory_name, location, created_at, status, current_act_index, current_question_index, last_saved_at, act_id')
+          .order('created_at', { ascending: false });
+        
+        if (data) {
+          const uniqueFactories = [];
+          const seen = new Set();
+          data.forEach(session => {
+            const key = `${session.factory_name}-${session.location}`;
+            if (!seen.has(key)) {
+              seen.add(key);
+              uniqueFactories.push(session);
+            }
+          });
+          setFactoryHistory(uniqueFactories);
+        }
+      }
+    };
+    fetchHistory();
+  }, [session, currentStep]);
 
   // Check if database migration is complete
   useEffect(() => {
@@ -582,17 +609,66 @@ function App() {
             <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
           </button>
 
-          {/* In Progress Audits */}
-          <FactoryHistorySection 
-            firmName=""
-            onSelectFactory={(sessionId, factoryName, factoryLocation) => {
-              setFactoryName(factoryName);
-              setFactoryLocation(factoryLocation);
-              setCurrentSessionId(sessionId);
-              setCurrentScreen('audit-type');
-              setCurrentStep('regulatory-audit');
-            }}
-          />
+          {/* In Progress Audits - Show factory history */}
+          {factoryHistory.length > 0 && (
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <div className="h-px bg-gray-200 flex-1"></div>
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">In Progress Audits</span>
+                <div className="h-px bg-gray-200 flex-1"></div>
+              </div>
+              
+              <div className="grid gap-4">
+                {factoryHistory.map(session => {
+                  const hasProgress = session.current_act_index !== null || session.current_question_index !== null;
+                  const lastSavedText = session.last_saved_at 
+                    ? `Last saved: ${new Date(session.last_saved_at).toLocaleDateString()} ${new Date(session.last_saved_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`
+                    : '';
+
+                  return (
+                    <div 
+                      key={session.id} 
+                      onClick={() => {
+                        setFactoryName(session.factory_name);
+                        setFactoryLocation(session.location);
+                        setCurrentSessionId(session.id);
+                        setCurrentScreen('audit-type');
+                        setCurrentStep('regulatory-audit');
+                      }}
+                      className="group bg-white p-5 rounded-xl border border-gray-100 hover:border-blue-200 flex justify-between items-center cursor-pointer transition-all hover:shadow-md"
+                    >
+                      <div className="flex items-center gap-4">
+                        <div className={`w-2 h-12 rounded-full ${hasProgress ? 'bg-orange-400' : 'bg-blue-400'}`}></div>
+                        <div>
+                          <div className="font-bold text-gray-900 text-lg">{session.factory_name}</div>
+                          <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
+                            <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
+                            <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
+                          </div>
+                          {lastSavedText && (
+                            <div className="text-xs text-gray-400 mt-1">{lastSavedText}</div>
+                          )}
+                        </div>
+                      </div>
+                      
+                      <div className="flex items-center gap-6">
+                        <span className={`text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide ${
+                          hasProgress 
+                            ? 'bg-orange-50 text-orange-700 border border-orange-200' 
+                            : 'bg-blue-50 text-blue-700 border border-blue-200'
+                        }`}>
+                          {hasProgress ? 'In Progress' : (session.status || 'Registered')}
+                        </span>
+                        <div className="p-2 rounded-full text-gray-300 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
+                          {hasProgress ? <PlayCircle size={20}/> : <ChevronRight size={20}/>}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     );

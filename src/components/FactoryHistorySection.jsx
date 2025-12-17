@@ -76,35 +76,7 @@ const FactoryHistorySection = ({ firmName, onSelectFactory }) => {
 
   return (
     <div className="max-w-6xl mx-auto px-8 pt-8">
-      {/* Add New Factory Button */}
-      {!showForm && (
-        <button 
-          onClick={() => setShowForm(true)}
-          className="group relative w-full overflow-hidden rounded-2xl bg-white p-6 text-left shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-lg hover:border-blue-300 hover:-translate-y-1 mb-8"
-        >
-          <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white shadow-inner">
-                <Plus size={24} strokeWidth={2.5} />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-700 transition-colors">Start New Factory Audit</h3>
-                <p className="mt-1 text-sm text-gray-500 max-w-lg leading-relaxed">
-                  Register a new factory for regulatory compliance audit
-                </p>
-              </div>
-            </div>
-            
-            <div className="hidden sm:flex items-center gap-2 text-sm font-bold text-blue-600 opacity-60 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-              Begin <ArrowRight size={18} />
-            </div>
-          </div>
-          
-          <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
-        </button>
-      )}
-
-      {/* Factory Form */}
+      {/* Factory Form - Only show if triggered from within this component (not used in new flow) */}
       {showForm && (
         <div className="bg-white p-8 rounded-2xl shadow-xl border border-gray-100 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="flex justify-between items-center mb-6 border-b pb-4">
