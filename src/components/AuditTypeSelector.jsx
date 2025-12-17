@@ -30,21 +30,21 @@ const AuditTypeSelector = ({ factoryName, location, onTypeSelected, onBack }) =>
       id: 'business',
       name: 'Business Risk Audit',
       icon: TrendingUp,
-      description: 'Strategic business risk evaluation covering operational, financial, and market-related risk factors',
+      description: 'Contract risk assessment for Sales & Purchase agreements based on Indian Contract Act, 1872',
       color: 'purple',
       gradient: 'from-purple-500 to-pink-600',
       bgGradient: 'from-purple-50 to-pink-50',
       features: [
-        'Operational Risk Analysis',
-        'Financial Risk Assessment',
-        'Market & Competition Risk',
-        'Supply Chain Evaluation',
-        'Strategic Risk Mapping'
+        'Compliance with Indian Contract Act, 1872',
+        'Financial Leakage & Pricing Controls',
+        'SLA & Operational Performance',
+        'Vendor/Customer Due Diligence',
+        'Legal & Regulatory Compliance'
       ],
       stats: {
-        acts: 'Coming Soon',
-        categories: 5,
-        items: 'TBD'
+        acts: '0',
+        categories: 6,
+        items: '38'
       }
     }
   ];
@@ -81,7 +81,7 @@ const AuditTypeSelector = ({ factoryName, location, onTypeSelected, onBack }) =>
         {auditTypes.map((type) => {
           const Icon = type.icon;
           const isSelected = selectedType === type.id;
-          const isDisabled = type.id === 'business';
+          const isDisabled = false;
           
           return (
             <div
@@ -102,6 +102,13 @@ const AuditTypeSelector = ({ factoryName, location, onTypeSelected, onBack }) =>
               {isDisabled && (
                 <div className="absolute top-4 right-4 bg-yellow-100 text-yellow-800 text-xs font-bold px-3 py-1 rounded-full">
                   Coming Soon
+                </div>
+              )}
+              
+              {!isDisabled && type.id === 'business' && !isSelected && (
+                <div className="absolute top-4 right-4 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                  New
                 </div>
               )}
               

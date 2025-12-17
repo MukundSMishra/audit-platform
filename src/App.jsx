@@ -13,6 +13,7 @@ import ActSelector from './components/ActSelector';
 import AuditProgress from './components/AuditProgress';
 import AuditTypeSelector from './components/AuditTypeSelector';
 import AdminPortal from './components/admin/AdminPortal';
+import BusinessAuditWizard from './components/BusinessAuditWizard';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -27,7 +28,7 @@ function App() {
   const [roleLoading, setRoleLoading] = useState(true);
   
   // Navigation State
-  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit'
+  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
   const [factoryLocation, setFactoryLocation] = useState(null);
@@ -64,7 +65,7 @@ function App() {
 
   // Block access to audit screens without authentication
   useEffect(() => {
-    if (!session && (currentScreen === 'audit-type' || currentScreen === 'act-selector' || currentScreen === 'audit' || currentScreen === 'progress')) {
+    if (!session && (currentScreen === 'audit-type' || currentScreen === 'act-selector' || currentScreen === 'audit' || currentScreen === 'progress' || currentScreen === 'business-audit')) {
       setCurrentScreen('dashboard');
       alert('Please login to access the audit portal');
     }
@@ -606,11 +607,26 @@ function App() {
           location={factoryLocation}
           onTypeSelected={(type) => {
             setAuditType(type);
-            setCurrentScreen('act-selector');
+            if (type === 'business') {
+              setCurrentScreen('business-audit');
+            } else {
+              setCurrentScreen('act-selector');
+            }
           }}
           onBack={() => setCurrentScreen('dashboard')}
         />
       </div>
+    );
+  }
+
+  // SCREEN 3.5: Business Audit Wizard
+  if (currentScreen === 'business-audit') {
+    return (
+      <BusinessAuditWizard
+        factoryName={factoryName}
+        location={factoryLocation}
+        onBack={() => setCurrentScreen('dashboard')}
+      />
     );
   }
 
