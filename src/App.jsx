@@ -650,13 +650,13 @@ function App() {
         </div>
 
         {/* Audit Type Cards */}
-        <div className="max-w-6xl mx-auto p-8">
+        <div className="max-w-4xl mx-auto p-8">
           <div className="mb-8 text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-2">Select Audit Type</h2>
             <p className="text-gray-600">Choose the type of audit you want to conduct</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-6">
             {/* Regulatory Risk Audit Card */}
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
               <div className="relative p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-blue-100">
