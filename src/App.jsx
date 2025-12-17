@@ -16,6 +16,7 @@ import AdminPortal from './components/admin/AdminPortal';
 import BusinessAuditWizard from './components/BusinessAuditWizard';
 import BusinessAuditCard from './components/BusinessAuditCard';
 import ContractManagement from './components/ContractManagement';
+import FactoryHistorySection from './components/FactoryHistorySection';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -650,6 +651,18 @@ function App() {
             </button>
           </div>
         </div>
+
+        {/* Factory History */}
+        <FactoryHistorySection 
+          firmName={firmDetails.name}
+          onSelectFactory={(sessionId, factoryName, factoryLocation) => {
+            setFactoryName(factoryName);
+            setFactoryLocation(factoryLocation);
+            setCurrentSessionId(sessionId);
+            setCurrentScreen('audit-type');
+            setCurrentStep('regulatory-audit');
+          }}
+        />
 
         {/* Audit Type Cards */}
         <div className="p-8">
