@@ -871,6 +871,7 @@ function App() {
                       setFactoryLocation(firmDetails.location);
                       setCurrentSessionId(data.id);
                       setCurrentScreen('audit-type');
+                      setCurrentStep('regulatory-audit'); // Move out of selection step
                       console.log('Navigation set to audit-type');
                     } catch (error) {
                       console.error('Error:', error);
@@ -926,6 +927,9 @@ function App() {
   // ============================================================================
   // REGULATORY AUDIT FLOW SCREENS (Act Selection, Progress, Questions)
   // ============================================================================
+  
+  // These screens are controlled by currentScreen state
+  // The regulatory flow uses: 'audit-type' -> 'act-selector' -> 'progress' -> 'audit'
 
   // SCREEN 2: Progress Overview - Show completion status with percentage bars
   if (currentScreen === 'progress') {
