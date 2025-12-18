@@ -870,9 +870,10 @@ function App() {
                       setFactoryName(firmDetails.name);
                       setFactoryLocation(firmDetails.location);
                       setCurrentSessionId(data.id);
-                      setCurrentScreen('audit-type');
+                      setAuditType('regulatory'); // Set audit type
+                      setCurrentScreen('act-selector'); // Go directly to act selector
                       setCurrentStep('regulatory-audit'); // Move out of selection step
-                      console.log('Navigation set to audit-type');
+                      console.log('Navigation set to act-selector');
                     } catch (error) {
                       console.error('Error:', error);
                       alert("Error creating audit session: " + error.message);
