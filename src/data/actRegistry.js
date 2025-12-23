@@ -33,9 +33,23 @@ import maharashtraFireSafetyActData from './maharashtraFireSafetyAct.json';
 
 export const AVAILABLE_ACTS = [
   // ============================================
-  // MODERN LABOUR CODES (2019-2020)
+  //  ACTIVE TESTING: NEW AI WORKFLOW
   // ============================================
   {
+    id: 'code_on_occupational_safety_2020',
+    name: 'The Occupational Safety, Health and Working Conditions Code, 2020',
+    description: 'Consolidates laws on workplace safety, health, and working conditions for all establishments',
+    table: 'code_on_occupational_safety_checklist',
+    data: codeOnOccupationalSafetyData,
+    shortName: 'OSH Code',
+    year: 2020,
+    type: 'act'
+  },
+
+  // ============================================
+  //  TEMPORARILY DISABLED (PENDING SCHEMA UPDATE)
+  // ============================================
+  /* {
     id: 'code_on_wages_2019',
     name: 'The Code on Wages, 2019',
     description: 'Comprehensive law for wage standards, equal remuneration, payment regulations, and minimum wages',
@@ -52,16 +66,6 @@ export const AVAILABLE_ACTS = [
     table: 'code_on_social_security_checklist',
     data: codeOnSocialSecurityData,
     shortName: 'Social Security Code',
-    year: 2020,
-    type: 'act'
-  },
-  {
-    id: 'code_on_occupational_safety_2020',
-    name: 'The Occupational Safety, Health and Working Conditions Code, 2020',
-    description: 'Consolidates laws on workplace safety, health, and working conditions for all establishments',
-    table: 'code_on_occupational_safety_checklist',
-    data: codeOnOccupationalSafetyData,
-    shortName: 'OSH Code',
     year: 2020,
     type: 'act'
   },
@@ -197,6 +201,7 @@ export const AVAILABLE_ACTS = [
     year: 2006,
     type: 'act'
   }
+  */
 ];
 
 // Helper functions to filter by type
@@ -221,6 +226,7 @@ export const getActData = (actId) => {
   if (!act) return [];
   
   // Normalize the data: add 'id' field from 'audit_item_id' for compatibility
+  // Note: Your new schema keeps 'audit_item_id', so this remains valid.
   return act.data.map(item => ({
     ...item,
     id: item.audit_item_id

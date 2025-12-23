@@ -17,6 +17,8 @@ import BusinessAuditWizard from './components/BusinessAuditWizard';
 import BusinessAuditCard from './components/BusinessAuditCard';
 import ContractManagement from './components/ContractManagement';
 import FactoryHistorySection from './components/FactoryHistorySection';
+import ClientSelector from './components/shared/ClientSelector';
+import ClientManagement from './components/admin/ClientManagement';
 // Risk scoring
 import { computeSessionScore } from './utils/riskScoring';
 import riskWeights from './config/riskWeights.json';
@@ -30,9 +32,13 @@ function App() {
   const [userRole, setUserRole] = useState(null);
   const [roleLoading, setRoleLoading] = useState(true);
   
-  // New Unified Flow State
+  // Client-Centric Architecture State
+  const [selectedClient, setSelectedClient] = useState(null); // Selected client for audit
+  const [activeTab, setActiveTab] = useState('dashboard'); // 'dashboard' | 'clients'
+  
+  // Legacy Flow State (to be phased out)
   const [firmDetails, setFirmDetails] = useState({ name: '', location: '', industry: '' });
-  const [currentStep, setCurrentStep] = useState('dashboard'); // 'dashboard' | 'details' | 'selection' | 'contract-management' | 'business-audit' | 'regulatory-audit'
+  const [currentStep, setCurrentStep] = useState('dashboard'); // 'dashboard' | 'details' | 'selection' | 'client-selector' | 'contract-management' | 'business-audit' | 'regulatory-audit'
   const [selectedContract, setSelectedContract] = useState(null); // Contract selected for audit
   const [factoryHistory, setFactoryHistory] = useState([]); // In-progress audits
   
@@ -565,14 +571,214 @@ function App() {
     return (
       <div className="min-h-screen bg-gray-50">
         {/* Header */}
+        <div className="bg-white border-b px-6 py-4">
+          <div className="flex justify-between items-center mb-4">
+            <div>
+              <h1 className="font-bold text-2xl flex items-center gap-2">
+                <ShieldCheck className="text-blue-600"/> AuditAI
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">
+                Logged in as <span className="font-semibold text-gray-900">{session.user.email}</span>
+              </p>
+            </div>
+            <button 
+              onClick={handleLogout} 
+              className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2 px-4 py-2 hover:bg-red-50 rounded-lg transition-colors"
+            >
+              <LogOut size={16}/> Sign Out
+            </button>
+          </div>
+          
+          {/* Tab Navigation */}
+          <div className="flex gap-1">
+            <button
+              onClick={() => setActiveTab('dashboard')}
+              className={`px-6 py-3 font-bold text-sm rounded-t-lg transition-all ${
+                activeTab === 'dashboard'
+                  ? 'bg-gray-50 text-blue-600 border-b-2 border-blue-600'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <Shield size={16} />
+                Dashboard
+              </div>
+            </button>
+            <button
+              onClick={() => setActiveTab('clients')}
+              className={`px-6 py-3 font-bold text-sm rounded-t-lg transition-all ${
+                activeTab === 'clients'
+                  ? 'bg-gray-50 text-blue-600 border-b-2 border-blue-600'
+                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+              }`}
+            >
+              <div className="flex items-center gap-2">
+                <Briefcase size={16} />
+                Clients
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Dashboard Tab Content */}
+        {activeTab === 'dashboard' && (
+        <div className="max-w-6xl mx-auto p-8">
+          {/* Stats Banner */}
+          <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 mb-8 border border-blue-100">
+            <div className="grid grid-cols-3 gap-6">
+              <div className="text-center">
+                <div className="text-3xl font-bold text-blue-600">{factoryHistory.length}</div>
+                <div className="text-sm text-gray-600 mt-1">Active Audits</div>
+              </div>
+              <div className="text-center border-l border-r border-blue-200">
+                <div className="text-3xl font-bold text-indigo-600">--</div>
+                <div className="text-sm text-gray-600 mt-1">Total Clients</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl font-bold text-purple-600">--</div>
+                <div className="text-sm text-gray-600 mt-1">Completed</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Audit Type Cards */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Select Audit Type</h2>
+            <p className="text-gray-600 mb-6">Choose the type of audit you want to conduct</p>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Regulatory Audit Card */}
+              <button
+                onClick={() => {
+                  setAuditType('regulatory');
+                  setCurrentStep('client-selector');
+                }}
+                className="group relative overflow-hidden rounded-2xl bg-white p-8 text-left shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:border-blue-400 hover:-translate-y-1"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-indigo-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-4 bg-blue-50 rounded-xl text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      <Shield size={32} strokeWidth={2.5} />
+                    </div>
+                    <ArrowRight size={24} className="text-gray-300 group-hover:text-blue-600 group-hover:translate-x-1 transition-all" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Regulatory Risk Audit</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Comprehensive compliance assessment covering 15+ Indian Acts & Rules
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>15 Acts & Rules Coverage</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>Labour Code Compliance</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                      <span>Environmental Standards</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+
+              {/* Business Audit Card */}
+              <button
+                onClick={() => {
+                  setAuditType('business');
+                  setCurrentStep('client-selector');
+                }}
+                className="group relative overflow-hidden rounded-2xl bg-white p-8 text-left shadow-lg border-2 border-gray-200 transition-all duration-300 hover:shadow-2xl hover:border-purple-400 hover:-translate-y-1"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-400/20 to-pink-500/20 rounded-full -mr-16 -mt-16 group-hover:scale-150 transition-transform duration-500"></div>
+                
+                <div className="relative z-10">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="p-4 bg-purple-50 rounded-xl text-purple-600 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                      <Briefcase size={32} strokeWidth={2.5} />
+                    </div>
+                    <ArrowRight size={24} className="text-gray-300 group-hover:text-purple-600 group-hover:translate-x-1 transition-all" />
+                  </div>
+                  
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">Business Risk Audit</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">
+                    Contract analysis based on Indian Contract Act 1872
+                  </p>
+                  
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Contract Risk Assessment</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Legal Compliance Check</span>
+                    </div>
+                    <div className="flex items-center gap-2 text-sm text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-purple-500"></div>
+                      <span>Indian Contract Act 1872</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              </button>
+            </div>
+          </div>
+
+          {/* View Clients Link */}
+          <div className="text-center pt-4">
+            <button
+              onClick={() => setActiveTab('clients')}
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
+            >
+              View All Client Portfolios
+              <ArrowRight size={18} />
+            </button>
+          </div>
+        </div>
+        )}
+
+        {/* Clients Tab Content */}
+        {activeTab === 'clients' && (
+          <div className="p-0">
+            <ClientManagement />
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // STEP 2 (REMOVED): Firm Details Form - replaced by Clients tab enrollment
+  
+  // Client Selection Screen (appears after selecting audit type from dashboard)
+  if (currentStep === 'client-selector') {
+    return (
+      <div className="min-h-screen bg-gray-50">
+        {/* Header */}
         <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
-          <div>
-            <h1 className="font-bold text-2xl flex items-center gap-2">
-              <ShieldCheck className="text-blue-600"/> AuditAI
-            </h1>
-            <p className="text-sm text-gray-600 mt-1">
-              Logged in as <span className="font-semibold text-gray-900">{session.user.email}</span>
-            </p>
+          <div className="flex items-center gap-4">
+            <button 
+              onClick={() => setCurrentStep('dashboard')}
+              className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <div>
+              <h1 className="font-bold text-xl flex items-center gap-2">
+                <ShieldCheck className="text-blue-600"/> AuditAI
+              </h1>
+              <p className="text-sm text-gray-600 mt-1">
+                {auditType === 'regulatory' ? 'Regulatory Risk Audit' : 'Business Risk Audit'}
+              </p>
+            </div>
           </div>
           <button 
             onClick={handleLogout} 
@@ -582,326 +788,63 @@ function App() {
           </button>
         </div>
 
-        <div className="max-w-6xl mx-auto p-8">
-          {/* Start New Audit Button */}
-          <button 
-            onClick={() => setCurrentStep('details')}
-            className="group relative w-full overflow-hidden rounded-2xl bg-white p-8 text-left shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-blue-300 hover:-translate-y-1 mb-8"
-          >
-            <div className="relative z-10 flex flex-col sm:flex-row sm:items-center justify-between gap-6">
-              <div className="flex items-start gap-6">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-blue-50 text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white shadow-inner">
-                  <Plus size={32} strokeWidth={2.5} />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors">Start New Audit</h3>
-                  <p className="mt-2 text-sm text-gray-500 max-w-lg leading-relaxed">
-                    Begin a new compliance audit session for your organization
-                  </p>
-                </div>
-              </div>
-              
-              <div className="hidden sm:flex items-center gap-2 text-sm font-bold text-blue-600 opacity-60 transform translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
-                Begin <ArrowRight size={18} />
-              </div>
-            </div>
+        <ClientSelector
+          onClientSelected={async (client) => {
+            setSelectedClient(client);
             
-            <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-blue-500 to-indigo-500 opacity-0 transition-opacity group-hover:opacity-100"></div>
-          </button>
+            if (auditType === 'regulatory') {
+              // Create audit session for regulatory audit
+              try {
+                const { data: { user } } = await supabase.auth.getUser();
+                
+                const { data, error } = await supabase
+                  .from('audit_sessions')
+                  .insert([{
+                    user_id: user.id,
+                    client_id: client.id,
+                    factory_name: client.company_name,
+                    location: `${client.city}, ${client.state}`,
+                    status: 'Planning'
+                  }])
+                  .select()
+                  .single();
 
-          {/* In Progress Audits - Show factory history */}
-          {factoryHistory.length > 0 && (
-            <div>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="h-px bg-gray-200 flex-1"></div>
-                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">In Progress Audits</span>
-                <div className="h-px bg-gray-200 flex-1"></div>
-              </div>
-              
-              <div className="grid gap-4">
-                {factoryHistory.map(session => {
-                  const hasProgress = session.current_act_index !== null || session.current_question_index !== null;
-                  const lastSavedText = session.last_saved_at 
-                    ? `Last saved: ${new Date(session.last_saved_at).toLocaleDateString()} ${new Date(session.last_saved_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`
-                    : '';
-
-                  return (
-                    <div 
-                      key={session.id} 
-                      onClick={() => {
-                        setFactoryName(session.factory_name);
-                        setFactoryLocation(session.location);
-                        setCurrentSessionId(session.id);
-                        setCurrentScreen('audit-type');
-                        setCurrentStep('regulatory-audit');
-                      }}
-                      className="group bg-white p-5 rounded-xl border border-gray-100 hover:border-blue-200 flex justify-between items-center cursor-pointer transition-all hover:shadow-md"
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className={`w-2 h-12 rounded-full ${hasProgress ? 'bg-orange-400' : 'bg-blue-400'}`}></div>
-                        <div>
-                          <div className="font-bold text-gray-900 text-lg">{session.factory_name}</div>
-                          <div className="text-sm text-gray-500 flex items-center gap-3 mt-1">
-                            <span className="flex items-center gap-1"><MapPin size={12}/> {session.location}</span>
-                            <span className="flex items-center gap-1"><Calendar size={12}/> {new Date(session.created_at).toLocaleDateString()}</span>
-                          </div>
-                          {lastSavedText && (
-                            <div className="text-xs text-gray-400 mt-1">{lastSavedText}</div>
-                          )}
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-center gap-6">
-                        <span className={`text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wide ${
-                          hasProgress 
-                            ? 'bg-orange-50 text-orange-700 border border-orange-200' 
-                            : 'bg-blue-50 text-blue-700 border border-blue-200'
-                        }`}>
-                          {hasProgress ? 'In Progress' : (session.status || 'Registered')}
-                        </span>
-                        <div className="p-2 rounded-full text-gray-300 group-hover:text-blue-600 group-hover:bg-blue-50 transition-all">
-                          {hasProgress ? <PlayCircle size={20}/> : <ChevronRight size={20}/>}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  // STEP 2: Firm Details Form
-  if (currentStep === 'details') {
-    return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-6">
-        <div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full p-8 border border-gray-100">
-          {/* Header */}
-          <div className="text-center mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-600 rounded-full mb-4">
-              <ShieldCheck className="text-white" size={32} />
-            </div>
-            <h1 className="text-3xl font-bold text-gray-900 mb-2">Firm Details</h1>
-            <p className="text-gray-600">Tell us about your organization</p>
-          </div>
-
-          {/* Form */}
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            if (firmDetails.name && firmDetails.location) {
-              setCurrentStep('selection');
-            } else {
-              alert('Please fill in all required fields');
+                if (error) throw error;
+                
+                setFactoryName(client.company_name);
+                setFactoryLocation(`${client.city}, ${client.state}`);
+                setCurrentSessionId(data.id);
+                setCurrentScreen('act-selector');
+                setCurrentStep('regulatory-audit');
+              } catch (error) {
+                console.error('Error creating audit session:', error);
+                alert('Error creating audit session: ' + error.message);
+              }
+            } else if (auditType === 'business') {
+              // Go to contract management for business audit
+              setCurrentStep('contract-management');
             }
-          }} className="space-y-6">
-            
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
-                Firm / Company Name <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                value={firmDetails.name}
-                onChange={(e) => setFirmDetails({ ...firmDetails, name: e.target.value })}
-                placeholder="e.g., Tata Steel Ltd."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
-                Location <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                required
-                value={firmDetails.location}
-                onChange={(e) => setFirmDetails({ ...firmDetails, location: e.target.value })}
-                placeholder="e.g., Mumbai, Maharashtra"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
-                Industry / Sector <span className="text-gray-400 text-xs">(Optional)</span>
-              </label>
-              <input
-                type="text"
-                value={firmDetails.industry}
-                onChange={(e) => setFirmDetails({ ...firmDetails, industry: e.target.value })}
-                placeholder="e.g., Manufacturing, IT Services"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-              />
-            </div>
-
-            <div className="flex gap-4 pt-4">
-              <button
-                type="button"
-                onClick={() => setCurrentStep('dashboard')}
-                className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all"
-              >
-                Cancel
-              </button>
-              <button
-                type="submit"
-                className="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-semibold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2"
-              >
-                Continue to Audit Selection
-                <ArrowRight size={18} />
-              </button>
-            </div>
-          </form>
-        </div>
+          }}
+          onAddNewClient={() => {
+            // Navigate to clients tab
+            setActiveTab('clients');
+          }}
+        />
       </div>
     );
   }
 
-  // STEP 3: Audit Type Selection View
-  if (currentStep === 'selection') {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        {/* Header */}
-        <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
-          <div>
-            <h1 className="font-bold text-xl flex items-center gap-2">
-              <ShieldCheck className="text-blue-600"/> AuditAI
-            </h1>
-            <p className="text-sm text-gray-600 mt-1">
-              Auditing for: <span className="font-semibold text-gray-900">{firmDetails.name}</span>
-              {firmDetails.location && <span className="text-gray-400"> • {firmDetails.location}</span>}
-            </p>
-          </div>
-          <div className="flex gap-3">
-            <button 
-              onClick={() => setCurrentStep('details')}
-              className="text-sm text-gray-600 hover:text-gray-900 flex items-center gap-1 px-4 py-2 hover:bg-gray-100 rounded-lg transition-colors"
-            >
-              <ArrowLeft size={16} />
-              Back to Details
-            </button>
-            <button 
-              onClick={handleLogout} 
-              className="text-sm text-gray-500 hover:text-red-600 flex items-center gap-2 px-4 py-2 hover:bg-red-50 rounded-lg transition-colors"
-            >
-              <LogOut size={16}/> Sign Out
-            </button>
-          </div>
-        </div>
-
-        {/* Audit Type Cards */}
-        <div className="p-8">
-          <div className="mb-8 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Select Audit Type</h2>
-            <p className="text-gray-600">Choose the type of audit you want to conduct</p>
-          </div>
-
-          <div className="space-y-6">
-            {/* Regulatory Risk Audit Card */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-              <div className="relative p-6 bg-gradient-to-br from-blue-50 to-indigo-50 border-b border-blue-100">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="p-4 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-xl shadow-lg">
-                      <Shield className="text-white" size={32} strokeWidth={2} />
-                    </div>
-                    <div>
-                      <h3 className="text-2xl font-bold text-gray-900 mb-1">Regulatory Risk Audit</h3>
-                      <span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">
-                        Active
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <p className="text-gray-700 mt-4 leading-relaxed">
-                  Comprehensive compliance assessment across labour laws, environmental regulations, and state-specific requirements.
-                </p>
-              </div>
-              <div className="p-6 border-b border-gray-100">
-                <h4 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Key Coverage Areas</h4>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3 text-gray-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                    <span className="text-sm font-medium">15 Acts & Rules Coverage</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                    <span className="text-sm font-medium">Labour Code Compliance</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                    <span className="text-sm font-medium">Environmental Standards</span>
-                  </div>
-                  <div className="flex items-center gap-3 text-gray-700">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600"></div>
-                    <span className="text-sm font-medium">Legal Risk Assessment</span>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6 bg-white">
-                <button
-                  onClick={async (e) => {
-                    e.preventDefault();
-                    console.log('Start Factory Audit clicked');
-                    // Create audit session and go to act selector
-                    try {
-                      const { data: { user } } = await supabase.auth.getUser();
-                      console.log('User:', user);
-                      
-                      const { data, error } = await supabase
-                        .from('audit_sessions')
-                        .insert([{
-                          user_id: user.id,
-                          factory_name: firmDetails.name,
-                          location: firmDetails.location,
-                          status: 'Planning'
-                        }])
-                        .select()
-                        .single();
-
-                      console.log('Insert result:', data, error);
-                      
-                      if (error) throw error;
-                      
-                      setFactoryName(firmDetails.name);
-                      setFactoryLocation(firmDetails.location);
-                      setCurrentSessionId(data.id);
-                      setAuditType('regulatory'); // Set audit type
-                      setCurrentScreen('act-selector'); // Go directly to act selector
-                      setCurrentStep('regulatory-audit'); // Move out of selection step
-                      console.log('Navigation set to act-selector');
-                    } catch (error) {
-                      console.error('Error:', error);
-                      alert("Error creating audit session: " + error.message);
-                    }
-                  }}
-                  className="group w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold py-4 px-6 rounded-xl hover:from-blue-700 hover:to-indigo-700 transition-all duration-300 shadow-md hover:shadow-xl flex items-center justify-center gap-2"
-                >
-                  Start Factory Audit
-                  <ArrowRight size={20} className="transform transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
-              </div>
-            </div>
-
-            {/* Business Risk Audit Card - Use the component */}
-            <BusinessAuditCard onStart={() => setCurrentStep('contract-management')} />
-          </div>
-        </div>
-      </div>
-    );
-  }
+  // STEP 2 (REMOVED): Firm Details Form - now handled via Clients tab
+  // STEP 3 (REMOVED): Audit Type Selection - now on dashboard directly (removed duplicate selection screen)
 
   // STEP 3: Contract Management (Before Business Audit)
   if (currentStep === 'contract-management') {
     return (
       <ContractManagement
-        firmName={firmDetails.name}
-        location={firmDetails.location}
-        onBack={() => setCurrentStep('selection')}
+        client={selectedClient}
+        firmName={selectedClient?.company_name || firmDetails.name}
+        location={selectedClient?.city ? `${selectedClient.city}, ${selectedClient.state}` : firmDetails.location}
+        onBack={() => setCurrentStep('client-selector')}
         onStartAudit={(contract) => {
           setSelectedContract(contract);
           setCurrentStep('business-audit');
@@ -914,8 +857,9 @@ function App() {
   if (currentStep === 'business-audit') {
     return (
       <BusinessAuditWizard
-        factoryName={selectedContract?.contractName || firmDetails.name}
-        location={selectedContract?.contractType || firmDetails.location}
+        client={selectedClient}
+        factoryName={selectedContract?.contractName || selectedClient?.company_name || firmDetails.name}
+        location={selectedContract?.contractType || (selectedClient?.city ? `${selectedClient.city}, ${selectedClient.state}` : firmDetails.location)}
         contractDetails={selectedContract}
         onBack={() => {
           setSelectedContract(null);
@@ -983,7 +927,10 @@ function App() {
             
             setCurrentScreen('audit');
           }}
-          onBackToDashboard={() => setCurrentScreen('dashboard')}
+          onBackToDashboard={() => {
+            setCurrentStep('dashboard');
+            setCurrentScreen('dashboard');
+          }}
         />
       </div>
     );
@@ -1008,7 +955,10 @@ function App() {
               setCurrentScreen('act-selector');
             }
           }}
-          onBack={() => setCurrentScreen('dashboard')}
+          onBack={() => {
+            setCurrentStep('dashboard');
+            setCurrentScreen('dashboard');
+          }}
         />
       </div>
     );
@@ -1032,7 +982,12 @@ function App() {
         <div className="bg-white border-b px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-4">
             <button 
-              onClick={() => setCurrentScreen('audit-type')}
+              onClick={() => {
+                setCurrentStep('client-selector');
+                setCurrentScreen('dashboard');
+                setSelectedClient(null);
+                setCurrentSessionId(null);
+              }}
               className="p-2 hover:bg-gray-100 rounded-lg text-gray-600 transition-colors"
             >
               <ArrowLeft size={20} />

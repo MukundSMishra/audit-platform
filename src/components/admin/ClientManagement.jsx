@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { supabase } from '../../services/supabaseClient';
+import Modal from '../shared/Modal';
 import { 
   Building2, Plus, Search, Edit2, MapPin, Mail, Phone,
   Calendar, CheckCircle, XCircle, AlertCircle, Loader2,
-  ArrowLeft, Save, Factory, TrendingUp
+  ArrowLeft, Save, Factory, TrendingUp, Shield, Briefcase
 } from 'lucide-react';
 
 const ClientManagement = () => {
@@ -12,6 +13,8 @@ const ClientManagement = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingClient, setEditingClient] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
   const [formData, setFormData] = useState({
     company_name: '',
     contact_person: '',
@@ -22,11 +25,7 @@ const ClientManagement = () => {
     state: '',
     pincode: '',
     gstin: '',
-    subscription_tier: 'trial',
-    subscription_status: 'trial',
-    subscription_start_date: '',
-    subscription_end_date: '',
-    total_audits_allowed: 5
+    audit_types: []
   });
 
   useEffect(() => {
@@ -52,6 +51,13 @@ const ClientManagement = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
+    // Validate at least one audit type is selected
+    if (!formData.audit_types || formData.audit_types.length === 0) {
+      alert('Please select at least one audit type');
+      return;
+    }
+    
     setLoading(true);
 
     try {
@@ -76,7 +82,8 @@ const ClientManagement = () => {
           p_details: { company_name: formData.company_name }
         });
 
-        alert('Client updated successfully!');
+        setSuccessMessage('Client updated successfully!');
+        setShowSuccessModal(true);
       } else {
         // Create new client
         const { data, error } = await supabase
@@ -97,7 +104,8 @@ const ClientManagement = () => {
           p_details: { company_name: formData.company_name }
         });
 
-        alert('Client created successfully!');
+        setSuccessMessage('Client created successfully!');
+        setShowSuccessModal(true);
       }
 
       handleCancelForm();
@@ -122,11 +130,7 @@ const ClientManagement = () => {
       state: client.state || '',
       pincode: client.pincode || '',
       gstin: client.gstin || '',
-      subscription_tier: client.subscription_tier || 'trial',
-      subscription_status: client.subscription_status || 'trial',
-      subscription_start_date: client.subscription_start_date || '',
-      subscription_end_date: client.subscription_end_date || '',
-      total_audits_allowed: client.total_audits_allowed || 5
+      audit_types: Array.isArray(client.audit_types) ? client.audit_types : (client.audit_type ? [client.audit_type] : [])
     });
     setShowForm(true);
   };
@@ -144,11 +148,22 @@ const ClientManagement = () => {
       state: '',
       pincode: '',
       gstin: '',
-      subscription_tier: 'trial',
-      subscription_status: 'trial',
-      subscription_start_date: '',
-      subscription_end_date: '',
-      total_audits_allowed: 5
+      audit_types: []
+    });
+  };
+
+  const toggleAuditType = (auditType) => {
+    setFormData(prevData => {
+      const currentTypes = prevData.audit_types || [];
+      const isSelected = currentTypes.includes(auditType);
+      
+      if (isSelected) {
+        // Deselect: remove from array
+        return { ...prevData, audit_types: currentTypes.filter(type => type !== auditType) };
+      } else {
+        // Select: add to array
+        return { ...prevData, audit_types: [...currentTypes, auditType] };
+      }
     });
   };
 
@@ -182,7 +197,7 @@ const ClientManagement = () => {
   if (showForm) {
     return (
       <div className="min-h-screen bg-gray-50 p-6">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <button
             onClick={handleCancelForm}
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900 font-bold mb-6 transition-colors"
@@ -313,71 +328,73 @@ const ClientManagement = () => {
                 </div>
               </div>
 
-              {/* Subscription */}
+              {/* Audit Configuration */}
               <div className="space-y-4">
-                <h3 className="text-lg font-bold text-gray-900 border-b pb-2">Subscription Details</h3>
+                <h3 className="text-lg font-bold text-gray-900 border-b pb-2">Audit Configuration</h3>
                 
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Subscription Tier</label>
-                    <select
-                      value={formData.subscription_tier}
-                      onChange={(e) => setFormData({ ...formData, subscription_tier: e.target.value })}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="trial">Trial</option>
-                      <option value="basic">Basic</option>
-                      <option value="professional">Professional</option>
-                      <option value="enterprise">Enterprise</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Status</label>
-                    <select
-                      value={formData.subscription_status}
-                      onChange={(e) => setFormData({ ...formData, subscription_status: e.target.value })}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="trial">Trial</option>
-                      <option value="active">Active</option>
-                      <option value="expired">Expired</option>
-                      <option value="cancelled">Cancelled</option>
-                    </select>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">Start Date</label>
-                    <input
-                      type="date"
-                      value={formData.subscription_start_date}
-                      onChange={(e) => setFormData({ ...formData, subscription_start_date: e.target.value })}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-bold text-gray-700 mb-2">End Date</label>
-                    <input
-                      type="date"
-                      value={formData.subscription_end_date}
-                      onChange={(e) => setFormData({ ...formData, subscription_end_date: e.target.value })}
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    />
-                  </div>
-                </div>
-
                 <div>
-                  <label className="block text-sm font-bold text-gray-700 mb-2">Total Audits Allowed</label>
-                  <input
-                    type="number"
-                    value={formData.total_audits_allowed}
-                    onChange={(e) => setFormData({ ...formData, total_audits_allowed: parseInt(e.target.value) })}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500"
-                    min="1"
-                  />
+                  <label className="block text-sm font-bold text-gray-700 mb-3">
+                    Audit Types * <span className="text-gray-500 font-normal text-xs">(Select one or more)</span>
+                  </label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      type="button"
+                      onClick={() => toggleAuditType('regulatory')}
+                      className={`p-4 rounded-xl border-2 transition-all relative ${
+                        formData.audit_types?.includes('regulatory')
+                          ? 'border-blue-500 bg-blue-50 shadow-md'
+                          : 'border-gray-300 hover:border-blue-300'
+                      }`}
+                    >
+                      {formData.audit_types?.includes('regulatory') && (
+                        <div className="absolute top-2 right-2">
+                          <CheckCircle className="text-blue-600" size={20} strokeWidth={3} />
+                        </div>
+                      )}
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className={`p-2 rounded-lg ${
+                          formData.audit_types?.includes('regulatory') ? 'bg-blue-500' : 'bg-gray-200'
+                        }`}>
+                          <Shield className={formData.audit_types?.includes('regulatory') ? 'text-white' : 'text-gray-500'} size={24} />
+                        </div>
+                        <span className={`font-bold text-lg ${
+                          formData.audit_types?.includes('regulatory') ? 'text-blue-700' : 'text-gray-700'
+                        }`}>
+                          Regulatory Risk
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-600 text-left">Labour laws, environmental regulations & state-specific compliance</p>
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() => toggleAuditType('business')}
+                      className={`p-4 rounded-xl border-2 transition-all relative ${
+                        formData.audit_types?.includes('business')
+                          ? 'border-purple-500 bg-purple-50 shadow-md'
+                          : 'border-gray-300 hover:border-purple-300'
+                      }`}
+                    >
+                      {formData.audit_types?.includes('business') && (
+                        <div className="absolute top-2 right-2">
+                          <CheckCircle className="text-purple-600" size={20} strokeWidth={3} />
+                        </div>
+                      )}
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className={`p-2 rounded-lg ${
+                          formData.audit_types?.includes('business') ? 'bg-purple-500' : 'bg-gray-200'
+                        }`}>
+                          <Briefcase className={formData.audit_types?.includes('business') ? 'text-white' : 'text-gray-500'} size={24} />
+                        </div>
+                        <span className={`font-bold text-lg ${
+                          formData.audit_types?.includes('business') ? 'text-purple-700' : 'text-gray-700'
+                        }`}>
+                          Business Risk
+                        </span>
+                      </div>
+                      <p className="text-sm text-gray-600 text-left">Contract compliance & Indian Contract Act 1872 assessment</p>
+                    </button>
+                  </div>
                 </div>
               </div>
 
@@ -406,8 +423,22 @@ const ClientManagement = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
-      <div className="max-w-7xl mx-auto">
+    <>
+      <Modal
+        isOpen={showSuccessModal}
+        onClose={() => {
+          setShowSuccessModal(false);
+          handleCancelForm();
+          fetchClients();
+        }}
+        title="Success!"
+        message={successMessage}
+        type="success"
+        confirmText="OK"
+      />
+
+      <div className="min-h-screen bg-gray-50 p-6">
+        <div className="max-w-7xl mx-auto">
         
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
@@ -475,54 +506,51 @@ const ClientManagement = () => {
                       <div className="flex-1">
                         <h3 className="text-xl font-bold text-gray-900 mb-2">{client.company_name}</h3>
                         <div className="flex flex-wrap items-center gap-2">
-                          <span className={`px-3 py-1 rounded-full text-xs font-bold border ${getStatusBadge(client.subscription_status)}`}>
-                            {client.subscription_status?.toUpperCase()}
-                          </span>
-                          <span className={`px-3 py-1 rounded-full text-xs font-bold ${getTierBadge(client.subscription_tier)}`}>
-                            {client.subscription_tier?.toUpperCase()}
-                          </span>
+                          {client.audit_types && client.audit_types.length > 0 && (
+                            client.audit_types.map(type => (
+                              <span key={type} className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 ${
+                                type === 'regulatory' ? 'bg-blue-100 text-blue-700' : 'bg-purple-100 text-purple-700'
+                              }`}>
+                                {type === 'regulatory' ? <Shield size={12} /> : <Briefcase size={12} />}
+                                {type.toUpperCase()}
+                              </span>
+                            ))
+                          )}
                         </div>
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-gray-600">
+                    <div className="flex items-center gap-6 text-sm text-gray-600">
                       {client.contact_person && (
                         <div className="flex items-center gap-2">
                           <Mail size={14} className="text-gray-400" />
-                          {client.contact_person}
+                          <span>{client.contact_person}</span>
                         </div>
                       )}
+                      {client.email && (
+                        <a 
+                          href={`mailto:${client.email}`}
+                          className="flex items-center gap-2 p-1.5 hover:bg-blue-50 rounded-lg text-blue-600 hover:text-blue-700 transition-colors"
+                          title={`Send email to ${client.email}`}
+                        >
+                          <Mail size={16} />
+                          <span className="text-xs font-medium">Email</span>
+                        </a>
+                      )}
                       {client.phone && (
-                        <div className="flex items-center gap-2">
-                          <Phone size={14} className="text-gray-400" />
-                          {client.phone}
-                        </div>
+                        <a 
+                          href={`tel:${client.phone}`}
+                          className="flex items-center gap-2 p-1.5 hover:bg-green-50 rounded-lg text-green-600 hover:text-green-700 transition-colors"
+                          title={`Call ${client.phone}`}
+                        >
+                          <Phone size={16} />
+                          <span className="text-xs font-medium">{client.phone}</span>
+                        </a>
                       )}
                       {client.city && (
                         <div className="flex items-center gap-2">
                           <MapPin size={14} className="text-gray-400" />
                           {client.city}, {client.state}
-                        </div>
-                      )}
-                      <div className="flex items-center gap-2">
-                        <Factory size={14} className="text-gray-400" />
-                        {client.total_factories || 0} factories
-                      </div>
-                    </div>
-
-                    <div className="mt-4 pt-4 border-t border-gray-100 flex items-center gap-6 text-sm">
-                      <div>
-                        <span className="text-gray-500">Audits:</span>
-                        <span className="ml-2 font-bold text-gray-900">
-                          {client.total_audits_used || 0} / {client.total_audits_allowed || 0}
-                        </span>
-                      </div>
-                      {client.subscription_end_date && (
-                        <div>
-                          <span className="text-gray-500">Valid until:</span>
-                          <span className="ml-2 font-bold text-gray-900">
-                            {new Date(client.subscription_end_date).toLocaleDateString()}
-                          </span>
                         </div>
                       )}
                     </div>
@@ -539,8 +567,9 @@ const ClientManagement = () => {
             ))}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

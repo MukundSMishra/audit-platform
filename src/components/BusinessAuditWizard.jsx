@@ -32,7 +32,11 @@ const ICON_MAP = {
   RefreshCw
 };
 
-const BusinessAuditWizard = ({ factoryName, location, contractDetails, onBack }) => {
+const BusinessAuditWizard = ({ client, factoryName, location, contractDetails, onBack }) => {
+  // Use client object if available, fallback to direct props for backward compatibility
+  const displayFirmName = client?.company_name || factoryName;
+  const displayLocation = client?.city ? `${client.city}, ${client.state}` : location;
+  
   const [currentSection, setCurrentSection] = useState(0);
   const [auditState, setAuditState] = useState(INITIAL_AUDIT_STATE);
   const [showRiskHeatMap, setShowRiskHeatMap] = useState(false);
@@ -245,9 +249,9 @@ const BusinessAuditWizard = ({ factoryName, location, contractDetails, onBack })
       {/* Sidebar */}
       <div className="w-72 bg-white border-r shadow-sm flex flex-col">
         <div className="p-6 border-b">
-          <h2 className="text-lg font-bold text-gray-900">Business Risk Audit</h2>
-          <p className="text-xs text-gray-600 mt-1">{factoryName}</p>
-          <p className="text-xs text-gray-500">{location}</p>
+          <h2 className="text-xl font-bold text-gray-900">Business Risk Audit</h2>
+          <p className="text-xs text-gray-600 mt-1">{displayFirmName}</p>
+          <p className="text-xs text-gray-500">{displayLocation}</p>
           {contractDetails && (
             <div className="mt-3 pt-3 border-t border-gray-200">
               <p className="text-xs font-semibold text-gray-700">Contract Details</p>

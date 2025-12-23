@@ -15,7 +15,11 @@ import {
   ArrowLeft
 } from 'lucide-react';
 
-const ContractManagement = ({ firmName, location, onBack, onStartAudit }) => {
+const ContractManagement = ({ client, firmName, location, onBack, onStartAudit }) => {
+  // Use client object if available, fallback to direct props for backward compatibility
+  const displayFirmName = client?.company_name || firmName;
+  const displayLocation = client?.city ? `${client.city}, ${client.state}` : location;
+  
   const [contracts, setContracts] = useState([]);
   const [showAddForm, setShowAddForm] = useState(false);
   const [editingContract, setEditingContract] = useState(null);
@@ -150,7 +154,7 @@ const ContractManagement = ({ firmName, location, onBack, onStartAudit }) => {
               <div>
                 <h1 className="font-bold text-2xl text-gray-900">Contract Management</h1>
                 <p className="text-sm text-gray-600 mt-1">
-                  {firmName} • {location}
+                  {displayFirmName} • {displayLocation}
                 </p>
               </div>
             </div>
