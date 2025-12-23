@@ -11,7 +11,6 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const [uploading, setUploading] = useState(false);
   const [aiUploading, setAiUploading] = useState(false);
   const [isLegalExpanded, setIsLegalExpanded] = useState(false);
-  const [isApplicabilityExpanded, setIsApplicabilityExpanded] = useState(false);
   const [applicabilityReason, setApplicabilityReason] = useState(answerData?.applicabilityReason || '');
   const [isEvidenceAvailable, setIsEvidenceAvailable] = useState(answerData?.missingEvidenceReason ? 'no' : null);
   const [missingEvidenceReason, setMissingEvidenceReason] = useState(answerData?.missingEvidenceReason || null);
@@ -768,26 +767,6 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
       {/* FOOTER: Collapsible Sections */}
       <div className="border-t border-gray-200 p-6 space-y-3 bg-slate-50">
         
-        {/* Applicability Accordion */}
-        <button 
-          onClick={() => setIsApplicabilityExpanded(!isApplicabilityExpanded)}
-          className="flex items-center justify-between w-full p-4 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group"
-        >
-          <div className="flex items-center gap-3">
-            <Info size={18} className="text-blue-600" strokeWidth={2.5} />
-            <span className="font-bold text-sm text-slate-700 group-hover:text-blue-700">Applicability Conditions</span>
-          </div>
-          <ChevronDown size={18} className={`text-slate-400 transition-transform ${isApplicabilityExpanded ? 'rotate-180' : ''}`} />
-        </button>
-        
-        {isApplicabilityExpanded && (
-          <div className="p-4 bg-white rounded-lg border border-blue-200 animate-in slide-in-from-top-2 duration-300">
-            <p className="text-sm text-slate-700 leading-relaxed">
-              {item.applicability_criteria || "Standard Factory Rule"}
-            </p>
-          </div>
-        )}
-
         {/* Legal References Accordion */}
         <button 
           onClick={() => setIsLegalExpanded(!isLegalExpanded)}
