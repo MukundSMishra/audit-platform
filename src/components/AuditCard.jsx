@@ -170,481 +170,496 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
         </div>
       </div>
 
-      {/* ZONE B: THE GATE - Applicability Toggle */}
-      <div className="bg-gray-50 border-y border-gray-200 p-4">
-        <div className="flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-slate-600 to-slate-800 flex items-center justify-center shadow-md">
-              <AlertCircle size={20} className="text-white" strokeWidth={2.5} />
+      {/* STAGE 1: APPLICABILITY GATE (Always Visible) */}
+      <div className="p-6 bg-gradient-to-br from-slate-50 to-gray-50">
+        <div className="bg-white border-2 border-slate-300 rounded-xl p-6 shadow-md">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+              <AlertCircle size={24} className="text-white" strokeWidth={2.5} />
             </div>
-            <div className="flex flex-col">
-              <span className="text-base font-bold text-slate-800">Applicable to this firm?</span>
-              <span className="text-xs text-slate-600 mt-1">Read these guidelines to decide if this audit question is applicable to the firm.</span>
+            <div className="flex-1">
+              <h3 className="text-lg font-extrabold text-slate-900">Is this applicable to the facility?</h3>
+              <p className="text-xs text-slate-600 mt-1">Determine if this requirement applies to this specific site</p>
             </div>
           </div>
-          
-          {/* Yes/No Segmented Control */}
-          <div className="flex items-center bg-white border-2 border-slate-300 rounded-lg overflow-hidden shadow-sm">
+
+          <div className="flex gap-4 mb-4">
             <button
               onClick={() => {
                 if (!isApplicable) handleToggle();
               }}
-              className={`px-6 py-2.5 text-sm font-bold transition-all ${
+              className={`flex-1 py-4 px-6 rounded-xl border-2 font-bold text-base transition-all ${
                 isApplicable
-                  ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:bg-slate-50'
+                  ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 text-green-700 shadow-md'
+                  : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:bg-slate-50'
               }`}
             >
-              YES
+              <div className="flex items-center justify-center gap-2">
+                <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                  isApplicable ? 'border-green-600 bg-green-600' : 'border-slate-400'
+                }`}>
+                  {isApplicable && <Check size={14} className="text-white" strokeWidth={3} />}
+                </div>
+                <span>YES</span>
+              </div>
             </button>
             <button
               onClick={() => {
                 if (isApplicable) handleToggle();
               }}
-              className={`px-6 py-2.5 text-sm font-bold transition-all border-l-2 border-slate-300 ${
+              className={`flex-1 py-4 px-6 rounded-xl border-2 font-bold text-base transition-all ${
                 !isApplicable
-                  ? 'bg-gradient-to-r from-rose-500 to-red-600 text-white shadow-md'
-                  : 'bg-white text-slate-600 hover:bg-slate-50'
+                  ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 text-rose-700 shadow-md'
+                  : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:bg-slate-50'
               }`}
             >
-              NO
+              <div className="flex items-center justify-center gap-2">
+                <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                  !isApplicable ? 'border-rose-600 bg-rose-600' : 'border-slate-400'
+                }`}>
+                  {!isApplicable && <X size={14} className="text-white" strokeWidth={3} />}
+                </div>
+                <span>NO</span>
+              </div>
             </button>
           </div>
-        </div>
 
-        {/* Not Applicable Reason Input */}
-        {!isApplicable && (
-          <div className="mt-4 animate-in slide-in-from-top-2 duration-300">
-            <label className="block text-sm font-bold text-slate-700 mb-2">
-              Why is it not applicable?
-            </label>
-            <textarea
-              className="w-full bg-white border-2 border-slate-300 rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-red-400 focus:border-red-300 outline-none transition-all placeholder-slate-400 text-slate-700 resize-none"
-              rows="3"
-              placeholder="Explain why this requirement does not apply to this site..."
-              value={applicabilityReason}
-              onChange={(e) => setApplicabilityReason(e.target.value)}
-              required
-            />
-            <div className="mt-3 flex justify-end">
-              <button
-                onClick={handleSaveNotApplicable}
-                className="px-6 py-2.5 bg-gradient-to-r from-slate-700 to-slate-900 text-white rounded-lg text-sm font-bold hover:from-slate-800 hover:to-black transition-all shadow-md flex items-center gap-2"
-              >
-                <Check size={16} strokeWidth={3} />
-                Save & Skip
-              </button>
+          {!isApplicable && (
+            <div className="mt-4 animate-in slide-in-from-top-2 duration-300">
+              <label className="block text-sm font-bold text-slate-700 mb-2">
+                Why is it not applicable?
+              </label>
+              <textarea
+                className="w-full bg-white border-2 border-slate-300 rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-rose-400 focus:border-rose-300 outline-none transition-all placeholder-slate-400 text-slate-700 resize-none"
+                rows="3"
+                placeholder="Explain why this requirement does not apply to this facility..."
+                value={applicabilityReason}
+                onChange={(e) => setApplicabilityReason(e.target.value)}
+              />
+              <div className="mt-3 flex justify-end">
+                <button
+                  onClick={handleSaveNotApplicable}
+                  className="px-6 py-2.5 bg-gradient-to-r from-slate-700 to-slate-900 text-white rounded-lg text-sm font-bold hover:from-slate-800 hover:to-black transition-all shadow-md flex items-center gap-2"
+                >
+                  <Check size={16} strokeWidth={3} />
+                  Save & Skip
+                </button>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
-
-      {/* ZONE C: THE WORKSPACE - Two-Column Grid (Only if Applicable) */}
-      {isApplicable && (
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 animate-in fade-in slide-in-from-top-4 duration-500">
-        
-        {/* LEFT COLUMN: Guidance Panel */}
-        <div className="bg-slate-50 rounded-xl border-2 border-slate-200 p-6 flex flex-col">
-          {isManualObservation ? (
-            /* Manual Observation Checklist */
-            <>
-              <div className="flex items-center gap-3 mb-4 pb-3 border-b border-slate-300">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-md">
-                  <CheckSquare size={20} className="text-white" strokeWidth={2.5} />
-                </div>
-                <h3 className="text-lg font-extrabold text-slate-800">
-                  Inspection Checklist
-                </h3>
-              </div>
-              <div className="space-y-3 flex-1">
-                {(item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || []).map((step, idx) => (
-                  <div key={idx} className="flex items-start gap-3 p-3 bg-white rounded-lg border border-slate-200 hover:border-blue-300 hover:shadow-sm transition-all group">
-                    <div className="w-6 h-6 rounded border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center shrink-0 mt-0.5 bg-white group-hover:bg-blue-50 transition-all">
-                      <Check size={14} className="text-transparent group-hover:text-blue-600 transition-all" strokeWidth={3} />
-                    </div>
-                    <p className="text-sm text-slate-700 leading-relaxed font-medium flex-1">
-                      {typeof step === 'string' ? step : step}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </>
-          ) : (
-            /* AI Evidence Instructions */
-            <>
-              <div className="flex items-center gap-3 mb-4 pb-3 border-b border-purple-300">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-md">
-                  <FileText size={20} className="text-white" strokeWidth={2.5} />
-                </div>
-                <h3 className="text-lg font-extrabold text-slate-800">
-                  Required Evidence
-                </h3>
-              </div>
-              <div className="flex-1 space-y-4">
-                <div className="bg-white p-4 rounded-lg border border-purple-200">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Sparkles size={16} className="text-purple-600" strokeWidth={2.5} />
-                    <span className="text-xs font-bold text-purple-700 uppercase">Document Required</span>
-                  </div>
-                  <p className="text-base font-extrabold text-slate-900 mb-3">
-                    {item.capture_instructions?.document_name || 'Evidence Document'}
-                  </p>
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    {item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}
-                  </p>
-                </div>
-                {item.capture_instructions?.title && (
-                  <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
-                    <p className="text-xs font-bold text-purple-700 mb-1 uppercase">Instructions</p>
-                    <p className="text-sm text-slate-700 font-medium">
-                      {item.capture_instructions.title}
-                    </p>
-                  </div>
-                )}
-              </div>
-            </>
           )}
         </div>
+      </div>
 
-        {/* RIGHT COLUMN: Action Zone */}
-        <div className="flex flex-col">
-          {isManualObservation ? (
-            /* Compliance Status Buttons */
-            <>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-md">
-                  <FileCheck size={20} className="text-white" strokeWidth={2.5} />
+      {/* STAGE 2: THE GUIDANCE (Only if Applicable) */}
+      {isApplicable && (
+        <div className="p-6 bg-blue-50 border-t border-blue-100 animate-in slide-in-from-top-4 duration-500">
+          <div className="bg-white rounded-xl border-2 border-blue-200 p-6 shadow-md">
+            {isManualObservation ? (
+              /* Manual Observation Checklist */
+              <>
+                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-blue-200">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                    <CheckSquare size={24} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-extrabold text-slate-900">🕵️ Inspection Checklist</h3>
+                    <p className="text-xs text-slate-600 mt-1">Follow these steps to conduct the inspection</p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-extrabold text-slate-800">
-                  Compliance Status
-                </h3>
-              </div>
-              
-              <div className="grid grid-cols-1 gap-4 mb-6">
-                {[
-                  { label: 'Compliant', color: 'emerald', gradient: 'from-emerald-400 to-teal-500', bgLight: 'from-emerald-50 to-teal-50', icon: CheckCircle },
-                  { label: 'Non-Compliant', color: 'rose', gradient: 'from-rose-400 to-pink-500', bgLight: 'from-rose-50 to-pink-50', icon: XCircle },
-                  { label: 'Delayed', color: 'amber', gradient: 'from-amber-400 to-orange-500', bgLight: 'from-amber-50 to-orange-50', icon: Clock }
-                ].map((opt) => {
-                  const isSelected = currentStatus === opt.label;
-                  return (
-                    <button
-                      key={opt.label}
-                      onClick={() => {
-                        if (isSelected) {
-                          onUpdateAnswer(item.id, { ...answerData, status: null });
-                        } else {
-                          onUpdateAnswer(item.id, { ...answerData, status: opt.label });
-                        }
-                      }}
-                      className={`relative flex items-center justify-between gap-4 py-4 px-6 rounded-xl border-2 transition-all duration-300 group overflow-hidden touch-manipulation min-h-[72px]
-                        ${isSelected
-                          ? `border-${opt.color}-400 shadow-lg scale-[1.02]` 
-                          : 'border-slate-200 hover:border-slate-300 hover:shadow-md hover:scale-[1.01] bg-white'
+                <div className="space-y-3">
+                  {(item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || []).map((step, idx) => (
+                    <div key={idx} className="flex items-start gap-3 p-4 bg-blue-50 rounded-lg border border-blue-200 hover:border-blue-400 hover:bg-blue-100 transition-all group">
+                      <div className="w-7 h-7 rounded-full border-2 border-blue-300 group-hover:border-blue-600 group-hover:bg-blue-600 flex items-center justify-center shrink-0 mt-0.5 bg-white transition-all">
+                        <Check size={16} className="text-transparent group-hover:text-white transition-all" strokeWidth={3} />
+                      </div>
+                      <p className="text-sm text-slate-700 leading-relaxed font-medium flex-1">
+                        {typeof step === 'string' ? step : step}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </>
+            ) : (
+              /* AI Evidence Instructions */
+              <>
+                <div className="flex items-center gap-3 mb-4 pb-4 border-b border-purple-200">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                    <FileText size={24} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-extrabold text-slate-900">📄 Required Evidence</h3>
+                    <p className="text-xs text-slate-600 mt-1">Document required for AI verification</p>
+                  </div>
+                </div>
+                <div className="space-y-4">
+                  <div className="bg-purple-50 border border-purple-200 p-5 rounded-lg">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Sparkles size={18} className="text-purple-600" strokeWidth={2.5} />
+                      <span className="text-xs font-bold text-purple-700 uppercase">Document Required</span>
+                    </div>
+                    <p className="text-lg font-extrabold text-slate-900 mb-2">
+                      {item.capture_instructions?.document_name || 'Evidence Document'}
+                    </p>
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      {item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}
+                    </p>
+                  </div>
+                  {item.capture_instructions?.title && (
+                    <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+                      <p className="text-xs font-bold text-indigo-700 mb-2 uppercase">Additional Instructions</p>
+                      <p className="text-sm text-slate-700 font-medium">
+                        {item.capture_instructions.title}
+                      </p>
+                    </div>
+                  )}
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      )}
+
+      {/* STAGE 3: THE ACTION ZONE (Only if Applicable) */}
+      {isApplicable && (
+        <div className="p-6 bg-gradient-to-br from-slate-50 to-gray-50 animate-in slide-in-from-top-4 duration-500">
+          <div className="bg-white rounded-xl border-2 border-slate-300 p-6 shadow-md">
+            {isManualObservation ? (
+              /* Manual Observation: Compliance Buttons */
+              <>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center shadow-lg">
+                    <FileCheck size={24} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-extrabold text-slate-900">Compliance Verdict</h3>
+                    <p className="text-xs text-slate-600 mt-1">Select the compliance status</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                  {[
+                    { label: 'Compliant', color: 'emerald', gradient: 'from-emerald-500 to-teal-600', icon: CheckCircle },
+                    { label: 'Non-Compliant', color: 'rose', gradient: 'from-rose-500 to-pink-600', icon: XCircle }
+                  ].map((opt) => {
+                    const isSelected = currentStatus === opt.label;
+                    return (
+                      <button
+                        key={opt.label}
+                        onClick={() => {
+                          if (isSelected) {
+                            onUpdateAnswer(item.id, { ...answerData, status: null });
+                          } else {
+                            onUpdateAnswer(item.id, { ...answerData, status: opt.label });
+                          }
+                        }}
+                        className={`relative flex items-center justify-center gap-3 py-6 px-6 rounded-xl border-2 transition-all duration-300 ${
+                          isSelected
+                            ? `border-${opt.color}-500 bg-gradient-to-br ${opt.gradient} shadow-lg scale-[1.02]` 
+                            : 'border-slate-300 hover:border-slate-400 hover:bg-slate-50 bg-white'
                         }`}
-                    >
-                      {isSelected && (
-                        <div className={`absolute inset-0 bg-gradient-to-br ${opt.bgLight} opacity-90`}></div>
-                      )}
-                      
-                      <div className="relative flex items-center gap-4 flex-1">
-                        <div className={`p-3 rounded-lg transition-all duration-300 ${
-                          isSelected 
-                            ? `bg-gradient-to-br ${opt.gradient} shadow-md` 
-                            : 'bg-slate-50 group-hover:bg-slate-100'
-                        }`}>
-                          <opt.icon 
-                            size={28} 
-                            strokeWidth={2.5} 
-                            className={`transition-all duration-300 ${
-                              isSelected ? 'text-white' : 'text-slate-400 group-hover:text-slate-600'
-                            }`}
-                          />
-                        </div>
-                        
-                        <span className={`font-bold text-base uppercase tracking-wide transition-colors duration-300 ${
-                          isSelected ? `text-${opt.color}-700` : 'text-slate-600 group-hover:text-slate-800'
-                        }`}>
+                      >
+                        <opt.icon 
+                          size={32} 
+                          strokeWidth={2.5} 
+                          className={isSelected ? 'text-white' : 'text-slate-400'}
+                        />
+                        <span className={`font-bold text-lg ${isSelected ? 'text-white' : 'text-slate-700'}`}>
                           {opt.label}
                         </span>
-                      </div>
-                      
-                      {isSelected && (
-                        <div className={`relative w-6 h-6 rounded-full bg-gradient-to-br ${opt.gradient} flex items-center justify-center shadow-md animate-in zoom-in duration-300`}>
-                          <Check size={14} className="text-white" strokeWidth={4} />
+                        {isSelected && (
+                          <div className="absolute top-3 right-3">
+                            <Check size={20} className="text-white" strokeWidth={3} />
+                          </div>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Remarks for Non-Compliant */}
+                {currentStatus === 'Non-Compliant' && (
+                  <div className="mt-4 animate-in slide-in-from-top-2 duration-300">
+                    <label className="block text-sm font-bold text-slate-700 mb-2">
+                      Non-Compliance Remarks
+                    </label>
+                    <textarea
+                      className="w-full bg-white border-2 border-slate-300 rounded-lg py-3 px-4 text-sm focus:ring-2 focus:ring-rose-400 focus:border-rose-300 outline-none transition-all placeholder-slate-400 text-slate-700 resize-none"
+                      rows="3"
+                      placeholder="Describe the non-compliance observed..."
+                      value={comment}
+                      onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
+                    />
+                  </div>
+                )}
+
+                {/* Evidence Upload */}
+                {(currentStatus === 'Compliant' || currentStatus === 'Non-Compliant') && (
+                  <div className="mt-6 pt-6 border-t border-slate-200">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Camera size={16} className="text-slate-600" />
+                      <span className="text-sm font-bold text-slate-700">Attach Evidence (Optional)</span>
+                    </div>
+                    <div 
+                      className={`border-2 border-dashed rounded-lg p-4 cursor-pointer transition-all ${
+                        evidenceUrl ? 'border-green-400 bg-green-50' : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-slate-100'
+                      }`} 
+                      onClick={() => fileInputRef.current?.click()}
+                    >
+                      <input type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} accept="image/*,.pdf" />
+                      {evidenceUrl ? (
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center gap-2">
+                            <CheckCircle size={20} className="text-green-600" />
+                            <span className="text-sm font-medium text-green-700">Evidence Uploaded</span>
+                          </div>
+                          <a href={evidenceUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-600 hover:underline font-bold">View</a>
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center gap-2 text-slate-500">
+                          {uploading ? (
+                            <>
+                              <Loader2 size={18} className="animate-spin" />
+                              <span className="text-sm">Uploading...</span>
+                            </>
+                          ) : (
+                            <>
+                              <Upload size={18} />
+                              <span className="text-sm font-medium">Click to Upload</span>
+                            </>
+                          )}
                         </div>
                       )}
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Upload Evidence (for Compliant/Delayed) */}
-              {(currentStatus === 'Compliant' || currentStatus === 'Delayed') && (
-                <div className="mt-auto">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Camera size={16} className="text-slate-600" />
-                    <span className="text-sm font-bold text-slate-700">Attach Evidence</span>
+                    </div>
                   </div>
-                  <div className={`border-2 border-dashed rounded-lg p-4 cursor-pointer transition-all hover:border-slate-400 ${
-                    evidenceUrl ? 'border-green-300 bg-green-50' : 'border-slate-300 bg-slate-50 hover:bg-slate-100'
-                  }`} onClick={() => fileInputRef.current?.click()}>
-                    <input type="file" ref={fileInputRef} className="hidden" onChange={handleFileChange} accept="image/*,.pdf" />
-                    {evidenceUrl ? (
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          <Check size={18} className="text-green-600" />
-                          <span className="text-sm font-medium text-green-700">Evidence Uploaded</span>
+                )}
+              </>
+            ) : (
+              /* AI Evidence: Upload Workflow */
+              <>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
+                    <Upload size={24} className="text-white" strokeWidth={2.5} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-extrabold text-slate-900">Upload Proof</h3>
+                    <p className="text-xs text-slate-600 mt-1">Provide evidence for AI verification</p>
+                  </div>
+                </div>
+
+                {/* Step 3.1: Is evidence available? */}
+                <div className="mb-6">
+                  <label className="block text-sm font-bold text-slate-700 mb-3">
+                    Is the evidence available?
+                  </label>
+                  <div className="grid grid-cols-2 gap-4">
+                    <button
+                      onClick={() => {
+                        setIsEvidenceAvailable('yes');
+                        setMissingEvidenceReason(null);
+                        onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
+                      }}
+                      className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
+                        isEvidenceAvailable === 'yes'
+                          ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 text-green-700'
+                          : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                          isEvidenceAvailable === 'yes' ? 'border-green-600 bg-green-600' : 'border-slate-400'
+                        }`}>
+                          {isEvidenceAvailable === 'yes' && <Check size={14} className="text-white" strokeWidth={3} />}
                         </div>
-                        <a href={evidenceUrl} target="_blank" rel="noreferrer" className="text-xs text-blue-600 hover:underline">View</a>
+                        <span>YES</span>
+                      </div>
+                    </button>
+                    <button
+                      onClick={() => setIsEvidenceAvailable('no')}
+                      className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
+                        isEvidenceAvailable === 'no'
+                          ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 text-rose-700'
+                          : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
+                      }`}
+                    >
+                      <div className="flex items-center justify-center gap-2">
+                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                          isEvidenceAvailable === 'no' ? 'border-rose-600 bg-rose-600' : 'border-slate-400'
+                        }`}>
+                          {isEvidenceAvailable === 'no' && <X size={14} className="text-white" strokeWidth={3} />}
+                        </div>
+                        <span>NO</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Step 3.2 (If YES): Upload Widget */}
+                {isEvidenceAvailable === 'yes' && (
+                  <div 
+                    className={`border-3 border-dashed rounded-xl cursor-pointer transition-all duration-300 flex flex-col items-center justify-center p-10 animate-in slide-in-from-top-2 duration-300 ${
+                      evidenceUrl 
+                        ? 'border-purple-400 bg-gradient-to-br from-purple-50 to-indigo-50' 
+                        : 'border-purple-300 bg-purple-50/50 hover:bg-purple-50 hover:border-purple-400'
+                    }`}
+                    onClick={() => !evidenceUrl && aiFileInputRef.current?.click()}
+                  >
+                    <input 
+                      type="file" 
+                      ref={aiFileInputRef} 
+                      className="hidden" 
+                      onChange={handleAiEvidenceUpload} 
+                      accept={item.ui_config?.accepted_formats || 'image/*,.pdf'} 
+                    />
+                    
+                    {evidenceUrl ? (
+                      <div className="text-center">
+                        <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-xl">
+                          <CheckCircle size={48} className="text-white" strokeWidth={2.5} />
+                        </div>
+                        <p className="text-xl font-bold text-purple-900 mb-2">Evidence Submitted</p>
+                        <p className="text-sm text-slate-600 mb-4">AI verification in progress</p>
+                        <div className="flex gap-3 justify-center">
+                          <a 
+                            href={evidenceUrl} 
+                            target="_blank" 
+                            rel="noreferrer"
+                            className="px-4 py-2 bg-white border-2 border-purple-400 rounded-lg text-sm font-bold text-purple-700 hover:bg-purple-50 transition-all"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            View File
+                          </a>
+                          <button 
+                            onClick={(e) => { e.stopPropagation(); aiFileInputRef.current?.click(); }}
+                            className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg text-sm font-bold hover:from-purple-600 hover:to-indigo-700 transition-all shadow-md"
+                          >
+                            Re-upload
+                          </button>
+                        </div>
                       </div>
                     ) : (
-                      <div className="flex items-center justify-center gap-2 text-slate-500">
-                        {uploading ? (
-                          <>
-                            <Loader2 size={18} className="animate-spin" />
-                            <span className="text-sm">Uploading...</span>
-                          </>
+                      <>
+                        {aiUploading ? (
+                          <div className="text-center">
+                            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-xl">
+                              <Loader2 size={48} className="animate-spin text-white" />
+                            </div>
+                            <p className="text-lg font-bold text-purple-900">Uploading to AI...</p>
+                          </div>
                         ) : (
-                          <>
-                            <Upload size={18} />
-                            <span className="text-sm font-medium">Click to Upload</span>
-                          </>
+                          <div className="text-center">
+                            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-white border-4 border-purple-400 flex items-center justify-center shadow-xl">
+                              <Camera size={44} className="text-purple-500" strokeWidth={2.5} />
+                            </div>
+                            <p className="text-xl font-bold text-slate-900 mb-2">Upload Proof</p>
+                            <p className="text-sm text-slate-600 mb-4">Drag & drop or click to browse</p>
+                            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border-2 border-purple-300 rounded-lg text-xs text-slate-600 font-bold">
+                              <FileText size={16} />
+                              <span>{item.ui_config?.accepted_formats || 'Images & PDF'}</span>
+                            </div>
+                          </div>
                         )}
+                      </>
+                    )}
+                  </div>
+                )}
+
+                {/* Step 3.2 (If NO): Reason Selector */}
+                {isEvidenceAvailable === 'no' && (
+                  <div className="animate-in slide-in-from-top-2 duration-300">
+                    <p className="text-sm text-slate-600 mb-4 font-medium">
+                      Select the reason why evidence is not available. This will mark the item as <span className="font-bold text-rose-600">Non-Compliant</span>.
+                    </p>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                      {[
+                        { 
+                          id: 'not_maintained',
+                          label: 'Document Not Maintained',
+                          icon: Ban
+                        },
+                        { 
+                          id: 'access_denied',
+                          label: 'Access Denied',
+                          icon: AlertCircle
+                        },
+                        { 
+                          id: 'not_produced',
+                          label: 'Not Produced / Lost',
+                          icon: XCircle
+                        }
+                      ].map((option) => {
+                        const isSelected = missingEvidenceReason === option.label;
+                        return (
+                          <button
+                            key={option.id}
+                            onClick={() => {
+                              setMissingEvidenceReason(option.label);
+                              onUpdateAnswer(item.id, {
+                                ...answerData,
+                                status: 'Non-Compliant',
+                                missingEvidenceReason: option.label,
+                                evidenceUrl: null
+                              });
+                            }}
+                            className={`p-4 rounded-xl border-2 transition-all ${
+                              isSelected
+                                ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 shadow-md'
+                                : 'border-slate-200 bg-white hover:border-rose-300 hover:bg-rose-50'
+                            }`}
+                          >
+                            <div className="flex flex-col items-center gap-3">
+                              <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
+                                isSelected ? 'bg-rose-500' : 'bg-slate-100'
+                              }`}>
+                                <option.icon 
+                                  size={24} 
+                                  className={isSelected ? 'text-white' : 'text-slate-500'} 
+                                  strokeWidth={2.5} 
+                                />
+                              </div>
+                              <p className={`text-sm font-bold text-center ${
+                                isSelected ? 'text-rose-700' : 'text-slate-700'
+                              }`}>
+                                {option.label}
+                              </p>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+
+                    {/* Reset Button */}
+                    {missingEvidenceReason && (
+                      <div className="mt-4 p-4 bg-rose-50 border-2 border-rose-200 rounded-lg">
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <p className="text-sm font-bold text-rose-700">Status: Non-Compliant</p>
+                            <p className="text-xs text-slate-600 mt-1">Reason: {missingEvidenceReason}</p>
+                          </div>
+                          <button
+                            onClick={() => {
+                              setMissingEvidenceReason(null);
+                              setIsEvidenceAvailable(null);
+                              onUpdateAnswer(item.id, {
+                                ...answerData,
+                                status: null,
+                                missingEvidenceReason: null
+                              });
+                            }}
+                            className="flex items-center gap-2 px-4 py-2 bg-white border-2 border-slate-300 rounded-lg text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
+                          >
+                            <RotateCcw size={16} />
+                            Reset
+                          </button>
+                        </div>
                       </div>
                     )}
                   </div>
-                </div>
-              )}
-            </>
-          ) : (
-            /* AI Evidence Upload Widget */
-            <>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-md">
-                  <Upload size={20} className="text-white" strokeWidth={2.5} />
-                </div>
-                <h3 className="text-lg font-extrabold text-slate-800">
-                  Upload Proof
-                </h3>
-              </div>
-
-              {/* Radio Button Group: Is the evidence available? */}
-              <div className="mb-6">
-                <label className="block text-sm font-bold text-slate-700 mb-3">
-                  Is the evidence available?
-                </label>
-                <div className="flex gap-4">
-                  <button
-                    onClick={() => {
-                      setIsEvidenceAvailable('yes');
-                      setMissingEvidenceReason(null);
-                      onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
-                    }}
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 rounded-lg transition-all ${
-                      isEvidenceAvailable === 'yes'
-                        ? 'border-green-500 bg-green-50 text-green-700'
-                        : 'border-slate-300 bg-white text-slate-700 hover:border-slate-400'
-                    }`}
-                  >
-                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                      isEvidenceAvailable === 'yes' ? 'border-green-600' : 'border-slate-400'
-                    }`}>
-                      {isEvidenceAvailable === 'yes' && (
-                        <div className="w-3 h-3 rounded-full bg-green-600"></div>
-                      )}
-                    </div>
-                    <span className="font-bold">Yes</span>
-                  </button>
-                  <button
-                    onClick={() => setIsEvidenceAvailable('no')}
-                    className={`flex-1 flex items-center justify-center gap-2 px-4 py-3 border-2 rounded-lg transition-all ${
-                      isEvidenceAvailable === 'no'
-                        ? 'border-rose-500 bg-rose-50 text-rose-700'
-                        : 'border-slate-300 bg-white text-slate-700 hover:border-slate-400'
-                    }`}
-                  >
-                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center ${
-                      isEvidenceAvailable === 'no' ? 'border-rose-600' : 'border-slate-400'
-                    }`}>
-                      {isEvidenceAvailable === 'no' && (
-                        <div className="w-3 h-3 rounded-full bg-rose-600"></div>
-                      )}
-                    </div>
-                    <span className="font-bold">No</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Conditional Rendering based on isEvidenceAvailable */}
-              {isEvidenceAvailable === 'yes' && (
-                <div 
-                  className={`flex-1 border-3 border-dashed rounded-xl cursor-pointer transition-all duration-300 flex flex-col items-center justify-center p-8 ${
-                    evidenceUrl 
-                      ? 'border-purple-300 bg-gradient-to-br from-purple-50 to-indigo-50' 
-                      : 'border-purple-300 bg-purple-50/30 hover:bg-purple-50/50 hover:border-purple-400'
-                  }`}
-                  onClick={() => !evidenceUrl && aiFileInputRef.current?.click()}
-                >
-                  <input 
-                    type="file" 
-                    ref={aiFileInputRef} 
-                    className="hidden" 
-                    onChange={handleAiEvidenceUpload} 
-                    accept={item.ui_config?.accepted_formats || 'image/*,.pdf'} 
-                  />
-                  
-                  {evidenceUrl ? (
-                    <div className="text-center">
-                      <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
-                        <CheckCircle size={40} className="text-white" strokeWidth={2.5} />
-                      </div>
-                      <p className="text-lg font-bold text-purple-900 mb-2">Evidence Submitted</p>
-                      <p className="text-sm text-slate-600 mb-4">AI verification in progress</p>
-                      <div className="flex gap-2 justify-center">
-                        <a 
-                          href={evidenceUrl} 
-                          target="_blank" 
-                          rel="noreferrer"
-                          className="px-4 py-2 bg-white border border-purple-300 rounded-lg text-sm font-bold text-purple-700 hover:bg-purple-50 transition-all"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          View File
-                        </a>
-                        <button 
-                          onClick={() => aiFileInputRef.current?.click()}
-                          className="px-4 py-2 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-lg text-sm font-bold hover:from-purple-600 hover:to-indigo-700 transition-all shadow-md"
-                        >
-                          Re-upload
-                        </button>
-                      </div>
-                    </div>
-                  ) : (
-                    <>
-                      {aiUploading ? (
-                        <div className="text-center">
-                          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow-lg">
-                            <Loader2 size={40} className="animate-spin text-white" />
-                          </div>
-                          <p className="text-base font-bold text-purple-900">Uploading to AI...</p>
-                        </div>
-                      ) : (
-                        <div className="text-center">
-                          <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-white border-4 border-purple-300 flex items-center justify-center shadow-lg">
-                            <Camera size={36} className="text-purple-500" strokeWidth={2.5} />
-                          </div>
-                          <p className="text-lg font-bold text-slate-800 mb-2">Upload Proof</p>
-                          <p className="text-sm text-slate-600 mb-4">Drag & drop or click to browse</p>
-                          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-xs text-slate-600">
-                            <FileText size={14} />
-                            <span>{item.ui_config?.accepted_formats || 'Images & PDF'}</span>
-                          </div>
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
-              )}
-
-              {/* Radio Buttons for Missing Evidence Reasons */}
-              {isEvidenceAvailable === 'no' && (
-                <div className="flex-1 space-y-3 animate-in fade-in slide-in-from-top-2 duration-300">
-                  <p className="text-sm text-slate-600 mb-4">
-                    Please select the reason why evidence is not available. This will mark the item as <span className="font-bold text-rose-600">Non-Compliant</span>.
-                  </p>
-                  
-                  {[
-                    { 
-                      id: 'not_maintained',
-                      label: 'Document Not Maintained',
-                      description: 'Required document is not being maintained by the facility'
-                    },
-                    { 
-                      id: 'access_denied',
-                      label: 'Access Denied by Client',
-                      description: 'Client refused to provide access to the document'
-                    },
-                    { 
-                      id: 'not_produced',
-                      label: 'Not Produced / Lost',
-                      description: 'Document was lost or cannot be produced at this time'
-                    }
-                  ].map((option) => (
-                    <button
-                      key={option.id}
-                      onClick={() => {
-                        setMissingEvidenceReason(option.label);
-                        onUpdateAnswer(item.id, {
-                          ...answerData,
-                          status: 'Non-Compliant',
-                          missingEvidenceReason: option.label,
-                          evidenceUrl: null
-                        });
-                      }}
-                      className={`w-full text-left p-4 border-2 rounded-xl transition-all group ${
-                        missingEvidenceReason === option.label
-                          ? 'border-rose-500 bg-rose-50'
-                          : 'border-slate-200 hover:border-rose-400 hover:bg-rose-50'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center shrink-0 mt-0.5 transition-all ${
-                          missingEvidenceReason === option.label
-                            ? 'border-rose-500 bg-rose-500'
-                            : 'border-slate-300 group-hover:border-rose-500'
-                        }`}>
-                          {missingEvidenceReason === option.label && (
-                            <div className="w-2 h-2 rounded-full bg-white"></div>
-                          )}
-                        </div>
-                        <div className="flex-1">
-                          <p className={`font-bold mb-1 transition-colors ${
-                            missingEvidenceReason === option.label
-                              ? 'text-rose-700'
-                              : 'text-slate-800 group-hover:text-rose-700'
-                          }`}>
-                            {option.label}
-                          </p>
-                          <p className="text-xs text-slate-500 group-hover:text-slate-600">
-                            {option.description}
-                          </p>
-                        </div>
-                      </div>
-                    </button>
-                  ))}
-
-                  {/* Undo Button */}
-                  {missingEvidenceReason && (
-                    <div className="mt-4 p-4 bg-rose-50 border border-rose-200 rounded-lg">
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="text-sm font-bold text-rose-700 mb-1">Status: Non-Compliant</p>
-                          <p className="text-xs text-slate-600">Reason: {missingEvidenceReason}</p>
-                        </div>
-                        <button
-                          onClick={() => {
-                            setMissingEvidenceReason(null);
-                            setIsEvidenceAvailable(null);
-                            onUpdateAnswer(item.id, {
-                              ...answerData,
-                              status: null,
-                              missingEvidenceReason: null
-                            });
-                          }}
-                          className="flex items-center gap-2 px-3 py-2 bg-white border border-slate-300 rounded-lg text-sm font-bold text-slate-700 hover:bg-slate-50 transition-all"
-                        >
-                          <RotateCcw size={14} />
-                          Reset
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                </div>
-              )}
-            </>
-          )}
+                )}
+              </>
+            )}
+          </div>
         </div>
-      </div>
       )}
 
       {/* FOOTER: Collapsible Sections */}
