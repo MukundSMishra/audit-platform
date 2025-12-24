@@ -380,59 +380,12 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
 
               {/* RIGHT COLUMN: Action Interface */}
               <div className="h-full flex flex-col">
-                {/* Evidence Availability Question */}
-                <div className="mb-6">
-                  <label className="block text-base font-bold text-slate-900 mb-4">
-                    Is evidence/observation available?
-                  </label>
-                  <div className="grid grid-cols-2 gap-4">
-                    <button
-                      onClick={() => {
-                        setIsEvidenceAvailable('yes');
-                        setMissingEvidenceReason(null);
-                        onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
-                      }}
-                      className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
-                        isEvidenceAvailable === 'yes'
-                          ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 text-green-700 shadow-md'
-                          : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
-                      }`}
-                    >
-                      <div className="flex items-center justify-center gap-2">
-                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                          isEvidenceAvailable === 'yes' ? 'border-green-600 bg-green-600' : 'border-slate-400'
-                        }`}>
-                          {isEvidenceAvailable === 'yes' && <Check size={14} className="text-white" strokeWidth={3} />}
-                        </div>
-                        <span>YES</span>
-                      </div>
-                    </button>
-                    <button
-                      onClick={() => setIsEvidenceAvailable('no')}
-                      className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
-                        isEvidenceAvailable === 'no'
-                          ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 text-rose-700 shadow-md'
-                          : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
-                      }`}
-                    >
-                      <div className="flex items-center justify-center gap-2">
-                        <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
-                          isEvidenceAvailable === 'no' ? 'border-rose-600 bg-rose-600' : 'border-slate-400'
-                        }`}>
-                          {isEvidenceAvailable === 'no' && <X size={14} className="text-white" strokeWidth={3} />}
-                        </div>
-                        <span>NO</span>
-                      </div>
-                    </button>
-                  </div>
-                </div>
-
-                {/* If YES: Workflow-specific action */}
-                {isEvidenceAvailable === 'yes' && (
-                  <div className="flex-1 animate-in slide-in-from-top-2 duration-300">
-                    {isManualObservation ? (
-                      /* Manual: Compliance Buttons */
-                      <>
+                
+                {isManualObservation ? (
+                  /* MANUAL OBSERVATION: Direct Compliance Buttons (No availability check) */
+                  <div className="flex-1">
+                    {/* Compliance Buttons */}
+                    <>
                         <h4 className="text-sm font-bold text-slate-700 mb-4">Select Compliance Status</h4>
                         <div className="grid grid-cols-1 gap-3 mb-4">
                           {[
@@ -530,9 +483,60 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                           </div>
                         )}
                       </>
-                    ) : (
-                      /* AI Evidence: Smart Upload Widget */
-                      <>
+                    </div>
+                ) : (
+                  /* AI EVIDENCE WORKFLOW: Availability check -> Upload or Reason */
+                  <>
+                    {/* Evidence Availability Question */}
+                    <div className="mb-6">
+                      <label className="block text-base font-bold text-slate-900 mb-4">
+                        Is evidence/observation available?
+                      </label>
+                      <div className="grid grid-cols-2 gap-4">
+                        <button
+                          onClick={() => {
+                            setIsEvidenceAvailable('yes');
+                            setMissingEvidenceReason(null);
+                            onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
+                          }}
+                          className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
+                            isEvidenceAvailable === 'yes'
+                              ? 'border-green-500 bg-gradient-to-br from-green-50 to-emerald-50 text-green-700 shadow-md'
+                              : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
+                          }`}
+                        >
+                          <div className="flex items-center justify-center gap-2">
+                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                              isEvidenceAvailable === 'yes' ? 'border-green-600 bg-green-600' : 'border-slate-400'
+                            }`}>
+                              {isEvidenceAvailable === 'yes' && <Check size={14} className="text-white" strokeWidth={3} />}
+                            </div>
+                            <span>YES</span>
+                          </div>
+                        </button>
+                        <button
+                          onClick={() => setIsEvidenceAvailable('no')}
+                          className={`py-4 px-6 rounded-xl border-2 font-bold transition-all ${
+                            isEvidenceAvailable === 'no'
+                              ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 text-rose-700 shadow-md'
+                              : 'border-slate-300 bg-white text-slate-600 hover:border-slate-400'
+                          }`}
+                        >
+                          <div className="flex items-center justify-center gap-2">
+                            <div className={`w-6 h-6 rounded-full border-2 flex items-center justify-center ${
+                              isEvidenceAvailable === 'no' ? 'border-rose-600 bg-rose-600' : 'border-slate-400'
+                            }`}>
+                              {isEvidenceAvailable === 'no' && <X size={14} className="text-white" strokeWidth={3} />}
+                            </div>
+                            <span>NO</span>
+                          </div>
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* If YES: AI Upload Widget */}
+                    {isEvidenceAvailable === 'yes' && (
+                      <div className="flex-1 animate-in slide-in-from-top-2 duration-300">
                         <h4 className="text-sm font-bold text-slate-700 mb-4">Upload Evidence for AI Verification</h4>
                         <div 
                           className={`border-3 border-dashed rounded-xl cursor-pointer transition-all duration-300 flex flex-col items-center justify-center p-8 ${
@@ -600,55 +604,90 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                             </>
                           )}
                         </div>
-                      </>
+                      </div>
                     )}
-                  </div>
-                )}
 
-                {/* If NO: Reason Selector */}
-                {isEvidenceAvailable === 'no' && (
-                  <div className="flex-1 animate-in slide-in-from-top-2 duration-300">
-                    <p className="text-sm text-slate-600 mb-4 font-medium">
-                      Select the reason why evidence is not available. This will mark the item as <span className="font-bold text-rose-600">Non-Compliant</span>.
-                    </p>
-                    
-                    <div className="grid grid-cols-1 gap-3 mb-4">
-                      {[
-                        { id: 'not_maintained', label: 'Document Not Maintained', icon: Ban },
-                        { id: 'access_denied', label: 'Access Denied', icon: AlertCircle },
-                        { id: 'not_produced', label: 'Not Produced / Lost', icon: XCircle }
-                      ].map((option) => {
-                        const isSelected = missingEvidenceReason === option.label;
-                        return (
-                          <button
-                            key={option.id}
-                            onClick={() => {
-                              setMissingEvidenceReason(option.label);
-                              onUpdateAnswer(item.id, {
-                                ...answerData,
-                                status: 'Non-Compliant',
-                                missingEvidenceReason: option.label,
-                                evidenceUrl: null
-                              });
-                            }}
-                            className={`p-3 rounded-xl border-2 transition-all flex items-center gap-3 ${
-                              isSelected
-                                ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 shadow-md'
-                                : 'border-slate-200 bg-white hover:border-rose-300 hover:bg-rose-50'
-                            }`}
-                          >
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
-                              isSelected ? 'bg-rose-500' : 'bg-slate-100'
-                            }`}>
-                              <option.icon 
-                                size={20} 
-                                className={isSelected ? 'text-white' : 'text-slate-500'} 
-                                strokeWidth={2.5} 
-                              />
+                    {/* If NO: Reason Selector */}
+                    {isEvidenceAvailable === 'no' && (
+                      <div className="flex-1 animate-in slide-in-from-top-2 duration-300">
+                        <p className="text-sm text-slate-600 mb-4 font-medium">
+                          Select the reason why evidence is not available. This will mark the item as <span className="font-bold text-rose-600">Non-Compliant</span>.
+                        </p>
+                        
+                        <div className="grid grid-cols-1 gap-3 mb-4">
+                          {[
+                            { id: 'not_maintained', label: 'Document Not Maintained', icon: Ban },
+                            { id: 'access_denied', label: 'Access Denied', icon: AlertCircle },
+                            { id: 'not_produced', label: 'Not Produced / Lost', icon: XCircle }
+                          ].map((option) => {
+                            const isSelected = missingEvidenceReason === option.label;
+                            return (
+                              <button
+                                key={option.id}
+                                onClick={() => {
+                                  setMissingEvidenceReason(option.label);
+                                  onUpdateAnswer(item.id, {
+                                    ...answerData,
+                                    status: 'Non-Compliant',
+                                    missingEvidenceReason: option.label,
+                                    evidenceUrl: null
+                                  });
+                                }}
+                                className={`p-3 rounded-xl border-2 transition-all flex items-center gap-3 ${
+                                  isSelected
+                                    ? 'border-rose-500 bg-gradient-to-br from-rose-50 to-red-50 shadow-md'
+                                    : 'border-slate-200 bg-white hover:border-rose-300 hover:bg-rose-50'
+                                }`}
+                              >
+                                <div className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
+                                  isSelected ? 'bg-rose-500' : 'bg-slate-100'
+                                }`}>
+                                  <option.icon 
+                                    size={20} 
+                                    className={isSelected ? 'text-white' : 'text-slate-500'} 
+                                    strokeWidth={2.5} 
+                                  />
+                                </div>
+                                <p className={`text-sm font-bold ${
+                                  isSelected ? 'text-rose-700' : 'text-slate-700'
+                                }`}>
+                                  {option.label}
+                                </p>
+                              </button>
+                            );
+                          })}
+                        </div>
+
+                        {/* Reset Button */}
+                        {missingEvidenceReason && (
+                          <div className="p-3 bg-rose-50 border-2 border-rose-200 rounded-lg">
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <p className="text-sm font-bold text-rose-700">Status: Non-Compliant</p>
+                                <p className="text-xs text-slate-600 mt-1">Reason: {missingEvidenceReason}</p>
+                              </div>
+                              <button
+                                onClick={() => {
+                                  setMissingEvidenceReason(null);
+                                  setIsEvidenceAvailable(null);
+                                  onUpdateAnswer(item.id, {
+                                    ...answerData,
+                                    status: null,
+                                    missingEvidenceReason: null
+                                  });
+                                }}
+                                className="flex items-center gap-2 px-3 py-1.5 bg-white border-2 border-slate-300 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all"
+                              >
+                                <RotateCcw size={14} />
+                                Reset
+                              </button>
                             </div>
-                            <p className={`text-sm font-bold ${
-                              isSelected ? 'text-rose-700' : 'text-slate-700'
-                            }`}>
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </>
+                )}
                               {option.label}
                             </p>
                           </button>
