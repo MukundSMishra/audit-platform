@@ -688,41 +688,6 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     )}
                   </>
                 )}
-                              {option.label}
-                            </p>
-                          </button>
-                        );
-                      })}
-                    </div>
-
-                    {/* Reset Button */}
-                    {missingEvidenceReason && (
-                      <div className="p-3 bg-rose-50 border-2 border-rose-200 rounded-lg">
-                        <div className="flex items-center justify-between">
-                          <div>
-                            <p className="text-sm font-bold text-rose-700">Status: Non-Compliant</p>
-                            <p className="text-xs text-slate-600 mt-1">Reason: {missingEvidenceReason}</p>
-                          </div>
-                          <button
-                            onClick={() => {
-                              setMissingEvidenceReason(null);
-                              setIsEvidenceAvailable(null);
-                              onUpdateAnswer(item.id, {
-                                ...answerData,
-                                status: null,
-                                missingEvidenceReason: null
-                              });
-                            }}
-                            className="flex items-center gap-2 px-3 py-1.5 bg-white border-2 border-slate-300 rounded-lg text-xs font-bold text-slate-700 hover:bg-slate-50 transition-all"
-                          >
-                            <RotateCcw size={14} />
-                            Reset
-                          </button>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                )}
 
                 {/* Back Button */}
                 <div className="mt-auto pt-4 border-t border-slate-200">
@@ -734,7 +699,6 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     Back
                   </button>
                 </div>
-              </div>
               </div>
               
               {/* Progress Indicator - Bottom Center */}
