@@ -169,30 +169,23 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
               {item.question_text}
             </h2>
           </div>
-          {/* Slide Indicator */}
-          <div className="flex flex-col items-end shrink-0">
-            <span className="text-xs font-bold text-slate-500 uppercase tracking-wider">Slide {currentSlide} of 2</span>
-            <div className="flex gap-1.5 mt-2">
-              {[1, 2].map((slide) => (
-                <div
-                  key={slide}
-                  className={`h-1.5 rounded-full transition-all ${
-                    slide === currentSlide ? 'w-8 bg-gradient-to-r from-blue-500 to-purple-600' : 'w-1.5 bg-slate-300'
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
         </div>
       </div>
 
       {/* 2-SLIDE SPLIT-VIEW CONTAINER */}
-      <div className="p-6 bg-gradient-to-br from-slate-50 to-gray-50">
-        <div className="bg-white border-2 border-slate-300 rounded-xl p-6 shadow-md">
+      <div className="w-full p-6 bg-gradient-to-br from-slate-50 to-gray-50">
+        <div className="w-full bg-white border-2 border-slate-300 rounded-xl p-6 shadow-md">
           
           {/* SLIDE 1: APPLICABILITY GATE (2-Column Split-View) */}
           {currentSlide === 1 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right-4 duration-300">
+            <div className="w-full">
+              {/* Section Header */}
+              <h3 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+                <span>🛡️</span>
+                <span>Applicability Assessment</span>
+              </h3>
+              
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right-4 duration-300">
               
               {/* LEFT COLUMN: Applicability Criteria Context */}
               <div className="h-full">
@@ -303,12 +296,32 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   </div>
                 )}
               </div>
+              </div>
+              
+              {/* Progress Indicator - Bottom Center */}
+              <div className="flex justify-center items-center gap-2 mt-6 pt-4 border-t border-slate-200">
+                {[1, 2].map((slide) => (
+                  <div
+                    key={slide}
+                    className={`h-2 rounded-full transition-all ${
+                      slide === currentSlide ? 'w-8 bg-gradient-to-r from-blue-500 to-purple-600' : 'w-2 bg-slate-300'
+                    }`}
+                  />
+                ))}
+              </div>
             </div>
           )}
 
-          {/* STEP 2: UNDERSTANDING/GUIDANCE */}
+          {/* SLIDE 2: COMPLIANCE VERIFICATION */}
           {currentSlide === 2 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right-4 duration-300">
+            <div className="w-full">
+              {/* Section Header */}
+              <h3 className="text-lg font-bold text-slate-700 mb-4 flex items-center gap-2">
+                <span>{isManualObservation ? '🕵️' : '📄'}</span>
+                <span>{isManualObservation ? 'Compliance Verification' : 'Evidence Collection'}</span>
+              </h3>
+              
+              <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6 animate-in fade-in slide-in-from-right-4 duration-300">
               
               {/* LEFT COLUMN: Guidance/Requirements */}
               <div className="h-full">
@@ -682,6 +695,19 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     Back
                   </button>
                 </div>
+              </div>
+              </div>
+              
+              {/* Progress Indicator - Bottom Center */}
+              <div className="flex justify-center items-center gap-2 mt-6 pt-4 border-t border-slate-200">
+                {[1, 2].map((slide) => (
+                  <div
+                    key={slide}
+                    className={`h-2 rounded-full transition-all ${
+                      slide === currentSlide ? 'w-8 bg-gradient-to-r from-blue-500 to-purple-600' : 'w-2 bg-slate-300'
+                    }`}
+                  />
+                ))}
               </div>
             </div>
           )}
