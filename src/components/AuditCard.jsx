@@ -172,6 +172,8 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
         </div>
       </div>
 
+      {/* BODY CONTAINER */}
+      <div className="flex flex-col flex-1">
       {/* 2-SLIDE SPLIT-VIEW CONTAINER */}
       <div className="w-full p-6 bg-gradient-to-br from-slate-50 to-gray-50">
         <div className="w-full bg-white border-2 border-slate-300 rounded-xl p-6 shadow-md">
@@ -297,6 +299,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                 )}
               </div>
               </div>
+
               
               {/* Progress Indicator - Bottom Center */}
               <div className="flex justify-center items-center gap-2 mt-6 pt-4 border-t border-slate-200">
@@ -700,6 +703,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   </button>
                 </div>
               </div>
+              </div>
               
               {/* Progress Indicator - Bottom Center */}
               <div className="flex justify-center items-center gap-2 mt-6 pt-4 border-t border-slate-200">
@@ -759,6 +763,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
             onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
           />
         </div>
+      </div>
       </div>
 
     </div>

@@ -1,1910 +1,1916 @@
 [
   {
-    "audit_item_id": "OSHWC-S3(1)-01",
+    "audit_item_id": "OSHWC-SEC-03-01",
+    "category": "Statutory Compliance",
+    "risk_level": "Critical",
+    "question_text": "Has the establishment obtained a valid electronic Certificate of Registration from the registering officer?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the establishment made an electronic application for registration to the registering officer within sixty days from the date of applicability of this Code?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Registration Application",
-      "document_name": "Electronic Certificate of Registration or Application Receipt",
-      "instruction": "Upload the 'Certificate of Registration'. If pending, upload the 'Application Receipt' showing the date of submission."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Analyze this image. Return 'OK' if it looks like a Government Registration Certificate, Application Receipt, or Form-1. Return 'REJECT' if it is blurry, irrelevant, or not a document."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract the 'Date of Application' or 'Date of Issue'. 2. Compare it with the 'Establishment Start Date' provided in metadata. 3. If the difference is > 60 days, mark status 'Delayed'. 4. If the document is missing or invalid, mark 'Non-Compliant'. 5. Otherwise, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S3(4)-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer intimated the registering officer electronically within thirty days of any change in ownership, management, or other registration particulars?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Amendment Intimation",
-      "document_name": "Amendment Certificate or Intimation Receipt",
-      "instruction": "If details (Ownership/Management) have changed, upload the 'Intimation Receipt' or 'Amended Certificate'. If no changes occurred, upload a 'Nil-Change Declaration' signed by HR."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a document showing an amendment to registration, or a signed declaration? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check if the document is a 'Nil Declaration'. If yes, mark 'Compliant'. 2. If it is an amendment receipt, extract the 'Date of Change' and 'Date of Intimation'. 3. If (Intimation Date - Change Date) > 30 days, mark 'Delayed'. Else 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S3(5)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "In the event of closing the establishment, did the employer inform the registering officer and certify payment of all dues to workers within thirty days?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Closure Intimation",
-      "document_name": "Closure Notice & Dues Certification",
-      "instruction": "If the establishment is closed/closing, upload the 'Closure Intimation' sent to the officer. If active, upload a statement: 'Establishment Active - Not Applicable'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Closure Notice, Dues Certificate, or a 'Not Applicable' statement? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If text says 'Establishment Active' or similar, mark 'Compliant' (N/A). 2. If Closure Notice, check if 'Date of Intimation' is within 30 days of 'Date of Closure'. 3. Verify if 'Payment of Dues' is mentioned/certified. 4. If late or dues not certified, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S5(1)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer sent a notice of commencement of operation electronically prior to starting operations in a factory, mine, or construction work?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Notice of Commencement",
-      "document_name": "Form-IV / Notice of Commencement",
-      "instruction": "Upload the 'Notice of Commencement' submitted to the authorities. Ensure the acknowledgement stamp/date is visible."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a 'Notice of Commencement' or Form-IV? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Submission' and 'Date of Commencement of Operations'. 2. If Submission Date is > Commencement Date, mark 'Non-Compliant' (Must be prior). 3. Otherwise, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S119(1)-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the establishment possess a valid common license or single license if it operates as a factory, industrial premises for beedi/cigar, or engages contract labor?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Common/Single License",
-      "document_name": "Factory/Contract Labour License",
-      "instruction": "Upload the valid 'Common License' or 'Single License'. Check if it has expired. If renewed, upload the renewal application."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a License document (Factory/Contract Labour)? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract the 'Valid Upto' or 'Expiry Date'. 2. Compare with Today's Date. 3. If Expired, check for 'Renewal Application Date'. 4. If Expired and No Renewal, mark 'Non-Compliant'. 5. If Valid, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S6(1)(f)-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer issued an appointment letter to every employee with the prescribed information?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf"],
-      "camera_allowed": true,
-      "min_uploads": 3
-    },
-    "capture_instructions": {
-      "title": "Upload Sample Appointment Letters",
-      "document_name": "Appointment Letters (Sample)",
-      "instruction": "Select 3 random employees (1 new joinee, 1 senior). Upload their Appointment Letters ensuring the 'Employee Acknowledgement' signature is visible."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Appointment Letter or Employment Contract? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan for 'Wages', 'Designation', and 'Nature of Work'. 2. Scan for 'Signature of Employee' (Acknowledgement). 3. If basic terms or signature are missing in any of the 3 samples, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S6(1)(c)-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the employer provide free annual health examinations or tests to employees of the prescribed age or class?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Health Checkup Records",
-      "document_name": "Health Examination Report / Invoice",
-      "instruction": "Upload the 'Annual Health Checkup Report' summary or the Invoice from the Hospital/Lab showing payment by the Employer."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Medical Report, Health Checkup list, or Hospital Invoice? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract the 'Date of Examination'. 2. Ensure it is within the last 12 months. 3. Check if the 'Billed To' entity is the Employer (indicating free for employee). 4. If old or self-paid by employee, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S6(1)(e)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is the disposal of hazardous and toxic waste, including e-waste, ensured by the employer?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Waste Disposal Manifest",
-      "document_name": "Form-10 / Disposal Manifest",
-      "instruction": "Upload the latest 'Hazardous Waste Manifest' (Form 10) or Certificate from the authorized disposal agency (TSDF)."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Waste Manifest, Disposal Certificate, or Agreement with a recycler? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for 'Authorized Agency' stamp or TSDF name. 2. Check the 'Date of Disposal' is recent (last 3-6 months). 3. If no authorized agency is linked, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S10(1)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer sent notice of any accident causing death or bodily injury preventing work for 48+ hours to the prescribed authorities?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Accident Notices",
-      "document_name": "Form-12 / Accident Report",
-      "instruction": "Upload the 'Accident Notice' sent to authorities for any accident in the last year. If NO accidents occurred, upload the 'Accident Register' showing Nil entries."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Accident Notice (Form 12) or an Accident Register? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If document is a Register showing 'Nil' or 'No Accidents', mark 'Compliant'. 2. If it is an Accident Notice, check the 'Date of Accident' vs 'Date of Notice'. 3. If Notice Date > (Accident Date + 48 hours), mark 'Delayed'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S11-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer sent notice of any dangerous occurrences to the prescribed authorities?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Dangerous Occurrence Notice",
-      "document_name": "Dangerous Occurrence Report",
-      "instruction": "Upload notice sent for events like fire/explosion/collapse. If NONE occurred, upload a signed 'Nil-Declaration' for the audit period."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Dangerous Occurrence Notice or a signed Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Notice exists, check submission timeline (typically 24-48 hours). 3. Mark 'Delayed' if submitted late."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S12(1)-06",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer sent notice to authorities regarding any worker contracting a disease specified in the Third Schedule?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Disease Notification",
-      "document_name": "Form-13 / Disease Notice",
-      "instruction": "Upload the notice sent to authorities for any Third Schedule disease (e.g., Silicosis, Lead poisoning). If none, upload a 'Nil-Disease Declaration' signed by the Medical Officer."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Disease Notification Form or a 'Nil Declaration'? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Notice exists, check 'Date of Diagnosis' vs 'Date of Notice'. 3. If Notice is sent > 7 days after diagnosis (or prescribed limit), mark 'Delayed'. 4. Check if the disease named is from the Third Schedule."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S8(1)-07",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer ensured that articles used in the establishment are designed and constructed to be safe and without risk to health?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
-    },
-    "capture_instructions": {
-      "title": "Upload Safety Certificates",
-      "document_name": "Design Certificate / Test Report",
-      "instruction": "Upload the 'Third-Party Safety Certification' or 'Design Test Report' for heavy machinery (e.g., Boilers, Lifts, Cranes)."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Technical Safety Certificate, Load Test Report, or Design Manual? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan for 'Pass', 'Safe for Use', or 'Conformity' status. 2. Check the date of the last test. If > 12 months (or prescribed period), mark 'Non-Compliant'. 3. If the report indicates 'Unsafe' or 'Repairs Needed', mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S14(3)-08",
-    "workflow_type": "ai_evidence",
-    "question_text": "Did the employer take immediate remedial action upon being informed of an imminent danger by an employee?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Imminent Danger Action Report",
-      "document_name": "Action Taken Report",
-      "instruction": "Upload the report sent to the Inspector-cum-Facilitator regarding action taken on reported imminent dangers. If no such events, upload 'Nil-Incident Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Action Taken Report or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Report exists, check 'Date of Danger Report' vs 'Date of Action'. 3. If action was not 'Immediate' (same day or next day), mark 'Delayed'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S22(1)-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has a Safety Committee been constituted with equal or greater representation of workers compared to employer representatives?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Safety Committee Minutes",
-      "document_name": "Constitution Order / Minutes of Meeting",
-      "instruction": "Upload the 'Order Constituting the Committee' or the latest 'Minutes of Meeting' listing all attendees."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Does this document list names of committee members or attendees? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Identify the list of 'Management Representatives' and 'Worker Representatives'. 2. Count them. 3. Logic: If Worker_Count >= Management_Count, mark 'Compliant'. Else 'Non-Compliant'. 4. Check if the meeting date is recent (last 3 months)."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S22(2)-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer appointed the prescribed number of qualified Safety Officers?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
-    },
-    "capture_instructions": {
-      "title": "Upload Safety Officer Credentials",
-      "document_name": "Appointment Letter & Degree",
-      "instruction": "Upload the 'Appointment Letter' AND the 'Degree/Diploma in Industrial Safety' for the appointed Safety Officer(s)."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Appointment Letter or an Educational Certificate/Degree? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check Appointment Letter for 'Safety Officer' designation. 2. Check Degree for 'Industrial Safety' or equivalent qualification. 3. If both exist and match the same person, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S20(1)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the employer afford all facilities for safety and occupational health surveys conducted by authorized officers?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Survey Acknowledgement",
-      "document_name": "Survey Report / Inspection Book",
-      "instruction": "Upload the 'Inspection Book' entry or 'Survey Report' signed by the Chief Inspector/DG. If no survey was conducted, upload 'Nil-Survey Statement'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Inspection Report, Survey log, or Nil Statement? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Statement', mark 'Compliant' (N/A). 2. If Report exists, scan for 'Non-cooperation' or 'Access denied' remarks. 3. If remarks are negative, mark 'Non-Compliant'. Else 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S21(1)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the establishment collect, compile, and analyze occupational safety and health statistics in the prescribed form?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xls", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Safety Statistics",
-      "document_name": "Annual Statistical Return",
-      "instruction": "Upload the 'Annual Safety Statistics Return' filed with the government or the internal 'Safety Analysis Report'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Statistical Table, Data Chart, or Safety Report? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check if the document contains data tables (Accidents, Man-hours, Frequency Rate). 2. Check the 'Period' (Year/Month). 3. If data is present and period is current, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(i)-01",
-    "workflow_type": "manual_observation",
-    "question_text": "Is the establishment maintained in a state of cleanliness and hygiene?",
+    "applicability_criteria": "Applicable to all establishments with 10 or more workers (or as notified for hazardous activities).",
+    "section_reference": "Section 3(1) & 3(3)",
+    "legal_text": "Every employer of any establishment... shall, within sixty days from the date of such applicability of this Code, make an application electronically to the registering officer... for the registration of such establishment. The registering officer shall register the establishment and issue a certificate of registration electronically.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Walk through the entire production floor, corridors, and staircases.",
-        "Check for accumulation of dirt, cobwebs, oil spills, or overflowing waste bins.",
-        "Inspect if drains are open, clogged, or emitting foul odors.",
-        "Verify if 'Cleaning Schedule' is displayed and updated."
-      ],
-      "decision_criteria": {
-        "compliant": "Floors are clean, no accumulation of waste, drains are clear.",
-        "non_compliant": "Visible dirt heaps, oil spills, blocked drains, or foul smell."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true,
-      "require_evidence_if_non_compliant": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(ii)-02",
-    "workflow_type": "manual_observation",
-    "question_text": "Are adequate ventilation, temperature, and humidity maintained in the workrooms?",
-    "intern_action_guide": {
-      "inspection_steps": [
-        "Enter the main workrooms and stay for 5 minutes.",
-        "Check if air circulation is sufficient (fans/blowers/AC working).",
-        "Observe if workers are sweating excessively or showing signs of heat stress.",
-        "Check the 'Temperature/Humidity Gauge' if installed (should be < 30°C typically)."
-      ],
-      "decision_criteria": {
-        "compliant": "Comfortable temperature, good airflow, exhaust fans operational.",
-        "non_compliant": "Stifling heat, suffocating atmosphere, or broken ventilation systems."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(iii)-03",
-    "workflow_type": "manual_observation",
-    "question_text": "Is the work environment kept free from dust, noxious gas, fumes, and other impurities?",
-    "intern_action_guide": {
-      "inspection_steps": [
-        "Go near machines generating dust or fumes (e.g., Grinding, Welding, Chemical mixing).",
-        "Check if 'Local Exhaust Ventilation' (hoods/pipes) is installed and suction is working.",
-        "Visually check for dust clouds or haze in the air.",
-        "Smell for strong chemical odors."
-      ],
-      "decision_criteria": {
-        "compliant": "Air is clear, exhaust systems are running, no strong odors.",
-        "non_compliant": "Visible dust clouds, strong fumes, or non-functional exhaust systems."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(v)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is adequate potable drinking water provided at convenient points?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+        "Step 1: Request the electronic Certificate of Registration.",
+        "Step 2: Verify that the name and address of the establishment match the current location.",
+        "Step 3: Check if the certificate is generated within the correct timeline (60 days of applicability)."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Water Potability Report",
-      "document_name": "Water Test Report (NABL Approved)",
-      "instruction": "Upload the latest 'Drinking Water Potability Test Report' from an approved lab. Ensure the 'Date of Test' and 'Result' (Pass/Fail) are visible."
+      "document_name": "Certificate of Registration",
+      "instruction": "Upload the full PDF or clear image of the Registration Certificate issued by the Ministry/Department of Labour.",
+      "title": "Registration Certificate"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Laboratory Test Report for Water Quality? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Test'. Ensure it is within the last 12 months. 2. Look for the final conclusion: 'Fit for Drinking', 'Potable', or 'Conforms to IS:10500'. 3. If result is 'Fail' or 'Unsafe', mark 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if the uploaded document is an 'Establishment Registration Certificate' or 'Form 1'. Reject if irrelevant.",
+      "verification_logic": "Prompt: Extract the 'Establishment Name', 'Registration Date', and 'Max Number of Employees'. Verify if the date is visible and valid."
     }
   },
   {
-    "audit_item_id": "OSHWC-S23(2)(vi)-05",
-    "workflow_type": "manual_observation",
-    "question_text": "Are adequate standards maintained to prevent overcrowding and provide sufficient space to employees?",
-    "intern_action_guide": {
-      "inspection_steps": [
-        "Enter the main production/work hall.",
-        "Observe if workers are bumping into each other or machinery while working.",
-        "Check if aisles and walkways are clear of obstructions.",
-        "Look for the 'Maximum Capacity' notice on the wall (if applicable)."
-      ],
-      "decision_criteria": {
-        "compliant": "Sufficient space (approx 14.2 cubic meters/person), clear walkways, no congestion.",
-        "non_compliant": "Workers are cramped, aisles are blocked, or space feels suffocating."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(vii)-06",
-    "workflow_type": "manual_observation",
-    "question_text": "Is adequate lighting provided in every part of the establishment where workers are working or passing?",
-    "intern_action_guide": {
-      "inspection_steps": [
-        "Walk through corridors, staircases, and work areas.",
-        "Check if you can read small text (like an ID card) easily without straining eyes.",
-        "Look for flickering lights or dark corners.",
-        "Check if Emergency Exit lights are functional."
-      ],
-      "decision_criteria": {
-        "compliant": "Well-lit areas, no dark spots, no flickering lights.",
-        "non_compliant": "Dim lighting causing eye strain, broken bulbs in corridors."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(viii)-07",
-    "workflow_type": "manual_observation",
-    "question_text": "Are sufficient latrine and urinal accommodations provided separately for male, female, and transgender employees?",
-    "intern_action_guide": {
-      "inspection_steps": [
-        "Visit the restrooms.",
-        "Count the number of toilets vs approximate number of workers (Rule of thumb: 1 per 25 males/females).",
-        "Check for gender signage (Male/Female/Transgender) on doors.",
-        "Check for privacy (doors with latches) and water availability."
-      ],
-      "decision_criteria": {
-        "compliant": "Separate, marked facilities available, clean, water running, doors lockable.",
-        "non_compliant": "Common toilet for all, broken doors, no water, or foul hygiene."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true,
-      "require_evidence_if_non_compliant": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S23(2)(ix)-08",
+    "audit_item_id": "OSHWC-SEC-03-04",
+    "category": "Statutory Compliance",
+    "risk_level": "Medium",
+    "question_text": "Have any changes in ownership, management, or particulars been intimately electronically to the registering officer within 30 days?",
     "workflow_type": "ai_evidence",
-    "question_text": "Are effective arrangements made for the treatment of wastes and effluents?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable if there have been changes in ownership/management after initial registration.",
+    "section_reference": "Section 3(4)",
+    "legal_text": "Any change in the ownership or management or in any particulars... which occurs after the registration of an establishment... shall be intimated by the employer electronically to the registering officer within thirty days of such change.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask if there were any recent changes in Directors, Partners, or Occupiers.",
+        "Step 2: If yes, request the electronic intimation receipt or amended Registration Certificate.",
+        "Step 3: Verify the date of intimation is within 30 days of the change."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload PCB Consent Order",
-      "document_name": "Pollution Control Board (PCB) Consent",
-      "instruction": "Upload the 'Consent to Operate' (Air/Water) from the Pollution Control Board. Check if the 'Validity Date' is current."
+      "document_name": "Amendment Intimation / Updated Certificate",
+      "instruction": "Upload proof of intimation for change in particulars or the updated Registration Certificate.",
+      "title": "Change Intimation Proof"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Pollution Control Board Consent Order? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Valid Upto' date. 2. Compare with Today's Date. 3. If Expired, mark 'Non-Compliant'. 4. If Valid, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Notice of Change' or 'Amended Registration Certificate'.",
+      "verification_logic": "Prompt: Extract 'Date of Change' and 'Date of Intimation'. Verify if the difference is <= 30 days."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(1)(i)-01",
-    "workflow_type": "manual_observation",
-    "question_text": "Are adequate and suitable washing facilities provided separately for male and female employees?",
+    "audit_item_id": "OSHWC-SEC-05-01",
+    "category": "Statutory Compliance",
+    "risk_level": "High",
+    "question_text": "Has the employer submitted the Notice of Commencement of Operation to the appropriate authority?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to Factories, Mines, Contract Labour, and Construction establishments.",
+    "section_reference": "Section 5(1)",
+    "legal_text": "No employer of an establishment being factory or mine or relating to contract labour or building or other construction work shall use such establishment to commence the operation... without sending notice of such purpose in such form and manner... as may be prescribed.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Inspect the washing area (washbasins/taps).",
-        "Check if there are separate areas or screened sections for men and women.",
-        "Verify if soap and running water are available."
-      ],
-      "decision_criteria": {
-        "compliant": "Separate facilities, clean, running water, soap provided.",
-        "non_compliant": "No separation (mixed use), no water, or taps broken."
-      }
+        "Step 1: Request the Notice of Commencement (often Form 4-A or similar depending on state rules).",
+        "Step 2: Verify that it was submitted electronically.",
+        "Step 3: Confirm it covers the specific industry type (Factory/Mine/etc)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Notice of Commencement",
+      "instruction": "Upload the electronic receipt or copy of the Notice of Commencement submitted to the authority.",
+      "title": "Commencement Notice"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Notice of Commencement of Operation'.",
+      "verification_logic": "Prompt: Extract 'Date of Commencement' and 'Submission Date'. Confirm the document is addressed to the correct authority."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(1)(ii)-02",
-    "workflow_type": "manual_observation",
-    "question_text": "Are separate bathing places and locker rooms provided for male, female, and transgender employees?",
+    "audit_item_id": "OSHWC-SEC-06-01-F",
+    "category": "Employment Conditions",
+    "risk_level": "High",
+    "question_text": "Does the employer issue a formal appointment letter to every employee containing prescribed information?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 6(1)(f)",
+    "legal_text": "Issue a letter of appointment to every employee on his appointment in the establishment, with such information and in such form as may be prescribed... and where an employee has not been issued such appointment letter... he shall, within three months... be issued such appointment letter.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Ask if the facility requires bathing (e.g., hazardous process, mines).",
-        "If yes, inspect the locker/bathing rooms.",
-        "Check for separation of genders and security of lockers."
-      ],
-      "decision_criteria": {
-        "compliant": "Separate rooms with lockers provided.",
-        "non_compliant": "Mixed usage, no lockers where required, or dirty condition."
-      }
+        "Step 1: Select 3 random employee files.",
+        "Step 2: Check for the presence of an Appointment Letter signed by the employer.",
+        "Step 3: Ensure it contains wage details, designation, and terms of employment."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Sample Appointment Letter",
+      "instruction": "Upload one anonymized or sample appointment letter currently in use.",
+      "title": "Appointment Letter Verification"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document looks like an 'Appointment Letter' or 'Employment Contract'.",
+      "verification_logic": "Prompt: Verify presence of 'Employee Name', 'Designation', 'Wages/Salary', and 'Employer Signature'."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(1)(iv)-03",
-    "workflow_type": "manual_observation",
-    "question_text": "Are sitting arrangements provided for all employees who are obliged to work in a standing position?",
+    "audit_item_id": "OSHWC-SEC-06-01-C",
+    "category": "Health & Safety",
+    "risk_level": "High",
+    "question_text": "Does the employer provide free annual health examinations to eligible employees?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to establishments with employees of prescribed age/class (typically hazardous industries or older workers).",
+    "section_reference": "Section 6(1)(c)",
+    "legal_text": "Provide such annual health examination or test free of costs to such employees of such age or such class of employees of establishments... as may be prescribed.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Identify workers who stand all day (e.g., assembly line, machine operators).",
-        "Look for chairs, stools, or benches nearby for them to rest occasionally.",
-        "Ask a worker: 'Are you allowed to sit when not working?'"
-      ],
-      "decision_criteria": {
-        "compliant": "Seating provided near workstations.",
-        "non_compliant": "No chairs visible, workers forced to stand continuously."
-      }
+        "Step 1: Request the Annual Health Check-up policy or recent records.",
+        "Step 2: Verify that the cost is borne by the employer (not deducted from wages).",
+        "Step 3: Check records for employees above the prescribed age threshold (often 45+)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Health Examination Record / Invoice",
+      "instruction": "Upload a summary report of health checkups or an invoice from the medical provider proving employer payment.",
+      "title": "Health Check Compliance"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Medical Checkup Report', 'Health Camp Invoice' or 'Health Policy'.",
+      "verification_logic": "Prompt: Scan for keywords like 'Annual Health Check', 'Free of Cost', or payment details indicating employer liability."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(1)(v)-04",
+    "audit_item_id": "OSHWC-SEC-06-01-A",
+    "category": "Health & Safety",
+    "risk_level": "Critical",
+    "question_text": "Is the workplace visibly free from hazards likely to cause injury or occupational disease?",
     "workflow_type": "manual_observation",
-    "question_text": "Is a canteen facility provided in the establishment where one hundred or more workers are ordinarily employed?",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 6(1)(a)",
+    "legal_text": "Ensure that workplace is free from hazards which cause or are likely to cause injury or occupational disease to the employees.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Check worker count. If <100, mark Compliant (N/A).",
-        "If >100, visit the canteen.",
-        "Check if food is being served, seating is adequate, and the kitchen looks hygienic.",
-        "Check if the Price List is displayed."
-      ],
-      "decision_criteria": {
-        "compliant": "Canteen exists, is operational, and clean.",
-        "non_compliant": "No canteen despite >100 workers, or canteen is non-functional/unhygienic."
-      }
+        "Step 1: Walk through the main production or work areas.",
+        "Step 2: Look for exposed wiring, blocked exits, slippery floors, or unguarded machinery.",
+        "Step 3: Observe if workers are wearing necessary PPE."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Site Safety Photo",
+      "instruction": "Take a photo of the general work floor showing clear aisles and safe conditions, or a photo of a specific hazard if found.",
+      "title": "Workplace Safety Check"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a workplace environment (factory floor, office, construction site).",
+      "verification_logic": "Prompt: Analyze image for obvious hazards like 'fire', 'blocked path', 'spill', or 'exposed wires'. (Experimental)"
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(1)(vii)-05",
-    "workflow_type": "manual_observation",
-    "question_text": "Are adequate first-aid boxes or cupboards with contents readily accessible during all working hours?",
+    "audit_item_id": "OSHWC-SEC-119-01",
+    "category": "Statutory Compliance",
+    "risk_level": "High",
+    "question_text": "If applicable, does the establishment hold a valid Common License for Factory, Contract Labour, and Beedi work?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if the employer has opted for a single license under Section 119.",
+    "section_reference": "Section 119(1)",
+    "legal_text": "Any person desirous of obtaining common licence in respect of a factory, industrial premises for beedi and cigar work and for engaging contract workers... shall make an application electronically... such authority shall issue a licence.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Locate the First-Aid box on the floor.",
-        "Open it. Check if it contains basic items (bandages, antiseptic, cotton, burnol).",
-        "Check expiry dates on one or two medicines.",
-        "Ensure the box is NOT locked or the key is immediately available."
-      ],
-      "decision_criteria": {
-        "compliant": "Box accessible, contents fully stocked and not expired.",
-        "non_compliant": "Box empty, locked with no key, or medicines expired."
-      }
+        "Step 1: Ask if the unit operates under a Common License scheme.",
+        "Step 2: If yes, verify the single license covers all relevant activities (Factory + CL).",
+        "Step 3: Check validity (5 years typically).",
+        "Step 4: If no, ensure separate licenses are available."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Common License / Single License",
+      "instruction": "Upload the Common License if availed, otherwise skip or upload individual licenses.",
+      "title": "Common License Verification"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Common License' or 'Unified License'.",
+      "verification_logic": "Prompt: Extract 'Valid From', 'Valid Till', and 'Activities Covered' (Factory, Contract Labour)."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(2)(i)-06",
-    "workflow_type": "manual_observation",
-    "question_text": "Is an ambulance room provided where more than five hundred workers are ordinarily employed?",
+    "audit_item_id": "OSHWC-SEC-25-01",
+    "category": "Working Hours",
+    "risk_level": "High",
+    "question_text": "Does the establishment strictly adhere to the 8-hour daily working limit?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 25(1)(a) [cite: 732]",
+    "legal_text": "No worker shall be required or allowed to work, in any establishment or class of establishment for more than eight hours in a day.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Check total worker count. If <500, mark Compliant (N/A).",
-        "If >500, inspect the Ambulance Room.",
-        "Verify if a nurse or medical assistant is present.",
-        "Check if the room has a bed, stretcher, and oxygen cylinder."
-      ],
-      "decision_criteria": {
-        "compliant": "Room exists, is staffed, and equipped.",
-        "non_compliant": "No room, room used for storage, or no medical staff available."
-      }
+        "Step 1: Request the Muster Roll or Attendance Register for the last month.",
+        "Step 2: Select a sample of 5 workers.",
+        "Step 3: Check their 'Time In' and 'Time Out' entries to ensure the working duration (excluding breaks) does not exceed 8 hours."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Attendance Register / Muster Roll",
+      "instruction": "Upload a clear image of the attendance register page showing daily hours for a random week.",
+      "title": "Daily Hours Check"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is an 'Attendance Register' or 'Time Sheet'.",
+      "verification_logic": "Prompt: Extract 'Time In', 'Time Out', and 'Break Duration'. Calculate total working hours. Flag if any entry > 8 hours."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(2)(iii)-07",
-    "workflow_type": "manual_observation",
-    "question_text": "Are separate shelters or rest-rooms and lunch-rooms provided for male, female, and transgender employees where required?",
+    "audit_item_id": "OSHWC-SEC-26-01",
+    "category": "Working Hours",
+    "risk_level": "High",
+    "question_text": "Is every worker allowed a weekly holiday (day of rest)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 26(1) [cite: 766]",
+    "legal_text": "No worker shall be allowed to work in an establishment for more than six days in any one week.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Check worker count (>50).",
-        "Visit the Rest Room / Lunch Room.",
-        "Verify if it is well-ventilated, lit, and clean.",
-        "Check for gender separation (different rooms or partitioned areas)."
-      ],
-      "decision_criteria": {
-        "compliant": "Clean, separate rooms available for dining/resting.",
-        "non_compliant": "Workers eating on production floor, dirty rooms, or no separation."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S24(2)(iv)-08",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has a Welfare Officer been appointed where two hundred and fifty or more workers are ordinarily employed?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
+        "Step 1: Review the Shift Schedule or Attendance Register.",
+        "Step 2: Verify that every worker has at least one 'Off' or 'Rest' day marked in every 7-day cycle.",
+        "Step 3: If a worker worked on a rest day, check if a compensatory holiday was given."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Welfare Officer Docs",
-      "document_name": "Appointment Letter & Qualification",
-      "instruction": "Upload the 'Appointment Letter' of the Welfare Officer AND their 'Degree/Diploma in Social Science/Labour Welfare'."
+      "document_name": "Shift Schedule / Attendance Register",
+      "instruction": "Upload the shift roster or attendance log showing weekly off days.",
+      "title": "Weekly Holiday Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Appointment Letter or University Degree? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check Appointment Letter for 'Welfare Officer' title. 2. Check Degree for 'Labour Welfare' or 'Social Work'. 3. If both match the same person, mark 'Compliant'. If missing or unqualified, mark 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if the document is a 'Shift Schedule' or 'Attendance Log'.",
+      "verification_logic": "Prompt: Analyze the sequence of 'Present' days. Flag if any worker has > 6 consecutive working days without a 'Rest' marker."
     }
   },
   {
-    "audit_item_id": "OSHWC-S24(3)-09",
-    "workflow_type": "manual_observation",
-    "question_text": "Is a crèche facility provided where more than fifty workers are ordinarily employed?",
+    "audit_item_id": "OSHWC-SEC-27-01",
+    "category": "Wages & Overtime",
+    "risk_level": "High",
+    "question_text": "Are workers paid overtime wages at double the normal rate for extra work?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments where overtime work is performed.",
+    "section_reference": "Section 27 [cite: 771]",
+    "legal_text": "There shall be paid wages at the rate of twice the rate of wages in respect of overtime work, where a worker works... for more than such hours of work in any day or in any week.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Check worker count (>50).",
-        "Visit the Crèche (or ask for the agreement with a nearby common crèche).",
-        "If on-site: Check if it is clean, has toys/beds, and is safe for kids.",
-        "If off-site: Verify the distance is reasonable."
-      ],
-      "decision_criteria": {
-        "compliant": "Facility exists, looks safe and hygienic.",
-        "non_compliant": "No facility provided despite having >50 workers."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S25(1)(a)-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is the daily working limit of eight hours strictly adhered to for all workers?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "xlsx"],
-      "camera_allowed": true,
-      "min_uploads": 1
+        "Step 1: Identify workers who worked overtime from the Attendance Register.",
+        "Step 2: Request the 'Register of Overtime' or Wage Slip for those workers.",
+        "Step 3: Compare the 'OT Rate' with the 'Normal Hourly Rate'. It must be exactly 2x.",
+        "Step 4: Ensure OT hours are calculated daily or weekly (whichever is more beneficial)."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Attendance Register",
-      "document_name": "Form-D / Attendance Log",
-      "instruction": "Upload the 'Attendance Register' for the last month. Ensure 'In-Time' and 'Out-Time' columns are clearly visible for a random sample of workers."
+      "document_name": "Overtime Register / Wage Slip",
+      "instruction": "Upload the Overtime Register or a Wage Slip showing OT calculation.",
+      "title": "Overtime Payment Check"
     },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Attendance Register with Time-In/Time-Out columns? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Pick 5 random rows. 2. Calculate (OutTime - InTime) - RestInterval. 3. If Result > 8 hours (or 9 including rest) WITHOUT overtime marking, mark 'Non-Compliant'. 4. If all are <= 8 hours, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S27-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are wages paid at twice the ordinary rate for any overtime work performed?",
     "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Overtime Wage Proof",
-      "document_name": "Wage Slip / OT Register",
-      "instruction": "Find a worker who did Overtime last month. Upload their 'Wage Slip' showing the 'OT Rate' or 'OT Amount' calculation."
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Wage Slip or Payroll Sheet showing Overtime? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Basic Wage Rate' (A). 2. Extract 'Overtime Rate' (B). 3. Calculate Ratio = B / A. 4. If Ratio >= 2.0, mark 'Compliant'. 5. If Ratio < 2.0 or OT paid as 'Single Rate', mark 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is an 'Overtime Register' or 'Wage Slip'.",
+      "verification_logic": "Prompt: Extract 'Normal Rate', 'Overtime Rate', and 'OT Hours'. Verify if Overtime Rate == 2 * Normal Rate."
     }
   },
   {
-    "audit_item_id": "OSHWC-S27-Proviso-03",
+    "audit_item_id": "OSHWC-SEC-28-01",
+    "category": "Working Hours",
+    "risk_level": "Medium",
+    "question_text": "For night shifts extending beyond midnight, is the 24-hour rest period correctly calculated?",
     "workflow_type": "ai_evidence",
-    "question_text": "Is the consent of the worker obtained prior to requiring them to work overtime?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload OT Consent Form",
-      "document_name": "Overtime Consent Record",
-      "instruction": "Upload a sample 'Overtime Consent Form' signed by a worker, or a digital log showing worker acceptance of OT."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a signed Consent Form or Digital Approval Log? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan for 'Consent', 'Agree', or 'Willingness'. 2. Check for Employee Signature/Digital ID. 3. If signed and dated, mark 'Compliant'. If blank or missing, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S31(1)-04",
-    "workflow_type": "manual_observation",
-    "question_text": "Is the Notice of Periods of Work displayed correctly and maintained at the establishment?",
+    "applicability_criteria": "Applicable to establishments with night shifts.",
+    "section_reference": "Section 28 [cite: 774]",
+    "legal_text": "Where a worker... works on a shift which extends beyond midnight... a weekly holiday for a whole day shall mean in his case a period of twenty-four consecutive hours beginning when his shift ends.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Go to the Notice Board near the main entrance.",
-        "Look for 'Form-A' or 'Notice of Periods of Work'.",
-        "Check if it shows Start Time, End Time, Rest Intervals, and Shift Groups.",
-        "Verify it is in English and the Local Language."
-      ],
-      "decision_criteria": {
-        "compliant": "Notice is displayed, filled out, and readable.",
-        "non_compliant": "Notice missing, blank/unfilled, or torn."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true,
-      "require_evidence_if_non_compliant": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S31(3)-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are changes to the system of work intimated to the Inspector-cum-Facilitator before implementation?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+        "Step 1: Identify night shift workers (e.g., Shift C: 10 PM - 6 AM).",
+        "Step 2: Check the 'Weekly Off' timing.",
+        "Step 3: Ensure the next shift does not start until 24 hours after the night shift ended."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Shift Change Intimation",
-      "document_name": "Intimation Letter to Inspector",
-      "instruction": "If shift timings changed recently, upload the 'Intimation Letter' sent to the Inspector. If no changes, upload 'Nil-Change Declaration'."
+      "document_name": "Night Shift Roster",
+      "instruction": "Upload the roster for night shift workers showing shift end times and next shift start times.",
+      "title": "Night Shift Rest Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Letter to the Inspector or a Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Letter exists, compare 'Date of Letter' with 'Date of Shift Change' (from context/letter). 3. If Letter Date < Change Date (Prior Intimation), mark 'Compliant'. Else 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Shift Roster'.",
+      "verification_logic": "Prompt: Identify 'Shift End Time' on the day before the holiday. Verify the next 'Shift Start Time' is >= 24 hours later."
     }
   },
   {
-    "audit_item_id": "OSHWC-S29(1)-06",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is the system of shifts arranged to ensure no overlapping relays of workers doing the same kind of work?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "xlsx"],
-      "camera_allowed": true,
-      "min_uploads": 1
+    "audit_item_id": "OSHWC-SEC-29-01",
+    "category": "Working Hours",
+    "risk_level": "Medium",
+    "question_text": "Is the system of overlapping shifts prohibited (except for Mines)?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments except Mines (Section 29(1) [cite: 777]).",
+    "section_reference": "Section 29(1) [cite: 777]",
+    "legal_text": "The work shall not be carried on in any establishment by means of a system of shifts so arranged that more than one relay of workers is engaged in work of the same kind at the same time.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the shift schedule.",
+        "Step 2: Check if Shift A and Shift B overlap (e.g., A: 6AM-2PM, B: 1PM-9PM).",
+        "Step 3: If overlap exists, ask for a specific exemption order from the Chief Inspector-cum-Facilitator."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Shift Roster",
-      "document_name": "Shift Schedule",
-      "instruction": "Upload the 'Shift Roster' showing timings for Shift A, B, and C. Ensure overlap times (if any) are visible."
+      "document_name": "Shift Schedule / Exemption Order",
+      "instruction": "Upload the Shift Schedule. If overlaps exist, upload the Exemption Order.",
+      "title": "Shift Overlap Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Shift Roster or Time Table? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Identify Stop Time of Shift A and Start Time of Shift B. 2. If Shift B starts BEFORE Shift A ends (Overlap), check if they do the same work. 3. If Overlap exists without specific Exemption Order, mark 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Shift Schedule' or 'Exemption Order'.",
+      "verification_logic": "Prompt: Analyze shift timings. Detect overlaps. If overlap found, flag for manual review unless 'Exemption' keyword is present."
     }
   },
   {
-    "audit_item_id": "OSHWC-S30-07",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are measures in place to prevent double employment of workers who have worked in another factory/mine within the preceding 12 hours?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+    "audit_item_id": "OSHWC-SEC-30-01",
+    "category": "Working Hours",
+    "risk_level": "Medium",
+    "question_text": "Is double employment restricted (no work in two establishments within 12 hours)?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to Factories and Mines.",
+    "section_reference": "Section 30 [cite: 780]",
+    "legal_text": "No worker shall be required or allowed to work in a mine or factory if he has already been working in any other such similar establishment within the preceding twelve hours.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: This is difficult to verify directly.",
+        "Step 2: Check for any shared workers with nearby sister concerns.",
+        "Step 3: Verify shift timings do not conflict/overlap between the two units."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Double Employment Declaration",
-      "document_name": "Worker Declaration Form",
-      "instruction": "Upload a sample 'Declaration Form' signed by a new joiner stating they are not working elsewhere. If not available, upload the 'Appointment Letter' clause forbidding dual employment."
+      "document_name": "Worker Declaration / Policy",
+      "instruction": "Upload a policy document or worker declaration form where they state they are not employed elsewhere.",
+      "title": "Double Employment Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a signed Declaration or Employment Contract clause? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for text 'Dual Employment' or 'Double Employment' or 'Working elsewhere'. 2. Verify if the worker certifies they have not worked in the preceding 12 hours. 3. If clause exists and is signed, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Declaration' or 'HR Policy'.",
+      "verification_logic": "Prompt: Scan for clause prohibiting 'Dual Employment' or 'Double Work' within 12 hours."
     }
   },
   {
-    "audit_item_id": "OSHWC-S26(1)-01",
+    "audit_item_id": "OSHWC-SEC-31-01",
+    "category": "Statutory Notices",
+    "risk_level": "Medium",
+    "question_text": "Is the Notice of Periods of Work displayed correctly?",
     "workflow_type": "ai_evidence",
-    "question_text": "Is every worker allowed a weekly holiday, ensuring they do not work for more than six days in any one week?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 31(1) [cite: 781]",
+    "legal_text": "There shall be displayed and correctly maintained in every establishment a notice of periods of work, showing clearly for every day the periods during which workers may be required to work.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Go to the main notice board.",
+        "Step 2: Look for 'Form 13' (or state equivalent) showing shift start/end times and rest intervals.",
+        "Step 3: Verify it is legible and up-to-date."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Weekly Holiday Proof",
-      "document_name": "Attendance Register (Month View)",
-      "instruction": "Upload the 'Attendance Register' for the previous month. Ensure 'Sundays' or 'Rest Days' (marked as 'W' or 'H') are clearly visible."
+      "document_name": "Notice of Periods of Work",
+      "instruction": "Take a photo of the Notice Board showing the 'Notice of Periods of Work'.",
+      "title": "Notice Board Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Attendance Register showing a full month? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Select 3 random workers. 2. Scan their attendance row. 3. Check for any sequence of 'Present' (P) > 6 days without a 'Holiday' (H) or 'Week Off' (W). 4. If > 6 consecutive work days found, mark 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if image contains a table with 'Shift', 'Time', 'Rest Interval'.",
+      "verification_logic": "Prompt: Verify if the notice includes 'Start Time', 'End Time', and 'Break Duration'."
     }
   },
   {
-    "audit_item_id": "OSHWC-S26(3)-02",
+    "audit_item_id": "OSHWC-SEC-26-03-A",
+    "category": "Leave & Holidays",
+    "risk_level": "Medium",
+    "question_text": "Are compensatory holidays granted within 2 months if a worker works on a weekly holiday?",
     "workflow_type": "ai_evidence",
-    "question_text": "Are compensatory holidays granted within two months to workers deprived of any weekly holiday due to exemptions?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable when workers are deprived of weekly holidays due to exemption.",
+    "section_reference": "Section 26(3) [cite: 770]",
+    "legal_text": "The worker shall be allowed, within the month in which the holidays were due or within the two months immediately following that month, compensatory holidays of equal number to the holidays, so deprived.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify workers who worked on their rest day (from Attendance Register).",
+        "Step 2: Check the 'Compensatory Holiday Register' (Form 15 equivalent).",
+        "Step 3: Verify the compensatory off was taken within 2 months."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Comp-Off Register",
-      "document_name": "Register of Compensatory Holidays",
-      "instruction": "Upload the 'Compensatory Holiday Register'. If no workers worked on holidays, upload 'Nil-Work on Holiday Declaration'."
+      "document_name": "Compensatory Holiday Register",
+      "instruction": "Upload the register showing work on rest days and subsequent compensatory offs.",
+      "title": "Compensatory Off Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Compensatory Holiday Register or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Register: Find a 'Work on Holiday' date (Date A). 3. Find the corresponding 'Compensatory Off' date (Date B). 4. Calculate Days = Date B - Date A. 5. If Days > 60, mark 'Delayed'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Compensatory Holiday Register'.",
+      "verification_logic": "Prompt: For every 'Work on Holiday' entry, find the corresponding 'Compensatory Off' date. Verify difference is <= 60 days."
     }
   },
   {
-    "audit_item_id": "OSHWC-S32(1)-03",
+    "audit_item_id": "OSHWC-SEC-22-01",
+    "category": "Safety Management",
+    "risk_level": "High",
+    "question_text": "Has a Safety Committee been constituted with equal representation of workers and employers?",
     "workflow_type": "ai_evidence",
-    "question_text": "Are workers who have worked 180 days or more in a calendar year granted annual leave with wages at the prescribed rate?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to Factories/Construction (>250 workers), Mines (>100 workers), or as notified.",
+    "section_reference": "Section 22(1)",
+    "legal_text": "Require any establishment... to constitute in the prescribed manner a Safety Committee consisting of representatives of employers and workers... number of representatives of workers shall not be less than the number of representatives of the employer.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the official order constituting the Safety Committee.",
+        "Step 2: Check the list of members.",
+        "Step 3: Verify that the number of worker representatives >= employer representatives.",
+        "Step 4: Check minutes of the last meeting to ensure it is active."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Annual Leave Record",
-      "document_name": "Leave with Wages Register (Form-15)",
-      "instruction": "Upload the 'Leave with Wages Register' for the last calendar year. Show the columns for 'Days Worked' and 'Leave Credited'."
+      "document_name": "Safety Committee Minutes / Constitution Order",
+      "instruction": "Upload the document showing the list of Safety Committee members and minutes of the latest meeting.",
+      "title": "Safety Committee Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Leave Register showing Days Worked and Leave Balance? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Identify a worker with 'Days Worked' >= 180. 2. Calculate Expected Leave = Days Worked / 20. 3. Compare with 'Leave Credited'. 4. If Credited < Expected, mark 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is 'Safety Committee Minutes' or 'Constitution Order'.",
+      "verification_logic": "Prompt: Extract names of 'Employer Representatives' and 'Worker Representatives'. Count them. Verify Worker Count >= Employer Count."
     }
   },
   {
-    "audit_item_id": "OSHWC-S32(1)(vii)-04",
+    "audit_item_id": "OSHWC-SEC-22-02",
+    "category": "Safety Management",
+    "risk_level": "High",
+    "question_text": "Has the required number of Safety Officers been appointed?",
     "workflow_type": "ai_evidence",
-    "question_text": "Is the carry-forward of unavailed annual leave compliant with the maximum limit of thirty days?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to Factories (>500 workers or >250 if hazardous), Construction (>250), Mines (>100).",
+    "section_reference": "Section 22(2)",
+    "legal_text": "In every establishment which is a factory... mine... building or other construction work... the employer shall also appoint such number of safety officers, who shall possess such qualifications and perform such duties, as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Determine the total worker count.",
+        "Step 2: If above threshold, request the Appointment Letter of the Safety Officer(s).",
+        "Step 3: Verify the officer possesses the required technical qualifications."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Leave Carry Forward Proof",
+      "document_name": "Safety Officer Appointment Letter",
+      "instruction": "Upload the appointment letter of the Safety Officer.",
+      "title": "Safety Officer Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Appointment Letter' or 'CV'.",
+      "verification_logic": "Prompt: Search for designation 'Safety Officer'. Extract 'Qualifications'. Verify presence of safety-related degree/diploma."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-23-01",
+    "category": "Hygiene & Sanitation",
+    "risk_level": "Critical",
+    "question_text": "Are separate latrine and urinal accommodations provided for male, female, and transgender employees?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 23(2)(viii)",
+    "legal_text": "Sufficient arrangement for latrine and urinal accommodation to male, female and transgender employee separately and maintaining hygiene therein.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Visit the washroom facilities.",
+        "Step 2: Check for clear signage distinguishing 'Male', 'Female', and 'Transgender' (if applicable) toilets.",
+        "Step 3: Ensure privacy, water availability, and general hygiene."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Washroom Signage Photo",
+      "instruction": "Take a photo of the washroom entrance showing the signage for separate facilities.",
+      "title": "Gender Separated Toilets"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Toilet' or 'Restroom' doors/signage.",
+      "verification_logic": "Prompt: Detect text/symbols for 'Men/Male', 'Women/Female', and 'Transgender/Unisex'. Flag if only one type is found."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-23-02",
+    "category": "Health",
+    "risk_level": "Critical",
+    "question_text": "Is potable drinking water provided at accessible points?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 23(2)(v)",
+    "legal_text": "Potable drinking water [must be provided].",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the drinking water stations.",
+        "Step 2: Check if the water is clean and the area is hygienic (no waste water pooling).",
+        "Step 3: Look for 'Drinking Water' signage.",
+        "Step 4: Ask for the latest water testing report."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Drinking Water Station Photo",
+      "instruction": "Take a photo of the drinking water cooler/station marked with signage.",
+      "title": "Drinking Water Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'Water Cooler', 'RO Plant' or 'Dispenser'.",
+      "verification_logic": "Prompt: Verify presence of 'Drinking Water' signage. Check for cleanliness of the area."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-06-02",
+    "category": "Health & Safety",
+    "risk_level": "High",
+    "question_text": "Is the workplace strictly free from accumulated waste and toxic effluents?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 6(1)(e) & 23(2)(ix)",
+    "legal_text": "Ensure the disposal of hazardous and toxic waste including disposal of e-waste... Effective arrangements for treatment of wastes and effluents.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Inspect waste storage areas.",
+        "Step 2: Ensure hazardous waste is segregated and labeled.",
+        "Step 3: Verify there is no accumulation of e-waste or toxic leakage on the floors."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Waste Disposal Area Photo",
+      "instruction": "Take a photo of the designated waste storage area showing segregation or bins.",
+      "title": "Waste Management Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Waste Bins', 'Disposal Yard' or 'Effluent Treatment Plant'.",
+      "verification_logic": "Prompt: Detect labels like 'Hazardous', 'E-waste', or color-coded bins. Flag if waste is dumped openly."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-23-03",
+    "category": "Environment",
+    "risk_level": "Medium",
+    "question_text": "Are lighting, ventilation, and temperature maintained at adequate standards?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 23(2)(ii) & (vii)",
+    "legal_text": "Ventilation, temperature and humidity... Adequate lighting.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Walk through the darkest part of the facility.",
+        "Step 2: Ensure visibility is sufficient to work safely.",
+        "Step 3: Check if air circulation is adequate (fans, exhaust, AC) and temperature is bearable.",
+        "Step 4: Note any excessive dust or fumes."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Work Floor Environment Photo",
+      "instruction": "Take a wide-angle photo of the work floor showing lighting fixtures and ventilation (fans/ducts).",
+      "title": "Lighting & Ventilation Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows an 'Interior Workspace'.",
+      "verification_logic": "Prompt: Identify 'Lights', 'Windows', 'Fans', or 'Ventilation Ducts'. Flag if the image appears excessively dark."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-01",
+    "category": "Welfare",
+    "risk_level": "Critical",
+    "question_text": "Are adequate first-aid boxes with prescribed contents readily accessible during all working hours?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 24(1)(vii)",
+    "legal_text": "The employer shall be responsible to provide and maintain... adequate first-aid boxes or cupboards with contents readily accessible during all working hours.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the First Aid boxes on the shop floor or office area.",
+        "Step 2: Check if they are unlocked or the key is immediately available.",
+        "Step 3: Open a box and verify contents against the prescribed list (bandages, antiseptics, etc.).",
+        "Step 4: Ensure contents are not expired."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "First Aid Box Photo",
+      "instruction": "Take a photo of the open First Aid box showing its contents and the location signage.",
+      "title": "First Aid Availability"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'First Aid Box' or medical supplies.",
+      "verification_logic": "Prompt: Identify items like 'Bandage', 'Cotton', 'Antiseptic'. Flag if the box appears empty or depleted."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-02",
+    "category": "Welfare",
+    "risk_level": "High",
+    "question_text": "Are separate and suitable washing facilities provided for male and female employees?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 24(1)(i)",
+    "legal_text": "Adequate and suitable facilities for washing to male and female employees separately.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Inspect the washing area (sinks/taps).",
+        "Step 2: Verify separation for male and female employees (screens or separate rooms).",
+        "Step 3: Check for water supply and cleaning agents (soap).",
+        "Step 4: Ensure privacy is maintained."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Washing Facility Photo",
+      "instruction": "Take a photo of the washing area showing separate sections or entrances for men and women.",
+      "title": "Washing Facilities Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Sinks', 'Washbasins' or 'Bathing Area'.",
+      "verification_logic": "Prompt: Look for gender signage (Male/Female) near the facilities. Confirm existence of water taps."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-03",
+    "category": "Welfare",
+    "risk_level": "Medium",
+    "question_text": "Are suitable sitting arrangements provided for employees obliged to work in a standing position?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to establishments where work is primarily done standing.",
+    "section_reference": "Section 24(1)(iv)",
+    "legal_text": "Sitting arrangements for all employees obliged to work in a standing position.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify areas where workers stand for long periods (e.g., assembly lines, retail counters).",
+        "Step 2: Check for stools, chairs, or benches provided nearby for rest intervals.",
+        "Step 3: Ensure the seating does not obstruct emergency exits."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Sitting Arrangement Photo",
+      "instruction": "Take a photo of the work area showing the stools or chairs provided for standing workers.",
+      "title": "Seating Facility Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Chairs', 'Stools' or 'Benches' in a work environment.",
+      "verification_logic": "Prompt: Verify if seating is present near work stations."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-04",
+    "category": "Welfare",
+    "risk_level": "High",
+    "question_text": "Is a canteen provided and maintained if the establishment employs 100 or more workers?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to establishments with 100 or more workers (including contract labour).",
+    "section_reference": "Section 24(1)(v)",
+    "legal_text": "Facilities of canteen in an establishment for employees thereof, wherein one hundred or more workers including contract labourers are ordinarily employed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Confirm total worker count (direct + contract). If <100, skip.",
+        "Step 2: Visit the canteen area.",
+        "Step 3: Check for hygiene, adequate seating, and food availability.",
+        "Step 4: Check if a Canteen Management Committee exists (optional but good practice)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Canteen Photo",
+      "instruction": "Take a photo of the canteen hall showing seating arrangements and the food counter.",
+      "title": "Canteen Facility Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'Cafeteria', 'Dining Hall' or 'Kitchen'.",
+      "verification_logic": "Prompt: Verify presence of tables/chairs and food service area. Check for general cleanliness."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-05",
+    "category": "Welfare",
+    "risk_level": "High",
+    "question_text": "Is a creche facility provided (separately or commonly) if the establishment employs more than 50 workers?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to establishments with more than 50 workers.",
+    "section_reference": "Section 24(3)",
+    "legal_text": "Facility of creche having suitable room or rooms for the use of children under the age of six years... in establishments wherein more than fifty workers are ordinarily employed. Provided that an establishment can avail common creche facility...",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Confirm worker count (>50).",
+        "Step 2: Visit the Creche facility.",
+        "Step 3: If on-site: Check for safety, ventilation, toys, and bedding.",
+        "Step 4: If off-site (common facility): Request proof of tie-up/agreement."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Creche Photo / Agreement",
+      "instruction": "Upload a photo of the Creche room (if on-site) or the Agreement with a common Creche provider.",
+      "title": "Creche Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if upload is a 'Room Photo' (toys/beds) or 'Legal Agreement'.",
+      "verification_logic": "Prompt: If Image: Look for 'Cribs', 'Toys', 'Kids'. If PDF: Search for 'Creche Services Agreement' and validity date."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-06",
+    "category": "Welfare",
+    "risk_level": "Medium",
+    "question_text": "Are separate shelters or rest-rooms provided for male, female, and transgender employees?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to Factories and Mines (>50 workers) and Motor Transport Undertakings (night halts).",
+    "section_reference": "Section 24(2)(iii)",
+    "legal_text": "Adequate, suitable and separate shelters or rest-rooms for male, female and transgender employees and lunch-room in every factory and mine wherein more than fifty workers are ordinarily employed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the rest room or lunch room.",
+        "Step 2: Verify if it is separate from the workroom.",
+        "Step 3: Check for adequate seating and ventilation.",
+        "Step 4: Ensure gender separation is maintained."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Rest Room Photo",
+      "instruction": "Take a photo of the rest room or lunch room showing seating and gender separation signage.",
+      "title": "Rest Room Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'Break Room' or 'Lunch Room'.",
+      "verification_logic": "Prompt: Verify presence of tables/chairs. Check for 'Rest Room' or 'Lunch Room' signage."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-24-07",
+    "category": "Welfare",
+    "risk_level": "High",
+    "question_text": "Has a Welfare Officer been appointed (if applicable)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to Factories, Mines, Plantations with 250 or more workers.",
+    "section_reference": "Section 24(2)(iv)",
+    "legal_text": "The appointment of welfare officer in every factory, mine or plantation wherein two hundred and fifty or more workers are ordinarily employed and the qualification, conditions of service and duties...",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check worker count (>250).",
+        "Step 2: Request the Appointment Letter of the Welfare Officer.",
+        "Step 3: Verify the designation matches 'Welfare Officer'.",
+        "Step 4: Check if qualifications (e.g., Social Work degree) are mentioned."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Welfare Officer Appointment Letter",
+      "instruction": "Upload the appointment letter or joining report of the designated Welfare Officer.",
+      "title": "Welfare Officer Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Appointment Letter' or 'CV'.",
+      "verification_logic": "Prompt: Extract 'Designation'. Verify it contains 'Welfare Officer'. Check for educational qualifications."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-32-01",
+    "category": "Leave Entitlement",
+    "risk_level": "High",
+    "question_text": "Is annual leave with wages calculated correctly (1 day for every 20 days worked) for eligible workers?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments. (Note: rate is 1:15 for mines and adolescents).",
+    "section_reference": "Section 32(1)(ii)",
+    "legal_text": "He shall be entitled for one-day leave for every twenty days of his work, in the case of adolescent worker for fifteen days of his work, and in case of worker employed below ground mine, at the rate of one day for every fifteen days of his work.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the Register of Adult Workers / Leave with Wages Register (Form 15 or equivalent).",
+        "Step 2: Select a sample worker who worked >180 days last year.",
+        "Step 3: Calculate 'Days Worked' divided by 20.",
+        "Step 4: Verify this matches the 'Leave Credited' column."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Leave with Wages Register",
+      "instruction": "Upload a page of the Leave Register showing 'Days Worked' and 'Leave Earned/Credited' columns.",
+      "title": "Leave Calculation Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Leave Register' or 'Leave Card'.",
+      "verification_logic": "Prompt: Extract 'Days Worked' and 'Leave Credited'. Calculate Expected Leave = Days Worked / 20. Flag mismatch if Credited < Expected."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-32-02",
+    "category": "Leave Entitlement",
+    "risk_level": "Medium",
+    "question_text": "Is the carry-forward of unavailed annual leave capped at 30 days, with excess leave being encashed?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 32(1)(vii) & (ix)",
+    "legal_text": "The total number of days of leave that may be carried forward to a succeeding year shall not exceed thirty days... such worker shall be entitled... to encash such exceeded leave.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the Leave Register for year-end balances.",
+        "Step 2: Check the 'Closing Balance' carried to next year.",
+        "Step 3: Ensure it does not exceed 30 days.",
+        "Step 4: Verify that any balance >30 days was paid out (encashed)."
+      ]
+    },
+    "capture_instructions": {
       "document_name": "Leave Register (Year End)",
-      "instruction": "Upload the Year-End Leave Register showing 'Closing Balance' and 'Carried Forward' columns."
+      "instruction": "Upload the Leave Register showing closing balances at the end of the calendar year.",
+      "title": "Leave Carry Forward Check"
     },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Leave Register showing Closing Balances? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan 'Carried Forward' column. 2. If any value > 30, check for 'Refused Leave' note. 3. If > 30 AND no 'Refused' note, mark 'Non-Compliant'. 4. Else 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S32(1)(vi)-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are wages in lieu of unavailed leave paid within the prescribed timeline upon discharge, dismissal, quitting, or superannuation?",
     "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Full & Final Settlement",
-      "document_name": "F&F Settlement Statement",
-      "instruction": "Upload the 'Full & Final Settlement' (F&F) receipt for an employee who left recently. Ensure 'Leave Encashment' and 'Date of Payment' are visible."
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Full & Final Settlement document? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Exit' and 'Date of Payment'. 2. Calculate Gap. 3. If Gap > 2 days (for quitting) or > 2 months (for death/retirement), mark 'Delayed'. 4. Verify 'Leave Encashment' amount > 0. Else 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Leave Register'.",
+      "verification_logic": "Prompt: Extract 'Closing Balance'. If > 30, check for indication of 'Encashment' or 'Payment' for the excess."
     }
   },
   {
-    "audit_item_id": "OSHWC-S32(1)(ix)-06",
+    "audit_item_id": "OSHWC-SEC-32-03",
+    "category": "Leave Encashment",
+    "risk_level": "High",
+    "question_text": "Are wages in lieu of unavailed leave paid within two working days to employees who quit or are dismissed?",
     "workflow_type": "ai_evidence",
-    "question_text": "Is the worker entitled to encash leave that exceeds the thirty-day carry-forward limit?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Leave Encashment Proof",
-      "document_name": "Payroll / Leave Encashment Log",
-      "instruction": "Upload proof of payment for 'Leave Encashment' for workers with >30 days leave balance at year end."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Payment Record for Leave Encashment? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check if document shows 'Encashment' or 'Payment in lieu of leave'. 2. If valid payment record exists for excess days, mark 'Compliant'. If excess days lapsed/expired without pay, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S33(a)-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the employer maintain a register electronically or otherwise containing prescribed particulars of workers?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Worker Register",
-      "document_name": "Muster Roll / Form-D",
-      "instruction": "Upload the master 'Register of Workers' (Muster Roll). Ensure details like Name, Designation, and Date of Joining are visible."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Muster Roll or Register of Workers? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for columns: 'Name', 'Nature of Work', 'Wages', 'Date of Employment'. 2. If all key columns are present and filled, mark 'Compliant'. If blank or missing columns, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S33(b)-02",
-    "workflow_type": "manual_observation",
-    "question_text": "Are notices displayed at the workplace in the prescribed manner and form?",
+    "applicability_criteria": "Applicable when an employee is discharged, dismissed, or quits.",
+    "section_reference": "Section 32(1)(vi)(a)",
+    "legal_text": "Where such worker is discharged or dismissed or quits employment before the expiry of the second working day from the date of such discharge, dismissal or quitting... shall be entitled to wages in lieu of the quantum of leave.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Go to the main Notice Board.",
-        "Check for: 1. Abstract of the Act. 2. Wage Rates. 3. Name/Address of Inspector. 4. Holiday List.",
-        "Verify they are in English and Local Language.",
-        "Check if they are torn or faded."
-      ],
-      "decision_criteria": {
-        "compliant": "All required notices displayed, readable, and bilingual.",
-        "non_compliant": "Notice board empty, missing key abstracts, or only in English."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true,
-      "require_evidence_if_non_compliant": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S33(c)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are wage slips issued to workers in electronic forms or otherwise?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+        "Step 1: Identify an employee who left in the last 6 months.",
+        "Step 2: Request their 'Full and Final Settlement' (FnF) statement.",
+        "Step 3: Compare 'Date of Leaving' with 'Date of Payment'.",
+        "Step 4: Verify the payment includes 'Leave Encashment'."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Wage Slip Sample",
-      "document_name": "Wage Slip (Form-V)",
-      "instruction": "Upload a 'Wage Slip' issued to a worker for the last month. Ensure 'Deductions' and 'Net Pay' are clear."
+      "document_name": "Full & Final Settlement",
+      "instruction": "Upload the FnF statement or bank proof of payment for a recently exited employee.",
+      "title": "Exit Payment Check"
     },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Wage Slip or Salary Slip? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for fields: 'Name', 'Days Worked', 'Gross Wages', 'Deductions' (PF/ESI), 'Net Pay'. 2. If all fields are legible, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S33(d)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer filed the return electronically or otherwise to the Inspector-cum-Facilitator within the prescribed period?",
     "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Annual Return",
-      "document_name": "Unified Annual Return (Form)",
-      "instruction": "Upload the 'Unified Annual Return' filed for the previous financial year. Ensure the 'Acknowledgement Receipt' with the date is attached."
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Annual Return Form or Filing Receipt? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Filing Date' from the receipt. 2. Compare with the Due Date (typically Feb 1st or as per state rules in context). 3. If Filed Date > Due Date, mark 'Delayed'. 4. If Filed Date <= Due Date, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Settlement Receipt' or 'FnF Statement'.",
+      "verification_logic": "Prompt: Extract 'Date of Exit' and 'Date of Payment'. Verify Payment Date <= Exit Date + 2 days."
     }
   },
   {
-    "audit_item_id": "OSHWC-S55(2)-05",
+    "audit_item_id": "OSHWC-SEC-32-04",
+    "category": "Leave Entitlement",
+    "risk_level": "Medium",
+    "question_text": "Are workers entitled to wages for the leave period at a rate equal to their daily average earnings?",
     "workflow_type": "ai_evidence",
-    "question_text": "Does the contractor inform the principal employer electronically of wage amounts paid to contract labor?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg", "png"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Contractor Wage Intimation",
-      "document_name": "Email / Portal Log of Wage Payment",
-      "instruction": "Upload a screenshot of the Email or Portal Notification sent by the Contractor to HR confirming wage disbursement for the last month."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Email, Letter, or Screenshot regarding wage payment? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for details: 'Amount Paid', 'Number of Workers', 'Month'. 2. Check if the recipient is the Principal Employer. 3. If intimation exists and is clear, mark 'Compliant'. Else 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S56-06",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is an experience certificate issued to contract labor on demand?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Experience Certificate",
-      "document_name": "Service Certificate",
-      "instruction": "Upload a copy of an 'Experience/Service Certificate' issued to a contract worker who left recently. If none left, upload a blank template used by the contractor."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Experience Certificate or Service Letter? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for fields: 'Name of Worker', 'Period of Work', 'Nature of Work'. 2. If it is a filled certificate, mark 'Compliant'. 3. If it is a template, mark 'Compliant' (Process exists)."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S43-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the employer obtained consent from women employees before employing them between 7 p.m. and 6 a.m.?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Night Shift Consent",
-      "document_name": "Women's Consent Form (Night Shift)",
-      "instruction": "Upload the 'Written Consent Form' signed by a female employee working night shifts. If NO women work night shifts, upload a 'Nil-Night Shift Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Consent Form or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration' or 'Day Shift Only', mark 'Compliant'. 2. If Consent Form: Check for 'Signature' and 'Date'. 3. Check if date of consent is BEFORE the shift dates. 4. If valid, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S44-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are adequate safeguards provided prior to the employment of women in operations considered dangerous?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Safety Safeguard Report",
-      "document_name": "Risk Assessment / Safety Audit",
-      "instruction": "If women work in dangerous operations (as notified), upload the 'Risk Assessment Report' or 'Safety Audit' outlining safeguards. If N/A, upload 'Not Applicable' statement."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Safety Report, Risk Assessment, or N/A Statement? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'N/A', mark 'Compliant'. 2. If Report: Scan for specific safeguards for women (e.g., prohibited chemicals, PPE). 3. If safeguards are listed, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S70(1)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is the prohibition on employing persons below eighteen years of age in mines strictly enforced?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
-    },
-    "capture_instructions": {
-      "title": "Upload Age Proof (Sample)",
-      "document_name": "Aadhaar / School Certificate",
-      "instruction": "Upload Age Proof (Aadhaar/10th Certificate) for the 2 youngest looking workers found on site."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Identity Card or Age Proof document? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Birth' (DOB). 2. Calculate Age = Today - DOB. 3. If Age < 18, mark 'Non-Compliant' (Critical Violation). 4. If Age >= 18, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S70(2)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are apprentices and trainees between 16 and 18 years of age working in mines under proper supervision?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Trainee Supervision Order",
-      "document_name": "Supervision Order / Approval Letter",
-      "instruction": "If trainees (16-18 yrs) are employed, upload the 'Approval Letter from Chief Inspector'. If none, upload 'Nil-Trainee Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Approval Letter or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Letter: Check for 'Chief Inspector' approval stamp. 3. If valid approval exists, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S42(2)(c)-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has a Certificate of Fitness been obtained from a medical officer for every adolescent employed in factories, plantations, or motor transport undertakings?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Adolescent Fitness Cert",
-      "document_name": "Certificate of Fitness (Form)",
-      "instruction": "Upload the 'Certificate of Fitness' for any adolescent (14-18 yrs) worker. If no adolescents employed, upload 'Nil-Adolescent Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Medical Fitness Certificate or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Certificate: Check 'Date of Issue' (Valid for 1 year). 3. If expired, mark 'Non-Compliant'. 4. Check for 'Fit for Work' statement."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S47(1)-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the contractor hold a valid licence issued by the designated authority for supplying or engaging contract labour?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Contractor License",
-      "document_name": "Contract Labour License (Form-VI)",
-      "instruction": "Upload the 'Labour License' of the main contractor. Ensure the 'Max Number of Workers' and 'Validity' are visible."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Contract Labour License? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Expiry Date'. If < Today, mark 'Non-Compliant'. 2. Extract 'Max Workers Permitted'. Compare with 'Actual Workers' (from metadata/context). 3. If Actual > Permitted, mark 'Non-Compliant'. 4. Else 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S57(1)-02",
-    "workflow_type": "manual_observation",
-    "question_text": "Is the engagement of contract labour restricted to non-core activities, unless specifically permitted?",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 2(zzj) & 32(1)",
+    "legal_text": "For the purpose of equal wages... the emoluments specified in sub-clauses (d), (f), (g) and (h) shall be taken for computation of wages. [Refers to standard calculation of leave wages].",
     "intern_action_guide": {
       "inspection_steps": [
-        "Ask the Plant Manager: 'What is the main product/activity here?' (e.g., Making Cars).",
-        "Observe the Contract Workers. Are they making the cars (Core)? Or are they Cleaning/Security/Loading (Non-Core)?",
-        "If Contract workers are doing the EXACT same job as permanent workers, mark Non-Compliant."
-      ],
-      "decision_criteria": {
-        "compliant": "Contract workers engaged in support services (Cleaning, Canteen, Security, Loading).",
-        "non_compliant": "Contract workers performing core manufacturing/production tasks."
-      }
+        "Step 1: Check a wage slip where 'Leave Wages' were paid.",
+        "Step 2: Verify the rate used.",
+        "Step 3: Ensure it includes basic wages + DA (and other applicable allowances) averaged over the full-time work period.",
+        "Step 4: It should not be just 'Basic' if DA is applicable."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Wage Slip (Leave Period)",
+      "instruction": "Upload a wage slip for a month where a worker took annual leave.",
+      "title": "Leave Wage Rate Check"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true,
-      "require_evidence_if_non_compliant": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Wage Slip'.",
+      "verification_logic": "Prompt: Identify 'Leave Days Paid' and 'Leave Amount'. Calculate implied daily rate. Compare with 'Basic + DA' daily rate."
     }
   },
   {
-    "audit_item_id": "OSHWC-S53-03",
-    "workflow_type": "manual_observation",
-    "question_text": "Does the principal employer ensure that welfare facilities are provided to contract labour employed in the establishment?",
+    "audit_item_id": "OSHWC-SEC-47-01",
+    "category": "Contract Labour",
+    "risk_level": "Critical",
+    "question_text": "Does every contractor engaged by the establishment hold a valid license issued by the designated authority?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to establishments engaging 50 or more contract labourers (or as notified).",
+    "section_reference": "Section 47(1)",
+    "legal_text": "No contractor to whom this Part applies shall supply or engage contract labour in any establishment... except under and in accordance with a licence issued to him by the authority.",
     "intern_action_guide": {
       "inspection_steps": [
-        "Go to the common facilities (Canteen, Restrooms, Drinking Water).",
-        "Observe if Contract Workers are using them.",
-        "Ask a contract worker: 'Are you allowed to use the canteen and toilets here?'",
-        "Check if there are any 'Staff Only' signs restricting contract workers."
-      ],
-      "decision_criteria": {
-        "compliant": "Contract workers have equal access to all welfare amenities.",
-        "non_compliant": "Contract workers are denied access or forced to use inferior separate facilities."
-      }
-    },
-    "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S55(1)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are wages paid to contract labour via bank transfer or electronic mode before the expiry of the prescribed period?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+        "Step 1: Get the list of all active contractors.",
+        "Step 2: Request the valid Labour License for each contractor.",
+        "Step 3: Check if the license is valid for the current period and the number of workers deployed does not exceed the license limit."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Contractor Wage Proof",
-      "document_name": "Bank Transfer Statement (Contractor)",
-      "instruction": "Upload the 'Bank Advice / Transaction Log' from the Contractor showing wage disbursement to workers for the last month."
+      "document_name": "Contractor Labour License",
+      "instruction": "Upload the Labour License (Form) for the principal contractor.",
+      "title": "License Verification"
     },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Bank Statement or Transaction Log? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Transaction'. 2. Check if it is before the 7th (or prescribed day) of the following month. 3. If Date > Due Date, mark 'Delayed'. 4. If document shows Cash Payment without exemption order, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S55(3)-05",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the principal employer paid the wages in full or the unpaid balance if the contractor failed to do so?",
     "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Default Payment Proof",
-      "document_name": "Direct Payment Record / Nil Declaration",
-      "instruction": "If a contractor defaulted on wages, upload proof of 'Direct Payment' by Principal Employer. If no default occurred, upload 'Nil-Default Declaration'."
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Payment Record or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Payment Record: Verify payer is 'Principal Employer'. 3. Mark 'Compliant' if payment was made to resolve contractor default."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Labour License' or 'Contractor License'.",
+      "verification_logic": "Prompt: Extract 'Contractor Name', 'Validity Date', 'Max Workers Permitted'. Verify if the date is current."
     }
   },
   {
-    "audit_item_id": "OSHWC-S50(1)-06",
+    "audit_item_id": "OSHWC-SEC-55-01",
+    "category": "Wages & Payments",
+    "risk_level": "High",
+    "question_text": "Are wages disbursed to contract labour via bank transfer within the prescribed period?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the contractor intimated the designated authority upon receiving a work order?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Work Order Intimation",
-      "document_name": "Form-VII / Intimation to Authority",
-      "instruction": "Upload the 'Intimation Form' submitted by the Contractor to the Labor Department for the current Work Order."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Government Intimation Form? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Date of Intimation' and 'Start Date of Contract'. 2. If Intimation Date > Start Date, mark 'Delayed'. 3. If missing, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S54-07",
-    "workflow_type": "ai_evidence",
-    "question_text": "Has the principal employer ensured they are not employing contract labour through a non-licensed contractor?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Vendor Compliance List",
-      "document_name": "Vendor Master List with License Details",
-      "instruction": "Upload the 'Active Contractor List' showing Name, License Number, and Validity Date for each."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Vendor List or Contractor Matrix? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan the list. 2. If any contractor has 'License No' as Empty/Null or 'Validity' < Today, mark 'Non-Compliant'. 3. If all have valid, unexpired licenses, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S61-01",
-    "workflow_type": "ai_evidence",
-    "question_text": "Does the employer pay a lump sum journey allowance to every inter-State migrant worker annually for travel to and from their native place?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Journey Allowance Proof",
-      "document_name": "Payment Voucher / Bank Transfer",
-      "instruction": "Upload proof of 'Journey Allowance' payment to migrant workers. If no migrant workers, upload 'Nil-Migrant Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Payment Voucher or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Payment Voucher: Check narration for 'Journey Allowance' or 'Travel Fare'. 3. Verify amount is reasonable (>0). 4. If paid annually, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S60(iii)-02",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are inter-State migrant workers extended all benefits available to other workers, including ESIC, PF, and medical check-ups?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Migrant Benefit Proof",
-      "document_name": "ECR / PF Challan",
-      "instruction": "Upload the PF/ESIC ECR (Electronic Challan Return) highlighting names of Migrant Workers."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a PF/ESIC Challan or ECR list? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan for worker names (from context if available). 2. Check if contributions exist for them. 3. If migrant workers are found in the list with contributions, mark 'Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S60(ii)-03",
-    "workflow_type": "ai_evidence",
-    "question_text": "In case of fatal accident or serious bodily injury to a migrant worker, are reports sent to the specified authorities of both States and the next of kin?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
-    },
-    "capture_instructions": {
-      "title": "Upload Migrant Accident Report",
-      "document_name": "Accident Report to Both States",
-      "instruction": "If a migrant worker had a serious accident, upload the report sent to Home State & Host State authorities. If none, upload 'Nil-Accident Declaration'."
-    },
-    "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Accident Report or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Report: Check if it addresses 'Home State Authority' AND 'Host State Authority'. 3. If sent to both, mark 'Compliant'. If sent to only one, mark 'Non-Compliant'."
-      }
-    }
-  },
-  {
-    "audit_item_id": "OSHWC-S60(i)-04",
-    "workflow_type": "manual_observation",
-    "question_text": "Does the employer ensure suitable conditions of work for inter-State migrant workers?",
+    "applicability_criteria": "Applicable to all contractors.",
+    "section_reference": "Section 55(2)",
+    "legal_text": "Every contractor shall, make the disbursement of wages... through bank transfer or electronic mode and inform the principal employer electronically the amount so paid.",
     "intern_action_guide": {
       "inspection_steps": [
-        "If Migrant Workers reside on-site, inspect their quarters.",
-        "Check for basic amenities: Electricity, Water, Bedding, Ventilation.",
-        "Check if safety instructions are available in their local language.",
-        "Interview one worker: 'Do you face any discrimination here?'"
-      ],
-      "decision_criteria": {
-        "compliant": "Quarters are humane/clean, language support provided.",
-        "non_compliant": "Sub-standard living conditions, no language support."
-      }
+        "Step 1: Request the 'Wage Disbursement Record' for the last month from the contractor.",
+        "Step 2: Verify proof of bank transfer (e.g., bank advice slip).",
+        "Step 3: Ensure the Principal Employer has received electronic intimation of this payment."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Wage Disbursement Proof / Bank Statement",
+      "instruction": "Upload the bank transfer statement or wage sheet showing electronic payment details for contract workers.",
+      "title": "Wage Payment Verification"
     },
     "ui_config": {
-      "widget": "status_selector",
-      "allow_comments": true
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Bank Statement', 'Wage Sheet' or 'Payment Advice'.",
+      "verification_logic": "Prompt: Look for keywords 'NEFT', 'RTGS', 'Transfer'. Verify dates are within the wage period limit."
     }
   },
   {
-    "audit_item_id": "OSHWC-S84(1)-01",
+    "audit_item_id": "OSHWC-SEC-50-01",
+    "category": "Statutory Reporting",
+    "risk_level": "Medium",
+    "question_text": "Has the contractor intimated the work order to the designated authority?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the occupier disclosed all prescribed information regarding dangers and health hazards to workers, the Chief Inspector-cum-Facilitator, the local authority, and the general public?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
+    "applicability_criteria": "Applicable whenever a new work order is issued to a contractor.",
+    "section_reference": "Section 50(1)",
+    "legal_text": "When a contractor receives work order... he shall, within such time and in such manner as may be prescribed, intimate to the authority.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Select a recent work order issued to a contractor.",
+        "Step 2: Ask for the 'Form of Intimation' receipt submitted to the Labour Department.",
+        "Step 3: Verify the details match the work order."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Hazard Disclosure",
-      "document_name": "Disclosure Form & Public Notice",
-      "instruction": "Upload 1. The 'Disclosure Form' submitted to the Chief Inspector. 2. A photo of the 'Public Notice' displayed near the factory gate warning of hazards."
+      "document_name": "Work Order Intimation Receipt",
+      "instruction": "Upload the receipt or form acknowledging intimation of the work order to the authorities.",
+      "title": "Intimation Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Disclosure Form or Public Notice photo? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check Document 1 for 'Receiving Stamp' from Chief Inspector. 2. Check Document 2 (Photo) for 'Hazard Warning' text visible to public. 3. If both exist, mark 'Compliant'. If missing, mark 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is an 'Intimation Form' or 'Receipt'.",
+      "verification_logic": "Prompt: Extract 'Contractor Name', 'Work Order Date', and 'Submission Date'. Verify submission is compliant."
     }
   },
   {
-    "audit_item_id": "OSHWC-S84(2)-02",
+    "audit_item_id": "OSHWC-SEC-61-01",
+    "category": "Migrant Workers",
+    "risk_level": "High",
+    "question_text": "Is the lump sum journey allowance paid to inter-State migrant workers annually?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the occupier laid down a detailed health and safety policy and intimated it to the Chief Inspector-cum-Facilitator and local authority?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to establishments employing Inter-State Migrant Workers.",
+    "section_reference": "Section 61",
+    "legal_text": "The employer shall pay, to every inter-State migrant worker employed in his establishment, in a year a lump sum amount of fare for to and fro journey to his native place.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify Inter-State Migrant Workers from the register.",
+        "Step 2: Check payroll or voucher records for 'Journey Allowance' or 'Travel Fare'.",
+        "Step 3: Confirm it covers to and fro journey costs."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Health & Safety Policy",
-      "document_name": "Signed Safety Policy Document",
-      "instruction": "Upload the 'Health & Safety Policy' signed by the Occupier. Ensure the 'Date of Signing' and 'Acknowledgement Receipt' from the Inspector are visible."
+      "document_name": "Journey Allowance Voucher",
+      "instruction": "Upload a payment voucher or payroll extract showing 'Journey Allowance' paid to migrant workers.",
+      "title": "Journey Allowance Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Health & Safety Policy document? Return 'OK' if readable."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for 'Signature of Occupier'. 2. Check for 'Date' (should be reviewed annually). 3. Check for evidence of submission (Stamp/Receipt) to Chief Inspector. 4. If signed and submitted, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Payment Voucher' or 'Payroll Extract'.",
+      "verification_logic": "Prompt: Search for 'Journey Allowance', 'Travel Fare', or 'Lump Sum'. Verify amounts are credited to worker accounts."
     }
   },
   {
-    "audit_item_id": "OSHWC-S84(4)-03",
+    "audit_item_id": "OSHWC-SEC-56-01",
+    "category": "Employment Records",
+    "risk_level": "Medium",
+    "question_text": "Does the contractor issue Experience Certificates to contract labour?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has an on-site emergency plan and detailed disaster control measures been drawn up and approved?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to all contractors.",
+    "section_reference": "Section 56",
+    "legal_text": "Every concerned contractor shall issue, on demand, experience certificate, in such form as may be prescribed... giving details of the work performed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask for a copy of a recently issued Experience Certificate.",
+        "Step 2: Ensure it contains the period of work and nature of duties.",
+        "Step 3: If no recent exits, check the format used for issuance."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Emergency Plan",
-      "document_name": "Approved On-Site Emergency Plan",
-      "instruction": "Upload the cover page and approval page of the 'On-Site Emergency Plan'. Ensure the 'Approval Signature' from the Chief Inspector is visible."
+      "document_name": "Sample Experience Certificate",
+      "instruction": "Upload a copy of an Experience Certificate issued to a former contract worker.",
+      "title": "Certificate Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Emergency Plan or Disaster Control document? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Scan for 'Approved by Chief Inspector' stamp or letter. 2. Check the 'Date of Approval'. 3. If approval is missing or outdated (>5 years typically, or as per state rules), mark 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is an 'Experience Certificate' or 'Service Certificate'.",
+      "verification_logic": "Prompt: Extract 'Employee Name', 'Period of Work', and 'Nature of Work'. Confirm issuer is the Contractor."
     }
   },
   {
-    "audit_item_id": "OSHWC-S85(a)-04",
-    "workflow_type": "ai_evidence",
-    "question_text": "Are accurate and up-to-date health/medical records maintained for workers exposed to harmful substances?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "xlsx", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "audit_item_id": "OSHWC-SEC-63-01",
+    "category": "Migrant Workers",
+    "risk_level": "Low",
+    "question_text": "Is the toll-free helpline facility provided/displayed for inter-State migrant workers?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to establishments employing Inter-State Migrant Workers.",
+    "section_reference": "Section 63",
+    "legal_text": "The appropriate Government may provide facility of toll free helpline... [Employer compliance implied to display/facilitate access].",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Look for notices in areas frequented by migrant workers.",
+        "Step 2: Check if the Toll-Free Helpline number prescribed by the state is displayed.",
+        "Step 3: Verify visibility and language (local/native language of workers)."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Health Register Sample",
-      "document_name": "Form-17 / Health Register",
-      "instruction": "Upload the 'Health Register' (Form 17) for a worker exposed to chemicals. Ensure recent medical entries are visible."
+      "document_name": "Helpline Notice Photo",
+      "instruction": "Take a photo of the notice board displaying the Toll-Free Helpline number for migrant workers.",
+      "title": "Helpline Display Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Health Register or Medical Record Form? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for 'Date of Examination' in the last 6-12 months. 2. Check for 'Signature of Factory Medical Officer'. 3. If entries are recent and signed, mark 'Compliant'. If blank or old, mark 'Non-Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if image shows a 'Notice Board' or 'Poster'.",
+      "verification_logic": "Prompt: Detect phone numbers (1800-XXX-XXXX). Search for keywords 'Helpline', 'Migrant', 'Assistance'."
     }
   },
   {
-    "audit_item_id": "OSHWC-S85(b)-05",
+    "audit_item_id": "OSHWC-SEC-43-01",
+    "category": "Women Employment",
+    "risk_level": "Critical",
+    "question_text": "Is the employment of women during night shifts (7 PM - 6 AM) subject to their consent and safety conditions?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the occupier appointed qualified and competent persons to supervise the handling of hazardous substances?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 2
+    "applicability_criteria": "Applicable to establishments employing women during night hours.",
+    "section_reference": "Section 43 [cite: 945]",
+    "legal_text": "Women shall be entitled to be employed in all establishments for all types of work under this Code and they may also be employed, with their consent before 6 a.m. and beyond 7 p.m. subject to such conditions relating to safety, holidays and working hours or any other condition... as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the shift roster for women employees working between 7 PM and 6 AM.",
+        "Step 2: If found, request the 'Consent Form' signed by the employee.",
+        "Step 3: Verify proof of safe transport provided by the employer (transport log/contract)."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Supervisor Qualifications",
-      "document_name": "Supervisor Appointment & Certificate",
-      "instruction": "Upload the 'Appointment Letter' of the Hazardous Process Supervisor AND their 'Competency Certificate' or 'Training Certificate'."
+      "document_name": "Consent Form / Night Shift Policy",
+      "instruction": "Upload a sample signed consent form for night work and the transport policy/log.",
+      "title": "Night Shift Consent & Safety"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Appointment Letter or Training Certificate? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Check for 'Supervisor' designation. 2. Check for specific training in 'Hazardous Chemicals' or 'Safety'. 3. If qualified person appointed, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Consent Form' or 'Transport Log'.",
+      "verification_logic": "Prompt: Search for keywords 'Consent', 'Night Shift', '7 PM', '6 AM'. Verify signatures. Check for 'Transport' provision clause."
     }
   },
   {
-    "audit_item_id": "OSHWC-S85(c)-06",
-    "workflow_type": "ai_evidence",
-    "question_text": "Is medical examination provided to every worker before assignment to a hazardous job and at intervals not exceeding twelve months?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": true,
-      "min_uploads": 1
+    "audit_item_id": "OSHWC-SEC-44-01",
+    "category": "Women Employment",
+    "risk_level": "High",
+    "question_text": "Are adequate safeguards provided prior to employing women in dangerous operations?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to establishments with notified dangerous operations/hazardous processes.",
+    "section_reference": "Section 44 [cite: 947]",
+    "legal_text": "Where the appropriate Government considers that the employment of women is dangerous for their health and safety... [it may] require the employer to provide adequate safeguards prior to the employment of women for such operation.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify hazardous areas (e.g., chemical mixing, heavy machinery).",
+        "Step 2: Check if women are deployed there.",
+        "Step 3: If yes, inspect for special safeguards (e.g., specific PPE, automated handling, barriers) as per state rules.",
+        "Step 4: Verify training records specific to those hazards."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Medical Fitness Schedule",
-      "document_name": "Medical Exam Schedule / Matrix",
-      "instruction": "Upload the 'Medical Examination Schedule' showing the list of workers and their last exam dates."
+      "document_name": "Hazard Safeguard Training Record",
+      "instruction": "Upload training records or a photo of the specific safeguard equipment used by women in hazardous areas.",
+      "title": "Dangerous Operation Safeguards"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this a Medical Exam Schedule or List? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Last Exam Date' for 3 random workers. 2. Calculate Gap = Today - Last Exam Date. 3. If Gap > 12 months for any worker, mark 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if upload is a 'Training Record' or 'Equipment Photo'.",
+      "verification_logic": "Prompt: If Document: Look for 'Hazardous Process Training', 'Women Employees'. If Image: Detect PPE or Safety Guards."
     }
   },
   {
-    "audit_item_id": "OSHWC-S88-07",
+    "audit_item_id": "OSHWC-SEC-70-01",
+    "category": "Adolescent Employment",
+    "risk_level": "Critical",
+    "question_text": "Is the employment of persons below 18 years prohibited in mines (except apprentices >16)?",
     "workflow_type": "ai_evidence",
-    "question_text": "Are the permissible limits of exposure to chemical and toxic substances strictly adhered to?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to Mines.",
+    "section_reference": "Section 70(1) & (2) [cite: 1072, 1073]",
+    "legal_text": "No person below eighteen years of age shall be allowed to work in any mine or part thereof. Notwithstanding... apprentices and other trainees, not below sixteen years of age, may be allowed to work, under proper supervision.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Register of Persons Employed'.",
+        "Step 2: Check the 'Date of Birth' column for all employees.",
+        "Step 3: If any age < 18 is found, verify they are registered Apprentices/Trainees > 16.",
+        "Step 4: Check for medical fitness certificates for these trainees."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload Industrial Hygiene Report",
-      "document_name": "Workplace Monitoring Report",
-      "instruction": "Upload the latest 'Industrial Hygiene / Air Monitoring Report'. Ensure 'Measured Value' and 'Permissible Limit' columns are visible."
+      "document_name": "Register of Employees / Age Proof",
+      "instruction": "Upload the page of the register showing Age/DOB or a Medical Certificate for apprentices.",
+      "title": "Age Verification (Mines)"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Air Monitoring or Hygiene Report? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. Extract 'Measured Value' and 'Permissible Exposure Limit' (PEL/TLV). 2. Compare. If Measured > PEL, mark 'Non-Compliant'. 3. If Measured <= PEL, mark 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is an 'Employee Register' or 'Medical Certificate'.",
+      "verification_logic": "Prompt: Extract 'Date of Birth'. Calculate Age. Flag if Age < 18 unless 'Apprentice' is mentioned."
     }
   },
   {
-    "audit_item_id": "OSHWC-S84(5)-08",
+    "audit_item_id": "OSHWC-SEC-78-01",
+    "category": "Building & Construction",
+    "risk_level": "High",
+    "question_text": "Are persons with defective vision, deafness, or giddiness excluded from risky building/construction work?",
     "workflow_type": "ai_evidence",
-    "question_text": "Has the occupier informed the Chief Inspector-cum-Facilitator about the nature and details of any new hazardous process within 30 days before commencement?",
-    "ui_config": {
-      "widget": "file_upload",
-      "accepted_formats": ["pdf", "jpg"],
-      "camera_allowed": false,
-      "min_uploads": 1
+    "applicability_criteria": "Applicable to Building & Other Construction Work.",
+    "section_reference": "Section 78 [cite: 1113]",
+    "legal_text": "No person, about whom the employer knows or has reasons to believe that he is a deaf or he has a defective vision or he has a tendency to giddiness, shall be required or allowed to work in any such operation of building or other construction work which is likely to involve a risk of any accident.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the 'Medical Examination Records' for workers at heights or operating cranes.",
+        "Step 2: Verify that fitness certificates explicitly rule out 'Vertigo', 'Deafness', or 'Vision defects'.",
+        "Step 3: Ensure records are updated periodically."
+      ]
     },
     "capture_instructions": {
-      "title": "Upload New Process Intimation",
-      "document_name": "Intimation Letter of New Process",
-      "instruction": "If a NEW hazardous process started recently, upload the 'Intimation Letter' sent to the Inspector 30 days prior. If no new process, upload 'Nil-New Process Declaration'."
+      "document_name": "Medical Fitness Certificate (Height/Crane)",
+      "instruction": "Upload a medical fitness certificate for a worker engaged in height work or heavy machinery operation.",
+      "title": "Fitness for Risky Work"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
     "ai_logic": {
-      "gatekeeper": {
-        "model": "gemini-1.5-flash",
-        "prompt": "Is this an Intimation Letter or Nil Declaration? Return 'OK'."
-      },
-      "evaluator": {
-        "model": "gemini-1.5-pro",
-        "prompt": "1. If 'Nil Declaration', mark 'Compliant'. 2. If Letter: Extract 'Date of Letter' and 'Date of Process Start'. 3. If (Process Start - Letter Date) < 30 days, mark 'Delayed' or 'Non-Compliant'. Else 'Compliant'."
-      }
+      "gatekeeper_check": "Prompt: Check if document is a 'Medical Fitness Certificate'.",
+      "verification_logic": "Prompt: Scan for 'Fit for Height Work', 'Vision Normal', 'Hearing Normal'. Flag if 'Unfit' or specific conditions like 'Vertigo' are noted."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-117-01",
+    "category": "Adolescent Employment",
+    "risk_level": "Medium",
+    "question_text": "Is the age of workers verified using Aadhaar or valid birth certificates?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments employing young persons.",
+    "section_reference": "Section 117(2) [cite: 1328]",
+    "legal_text": "The medical authority... shall, while examining a worker for issuing the certificate of age... take into account the Aadhaar card of the worker, and in the absence thereof, the date of birth certificate from school... or birth certificate.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the personnel files of young workers.",
+        "Step 2: Check if Age Proof copies (Aadhaar/School Certificate) are attached.",
+        "Step 3: Verify the age recorded in the register matches the proof."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Age Proof Document",
+      "instruction": "Upload a sample Age Proof (Aadhaar/Certificate) used for age verification.",
+      "title": "Age Proof Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Aadhaar Card', 'Birth Certificate', or 'School Certificate'.",
+      "verification_logic": "Prompt: Extract 'Date of Birth'. Cross-reference with the worker category (Adult/Adolescent)."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-84-01",
+    "category": "Hazardous Process",
+    "risk_level": "Critical",
+    "question_text": "Has the occupier disclosed all information regarding dangers and health hazards to the workers, Chief Inspector-cum-Facilitator, and local authority?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to factories involving hazardous processes (First Schedule).",
+    "section_reference": "Section 84(1)",
+    "legal_text": "The occupier of every factory involving a hazardous process shall disclose in the manner prescribed... all information regarding dangers, including health hazards and the measures to overcome such hazards... to the workers employed in the factory, the Chief Inspector-cum-Facilitator... and the general public.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check for the 'Disclosure of Information' document (often Form 11 or similar state specific form).",
+        "Step 2: Verify proof of submission to the Chief Inspector and Local Authority.",
+        "Step 3: Check if this information is displayed or communicated to workers (e.g., MSDS sheets available)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Disclosure of Hazards Form",
+      "instruction": "Upload the disclosure form submitted to the authorities regarding hazardous processes.",
+      "title": "Hazard Disclosure Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Hazard Disclosure Form', 'MSDS Compilation', or 'Safety Report'.",
+      "verification_logic": "Prompt: Verify if the document lists 'Hazardous Materials', 'Health Risks', and 'Safety Measures'. Check for 'Received' stamp from authority."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-84-04",
+    "category": "Emergency Preparedness",
+    "risk_level": "Critical",
+    "question_text": "Is there an approved On-Site Emergency Plan and Disaster Control Measure in place?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to factories involving hazardous processes.",
+    "section_reference": "Section 84(4)",
+    "legal_text": "Every occupier shall, with the approval of the Chief Inspector-cum-Facilitator, draw up an on-site emergency plan and detailed disaster control measures for his factory and make known to the workers... the safety measures required to be taken.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'On-Site Emergency Plan'.",
+        "Step 2: Check for the approval signature/seal of the Chief Inspector-cum-Facilitator.",
+        "Step 3: Verify the plan includes evacuation routes and disaster control protocols.",
+        "Step 4: Check if the last mock drill record is attached."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "On-Site Emergency Plan",
+      "instruction": "Upload the cover page and approval page of the On-Site Emergency Plan.",
+      "title": "Emergency Plan Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Emergency Plan' or 'Disaster Control Plan'.",
+      "verification_logic": "Prompt: Search for 'Approved by Chief Inspector' or official seal. Verify the date is current/valid."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-85-01",
+    "category": "Health Records",
+    "risk_level": "High",
+    "question_text": "Are accurate and up-to-date health/medical records maintained for workers exposed to hazardous substances?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to factories involving hazardous processes.",
+    "section_reference": "Section 85(a)",
+    "legal_text": "Maintain accurate and up-to-date health records or, as the case may be, medical records, of the workers in the factory who are exposed to any chemical, toxic or any other harmful substances... and such records shall be accessible to the workers.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify workers in the hazardous zone.",
+        "Step 2: Request the 'Health Register' (Form 16/17 equivalent).",
+        "Step 3: Check for entries of pre-employment and periodic medical exams.",
+        "Step 4: Ensure the Fitness Certificate (Form O) is attached."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Health Register (Hazardous Process)",
+      "instruction": "Upload a page of the Health Register showing recent medical examination entries for exposed workers.",
+      "title": "Medical Record Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Health Register' or 'Medical Examination Record'.",
+      "verification_logic": "Prompt: Extract 'Worker Name', 'Date of Exam', and 'Fitness Status'. Verify if exams are periodic (e.g., annual/six-monthly)."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-85-02",
+    "category": "Competent Supervision",
+    "risk_level": "High",
+    "question_text": "Are supervisors handling hazardous substances qualified and competent?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to factories involving hazardous processes.",
+    "section_reference": "Section 85(b)",
+    "legal_text": "Appoint persons who possess prescribed qualifications and experience in handling hazardous substances and are competent to supervise such handling within the factory.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the list of supervisors in the hazardous process department.",
+        "Step 2: Check their qualification certificates (Chemistry/Chemical Engineering/Safety Diploma).",
+        "Step 3: Verify experience letters proving competence in hazardous handling."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Supervisor Qualification Record",
+      "instruction": "Upload the CV or Degree Certificate of the supervisor in charge of the hazardous process.",
+      "title": "Supervisor Competence Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Degree Certificate', 'Diploma' or 'CV'.",
+      "verification_logic": "Prompt: Search for keywords like 'Chemical Engineering', 'Industrial Safety', 'Chemistry'. Verify relevant experience."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-88-01",
+    "category": "Chemical Safety",
+    "risk_level": "Critical",
+    "question_text": "Are permissible limits of exposure to chemical and toxic substances adhered to?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to factories using chemicals/toxic substances.",
+    "section_reference": "Section 88",
+    "legal_text": "The maximum permissible limits of exposure of chemical and toxic substances in manufacturing process in any factory shall be of the value as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the latest 'Workplace Environment Monitoring Report' (Air/Chemical Analysis).",
+        "Step 2: Check the 'Measured Value' vs 'Permissible Limit' (TLV/STEL) columns.",
+        "Step 3: Ensure the report is from an accredited lab and is recent (usually annual/bi-annual)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Work Zone Monitoring Report",
+      "instruction": "Upload the latest air quality or chemical exposure monitoring report.",
+      "title": "Exposure Limit Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Monitoring Report' or 'Lab Analysis Report'.",
+      "verification_logic": "Prompt: Extract 'Chemical Name', 'Concentration', and 'Limit'. Flag if Concentration > Limit."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-93-01",
+    "category": "Plantation Safety",
+    "risk_level": "High",
+    "question_text": "In plantations, are insecticides and toxic substances handled only by trained workers under supervision?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to Plantations.",
+    "section_reference": "Section 93(3) & (4)",
+    "legal_text": "Appoint persons possessing the prescribed qualifications to supervise the use... of insecticides... Ensure that every worker... is trained about the hazards involved.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Visit the chemical mixing/storage area.",
+        "Step 2: Interview a worker handling sprayers.",
+        "Step 3: Ask if they received training on hazards.",
+        "Step 4: Check for the presence of a qualified supervisor.",
+        "Step 5: Verify separate washing facilities for these workers."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Agro-Chemical Handling Photo",
+      "instruction": "Take a photo of workers handling chemicals (showing PPE) or the training register for sprayers.",
+      "title": "Plantation Chemical Safety"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if upload is a 'Photo of Sprayer' or 'Training Register'.",
+      "verification_logic": "Prompt: If Image: Check for PPE (Masks, Gloves). If Document: Search for 'Insecticide Training' or 'Chemical Safety'."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-84-07",
+    "category": "Hazard Communication",
+    "risk_level": "Medium",
+    "question_text": "Are safety measures for handling hazardous substances publicized among workers and the general public?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to factories involving hazardous processes.",
+    "section_reference": "Section 84(7)",
+    "legal_text": "Lay down measures for the handling, usage, transportation and storage of hazardous substances... and publicise them in the manner prescribed... among the workers and the general public living in the vicinity.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check notice boards near the factory gate (for public).",
+        "Step 2: Check for safety posters/instructions near the hazardous process area.",
+        "Step 3: Verify if 'Do's and Don'ts' are displayed in the local language."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Public Safety Notice Photo",
+      "instruction": "Take a photo of the safety notice displayed at the factory entrance or hazardous area.",
+      "title": "Hazard Communication Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'Safety Notice' or 'Hazard Sign'.",
+      "verification_logic": "Prompt: Detect text related to 'Emergency', 'Hazard', 'Safety Instructions'. Verify visibility."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-33-01",
+    "category": "Statutory Registers",
+    "risk_level": "Medium",
+    "question_text": "Is the Master Register (Employee Register) maintained electronically or physically with all prescribed particulars?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 33(a)",
+    "legal_text": "Maintain register in prescribed form, electronically or otherwise, containing such particulars of workers... including work performed, number of hours... day of rest... wage paid... leave... overtime... and employment of adolescent.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Employee Register' (often Form A or combined Master Register).",
+        "Step 2: Check if it contains columns for Name, Designation, Wages, Leave, and Overtime.",
+        "Step 3: Verify that entries are current (up to the last working day/month)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Employee Register (Form A)",
+      "instruction": "Upload the latest month's Employee Register showing worker details and attendance summary.",
+      "title": "Register Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Employee Register', 'Muster Roll' or 'Form A'.",
+      "verification_logic": "Prompt: Check for presence of headers: 'Name', 'Designation', 'Wages', 'Attendance'. Confirm data exists for the current/previous month."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-33-02",
+    "category": "Statutory Returns",
+    "risk_level": "High",
+    "question_text": "Has the Annual Unified Return been filed electronically with the Inspector-cum-Facilitator?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 33(d)",
+    "legal_text": "File such return electronically or otherwise to the Inspector-cum-Facilitator in such manner and during such periods as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask for the acknowledgement of the last Annual Return filed.",
+        "Step 2: Verify the filing date (usually by Feb 1st of the following year).",
+        "Step 3: Ensure it covers the correct financial/calendar year."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Annual Return Receipt",
+      "instruction": "Upload the electronic acknowledgement receipt of the Annual Return filing.",
+      "title": "Return Filing Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Annual Return Receipt' or 'Form Acknowledgement'.",
+      "verification_logic": "Prompt: Extract 'Filing Date' and 'Period Covered'. Verify if the filing was done within the prescribed deadline (e.g., before Feb 1st)."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-33-03",
+    "category": "Wage Documentation",
+    "risk_level": "Medium",
+    "question_text": "Are wage slips issued to all workers (electronically or physically) at least a day prior to disbursement?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 33(c)",
+    "legal_text": "Issue wage slips to the workers, in electronic forms or otherwise.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Interview 2-3 workers randomly.",
+        "Step 2: Ask if they receive a wage slip (payslip) every month.",
+        "Step 3: Request a sample copy of a recent wage slip.",
+        "Step 4: Verify it details gross wages, deductions, and net pay."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Sample Wage Slip",
+      "instruction": "Upload a copy of a standard wage slip issued to workers.",
+      "title": "Wage Slip Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Wage Slip' or 'Payslip'.",
+      "verification_logic": "Prompt: Verify presence of 'Employer Name', 'Employee Name', 'Earnings', 'Deductions', and 'Net Pay'."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-33-04",
+    "category": "Statutory Notices",
+    "risk_level": "Low",
+    "question_text": "Are the Abstract of the Code and other required notices displayed at a conspicuous place?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 33(b)",
+    "legal_text": "Display notices at the work place of the workers in such manner and form as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Go to the main entrance or time-office.",
+        "Step 2: Check for the 'Abstract of the OSH Code'.",
+        "Step 3: Check for the list of holidays and wage period notice.",
+        "Step 4: Ensure they are in English and the local language."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Statutory Abstract Display Photo",
+      "instruction": "Take a photo of the notice board showing the Abstract of the Act/Code.",
+      "title": "Abstract Display Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows a 'Notice Board' with text documents.",
+      "verification_logic": "Prompt: Scan for keywords 'Abstract', 'OSH Code', 'Occupational Safety'. Verify if text appears legible."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-98-01",
+    "category": "Record Integrity",
+    "risk_level": "High",
+    "question_text": "Are records maintained truthfully without falsification or unauthorized alteration?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 98",
+    "legal_text": "Punishment for falsification of records... produces false records or counterfeits or knowingly makes... a false statement.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Cross-check Attendance Register entries with Biometric/Gate logs for a specific day.",
+        "Step 2: Cross-check OT Register hours with production logs.",
+        "Step 3: Look for obvious overwriting or white-fluid usage on physical registers without initialing."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Cross-Verification Record",
+      "instruction": "Upload a photo where a register entry contradicts another source (only if discrepancy found), otherwise upload a clean register page.",
+      "title": "Record Integrity Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Register' or 'Log'.",
+      "verification_logic": "Prompt: (Advanced) Compare handwriting consistency or detect signs of digital tampering/alteration. (Experimental)."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-10-01",
+    "category": "Incident Management",
+    "risk_level": "Critical",
+    "question_text": "Has the employer submitted a notice to the appropriate authority for any accident causing death or bodily injury preventing work for 48 hours or more?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if any reportable accident occurred in the audit period.",
+    "section_reference": "Section 10(1)",
+    "legal_text": "Where at any place in an establishment, an accident occurs which causes death, or which causes any bodily injury by reason of which the person injured is prevented from working for a period of forty-eight hours or more... employer... shall send notice thereof to such authorities... within such time, as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the 'Accident Register' or 'Incident Log' for the past year.",
+        "Step 2: Identify entries where 'Days Lost' >= 2 days (48 hours) or 'Fatal' is marked.",
+        "Step 3: For each such event, request the proof of notice (Form) sent to the Inspector-cum-Facilitator.",
+        "Step 4: Verify the notice date is within the prescribed limit (typically 4-24 hours depending on state rules)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Accident Notice Form",
+      "instruction": "Upload the copy of the Accident Notice (e.g., Form 18 or equivalent) submitted to authorities for the most recent reportable accident.",
+      "title": "Accident Notice Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is an 'Accident Report', 'Form 18', or 'Notice of Accident'.",
+      "verification_logic": "Prompt: Extract 'Date of Accident' and 'Date of Report'. Check if 'Nature of Injury' indicates 'Fatal' or 'Disablement'. Verify submission timeframe."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-11-01",
+    "category": "Incident Management",
+    "risk_level": "High",
+    "question_text": "Have 'Dangerous Occurrences' (fires, explosions, collapse) been reported even if no bodily injury was caused?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if a dangerous occurrence (as defined in rules) occurred.",
+    "section_reference": "Section 11",
+    "legal_text": "Where in an establishment there is any dangerous occurrence of such nature, (whether causing any bodily injury or disability, or not) the employer shall send notice thereof to such authorities, and in such form and within such time, as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask the Safety Officer if any fire, structural collapse, or machinery explosion occurred recently.",
+        "Step 2: Check the Safety Logbook.",
+        "Step 3: If yes, request the specific 'Notice of Dangerous Occurrence' submitted to the authorities.",
+        "Step 4: Ensure reporting was done even if no one was hurt."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Dangerous Occurrence Notice",
+      "instruction": "Upload the notice submitted for any recent dangerous occurrence (fire/explosion/collapse).",
+      "title": "Dangerous Occurrence Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Notice of Dangerous Occurrence' or 'Incident Report'.",
+      "verification_logic": "Prompt: Search for keywords 'Fire', 'Explosion', 'Collapse'. Verify the document is addressed to the Inspector-cum-Facilitator."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-12-01",
+    "category": "Health Reporting",
+    "risk_level": "High",
+    "question_text": "Has the employer notified the authorities of any worker contracting a disease specified in the Third Schedule (e.g., Silicosis, Lead Poisoning)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to establishments with specific hazards (chemical/dust/noise).",
+    "section_reference": "Section 12(1) & Third Schedule",
+    "legal_text": "Where any worker in an establishment contracts any disease specified in the Third Schedule, the employer of the establishment shall send notice thereof to such authorities, and in such form and within such time, as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the Annual Health Examination records.",
+        "Step 2: Look for diagnosis of Third Schedule diseases (e.g., Asbestosis, Noise Induced Hearing Loss, Toxic Jaundice).",
+        "Step 3: If found, ask for the 'Notice of Occupational Disease' sent to the Chief Inspector.",
+        "Step 4: Cross-reference with the list in the Third Schedule."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Notice of Occupational Disease",
+      "instruction": "Upload the notice sent to authorities regarding a worker diagnosed with a scheduled disease.",
+      "title": "Disease Notification Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Notice of Disease' or 'Medical Notification Form'.",
+      "verification_logic": "Prompt: Extract 'Disease Name'. Compare against Third Schedule list (e.g., 'Silicosis', 'Anthrax', 'Lead Poisoning'). Verify 'Date of Diagnosis' vs 'Date of Notice'."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-33-05",
+    "category": "Incident Records",
+    "risk_level": "Medium",
+    "question_text": "Is a bound Register of Accidents and Dangerous Occurrences maintained?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 33(a)(v) read with Sec 10",
+    "legal_text": "Maintain register in prescribed form... containing such particulars of workers... including... dangerous occurrences.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Register of Accidents'.",
+        "Step 2: Verify it contains columns for: Date, Time, Nature of Accident, Person Injured, and Action Taken.",
+        "Step 3: Check if it is signed by the Manager."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Register of Accidents",
+      "instruction": "Upload the last used page of the Accident Register (or a blank page if no accidents occurred).",
+      "title": "Accident Register Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Accident Register' or 'Injury Log'.",
+      "verification_logic": "Prompt: Verify columns for 'Name of Injured', 'Date of Accident', 'Nature of Injury'. Check for Manager's signature."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-66-01",
+    "category": "Audio-Visual Sector",
+    "risk_level": "Critical",
+    "question_text": "Is a written agreement entered into with every audio-visual worker and registered with the competent authority?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to producers of audio-visual programmes (films, web series, TV, etc.).",
+    "section_reference": "Section 66(1)",
+    "legal_text": "No person shall be employed as an audio-visual worker... unless an agreement in writing is entered into... and such agreement is registered with the competent authority... by the producer.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Select 3 random audio-visual workers (actors, stunt persons, technicians).",
+        "Step 2: Request their 'Employment Agreement'.",
+        "Step 3: Check if the agreement covers wages, hours, and safety.",
+        "Step 4: Verify proof of registration of this agreement with the notified authority."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Registered Agreement (Audio-Visual)",
+      "instruction": "Upload the written agreement for a worker, stamped/acknowledged by the competent authority.",
+      "title": "Agreement Registration Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'Employment Agreement' or 'Contract'.",
+      "verification_logic": "Prompt: Extract 'Producer Name', 'Worker Name', 'Wages', and 'Registration Stamp/Number'. Verify the document is registered."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-67-01",
+    "category": "Mines Safety",
+    "risk_level": "Critical",
+    "question_text": "Has a sole manager with prescribed qualifications been appointed for the mine?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to Mines.",
+    "section_reference": "Section 67(1)",
+    "legal_text": "Every mine shall be under a sole manager who shall have such qualifications as may be prescribed... and the owner or agent of every mine shall appoint a person... to be the manager.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the Appointment Letter of the Mine Manager.",
+        "Step 2: Request the 'Certificate of Competency' (e.g., First Class Manager's Certificate from DGMS).",
+        "Step 3: Verify the manager is solely responsible for this mine (unless exempted)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Mine Manager Certificate",
+      "instruction": "Upload the Appointment Letter and Competency Certificate of the Mine Manager.",
+      "title": "Manager Qualification Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Competency Certificate' or 'Appointment Letter'.",
+      "verification_logic": "Prompt: Extract 'Name', 'Designation' (Manager), and 'Certificate Number'. Verify if the certificate relates to Mining Competency."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-72-01",
+    "category": "Mines Safety",
+    "risk_level": "High",
+    "question_text": "Are vocational training and rescue services established and maintained for mine workers?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to Mines.",
+    "section_reference": "Section 72",
+    "legal_text": "The Central Government may prescribe vocational training and rescue and recovery services for persons employed in a mine.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Visit the Vocational Training Centre (VTC) on site.",
+        "Step 2: Check training records/registers for new inductees.",
+        "Step 3: Inspect the Rescue Station/Room for breathing apparatus and rescue equipment.",
+        "Step 4: Verify the rescue team roster."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "VTC / Rescue Room Photo",
+      "instruction": "Take a photo of the Vocational Training Centre or the Rescue Room showing equipment.",
+      "title": "Training & Rescue Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Training Classroom', 'Rescue Equipment', or 'Breathing Apparatus'.",
+      "verification_logic": "Prompt: Identify safety equipment or training infrastructure. Flag if room appears empty or defunct."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-74-01",
+    "category": "Beedi & Cigar",
+    "risk_level": "Critical",
+    "question_text": "Is the industrial premises for beedi/cigar work licensed separately?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to Beedi and Cigar industrial premises.",
+    "section_reference": "Section 74(1)",
+    "legal_text": "No employer shall use or allow to use any place or premises as an industrial premises unless he holds a valid licence issued... for the purposes of this Part.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the specific License for 'Industrial Premises' under the Beedi & Cigar Part.",
+        "Step 2: Check the validity date (typically 5 years/renewable).",
+        "Step 3: Ensure the plan of the premises attached matches the actual site."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Beedi/Cigar Premises License",
+      "instruction": "Upload the valid license for the industrial premises used for beedi/cigar manufacturing.",
+      "title": "Premises License Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'License' or 'Permit'.",
+      "verification_logic": "Prompt: Search for keywords 'Beedi', 'Cigar', 'Industrial Premises'. Extract 'Valid Till' date."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-76-02",
+    "category": "Beedi & Cigar",
+    "risk_level": "Medium",
+    "question_text": "Is a record maintained of work permitted to be carried on outside the industrial premises (home workers)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to Beedi/Cigar establishments with home workers.",
+    "section_reference": "Section 76(2)",
+    "legal_text": "The employer shall maintain the record of the work permitted... to be carried on outside the industrial premises, in such form as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask if workers are allowed to cut leaves/wet beedis at home.",
+        "Step 2: If yes, request the 'Record of Outside Work' (often Form IV or equivalent).",
+        "Step 3: Check entries for raw material issued and finished goods received."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Record of Outside Work",
+      "instruction": "Upload the register showing details of work distributed to home workers.",
+      "title": "Home Work Record Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is a 'Work Register' or 'Log'.",
+      "verification_logic": "Prompt: Verify columns for 'Material Issued', 'Worker Name', 'Work Returned'. Check dates for consistency."
+    }
+  },
+  {
+    "audit_item_id": "OSHWC-SEC-92-01",
+    "category": "Plantation Welfare",
+    "risk_level": "High",
+    "question_text": "Is necessary housing accommodation provided to every resident worker and their family in the plantation?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to Plantations.",
+    "section_reference": "Section 92(1)(a)",
+    "legal_text": "Every employer to make provisions in his plantation for necessary housing accommodation including drinking water, kitchen and toilet to every worker employed in the plantation (including his family).",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Visit the labour colony/housing area.",
+        "Step 2: Inspect a sample house.",
+        "Step 3: Check for basic amenities: Kitchen, Toilet, Drinking Water, and structural safety (roof/walls).",
+        "Step 4: Verify it is provided free or at standard rates."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Plantation Housing Photo",
+      "instruction": "Take a photo of the worker housing showing the structure and toilet facilities.",
+      "title": "Housing Facility Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if image shows 'Houses', 'Quarters', or 'Residential Units'.",
+      "verification_logic": "Prompt: Detect 'Building Structure'. Flag if it appears dilapidated or lacks 'Toilet' structures visible outside."
     }
   }
 ]
