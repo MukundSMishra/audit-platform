@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS ai_review_reports (
   id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
   batch_id TEXT NOT NULL UNIQUE,
   session_id UUID REFERENCES audit_sessions(id) ON DELETE CASCADE,
+  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE DEFAULT auth.uid(),
   report_data JSONB NOT NULL,
   created_at TIMESTAMPTZ DEFAULT NOW(),
   updated_at TIMESTAMPTZ DEFAULT NOW()
@@ -13,6 +14,7 @@ CREATE TABLE IF NOT EXISTS ai_review_reports (
 -- Add index for faster lookups
 CREATE INDEX IF NOT EXISTS idx_ai_review_reports_session_id ON ai_review_reports(session_id);
 CREATE INDEX IF NOT EXISTS idx_ai_review_reports_batch_id ON ai_review_reports(batch_id);
+CREATE INDEX IF NOT EXISTS idx_ai_review_reports_user_id ON ai_review_reports(user_id);
 CREATE INDEX IF NOT EXISTS idx_ai_review_reports_created_at ON ai_review_reports(created_at DESC);
 
 -- Add RLS policies (Row Level Security)
@@ -22,33 +24,13 @@ ALTER TABLE ai_review_reports ENABLE ROW LEVEL SECURITY;
 CREATE POLICY "Users can view own reports"
   ON ai_review_reports
   FOR SELECT
-  USING (
-    session_id IN (
-      SELECT id FROM audit_sessions WHERE user_id = auth.uid()
-    )
-  );
+  USING (user_id = auth.uid());
 
 -- Policy: Users can insert their own reports
 CREATE POLICY "Users can insert own reports"
   ON ai_review_reports
   FOR INSERT
-  WITH CHECK (
-    session_id IN (
-      SELECT id FROM audit_sessions WHERE user_id = auth.uid()
-    )
-  );
-
--- Policy: Admins can view all reports
-CREATE POLICY "Admins can view all reports"
-  ON ai_review_reports
-  FOR SELECT
-  USING (
-    EXISTS (
-      SELECT 1 FROM profiles 
-      WHERE profiles.id = auth.uid() 
-      AND profiles.role = 'admin'
-    )
-  );
+  WITH CHECK (user_id = auth.uid());
 
 -- Add updated_at trigger
 CREATE OR REPLACE FUNCTION update_ai_review_reports_updated_at()
