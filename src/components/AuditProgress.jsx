@@ -8,7 +8,8 @@ export default function AuditProgress({
   sessionId, 
   selectedActs, 
   onContinueAudit, 
-  onBackToDashboard 
+  onBackToDashboard,
+  onSubmitForReview 
 }) {
   const [progressData, setProgressData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -203,7 +204,7 @@ export default function AuditProgress({
 
             {/* Category Breakdown */}
             {riskData && riskData.categoryBreakdown && (
-              <div className="grid md:grid-cols-3 gap-3">
+              <div className="grid md:grid-cols-3 gap-3 mb-6">
                 {Object.entries(riskData.categoryBreakdown).map(([key, category]) => {
                   if (category.acts.length === 0) return null;
                   return (
@@ -229,6 +230,28 @@ export default function AuditProgress({
                     </div>
                   );
                 })}
+              </div>
+            )}
+
+            {/* Submit for Review Button - Show if all audits are complete */}
+            {overallProgress === 100 && onSubmitForReview && (
+              <div className="mt-6 p-4 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h3 className="text-lg font-bold text-green-900 mb-1">
+                      ✅ All Audits Complete!
+                    </h3>
+                    <p className="text-sm text-green-700">
+                      Ready to submit for AI review and final report generation
+                    </p>
+                  </div>
+                  <button
+                    onClick={onSubmitForReview}
+                    className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:shadow-xl hover:from-green-700 hover:to-emerald-700 transition-all flex items-center gap-2"
+                  >
+                    Submit for Review →
+                  </button>
+                </div>
               </div>
             )}
           </div>

@@ -1,525 +1,702 @@
-import React, { useState } from 'react';
-import { 
-  Plus, 
-  FileText, 
-  Calendar, 
-  DollarSign, 
-  Users, 
-  Building2, 
-  ArrowRight, 
-  Edit2, 
-  Trash2,
-  CheckCircle,
-  Clock,
-  AlertCircle,
-  ArrowLeft
+import React, { useState, useEffect } from 'react';
+import {
+	Plus,
+	FileText,
+	Upload,
+	X,
+	Edit2,
+	Trash2,
+	CheckCircle,
+	Clock,
+	AlertCircle,
+	ArrowLeft,
+	File,
+	Loader2
 } from 'lucide-react';
+import { supabase } from '../services/supabaseClient';
+import Modal from './shared/Modal';
 
 const ContractManagement = ({ client, firmName, location, onBack, onStartAudit }) => {
-  // Use client object if available, fallback to direct props for backward compatibility
-  const displayFirmName = client?.company_name || firmName;
-  const displayLocation = client?.city ? `${client.city}, ${client.state}` : location;
-  
-  const [contracts, setContracts] = useState([]);
-  const [showAddForm, setShowAddForm] = useState(false);
-  const [editingContract, setEditingContract] = useState(null);
-  const [formData, setFormData] = useState({
-    contractName: '',
-    contractNumber: '',
-    contractType: 'sales',
-    partiesInvolved: '',
-    contractValue: '',
-    contractTenure: '',
-    renewalTerms: '',
-    contractOwner: '',
-    dateOfExecution: '',
-    signatories: '',
-    auditStatus: 'pending' // pending, in-progress, completed
-  });
+	// Use client object if available, fallback to direct props for backward compatibility
+	const displayFirmName = client?.company_name || firmName;
+	const displayLocation = client?.city ? `${client.city}, ${client.state}` : location;
 
-  const contractTypes = [
-    { value: 'sales', label: 'Sales Contract' },
-    { value: 'purchase', label: 'Purchase Contract' },
-    { value: 'service', label: 'Service Agreement' },
-    { value: 'amc', label: 'Annual Maintenance Contract (AMC)' },
-    { value: 'annual', label: 'Annual Contract' }
-  ];
+	const [contracts, setContracts] = useState([]);
+	const [showModal, setShowModal] = useState(false);
+	const [editingIndex, setEditingIndex] = useState(null);
+	const [loading, setLoading] = useState(true);
+	const [uploading, setUploading] = useState(false);
+	const [showSuccessModal, setShowSuccessModal] = useState(false);
+	const [feedbackModal, setFeedbackModal] = useState({
+		open: false,
+		title: '',
+		message: '',
+		type: 'info',
+		confirmText: 'OK'
+	});
+	const [deleteModal, setDeleteModal] = useState({ open: false, index: null });
+	const [formData, setFormData] = useState({
+		contractTitle: '',
+		contractType: 'msa',
+		agreementFile: null,
+		auditStatus: 'ready'
+	});
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
+	const contractTypes = [
+		{ value: 'nda', label: 'Non-Disclosure Agreement (NDA)' },
+		{ value: 'msa', label: 'Master Service Agreement (MSA)' },
+		{ value: 'sow', label: 'Statement of Work (SOW)' },
+		{ value: 'purchase', label: 'Purchase Agreement' },
+		{ value: 'sales', label: 'Sales Contract' },
+		{ value: 'service', label: 'Service Agreement' },
+		{ value: 'lease', label: 'Lease Agreement' },
+		{ value: 'employment', label: 'Employment Contract' },
+		{ value: 'other', label: 'Other' }
+	];
 
-  const handleAddContract = () => {
-    if (!formData.contractName || !formData.contractType) {
-      alert('Please fill in at least Contract Name and Type');
-      return;
-    }
+	// Fetch contracts from Supabase on mount
+	useEffect(() => {
+		fetchContracts();
+	}, [client]);
 
-    if (editingContract !== null) {
-      // Update existing contract
-      setContracts(prev => 
-        prev.map((contract, index) => 
-          index === editingContract ? { ...formData, id: contract.id } : contract
-        )
-      );
-      setEditingContract(null);
-    } else {
-      // Add new contract
-      setContracts(prev => [...prev, { ...formData, id: Date.now() }]);
-    }
+	const fetchContracts = async () => {
+		try {
+			setLoading(true);
+			const { data: { user } } = await supabase.auth.getUser();
+			if (!user) {
+				setContracts([]);
+				return;
+			}
 
-    // Reset form
-    setFormData({
-      contractName: '',
-      contractNumber: '',
-      contractType: 'sales',
-      partiesInvolved: '',
-      contractValue: '',
-      contractTenure: '',
-      renewalTerms: '',
-      contractOwner: '',
-      dateOfExecution: '',
-      signatories: '',
-      auditStatus: 'pending'
-    });
-    setShowAddForm(false);
-  };
+			let query = supabase
+				.from('business_audits')
+				.select('*')
+				.eq('user_id', user.id)
+				.order('uploaded_at', { ascending: false });
 
-  const handleEditContract = (index) => {
-    setFormData(contracts[index]);
-    setEditingContract(index);
-    setShowAddForm(true);
-  };
+			if (client?.id) {
+				query = query.eq('client_id', client.id);
+			}
 
-  const handleDeleteContract = (index) => {
-    if (window.confirm('Are you sure you want to delete this contract?')) {
-      setContracts(prev => prev.filter((_, i) => i !== index));
-    }
-  };
+			const { data, error } = await query;
 
-  const handleStartAuditForContract = (contract, index) => {
-    // Update contract status to in-progress
-    setContracts(prev => 
-      prev.map((c, i) => 
-        i === index ? { ...c, auditStatus: 'in-progress' } : c
-      )
-    );
-    onStartAudit(contract);
-  };
+			if (error) throw error;
 
-  const getStatusBadge = (status) => {
-    switch (status) {
-      case 'completed':
-        return (
-          <span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
-            <CheckCircle size={14} />
-            Completed
-          </span>
-        );
-      case 'in-progress':
-        return (
-          <span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">
-            <Clock size={14} />
-            In Progress
-          </span>
-        );
-      default:
-        return (
-          <span className="inline-flex items-center gap-1.5 bg-yellow-100 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full">
-            <AlertCircle size={14} />
-            Pending
-          </span>
-        );
-    }
-  };
+			// Transform DB data to match component state structure
+			const transformedContracts = (data || []).map(contract => ({
+				id: contract.id,
+				contractTitle: contract.contract_name,
+				contractType: contract.contract_type,
+				agreementFile: {
+					name: contract.file_name,
+					size: contract.file_size,
+					path: contract.file_path
+				},
+				auditStatus: contract.status,
+				uploadedAt: contract.uploaded_at
+			}));
 
-  const getContractTypeLabel = (type) => {
-    return contractTypes.find(t => t.value === type)?.label || type;
-  };
+			setContracts(transformedContracts);
+		} catch (error) {
+			console.error('Error fetching contracts:', error);
+			openFeedback({
+				title: 'Load Failed',
+				message: 'Failed to load contracts. Please refresh the page.',
+				type: 'error'
+			});
+		} finally {
+			setLoading(false);
+		}
+	};
 
-  return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b px-6 py-4">
-        <div className="flex justify-between items-center">
-          <div>
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={onBack}
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
-              >
-                <ArrowLeft size={20} className="text-gray-600" />
-              </button>
-              <div>
-                <h1 className="font-bold text-2xl text-gray-900">Contract Management</h1>
-                <p className="text-sm text-gray-600 mt-1">
-                  {displayFirmName} • {displayLocation}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="text-right">
-            <div className="text-sm text-gray-600">Total Contracts</div>
-            <div className="text-2xl font-bold text-gray-900">{contracts.length}</div>
-          </div>
-        </div>
-      </div>
+	const resetForm = () => {
+		setFormData({
+			contractTitle: '',
+			contractType: 'msa',
+			agreementFile: null,
+			auditStatus: 'ready'
+		});
+	};
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto p-8">
-        {/* Add Contract Button */}
-        {!showAddForm && (
-          <div className="mb-6">
-            <button
-              onClick={() => {
-                setShowAddForm(true);
-                setEditingContract(null);
-                setFormData({
-                  contractName: '',
-                  contractNumber: '',
-                  contractType: 'sales',
-                  partiesInvolved: '',
-                  contractValue: '',
-                  contractTenure: '',
-                  renewalTerms: '',
-                  contractOwner: '',
-                  dateOfExecution: '',
-                  signatories: '',
-                  auditStatus: 'pending'
-                });
-              }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-md hover:shadow-lg"
-            >
-              <Plus size={20} />
-              Add New Contract
-            </button>
-          </div>
-        )}
+	const handleInputChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prev) => ({ ...prev, [name]: value }));
+	};
 
-        {/* Add/Edit Contract Form */}
-        {showAddForm && (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 mb-6">
-              {editingContract !== null ? 'Edit Contract' : 'Add New Contract'}
-            </h2>
-            
-            <div className="grid md:grid-cols-2 gap-6">
-              {/* Contract Name/Number */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Contract Name / Number <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="text"
-                  name="contractName"
-                  value={formData.contractName}
-                  onChange={handleInputChange}
-                  placeholder="e.g., Supply Agreement 2024-001"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                  required
-                />
-              </div>
+	const openFeedback = ({ title, message, type = 'info', confirmText = 'OK' }) => {
+		setFeedbackModal({ open: true, title, message, type, confirmText });
+	};
 
-              {/* Contract Number (Optional separate field) */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Reference Number
-                </label>
-                <input
-                  type="text"
-                  name="contractNumber"
-                  value={formData.contractNumber}
-                  onChange={handleInputChange}
-                  placeholder="e.g., REF-2024-001"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+	const handleFileChange = (e, fieldName) => {
+		const file = e.target.files?.[0];
+		if (!file) return;
 
-              {/* Contract Type */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Type <span className="text-red-500">*</span>
-                </label>
-                <select
-                  name="contractType"
-                  value={formData.contractType}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                  required
-                >
-                  {contractTypes.map(type => (
-                    <option key={type.value} value={type.value}>
-                      {type.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
+		const allowedTypes = [
+			'application/pdf',
+			'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+			'application/msword'
+		];
+		if (!allowedTypes.includes(file.type)) {
+			openFeedback({
+				title: 'Invalid File Type',
+				message: 'Please upload only PDF or DOCX files.',
+				type: 'warning'
+			});
+			return;
+		}
+		if (file.size > 10 * 1024 * 1024) {
+			openFeedback({
+				title: 'File Too Large',
+				message: 'File size should not exceed 10MB.',
+				type: 'warning'
+			});
+			return;
+		}
 
-              {/* Parties Involved */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Parties Involved
-                </label>
-                <input
-                  type="text"
-                  name="partiesInvolved"
-                  value={formData.partiesInvolved}
-                  onChange={handleInputChange}
-                  placeholder="e.g., ABC Corp, XYZ Ltd"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+		setFormData((prev) => ({
+			...prev,
+			[fieldName]: {
+				name: file.name,
+				size: file.size,
+				type: file.type,
+				uploadedAt: new Date().toISOString()
+			}
+		}));
+	};
 
-              {/* Contract Value */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Contract Value (₹)
-                </label>
-                <input
-                  type="text"
-                  name="contractValue"
-                  value={formData.contractValue}
-                  onChange={handleInputChange}
-                  placeholder="e.g., 10,00,000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+	const handleRemoveFile = (fieldName) => {
+		setFormData((prev) => ({ ...prev, [fieldName]: null }));
+	};
 
-              {/* Contract Tenure */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Contract Tenure
-                </label>
-                <input
-                  type="text"
-                  name="contractTenure"
-                  value={formData.contractTenure}
-                  onChange={handleInputChange}
-                  placeholder="e.g., 2 years, 12 months"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+	const handleAddContract = async () => {
+		if (!formData.contractTitle.trim()) {
+			openFeedback({
+				title: 'Missing Contract Title',
+				message: 'Please provide a Contract Title to continue.',
+				type: 'warning'
+			});
+			return;
+		}
+		if (!formData.contractType) {
+			openFeedback({
+				title: 'Select Contract Type',
+				message: 'Please choose a Contract Type.',
+				type: 'warning'
+			});
+			return;
+		}
+		if (!formData.agreementFile) {
+			openFeedback({
+				title: 'Agreement Required',
+				message: 'Please upload the executed agreement to proceed.',
+				type: 'warning'
+			});
+			return;
+		}
 
-              {/* Renewal/Extension Terms */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Renewal / Extension Terms
-                </label>
-                <input
-                  type="text"
-                  name="renewalTerms"
-                  value={formData.renewalTerms}
-                  onChange={handleInputChange}
-                  placeholder="e.g., Auto-renewal, 90 days notice"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+		try {
+			setUploading(true);
+			const { data: { user } } = await supabase.auth.getUser();
+			if (!user) {
+				openFeedback({
+					title: 'Login Required',
+					message: 'You must be logged in to upload contracts.',
+					type: 'warning'
+				});
+				return;
+			}
 
-              {/* Contract Owner (Department) */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Contract Owner (Department)
-                </label>
-                <input
-                  type="text"
-                  name="contractOwner"
-                  value={formData.contractOwner}
-                  onChange={handleInputChange}
-                  placeholder="e.g., Procurement, Sales"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+			if (editingIndex !== null) {
+				// Update existing contract
+				const existingContract = contracts[editingIndex];
+				const { error } = await supabase
+					.from('business_audits')
+					.update({
+						contract_name: formData.contractTitle,
+						contract_type: formData.contractType
+					})
+					.eq('id', existingContract.id);
 
-              {/* Date of Execution */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Date of Execution
-                </label>
-                <input
-                  type="date"
-                  name="dateOfExecution"
-                  value={formData.dateOfExecution}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
+				if (error) throw error;
+				setEditingIndex(null);
+			} else {
+				// Upload new contract
+				const fileExt = formData.agreementFile.name.split('.').pop();
+				const fileName = `${user.id}/${Date.now()}_${formData.contractTitle.replace(/[^a-zA-Z0-9]/g, '_')}.${fileExt}`;
 
-              {/* Signatories & Authority Verified */}
-              <div>
-                <label className="block text-sm font-bold text-gray-700 mb-2">
-                  Signatories & Authority
-                </label>
-                <input
-                  type="text"
-                  name="signatories"
-                  value={formData.signatories}
-                  onChange={handleInputChange}
-                  placeholder="e.g., John Doe (CEO), Jane Smith (Director)"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                />
-              </div>
-            </div>
+				// Upload file to storage
+				const { error: uploadError } = await supabase.storage
+					.from('audit-docs')
+					.upload(fileName, formData.agreementFile, {
+						cacheControl: '3600',
+						upsert: false
+					});
 
-            {/* Form Actions */}
-            <div className="flex gap-4 mt-8">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowAddForm(false);
-                  setEditingContract(null);
-                }}
-                className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-semibold transition-all"
-              >
-                Cancel
-              </button>
-              <button
-                onClick={handleAddContract}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 font-semibold transition-all shadow-md hover:shadow-lg"
-              >
-                {editingContract !== null ? 'Update Contract' : 'Add Contract'}
-              </button>
-            </div>
-          </div>
-        )}
+				if (uploadError) throw uploadError;
 
-        {/* Contracts List */}
-        {contracts.length === 0 && !showAddForm ? (
-          <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-12 text-center">
-            <FileText size={64} className="text-gray-300 mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-gray-900 mb-2">No Contracts Added Yet</h3>
-            <p className="text-gray-600 mb-6">
-              Add contracts to start conducting Business Risk Audits
-            </p>
-            <button
-              onClick={() => setShowAddForm(true)}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-md hover:shadow-lg"
-            >
-              <Plus size={20} />
-              Add Your First Contract
-            </button>
-          </div>
-        ) : (
-          <div className="space-y-4">
-            {contracts.map((contract, index) => (
-              <div 
-                key={contract.id} 
-                className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all"
-              >
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-4">
-                    <div className="flex-1">
-                      <div className="flex items-center gap-3 mb-2">
-                        <h3 className="text-xl font-bold text-gray-900">
-                          {contract.contractName}
-                        </h3>
-                        {getStatusBadge(contract.auditStatus)}
-                      </div>
-                      <div className="flex items-center gap-4 text-sm text-gray-600">
-                        <span className="inline-flex items-center gap-1">
-                          <FileText size={16} />
-                          {getContractTypeLabel(contract.contractType)}
-                        </span>
-                        {contract.contractNumber && (
-                          <span>Ref: {contract.contractNumber}</span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="flex gap-2">
-                      <button
-                        onClick={() => handleEditContract(index)}
-                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
-                        title="Edit Contract"
-                      >
-                        <Edit2 size={18} />
-                      </button>
-                      <button
-                        onClick={() => handleDeleteContract(index)}
-                        className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
-                        title="Delete Contract"
-                      >
-                        <Trash2 size={18} />
-                      </button>
-                    </div>
-                  </div>
+				// Insert record into database
+				const { error: dbError } = await supabase
+					.from('business_audits')
+					.insert({
+						contract_name: formData.contractTitle,
+						contract_type: formData.contractType,
+						file_path: fileName,
+						file_name: formData.agreementFile.name,
+						file_size: formData.agreementFile.size,
+						status: 'ready',
+						user_id: user.id,
+						client_id: client?.id || null
+					});
 
-                  {/* Contract Details Grid */}
-                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-                    {contract.partiesInvolved && (
-                      <div className="flex items-start gap-2">
-                        <Users size={16} className="text-gray-400 mt-0.5" />
-                        <div>
-                          <div className="text-xs text-gray-500">Parties</div>
-                          <div className="text-sm font-medium text-gray-900">{contract.partiesInvolved}</div>
-                        </div>
-                      </div>
-                    )}
-                    {contract.contractValue && (
-                      <div className="flex items-start gap-2">
-                        <DollarSign size={16} className="text-gray-400 mt-0.5" />
-                        <div>
-                          <div className="text-xs text-gray-500">Value</div>
-                          <div className="text-sm font-medium text-gray-900">₹ {contract.contractValue}</div>
-                        </div>
-                      </div>
-                    )}
-                    {contract.contractTenure && (
-                      <div className="flex items-start gap-2">
-                        <Calendar size={16} className="text-gray-400 mt-0.5" />
-                        <div>
-                          <div className="text-xs text-gray-500">Tenure</div>
-                          <div className="text-sm font-medium text-gray-900">{contract.contractTenure}</div>
-                        </div>
-                      </div>
-                    )}
-                    {contract.contractOwner && (
-                      <div className="flex items-start gap-2">
-                        <Building2 size={16} className="text-gray-400 mt-0.5" />
-                        <div>
-                          <div className="text-xs text-gray-500">Owner</div>
-                          <div className="text-sm font-medium text-gray-900">{contract.contractOwner}</div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
+				if (dbError) throw dbError;
+			}
 
-                  {/* Audit Action Button */}
-                  <div className="pt-4 border-t">
-                    <button
-                      onClick={() => handleStartAuditForContract(contract, index)}
-                      disabled={contract.auditStatus === 'completed'}
-                      className={`w-full flex items-center justify-center gap-2 font-bold py-3 px-6 rounded-lg transition-all ${
-                        contract.auditStatus === 'completed'
-                          ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                          : 'bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700 shadow-md hover:shadow-lg'
-                      }`}
-                    >
-                      {contract.auditStatus === 'completed' ? (
-                        <>
-                          <CheckCircle size={20} />
-                          Audit Completed
-                        </>
-                      ) : contract.auditStatus === 'in-progress' ? (
-                        <>
-                          Continue Audit
-                          <ArrowRight size={20} />
-                        </>
-                      ) : (
-                        <>
-                          Start Audit
-                          <ArrowRight size={20} />
-                        </>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+			// Refresh the contracts list
+			await fetchContracts();
+			resetForm();
+			setShowModal(false);
+			setShowSuccessModal(true);
+		} catch (error) {
+			console.error('Error uploading contract:', error);
+			openFeedback({
+				title: 'Upload Failed',
+				message: 'Failed to upload contract: ' + error.message,
+				type: 'error'
+			});
+		} finally {
+			setUploading(false);
+		}
+	};
 
-export default ContractManagement;
+	const handleEditContract = (index) => {
+		setEditingIndex(index);
+		setFormData(contracts[index]);
+		setShowModal(true);
+	};
+
+	const handleDeleteContract = (index) => {
+		setDeleteModal({ open: true, index });
+	};
+
+	const confirmDeleteContract = async () => {
+		const index = deleteModal.index;
+		if (index === null || index === undefined) return;
+
+		try {
+			const contract = contracts[index];
+
+			const { error: storageError } = await supabase.storage
+				.from('audit-docs')
+				.remove([contract.agreementFile.path]);
+
+			if (storageError) console.warn('Storage deletion warning:', storageError);
+
+			const { error: dbError } = await supabase
+				.from('business_audits')
+				.delete()
+				.eq('id', contract.id);
+
+			if (dbError) throw dbError;
+
+			await fetchContracts();
+			setDeleteModal({ open: false, index: null });
+			openFeedback({
+				title: 'Contract Deleted',
+				message: 'The contract and its audit data have been removed.',
+				type: 'success'
+			});
+		} catch (error) {
+			console.error('Error deleting contract:', error);
+			openFeedback({
+				title: 'Delete Failed',
+				message: 'Failed to delete contract: ' + error.message,
+				type: 'error'
+			});
+		} finally {
+			setDeleteModal({ open: false, index: null });
+		}
+	};
+
+	const handleStartAuditForContract = (contract, index) => {
+		setContracts((prev) => prev.map((c, i) => (i === index ? { ...c, auditStatus: 'in-progress' } : c)));
+		onStartAudit?.(contract);
+	};
+
+	const getStatusBadge = (status) => {
+		switch (status) {
+			case 'completed':
+				return (
+					<span className="inline-flex items-center gap-1.5 bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full">
+						<CheckCircle size={14} />
+						Audit Completed
+					</span>
+				);
+			case 'in-progress':
+				return (
+					<span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full">
+						<Clock size={14} />
+						In Progress
+					</span>
+				);
+			default:
+				return (
+					<span className="inline-flex items-center gap-1.5 bg-purple-100 text-purple-700 text-xs font-bold px-3 py-1 rounded-full">
+						<CheckCircle size={14} />
+						Ready to Audit
+					</span>
+				);
+		}
+	};
+
+	const getContractTypeLabel = (type) => contractTypes.find((t) => t.value === type)?.label || type;
+
+	const formatFileSize = (bytes) => {
+		if (bytes < 1024) return `${bytes} B`;
+		if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+		return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+	};
+
+	const formatDate = (isoString) => {
+		const date = new Date(isoString);
+		return date.toLocaleDateString('en-IN', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric'
+		});
+	};
+
+	return (
+		<div className="min-h-screen bg-gray-50">
+			{/* Header */}
+			<div className="bg-white border-b px-6 py-4">
+				<div className="flex justify-between items-center">
+					<div className="flex items-center gap-3">
+						<button onClick={onBack} className="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+							<ArrowLeft size={20} className="text-gray-600" />
+						</button>
+						<div>
+							<h1 className="font-bold text-2xl text-gray-900">Contract Management</h1>
+							<p className="text-sm text-gray-600 mt-1">
+								{displayFirmName} • {displayLocation}
+							</p>
+						</div>
+					</div>
+					<div className="text-right">
+						<div className="text-sm text-gray-600">Total Contracts</div>
+						<div className="text-2xl font-bold text-gray-900">{contracts.length}</div>
+					</div>
+				</div>
+			</div>
+
+			{/* Main Content */}
+			<div className="max-w-7xl mx-auto p-8">
+				{/* Add Contract Button - visible when list exists */}
+				{contracts.length > 0 && (
+					<div className="mb-6">
+						<button
+							onClick={() => {
+								resetForm();
+								setEditingIndex(null);
+								setShowModal(true);
+							}}
+							className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-3 px-6 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-md hover:shadow-lg"
+						>
+							<Plus size={20} />
+							Add New Contract
+						</button>
+					</div>
+				)}
+
+				{/* Success Modal */}
+				{showSuccessModal && (
+					<Modal
+						isOpen={showSuccessModal}
+						onClose={() => setShowSuccessModal(false)}
+						title="Audit Initiated Successfully"
+						message="The contract has been uploaded. Our AI is now processing the document for risk auditing. You will see the status update in the dashboard shortly."
+						type="success"
+						confirmText="Back to Dashboard"
+						onConfirm={() => {
+							setShowSuccessModal(false);
+							fetchContracts();
+						}}
+						showCancel={false}
+					/>
+				)}
+
+				{/* Feedback Modal (warnings/errors/info) */}
+				{feedbackModal.open && (
+					<Modal
+						isOpen={feedbackModal.open}
+						onClose={() => setFeedbackModal((prev) => ({ ...prev, open: false }))}
+						title={feedbackModal.title}
+						message={feedbackModal.message}
+						type={feedbackModal.type || 'info'}
+						confirmText={feedbackModal.confirmText || 'OK'}
+						showCancel={false}
+					/>
+				)}
+
+				{/* Delete Confirmation Modal */}
+				{deleteModal.open && (
+					<Modal
+						isOpen={deleteModal.open}
+						onClose={() => setDeleteModal({ open: false, index: null })}
+						title="Delete Contract?"
+						message="Are you sure you want to delete this contract and its audit data? This action cannot be undone."
+						type="warning"
+						confirmText="Delete"
+						cancelText="Cancel"
+						showCancel={true}
+						onConfirm={confirmDeleteContract}
+					/>
+				)}
+
+				{showSuccessModal && (
+					<Modal
+						isOpen={showSuccessModal}
+						onClose={() => setShowSuccessModal(false)}
+						title="Audit Initiated Successfully"
+						message="The contract has been uploaded. Our AI is now processing the document for risk auditing. You will see the status update in the dashboard shortly."
+						type="success"
+						confirmText="Back to Dashboard"
+						onConfirm={() => {
+							setShowSuccessModal(false);
+							fetchContracts();
+						}}
+						showCancel={false}
+					/>
+				)}
+
+				{/* Modal */}
+				{showModal && (
+					<div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
+						<div className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+							<div className="sticky top-0 bg-white border-b px-6 py-4 flex justify-between items-center">
+								<h2 className="text-2xl font-bold text-gray-900">
+									{editingIndex !== null ? 'Edit Contract' : 'Upload New Contract'}
+								</h2>
+								<button
+									onClick={() => {
+										setShowModal(false);
+										setEditingIndex(null);
+										resetForm();
+									}}
+									className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+								>
+									<X size={20} className="text-gray-600" />
+								</button>
+							</div>
+
+							<div className="p-6">
+								<div className="grid md:grid-cols-2 gap-6">
+									<div className="space-y-6">
+										<div>
+											<label className="block text-sm font-bold text-gray-700 mb-2">
+												Contract Title <span className="text-red-500">*</span>
+											</label>
+											<input
+												type="text"
+												name="contractTitle"
+												value={formData.contractTitle}
+												onChange={handleInputChange}
+												placeholder="e.g., MSA - Vendor X, NDA - Client ABC"
+												className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-sm"
+											/>
+										</div>
+
+										<div>
+											<label className="block text-sm font-bold text-gray-700 mb-2">
+												Contract Type <span className="text-red-500">*</span>
+											</label>
+											<select
+												name="contractType"
+												value={formData.contractType}
+												onChange={handleInputChange}
+												className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-sm"
+											>
+												{contractTypes.map((type) => (
+													<option key={type.value} value={type.value}>
+														{type.label}
+													</option>
+												))}
+											</select>
+										</div>
+
+										<div>
+											<label className="block text-sm font-bold text-gray-700 mb-2">
+												Upload Executed Agreement <span className="text-red-500">*</span>
+											</label>
+											{formData.agreementFile ? (
+												<div className="border-2 border-green-300 bg-green-50 rounded-lg p-4">
+													<div className="flex items-start justify-between">
+														<div className="flex items-start gap-3">
+															<File size={20} className="text-green-600 mt-0.5" />
+															<div>
+																<p className="text-sm font-medium text-gray-900">{formData.agreementFile.name}</p>
+																<p className="text-xs text-gray-500 mt-1">
+																	{formatFileSize(formData.agreementFile.size)} • Uploaded {formatDate(formData.agreementFile.uploadedAt)}
+																</p>
+															</div>
+														</div>
+														<button
+															onClick={() => handleRemoveFile('agreementFile')}
+															className="p-1 hover:bg-red-100 rounded transition-colors"
+														>
+															<X size={16} className="text-red-600" />
+														</button>
+													</div>
+												</div>
+											) : (
+												<label className="block border-2 border-dashed border-gray-300 rounded-lg p-6 hover:border-purple-400 hover:bg-purple-50 transition-all cursor-pointer">
+													<input
+														type="file"
+														accept=".pdf,.doc,.docx"
+														onChange={(e) => handleFileChange(e, 'agreementFile')}
+														className="hidden"
+													/>
+													<div className="text-center">
+														<Upload size={32} className="mx-auto text-gray-400 mb-2" />
+														<p className="text-sm font-medium text-gray-700">Click to upload or drag and drop</p>
+														<p className="text-xs text-gray-500 mt-1">PDF or DOCX (Max 10MB)</p>
+													</div>
+												</label>
+											)}
+										</div>
+									</div>
+
+									<div>
+										<div className="h-full border rounded-xl p-5 bg-yellow-50 border-yellow-200">
+											<div className="flex items-center gap-2 mb-3">
+												<span className="text-lg">⚠️</span>
+												<h3 className="text-base font-bold text-yellow-900">Intern Audit Guidelines</h3>
+											</div>
+											<ul className="list-disc pl-5 space-y-2 text-sm text-yellow-900">
+												<li><span className="font-semibold">Validity:</span> Upload ONLY fully executed copies (signed by both parties). No drafts.</li>
+												<li><span className="font-semibold">Completeness:</span> Ensure all Annexures (Scope, SLA, Pricing) are included in the PDF.</li>
+												<li><span className="font-semibold">Amendments:</span> If renewed or changed, upload the latest Amendment/Addendum.</li>
+												<li><span className="font-semibold">Data Check:</span> Verify “Effective Date” and “Contract Value” are legible.</li>
+												<li><span className="font-semibold">Compliance:</span> Flag if the party is a Foreign Entity (requires FEMA check).</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div className="sticky bottom-0 bg-gray-50 border-t px-6 py-4 flex gap-4">
+								<button
+									onClick={() => {
+										setShowModal(false);
+										setEditingIndex(null);
+										resetForm();
+									}}
+									className="flex-1 px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 font-semibold transition-all"
+								>
+									Cancel
+								</button>
+								<button
+									onClick={handleAddContract}
+									className="flex-1 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-lg hover:from-purple-700 hover:to-pink-700 font-semibold transition-all shadow-md hover:shadow-lg"
+								>
+									{editingIndex !== null ? 'Update Contract' : 'Upload & Initialize Audit'}
+								</button>
+							</div>
+						</div>
+					</div>
+				)}
+
+				{/* Empty State */}
+				{loading ? (
+					<div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-16 text-center">
+						<Loader2 size={48} className="mx-auto text-purple-600 animate-spin mb-4" />
+						<p className="text-gray-600">Loading contracts...</p>
+					</div>
+				) : contracts.length === 0 ? (
+					<div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-16 text-center">
+						<div className="max-w-md mx-auto">
+							<div className="w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+								<FileText size={48} className="text-purple-600" />
+							</div>
+							<h3 className="text-2xl font-bold text-gray-900 mb-3">No Business Audits Initiated</h3>
+							<p className="text-gray-600 mb-8 leading-relaxed">
+								Upload a contract and its accompanying guidelines to generate a risk assessment report.
+							</p>
+							<button
+								onClick={() => {
+									resetForm();
+									setEditingIndex(null);
+									setShowModal(true);
+								}}
+								className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 px-8 rounded-xl hover:from-purple-700 hover:to-pink-700 transition-all shadow-lg hover:shadow-xl"
+							>
+								<Plus size={22} />
+								Add Your First Contract
+							</button>
+						</div>
+					</div>
+								) : (
+									<div className="bg-white rounded-xl shadow-md border border-gray-100 overflow-hidden">
+										<div className="overflow-x-auto">
+											<table className="min-w-full text-sm">
+												<thead className="bg-gray-50 text-gray-600 uppercase text-xs">
+													<tr>
+														<th className="px-4 py-3 text-left">Contract Details</th>
+														<th className="px-4 py-3 text-left">Type</th>
+														<th className="px-4 py-3 text-left">Uploaded Date</th>
+														<th className="px-4 py-3 text-left">Status</th>
+														<th className="px-4 py-3 text-right">Actions</th>
+													</tr>
+												</thead>
+												<tbody className="divide-y divide-gray-100">
+													{contracts.map((contract, index) => (
+														<tr key={contract.id} className="hover:bg-gray-50">
+															<td className="px-4 py-3 align-middle">
+																<div className="font-semibold text-gray-900">{contract.contractTitle}</div>
+																<div className="text-xs text-gray-500 flex items-center gap-2 mt-1">
+																	<File size={14} className="text-gray-400" />
+																	<span>{contract.agreementFile?.name}</span>
+																</div>
+															</td>
+															<td className="px-4 py-3 align-middle">
+																<span className="inline-flex items-center gap-1.5 bg-blue-100 text-blue-700 text-xs font-semibold px-2.5 py-1 rounded-full">
+																	{getContractTypeLabel(contract.contractType)}
+																</span>
+															</td>
+															<td className="px-4 py-3 align-middle text-gray-700">
+																{formatDate(contract.uploadedAt)}
+															</td>
+															<td className="px-4 py-3 align-middle">
+																{getStatusBadge(contract.auditStatus)}
+															</td>
+															<td className="px-4 py-3 align-middle">
+																<div className="flex items-center gap-3 justify-end">
+																	<button
+																		onClick={() => handleEditContract(index)}
+																		className="p-2 text-blue-600 hover:bg-blue-50 rounded-md transition-colors"
+																		title="Edit Contract"
+																	>
+																		<Edit2 size={16} />
+																	</button>
+																	<button
+																		onClick={() => handleDeleteContract(index)}
+																		className="p-2 text-red-600 hover:bg-red-50 rounded-md transition-colors"
+																		title="Delete Contract"
+																	>
+																		<Trash2 size={16} />
+																	</button>
+																</div>
+															</td>
+														</tr>
+													))}
+												</tbody>
+											</table>
+										</div>
+									</div>
+								)}
+			</div>
+		</div>
+		  );
+		};
+
+		export default ContractManagement;
+

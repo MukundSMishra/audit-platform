@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard';
 import ActSelector from './components/ActSelector';
 import AuditProgress from './components/AuditProgress';
 import AuditTypeSelector from './components/AuditTypeSelector';
+import SubmitForReview from './components/SubmitForReview';
 import AdminPortal from './components/admin/AdminPortal';
 import BusinessAuditWizard from './components/BusinessAuditWizard';
 import BusinessAuditCard from './components/BusinessAuditCard';
@@ -43,7 +44,7 @@ function App() {
   const [factoryHistory, setFactoryHistory] = useState([]); // In-progress audits
   
   // Navigation State (for regulatory audit flow)
-  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit'
+  const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit' | 'submit-review'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
   const [factoryLocation, setFactoryLocation] = useState(null);
@@ -931,8 +932,77 @@ function App() {
             setCurrentStep('dashboard');
             setCurrentScreen('dashboard');
           }}
+          onSubmitForReview={() => {
+            setCurrentScreen('submit-review');
+          }}
         />
       </div>
+    );
+  }
+
+  // SCREEN 2.5: Submit for Review - Final submission after completing all audit questions
+  if (currentScreen === 'submit-review') {
+    return (
+      <SubmitForReview
+        sessionId={currentSessionId}
+        company={{ company_name: factoryName, location: factoryLocation }}
+        auditData={auditData}
+        answers={answers}
+        selectedActs={selectedActIds.map(actId => {
+          const actMetadata = getActById(actId);
+          return {
+            id: actId,
+            name: actMetadata.name,
+            shortName: actMetadata.shortName
+          };
+        })}
+        onSubmitSuccess={async (aiReport, batchId) => {
+          try {
+            console.log('[Submit Success] AI Report received:', aiReport);
+            
+            // Save the AI report to Supabase
+            const { error: reportError } = await supabase
+              .from('ai_review_reports')
+              .insert({
+                batch_id: batchId,
+                session_id: currentSessionId,
+                report_data: aiReport,
+                created_at: new Date().toISOString()
+              });
+            
+            if (reportError) {
+              console.error('[Submit Success] Error saving AI report:', reportError);
+              alert('AI review completed but failed to save report. Check console for details.');
+            } else {
+              console.log('[Submit Success] AI report saved successfully');
+              
+              // Update session status to completed
+              await supabase
+                .from('audit_sessions')
+                .update({ status: 'Completed', completed_at: new Date().toISOString() })
+                .eq('id', currentSessionId);
+            }
+            
+            // Show success message and redirect after delay
+            setTimeout(() => {
+              setCurrentScreen('dashboard');
+              setCurrentSessionId(null);
+              setSelectedActIds([]);
+              setCurrentActIndex(0);
+              setAnswers({});
+              alert('Audit submitted successfully! Check your dashboard for the report.');
+            }, 3000);
+            
+          } catch (error) {
+            console.error('[Submit Success] Error handling submission:', error);
+            alert('Error processing submission: ' + error.message);
+          }
+        }}
+        onCancel={() => {
+          // Go back to the audit screen
+          setCurrentScreen('audit');
+        }}
+      />
     );
   }
 
@@ -1201,14 +1271,14 @@ function App() {
           </div>
 
           <button 
-            onClick={() => {
+            onClick={async () => {
               if (currentQuestionIndex === auditData.length - 1) {
-                // Last question of this act
+                // Last question of this act - save progress first
+                await saveProgress(false);
+                
                 if (currentActIndex === selectedActIds.length - 1) {
-                  // Last act
-                  if (window.confirm('You have completed all audit questions. Review your answers?')) {
-                    // Could show summary here
-                  }
+                  // Last act - go to submit for review screen
+                  setCurrentScreen('submit-review');
                 } else {
                   // More acts to audit
                   if (window.confirm(`${currentActData?.shortName} audit complete. Ready to audit the next act?`)) {
@@ -1227,7 +1297,7 @@ function App() {
           >
             {currentQuestionIndex === auditData.length - 1 
               ? (currentActIndex === selectedActIds.length - 1 
-                ? <>Complete All <FileText size={20} /></> 
+                ? <>Complete & Review <FileText size={20} /></> 
                 : <>Next Act <ArrowLeft size={20} /></>)
               : <>Next <ChevronRight size={20} /></>
             }
