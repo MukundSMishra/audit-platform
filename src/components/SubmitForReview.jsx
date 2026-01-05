@@ -28,63 +28,24 @@ const SubmitForReview = ({
     setSuccessMessage(null);
 
     try {
-      // Generate unique batch ID
-      const batchId = `batch_${sessionId}_${Date.now()}`;
-      
-      // Build audit items payload
-      const auditItems = auditData
-        .filter(question => answers[question.id]) // Only include answered questions
-        .map(question => {
-          const answer = answers[question.id];
-          const isAiEvidence = question.workflow_type === 'ai_evidence';
-          
-          return {
-            audit_item_id: question.id,
-            question_text: question.question_text || question.text,
-            legal_text: question.legal_text || '',
-            risk_level: question.risk_level || question.risk_profile?.severity_level || 'Medium',
-            category: question.category || 'General',
-            workflow_type: question.workflow_type || 'manual_observation',
-            
-            // For manual observation workflow
-            ...((!isAiEvidence) && {
-              intern_verdict: answer.status,
-              intern_comment: answer.comment || '',
-              evidence_url: answer.evidenceUrl || null
-            }),
-            
-            // For AI evidence workflow
-            ...(isAiEvidence && {
-              intern_evidence: answer.evidenceUrl || answer.comment || '',
-              evidence_url: answer.evidenceUrl || null,
-              missing_evidence_reason: answer.missingEvidenceReason || null
-            }),
-            
-            // Common fields
-            applicability_reason: answer.applicabilityReason || null,
-            is_applicable: answer.status !== 'Not Applicable'
-          };
-        });
-
-      // Build payload
-      const payload = {
-        batch_id: batchId,
-        session_id: sessionId,
-        company_name: company.company_name || company.name,
-        location: company.location,
-        submitted_at: new Date().toISOString(),
-        audit_items: auditItems
+      // Construct Work Order object for Universal Agentic Workflow
+      const workOrder = {
+        agent_id: "safety_expert",
+        task_type: "audit_report",
+        payload: {
+          batch_id: sessionId
+        }
       };
 
-      console.log('[SubmitForReview] Submitting payload:', payload);
+      console.log('[SubmitForReview] Submitting work order:', workOrder);
 
-      // Send to Python AI Agent
-      const response = await fetch('http://127.0.0.1:8000/submit-audit-batch', {
+      // Send to Universal Agent Endpoint
+      const response = await fetch('http://localhost:8000/invoke-agent', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(payload)
+        body: JSON.stringify(workOrder)
       });
 
       if (!response.ok) {
@@ -92,16 +53,21 @@ const SubmitForReview = ({
         throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
       }
 
-      const aiReport = await response.json();
-      console.log('[SubmitForReview] AI Agent response:', aiReport);
+      const result = await response.json();
+      console.log('[SubmitForReview] Agent response:', result);
 
       // Success!
-      setSuccessMessage(`Successfully submitted ${auditItems.length} items for AI review!`);
+      setSuccessMessage('Audit submitted successfully! Redirecting to dashboard...');
       
-      // Call success callback with the AI report
+      // Call success callback
       if (onSubmitSuccess) {
-        onSubmitSuccess(aiReport, batchId);
+        onSubmitSuccess(result);
       }
+
+      // Navigate to Dashboard after short delay
+      setTimeout(() => {
+        window.location.href = '/dashboard';
+      }, 1500);
 
     } catch (err) {
       console.error('[SubmitForReview] Error submitting:', err);
