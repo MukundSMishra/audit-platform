@@ -47,9 +47,9 @@ export const AVAILABLE_ACTS = [
   },
 
   // ============================================
-  //  TEMPORARILY DISABLED (PENDING SCHEMA UPDATE)
+  // CODE ON WAGES 2019 - ACTIVE
   // ============================================
-  /* {
+  {
     id: 'code_on_wages_2019',
     name: 'The Code on Wages, 2019',
     description: 'Comprehensive law for wage standards, equal remuneration, payment regulations, and minimum wages',
@@ -59,6 +59,11 @@ export const AVAILABLE_ACTS = [
     year: 2019,
     type: 'act'
   },
+
+  // ============================================
+  //  TEMPORARILY DISABLED (PENDING SCHEMA UPDATE)
+  // ============================================
+  /*
   {
     id: 'code_on_social_security_2020',
     name: 'The Code on Social Security, 2020',

@@ -1,1244 +1,921 @@
 [
   {
-    "audit_item_id": "CW2019-SEC-03-001",
+    "audit_item_id": "CW-2019-SEC-03",
+    "category": "Remuneration & Equality",
+    "risk_level": "High",
+    "question_text": "Is the establishment maintaining equal rates of wages for employees of all genders performing the same or similar nature of work?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 3(1)",
+    "legal_text": "There shall be no discrimination in an establishment or any unit thereof among employees on the ground of gender in matters relating to wages by the same employer, in respect of the same work or work of a similar nature done by any employee.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the Register of Wages or Payroll Sheet for the most recent month.",
+        "Step 2: Identification: Select at least two employees of different genders holding the same designation/job role.",
+        "Step 3: Verification: Compare the 'Rate of Wages' column for these employees to ensure no disparity exists based on gender."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Register of Wages / Payroll Summary",
+      "instruction": "Upload a clear image/PDF of the wage register showing employee names, designations, gender, and basic wage rates.",
+      "title": "Equal Remuneration Check"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the uploaded document is a Payroll or Wage Register containing columns for Employee Name, Designation, and Wage Rate. Reject if unreadable.",
+      "verification_logic": "Prompt: Analyze the data to identify employees with the same 'Designation'. For such pairs, compare the 'Basic Wage' or 'Rate of Wages'. Flag 'Non-Compliant' if significant disparity exists between different genders for the same role without apparent tenure/seniority difference."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-05",
+    "category": "Minimum Wages",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 3(1)",
-      "category": "Wage Standards and Equal Remuneration"
+    "question_text": "Are all employees being paid wages not less than the minimum rate notified by the appropriate Government for their specific category?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 5 & Section 6",
+    "legal_text": "No employer shall pay to any employee wages less than the minimum rate of wages notified by the appropriate Government.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify the establishment's zone/category and the current applicable Minimum Wage Notification.",
+        "Step 2: Request the Register of Wages.",
+        "Step 3: Check the 'Gross Wages' or 'Basic + DA' column for unskilled, semi-skilled, and skilled workers.",
+        "Step 4: Ensure the amount is equal to or higher than the notified rate."
+      ]
     },
-    "question_text": "Is the establishment ensuring that no discrimination exists among employees on the ground of gender regarding wages for the same or similar nature of work?",
-    "applicability_criteria": "All establishments employing male, female, or transgender employees performing similar work",
-    "simplified_guidance": "1. Identify all employees performing same or similar work.\n2. Compare wage rates across genders for these roles.\n3. Ensure no disparity exists solely based on gender.\n4. Document job descriptions and skill assessments to justify any non-gender-based variances.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Wages (Latest Month)",
+      "instruction": "Upload the wage register page highlighting the lowest-paid employee category (e.g., Unskilled/Helper).",
+      "title": "Minimum Wage Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Payroll records showing equal pay for same roles; Job descriptions; Anti-discrimination policy",
-      "delay_proof": "Pending wage adjustments; Dispute resolution records regarding equal pay"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "There shall be no discrimination in an establishment or any unit thereof among employees on the ground of gender in matters relating to wages by the same employer, in respect of the same work or work of a similar nature done by any employee."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify the document is a Wage Register with numeric wage columns. Ensure it is legible.",
+      "verification_logic": "Prompt: Extract the lowest value in the 'Basic + DA' or 'Gross Wage' column. Compare this against the provided context of [Current Minimum Wage Rate]. If the extracted value is lower than the threshold, mark as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-03-002",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 3(2)(i)",
-      "category": "Wage Standards and Equal Remuneration"
-    },
-    "question_text": "Has the employer refrained from reducing the wage rates of any employee for the purpose of complying with gender non-discrimination provisions?",
-    "applicability_criteria": "All establishments adjusting wages to comply with equal remuneration",
-    "simplified_guidance": "1. Review wage history before and after equal pay adjustments.\n2. Confirm that higher-paid employees' wages were not lowered to meet the lower threshold.\n3. Ensure adjustments are made by raising the lower wages to the higher level.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Historical payroll data; Wage revision letters",
-      "delay_proof": "Evidence of wage reduction negotiations"
-    },
-    "legal_text": "No employer shall for the purposes of complying with the provisions of sub-section (1), reduce the rate of wages of any employee."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-03-003",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 3(2)(ii)",
-      "category": "Wage Standards and Equal Remuneration"
-    },
-    "question_text": "Does the establishment ensure no discrimination on the ground of sex during recruitment for the same work or work of similar nature?",
-    "applicability_criteria": "All establishments during the hiring process",
-    "simplified_guidance": "1. Review recruitment policies and job advertisements.\n2. Ensure selection criteria are gender-neutral.\n3. Verify offer letters for similar roles to ensure consistent terms of employment.\n4. Exception applies only if employment of women is legally prohibited in that specific work.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Recruitment policy; Job postings; Interview records",
-      "delay_proof": "Draft policies pending approval"
-    },
-    "legal_text": "No employer shall make any discrimination on the ground of sex while recruiting any employee for the same work or work of similar nature and in the conditions of employment, except where the employment of women in such work is prohibited or restricted by or under any law for the time being in force."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-05-001",
+    "audit_item_id": "CW-2019-SEC-14",
+    "category": "Overtime",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 5",
-      "category": "Wage Standards and Equal Remuneration"
+    "question_text": "Is overtime being paid at a rate not less than twice the normal rate of wages for work done in excess of normal working hours?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to establishments where employees work beyond normal hours (usually >8 hours/day or >48 hours/week).",
+    "section_reference": "Section 14",
+    "legal_text": "Where an employee... works on any day in excess of the number of hours constituting a normal working day, the employer shall pay him for every hour... at the overtime rate which shall not be less than twice the normal rate of wages.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Register of Overtime' or the Wage Register containing an 'Overtime' column.",
+        "Step 2: Identify an employee who performed overtime.",
+        "Step 3: Calculate the hourly rate: (Monthly Normal Wage / 26 / 8).",
+        "Step 4: Verify that the OT payment = (OT Hours * 2 * Hourly Rate)."
+      ]
     },
-    "question_text": "Are all employees paid wages at a rate not less than the minimum rate of wages notified by the appropriate Government?",
-    "applicability_criteria": "All employers",
-    "simplified_guidance": "1. Identify the applicable minimum wage notification for the region and industry.\n2. Compare notified rates against the wages paid to all categories of employees.\n3. Ensure basic pay plus dearness allowance meets the minimum threshold.\n4. Rectify any shortfalls immediately.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Overtime / Wage Register",
+      "instruction": "Upload a document showing OT hours worked and the corresponding OT amount paid.",
+      "title": "Overtime Rate Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Monthly wage register; Official Minimum Wage Notification copy",
-      "delay_proof": "Arrears calculation sheet; Proof of payment of differential wages"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No employer shall pay to any employee wages less than the minimum rate of wages notified by the appropriate Government."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document contains columns for 'OT Hours' and 'OT Amount' or 'Overtime Wages'.",
+      "verification_logic": "Prompt: Extract 'Normal Wage Rate', 'OT Hours', and 'OT Paid Amount'. Calculate: (Normal Rate * 2 * OT Hours). If 'OT Paid Amount' is less than this calculated value (allowing for minor rounding), flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-09-001",
+    "audit_item_id": "CW-2019-SEC-13-A",
+    "category": "Working Hours",
+    "risk_level": "High",
+    "question_text": "Has the establishment defined the normal working day (hours) and is it compliant with the statutory limit (typically 8-9 hours)?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 13(1)(a)",
+    "legal_text": "The appropriate Government may fix the number of hours of work which shall constitute a normal working day inclusive of one or more specified intervals.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the 'Notice of Working Hours' displayed on the notice board.",
+        "Step 2: Check the 'Start Time', 'End Time', and 'Rest Intervals'.",
+        "Step 3: Verify the total working hours do not exceed 9 hours (or as per State rules) and spread-over is within limits (usually 10.5 - 12 hours)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Notice of Working Hours (Display Board)",
+      "instruction": "Take a photo of the Notice Board displaying daily working hours and rest intervals.",
+      "title": "Working Hours Display"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify the image shows a 'Notice of Periods of Work' or 'Working Hours' chart.",
+      "verification_logic": "Prompt: Extract 'Total Daily Hours'. If hours > 9 (excluding intervals) or if no rest interval is shown, flag as Potential Risk."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-13-B",
+    "category": "Rest Days",
+    "risk_level": "High",
+    "question_text": "Is a day of rest provided in every period of seven days (Weekly Off), and is remuneration paid for such rest days?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 13(1)(b)",
+    "legal_text": "Provide for a day of rest in every period of seven days which shall be allowed to all employees... and for the payment of remuneration in respect of such days of rest.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the Attendance Register / Muster Roll.",
+        "Step 2: Look for the 'W' or 'WO' (Weekly Off) marking.",
+        "Step 3: Ensure employees are not working continuously for more than 10 days without a break (or as per specific state rule, usually 6 days work + 1 rest).",
+        "Step 4: Ensure no deduction of wages is made for this mandatory rest day (for monthly rated employees)."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Muster Roll / Attendance Register",
+      "instruction": "Upload the attendance register for the last month showing Weekly Offs markings.",
+      "title": "Weekly Rest Day Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify the document is an Attendance Register with daily presence markings.",
+      "verification_logic": "Prompt: Check for 'WO' or 'Rest Day' markers. If an employee shows 'Present' (P) for 10+ consecutive days without a 'WO', flag as Non-Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-10",
+    "category": "Remuneration",
+    "risk_level": "Medium",
+    "question_text": "Are employees paid for a full normal working day even if they worked less hours, provided the shortage was not due to their own unwillingness?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if short-duration work was assigned during the audit period.",
+    "section_reference": "Section 10",
+    "legal_text": "If an employee... works on any day on which he was employed for a period of less than the requisite number of hours... he shall... be entitled to receive wages in respect of work done on that day as if he had worked for a full normal working day.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the Wage Register for any 'Short Payment' or deductions for partial days.",
+        "Step 2: Cross-reference with the 'Loss of Pay' or 'Deduction' register.",
+        "Step 3: If deductions exist for partial attendance, verify if there is proof (e.g., employee application) that the employee left early voluntarily."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Wage Slip / Deduction Register",
+      "instruction": "Upload a sample wage slip where partial day deduction occurred, or a statement confirming no such deductions.",
+      "title": "Short Work Payment Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for Wage Slip or Register.",
+      "verification_logic": "Prompt: Identify if 'Days Payable' is a fraction (e.g., 25.5) or if deductions are labeled 'Short Hours'. If found, Manual Review is recommended to check for 'Unwillingness' proof."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-15",
+    "category": "Payment Logistics",
+    "risk_level": "Medium",
+    "question_text": "Are wages paid exclusively in current coin, currency notes, by cheque, or by crediting the bank account/electronic mode?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 15 [cite: 331]",
+    "legal_text": "All wages shall be paid in current coin or currency notes or by cheque or by crediting the wages in the bank account of the employee or by the electronic mode.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request proof of wage disbursement for the audit period.",
+        "Step 2: Verify the mode of payment.",
+        "Step 3: If paid in cash, ensure valid currency is used (no kind payments unless specifically authorized).",
+        "Step 4: If by bank, verify transfer records match the wage register."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Bank Transfer Advice / Cash Payment Register",
+      "instruction": "Upload the bank transfer summary or the cash payment register signed by employees.",
+      "title": "Payment Mode Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a Bank Statement, Transfer Advice, or Signed Cash Register. Reject if irrelevant.",
+      "verification_logic": "Prompt: Extract the 'Mode of Payment' or infer from document type. If 'Kind' or 'Coupons' are detected as the sole wage payment, flag as Non-Compliant. Confirm presence of transaction IDs for electronic transfers."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-16",
+    "category": "Payment Logistics",
+    "risk_level": "Low",
+    "question_text": "Has the employer fixed a wage period (Daily, Weekly, Fortnightly, or Monthly) that does not exceed one month?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 16 [cite: 336]",
+    "legal_text": "The employer shall fix the wage period for employees either as daily or weekly or fortnightly or monthly subject to the condition that no wage period in respect of any employee shall be more than a month.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the Standing Orders or Employment Contracts.",
+        "Step 2: Verify the defined 'Wage Period'.",
+        "Step 3: Ensure the duration is not 'Quarterly' or 'Annually'.",
+        "Step 4: Confirm wages are calculated based on this fixed period."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Notice of Wage Period / Employment Contract",
+      "instruction": "Upload a photo of the notice board or a contract clause defining the wage period.",
+      "title": "Wage Period Definition"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for text indicating 'Wage Period', 'Salary Cycle', or 'Payment Frequency'.",
+      "verification_logic": "Prompt: Extract the frequency (e.g., 'Monthly', 'Weekly'). If frequency > 1 month (e.g., 'Quarterly'), flag as Non-Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-17-1",
+    "category": "Disbursement Timelines",
+    "risk_level": "High",
+    "question_text": "Are wages paid before the statutory deadline (e.g., 7th of the next month for monthly rated employees)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 17(1) [cite: 341]",
+    "legal_text": "The employer shall pay... (i) daily basis, at the end of the shift; (ii) weekly basis, on the last working day of the week... (iv) monthly basis, before the expiry of the seventh day of the succeeding month.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify the wage period (e.g., Monthly).",
+        "Step 2: Locate the payment date on the Bank Statement or Transfer Advice.",
+        "Step 3: Compare this date against the 7th of the following month.",
+        "Step 4: For weekly/daily workers, check if paid immediately/end of week."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Bank Statement / Payment Proof",
+      "instruction": "Upload a bank statement page showing the salary debit date for the last month.",
+      "title": "Timeliness of Payment"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document shows transaction dates and amounts.",
+      "verification_logic": "Prompt: Extract 'Transaction Date' and 'Wage Period Month'. If Wage Period is 'January' and Transaction Date is after 'February 7th', flag as Non-Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-17-2",
+    "category": "Disbursement Timelines",
+    "risk_level": "High",
+    "question_text": "Are wages for removed, dismissed, retrenched, or resigned employees paid within two working days?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if any employee separations occurred during the audit period.",
+    "section_reference": "Section 17(2) [cite: 350]",
+    "legal_text": "Where an employee has been (i) removed or dismissed... or (ii) retrenched or has resigned... the wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment or... resignation.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the list of employees who left/resigned in the last 6 months.",
+        "Step 2: Select a sample (e.g., 2-3 employees).",
+        "Step 3: Check their 'Date of Exit' vs. 'Date of Full & Final Settlement' payment.",
+        "Step 4: Ensure the gap is <= 2 working days."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Full & Final Settlement Receipt",
+      "instruction": "Upload the F&F statement showing Date of Leaving and Date of Payment.",
+      "title": "Settlement Timeline Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if document is an 'F&F Statement' or 'Settlement Receipt'.",
+      "verification_logic": "Prompt: Extract 'Date of Leaving' (DoL) and 'Payment Date'. Calculate working days between them. If > 2 days, flag as Non-Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-44",
+    "category": "Payment Liability",
+    "risk_level": "Medium",
+    "question_text": "In case of an employee's death, are undisbursed dues paid to the nominated person or deposited with the prescribed authority?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable if any employee death occurred during the audit period.",
+    "section_reference": "Section 44 [cite: 651]",
+    "legal_text": "All amounts payable... shall... be paid to the person nominated by him... or where no such nomination has been made... be deposited with the such authority, as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Inquire if any employee death occurred.",
+        "Step 2: If yes, check the 'Nomination Form' of the deceased.",
+        "Step 3: Verify proof of payment to the nominee (Bank Transfer/Cheque Acknowledgement).",
+        "Step 4: If no nominee, verify deposit receipt with the Authority."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Payment Receipt to Nominee / Authority Deposit Challan",
+      "instruction": "Upload proof of payment to the legal nominee or deposit receipt to the Authority.",
+      "title": "Deceased Employee Dues Settlement"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for 'Receipt', 'Cheque Copy', or 'Challan'.",
+      "verification_logic": "Prompt: Verify if the payment is directed to a 'Nominee' or 'Authority'. If document indicates unpaid dues pending > 1 month post-death, flag for review."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-18-3",
+    "category": "Deductions Cap",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 9(2)",
-      "category": "Wage Standards and Equal Remuneration"
+    "question_text": "Is the total amount of deductions (statutory + voluntary) in any wage period limited to 50% of the employee's total wages?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 18(3)",
+    "legal_text": "The total amount of deductions which may be made under sub-section (2) in any wage period from the wages of an employee shall not exceed fifty per cent of such wages.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the Wage Register for the audit month.",
+        "Step 2: Identify employees with high deductions (e.g., loans, advances, EMI).",
+        "Step 3: Compare 'Total Deductions' column against 'Gross Wages'.",
+        "Step 4: Ensure (Total Deductions / Gross Wages) * 100 <= 50."
+      ]
     },
-    "question_text": "Are the minimum wages paid by the establishment equal to or higher than the floor wage fixed by the Central Government for the geographical area?",
-    "applicability_criteria": "All establishments in areas where a Floor Wage is notified",
-    "simplified_guidance": "1. Check the Central Government notification for the Floor Wage applicable to your area.\n2. Ensure the state minimum wage is not lower than this floor wage.\n3. If the state wage is lower, pay the floor wage rate.\n4. If the employer was paying higher than the floor wage earlier, ensure wages are not reduced.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Wage Register / Pay Sheet",
+      "instruction": "Upload a wage register page showing 'Gross Earnings' and 'Total Deductions' columns, highlighting any employee with deductions exceeding 50%.",
+      "title": "Deduction Limit Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Wage comparison sheet; Floor wage notification",
-      "delay_proof": "Internal memo acknowledging floor wage adjustments"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The minimum rates of wages fixed by the appropriate Government under section 6 shall not be less than the floor wage and if the minimum rates of wages fixed by the appropriate Government earlier is more than the floor wage, then, the appropriate Government shall not reduce such minimum rates of wages fixed by it earlier."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a Wage Register containing financial columns. Reject if headers are missing.",
+      "verification_logic": "Prompt: Extract 'Gross Wages' and 'Total Deductions' for 3 random rows. Calculate percentage: (Deductions / Gross) * 100. If result > 50 for any row, flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-10-001",
+    "audit_item_id": "CW-2019-SEC-19-PROC",
+    "category": "Fines",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 10",
-      "category": "Wage Standards and Equal Remuneration"
+    "question_text": "Are fines imposed on employees only after giving them an opportunity to show cause, and are they limited to 3% of wages?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if any fines were imposed on employees during the audit period.",
+    "section_reference": "Section 19(3) & 19(4)",
+    "legal_text": "No fine shall be imposed on any employee until such employee has been given an opportunity of showing cause... The total amount of fine... shall not exceed an amount equal to three per cent of the wages payable.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the 'Register of Fines'.",
+        "Step 2: If an entry exists, ask for the corresponding 'Show Cause Notice' issued to the employee and their reply.",
+        "Step 3: Verify the fine amount in the register does not exceed 3% of the monthly wage."
+      ]
     },
-    "question_text": "Does the employer pay wages for a full normal working day to employees who work less than the requisite hours, provided the failure to work was not due to the employee's unwillingness?",
-    "applicability_criteria": "Employees whose minimum wage is fixed by the day",
-    "simplified_guidance": "1. Identify days where employees worked partial hours.\n2. Determine the cause: Employer failure to provide work vs. Employee unwillingness.\n3. If it was the employer's failure, pay the full daily wage.\n4. Document reasons for partial work in the register.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Fines & Show Cause Notice",
+      "instruction": "Upload the Register of Fines entry AND the Show Cause Notice copy for the same incident.",
+      "title": "Fine Procedure Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Attendance register; Wage slips; Incident reports for short work",
-      "delay_proof": "Correspondence regarding work availability"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "If an employee whose minimum rate of wages has been fixed under this Code by the day works on any day on which he was employed for a period of less than the requisite number of hours constituting a normal working day, he shall, save as otherwise hereinafter provided, be entitled to receive wages in respect of work done on that day, as if he had worked for a full normal working day."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify the image contains a 'Register of Fines' or a legal 'Show Cause Notice'.",
+      "verification_logic": "Prompt: If a Register is uploaded, extract 'Wage' and 'Fine Amount'. Check if Fine <= 0.03 * Wage. If a Notice is uploaded, check for keywords 'Show Cause', 'Explanation', or 'Disciplinary'."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-11-001",
+    "audit_item_id": "CW-2019-SEC-21",
+    "category": "Damages & Loss",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 11",
-      "category": "Wage Standards and Equal Remuneration"
+    "question_text": "Are deductions for damage or loss strictly limited to the value of damage caused by the employee's neglect, and supported by a show-cause procedure?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if deductions for damage/loss were made.",
+    "section_reference": "Section 21",
+    "legal_text": "A deduction... for damage or loss shall not exceed the amount of the damage or loss caused to the employer by negligence or default of the employee... [and] shall not be made... until the employee has been given an opportunity of showing cause.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the 'Register of Deductions for Damage or Loss'.",
+        "Step 2: Verify that the deducted amount does not exceed the actual value of the item lost/damaged.",
+        "Step 3: Check for a recorded explanation or hearing proceeding (Show Cause) prior to deduction.",
+        "Step 4: Ensure the cause is explicitly 'Negligence' or 'Default', not accidental breakage."
+      ]
     },
-    "question_text": "Where an employee performs two or more classes of work with different minimum wage rates, are wages paid according to the time spent on each class at the respective rates?",
-    "applicability_criteria": "Employees performing mixed roles with different wage tiers",
-    "simplified_guidance": "1. Track time spent on each specific class of work (e.g., skilled vs. semi-skilled tasks).\n2. Apply the applicable minimum wage rate for the hours spent on each task.\n3. Calculate total daily wage based on this breakdown.\n4. Ensure the total is not less than the minimum rate for the respective classes.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Deductions for Damage/Loss",
+      "instruction": "Upload the register showing the damage description, value, and deduction amount.",
+      "title": "Damage Deduction Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Time sheets showing task breakdown; Wage calculation records",
-      "delay_proof": "Implementation of time-tracking system"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Where an employee does two or more classes of work to each of which a different minimum rate of wages is applicable, the employer shall pay to such employee in respect of the time respectively occupied in each such class of work, wages at not less than the minimum rate in force in respect of each such class."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for a register with columns like 'Damage', 'Value', 'Deduction Amount'.",
+      "verification_logic": "Prompt: Extract 'Value of Damage' and 'Amount Deducted'. If Amount Deducted > Value of Damage, flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-12-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 12",
-      "category": "Wage Standards and Equal Remuneration"
+    "audit_item_id": "CW-2019-SEC-23",
+    "category": "Advances & Recovery",
+    "risk_level": "Medium",
+    "question_text": "Are recoveries of advances compliant, ensuring NO deduction is made for pre-employment travelling expenses?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable if salary advances are given.",
+    "section_reference": "Section 23(a)",
+    "legal_text": "Recovery of advance of money given to an employee before the employment began shall be made from the first payment of wages... but no recovery shall be made of such advances given for travelling expenses.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the 'Register of Advances' or Loan Book.",
+        "Step 2: Look for 'Travel Advance' or 'Relocation Advance' given to new joiners.",
+        "Step 3: Cross-check with the first month's wage slip.",
+        "Step 4: Ensure no deduction line item exists for 'Travel Expense Recovery' for pre-employment travel."
+      ]
     },
-    "question_text": "For employees on piece work where a minimum time rate is fixed, does the employer pay wages at not less than the minimum time rate?",
-    "applicability_criteria": "Establishments employing piece-rate workers",
-    "simplified_guidance": "1. Identify employees paid on a piece-rate basis.\n2. Check if a minimum time rate (e.g., daily/hourly minimum wage) is fixed for their category.\n3. Compare piece-rate earnings against the minimum time rate for the hours worked.\n4. Pay the shortfall if piece-rate earnings are lower than the minimum time rate.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Advances / First Month Wage Slip",
+      "instruction": "Upload the Advance Register or the first wage slip of a new employee who received a joining advance.",
+      "title": "Advance Recovery Check"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Piece-rate production records; Daily wage comparison sheet",
-      "delay_proof": "Adjustment entries in payroll"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Where a person is employed on piece work for which minimum time rate and not a minimum piece rate has been fixed under this Code, the employer shall pay to such person wages at not less than the minimum time rate."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for 'Advance' or 'Loan' recovery columns in a wage document.",
+      "verification_logic": "Prompt: Scan for deduction labels containing 'Travel', 'Ticket', or 'Journey' in the context of 'Recovery'. If found, flag for Manual Review to ensure it wasn't pre-employment travel."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-13-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 13(1)(a)",
-      "category": "Hours of Work and Overtime"
+    "audit_item_id": "CW-2019-SEC-19-20-DISP",
+    "category": "Notices & Displays",
+    "risk_level": "Medium",
+    "question_text": "Is a notice specifying the acts and omissions for which fines may be imposed exhibited prominently in the establishment?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 19(2)",
+    "legal_text": "A notice specifying such acts and omissions shall be exhibited in such manner as may be prescribed, on the premises in which the employment is carried on.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Walk to the main Notice Board.",
+        "Step 2: Look for a list titled 'List of Acts and Omissions for which Fines may be Imposed'.",
+        "Step 3: Verify it is legible and in a language understood by the majority of workers."
+      ]
     },
-    "question_text": "Has the employer fixed the number of hours of work that constitute a normal working day, inclusive of specified intervals?",
-    "applicability_criteria": "All establishments employing workers with minimum wage rates",
-    "simplified_guidance": "1. Define the normal working hours per day (typically 8-9 hours).\n2. Include rest intervals in the calculation of the working day where required.\n3. Display these hours on the notice board.\n4. Ensure compliance with state-specific rules regarding daily limits.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Notice of Acts & Omissions",
+      "instruction": "Take a photo of the Notice Board displaying the list of finable acts.",
+      "title": "Fines Notice Display"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Notice Board display of working hours; Standing Orders; Employee Handbook",
-      "delay_proof": "Draft working hour policy"
+    "ui_config": {
+      "accepted_formats": "image/*"
     },
-    "legal_text": "Where the minimum rates of wages have been fixed under this Code, the appropriate Government may fix the number of hours of work which shall constitute a normal working day inclusive of one or more specified intervals."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify the image shows a Notice Board with a list of rules.",
+      "verification_logic": "Prompt: Look for keywords 'Fines', 'Acts', 'Omissions', 'Misconduct'. If text is legible and contains these terms, mark as Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-13-002",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 13(1)(b)",
-      "category": "Hours of Work and Overtime"
+    "audit_item_id": "CW-2019-SEC-20",
+    "category": "Absence Deductions",
+    "risk_level": "Medium",
+    "question_text": "Are deductions for absence strictly proportional to the period of absence (except in cases of concerted illegal strikes)?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if absence deductions (Loss of Pay) occurred.",
+    "section_reference": "Section 20(2)",
+    "legal_text": "The amount of such deduction shall in no case bear to the wages payable... in a larger proportion than the period for which he was absent bears to the total period.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify an employee with 'Loss of Pay' (LOP) or 'Absent' days in the wage register.",
+        "Step 2: Calculate Proportional Wage: (Monthly Wage / Total Working Days) * Days Worked.",
+        "Step 3: Ensure the Paid Amount matches this calculation. (Deduction shouldn't differ from the actual absent time value).",
+        "Step 4: Check if '8-day deduction' penal rule was applied (only valid for strikes without notice)."
+      ]
     },
-    "question_text": "Is a day of rest provided to every employee in every period of seven days?",
-    "applicability_criteria": "All employees in the establishment",
-    "simplified_guidance": "1. Schedule one mandatory weekly off day for every 7-day cycle.\n2. Ensure this rest day is paid if required by the minimum wage notification.\n3. Maintain a roster showing rest days for all employees.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Wage Slip with Absence Deduction",
+      "instruction": "Upload a wage slip showing LOP/Absence deduction details.",
+      "title": "Absence Deduction Logic"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Attendance Register; Shift Roster; Weekly Off records",
-      "delay_proof": "Applications for compensatory off"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Where the minimum rates of wages have been fixed under this Code, the appropriate Government may provide for a day of rest in every period of seven days which shall be allowed to all employees or to any specified class of employees and for the payment of remuneration in respect of such days of rest."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for 'Days Present', 'Days Absent', or 'LOP' fields.",
+      "verification_logic": "Prompt: Extract 'Basic Wage', 'Days in Month', 'Days Paid'. Calculate expected pay. If Actual Pay < (Expected Pay - Small Rounding Error), flag for potential disproportionate deduction."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-13-003",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 13(1)(c)",
-      "category": "Hours of Work and Overtime"
-    },
-    "question_text": "Are employees compensated at a rate not less than the overtime rate if they are required to work on their designated day of rest?",
-    "applicability_criteria": "Employees working on their weekly off day",
-    "simplified_guidance": "1. Identify instances where employees worked on their weekly rest day.\n2. Verify the payment made for that specific day.\n3. Ensure the rate paid is at least the overtime rate (typically double).\n4. Check if a compensatory rest day was also provided.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Overtime Register; Wage Slips showing rest day pay",
-      "delay_proof": "Payment vouchers for overtime arrears"
-    },
-    "legal_text": "Where the minimum rates of wages have been fixed under this Code, the appropriate Government may provide for payment for work on a day of rest at a rate not less than the overtime rate."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-14-001",
+    "audit_item_id": "CW-2019-SEC-26-1",
+    "category": "Bonus Eligibility & Quantum",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 14",
-      "category": "Hours of Work and Overtime"
+    "question_text": "Has the employer paid the annual minimum bonus (8.33% of wages or ₹100, whichever is higher) to all employees who have worked for at least 30 days in the accounting year?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to establishments with 20 or more employees (or as notified).",
+    "section_reference": "Section 26(1)",
+    "legal_text": "There shall be paid to every employee... who has put in at least thirty days work in an accounting year, an annual minimum bonus calculated at the rate of eight and one-third per cent of the wages earned... or one hundred rupees, whichever is higher.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Register of Bonus' (Form C equivalent) for the last completed accounting year.",
+        "Step 2: Identify employees who worked >30 days.",
+        "Step 3: Check the 'Total Annual Wages' and 'Bonus Paid' columns.",
+        "Step 4: Verify that Bonus Paid >= (Total Wages * 8.33%)."
+      ]
     },
-    "question_text": "Is overtime paid at a rate not less than twice the normal rate of wages for any work done in excess of the normal working day?",
-    "applicability_criteria": "All employees working beyond normal fixed hours",
-    "simplified_guidance": "1. Identify the 'normal rate of wages' for the employee.\n2. Verify time records for hours worked beyond the daily limit (e.g., >8 or 9 hours).\n3. Calculate the overtime payable at 2x the normal rate.\n4. Ensure payment is for every hour or part of an hour worked in excess.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Bonus (Form C)",
+      "instruction": "Upload the Bonus Register showing annual wage totals and bonus payment calculations.",
+      "title": "Minimum Bonus Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Overtime Register; Payroll records; Attendance logs vs Payment logs",
-      "delay_proof": "Dispute records regarding overtime calculation"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Where an employee whose minimum rate of wages has been fixed under this Code by the hour, by the day or by such a longer wage-period as may be prescribed, works on any day in excess of the number of hours constituting a normal working day, the employer shall pay him for every hour or for part of an hour so worked in excess, at the overtime rate which shall not be less than twice the normal rate of wages."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a Bonus Register containing columns for 'Annual Wages' and 'Bonus Payable'.",
+      "verification_logic": "Prompt: Extract 'Annual Wages' and 'Bonus Paid' for 3 random entries. Calculate (Annual Wages * 0.0833). If 'Bonus Paid' is less than the calculated amount, flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-13-004",
+    "audit_item_id": "CW-2019-SEC-39",
+    "category": "Bonus Timeline",
+    "risk_level": "High",
+    "question_text": "Was the bonus for the last accounting year paid within eight months from the close of that year?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments liable to pay bonus.",
+    "section_reference": "Section 39(1)",
+    "legal_text": "All amounts payable to an employee by way of bonus... shall be paid... within a period of eight months from the close of the accounting year.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Determine the close of the financial year (usually March 31st).",
+        "Step 2: The statutory deadline is November 30th.",
+        "Step 3: Check the Bank Transfer Advice or Payment Receipt dates.",
+        "Step 4: Ensure the date is on or before November 30th."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Proof of Bonus Disbursement",
+      "instruction": "Upload the bank transfer advice or payment summary sheet showing the date of bonus credit.",
+      "title": "Bonus Payment Date Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document shows a payment date and reference to 'Bonus'.",
+      "verification_logic": "Prompt: Extract 'Payment Date'. If the date is later than November 30th of the relevant year, flag as Non-Compliant (unless an extension order is provided)."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-31-33",
+    "category": "Bonus Calculation",
+    "risk_level": "High",
+    "question_text": "Is the bonus amount supported by a computation of 'Allocable Surplus' derived from 'Available Surplus'?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments liable to pay bonus.",
+    "section_reference": "Section 31 & Section 33",
+    "legal_text": "The bonus shall be paid out of the allocable surplus... of the available surplus and the available surplus shall be the amount calculated in accordance with section 33.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Computation of Allocable Surplus' sheet (Form A/B equivalent).",
+        "Step 2: Verify it starts with Gross Profit.",
+        "Step 3: Check deductions for Depreciation and Direct Taxes.",
+        "Step 4: Ensure 60% (for banking) or 67% (others) of Available Surplus is allocated for bonus.",
+        "Step 5: Verify the maximum bonus cap (20%) is respected if surplus is high."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Computation of Allocable Surplus (Form A/B)",
+      "instruction": "Upload the computation sheet showing Gross Profit, Deductions, and Allocable Surplus.",
+      "title": "Allocable Surplus Computation"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a financial computation sheet with fields like 'Gross Profit', 'Depreciation', 'Available Surplus'.",
+      "verification_logic": "Prompt: Verify that 'Allocable Surplus' is calculated as 67% (or 60%) of 'Available Surplus'. Flag arithmetic errors."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-29",
+    "category": "Bonus Disqualification",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 13(2)",
-      "category": "Hours of Work and Overtime"
+    "question_text": "If any employee was disqualified from receiving bonus, is the disqualification based on dismissal for fraud, violent behavior, theft, or sexual harassment?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable only if employees were disqualified from bonus.",
+    "section_reference": "Section 29",
+    "legal_text": "An employee shall be disqualified from receiving bonus under this Code, if he is dismissed from service for (a) fraud; or (b) riotous or violent behaviour... or (c) theft, misappropriation or sabotage... or (d) conviction for sexual harassment.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask if any eligible employee was denied bonus.",
+        "Step 2: If yes, request the 'Dismissal Order' or 'Termination Letter'.",
+        "Step 3: Verify the reason for dismissal matches the statutory disqualification grounds (Fraud, Theft, Violence, Sexual Harassment).",
+        "Step 4: Ensure the dismissal process (inquiry) was completed."
+      ]
     },
-    "question_text": "Has the establishment correctly applied exemptions for intermittent or emergency work only to the classes of employees prescribed by the appropriate Government?",
-    "applicability_criteria": "Establishments claiming exemptions from standard working hours",
-    "simplified_guidance": "1. List employees categorized as 'intermittent', 'preparatory', or 'emergency' workers.\n2. Verify if these categories match the specific exemptions prescribed by the Government.\n3. Ensure standard limits are not bypassed for non-exempt employees.\n4. Document the justification for intermittent classification.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Dismissal Order / Disqualification Record",
+      "instruction": "Upload the dismissal letter stating the specific reason for disqualification from bonus.",
+      "title": "Disqualification Validation"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "List of exempt employees; Job descriptions justifying intermittent nature",
-      "delay_proof": "Consultation letters with labor authorities"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The provisions of sub-section (1) shall, in relation to the following classes of employees apply, only to such extent and subject to such conditions as may be prescribed... employees engaged in any emergency... preparatory or complementary work... essentially intermittent... technical reasons... irregular action of natural forces."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a 'Dismissal Order' or 'Termination Letter'.",
+      "verification_logic": "Prompt: Scan text for keywords: 'Fraud', 'Theft', 'Violent', 'Sexual Harassment', 'Misappropriation'. If these grounds are missing but bonus is denied, flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-15-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 15",
-      "category": "Wage Disbursement and Timelines"
-    },
-    "question_text": "Are wages paid to employees only through authorized modes such as current coin, currency notes, cheque, bank credit, or electronic mode?",
-    "applicability_criteria": "All establishments",
-    "simplified_guidance": "1. Verify the method of wage payment used for all employees.\n2. Ensure it falls under the authorized categories (Cash, Cheque, Bank Transfer, Digital).\n3. If a specific notification exists for your industry requiring digital/bank payment only, ensure strict compliance.\n4. Avoid payment via promissory notes or barter.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bank advice slips; Cash payment vouchers with signatures; Cheque counterfoils",
-      "delay_proof": "Transition plan to digital payments"
-    },
-    "legal_text": "All wages shall be paid in current coin or currency notes or by cheque or by crediting the wages in the bank account of the employee or by the electronic mode: Provided that the appropriate Government may, by notification, specify the industrial or other establishment, the employer of which shall pay to every person employed in such industrial or other establishment, the wages only by cheque or by crediting the wages in his bank account."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-16-001",
+    "audit_item_id": "CW-2019-SEC-36",
+    "category": "Set On / Set Off",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 16",
-      "category": "Wage Disbursement and Timelines"
+    "question_text": "Are records maintained for the 'Set On' and 'Set Off' of allocable surplus for the relevant accounting years (up to 4 years)?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments liable to pay bonus.",
+    "section_reference": "Section 36",
+    "legal_text": "Excess shall... be carried forward for being set on in the succeeding accounting year... deficiency... shall be carried forward for being set off... up to and inclusive of the fourth accounting year.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Set On and Set Off' statement (Form B equivalent).",
+        "Step 2: Check the history of the last 4 years.",
+        "Step 3: Verify if current year's payment utilized any previous 'Set On' or carried forward a new 'Set Off'.",
+        "Step 4: Ensure the sequence is maintained correctly."
+      ]
     },
-    "question_text": "Has the employer fixed a wage period for employees that does not exceed one month?",
-    "applicability_criteria": "All establishments",
-    "simplified_guidance": "1. Define the wage period (Daily, Weekly, Fortnightly, or Monthly).\n2. Ensure the duration does not exceed one month (e.g., Quarterly payment is prohibited).\n3. Document this period in the employment contract and standing orders.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Set On and Set Off Statement (Form B)",
+      "instruction": "Upload the statement showing the history of allocable surplus for the last 4 years.",
+      "title": "Set On/Set Off History"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Standing Orders; Appointment Letters; Notice of wage period",
-      "delay_proof": "Draft policy on wage periods"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The employer shall fix the wage period for employees either as daily or weekly or fortnightly or monthly subject to the condition that no wage period in respect of any employee shall be more than a month."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for a table with columns like 'Accounting Year', 'Amount Available', 'Set On', 'Set Off'.",
+      "verification_logic": "Prompt: Verify if the 'Carried Forward' amount from Year X matches the 'Brought Forward' amount in Year X+1. Flag inconsistencies."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-17-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 17(1)",
-      "category": "Wage Disbursement and Timelines"
+    "audit_item_id": "CW-2019-SEC-27",
+    "category": "Bonus Calculation",
+    "risk_level": "Low",
+    "question_text": "For employees who worked less than the total working days in the year, was the minimum bonus reduced proportionately?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable if there are employees who worked partial years (e.g., new joiners).",
+    "section_reference": "Section 27",
+    "legal_text": "Where an employee has not worked for all the working days in an accounting year, the minimum bonus... shall be proportionately reduced.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify an employee who joined mid-year or had significant authorized unpaid leave.",
+        "Step 2: Check their total wages earned vs. theoretical full-year wages.",
+        "Step 3: Verify the bonus paid is proportionate to the days worked (if paying minimum bonus).",
+        "Step 4: Note: If paying % of wages (e.g. 10%), the calculation on actual earned wages automatically adjusts this."
+      ]
     },
-    "question_text": "Are wages paid within the statutory time limits prescribed for the respective wage period (e.g., by the 7th of the succeeding month for monthly earners)?",
-    "applicability_criteria": "All establishments based on their fixed wage period",
-    "simplified_guidance": "1. Daily earners: Pay at the end of the shift.\n2. Weekly earners: Pay on the last working day of the week.\n3. Fortnightly earners: Pay before the end of the 2nd day after the fortnight.\n4. Monthly earners: Pay before the expiry of the 7th day of the succeeding month.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Bonus Calculation Sheet (Partial Year Employee)",
+      "instruction": "Upload the bonus calculation row for an employee who worked for a partial year.",
+      "title": "Proportionate Reduction Check"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bank transfer timestamps; Wage Register with payment dates",
-      "delay_proof": "Reasons for delay recorded in register"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The employer shall pay or cause to be paid wages to the employees, engaged on... (i) daily basis, at the end of the shift; (ii) weekly basis, on the last working day of the week... (iii) fortnightly basis, before the end of the second day after the end of the fortnight; (iv) monthly basis, before the expiry of the seventh day of the succeeding month."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for Bonus Register row.",
+      "verification_logic": "Prompt: Extract 'Days Worked' and 'Bonus Paid'. If 'Days Worked' < Total Working Days, ensure Bonus is not the full flat rate (e.g. 7000) but a proportion, or exactly 8.33% of 'Earned Wages'."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-17-002",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 17(2)",
-      "category": "Wage Disbursement and Timelines"
-    },
-    "question_text": "In cases of removal, dismissal, retrenchment, or resignation, are wages paid within two working days of the termination of employment?",
-    "applicability_criteria": "Employees leaving service due to resignation, dismissal, or retrenchment",
-    "simplified_guidance": "1. Track dates of resignation, dismissal, or removal.\n2. Ensure full and final settlement (wages) is processed within 2 working days.\n3. Obtain acknowledgment of receipt from the employee.\n4. Note: This timeline is strictly 2 working days, unlike the general 7th day rule.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Full and Final Settlement records; Bank payment proofs",
-      "delay_proof": "Proof of employee non-availability for settlement"
-    },
-    "legal_text": "Where an employee has been... removed or dismissed from service; or... retrenched or has resigned from service, or became unemployed due to closure of the establishment, the wages payable to him shall be paid within two working days of his removal, dismissal, retrenchment or, as the case may be, his resignation."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-43-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 43",
-      "category": "Wage Disbursement and Timelines"
-    },
-    "question_text": "Does the proprietor, firm, or company accept ultimate responsibility for the payment of all dues under the Code if the immediate employer fails to pay?",
-    "applicability_criteria": "Proprietors, Companies, Firms",
-    "simplified_guidance": "1. Establish a clear hierarchy of payment responsibility.\n2. If contractors or immediate supervisors fail to pay, the principal employer/proprietor must settle dues.\n3. Maintain indemnity clauses in contracts with third-party manpower agencies.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Service Agreements; Payment records to contract labor",
-      "delay_proof": "Notices sent to contractors regarding non-payment"
-    },
-    "legal_text": "Every employer shall pay all amounts required to be paid under this Code to every employee employed by him: Provided that where such employer fails to make such payment in accordance with this Code, then, the company or firm or association or any other person who is the proprietor of the establishment, in which the employee is employed, shall be responsible for such payment."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-44-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 44(1)",
-      "category": "Wage Disbursement and Timelines"
-    },
-    "question_text": "In the event of an employee's death, are undisbursed dues paid to the nominated person or deposited with the prescribed authority?",
-    "applicability_criteria": "Cases where an employee dies before wage settlement",
-    "simplified_guidance": "1. Ensure all employees have valid nominations on file.\n2. Upon death, pay dues to the nominee.\n3. If no nominee exists or payment cannot be made, deposit the amount with the Authority prescribed by the Government.\n4. Retain proof of deposit to discharge liability.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Nomination forms (Form F equivalent); Proof of payment to nominee/Authority",
-      "delay_proof": "Correspondence attempting to locate nominee"
-    },
-    "legal_text": "Subject to the other provisions of this Code, all amounts payable to an employee under this Code shall, if such amounts could not or cannot be paid on account of his death before payment or on account of his whereabouts not being known, (a) be paid to the person nominated by him... or (b) where no such nomination has been made... be deposited with the such authority, as may be prescribed."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-18-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 18(3)",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Does the total amount of deductions made from an employee's wages in any wage period remain within the limit of 50% of such wages?",
-    "applicability_criteria": "All employees undergoing deductions",
-    "simplified_guidance": "1. Calculate gross wages for the period.\n2. Sum up all authorized deductions (fines, absence, damages, loans, etc.).\n3. Ensure the total deduction does not exceed 50% of the gross wage.\n4. If deductions exceed 50%, recover the excess in the manner prescribed by rules.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Wage Register; Pay Slips showing deduction breakdown",
-      "delay_proof": "Recovery plan for excess deductions"
-    },
-    "legal_text": "Notwithstanding anything contained in this Code and subject to the provisions of any other law for the time being in force, the total amount of deductions which may be made under sub-section (2) in any wage period from the wages of an employee shall not exceed fifty per cent. of such wages."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-18-002",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 18(1)",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Are all deductions made from wages strictly limited to those authorized under the Code (e.g., fines, absence, damages, amenities, loans)?",
-    "applicability_criteria": "All establishments",
-    "simplified_guidance": "1. Review the list of deductions applied to employee wages.\n2. Cross-reference with the authorized list in Section 18(2) (fines, absence, damage, housing, amenities, loans, tax, PF, etc.).\n3. Ensure no unauthorized deductions (e.g., 'charity' without consent, arbitrary penalties) are made.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Wage Slip components; Deduction authorization forms",
-      "delay_proof": "Correction entries in payroll"
-    },
-    "legal_text": "Notwithstanding anything contained in any other law for the time being in force, there shall be no deductions from the wages of the employee, except those as are authorised under this Code."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-19-001",
+    "audit_item_id": "CW-2019-SEC-50-1",
+    "category": "Statutory Registers",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 19(1) and 19(2)",
-      "category": "Authorized Deductions, Fines and Recoveries"
+    "question_text": "Is the establishment maintaining a Register of Wages containing details of persons employed, muster roll, and wages paid?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments (except agriculture/domestic with <=5 employees).",
+    "section_reference": "Section 50(1)",
+    "legal_text": "Every employer... shall maintain a register containing the details with regard to persons employed, muster roll, wages and such other details in such manner as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the combined 'Register of Wages, Muster Roll and Employees' (often Form I or Form IV depending on state rules).",
+        "Step 2: Ensure it covers all employees, including contract labor if applicable.",
+        "Step 3: Verify columns for 'Daily Attendance', 'Overtime', 'Gross Wages', 'Deductions', and 'Net Pay' are filled."
+      ]
     },
-    "question_text": "Are fines imposed only for acts and omissions that have been approved by the appropriate Government and specified by notice?",
-    "applicability_criteria": "Establishments imposing fines on employees",
-    "simplified_guidance": "1. Obtain approval from the appropriate Government/Authority for the list of acts/omissions warranting fines.\n2. Display this list clearly on the premises.\n3. Ensure fines are only imposed for these specific acts.\n4. Do not fine for vague reasons not on the list.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Register of Wages / Muster Roll",
+      "instruction": "Upload a clear image of the register page for the last complete wage period.",
+      "title": "Register Maintenance Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Approved list of acts/omissions; Photo of notice board display",
-      "delay_proof": "Application for approval of acts/omissions"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No fine shall be imposed on any employee save in respect of those acts and omissions on his part as the employer, with the previous approval of the appropriate Government or of such authority as may be prescribed, may have specified by notice... A notice specifying such acts and omissions shall be exhibited in such manner as may be prescribed, on the premises in which the employment is carried on."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a Register with tabular employee data. Reject if blank or illegible.",
+      "verification_logic": "Prompt: Check for the presence of key columns: 'Name', 'Designation', 'Attendance/Days Worked', 'Gross Wages', 'Deductions', 'Net Payable'. If multiple key columns are missing, flag as Non-Compliant."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-19-002",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 19(4)",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Is the total amount of fine imposed in any one wage period limited to 3% of the wages payable?",
-    "applicability_criteria": "Employees subject to disciplinary fines",
-    "simplified_guidance": "1. Calculate the total wages payable for the wage period.\n2. Ensure the fine amount does not exceed 3% of this total.\n3. Adjust any excess fine to fall within this limit.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Register of Fines; Wage Slips",
-      "delay_proof": "Refund records for excess fines"
-    },
-    "legal_text": "The total amount of fine which may be imposed in any one wage-period on any employee shall not exceed an amount equal to three per cent. of the wages payable to him in respect of that wage-period."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-19-003",
+    "audit_item_id": "CW-2019-SEC-50-3",
+    "category": "Wage Slips",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 19(3)",
-      "category": "Authorized Deductions, Fines and Recoveries"
+    "question_text": "Are wage slips issued to all employees in the prescribed form at least a day prior to the disbursement of wages?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 50(3)",
+    "legal_text": "Every employer shall issue wage slips to the employees in such form and manner as may be prescribed.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Ask for a random sample of 3 issued wage slips from the last month.",
+        "Step 2: Check if they contain: Name, UAN/ID, Wage Period, Gross Wages (broken down), Deductions, and Net Pay.",
+        "Step 3: Confirm with employees (if possible) that they received this before payment."
+      ]
     },
-    "question_text": "Is the employee given an opportunity to show cause against the fine before it is imposed?",
-    "applicability_criteria": "Cases where fines are proposed",
-    "simplified_guidance": "1. Issue a show-cause notice to the employee detailing the act/omission.\n2. Allow the employee to explain or defend their action.\n3. Record the proceedings.\n4. Impose the fine only after considering the explanation.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Sample Wage Slip",
+      "instruction": "Upload a copy of a standard wage slip issued to an employee.",
+      "title": "Wage Slip Format Check"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Copy of Show Cause Notice; Employee's reply; Minutes of hearing",
-      "delay_proof": "Disciplinary proceeding records"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No fine shall be imposed on any employee until such employee has been given an opportunity of showing cause against the fine or otherwise than in accordance with such procedure as may be prescribed for the imposition of fines."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a 'Pay Slip' or 'Wage Slip'.",
+      "verification_logic": "Prompt: Extract 'Wage Period', 'Basic Wage', 'Deductions', and 'Net Pay'. Ensure the slip is not a generic calculator screenshot but a formal document with the Establishment Name."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-20-001",
+    "audit_item_id": "CW-2019-SEC-50-2-ABS",
+    "category": "Statutory Displays",
+    "risk_level": "Low",
+    "question_text": "Is the Abstract of the Code on Wages, 2019 displayed at a prominent place in the establishment?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 50(2)",
+    "legal_text": "Every employer shall display a notice on the notice board... containing the abstract of this Code.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Go to the main entrance or time-office notice board.",
+        "Step 2: Look for a poster titled 'Abstract of the Code on Wages'.",
+        "Step 3: Ensure it is in English and the local language understood by the majority of workers."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Abstract on Notice Board",
+      "instruction": "Take a photo of the 'Abstract of the Act' displayed on the notice board.",
+      "title": "Abstract Display"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the image shows a 'Notice Board' or 'Poster'.",
+      "verification_logic": "Prompt: Look for text 'Abstract', 'Code on Wages', 'Rights', 'Duties'. If text is clearly visible, mark as Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-50-2-RATES",
+    "category": "Statutory Displays",
+    "risk_level": "Low",
+    "question_text": "Does the notice board display category-wise wage rates, wage period, and the date/time of payment?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 50(2)",
+    "legal_text": "Display a notice... containing... category-wise wage rates of employees, wage period, day or date and time of payment of wages.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the specific 'Notice of Wages' or 'Payment Details' on the board.",
+        "Step 2: Verify it lists categories (e.g., Skilled/Unskilled) and their corresponding rates.",
+        "Step 3: Check if the 'Date of Payment' (e.g., '7th of every month') is clearly stated."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Notice of Wage Rates & Pay Day",
+      "instruction": "Capture the specific notice showing wage rates and payment schedules.",
+      "title": "Wage Details Notice"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for a tabular notice or list.",
+      "verification_logic": "Prompt: Scan for keywords 'Unskilled', 'Skilled', 'Minimum Wage', 'Date of Payment'. If these elements exist, mark as Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-50-2-INSP",
+    "category": "Statutory Displays",
+    "risk_level": "Low",
+    "question_text": "Are the name and address of the Inspector-cum-Facilitator having jurisdiction displayed on the notice board?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to all establishments.",
+    "section_reference": "Section 50(2)",
+    "legal_text": "Display a notice... containing... the name and address of the Inspector-cum-Facilitator having jurisdiction.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Check the notice board for 'Inspector Details'.",
+        "Step 2: Verify it contains a Name (or Designation), Office Address, and Contact Number/Email.",
+        "Step 3: Ensure the information is current and not faded/torn."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "Inspector Details Notice",
+      "instruction": "Take a photo of the section of the notice board displaying the Inspector's contact details.",
+      "title": "Inspector Details Verification"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for contact details on a notice.",
+      "verification_logic": "Prompt: Look for keywords 'Inspector', 'Facilitator', 'Address', 'Labor Office'. If an address block is detected, mark as Compliant."
+    }
+  },
+  {
+    "audit_item_id": "CW-2019-SEC-47",
+    "category": "Financial Accountability",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 20(2)",
-      "category": "Authorized Deductions, Fines and Recoveries"
+    "question_text": "Are the establishment's financial statements (Balance Sheet and Profit & Loss Account) duly audited by a qualified auditor to support Bonus calculations?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all Corporations and Companies.",
+    "section_reference": "Section 47(1)",
+    "legal_text": "The balance sheet and the profit and loss account of an employer, being a corporation or a company... duly audited by the Comptroller and Auditor General of India or by auditors duly qualified... may presume the statements... to be accurate.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the Audited Balance Sheet and P&L Account for the last accounting year.",
+        "Step 2: Check for the Auditor's Stamp and Signature (Chartered Accountant).",
+        "Step 3: Verify the figures match the 'Gross Profit' used in Bonus computations."
+      ]
     },
-    "question_text": "Are deductions for absence from duty strictly proportional to the period of absence?",
-    "applicability_criteria": "Employees absent from work",
-    "simplified_guidance": "1. Calculate the period of absence versus the total required work period.\n2. Ensure the deduction amount matches this proportion exactly.\n3. Note: If 10+ employees absent themselves in concert without due notice, deduction can include up to 8 days' wages.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Audited Financial Statements",
+      "instruction": "Upload the cover page and signature page of the Audited Balance Sheet/P&L.",
+      "title": "Audited Accounts Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Attendance Register; Wage Calculation Sheet",
-      "delay_proof": "Correction of disproportionate deductions"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The amount of such deduction shall in no case bear to the wages payable to the employed person in respect of the wage-period for which the deduction is made in a larger proportion than the period for which he was absent bears to the total period within such wage-period during which by the terms of his employment he was required to work."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check if the document is a Balance Sheet or Profit & Loss Account. Reject if it looks like a simple spreadsheet without auditor markings.",
+      "verification_logic": "Prompt: Check for 'Auditor Report', 'Chartered Accountant' stamp, or 'UDIN'. Verify the financial year matches the audit period."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-21-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 21(1) and 21(2)",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Are deductions for damage or loss limited to the amount of loss caused by the employee's negligence or default, and imposed only after a show-cause opportunity?",
-    "applicability_criteria": "Cases involving damage to employer property or loss of money",
-    "simplified_guidance": "1. Establish that damage/loss was directly due to employee negligence.\n2. Assess the actual value of the loss (deduction cannot exceed this).\n3. Give the employee an opportunity to explain.\n4. Record the deduction in the register.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Damage Assessment Report; Show Cause Notice; Register of Deductions for Damage/Loss",
-      "delay_proof": "Inquiry report pending"
-    },
-    "legal_text": "A deduction under clause (c) or clause (n) of sub-section (2) of section 18 for damage or loss shall not exceed the amount of the damage or loss caused to the employer by negligence or default of the employee. A deduction shall not be made under sub-section (1) until the employee has been given an opportunity of showing cause against the deduction..."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-22-001",
+    "audit_item_id": "CW-2019-SEC-48",
+    "category": "Financial Accountability",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 22",
-      "category": "Authorized Deductions, Fines and Recoveries"
+    "question_text": "If the employer is NOT a corporation or company, are accounts maintained and audited (if required) to justify bonus liability?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Applicable to partnerships, proprietorships, or HUFs.",
+    "section_reference": "Section 48",
+    "legal_text": "Where... bonus payable... between an employer, not being a corporation or a company... authority... may, by order, direct the employer to get his accounts audited.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Confirm the entity type (Proprietorship/Partnership).",
+        "Step 2: Check if accounts are audited under Income Tax Act or specific Labour Authority order.",
+        "Step 3: If not audited, review the internal P&L statement signed by the owner."
+      ]
     },
-    "question_text": "Are deductions for amenities or services made only when authorized and accepted by the employee?",
-    "applicability_criteria": "Employees availing housing or other services provided by employer",
-    "simplified_guidance": "1. Verify if the employee accepted the amenity/service as a term of employment.\n2. Ensure the deduction does not exceed the value of the amenity supplied.\n3. Check for general or special orders from the appropriate Government authorizing such services.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Financial Statement (Non-Corporate)",
+      "instruction": "Upload the P&L statement signed by the Proprietor/Partner.",
+      "title": "Non-Corporate Accounts Check"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Employment Contract with acceptance clause; Written consent forms",
-      "delay_proof": "Revocation of amenity requests"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "A deduction under clause (d) or clause (e) of sub-section (2) of section 18 shall not be made from the wages of an employee, unless the house-accommodation amenity or service has been accepted by him as a term of employment or otherwise and such deduction shall not exceed an amount equivalent to the value of the house-accommodation amenity or service supplied."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for a financial statement signed by an individual owner/partner.",
+      "verification_logic": "Prompt: Verify presence of 'Profit' or 'Loss' figures. Check for signatures."
+    }
   },
   {
-    "audit_item_id": "CW2019-SEC-23-001",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 23",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Are recoveries of advances made in accordance with prescribed conditions, and are travel expense advances excluded from recovery?",
-    "applicability_criteria": "Employees receiving salary advances",
-    "simplified_guidance": "1. For pre-employment advances: Recover from the first wage payment (except travel expenses).\n2. For post-employment advances: Follow prescribed conditions for recovery installments.\n3. Ensure travel advances are not deducted from wages.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Advance Register; Wage Slips",
-      "delay_proof": "Loan/Advance policy document"
-    },
-    "legal_text": "recovery of advance of money given to an employee before the employment began shall be made from the first payment of wages to him in respect of a complete wage-period but no recovery shall be made of such advances given for travelling expenses;"
-  },
-  {
-    "audit_item_id": "CW2019-SEC-19-004",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 19(8) and 21(3)",
-      "category": "Authorized Deductions, Fines and Recoveries"
-    },
-    "question_text": "Are registers maintained to record all fines and deductions for damage or loss?",
-    "applicability_criteria": "All establishments imposing fines or deductions",
-    "simplified_guidance": "1. Maintain a 'Register of Fines'.\n2. Maintain a 'Register of Deductions for Damage or Loss'.\n3. Record every instance, amount, and date of realization.\n4. Ensure fine realizations are applied to beneficial purposes approved by the authority.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 10000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Physical or Digital Registers (Form I/II equivalent)",
-      "delay_proof": "Backfilling of registers"
-    },
-    "legal_text": "All fines and all realisations thereof shall be recorded in a register to be kept in such manner and form as may be prescribed... All such deductions and all realisations thereof shall be recorded in a register to be kept in such form as may be prescribed."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-26-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 26(1)",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Is an annual minimum bonus paid to every eligible employee who has worked for at least 30 days in the accounting year?",
-    "applicability_criteria": "Employees earning wages below the notified threshold who worked 30+ days",
-    "simplified_guidance": "1. Verify the employee worked at least 30 days in the year.\n2. Ensure the bonus paid is at least 8.33% of wages earned or ₹100, whichever is higher.\n3. Confirm this is paid regardless of whether the employer has an allocable surplus.\n4. Check that no eligible employee is omitted.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bonus Register (Form C); Payment proof",
-      "delay_proof": "Calculation sheets for minimum bonus"
-    },
-    "legal_text": "There shall be paid to every employee, drawing wages not exceeding such amount per mensem, as determined by notification, by the appropriate Government, by his employer, who has put in at least thirty days work in an accounting year, an annual minimum bonus calculated at the rate of eight and one-third per cent. of the wages earned by the employee or one hundred rupees, whichever is higher whether or not the employer has any allocable surplus during the previous accounting year."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-26-002",
+    "audit_item_id": "CW-2019-SEC-43",
+    "category": "Contractor Liability",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 26(3)",
-      "category": "Bonus Eligibility and Calculation"
+    "question_text": "Does the company/firm acting as the proprietor of the establishment accept ultimate responsibility for payment of dues if the immediate employer fails to pay?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to all establishments, especially those using intermediaries/contractors.",
+    "section_reference": "Section 43",
+    "legal_text": "Provided that where such employer fails to make such payment... then, the company or firm or association or any other person who is the proprietor of the establishment... shall be responsible for such payment.",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Identify if contractors are used.",
+        "Step 2: Request proof that the Principal Employer monitors contractor wage payments.",
+        "Step 3: Check for any 'Undertaking' or clause in vendor contracts regarding wage liability.",
+        "Step 4: Verify if the company has directly settled dues for any contractor failures."
+      ]
     },
-    "question_text": "When allocable surplus exceeds the minimum bonus amount, is the bonus paid in proportion to wages, subject to a maximum of 20%?",
-    "applicability_criteria": "Establishments with allocable surplus exceeding minimum bonus liability",
-    "simplified_guidance": "1. Calculate allocable surplus for the accounting year.\n2. If surplus exists, increase bonus percentage above 8.33%.\n3. Ensure the total bonus does not exceed 20% of the employee's wages.\n4. Verify computations against the available surplus figures.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Contractor Compliance Report / Undertaking",
+      "instruction": "Upload a document showing the Principal Employer's verification of contractor payments or a liability undertaking.",
+      "title": "Proprietor Liability Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Audited Balance Sheet; Allocable Surplus Calculation (Form A/B)",
-      "delay_proof": "Dispute records regarding surplus calculation"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Where in respect of any accounting year... the allocable surplus exceeds the amount of minimum bonus payable to the employees under that sub-section, the employer shall, in lieu of such minimum bonus, be bound to pay to every employee in respect of that accounting year, bonus which shall be an amount in proportion to the wages earned by the employee during the accounting year, subject to a maximum of twenty per cent. of such wages."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-27-001",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 27",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Is the minimum bonus proportionately reduced only when an employee has not worked for all working days in the accounting year?",
-    "applicability_criteria": "Employees with partial attendance during the year",
-    "simplified_guidance": "1. Identify employees who did not work all scheduled working days.\n2. Apply proportionate reduction to the minimum bonus (if higher than 8.33% of actual earnings).\n3. Ensure the reduction formula is mathematically consistent with days worked.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Attendance Register; Bonus calculation worksheet showing reduction logic",
-      "delay_proof": "Correction of calculation errors"
-    },
-    "legal_text": "Where an employee has not worked for all the working days in an accounting year, the minimum bonus under sub-section (1) of section 26, if such bonus is higher than eight and one third per cent. of the salary or wage of the days such employee has worked in that accounting year, shall be proportionately reduced."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-28-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 28",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Are days of layoff, paid leave, temporary disablement, and maternity leave included as 'days worked' for bonus eligibility computation?",
-    "applicability_criteria": "Calculation of working days for bonus purposes",
-    "simplified_guidance": "1. When counting days worked, include: Layoff days, Paid leave days, Temporary disablement (accident) days, and Maternity leave.\n2. Do not treat these as 'absent' for the purpose of disqualifying eligibility (30 days threshold) or reducing bonus proportionately.\n3. Update attendance records to reflect these as 'deemed worked'.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Leave records cross-referenced with Bonus Register",
-      "delay_proof": "Adjustment payments for miscalculated days"
-    },
-    "legal_text": "For the purposes of section 27, an employee shall be deemed to have worked in an establishment in any accounting year also on the days on which, (a) he has been laid off... (b) he has been on leave with salary or wages; (c) he has been absent due to temporary disablement... and (d) the employee has been on maternity leave with salary or wages."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-29-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 29",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Are employees disqualified from bonus only in cases of dismissal for fraud, riotous behavior, theft, or sexual harassment?",
-    "applicability_criteria": "Employees dismissed for misconduct",
-    "simplified_guidance": "1. Check the list of employees disqualified from bonus.\n2. Verify they were dismissed specifically for: Fraud, Riotous/Violent behavior, Theft/Sabotage, or Sexual Harassment conviction.\n3. Ensure due process (inquiry) was followed for the dismissal.\n4. Do not disqualify for minor misconducts not listed in Section 29.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Dismissal Orders citing specific misconduct; Disciplinary Inquiry Reports",
-      "delay_proof": "Legal opinion on disqualification"
-    },
-    "legal_text": "Notwithstanding anything contained in this Code, an employee shall be disqualified from receiving bonus under this Code, if he is dismissed from service for (a) fraud; or (b) riotous or violent behaviour while on the premises of the establishment; or (c) theft, misappropriation or sabotage of any property of the establishment; or (d) conviction for sexual harassment."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-31-001",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 31(1)",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Is the bonus paid out of the allocable surplus calculated as 60% (banking) or 67% (others) of the available surplus?",
-    "applicability_criteria": "All establishments calculating bonus pool",
-    "simplified_guidance": "1. Determine 'Available Surplus' per Section 33.\n2. Calculate 'Allocable Surplus' (67% of available surplus for non-banking, 60% for banking).\n3. Use this amount as the primary pool for distributing bonus.\n4. Document this calculation in the statutory abstract.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Computation of Allocable Surplus (Form A); Financial Statements",
-      "delay_proof": "Auditor's certificate on surplus"
-    },
-    "legal_text": "The bonus shall be paid out of the allocable surplus which shall be an amount equal to sixty per cent. in case of a banking company and sixty-seven per cent. in case of other establishment, of the available surplus and the available surplus shall be the amount calculated in accordance with section 33."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-36-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 36(1) and 36(2)",
-      "category": "Bonus Eligibility and Calculation"
-    },
-    "question_text": "Is the principle of set-on and set-off applied correctly for allocable surplus over a four-year cycle?",
-    "applicability_criteria": "All establishments liable to pay bonus",
-    "simplified_guidance": "1. If surplus exceeds max bonus (20%), carry forward the excess (Set-On) to the next year (up to 4 years).\n2. If surplus is insufficient for min bonus, carry forward the deficiency (Set-Off) to be adjusted against future profits.\n3. Maintain a specific register/record (Form B) tracking these set-on/set-off amounts year over year.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Set-On and Set-Off Register (Form B); Annual Returns",
-      "delay_proof": "Recalculation of 4-year cycle"
-    },
-    "legal_text": "Where for any accounting year, the allocable surplus exceeds the amount of maximum bonus... the excess shall... be carried forward for being set on in the succeeding accounting year and so on up to and inclusive of the fourth accounting year... Where for any accounting year... the allocable surplus... falls short... such minimum amount or the deficiency... shall be carried forward for being set off in the succeeding accounting year and so on up to and inclusive of the fourth accounting year..."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-39-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 39(1)",
-      "category": "Bonus Payment and Adjustments"
-    },
-    "question_text": "Is the bonus paid to employees within a period of eight months from the close of the accounting year?",
-    "applicability_criteria": "All establishments liable to pay bonus",
-    "simplified_guidance": "1. Identify the close of the accounting year (e.g., March 31st).\n2. Ensure the bonus is disbursed before the 8-month deadline (e.g., Nov 30th).\n3. If an extension is needed, ensure specific permission is obtained from the appropriate Government (up to max 2 years).",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bank Statement showing disbursement date; Government Order for extension (if applicable)",
-      "delay_proof": "Extension application copy"
-    },
-    "legal_text": "All amounts payable to an employee by way of bonus under this Code shall be paid by crediting it in the bank account of the employee by his employer within a period of eight months from the close of the accounting year: Provided that the appropriate Government or such authority as the appropriate Government may specify in this behalf may, upon an application made to it by the employer and for sufficient reasons, by order, extend the said period of eight months to such further period or periods as it thinks fit; so, however, that the total period so extended shall not in any case exceed two years."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-39-002",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 39(1)",
-      "category": "Bonus Payment and Adjustments"
-    },
-    "question_text": "Is the bonus paid exclusively by crediting it to the bank account of the employee?",
-    "applicability_criteria": "All bonus payments",
-    "simplified_guidance": "1. Review the mode of bonus payment.\n2. Ensure no cash payments are made for bonus.\n3. Verify bank transfer records correspond to the bonus register.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bank Advice Slip; Bank Statement referencing bonus",
-      "delay_proof": "Correction of payment mode"
-    },
-    "legal_text": "All amounts payable to an employee by way of bonus under this Code shall be paid by crediting it in the bank account of the employee by his employer within a period of eight months from the close of the accounting year"
-  },
-  {
-    "audit_item_id": "CW2019-SEC-37-001",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 37",
-      "category": "Bonus Payment and Adjustments"
-    },
-    "question_text": "If customary or interim bonus was paid earlier, is only the balance amount deducted from the final bonus payable?",
-    "applicability_criteria": "Establishments that paid Puja bonus, customary bonus, or interim bonus",
-    "simplified_guidance": "1. Identify any 'Puja bonus' or interim payments made during the year.\n2. Calculate the total statutory bonus liability.\n3. Deduct the amount already paid from the total liability.\n4. Pay the remaining balance to the employee.\n5. Ensure the deduction does not exceed the amount actually advanced.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 20000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Bonus Register showing advance deduction; Vouchers for interim payment",
-      "delay_proof": "Adjustment entries in payroll"
-    },
-    "legal_text": "Where in any accounting year, (a) an employer has paid any puja bonus or other customary bonus to employee; or (b) an employer has paid a part of the bonus payable under this Code to an employee before the date on which such bonus becomes payable, then, the employer shall be entitled to deduct the amount of bonus so paid from the amount of bonus payable by him to the employee under this Code in respect of that accounting year and the employee shall be entitled to receive only the balance."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-38-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 38",
-      "category": "Bonus Payment and Adjustments"
-    },
-    "question_text": "Are deductions from bonus for misconduct limited to the financial loss caused and restricted to the relevant accounting year?",
-    "applicability_criteria": "Employees found guilty of misconduct causing financial loss",
-    "simplified_guidance": "1. Confirm the employee was found guilty of misconduct causing *financial loss*.\n2. Ensure the deduction amount does not exceed the actual loss value.\n3. Ensure the deduction is applied only against the bonus of the *same* accounting year (no carry forward of deduction).\n4. Pay the balance bonus, if any.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Inquiry Report establishing guilt and loss value; Bonus calculation sheet",
-      "delay_proof": "Disciplinary proceedings records"
-    },
-    "legal_text": "Where in any accounting year, an employee is found guilty of misconduct causing financial loss to the employer, then, it shall be lawful for the employer to deduct the amount of loss from the amount of bonus payable by him to the employee under this Code in respect of that accounting year only and the employee shall be entitled to receive the balance, if any."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-39-003",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 39(2)",
-      "category": "Bonus Payment and Adjustments"
-    },
-    "question_text": "In case of a dispute regarding higher bonus rates, is the undisputed minimum (8.33%) paid within the 8-month deadline?",
-    "applicability_criteria": "Establishments with pending bonus disputes",
-    "simplified_guidance": "1. If a dispute exists claiming a higher bonus rate, do not withhold the entire amount.\n2. Pay the statutory minimum (8.33%) immediately within the standard 8-month timeline.\n3. Settle the differential amount later based on the dispute outcome (within 1 month of settlement).",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Proof of minimum payment; Dispute documentation",
-      "delay_proof": "Legal counsel advice on disputed amount"
-    },
-    "legal_text": "Provided that if, there is a dispute for payment at the higher rate, the employer shall pay eight and one-third per cent. of the wages earned by the employee as per the provisions of this Code within a period of eight months from the close of the accounting year."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-50-001",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 50(1)",
-      "category": "Statutory Registers, Notices and Slips"
-    },
-    "question_text": "Does the establishment maintain a register containing details of persons employed, muster roll, wages, and other prescribed details?",
-    "applicability_criteria": "All establishments (except small agriculture/domestic employers)",
-    "simplified_guidance": "1. Maintain a consolidated register (e.g., Form I or prescribed format).\n2. Ensure it includes: Employee details, Muster roll (attendance), Wage calculations, Overtime, and Deductions.\n3. Keep records electronically or physically as permitted.\n4. Ensure entries are up-to-date and preserved for the statutory period.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 10000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Wage Register; Muster Roll; Combined Register",
-      "delay_proof": "Backfilling of missing data"
-    },
-    "legal_text": "Every employer of an establishment to which this Code applies shall maintain a register containing the details with regard to persons employed, muster roll, wages and such other details in such manner as may be prescribed."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-50-002",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 50(2)",
-      "category": "Statutory Registers, Notices and Slips"
-    },
-    "question_text": "Is a notice displayed at a prominent place in the establishment containing the abstract of the Code, wage rates, wage period, and Inspector details?",
-    "applicability_criteria": "All establishments",
-    "simplified_guidance": "1. Prepare a notice in English and the local language.\n2. Include: Abstract of the Code on Wages, Category-wise wage rates, Wage period (e.g., Monthly), Payment day/time, and Name/Address of the Inspector-cum-Facilitator.\n3. Display this on the main notice board near the entrance or timekeeper's office.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 10000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Direct Observation",
-      "compliance_proof": "Photographic evidence of Notice Board; Copy of the displayed notice",
-      "delay_proof": "Draft notice pending printing"
-    },
-    "legal_text": "Every employer shall display a notice on the notice board at a prominent place of the establishment containing the abstract of this Code, category-wise wage rates of employees, wage period, day or date and time of payment of wages, and the name and address of the Inspector-cum-Facilitator having jurisdiction."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-50-003",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 50(3)",
-      "category": "Statutory Registers, Notices and Slips"
-    },
-    "question_text": "Are wage slips issued to all employees in the prescribed form and manner?",
-    "applicability_criteria": "All establishments (except small agriculture/domestic employers)",
-    "simplified_guidance": "1. Generate wage slips for every wage period (e.g., monthly).\n2. Ensure the slip contains: Gross wages, Detailed deductions, Net pay, and Overtime details.\n3. Issue these to employees electronically or physically at least a day before or on the day of payment.\n4. Obtain acknowledgment (digital or physical) if possible.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 10000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Sample Wage Slips; Employee acknowledgment records; Email logs of digital slips",
-      "delay_proof": "System logs showing generation delays"
-    },
-    "legal_text": "Every employer shall issue wage slips to the employees in such form and manner as may be prescribed."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-50-004",
-    "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 50(4)",
-      "category": "Statutory Registers, Notices and Slips"
-    },
-    "question_text": "For employers with 5 or fewer persons in agriculture or domestic service, is reasonable proof of wage payment produced upon demand?",
-    "applicability_criteria": "Small establishments in agriculture or domestic service (≤5 employees)",
-    "simplified_guidance": "1. While formal registers may not be mandatory, maintain a simple record of payments.\n2. Ensure you can produce 'reasonable proof' (e.g., bank transfer history, signed receipts, diary entries) if an Inspector demands it.\n3. Ensure proof covers the relevant period under inspection.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 10000,
-        "imprisonment_term": "None",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Interview",
-      "compliance_proof": "Simple payment diary; Signed receipts; Bank passbook entries",
-      "delay_proof": "Verbal confirmation from workers"
-    },
-    "legal_text": "The provisions of sub-sections (1) to (3) shall not apply in respect of the employer to the extent he employs not more than five persons for agriculture or domestic purpose: Provided that such employer, when demanded, shall produce before the Inspector-cum-Facilitator, the reasonable proof of the payment of wages to the persons so employed."
-  },
-  {
-    "audit_item_id": "CW2019-SEC-59-001",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Code on Wages, 2019",
-      "section_reference": "Section 59",
-      "category": "Statutory Registers, Notices and Slips"
-    },
-    "question_text": "Does the employer maintain sufficient records to discharge the burden of proof regarding payment of dues?",
-    "applicability_criteria": "All establishments facing claims",
-    "simplified_guidance": "1. Understand that the burden of proving payment lies solely on the employer.\n2. Archive all payment proofs (bank logs, signed registers, vouchers).\n3. Ensure records are organized to quickly refute any claims of non-payment or unauthorized deductions.\n4. Missing records will be presumed as non-payment.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 50000,
-        "imprisonment_term": "None",
-        "liability_type": "Civil"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Archived Wage Records; Full and Final Settlement Receipts",
-      "delay_proof": "Reconstruction of lost records"
-    },
-    "legal_text": "Where a claim has been filed on account of non-payment of remuneration or bonus or less payment of wages or bonus or on account of making deductions not authorised by this Code from the wages of an employee, the burden to prove that the said dues have been paid shall be on the employer."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for a contract, compliance report, or indemnity bond.",
+      "verification_logic": "Prompt: Scan for keywords 'Principal Employer', 'Liability', 'Wage Payment', 'Reimbursement'. If the document confirms the Principal Employer checks payments, mark as Compliant."
+    }
   }
 ]
