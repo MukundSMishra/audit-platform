@@ -133,45 +133,40 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
             <h2 className="text-xl font-extrabold text-slate-900 leading-tight">{item.question_text || item.question}</h2>
           </div>
         </div>
+        
+        {/* Persistent Legal Context */}
+        <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg">
+          <p className="text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">📜 Legal Reference</p>
+          <p className="text-sm font-semibold text-slate-900 mb-1">{item.section_reference || 'Reference'}</p>
+          <p className="text-xs text-slate-700 leading-relaxed">{item.legal_text || 'Legal documentation will be displayed here.'}</p>
+        </div>
       </div>
 
       <div className="flex-1 bg-gradient-to-br from-slate-50 to-gray-50 p-6">
         <div className="bg-white border-2 border-slate-200 rounded-xl shadow-md p-6">
           {currentSlide === 1 && (
-            <div className="space-y-6">
-              {/* Part A: Legal Mandate (Full Width) */}
-              <div className="p-5 bg-slate-100 border border-slate-300 rounded-xl shadow-sm">
-                <p className="text-xs font-bold text-slate-700 uppercase tracking-wide mb-2">📜 Legal Mandate</p>
-                <p className="text-base font-extrabold text-slate-900 mb-3">{item.section_reference || 'Mandate Reference'}</p>
-                <p className="text-sm text-slate-800 leading-relaxed">{item.legal_text || 'Legal documentation will be displayed here.'}</p>
-              </div>
-              
-              {/* Part B: 2-Column Grid (Applicability Criteria + Compliance Burden) */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-lg">
-                  <p className="text-xs font-bold text-indigo-700 uppercase">🎯 Applicability Criteria</p>
-                  <p className="text-sm text-slate-800 mt-3 leading-relaxed">{item.applicability_criteria || 'Criteria not specified'}</p>
-                </div>
-                <div className="p-4 bg-blue-50 border border-blue-100 rounded-lg">
-                  <p className="text-xs font-bold text-blue-700 uppercase">⚡ Compliance Burden</p>
-                  <p className="text-base font-extrabold text-slate-900 mt-1">{item.question_text || item.question}</p>
-                </div>
+            <div className="space-y-4">
+              {/* Applicability Criteria */}
+              <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-lg">
+                <p className="text-xs font-bold text-indigo-700 uppercase mb-2">🎯 Applicability Criteria</p>
+                <p className="text-sm text-slate-800 leading-relaxed">{item.applicability_criteria || 'Criteria not specified'}</p>
               </div>
 
-              <div className="p-5 bg-slate-900 text-white rounded-xl border border-slate-800 space-y-4">
-                <p className="text-sm font-semibold">Does this Compliance Burden apply to this site?</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+              {/* Decision Section */}
+              <div className="p-4 bg-slate-900 text-white rounded-lg border border-slate-800 space-y-3">
+                <p className="text-sm font-semibold">Does this requirement apply to this firm?</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   <button
                     onClick={handleMarkApplicable}
-                    className={`w-full py-4 px-4 rounded-lg border-2 font-bold text-lg transition-all ${
+                    className={`w-full py-2.5 px-3 rounded-lg border-2 font-semibold text-sm transition-all ${
                       isApplicable ? 'border-emerald-400 bg-gradient-to-br from-emerald-50 to-teal-50 text-emerald-800 shadow' : 'border-slate-200 bg-white text-slate-800 hover:border-emerald-300 hover:bg-emerald-50/50'
                     }`}
                   >
-                    YES, It Applies
+                    YES, Applies
                   </button>
                   <button
                     onClick={() => setApplicabilityChoice('no')}
-                    className={`w-full py-4 px-4 rounded-lg border-2 font-bold text-lg transition-all ${
+                    className={`w-full py-2.5 px-3 rounded-lg border-2 font-semibold text-sm transition-all ${
                       !isApplicable ? 'border-rose-400 bg-gradient-to-br from-rose-50 to-red-50 text-rose-800 shadow' : 'border-slate-200 bg-white text-slate-800 hover:border-rose-300 hover:bg-rose-50/60'
                     }`}
                   >
@@ -185,7 +180,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     <textarea
                       className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-3 focus:ring-2 focus:ring-rose-300 focus:border-rose-300 outline-none transition-all"
                       rows="3"
-                      placeholder="Explain why this requirement does not apply to this site."
+                      placeholder="Explain why this requirement does not apply to this firm."
                       value={applicabilityReason}
                       onChange={(e) => setApplicabilityReason(e.target.value)}
                     />
@@ -193,11 +188,11 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                       <button
                         onClick={handleMarkNotApplicable}
                         disabled={!applicabilityReason.trim()}
-                        className={`px-5 py-2 rounded-lg text-sm font-bold transition-all flex items-center gap-2 ${
+                        className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 ${
                           applicabilityReason.trim() ? 'bg-gradient-to-r from-slate-800 to-slate-900 text-white hover:shadow-lg' : 'bg-slate-600/50 text-slate-200 cursor-not-allowed'
                         }`}
                       >
-                        <Check size={16} strokeWidth={3} />
+                        <Check size={14} strokeWidth={3} />
                         Mark as N/A
                       </button>
                     </div>
@@ -205,13 +200,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                 )}
 
                 {isApplicable && (
-                  <div className="flex justify-end">
+                  <div className="flex justify-end pt-2">
                     <button
                       onClick={() => setCurrentSlide(2)}
-                      className="px-6 py-3 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-600 text-white font-bold shadow hover:from-indigo-600 hover:to-blue-700 transition-all flex items-center gap-2"
+                      className="px-4 py-2 rounded-lg bg-gradient-to-r from-indigo-500 to-blue-600 text-white text-sm font-semibold shadow hover:from-indigo-600 hover:to-blue-700 transition-all flex items-center gap-2"
                     >
-                      Next: Upload Evidence
-                      <ChevronDown size={16} className="-rotate-90" strokeWidth={3} />
+                      Next: Evidence
+                      <ChevronDown size={14} className="-rotate-90" strokeWidth={3} />
                     </button>
                   </div>
                 )}
@@ -220,51 +215,54 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
           )}
 
           {currentSlide === 2 && (
-            <div className="space-y-5">
+            <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-xs font-bold text-indigo-700 uppercase">Evidence & Validation</p>
-                  <h3 className="text-lg font-extrabold text-slate-900">Prove Compliance for: {(item.question_text || item.question || '').slice(0, 100)}</h3>
+                  <p className="text-xs font-bold text-indigo-700 uppercase">Evidence Collection</p>
+                  <h3 className="text-base font-extrabold text-slate-900">Upload Evidence</h3>
                 </div>
-                <button onClick={() => setCurrentSlide(1)} className="text-sm font-bold text-indigo-700 hover:text-indigo-900 flex items-center gap-2">
-                  <ChevronDown size={14} className="rotate-90" />
-                  Back to Legal Context
+                <button onClick={() => setCurrentSlide(1)} className="text-xs font-bold text-indigo-700 hover:text-indigo-900 flex items-center gap-1">
+                  <ChevronDown size={12} className="rotate-90" />
+                  Back
                 </button>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="p-5 bg-indigo-50 border border-indigo-100 rounded-xl space-y-3">
-                  <p className="text-xs font-bold text-indigo-700 uppercase">What to capture</p>
-                  {isManualObservation ? (
-                    (item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || ['Follow standard inspection procedures']).map((step, idx) => (
-                      <div key={idx} className="flex gap-3 bg-white border border-indigo-100 rounded-lg p-3">
-                        <span className="text-xs font-bold text-indigo-700">{idx + 1}</span>
-                        <p className="text-sm text-slate-800 leading-relaxed">{typeof step === 'string' ? step : step}</p>
+              {/* Evidence Guidelines */}
+              <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-lg space-y-2">
+                <p className="text-xs font-bold text-indigo-700 uppercase">📋 Evidence Guidelines</p>
+                {isManualObservation ? (
+                  <div className="space-y-2">
+                    {(item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || ['Follow standard inspection procedures']).map((step, idx) => (
+                      <div key={idx} className="flex gap-2 text-sm">
+                        <span className="font-bold text-indigo-700 shrink-0">{idx + 1}.</span>
+                        <p className="text-slate-800">{typeof step === 'string' ? step : step}</p>
                       </div>
-                    ))
-                  ) : (
-                    <>
-                      <div className="bg-white border border-indigo-100 rounded-lg p-3">
-                        <p className="text-xs font-bold text-indigo-700 uppercase">Document Required</p>
-                        <p className="text-base font-bold text-slate-900 mt-1">{item.capture_instructions?.document_name || 'Evidence Document'}</p>
-                        <p className="text-sm text-slate-700 mt-2 leading-relaxed">{item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="space-y-2 text-sm">
+                    <div>
+                      <p className="text-xs font-bold text-indigo-700 uppercase">Document Required</p>
+                      <p className="text-slate-900 font-semibold mt-0.5">{item.capture_instructions?.document_name || 'Evidence Document'}</p>
+                      <p className="text-slate-700 mt-1">{item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}</p>
+                    </div>
+                    {item.capture_instructions?.title && (
+                      <div className="pt-2 border-t border-indigo-200">
+                        <p className="text-xs font-bold text-indigo-700 uppercase">Instructions</p>
+                        <p className="text-slate-800 mt-0.5">{item.capture_instructions.title}</p>
                       </div>
-                      {item.capture_instructions?.title && (
-                        <div className="bg-white border border-indigo-100 rounded-lg p-3">
-                          <p className="text-xs font-bold text-indigo-700 uppercase">Additional Instructions</p>
-                          <p className="text-sm text-slate-800 mt-1">{item.capture_instructions.title}</p>
-                        </div>
-                      )}
-                    </>
-                  )}
-                </div>
+                    )}
+                  </div>
+                )}
+              </div>
 
-                <div className="p-5 bg-white border border-slate-200 rounded-xl shadow-sm flex flex-col gap-4">
+              {/* Upload & Status Section */}
+              <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-3">
                   {isManualObservation ? (
-                    <div className="space-y-4">
-                      <p className="text-sm font-bold text-slate-800">Upload Evidence (optional)</p>
+                    <div className="space-y-3">
+                      <p className="text-sm font-semibold text-slate-800">Upload Evidence (Optional)</p>
                       <div
-                        className={`border-2 border-dashed rounded-lg p-4 cursor-pointer transition-all ${
+                        className={`border-2 border-dashed rounded-lg p-3 cursor-pointer transition-all ${
                           evidenceUrl ? 'border-emerald-400 bg-emerald-50' : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-slate-100'
                         }`}
                         onClick={() => fileInputRef.current?.click()}
@@ -296,10 +294,10 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                       </div>
                     </div>
                   ) : (
-                    <div className="space-y-4">
-                      <p className="text-sm font-bold text-slate-800">Upload Evidence for AI Verification</p>
+                    <div className="space-y-3">
+                      <p className="text-sm font-semibold text-slate-800">Upload Evidence for AI Review</p>
                       <div
-                        className={`border-2 border-dashed rounded-lg p-5 cursor-pointer transition-all flex flex-col items-center justify-center ${
+                        className={`border-2 border-dashed rounded-lg p-3 cursor-pointer transition-all flex flex-col items-center justify-center ${
                           evidenceUrl ? 'border-purple-400 bg-purple-50' : 'border-purple-200 bg-purple-50/40 hover:border-purple-400'
                         }`}
                         onClick={() => !evidenceUrl && aiFileInputRef.current?.click()}
@@ -339,16 +337,16 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                         )}
                       </div>
 
-                      <div className="space-y-3">
-                        <p className="text-sm font-bold text-slate-800">Is evidence available?</p>
-                        <div className="grid grid-cols-2 gap-3">
+                      <div className="space-y-2 pt-2 border-t border-slate-200">
+                        <p className="text-sm font-semibold text-slate-800">Is evidence available?</p>
+                        <div className="grid grid-cols-2 gap-2">
                           <button
                             onClick={() => {
                               setIsEvidenceAvailable('yes');
                               setMissingEvidenceReason(null);
                               onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
                             }}
-                            className={`py-3 rounded-lg border-2 font-bold transition-all ${
+                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${
                               isEvidenceAvailable === 'yes' ? 'border-emerald-400 bg-emerald-50 text-emerald-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-emerald-300'
                             }`}
                           >
@@ -356,7 +354,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                           </button>
                           <button
                             onClick={() => setIsEvidenceAvailable('no')}
-                            className={`py-3 rounded-lg border-2 font-bold transition-all ${
+                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${
                               isEvidenceAvailable === 'no' ? 'border-rose-400 bg-rose-50 text-rose-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-rose-300'
                             }`}
                           >
@@ -365,7 +363,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                         </div>
 
                         {isEvidenceAvailable === 'no' && (
-                          <div className="space-y-2">
+                          <div className="space-y-1.5">
                             {[{ id: 'not_maintained', label: 'Document Not Maintained', icon: Ban }, { id: 'access_denied', label: 'Access Denied', icon: AlertCircle }, { id: 'not_produced', label: 'Not Produced / Lost', icon: XCircle }].map((option) => {
                               const isSelected = missingEvidenceReason === option.label;
                               return (
@@ -375,14 +373,14 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                                     setMissingEvidenceReason(option.label);
                                     onUpdateAnswer(item.id, { ...answerData, status: 'Non-Compliant', missingEvidenceReason: option.label, evidenceUrl: null });
                                   }}
-                                  className={`w-full p-3 rounded-lg border-2 flex items-center gap-3 text-left transition-all ${
+                                  className={`w-full p-2 rounded-lg border-2 flex items-center gap-2 text-left transition-all ${
                                     isSelected ? 'border-rose-400 bg-rose-50 text-rose-800' : 'border-slate-200 bg-white hover:border-rose-300'
                                   }`}
                                 >
-                                  <span className={`w-9 h-9 rounded-full flex items-center justify-center ${isSelected ? 'bg-rose-500' : 'bg-slate-100'}`}>
-                                    <option.icon size={18} className={isSelected ? 'text-white' : 'text-slate-600'} />
+                                  <span className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${isSelected ? 'bg-rose-500' : 'bg-slate-100'}`}>
+                                    <option.icon size={14} className={isSelected ? 'text-white' : 'text-slate-600'} />
                                   </span>
-                                  <span className="text-sm font-semibold">{option.label}</span>
+                                  <span className="text-xs font-semibold">{option.label}</span>
                                 </button>
                               );
                             })}
@@ -392,16 +390,16 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     </div>
                   )}
 
-                  <div className="space-y-3">
-                    <p className="text-sm font-bold text-slate-800">Final Status</p>
-                    <div className="grid grid-cols-2 gap-3">
+                <div className="space-y-2 pt-2 border-t border-slate-200">
+                  <p className="text-sm font-semibold text-slate-800">Final Status</p>
+                  <div className="grid grid-cols-2 gap-2">
                       {['Compliant', 'Non-Compliant'].map((label) => {
                         const selected = currentStatus === label;
                         return (
                           <button
                             key={label}
                             onClick={() => handleStatusClick(label)}
-                            className={`py-3 rounded-lg border-2 font-bold transition-all ${selected ? statusStyles[label] : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300'}`}
+                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${selected ? statusStyles[label] : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300'}`}
                           >
                             {label}
                           </button>
@@ -410,16 +408,15 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <p className="text-sm font-bold text-slate-800">Auditor Comment</p>
-                    <textarea
-                      className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-3 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 outline-none transition-all"
-                      rows="3"
+                <div className="space-y-1.5">
+                  <p className="text-sm font-semibold text-slate-800">Comment</p>
+                  <textarea
+                      className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-2 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 outline-none transition-all"
+                      rows="2"
                       placeholder="Add your observations or notes..."
                       value={comment}
-                      onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
-                    />
-                  </div>
+                    onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
+                  />
                 </div>
               </div>
             </div>
