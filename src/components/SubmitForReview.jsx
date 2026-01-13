@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Loader2, CheckCircle, AlertCircle, FileCheck, Database } from 'lucide-react';
+import { supabase } from '../services/supabaseClient'; // Ensure this path is correct
 
 const SubmitForReview = ({ 
   sessionId, 
@@ -11,6 +12,7 @@ const SubmitForReview = ({
   onCancel 
 }) => {
   const [submitting, setSubmitting] = useState(false);
+  const [statusStep, setStatusStep] = useState(''); // 'saving' | 'analyzing' | 'done'
   const [error, setError] = useState(null);
   const [successMessage, setSuccessMessage] = useState(null);
 
@@ -19,59 +21,83 @@ const SubmitForReview = ({
   const answeredQuestions = Object.keys(answers).length;
   const compliantCount = Object.values(answers).filter(a => a.status === 'Compliant').length;
   const nonCompliantCount = Object.values(answers).filter(a => a.status === 'Non-Compliant').length;
-  const delayedCount = Object.values(answers).filter(a => a.status === 'Delayed').length;
-  const notApplicableCount = Object.values(answers).filter(a => a.status === 'Not Applicable').length;
 
   const handleSubmit = async () => {
     setSubmitting(true);
     setError(null);
-    setSuccessMessage(null);
+    setStatusStep('saving');
 
     try {
-      // Construct Work Order object for Universal Agentic Workflow
-      const workOrder = {
-        agent_id: "safety_expert",
-        task_type: "audit_report",
-        payload: {
-          batch_id: sessionId
+      // 1. SAVE DATA TO SUPABASE
+      console.log('[SubmitForReview] Step 1: Saving to DB...');
+      const batchId = `BATCH-${Date.now()}`;
+      
+      const recordsToInsert = auditData.map((item) => {
+        const answer = answers[item.id] || {};
+        
+        // Check for direct string URL first (AuditCard format), then legacy array
+        let finalEvidenceUrl = "";
+        if (answer.evidenceUrl) {
+            finalEvidenceUrl = answer.evidenceUrl;
+        } else if (answer.files && answer.files.length > 0) {
+            finalEvidenceUrl = answer.files.map(f => f.url || f.name).join(", ");
         }
-      };
 
-      console.log('[SubmitForReview] Submitting work order:', workOrder);
+        return {
+            session_id: sessionId,
+            batch_id: batchId,
+            audit_item_id: item.id,
+            question_text: item.question,
+            category: item.category || "environment",
+            risk_level: item.risk || "Medium",
+            legal_text: item.legalRef || "",
+            user_status: answer.status || "Not Answered",
+            user_comment: answer.comment || "",
+            evidence_url: finalEvidenceUrl,
+            ai_status: "Pending"
+        };
+      });
 
-      // Send to Universal Agent Endpoint
-      const response = await fetch('http://localhost:8000/invoke-agent', {
+      const { error: dbError } = await supabase
+        .from('audit_agent_submissions')
+        .insert(recordsToInsert);
+
+      if (dbError) throw new Error(`Database Save Failed: ${dbError.message}`);
+
+      // 2. TRIGGER AI AGENT
+      setStatusStep('analyzing');
+      console.log('[SubmitForReview] Step 2: Triggering AI Agent...');
+
+      // CALL THE NEW ENDPOINT
+      const response = await fetch('http://localhost:8000/trigger-ai-review', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(workOrder)
+        body: JSON.stringify({ 
+          session_id: sessionId 
+        })
       });
 
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ error: 'Unknown error' }));
-        throw new Error(errorData.error || `HTTP ${response.status}: ${response.statusText}`);
+        throw new Error(`AI Server Error: ${response.statusText}`);
       }
 
       const result = await response.json();
-      console.log('[SubmitForReview] Agent response:', result);
+      console.log('[SubmitForReview] AI Success:', result);
 
-      // Success!
-      setSuccessMessage('Audit submitted successfully! Redirecting to dashboard...');
+      setStatusStep('done');
+      setSuccessMessage(`Success! AI processed ${result.processed_count} items.`);
       
-      // Call success callback
-      if (onSubmitSuccess) {
-        onSubmitSuccess(result);
-      }
+      if (onSubmitSuccess) onSubmitSuccess(result);
 
-      // Navigate to Dashboard after short delay
       setTimeout(() => {
-        window.location.href = '/dashboard';
-      }, 1500);
+        // window.location.href = '/dashboard'; 
+      }, 2000);
 
     } catch (err) {
-      console.error('[SubmitForReview] Error submitting:', err);
-      setError(err.message || 'Failed to submit audit for review');
+      console.error('[SubmitForReview] Error:', err);
+      setError(err.message || 'Submission Failed');
     } finally {
       setSubmitting(false);
     }
@@ -80,143 +106,57 @@ const SubmitForReview = ({
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8 flex items-center justify-center">
       <div className="max-w-3xl w-full bg-white rounded-2xl shadow-2xl p-8">
-        
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full mb-4">
             <FileCheck className="text-white" size={32} />
           </div>
-          <h1 className="text-3xl font-bold text-gray-900 mb-2">
-            Submit Audit for AI Review
-          </h1>
-          <p className="text-gray-600">
-            📍 {company.company_name || company.name} • {company.location}
-          </p>
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Submit Audit for AI Review</h1>
+          <p className="text-gray-600">📍 {company?.company_name || "Company"} • {company?.location || "Location"}</p>
         </div>
 
-        {/* Stats Summary */}
-        <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 mb-6">
-          <h2 className="text-lg font-bold text-gray-800 mb-4">Audit Summary</h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-blue-600">{totalQuestions}</div>
-              <div className="text-xs text-gray-600 mt-1">Total Questions</div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-indigo-600">{answeredQuestions}</div>
-              <div className="text-xs text-gray-600 mt-1">Answered</div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-green-600">{compliantCount}</div>
-              <div className="text-xs text-gray-600 mt-1">Compliant</div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-red-600">{nonCompliantCount}</div>
-              <div className="text-xs text-gray-600 mt-1">Non-Compliant</div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-orange-600">{delayedCount}</div>
-              <div className="text-xs text-gray-600 mt-1">Delayed</div>
-            </div>
-            
-            <div className="bg-white rounded-lg p-4 text-center">
-              <div className="text-2xl font-bold text-gray-600">{notApplicableCount}</div>
-              <div className="text-xs text-gray-600 mt-1">Not Applicable</div>
-            </div>
-          </div>
-        </div>
+        {/* Status Indicators */}
+        {submitting && (
+           <div className="mb-8 flex justify-center items-center gap-4">
+              <div className={`flex items-center gap-2 ${statusStep === 'saving' ? 'text-blue-600 font-bold' : 'text-green-600'}`}>
+                 {statusStep === 'saving' ? <Loader2 className="animate-spin" size={20} /> : <CheckCircle size={20} />}
+                 <span>Saving Data...</span>
+              </div>
+              <div className="w-8 h-0.5 bg-gray-200"></div>
+              <div className={`flex items-center gap-2 ${statusStep === 'analyzing' ? 'text-purple-600 font-bold' : (statusStep === 'done' ? 'text-green-600' : 'text-gray-400')}`}>
+                 {statusStep === 'analyzing' ? <Loader2 className="animate-spin" size={20} /> : <Database size={20} />}
+                 <span>AI Analysis...</span>
+              </div>
+           </div>
+        )}
 
-        {/* Acts Summary */}
-        <div className="mb-6">
-          <h3 className="text-sm font-bold text-gray-700 mb-3">Acts Audited:</h3>
-          <div className="flex flex-wrap gap-2">
-            {selectedActs.map(act => (
-              <span 
-                key={act.id} 
-                className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                {act.shortName}
-              </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Error/Success Messages */}
+        {/* Messages */}
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-start gap-3">
+          <div className="mb-6 p-4 bg-red-50 border-l-4 border-red-500 rounded-r-xl flex items-start gap-3">
             <AlertCircle className="text-red-600 flex-shrink-0 mt-0.5" size={20} />
             <div>
-              <h4 className="font-bold text-red-900 mb-1">Submission Failed</h4>
+              <h4 className="font-bold text-red-900">Submission Failed</h4>
               <p className="text-red-700 text-sm">{error}</p>
             </div>
           </div>
         )}
 
         {successMessage && (
-          <div className="mb-6 p-4 bg-green-50 border-2 border-green-200 rounded-xl flex items-start gap-3">
+          <div className="mb-6 p-4 bg-green-50 border-l-4 border-green-500 rounded-r-xl flex items-start gap-3">
             <CheckCircle className="text-green-600 flex-shrink-0 mt-0.5" size={20} />
             <div>
-              <h4 className="font-bold text-green-900 mb-1">Success!</h4>
+              <h4 className="font-bold text-green-900">Analysis Complete</h4>
               <p className="text-green-700 text-sm">{successMessage}</p>
             </div>
           </div>
         )}
 
-        {/* Info Box */}
-        <div className="mb-6 p-4 bg-blue-50 border-2 border-blue-200 rounded-xl">
-          <h4 className="font-bold text-blue-900 mb-2 flex items-center gap-2">
-            <Database size={16} />
-            What happens next?
-          </h4>
-          <ul className="text-blue-800 text-sm space-y-1.5">
-            <li>• Your audit data will be sent to the AI Agent for analysis</li>
-            <li>• The AI will review evidence and generate compliance reports</li>
-            <li>• Manual observations will be cross-verified with legal requirements</li>
-            <li>• Results will be saved to your database for record-keeping</li>
-          </ul>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex gap-4">
-          <button
-            onClick={onCancel}
-            disabled={submitting}
-            className="flex-1 py-3 px-6 rounded-xl border-2 border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Cancel
-          </button>
-          
-          <button
-            onClick={handleSubmit}
-            disabled={submitting || answeredQuestions === 0}
-            className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold hover:from-blue-700 hover:to-indigo-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-          >
-            {submitting ? (
-              <>
-                <Loader2 className="animate-spin" size={20} />
-                Submitting...
-              </>
-            ) : (
-              <>
-                <Send size={20} />
-                Submit for AI Review
-              </>
-            )}
+        <div className="flex gap-4 mt-6">
+          <button onClick={onCancel} disabled={submitting} className="flex-1 py-3 px-6 rounded-xl border-2 border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">Cancel</button>
+          <button onClick={handleSubmit} disabled={submitting || answeredQuestions === 0} className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2">
+            {submitting ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
+            {submitting ? 'Processing...' : 'Submit for AI Review'}
           </button>
         </div>
-
-        {/* Warning if incomplete */}
-        {answeredQuestions < totalQuestions && (
-          <div className="mt-4 text-center text-sm text-amber-600">
-            ⚠️ Note: You have {totalQuestions - answeredQuestions} unanswered questions. 
-            Only answered items will be submitted.
-          </div>
-        )}
       </div>
     </div>
   );

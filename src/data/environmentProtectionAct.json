@@ -1,677 +1,278 @@
 [
   {
-    "audit_item_id": "EPA_1986-S7-01",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 7",
-      "category": "Emission and Discharge Standards"
-    },
-    "question_text": "Does the facility ensure that no environmental pollutants are discharged or emitted in excess of the standards prescribed by the relevant rules?",
-    "applicability_criteria": "Applicable to all persons carrying on any industry, operation, or process involving the discharge of environmental pollutants.",
-    "simplified_guidance": "1. Identify the specific standards applicable to your industry or operation under the Environment (Protection) Rules.\\n2. Conduct regular monitoring of all emission and discharge points.\\n3. Compare results against the prescribed limits.\\n4. Implement immediate corrective actions if any parameter exceeds the limit.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Environmental monitoring reports (Air/Water/Noise), Third-party laboratory test results, Logbooks of emission levels.",
-      "delay_proof": "Corrective Action Reports (CAR) for past exceedances, Maintenance logs of pollution control equipment."
-    },
-    "legal_text": "No person carrying on any industry, operation or process shall discharge or emit or permit to be discharged or emitted any environmental pollutants in excess of such standards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S7-02",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 7",
-      "category": "Emission and Discharge Standards"
-    },
-    "question_text": "Are adequate operational controls in place to prevent the 'permitting' of accidental or unauthorized discharges in excess of standards?",
-    "applicability_criteria": "Applicable to all industrial operations where process failures or negligence could lead to excessive discharge.",
-    "simplified_guidance": "1. Review Standard Operating Procedures (SOPs) for all pollution control equipment.\\n2. Ensure staff are trained to prevent bypasses or overflows.\\n3. Maintain interlocks or alarms that trigger before limits are exceeded.\\n4. Establish strict supervision protocols to ensure no unauthorized release occurs.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "SOPs for pollution control devices, Training records on discharge prevention, Maintenance records of auto-shutoff valves or alarms.",
-      "delay_proof": "Incident investigation reports for past accidental discharges."
-    },
-    "legal_text": "No person carrying on any industry, operation or process shall discharge or emit or permit to be discharged or emitted any environmental pollutants in excess of such standards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S7-03",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 7",
-      "category": "Emission and Discharge Standards"
-    },
-    "question_text": "Has the facility identified and complied with industry-specific pollutant concentration limits for solid, liquid, and gaseous substances?",
-    "applicability_criteria": "Applicable to industries with specific pollutant profiles defined in the Schedules of the Environment (Protection) Rules.",
-    "simplified_guidance": "1. Review the Schedules attached to the Environment (Protection) Rules to find your specific industry category.\\n2. List all 'environmental pollutants' (solid, liquid, gaseous) relevant to your process.\\n3. Ensure testing covers all listed parameters, not just generic ones.\\n4. Document compliance for each specific substance type.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Comprehensive Lab Analysis Reports covering industry-specific parameters, Consent to Operate (CTO) conditions mapping.",
-      "delay_proof": "Gap analysis report of current monitoring vs. required parameters."
-    },
-    "legal_text": "No person carrying on any industry, operation or process shall discharge or emit or permit to be discharged or emitted any environmental pollutants in excess of such standards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S7-04",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 7",
-      "category": "Emission and Discharge Standards"
-    },
-    "question_text": "Does the facility ensure that third-party contractors or operators on-site do not discharge pollutants in excess of prescribed standards?",
-    "applicability_criteria": "Applicable to principal employers or occupiers who outsource operations or processes to contractors.",
-    "simplified_guidance": "1. Include environmental compliance clauses in contractor agreements.\\n2. Monitor contractor activities that generate emissions or effluents.\\n3. Conduct periodic audits of contractor equipment.\\n4. Enforce stop-work authority if contractors violate emission standards.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Interview",
-      "compliance_proof": "Contractor service agreements with EHS clauses, Records of contractor supervision, Site inspection checklists.",
-      "delay_proof": "Notices issued to non-compliant contractors."
-    },
-    "legal_text": "No person carrying on any industry, operation or process shall discharge or emit or permit to be discharged or emitted any environmental pollutants in excess of such standards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S7-05",
+    "audit_item_id": "ACT-RULE-14-FORM-V",
+    "category": "Annual Environmental Statement & Resource Audit",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 7",
-      "category": "Emission and Discharge Standards"
+    "question_text": "Has the Environmental Statement (Form V) for the financial year ending 31st March been submitted to the State Pollution Control Board on or before September 30th?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Every person carrying on an industry, operation or process requiring consent under Section 25 of the Water Act or Section 21 of the Air Act or authorization under Hazardous Wastes Rules[cite: 377].",
+    "section_reference": "Section 20 read with Rule 14",
+    "legal_text": "Every person... shall submit an environmental audit report for the financial year ending the 31st March in Form V to the concerned State Pollution Control Board on or before the 30th day of September every year[cite: 377].",
+    "prescribed_form": "Form V",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the 'Environmental Audit Report' (Form V) for the most recent financial year.",
+        "Step 2: Check Part A (Item 5) for the 'Date of last environmental statement' to ensure continuity[cite: 484].",
+        "Step 3: Verify Part B mentions 'Water Consumption' per unit of product[cite: 3].",
+        "Step 4: Verify Part C documents 'Percentage of variation from prescribed standards'[cite: 3].",
+        "Step 5: Confirm the submission receipt date is on or before September 30th."
+      ]
     },
-    "question_text": "Is there a documented system to track updates to prescribed standards to ensure ongoing compliance?",
-    "applicability_criteria": "Applicable to all industries as standards may be revised by the Central Government.",
-    "simplified_guidance": "1. Subscribe to official gazette notifications or legal update services.\\n2. Review changes in 'prescribed standards' annually or upon notification.\\n3. Update internal monitoring protocols if limits are tightened.\\n4. Document the review of new standards vs. current performance.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM-V Environmental Audit Report",
+      "instruction": "Upload the full PDF of the 'Environmental Audit Report for the Financial year ending the 31st March'. Ensure the filing date and Part C (Pollution Generated) are clearly visible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Document Verification",
-      "compliance_proof": "Legal register updates, Minutes of management review meetings discussing new standards.",
-      "delay_proof": "Plan for upgrading pollution control equipment to meet new standards."
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No person carrying on any industry, operation or process shall discharge or emit or permit to be discharged or emitted any environmental pollutants in excess of such standards as may be prescribed."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if the document is 'Form V'. Check for keywords 'Environmental Audit Report', 'Part - A', and 'Water Consumption'.",
+      "verification_logic": "Prompt: 1. Extract the submission date and compare with 'September 30th'. 2. In 'Part C', extract 'Percentage of variation'. If variation > 0%, flag for 'Reason' check. 3. Extract 'Water Consumption per unit' from Part B."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S8-01",
+    "audit_item_id": "ACT-RULE-7-FORM-I",
+    "category": "Sampling Procedure & Chain of Custody",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 8",
-      "category": "Hazardous Substance Handling"
+    "question_text": "Was the 'Notice of intention to have sample analysed' (Form I) served 'then and there' on the occupier at the time of sampling?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "When samples of air, water, soil or other substances are taken for analysis from any factory or premises under Section 11.",
+    "section_reference": "Section 11(3)(a) read with Rule 7",
+    "legal_text": "The Central Government or the officer empowered shall serve on the occupier or his agent or person in charge of the place a notice then and there in Form I of his intention to have the sample analyzed. [cite: 325]",
+    "prescribed_form": "Form I",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the signed copy of 'Form I' issued during the specific sampling event.",
+        "Step 2: Verify the 'Date', 'Time', and specific 'Place' where the sample was taken are recorded. [cite: 3]",
+        "Step 3: Confirm the acknowledgement signature of the Occupier/Agent is present to prove service."
+      ]
     },
-    "question_text": "Does the facility ensure that all hazardous substances are handled strictly in accordance with the procedures prescribed under the Act and its Rules?",
-    "applicability_criteria": "Applicable to any person or facility that manufactures, processes, stores, transports, or uses hazardous substances.",
-    "simplified_guidance": "1. Identify all hazardous substances used or stored on site.\\n2. Obtain the specific handling rules (e.g., Hazardous Waste Rules, Chemical Accident Rules) relevant to your substances.\\n3. Establish Standard Operating Procedures (SOPs) based on these rules.\\n4. Train all staff on these mandatory procedures.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM I Notice of intention to have sample analysed",
+      "instruction": "Upload the full PDF of Form I. Ensure the 'Time', 'Place', and Occupier's acknowledgement signature are clearly visible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Standard Operating Procedures (SOPs) for handling, Material Safety Data Sheets (MSDS), Training records.",
-      "delay_proof": "Draft SOPs under review, Gap analysis of current handling practices."
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document is 'Form I'. Check for keywords 'Notice of intention to have sample analysed', 'rule 7', and 'specific place'.",
+      "verification_logic": "Prompt: 1. Extract 'Date', 'Time', and 'Place' of sampling. 2. Verify if the 'Signature' of the occupier/agent is detected at the bottom. 3. Flag if the Date field is blank."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S8-02",
+    "audit_item_id": "ACT-RULE-8-FORM-II",
+    "category": "Sampling Procedure & Chain of Custody",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 8",
-      "category": "Hazardous Substance Handling"
+    "question_text": "Was the sample sent to the Government Analyst accompanied by the 'Memorandum to Government Analyst' (Form II) describing the seal and marks?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Mandatory when submitting any sample portion to the environmental laboratory for analysis.",
+    "section_reference": "Section 11(3)(d) read with Rule 8(1)",
+    "legal_text": "Sample taken for analysis shall be sent by the Central Government or the officer empowered to the environmental laboratory by registered post or through special messenger along with Form II. [cite: 327]",
+    "prescribed_form": "Form II",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Locate the copy of 'Form II' that accompanied the lab sample.",
+        "Step 2: Verify the field 'The portion of the sample has been marked by me with the following mark'. [cite: 425]",
+        "Step 3: Ensure the 'Details of the portion of sample taken' matches the description in Form I. [cite: 426]",
+        "Step 4: Confirm the document bears the officer's SEAL. [cite: 429]"
+      ]
     },
-    "question_text": "Have the prescribed physical and operational safeguards been implemented for the handling of hazardous substances?",
-    "applicability_criteria": "Applicable to areas where hazardous substances are stored, processed, or transported.",
-    "simplified_guidance": "1. Conduct a risk assessment to identify required safeguards (e.g., secondary containment, fire suppression).\\n2. Install necessary physical barriers and safety devices.\\n3. Provide appropriate Personal Protective Equipment (PPE) to handlers.\\n4. Maintain safety systems regularly.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM II MEMORANDUM TO GOVERNMENT ANALYST",
+      "instruction": "Upload the scanned copy of Form II. Ensure the 'Details of the portion of sample' and the Officer's Seal are legible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Physical safety barriers, Containment dikes, Fire safety systems, PPE availability logs.",
-      "delay_proof": "Purchase orders for safety equipment, Maintenance requests for existing safeguards."
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document is 'Form II'. Check for keywords 'MEMORANDUM TO GOVERNMENT ANALYST' and 'rule 8'.",
+      "verification_logic": "Prompt: 1. Extract the text under 'Details of the portion of sample taken'. 2. Extract the text under 'The portion of the sample has been marked by me with the following mark'. 3. Verify presence of 'SEAL' impression."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S8-03",
+    "audit_item_id": "ACT-RULE-8-3-FORM-III-SEALS",
+    "category": "Laboratory Analysis & Standards Review",
+    "risk_level": "Critical",
+    "question_text": "Does the 'Report by Government Analyst' (Form III) certify that the sample seals and fastening were intact and matched the officer's specimen impression upon receipt?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Mandatory for all samples analyzed by an environmental laboratory under Section 11 to ensure admissibility of evidence.",
+    "section_reference": "Section 14 read with Rule 8(3)",
+    "legal_text": "The findings shall be recorded in Form III in triplicate and signed by the Government Analyst... Check the condition of seals and fastening upon receipt by the lab[cite: 3, 329].",
+    "prescribed_form": "Form III",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Retrieve 'Form III' (Report by Govt. Analyst) returned by the laboratory.",
+        "Step 2: Locate Item 2: 'The Condition of seals, fastening of sample on receipt was as follows'.",
+        "Step 3: Verify the analyst has explicitly written that seals were 'intact' or 'matched' the specimen.",
+        "Step 4: Ensure the report is signed by the Government Analyst."
+      ]
+    },
+    "capture_instructions": {
+      "document_name": "FORM III REPORT BY GOVERNMENT ANALYST",
+      "instruction": "Upload the full PDF of Form III. Ensure Item 2 regarding 'Condition of seals' is clearly legible.",
+      "title": "Evidence Requirement"
+    },
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
+    },
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document is 'Form III'. Check for keywords 'REPORT BY GOVERNMENT ANALYST', 'Condition of seals', and 'Rule 8'.",
+      "verification_logic": "Prompt: 1. Extract the text under 'The Condition of seals, fastening of sample on receipt was as follows'. 2. Logic: If text contains 'Intact', 'Ok', or 'Matched', pass. If text contains 'Broken', 'Tampered', or 'Did not match', flag as RISK."
+    }
+  },
+  {
+    "audit_item_id": "ACT-RULE-8-3-FORM-III-RESULTS",
+    "category": "Laboratory Analysis & Standards Review",
     "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 8",
-      "category": "Hazardous Substance Handling"
+    "question_text": "Do the analysis results declared in Form III fall within the prescribed standards for the specific industry or pollutant?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to industries discharging environmental pollutants (Section 7).",
+    "section_reference": "Section 14 read with Rule 8(3)",
+    "legal_text": "I further certify that I have analysed the aforementioned sample... and declare the result of the analysis to be as follows[cite: 445, 446].",
+    "prescribed_form": "Form III",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Review the main body of 'Form III' under the declaration of results.",
+        "Step 2: Compare the 'Result' values against the specific standards (e.g., BOD, COD, pH) mentioned in the Consent to Operate or Schedules.",
+        "Step 3: Check if the analyst has noted any method of analysis that differs from standard protocols."
+      ]
     },
-    "question_text": "Does the facility oversee third-party contractors to ensure they comply with safeguards when 'caused to handle' hazardous substances?",
-    "applicability_criteria": "Applicable when the facility outsources transport, waste disposal, or processing of hazardous materials.",
-    "simplified_guidance": "1. Verify valid licenses/authorizations of all contractors (transporters, waste disposers).\\n2. Include compliance mandates in service contracts.\\n3. Inspect contractor vehicles and equipment before allowing handling.\\n4. Retain manifest copies or transfer documents.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM III REPORT BY GOVERNMENT ANALYST",
+      "instruction": "Upload the full PDF of Form III. Ensure the table or list showing 'Result of analysis' is completely visible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Contractor agreements with liability clauses, Waste manifests, Contractor license copies.",
-      "delay_proof": "Correspondence requesting compliance documents from contractors."
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document is 'Form III'. Check for keywords 'declare the result of the analysis', 'Government Analyst'.",
+      "verification_logic": "Prompt: 1. Extract the list of parameters and their corresponding numeric values from the results section. 2. Present extracted values for manual comparison against Schedule I-IV standards (as standards vary by industry)."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S8-04",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 8",
-      "category": "Hazardous Substance Handling"
-    },
-    "question_text": "Do handling procedures cover the entire lifecycle including packaging, storage, destruction, and conversion?",
-    "applicability_criteria": "Applicable to all stages of the hazardous substance lifecycle within the facility.",
-    "simplified_guidance": "1. Map the flow of hazardous substances from receipt to disposal.\\n2. Ensure 'handling' protocols address packaging integrity and storage compatibility.\\n3. Implement specific safeguards for destruction or conversion processes.\\n4. Regular checks on storage conditions (ventilation, temperature).",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Direct Observation",
-      "compliance_proof": "Storage area checklists, Packaging compliance certificates, Disposal logs.",
-      "delay_proof": "Action plan to upgrade storage facilities or packaging standards."
-    },
-    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S8-05",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 8",
-      "category": "Hazardous Substance Handling"
-    },
-    "question_text": "Are safeguards sufficient to prevent liability for causing harm to human beings, living creatures, plants, property, or the environment?",
-    "applicability_criteria": "Applicable to all facilities handling substances defined as hazardous under the Act.",
-    "simplified_guidance": "1. Evaluate potential impact pathways (spills, fumes, leaks).\\n2. Implement emergency response plans for loss of containment.\\n3. Ensure safeguards protect not just humans but also local flora, fauna, and property.\\n4. Conduct mock drills for hazardous substance accidents.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Inspection",
-      "compliance_proof": "Environmental Impact Assessment (EIA) mitigation measures, On-site Emergency Plan, Mock drill reports.",
-      "delay_proof": "Risk assessment reports identifying gaps in current safeguards."
-    },
-    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S9-01",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 9(1)",
-      "category": "Incident Management and Mitigation"
-    },
-    "question_text": "Does the facility have immediate mitigation protocols in place for accidents or unforeseen events causing excessive pollutant discharge?",
-    "applicability_criteria": "Applicable to the person responsible for discharge and the person in charge of the place where discharge occurs.",
-    "simplified_guidance": "1. Identify potential accident scenarios (e.g., tank failure, pipe burst).\\n2. Develop specific mitigation plans to stop the release and contain pollutants.\\n3. Equip the facility with emergency response kits (spill kits, neutralizers).\\n4. Train staff to act immediately to prevent environmental damage.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Emergency Preparedness and Response Plan (EPRP), Mitigation SOPs, Records of mock drills.",
-      "delay_proof": "Purchase orders for spill containment equipment."
-    },
-    "legal_text": "Where the discharge of any environmental pollutant in excess of the prescribed standards occurs or is apprehended to occur due to any accident or other unforeseen act or event, the person responsible for such discharge and the person in charge of the place at which such discharge occurs or is apprehended to occur shall be bound to prevent or mitigate the environmental pollution caused as a result of such discharge..."
-  },
-  {
-    "audit_item_id": "EPA_1986-S9-02",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 9(1)(a)",
-      "category": "Incident Management and Mitigation"
-    },
-    "question_text": "Is there a documented procedure to 'forthwith' intimate prescribed authorities upon the occurrence or apprehension of excessive discharge?",
-    "applicability_criteria": "Applicable whenever an accident or unforeseen event causes or threatens to cause pollution in excess of standards.",
-    "simplified_guidance": "1. Maintain an up-to-date list of prescribed authorities (e.g., SPCB, District Magistrate) with emergency contact numbers.\\n2. Create a standard incident reporting format.\\n3. Assign responsibility to a specific officer to notify authorities immediately ('forthwith').\\n4. Document the time and method of intimation during any incident.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Incident Reporting SOP, List of emergency contacts for authorities, Proof of past intimations (emails/letters).",
-      "delay_proof": "Draft communication protocols under approval."
-    },
-    "legal_text": "...and shall also forthwith intimate the fact of such occurrence or apprehension of such occurrence to such authorities or agencies as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S9-03",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 9(1)(b)",
-      "category": "Incident Management and Mitigation"
-    },
-    "question_text": "Is the facility prepared to render all necessary assistance to authorities for remedial measures if called upon?",
-    "applicability_criteria": "Applicable when authorities intervene to mitigate pollution resulting from an accident.",
-    "simplified_guidance": "1. designate liaison officers to coordinate with government agencies during emergencies.\\n2. Ensure access to site resources (manpower, machinery) for authorities if requested.\\n3. Maintain records of assistance provided during past incidents.\\n4. Do not obstruct or delay authority requests.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Interview",
-      "compliance_proof": "Emergency management team structure, Policy on cooperation with regulatory bodies.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "...and be bound, if called upon, to render all assistance, to such authorities or agencies as may be prescribed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S9-04",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 9(3)",
-      "category": "Incident Management and Mitigation"
-    },
-    "question_text": "Is the management aware that expenses incurred by authorities for remedial measures are recoverable with interest?",
-    "applicability_criteria": "Applicable to the person concerned responsible for the pollution discharge.",
-    "simplified_guidance": "1. Review financial risk assessments to include potential environmental remediation costs.\\n2. Ensure insurance policies (like Public Liability Insurance) cover government-mandated clean-up costs.\\n3. Acknowledge that unpaid remedial costs can be recovered as arrears of land revenue.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Civil"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Interview",
-      "compliance_proof": "Public Liability Insurance Act (PLI) policy, Financial risk provisions.",
-      "delay_proof": "Insurance renewal documents."
-    },
-    "legal_text": "The expenses, if any, incurred by any authority or agency with respect to the remedial measures... together with interest... may be recovered by such authority or agency from the person concerned as arrears of land revenue or of public demand."
-  },
-  {
-    "audit_item_id": "EPA_1986-S10-01",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 10(1)",
-      "category": "Inspection, Entry and Sampling Protocol"
-    },
-    "question_text": "Does the facility grant unrestricted right of entry to persons empowered by the Central Government at all reasonable times?",
-    "applicability_criteria": "Applicable to any place where functions of the Act need to be performed or compliance checked.",
-    "simplified_guidance": "1. Ensure security staff are trained to recognize valid government identification cards.\\n2. Establish a protocol for immediate entry of empowered officers without delay.\\n3. Do not obstruct or refuse entry to officers conducting inspections.\\n4. Maintain a visitor log to document the time and details of official inspections.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Interview",
-      "compliance_proof": "Security gate logs, Visitor policy documents, records of past inspections.",
-      "delay_proof": "Not Applicable"
-    },
-    "legal_text": "Subject to the provisions of this section, any person empowered by the Central Government in this behalf shall have a right to enter, at all reasonable times with such assistance as he considers necessary, any place..."
-  },
-  {
-    "audit_item_id": "EPA_1986-S10-02",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 10(2)",
-      "category": "Inspection, Entry and Sampling Protocol"
-    },
-    "question_text": "Does the occupier render all necessary assistance to the empowered person during inspections?",
-    "applicability_criteria": "Applicable to every person carrying on any industry, operation, or process handling hazardous substances.",
-    "simplified_guidance": "1. Assign a competent site representative to accompany the inspector.\\n2. Provide access to all records, registers, and equipment requested.\\n3. Assist in the collection of samples or testing of equipment.\\n4. Failure to assist without reasonable cause is a punishable offence.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Interview",
-      "compliance_proof": "Inspection reports signed by site representatives, Internal incident reports regarding inspections.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "Every person carrying on any industry, operation or process of handling any hazardous substance shall be bound to render all assistance to the person empowered by the Central Government... for carrying out the functions..."
-  },
-  {
-    "audit_item_id": "EPA_1986-S10-03",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 10(3)",
-      "category": "Inspection, Entry and Sampling Protocol"
-    },
-    "question_text": "Does the facility ensure that no person willfully delays or obstructs an empowered officer in the performance of their duties?",
-    "applicability_criteria": "Applicable to all facility personnel interacting with government inspectors.",
-    "simplified_guidance": "1. Train staff that obstructing an inspector is a criminal offense.\\n2. Ensure records and keys to locked areas are readily available.\\n3. Avoid delays in presenting required documents during an audit.\\n4. Cooperate fully with search or seizure operations if they occur.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Interview",
-      "compliance_proof": "Employee code of conduct, Legal compliance training records.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "If any person willfully delays or obstructs any persons empowered by the Central Government... in the performance of his functions, he shall be guilty of an offence under this Act."
-  },
-  {
-    "audit_item_id": "EPA_1986-S11-01",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 11(3)(a)",
-      "category": "Inspection, Entry and Sampling Protocol"
-    },
-    "question_text": "When a sample is taken by an officer, does the facility representative ensure they receive a formal notice of intention to analyze?",
-    "applicability_criteria": "Applicable whenever samples of air, water, soil, or other substances are taken by government officers.",
-    "simplified_guidance": "1. Verify that the officer serves a notice in the prescribed form immediately upon taking the sample.\\n2. Acknowledge receipt of the notice.\\n3. Ensure the notice details the intention to have the sample analyzed.\\n4. Keep this notice for legal records.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Copies of 'Notice of Intention' (Form) served by inspectors, Sampling logbook.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "...serve on the occupier or his agent or person in charge of the place, a notice, then and there, in such form as may be prescribed, of his intention to have it so analysed."
-  },
-  {
-    "audit_item_id": "EPA_1986-S11-02",
-    "risk_level": "High",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 11(3)(c)",
-      "category": "Inspection, Entry and Sampling Protocol"
-    },
-    "question_text": "Does the facility representative witness the sampling process and sign the marked and sealed sample containers?",
-    "applicability_criteria": "Applicable during the collection of official samples for analysis.",
-    "simplified_guidance": "1. Be present during the entire sample collection process.\\n2. Verify that samples are placed in suitable containers and sealed properly.\\n3. Sign the container label alongside the officer's signature.\\n4. Refusal to sign allows the officer to sign alone, which may weaken the facility's legal position.",
-    "risk_profile": {
-      "severity_level": "High",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Direct Observation",
-      "compliance_proof": "Signature on split samples retained by the facility, Photographs of the sampling event.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "...cause the sample to be placed in a container or containers which shall be marked and sealed and shall also be signed both by the person taking the sample and the occupier or his agent or person."
-  },
-  {
-    "audit_item_id": "EPA_1986-S11-03",
+    "audit_item_id": "ACT-RULE-11-FORM-IV",
+    "category": "Legal Notices & Offence Complaints",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 11(4)(a)",
-      "category": "Inspection, Entry and Sampling Protocol"
+    "question_text": "Has the 'Form of Notice' (Form IV) been served to the Central Government or authorized authority at least 60 days prior to filing the complaint?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to any person (citizen or entity) intending to file a complaint for an offence under the Act.",
+    "section_reference": "Section 19(b) read with Rule 11",
+    "legal_text": "No court shall take cognizance... except on a complaint made by... any person who has given notice of not less than sixty days, in the manner prescribed... [Notice shall be in Form IV].",
+    "prescribed_form": "Form IV",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Request the copy of 'Form IV' (Notice under section 19(b)) relating to the complaint.",
+        "Step 2: Check the 'Date' at the bottom of the form.",
+        "Step 3: Calculate if 60 days have passed between this Notice Date and the Complaint Filing Date.",
+        "Step 4: Verify the notice lists specific 'documentary evidence' (photos/reports) in the support section."
+      ]
     },
-    "question_text": "Does the facility ensure that the occupier or agent does not willfully absent themselves during sampling to avoid signing?",
-    "applicability_criteria": "Applicable to the occupier or agent in charge at the time of sampling.",
-    "simplified_guidance": "1. Ensure a responsible person is always available during business hours.\\n2. Do not leave the site to avoid participating in the sampling procedure.\\n3. Understand that willful absence allows the officer to proceed and seal samples unilaterally.\\n4. The officer will document such absence in writing to the Government Analyst.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM IV FORM OF NOTICE",
+      "instruction": "Upload the full PDF of Form IV. Ensure the 'Date' and the section listing 'enclosed documents' are clearly visible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Interview",
-      "compliance_proof": "Attendance records of EHS manager/occupier, Visitor logs showing escorting of officers.",
-      "delay_proof": "N/A"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "...in a case where the occupier, his agent or person wilfully absents himself, the person taking the sample shall collect the sample for analysis to be placed in a container... and shall also be signed by the person taking the sample..."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document is 'Form IV'. Check for keywords 'Notice under section 19(b)', 'intention to file a complaint', and '60 days'.",
+      "verification_logic": "Prompt: 1. Extract the 'Dated' field at the bottom. 2. Extract the text following 'In support of my/our notice, I am /we are enclosed the following documents'. 3. Logic: If 'Dated' is null OR 'documents' section is empty, flag as Incomplete."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S5-01",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 5",
-      "category": "Information, Directives and Corporate Liability"
-    },
-    "question_text": "Has the facility fully complied with all written directions issued by the Central Government regarding closure, prohibition, or regulation of operations?",
-    "applicability_criteria": "Applicable to any person, officer, or authority receiving written directions from the Central Government.",
-    "simplified_guidance": "1. Maintain a register of all directions received from the Central Government or delegated authorities (SPCB/CPCB).\\n2. Implement immediate actions to comply with closure or regulation orders.\\n3. Document the specific steps taken to satisfy the direction.\\n4. Submit compliance reports to the issuing authority without delay.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Copies of Government Directions (Closure notices, etc.), Action Taken Reports (ATR), Correspondence acknowledging receipt.",
-      "delay_proof": "Legal stay orders or appeals filed against the directions."
-    },
-    "legal_text": "The Central Government may... issue directions in writing to any person, officer or any authority and such person, officer or authority shall be bound to comply with such directions."
-  },
-  {
-    "audit_item_id": "EPA_1986-S5-02",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 5 Explanation",
-      "category": "Information, Directives and Corporate Liability"
-    },
-    "question_text": "Is the facility aware that directions may include the stoppage or regulation of electricity, water, or other essential services?",
-    "applicability_criteria": "Applicable to all industrial operations subject to environmental regulation.",
-    "simplified_guidance": "1. Review the legal implications of non-compliance, which extends to utility disconnection.\\n2. Ensure backup power or water plans do not violate the stoppage order if issued.\\n3. Train plant managers on the severity of Section 5 directions.\\n4. Proactively address pollution issues to avoid such drastic regulatory measures.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Administrative"
-      }
-    },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Interview",
-      "compliance_proof": "Risk register including utility disconnection scenarios, Management meeting minutes discussing regulatory risks.",
-      "delay_proof": "N/A"
-    },
-    "legal_text": "For the avoidance of doubts, it is hereby declared that the power to issue directions under this section includes the power to direct... (b) stoppage or regulation of the supply of electricity or water or any other service."
-  },
-  {
-    "audit_item_id": "EPA_1986-S20-01",
+    "audit_item_id": "ACT-RULE-11-3-SERVICE",
+    "category": "Legal Notices & Offence Complaints",
     "risk_level": "Medium",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 20",
-      "category": "Information, Directives and Corporate Liability"
+    "question_text": "Is there proof that Form IV was sent via 'Registered Post Acknowledgement Due' as required by Rule 11(3)?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Mandatory procedural requirement for serving notice under Section 19(b).",
+    "section_reference": "Rule 11(3)",
+    "legal_text": "The notice shall be sent by registered post acknowledgement due.",
+    "prescribed_form": "Form IV (Service Proof)",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Look for the 'Registered Post' receipt or the 'Acknowledgement Due' card attached to the office copy of Form IV.",
+        "Step 2: Verify the date on the postal receipt matches or is immediately after the date on Form IV.",
+        "Step 3: Ensure the recipient address matches the Authority designated in Rule 11(2)."
+      ]
     },
-    "question_text": "Does the facility furnish all required reports, returns, statistics, and accounts to the prescribed authority upon request?",
-    "applicability_criteria": "Applicable to any person, officer, or authority required by the Central Government to furnish information.",
-    "simplified_guidance": "1. Identify all periodic returns required by your specific industry (e.g., Environmental Statements).\\n2. Establish a calendar for data collection and submission.\\n3. Ensure data accuracy in statistics and accounts provided.\\n4. Obtain acknowledgement of receipt for all submissions.",
-    "risk_profile": {
-      "severity_level": "Medium",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM IV FORM OF NOTICE",
+      "instruction": "Upload the Postal Receipt or Acknowledgement Card associated with the Form IV submission.",
+      "title": "Service Verification"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Copies of Environmental Statements (Form V), Annual Returns, Hazardous Waste Returns, Proof of submission (acknowledgement receipts).",
-      "delay_proof": "Correspondence requesting extension of time for submission."
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "The Central Government may... require any person, officer, State Government or other authority to furnish to it or any prescribed authority or officer any reports, returns, statistics, accounts and other information and such person... shall be bound to do so."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for 'Postal Receipt', 'India Post', or 'Acknowledgement Due' keywords.",
+      "verification_logic": "Prompt: Extract 'Date' and 'Receiver Address'. Logic: Confirm date aligns with Form IV date."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S16-01",
-    "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 16(1)",
-      "category": "Information, Directives and Corporate Liability"
+    "audit_item_id": "ACT-RULE-14-FORM-V-PART-D",
+    "category": "Hazardous Substance & Supply Chain Control",
+    "risk_level": "High",
+    "question_text": "Does the Environmental Statement (Form V) include a complete disclosure of Hazardous Wastes generated during the financial year in 'Part D'?",
+    "workflow_type": "ai_evidence",
+    "applicability_criteria": "Applicable to industries handling hazardous substances or generating hazardous wastes as defined under the Hazardous Wastes (Management & Handling) Rules[cite: 377].",
+    "section_reference": "Section 8 read with Rule 14",
+    "legal_text": "Persons handling hazardous substances to comply with procedural safeguards... Environmental Audit Report... Part D [as specified under Hazardous Wastes (Management & Handling) Rules, 1989][cite: 50, 486].",
+    "prescribed_form": "Form V",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Open the submitted 'Environmental Audit Report' (Form V).",
+        "Step 2: Navigate to 'PART - D'.",
+        "Step 3: Verify entries for 'Total Quantity (in Kg)' under two columns: 'During the previous financial year' and 'During the current financial year'.",
+        "Step 4: Check if wastes are categorized by 'From Process' and 'From Pollution Control Facilities'[cite: 486]."
+      ]
     },
-    "question_text": "Do persons in charge of the company exercise 'all due diligence' to prevent the commission of environmental offences?",
-    "applicability_criteria": "Applicable to every person who is directly in charge of and responsible to the company for the conduct of business.",
-    "simplified_guidance": "1. Implement a robust Environmental Management System (EMS).\\n2. Document regular management reviews of environmental compliance.\\n3. Allocation adequate budget for pollution control measures.\\n4. Maintain records showing that offences occurred without knowledge or despite due diligence.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "FORM-V Environmental Audit Report",
+      "instruction": "Upload the page containing 'PART - D' of Form V. Ensure the table showing 'Hazardous Wastes' and 'Total Quantity' is clearly visible.",
+      "title": "Evidence Requirement"
     },
-    "evidence_requirements": {
-      "mandatory": true,
-      "methodology": "Document Verification",
-      "compliance_proof": "Board meeting minutes regarding EHS, Internal Audit Reports, Corrective Action Plans, Budget approvals for environmental safety.",
-      "delay_proof": "N/A"
+    "ui_config": {
+      "accepted_formats": "image/*,.pdf"
     },
-    "legal_text": "Provided that nothing contained in this sub-section shall render any such person liable to any punishment provided in this Act, if he proves that the offence was committed without his knowledge or that he exercised all due diligence to prevent the commission of such offence."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Verify if document contains 'PART - D' and 'Hazardous Wastes'. Check for table headers 'Total Quantity' and 'From Process'.",
+      "verification_logic": "Prompt: 1. Extract values for 'From Process' (Current Year) and 'From Pollution Control Facilities' (Current Year). 2. Logic: If both values are 0 or Blank, flag for verification (unless the industry claims Zero Liquid Discharge/No Haz Waste). 3. Extract 'Part - F' content if available to cross-reference disposal practice."
+    }
   },
   {
-    "audit_item_id": "EPA_1986-S16-02",
+    "audit_item_id": "ACT-SECTION-8-SAFEGUARDS",
+    "category": "Hazardous Substance & Supply Chain Control",
     "risk_level": "Critical",
-    "meta_data": {
-      "source_act": "The Environment (Protection) Act, 1986",
-      "section_reference": "Section 16(2)",
-      "category": "Information, Directives and Corporate Liability"
+    "question_text": "Are hazardous substances being handled (stored, packaged, transported) in accordance with the prescribed procedural safeguards?",
+    "workflow_type": "manual_observation",
+    "applicability_criteria": "Any person who handles (manufactures, processes, packages, stores, transports) hazardous substances[cite: 142].",
+    "section_reference": "Section 8",
+    "legal_text": "No person shall handle or cause to be handled any hazardous substance except in accordance with such procedure and after complying with such safeguards as may be prescribed[cite: 142].",
+    "prescribed_form": "Form V (Part F - Disposal Practice)",
+    "intern_action_guide": {
+      "inspection_steps": [
+        "Step 1: Visit the storage/handling area.",
+        "Step 2: Verify if the 'Disposal practice adopted' matches the declaration in 'PART - F' of Form V[cite: 486].",
+        "Step 3: Observe if containers are properly sealed and labeled to prevent accidents (Section 8 mandate)."
+      ]
     },
-    "question_text": "Are internal controls established to ensure offences are not attributable to the neglect, consent, or connivance of directors or managers?",
-    "applicability_criteria": "Applicable to directors, managers, secretaries, or other officers of the company.",
-    "simplified_guidance": "1. Clearly define environmental responsibilities in job descriptions for key officers.\\n2. Conduct regular training for directors and managers on personal liability.\\n3. Establish a whistleblower or reporting mechanism for environmental negligence.\\n4. Investigate and document all internal non-compliances immediately.",
-    "risk_profile": {
-      "severity_level": "Critical",
-      "penalty_details": {
-        "fine_amount_max_inr": 100000,
-        "imprisonment_term": "Up to 5 years",
-        "liability_type": "Criminal"
-      }
+    "capture_instructions": {
+      "document_name": "Site Photo / PART-F Declaration",
+      "instruction": "Upload a photo of the hazardous waste storage area OR the 'PART - F' declaration page from Form V describing the characteristics and disposal practice.",
+      "title": "Site Verification"
     },
-    "evidence_requirements": {
-      "mandatory": false,
-      "methodology": "Interview",
-      "compliance_proof": "Organization chart with EHS responsibilities, Training records for senior management, Internal investigation reports.",
-      "delay_proof": "N/A"
+    "ui_config": {
+      "accepted_formats": "image/*"
     },
-    "legal_text": "Where an offence under this Act has been committed by a company and it is proved that the offence has been committed with the consent or connivance of, or is attributable to any neglect on the part of, any director, manager, secretary or other officer... such director, manager, secretary or other officer shall also deemed to be guilty..."
+    "ai_logic": {
+      "gatekeeper_check": "Prompt: Check for 'PART - F' or image of 'Storage Containers' / 'Labels'.",
+      "verification_logic": "Prompt: If document is Form V Part F: Extract 'characteristics' and 'disposal practice adopted'. If Image: Detect presence of 'Hazard Labels' or 'Sealed Containers'."
+    }
   }
 ]

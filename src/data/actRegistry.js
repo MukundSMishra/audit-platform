@@ -36,6 +36,21 @@ export const AVAILABLE_ACTS = [
   //  ACTIVE TESTING: NEW AI WORKFLOW
   // ============================================
   {
+    id: 'environment_protection_act_1986',
+    name: 'The Environment (Protection) Act, 1986',
+    description: 'Umbrella legislation for environmental protection and regulation of pollution',
+    table: 'environment_protection_act_checklist',
+    data: environmentProtectionActData,
+    shortName: 'EPA',
+    year: 1986,
+    type: 'act'
+  },
+
+  // ============================================
+  //  TEMPORARILY DISABLED (PENDING SCHEMA UPDATE)
+  // ============================================
+  /* 
+  {
     id: 'code_on_occupational_safety_2020',
     name: 'The Occupational Safety, Health and Working Conditions Code, 2020',
     description: 'Consolidates laws on workplace safety, health, and working conditions for all establishments',
@@ -45,10 +60,6 @@ export const AVAILABLE_ACTS = [
     year: 2020,
     type: 'act'
   },
-
-  // ============================================
-  // CODE ON WAGES 2019 - ACTIVE
-  // ============================================
   {
     id: 'code_on_wages_2019',
     name: 'The Code on Wages, 2019',
@@ -120,8 +131,9 @@ export const AVAILABLE_ACTS = [
   },
 
   // ============================================
-  // ENVIRONMENTAL ACTS (Chronological)
+  // ENVIRONMENTAL ACTS (Chronological) - DISABLED
   // ============================================
+  /*
   {
     id: 'water_act_1974',
     name: 'The Water (Prevention and Control of Pollution) Act, 1974',
@@ -142,16 +154,7 @@ export const AVAILABLE_ACTS = [
     year: 1981,
     type: 'act'
   },
-  {
-    id: 'environment_protection_act_1986',
-    name: 'The Environment (Protection) Act, 1986',
-    description: 'Umbrella legislation for environmental protection and regulation of pollution',
-    table: 'environment_protection_act_checklist',
-    data: environmentProtectionActData,
-    shortName: 'EPA',
-    year: 1986,
-    type: 'act'
-  },
+  // Note: Environment Protection Act moved to ACTIVE section above
   {
     id: 'hazardous_waste_rules_2016',
     name: 'Hazardous and Other Wastes (Management and Transboundary Movement) Rules, 2016',
