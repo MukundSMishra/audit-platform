@@ -7,6 +7,7 @@ import { ShieldCheck, Loader2, Database, LogOut, ArrowLeft, ArrowRight, ChevronL
 // Services
 import { supabase } from './services/supabaseClient';
 import AuditCard from './components/AuditCard';
+import AuditReport from './components/AuditReport';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import ActSelector from './components/ActSelector';
@@ -45,6 +46,7 @@ function App() {
   
   // Navigation State (for regulatory audit flow)
   const [currentScreen, setCurrentScreen] = useState('dashboard'); // 'dashboard' | 'audit-type' | 'act-selector' | 'progress' | 'audit' | 'business-audit' | 'submit-review'
+  const [viewState, setViewState] = useState('audit'); // 'audit' | 'processing' | 'report'
   const [currentSessionId, setCurrentSessionId] = useState(null);
   const [factoryName, setFactoryName] = useState(null);
   const [factoryLocation, setFactoryLocation] = useState(null);
@@ -341,6 +343,46 @@ function App() {
   const goBackToActSelector = () => {
     // Show progress screen when going back from audit (not act-selector)
     setCurrentScreen('progress');
+  };
+
+  // FINAL SUBMISSION: Trigger AI Review
+  const handleFinalSubmit = async () => {
+    if (!currentSessionId) {
+      alert('No active session found. Please ensure you have a valid audit session.');
+      return;
+    }
+
+    try {
+      // Step 1: Set processing state
+      setViewState('processing');
+
+      // Step 2: Call backend to trigger AI review
+      const response = await fetch('http://localhost:8000/trigger-ai-review', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          session_id: currentSessionId,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`AI Review failed: ${response.statusText}`);
+      }
+
+      const result = await response.json();
+      console.log('[AI Review] Success:', result);
+
+      // Step 3: Navigate to report view
+      setViewState('report');
+    } catch (error) {
+      console.error('[AI Review] Error:', error);
+      alert('AI Analysis Failed: ' + (error.message || 'Please try again later.'));
+      
+      // Return to audit view on error
+      setViewState('audit');
+    }
   };
 
   // 4. GENERATE REPORT
@@ -1107,6 +1149,33 @@ function App() {
 
   if (loading) return <div className="flex h-screen items-center justify-center gap-3 text-blue-600"><Loader2 className="animate-spin" size={32} /><span className="font-bold text-lg">Loading Audit Questions...</span></div>;
 
+  // Processing State - AI is analyzing evidence
+  if (viewState === 'processing') {
+    return (
+      <div className="fixed inset-0 z-50 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 flex items-center justify-center p-6">
+        <div className="text-center space-y-6">
+          <Loader2 size={64} className="animate-spin text-white mx-auto" />
+          <div className="space-y-2">
+            <h2 className="text-3xl font-black text-white">🤖 AI Agents Analyzing</h2>
+            <p className="text-lg text-indigo-200">Reviewing your evidence and generating compliance report...</p>
+            <p className="text-sm text-indigo-300 font-medium">This may take a minute</p>
+          </div>
+          <div className="flex items-center justify-center gap-2 mt-8">
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+            <div className="w-2 h-2 bg-indigo-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  // Report State - Show the audit report
+  if (viewState === 'report') {
+    return <AuditReport sessionId={currentSessionId} />;
+  }
+
+  // Audit State (default) - Continue with regular audit view
   const currentActId = selectedActIds[currentActIndex];
   const currentActData = getActById(currentActId);
   const currentQuestion = auditData[currentQuestionIndex];
@@ -1192,13 +1261,15 @@ function App() {
             </div>
           </div>
             <div className="flex gap-3 items-center">
-               {/* Risk Score Badge */}
-               <div className={`px-3 py-1.5 rounded-lg text-xs font-bold border shadow-sm hidden sm:flex items-center gap-2
-                 ${riskScore >= 67 ? 'bg-rose-50 text-rose-700 border-rose-200' : riskScore >= 34 ? 'bg-amber-50 text-amber-700 border-amber-200' : 'bg-emerald-50 text-emerald-700 border-emerald-200'}`}
-               >
-                 <span>Risk Score:</span>
-                 <span className="font-extrabold">{riskScore} / 100</span>
-               </div>
+               {/* Submit for Review Button - Show when all acts completed */}
+               {currentActIndex === selectedActIds.length - 1 && currentQuestionIndex === auditData.length - 1 && (
+                 <button 
+                   onClick={handleFinalSubmit}
+                   className="bg-gradient-to-r from-emerald-600 to-green-600 text-white px-5 py-2 rounded-lg text-sm font-bold shadow-lg hover:from-emerald-700 hover:to-green-700 transition-all active:scale-95 flex items-center gap-2"
+                 >
+                   <ShieldCheck size={18}/> Submit for Review
+                 </button>
+               )}
                
                {/* Save Progress Button */}
                {migrationComplete ? (
@@ -1216,33 +1287,12 @@ function App() {
                    <Save size={16}/> Migration Needed
                  </button>
                )}
-               
-               {/* Debug: Check Saved Answers */}
-               <button 
-                 onClick={async () => {
-                   const currentActId = selectedActIds[currentActIndex];
-                   const { data } = await supabase
-                     .from('session_answers')
-                     .select('*')
-                     .eq('session_id', currentSessionId)
-                     .eq('act_id', currentActId);
-                   console.log('🔍 Current saved answers:', data);
-                   alert(`Found ${data?.length || 0} saved answers. Check console for details.`);
-                 }}
-                 className="bg-gray-600 text-white px-3 py-2 rounded-lg text-xs font-bold shadow hover:bg-gray-700 transition-all"
-               >
-                 🔍 Debug
-               </button>
-               
-             <button onClick={generatePDF} className="bg-gray-900 text-white px-5 py-2 rounded-lg text-sm font-bold shadow hover:bg-black transition-all active:scale-95 flex items-center gap-2">
-               <FileText size={16}/> Report
-             </button>
           </div>
         </div>
 
         {/* Question Area */}
         <div className="flex-1 overflow-y-auto p-4 lg:p-8 flex justify-center bg-gray-100/50">
-          <div className="w-full max-w-5xl h-fit pb-10">
+          <div className="w-full max-w-none h-fit pb-10">
             {currentQuestion && (
               <AuditCard 
                 key={currentQuestion.id}

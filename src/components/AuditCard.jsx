@@ -17,12 +17,53 @@ const statusStyles = {
   'Non-Compliant': 'border-rose-500 bg-rose-50 text-rose-800',
 };
 
+const StatusModal = ({ isOpen, type = 'success', title, message, onClose }) => {
+  if (!isOpen) return null;
+
+  const iconMap = {
+    success: { icon: CheckCircle, color: 'text-emerald-600', bg: 'bg-emerald-50' },
+    error: { icon: XCircle, color: 'text-rose-600', bg: 'bg-rose-50' },
+    warning: { icon: AlertCircle, color: 'text-amber-600', bg: 'bg-amber-50' },
+  };
+
+  const { icon: Icon, color, bg } = iconMap[type] || iconMap.success;
+  const primaryLabel = type === 'error' ? 'Try Again' : 'Got it';
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/30 backdrop-blur-sm p-4">
+      <div className="w-full max-w-md rounded-2xl bg-white shadow-2xl border border-slate-200 p-6 animate-in fade-in-0 zoom-in-95 duration-200">
+        <div className="flex items-start gap-3">
+          <span className={`w-12 h-12 rounded-xl flex items-center justify-center ${bg}`}>
+            <Icon className={`${color}`} size={28} />
+          </span>
+          <div className="flex-1 space-y-1">
+            <p className="text-base font-bold text-slate-900 leading-tight">{title}</p>
+            <p className="text-sm text-slate-700 leading-relaxed">{message}</p>
+          </div>
+        </div>
+        <div className="mt-6 flex justify-end">
+          <button
+            onClick={onClose}
+            className="h-10 px-6 rounded-lg bg-slate-900 text-white font-bold text-sm shadow-sm hover:shadow-md transition-all"
+          >
+            {primaryLabel}
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const fileInputRef = useRef(null);
   const aiFileInputRef = useRef(null);
 
   const [uploading, setUploading] = useState(false);
   const [aiUploading, setAiUploading] = useState(false);
+  const [isValidating, setIsValidating] = useState(false);
+  const [validationError, setValidationError] = useState(null);
+  const [isValidated, setIsValidated] = useState(false);
+  const [statusModal, setStatusModal] = useState({ isOpen: false, type: 'success', title: '', message: '' });
   const [currentSlide, setCurrentSlide] = useState(1);
   const [applicabilityReason, setApplicabilityReason] = useState(answerData?.applicabilityReason || answerData?.comment || '');
   const [isEvidenceAvailable, setIsEvidenceAvailable] = useState(answerData?.missingEvidenceReason ? 'no' : null);
@@ -44,9 +85,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const [applicabilityChoice, setApplicabilityChoice] = useState(initialChoice);
   const isApplicable = applicabilityChoice === 'yes';
 
+  const showStatusModal = (type, title, message) => {
+    setStatusModal({ isOpen: true, type, title, message });
+  };
+
   const handleMarkNotApplicable = () => {
     if (!applicabilityReason.trim()) {
-      alert('Please provide a reason for non-applicability.');
+      showStatusModal('warning', 'Reason required', 'Please provide a reason for non-applicability.');
       return;
     }
     onUpdateAnswer(item.id, {
@@ -86,7 +131,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
       const url = await uploadEvidence(file, item.id);
       onUpdateAnswer(item.id, { ...answerData, evidenceUrl: url });
     } catch (error) {
-      alert('Upload Failed');
+      showStatusModal('error', 'Upload failed', 'We could not upload your file. Please try again.');
     } finally {
       setUploading(false);
     }
@@ -95,24 +140,121 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
   const handleAiEvidenceUpload = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
+
+    // ===== STAGE 1: Local Shield (Before Upload) =====
+    const MIN_FILE_SIZE = 5 * 1024; // 5KB
+    const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
+    const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'];
+
+    // Check file size
+    if (file.size < MIN_FILE_SIZE) {
+      showStatusModal('error', 'File too small', 'Minimum file size is 5KB. Please upload a larger file.');
+      return;
+    }
+
+    if (file.size > MAX_FILE_SIZE) {
+      showStatusModal('error', 'File too large', 'Maximum file size is 10MB. Please upload a smaller file.');
+      return;
+    }
+
+    // Check file type
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      showStatusModal('error', 'Invalid file type', 'Please upload images (JPG, PNG, WebP, GIF) or PDF files.');
+      return;
+    }
+
     try {
+      // Clear previous validation state
+      setValidationError(null);
+      setIsValidated(false);
       setAiUploading(true);
+
+      // ===== STAGE 2: Remote Gatekeeper (Upload & AI Validation) =====
       const fileName = `${Date.now()}_${file.name}`;
       const filePath = `uploads/${item.id}/${fileName}`;
       const { error } = await supabase.storage.from('audit-evidence').upload(filePath, file);
       if (error) throw error;
+
       const { data: { publicUrl } } = supabase.storage.from('audit-evidence').getPublicUrl(filePath);
-      onUpdateAnswer(item.id, { ...answerData, evidenceUrl: publicUrl, status: 'submitted_for_ai', missingEvidenceReason: null });
+
+      // Update UI to show we're validating
+      setAiUploading(false);
+      setIsValidating(true);
+
+      // Call AI validation endpoint
+      try {
+        const validationResponse = await fetch('http://localhost:8000/validate-evidence', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            evidence_url: publicUrl,
+            audit_item_id: item.id,
+            document_name: item.capture_instructions?.document_name || 'Evidence Document',
+          }),
+        });
+
+        if (!validationResponse.ok) {
+          throw new Error(`Validation service error: ${validationResponse.statusText}`);
+        }
+
+        const validationData = await validationResponse.json();
+
+        if (validationData.is_valid === false) {
+          // Validation failed - show reason and clear evidence
+          setValidationError(validationData.reason || 'Document quality check failed. Please retry with a clearer image.');
+          showStatusModal('error', 'Quality Check Failed', validationData.reason || 'Please provide a clearer document.');
+          
+          // Clear evidence state - force retake
+          onUpdateAnswer(item.id, {
+            ...answerData,
+            evidenceUrl: null,
+            status: null,
+            missingEvidenceReason: null,
+          });
+          
+          setIsValidated(false);
+        } else {
+          // Validation passed
+          setIsValidated(true);
+          onUpdateAnswer(item.id, {
+            ...answerData,
+            evidenceUrl: publicUrl,
+            status: 'submitted_for_ai',
+            missingEvidenceReason: null,
+          });
+        }
+      } catch (validationErr) {
+        console.error('AI validation error:', validationErr);
+        // If validation service is unavailable, proceed with upload anyway but warn user
+        showStatusModal('warning', 'Validation service unavailable', 'Quality check unavailable, but document uploaded. Proceeding with review.');
+        onUpdateAnswer(item.id, {
+          ...answerData,
+          evidenceUrl: publicUrl,
+          status: 'submitted_for_ai',
+          missingEvidenceReason: null,
+        });
+      }
     } catch (err) {
       console.error('AI Evidence upload failed:', err);
-      alert('Upload Failed: ' + err.message);
+      showStatusModal('error', 'Upload failed', err?.message || 'Unexpected error occurred during upload.');
     } finally {
       setAiUploading(false);
+      setIsValidating(false);
     }
   };
 
   return (
     <div className="bg-white rounded-2xl shadow-xl shadow-gray-200/50 border border-gray-100 overflow-hidden flex flex-col font-sans">
+      <StatusModal
+        isOpen={statusModal.isOpen}
+        type={statusModal.type}
+        title={statusModal.title}
+        message={statusModal.message}
+        onClose={() => setStatusModal({ ...statusModal, isOpen: false })}
+      />
+      {/* Header Section */}
       <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-slate-50 to-blue-50/30">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-3">
@@ -124,20 +266,21 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
             <span>{displayRiskLevel} Risk</span>
           </div>
         </div>
-        <div className="flex items-start gap-4">
+
+        {/* Question Text - Refactored Typography */}
+        <div className="flex items-start gap-4 mb-3">
           <div className="flex flex-col items-center shrink-0">
             <span className="text-4xl font-black bg-gradient-to-br from-blue-500 to-indigo-600 bg-clip-text text-transparent">{index + 1}</span>
             <span className="text-[9px] font-extrabold text-slate-400 uppercase mt-1">Topic</span>
           </div>
           <div className="flex-1">
-            <h2 className="text-xl font-extrabold text-slate-900 leading-tight">{item.question_text || item.question}</h2>
+            <h2 className="text-lg font-bold text-slate-800 leading-relaxed">{item.question_text || item.question}</h2>
           </div>
         </div>
         
-        {/* Persistent Legal Context */}
-        <div className="mt-4 p-3 bg-slate-50 border border-slate-200 rounded-lg">
-          <p className="text-xs font-bold text-slate-600 uppercase tracking-wide mb-1">📜 Legal Reference</p>
-          <p className="text-sm font-semibold text-slate-900 mb-1">{item.section_reference || 'Reference'}</p>
+        {/* Legal Reference - Moved Below Question */}
+        <div className="p-3 bg-white border border-slate-200 rounded-lg">
+          <p className="text-sm font-medium text-slate-900 mb-1">{item.section_reference || 'Legal Reference'}</p>
           <p className="text-xs text-slate-700 leading-relaxed">{item.legal_text || 'Legal documentation will be displayed here.'}</p>
         </div>
       </div>
@@ -153,13 +296,13 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
               </div>
 
               {/* Decision Section */}
-              <div className="p-4 bg-slate-900 text-white rounded-lg border border-slate-800 space-y-3">
-                <p className="text-sm font-semibold">Does this requirement apply to this firm?</p>
+              <div className="p-4 bg-slate-50 rounded-lg border border-slate-200 space-y-3">
+                <p className="text-sm font-semibold text-slate-900">Does this requirement apply to this firm?</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                   <button
                     onClick={handleMarkApplicable}
                     className={`w-full py-2.5 px-3 rounded-lg border-2 font-semibold text-sm transition-all ${
-                      isApplicable ? 'border-emerald-400 bg-gradient-to-br from-emerald-50 to-teal-50 text-emerald-800 shadow' : 'border-slate-200 bg-white text-slate-800 hover:border-emerald-300 hover:bg-emerald-50/50'
+                      isApplicable ? 'border-emerald-400 bg-gradient-to-br from-emerald-50 to-teal-50 text-emerald-800 shadow' : 'border-slate-300 bg-white text-slate-800 hover:border-emerald-300 hover:bg-emerald-50/50'
                     }`}
                   >
                     YES, Applies
@@ -167,7 +310,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                   <button
                     onClick={() => setApplicabilityChoice('no')}
                     className={`w-full py-2.5 px-3 rounded-lg border-2 font-semibold text-sm transition-all ${
-                      !isApplicable ? 'border-rose-400 bg-gradient-to-br from-rose-50 to-red-50 text-rose-800 shadow' : 'border-slate-200 bg-white text-slate-800 hover:border-rose-300 hover:bg-rose-50/60'
+                      !isApplicable ? 'border-rose-400 bg-gradient-to-br from-rose-50 to-red-50 text-rose-800 shadow' : 'border-slate-300 bg-white text-slate-800 hover:border-rose-300 hover:bg-rose-50/60'
                     }`}
                   >
                     NO, Not Applicable
@@ -176,7 +319,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
 
                 {applicabilityChoice === 'no' && (
                   <div className="space-y-3">
-                    <label className="text-sm font-semibold text-slate-100">Reason for Non-Applicability</label>
+                    <label className="text-sm font-semibold text-slate-900">Reason for Non-Applicability</label>
                     <textarea
                       className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-3 focus:ring-2 focus:ring-rose-300 focus:border-rose-300 outline-none transition-all"
                       rows="3"
@@ -189,7 +332,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                         onClick={handleMarkNotApplicable}
                         disabled={!applicabilityReason.trim()}
                         className={`px-4 py-1.5 rounded-lg text-xs font-bold transition-all flex items-center gap-2 ${
-                          applicabilityReason.trim() ? 'bg-gradient-to-r from-slate-800 to-slate-900 text-white hover:shadow-lg' : 'bg-slate-600/50 text-slate-200 cursor-not-allowed'
+                          applicabilityReason.trim() ? 'bg-slate-900 text-white hover:shadow-lg hover:bg-slate-800' : 'bg-slate-300 text-slate-500 cursor-not-allowed'
                         }`}
                       >
                         <Check size={14} strokeWidth={3} />
@@ -216,7 +359,7 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
 
           {currentSlide === 2 && (
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between mb-4">
                 <div>
                   <p className="text-xs font-bold text-indigo-700 uppercase">Evidence Collection</p>
                   <h3 className="text-base font-extrabold text-slate-900">Upload Evidence</h3>
@@ -227,40 +370,27 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                 </button>
               </div>
 
-              {/* Evidence Guidelines */}
-              <div className="p-4 bg-indigo-50 border border-indigo-100 rounded-lg space-y-2">
-                <p className="text-xs font-bold text-indigo-700 uppercase">📋 Evidence Guidelines</p>
+              {/* Slide 2 Content Container */}
+              <div className="space-y-4">
                 {isManualObservation ? (
-                  <div className="space-y-2">
-                    {(item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || ['Follow standard inspection procedures']).map((step, idx) => (
-                      <div key={idx} className="flex gap-2 text-sm">
-                        <span className="font-bold text-indigo-700 shrink-0">{idx + 1}.</span>
-                        <p className="text-slate-800">{typeof step === 'string' ? step : step}</p>
+                  // Manual Observation Workflow
+                  <div className="space-y-4">
+                    {/* Guidelines Section */}
+                    <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                      <p className="text-sm font-semibold text-slate-900 mb-3">Inspection Guidelines</p>
+                      <div className="space-y-2">
+                        {(item.intern_action_guide?.inspection_steps || item.simplified_guidance?.split('\n') || ['Follow standard inspection procedures']).map((step, idx) => (
+                          <div key={idx} className="flex gap-3">
+                            <span className="font-bold text-indigo-600 shrink-0 text-sm">{idx + 1}.</span>
+                            <p className="text-sm text-slate-700">{typeof step === 'string' ? step : step}</p>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="space-y-2 text-sm">
-                    <div>
-                      <p className="text-xs font-bold text-indigo-700 uppercase">Document Required</p>
-                      <p className="text-slate-900 font-semibold mt-0.5">{item.capture_instructions?.document_name || 'Evidence Document'}</p>
-                      <p className="text-slate-700 mt-1">{item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}</p>
                     </div>
-                    {item.capture_instructions?.title && (
-                      <div className="pt-2 border-t border-indigo-200">
-                        <p className="text-xs font-bold text-indigo-700 uppercase">Instructions</p>
-                        <p className="text-slate-800 mt-0.5">{item.capture_instructions.title}</p>
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
 
-              {/* Upload & Status Section */}
-              <div className="p-4 bg-white border border-slate-200 rounded-lg space-y-3">
-                  {isManualObservation ? (
-                    <div className="space-y-3">
-                      <p className="text-sm font-semibold text-slate-800">Upload Evidence (Optional)</p>
+                    {/* Optional Evidence Upload */}
+                    <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                      <p className="text-sm font-semibold text-slate-800 mb-3">Upload Evidence (Optional)</p>
                       <div
                         className={`border-2 border-dashed rounded-lg p-3 cursor-pointer transition-all ${
                           evidenceUrl ? 'border-emerald-400 bg-emerald-50' : 'border-slate-300 bg-slate-50 hover:border-slate-400 hover:bg-slate-100'
@@ -293,134 +423,237 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                         )}
                       </div>
                     </div>
-                  ) : (
-                    <div className="space-y-3">
-                      <p className="text-sm font-semibold text-slate-800">Upload Evidence for AI Review</p>
-                      <div
-                        className={`border-2 border-dashed rounded-lg p-3 cursor-pointer transition-all flex flex-col items-center justify-center ${
-                          evidenceUrl ? 'border-purple-400 bg-purple-50' : 'border-purple-200 bg-purple-50/40 hover:border-purple-400'
-                        }`}
-                        onClick={() => !evidenceUrl && aiFileInputRef.current?.click()}
-                      >
-                        <input
-                          type="file"
-                          ref={aiFileInputRef}
-                          className="hidden"
-                          onChange={handleAiEvidenceUpload}
-                          accept={item.ui_config?.accepted_formats || 'image/*,.pdf'}
-                        />
-                        {evidenceUrl ? (
-                          <div className="text-center space-y-2">
-                            <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow">
-                              <CheckCircle size={30} className="text-white" />
-                            </div>
-                            <p className="text-sm font-bold text-purple-900">Evidence Submitted</p>
-                            <a
-                              href={evidenceUrl}
-                              target="_blank"
-                              rel="noreferrer"
-                              onClick={(e) => e.stopPropagation()}
-                              className="text-xs font-bold text-indigo-700 hover:underline"
+
+                    {/* Compliance Status - Manual Only */}
+                    <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                      <p className="text-sm font-semibold text-slate-800 mb-3">Compliance Status</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {['Compliant', 'Non-Compliant'].map((label) => {
+                          const selected = currentStatus === label;
+                          return (
+                            <button
+                              key={label}
+                              onClick={() => handleStatusClick(label)}
+                              className={`h-12 rounded-lg border-2 font-semibold text-sm transition-all ${selected ? statusStyles[label] : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300'}`}
                             >
-                              View
-                            </a>
-                          </div>
-                        ) : (
-                          <div className="text-center space-y-2">
-                            {aiUploading ? (
-                              <Loader2 size={32} className="animate-spin text-purple-600 mx-auto" />
-                            ) : (
-                              <Camera size={28} className="text-purple-600 mx-auto" />
-                            )}
-                            <p className="text-xs text-slate-700">Images & PDF accepted</p>
-                          </div>
-                        )}
+                              {label}
+                            </button>
+                          );
+                        })}
                       </div>
-
-                      <div className="space-y-2 pt-2 border-t border-slate-200">
-                        <p className="text-sm font-semibold text-slate-800">Is evidence available?</p>
-                        <div className="grid grid-cols-2 gap-2">
-                          <button
-                            onClick={() => {
-                              setIsEvidenceAvailable('yes');
-                              setMissingEvidenceReason(null);
-                              onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
-                            }}
-                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${
-                              isEvidenceAvailable === 'yes' ? 'border-emerald-400 bg-emerald-50 text-emerald-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-emerald-300'
-                            }`}
-                          >
-                            Yes
-                          </button>
-                          <button
-                            onClick={() => setIsEvidenceAvailable('no')}
-                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${
-                              isEvidenceAvailable === 'no' ? 'border-rose-400 bg-rose-50 text-rose-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-rose-300'
-                            }`}
-                          >
-                            No
-                          </button>
-                        </div>
-
-                        {isEvidenceAvailable === 'no' && (
-                          <div className="space-y-1.5">
-                            {[{ id: 'not_maintained', label: 'Document Not Maintained', icon: Ban }, { id: 'access_denied', label: 'Access Denied', icon: AlertCircle }, { id: 'not_produced', label: 'Not Produced / Lost', icon: XCircle }].map((option) => {
-                              const isSelected = missingEvidenceReason === option.label;
-                              return (
-                                <button
-                                  key={option.id}
-                                  onClick={() => {
-                                    setMissingEvidenceReason(option.label);
-                                    onUpdateAnswer(item.id, { ...answerData, status: 'Non-Compliant', missingEvidenceReason: option.label, evidenceUrl: null });
-                                  }}
-                                  className={`w-full p-2 rounded-lg border-2 flex items-center gap-2 text-left transition-all ${
-                                    isSelected ? 'border-rose-400 bg-rose-50 text-rose-800' : 'border-slate-200 bg-white hover:border-rose-300'
-                                  }`}
-                                >
-                                  <span className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 ${isSelected ? 'bg-rose-500' : 'bg-slate-100'}`}>
-                                    <option.icon size={14} className={isSelected ? 'text-white' : 'text-slate-600'} />
-                                  </span>
-                                  <span className="text-xs font-semibold">{option.label}</span>
-                                </button>
-                              );
-                            })}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-                <div className="space-y-2 pt-2 border-t border-slate-200">
-                  <p className="text-sm font-semibold text-slate-800">Final Status</p>
-                  <div className="grid grid-cols-2 gap-2">
-                      {['Compliant', 'Non-Compliant'].map((label) => {
-                        const selected = currentStatus === label;
-                        return (
-                          <button
-                            key={label}
-                            onClick={() => handleStatusClick(label)}
-                            className={`py-2 rounded-lg border-2 font-semibold text-sm transition-all ${selected ? statusStyles[label] : 'border-slate-200 bg-slate-50 text-slate-800 hover:border-slate-300'}`}
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
                     </div>
                   </div>
+                ) : (
+                  // AI/Document Proof Workflow
+                  <div className="space-y-4">
+                    {/* Document Required Section */}
+                    <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                      <p className="text-sm font-semibold text-slate-900 mb-3">Document Required</p>
+                      <p className="text-sm font-semibold text-slate-900 mb-1">{item.capture_instructions?.document_name || 'Evidence Document'}</p>
+                      <p className="text-sm text-slate-700">{item.capture_instructions?.instruction || 'Please capture clear evidence for AI verification.'}</p>
+                      {item.capture_instructions?.title && (
+                        <div className="pt-3 mt-3 border-t border-slate-200">
+                          <p className="text-xs font-bold text-slate-600 uppercase mb-1">Additional Instructions</p>
+                          <p className="text-sm text-slate-700">{item.capture_instructions.title}</p>
+                        </div>
+                      )}
+                    </div>
 
-                <div className="space-y-1.5">
-                  <p className="text-sm font-semibold text-slate-800">Comment</p>
-                  <textarea
-                      className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-2 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 outline-none transition-all"
-                      rows="2"
-                      placeholder="Add your observations or notes..."
-                      value={comment}
-                    onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
-                  />
-                </div>
+                    {/* Step 1: Is evidence available? */}
+                    <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                      <p className="text-sm font-semibold text-slate-800 mb-3">Is evidence available?</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        <button
+                          onClick={() => {
+                            setIsEvidenceAvailable('yes');
+                            setMissingEvidenceReason(null);
+                            onUpdateAnswer(item.id, { ...answerData, missingEvidenceReason: null, status: null });
+                          }}
+                          className={`h-12 rounded-lg border-2 font-semibold text-sm transition-all ${
+                            isEvidenceAvailable === 'yes' ? 'border-emerald-400 bg-emerald-50 text-emerald-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-emerald-300'
+                          }`}
+                        >
+                          Yes
+                        </button>
+                        <button
+                          onClick={() => setIsEvidenceAvailable('no')}
+                          className={`h-12 rounded-lg border-2 font-semibold text-sm transition-all ${
+                            isEvidenceAvailable === 'no' ? 'border-rose-400 bg-rose-50 text-rose-800' : 'border-slate-200 bg-slate-50 text-slate-700 hover:border-rose-300'
+                          }`}
+                        >
+                          No
+                        </button>
+                      </div>
+                    </div>
+
+                    {/* Step 2 (Yes): Upload Widget */}
+                    {isEvidenceAvailable === 'yes' && (
+                      <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                        <p className="text-sm font-semibold text-slate-800 mb-3">Upload Evidence for AI Review</p>
+                        <div
+                          className={`border-2 border-dashed rounded-lg p-4 cursor-pointer transition-all flex flex-col items-center justify-center ${
+                            isValidating ? 'border-blue-300 bg-blue-50' : evidenceUrl ? 'border-purple-400 bg-purple-50' : 'border-purple-200 bg-purple-50/40 hover:border-purple-400'
+                          }`}
+                          onClick={() => !evidenceUrl && !isValidating && aiFileInputRef.current?.click()}
+                        >
+                          <input
+                            type="file"
+                            ref={aiFileInputRef}
+                            className="hidden"
+                            onChange={handleAiEvidenceUpload}
+                            accept={item.ui_config?.accepted_formats || 'image/*,.pdf'}
+                          />
+
+                          {/* Uploading State */}
+                          {aiUploading && !isValidating && (
+                            <div className="text-center space-y-2">
+                              <Loader2 size={28} className="animate-spin text-purple-600 mx-auto" />
+                              <p className="text-sm font-semibold text-slate-700">Uploading...</p>
+                            </div>
+                          )}
+
+                          {/* Validating State */}
+                          {isValidating && (
+                            <div className="text-center space-y-2">
+                              <Loader2 size={28} className="animate-spin text-blue-600 mx-auto" />
+                              <p className="text-sm font-semibold text-slate-700">Analyzing quality...</p>
+                              <p className="text-xs text-slate-600">Please wait while AI validates document</p>
+                            </div>
+                          )}
+
+                          {/* Validated State - Success */}
+                          {isValidated && evidenceUrl && (
+                            <div className="text-center space-y-2">
+                              <div className="w-14 h-14 mx-auto rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center shadow">
+                                <CheckCircle size={32} className="text-white" />
+                              </div>
+                              <p className="text-sm font-semibold text-emerald-900">✅ Quality Verified</p>
+                              <p className="text-xs text-emerald-700 font-medium">Document meets quality standards</p>
+                              <a
+                                href={evidenceUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-xs font-semibold text-indigo-700 hover:underline"
+                              >
+                                View Document
+                              </a>
+                            </div>
+                          )}
+
+                          {/* Submitted State (without validation) */}
+                          {evidenceUrl && !isValidated && !isValidating && (
+                            <div className="text-center space-y-2">
+                              <div className="w-12 h-12 mx-auto rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 flex items-center justify-center shadow">
+                                <CheckCircle size={24} className="text-white" />
+                              </div>
+                              <p className="text-sm font-semibold text-purple-900">Evidence Submitted</p>
+                              <a
+                                href={evidenceUrl}
+                                target="_blank"
+                                rel="noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="text-xs font-semibold text-indigo-700 hover:underline"
+                              >
+                                View Document
+                              </a>
+                            </div>
+                          )}
+
+                          {/* Ready to Upload State */}
+                          {!evidenceUrl && !aiUploading && !isValidating && (
+                            <div className="text-center space-y-2">
+                              <Camera size={28} className="text-purple-600 mx-auto" />
+                              <p className="text-sm text-slate-700">Click to Upload</p>
+                              <p className="text-xs text-slate-600">(Images & PDF accepted)</p>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Validation Error Alert */}
+                        {validationError && (
+                          <div className="mt-3 p-3 bg-rose-50 border border-rose-200 rounded-lg">
+                            <p className="text-xs font-semibold text-rose-900 mb-1">Quality Check Failed</p>
+                            <p className="text-xs text-rose-800">{validationError}</p>
+                            <p className="text-xs text-rose-700 mt-2 font-medium">Please upload a clearer document to proceed.</p>
+                          </div>
+                        )}
+
+                        {/* Proceed Button - Disabled during validation */}
+                        {evidenceUrl && (
+                          <div className="mt-4">
+                            <button
+                              disabled={isValidating}
+                              className={`w-full h-12 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
+                                isValidating
+                                  ? 'bg-slate-200 text-slate-500 cursor-not-allowed'
+                                  : 'bg-gradient-to-r from-indigo-500 to-blue-600 text-white hover:from-indigo-600 hover:to-blue-700 shadow hover:shadow-lg'
+                              }`}
+                            >
+                              {isValidating ? (
+                                <>
+                                  <Loader2 size={16} className="animate-spin" />
+                                  Validating...
+                                </>
+                              ) : (
+                                <>
+                                  <Check size={16} strokeWidth={3} />
+                                  Proceed with Review
+                                </>
+                              )}
+                            </button>
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Step 2 (No): Reason Checklist */}
+                    {isEvidenceAvailable === 'no' && (
+                      <div className="p-4 bg-white border border-slate-200 rounded-lg">
+                        <p className="text-sm font-semibold text-slate-800 mb-3">Reason for Missing Evidence</p>
+                        <div className="space-y-2">
+                          {[{ id: 'not_maintained', label: 'Document Not Maintained', icon: Ban }, { id: 'access_denied', label: 'Access Denied', icon: AlertCircle }, { id: 'not_produced', label: 'Not Produced / Lost', icon: XCircle }].map((option) => {
+                            const isSelected = missingEvidenceReason === option.label;
+                            return (
+                              <button
+                                key={option.id}
+                                onClick={() => {
+                                  setMissingEvidenceReason(option.label);
+                                  onUpdateAnswer(item.id, { ...answerData, status: 'Non-Compliant', missingEvidenceReason: option.label, evidenceUrl: null });
+                                }}
+                                className={`w-full p-3 rounded-lg border-2 flex items-center gap-3 text-left transition-all ${
+                                  isSelected ? 'border-rose-400 bg-rose-50' : 'border-slate-200 bg-white hover:border-rose-300'
+                                }`}
+                              >
+                                <span className={`w-6 h-6 rounded-full flex items-center justify-center shrink-0 flex-none ${isSelected ? 'bg-rose-500' : 'bg-slate-100'}`}>
+                                  <option.icon size={14} className={isSelected ? 'text-white' : 'text-slate-600'} strokeWidth={2} />
+                                </span>
+                                <span className="text-sm font-semibold">{option.label}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
             </div>
           )}
+        </div>
+      </div>
+
+      {/* Auditor Comments - Permanently Below Slide Container */}
+      <div className="px-6 py-4 border-t border-gray-100 bg-white">
+        <div className="space-y-2">
+          <label className="text-sm font-semibold text-slate-800">Auditor Comments</label>
+          <textarea
+            className="w-full rounded-lg border-2 border-slate-200 bg-white text-sm text-slate-800 p-3 focus:ring-2 focus:ring-indigo-300 focus:border-indigo-300 outline-none transition-all"
+            rows="3"
+            placeholder="Add your observations or notes..."
+            value={comment}
+            onChange={(e) => onUpdateAnswer(item.id, { ...answerData, comment: e.target.value })}
+          />
         </div>
       </div>
     </div>
