@@ -323,44 +323,23 @@ export default function InternPortal({ session, userRole, onLogout }) {
     }
   };
 
-  // FINAL SUBMISSION: Trigger AI Review
-  const handleFinalSubmit = async () => {
-    if (!currentSessionId) {
-      alert('No active session found. Please ensure you have a valid audit session.');
-      return;
-    }
+  // FINAL SUBMISSION: Handle post-submission redirect
+  const handleFinalSubmit = () => {
+    console.log('Audit submitted successfully. Redirecting to Completed tab...');
 
-    try {
-      // Step 1: Set processing state
-      setViewState('processing');
+    // 1. Reset Session State
+    setCurrentSessionId(null);
+    setFactoryName(null);
+    setFactoryLocation(null);
+    setSelectedActIds([]);
 
-      // Step 2: Call backend to trigger AI review
-      const response = await fetch('http://localhost:8000/trigger-ai-review', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          session_id: currentSessionId,
-        }),
-      });
+    // 2. Navigate to Dashboard -> Completed Tab
+    setViewState('dashboard');
+    setCurrentStep('dashboard');
+    setDashboardTab('completed'); // <--- Switches the tab automatically
 
-      if (!response.ok) {
-        throw new Error(`AI Review failed: ${response.statusText}`);
-      }
-
-      const result = await response.json();
-      console.log('[AI Review] Success:', result);
-
-      // Step 3: Switch to reports-list view to see the submitted audit
-      setViewState('reports-list');
-    } catch (error) {
-      console.error('[AI Review] Error:', error);
-      alert('AI Analysis Failed: ' + (error.message || 'Please try again later.'));
-      
-      // Return to audit view on error
-      setViewState('audit');
-    }
+    // 3. Optional: Show Success Modal
+    // alert('Audit moved to Completed History'); 
   };
 
   // 4. SAVE PROGRESS
@@ -672,7 +651,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
           factoryName={factoryName}
           factoryLocation={factoryLocation}
           selectedActIds={selectedActIds}
-          onSubmit={handleFinalSubmit}
+          onSubmitSuccess={handleFinalSubmit}
           onBack={() => setCurrentScreen('audit')}
         />
       );
@@ -819,15 +798,6 @@ export default function InternPortal({ session, userRole, onLogout }) {
             {isMapOpen && (
               <div className="p-4 bg-gray-50 border-t border-gray-200">
                 <div className="max-w-5xl mx-auto">
-                  <div className="flex justify-between items-center mb-3">
-                    <div>
-                      <p className="text-xs font-bold text-gray-500 uppercase tracking-wider">Current Act</p>
-                      {currentActData && <p className="text-sm font-bold text-gray-900 mt-0.5">{currentActData.shortName}</p>}
-                      <p className="text-xs text-gray-500 mt-0.5">
-                        {currentActIndex + 1} of {selectedActIds.length} acts
-                      </p>
-                    </div>
-                  </div>
                   <div className="grid grid-cols-10 gap-2">
                     {auditData.map((q, idx) => {
                       const isAnswered = answers[q.id]?.status;

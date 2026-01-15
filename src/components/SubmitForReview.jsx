@@ -64,6 +64,16 @@ const SubmitForReview = ({
 
       if (dbError) throw new Error(`Database Save Failed: ${dbError.message}`);
 
+      console.log('[SubmitForReview] Updating Session Status...');
+      const { error: updateError } = await supabase
+        .from('audit_sessions')
+        .update({ 
+          status: 'submitted',
+          submitted_at: new Date().toISOString()
+        })
+        .eq('id', sessionId);
+      if (updateError) throw new Error(`Status Update Failed: ${updateError.message}`);
+
       // 2. TRIGGER AI AGENT
       setStatusStep('analyzing');
       console.log('[SubmitForReview] Step 2: Triggering AI Agent...');
@@ -89,10 +99,8 @@ const SubmitForReview = ({
       setStatusStep('done');
       setSuccessMessage(`Success! AI processed ${result.processed_count} items.`);
       
-      if (onSubmitSuccess) onSubmitSuccess(result);
-
       setTimeout(() => {
-        // window.location.href = '/dashboard'; 
+        if (onSubmitSuccess) onSubmitSuccess(result);
       }, 2000);
 
     } catch (err) {
