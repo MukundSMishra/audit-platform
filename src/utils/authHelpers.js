@@ -18,7 +18,10 @@ export const checkUserRole = async () => {
       return 'intern';
     }
 
-    return profile.is_active ? profile.role : null;
+    // Normalize role: trim whitespace and convert to lowercase
+    const cleanRole = profile.role ? profile.role.trim().toLowerCase() : null;
+    
+    return profile.is_active ? cleanRole : null;
   } catch (error) {
     console.error('Error checking user role:', error);
     return 'intern'; // Default to intern on error

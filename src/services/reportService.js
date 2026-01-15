@@ -128,3 +128,97 @@ export async function fetchAuditSessionReport(sessionId) {
     return null;
   }
 }
+
+/**
+ * Fetch all audit sessions with summary data
+ * Groups submissions by session_id and returns array of session summaries
+ * @returns {Promise<Array>} Array of session summary objects sorted by date descending
+ */
+export async function fetchAllAuditSessions() {
+  try {
+    // Fetch all submissions from the audit_agent_submissions table
+    const { data: submissions, error } = await supabase
+      .from('audit_agent_submissions')
+      .select('session_id, client_id, analyzed_at, ai_score, ai_status');
+
+    if (error) {
+      console.error('[Report Service] Error fetching audit sessions:', error);
+      return [];
+    }
+
+    if (!submissions || submissions.length === 0) {
+      console.warn('[Report Service] No audit sessions found');
+      return [];
+    }
+
+    // Group submissions by session_id
+    const sessionMap = new Map();
+
+    submissions.forEach(submission => {
+      const sessionId = submission.session_id;
+
+      if (!sessionMap.has(sessionId)) {
+        // Create new session entry with first submission data
+        sessionMap.set(sessionId, {
+          session_id: sessionId,
+          client_id: submission.client_id,
+          analyzed_at: submission.analyzed_at,
+          scores: [],
+          statuses: [],
+        });
+      }
+
+      // Collect scores and statuses for averaging/aggregation
+      if (submission.ai_score != null) {
+        sessionMap.get(sessionId).scores.push(submission.ai_score);
+      }
+
+      if (submission.ai_status) {
+        sessionMap.get(sessionId).statuses.push(submission.ai_status);
+      }
+    });
+
+    // Convert map to array and format as required
+    const sessions = Array.from(sessionMap.values()).map(session => {
+      // Calculate average score
+      const score = session.scores.length > 0
+        ? Math.round(session.scores.reduce((a, b) => a + b, 0) / session.scores.length)
+        : 0;
+
+      // Determine status (use most common or latest status)
+      const status = session.statuses.length > 0
+        ? session.statuses[session.statuses.length - 1]
+        : 'Pending';
+
+      // Format date from analyzed_at
+      const date = session.analyzed_at
+        ? new Date(session.analyzed_at).toISOString().split('T')[0]
+        : null;
+
+      return {
+        session_id: session.session_id,
+        client_id: session.client_id,
+        date: date,
+        score: score,
+        status: status,
+      };
+    });
+
+    // Sort by date descending (newest first)
+    sessions.sort((a, b) => {
+      if (!a.date || !b.date) return 0;
+      return new Date(b.date) - new Date(a.date);
+    });
+
+    console.log('[Report Service] Fetched and grouped audit sessions:', {
+      total_sessions: sessions.length,
+      total_submissions: submissions.length,
+    });
+
+    return sessions;
+
+  } catch (error) {
+    console.error('[Report Service] Unexpected error fetching all audit sessions:', error);
+    return [];
+  }
+}

@@ -27,6 +27,13 @@ export default function AuditProgress({
       console.log('[AuditProgress] Loading progress for session:', sessionId);
       console.log('[AuditProgress] Selected acts:', selectedActs);
       
+      // Guard clause: check if selectedActs is valid
+      if (!selectedActs || !Array.isArray(selectedActs) || selectedActs.length === 0) {
+        console.warn('[AuditProgress] No valid selectedActs provided');
+        setLoading(false);
+        return;
+      }
+      
       // Fetch all answers for this session
       const { data: answers, error } = await supabase
         .from('session_answers')
@@ -152,7 +159,7 @@ export default function AuditProgress({
           <div className="bg-white rounded-lg shadow-md p-6">
             <h1 className="text-3xl font-bold text-gray-800 mb-2">Audit Progress</h1>
             <p className="text-gray-600 mb-4">
-              📍 {company.company_name} • {company.location}
+              📍 {company?.company_name || 'Unknown Company'} • {company?.location || 'Unknown Location'}
             </p>
             
             {/* Overall Progress */}

@@ -254,38 +254,24 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
         message={statusModal.message}
         onClose={() => setStatusModal({ ...statusModal, isOpen: false })}
       />
-      {/* Header Section */}
-      <div className="px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-slate-50 to-blue-50/30">
-        <div className="flex justify-between items-center mb-4">
-          <div className="flex items-center gap-3">
-            <span className="text-gray-400 font-extrabold uppercase tracking-widest text-[10px]">SECTION</span>
-            <span className="bg-white border border-gray-200 text-gray-600 text-xs font-bold px-2 py-1 rounded shadow-sm">{item.category}</span>
-          </div>
-          <div className={`flex items-center gap-2 px-4 py-2 rounded-lg text-[11px] font-black uppercase tracking-wide shadow-md ring-1 transition-all ${riskColors[displayRiskLevel] || riskColors.Medium}`}>
-            <Shield size={14} strokeWidth={3} />
-            <span>{displayRiskLevel} Risk</span>
-          </div>
-        </div>
 
-        {/* Question Text - Refactored Typography */}
-        <div className="flex items-start gap-4 mb-3">
-          <div className="flex flex-col items-center shrink-0">
-            <span className="text-4xl font-black bg-gradient-to-br from-blue-500 to-indigo-600 bg-clip-text text-transparent">{index + 1}</span>
-            <span className="text-[9px] font-extrabold text-slate-400 uppercase mt-1">Topic</span>
-          </div>
-          <div className="flex-1">
-            <h2 className="text-lg font-bold text-slate-800 leading-relaxed">{item.question_text || item.question}</h2>
-          </div>
-        </div>
-        
-        {/* Legal Reference - Moved Below Question */}
-        <div className="p-3 bg-white border border-slate-200 rounded-lg">
-          <p className="text-sm font-medium text-slate-900 mb-1">{item.section_reference || 'Legal Reference'}</p>
-          <p className="text-xs text-slate-700 leading-relaxed">{item.legal_text || 'Legal documentation will be displayed here.'}</p>
-        </div>
-      </div>
-
+      {/* Question Display Section */}
       <div className="flex-1 bg-gradient-to-br from-slate-50 to-gray-50 p-6">
+        {/* Question Header */}
+        <div className="mb-6">
+          <div className="flex justify-between items-start mb-3">
+            <span className="bg-white border border-gray-200 text-gray-600 text-xs font-bold px-2 py-1 rounded shadow-sm">{item.category}</span>
+            <div className={`flex items-center gap-2 px-3 py-1 rounded-lg text-[11px] font-black uppercase tracking-wide shadow-md ring-1 transition-all ml-auto ${riskColors[displayRiskLevel] || riskColors.Medium}`}>
+              <Shield size={14} strokeWidth={3} />
+              <span>{displayRiskLevel} Risk</span>
+            </div>
+          </div>
+          <h2 className="text-xl font-bold text-slate-900 leading-relaxed mb-4">{item.question_text || item.question}</h2>
+          <div className="p-3 bg-white border border-slate-200 rounded-lg">
+            <p className="text-sm font-medium text-slate-900 mb-1">{item.section_reference || 'Legal Reference'}</p>
+            <p className="text-xs text-slate-700 leading-relaxed">{item.legal_text || 'Legal documentation will be displayed here.'}</p>
+          </div>
+        </div>
         <div className="bg-white border-2 border-slate-200 rounded-xl shadow-md p-6">
           {currentSlide === 1 && (
             <div className="space-y-4">
