@@ -28,35 +28,97 @@ export default function ReportDashboard({ onViewReport }) {
   useEffect(() => {
     let filtered = sessions;
 
-    // Filter by client ID (case-insensitive substring match)
+    // Filter by factory name (case-insensitive substring match)
     if (searchClient.trim()) {
       filtered = filtered.filter(session =>
-        session.client_id?.toLowerCase().includes(searchClient.toLowerCase())
+        session.factory_name?.toLowerCase().includes(searchClient.toLowerCase())
       );
     }
 
     // Filter by date
     if (filterDate) {
-      filtered = filtered.filter(session => session.date === filterDate);
+      const filterDateStr = new Date(filterDate).toLocaleDateString('en-US', { 
+        year: 'numeric', 
+        month: 'short', 
+        day: 'numeric' 
+      });
+      filtered = filtered.filter(session => {
+        const sessionDateStr = session.submitted_at 
+          ? new Date(session.submitted_at).toLocaleDateString('en-US', { 
+              year: 'numeric', 
+              month: 'short', 
+              day: 'numeric' 
+            })
+          : null;
+        return sessionDateStr === filterDateStr;
+      });
     }
 
     setFilteredSessions(filtered);
   }, [sessions, searchClient, filterDate]);
 
   /**
-   * Get color-coded badge based on compliance score
+   * Get color-coded badge based on risk score
    */
   const getScoreBadgeColor = (score) => {
-    if (score >= 80) return 'bg-green-100 text-green-800';
-    if (score >= 60) return 'bg-yellow-100 text-yellow-800';
-    return 'bg-red-100 text-red-800';
+    if (!score) return 'bg-gray-100 text-gray-800';
+    if (score >= 80) return 'bg-red-100 text-red-800'; // High risk = red
+    if (score >= 60) return 'bg-orange-100 text-orange-800';
+    if (score >= 40) return 'bg-yellow-100 text-yellow-800';
+    return 'bg-green-100 text-green-800'; // Low risk = green
   };
 
   /**
-   * Format score display
+   * Format date display
    */
-  const formatScore = (score) => {
-    return score ? `${score}%` : 'N/A';
+  const formatDate = (dateString) => {
+    if (!dateString) return 'N/A';
+    return new Date(dateString).toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'short', 
+      day: 'numeric' 
+    });
+  };
+
+  /**
+   * Get status badge based on session status
+   */
+  const getStatusBadge = (status) => {
+    if (status === 'submitted') {
+      return (
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+          AI Reviewing...
+        </span>
+      );
+    }
+    if (status === 'completed') {
+      return (
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+          Report Ready
+        </span>
+      );
+    }
+    return (
+      <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+        {status || 'Unknown'}
+      </span>
+    );
+  };
+
+  /**
+   * Get audit type badge
+   */
+  const getTypeBadge = (type) => {
+    const displayType = type === 'regulatory' ? 'Regulatory' : type === 'business' ? 'Business' : 'N/A';
+    const colorClass = type === 'regulatory' 
+      ? 'bg-blue-100 text-blue-800' 
+      : 'bg-purple-100 text-purple-800';
+    
+    return (
+      <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium ${colorClass}`}>
+        {displayType}
+      </span>
+    );
   };
 
   /**
@@ -114,11 +176,11 @@ export default function ReportDashboard({ onViewReport }) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Search Client
+                Search Factory Name
               </label>
               <input
                 type="text"
-                placeholder="Enter client ID..."
+                placeholder="Enter factory name..."
                 value={searchClient}
                 onChange={(e) => setSearchClient(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
@@ -178,11 +240,11 @@ export default function ReportDashboard({ onViewReport }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Search Client
+              Search Factory Name
             </label>
             <input
               type="text"
-              placeholder="Enter client ID..."
+              placeholder="Enter factory name..."
               value={searchClient}
               onChange={(e) => setSearchClient(e.target.value)}
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none"
@@ -214,13 +276,16 @@ export default function ReportDashboard({ onViewReport }) {
           <thead>
             <tr className="bg-gray-50 border-b border-gray-200">
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
+                Client
+              </th>
+              <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
                 Date
               </th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-                Client ID
+                Type
               </th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
-                Compliance Score
+                Risk Score
               </th>
               <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">
                 Status
@@ -233,64 +298,48 @@ export default function ReportDashboard({ onViewReport }) {
           <tbody className="divide-y divide-gray-200">
             {filteredSessions.map((session) => (
               <tr
-                key={session.session_id}
+                key={session.id}
                 className="hover:bg-gray-50 transition-colors"
               >
+                {/* Client Column - Factory Name & Location */}
+                <td className="px-6 py-4 text-sm">
+                  <div className="font-medium text-gray-900">{session.factory_name || 'Unknown'}</div>
+                  <div className="text-xs text-gray-500">{session.location || 'N/A'}</div>
+                </td>
+
                 {/* Date Column */}
                 <td className="px-6 py-4 text-sm text-gray-900">
-                  {session.date || 'N/A'}
+                  {formatDate(session.submitted_at)}
                 </td>
 
-                {/* Client ID Column */}
-                <td className="px-6 py-4 text-sm text-gray-900 font-medium">
-                  {session.client_id || 'Unknown'}
+                {/* Type Column - Badge */}
+                <td className="px-6 py-4 text-sm">
+                  {getTypeBadge(session.audit_type)}
                 </td>
 
-                {/* Compliance Score Column (Color-coded badge) */}
+                {/* Risk Score Column - Color-coded badge */}
                 <td className="px-6 py-4 text-sm">
                   <span
                     className={`inline-block px-3 py-1 rounded-full font-semibold ${getScoreBadgeColor(
-                      session.score
+                      session.risk_score
                     )}`}
                   >
-                    {formatScore(session.score)}
+                    {session.risk_score || 'N/A'}
                   </span>
                 </td>
 
-                {/* Status Column */}
+                {/* Status Column - submitted/completed badge */}
                 <td className="px-6 py-4 text-sm">
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                    {session.status || 'Pending'}
-                  </span>
+                  {getStatusBadge(session.status)}
                 </td>
 
                 {/* Action Column - View Report Button */}
                 <td className="px-6 py-4 text-center">
                   <button
-                    onClick={() => handleViewReport(session.session_id)}
-                    className="inline-flex items-center justify-center p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all duration-200"
-                    title="View Report"
-                    aria-label="View Report"
+                    onClick={() => handleViewReport(session.id)}
+                    className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 hover:text-blue-800 hover:bg-blue-50 rounded-lg transition-all duration-200"
                   >
-                    <svg
-                      className="w-5 h-5"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
+                    View Report
                   </button>
                 </td>
               </tr>

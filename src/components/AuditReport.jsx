@@ -1,332 +1,478 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { FileText, Loader2, AlertCircle, CheckCircle, XCircle, TrendingUp, Eye } from 'lucide-react';
-import { useReactToPrint } from 'react-to-print';
-import { fetchAuditSessionReport } from '../services/reportService';
+import React, { useState, useEffect } from 'react';
+import { FileText, Download, AlertTriangle, CheckCircle, Shield, Loader2, ArrowLeft } from 'lucide-react';
+import { jsPDF } from 'jspdf';
+import 'jspdf-autotable';
+import { supabase } from '../services/supabaseClient';
 
-const AuditReport = ({ sessionId = 'default-session-id' }) => {
-  const [report, setReport] = useState(null);
+/**
+ * AuditReport Component
+ * Displays AI-generated audit insights with summary stats and detailed findings
+ */
+const AuditReport = ({ sessionId, onBack }) => {
   const [loading, setLoading] = useState(true);
+  const [sessionData, setSessionData] = useState(null);
+  const [aiResults, setAiResults] = useState([]);
   const [error, setError] = useState(null);
-  const reportRef = useRef();
 
-  // Fetch report data on mount
+  // Fetch data on component mount
   useEffect(() => {
-    const loadReport = async () => {
+    const fetchReportData = async () => {
       setLoading(true);
       setError(null);
-      
-      const data = await fetchAuditSessionReport(sessionId);
-      
-      if (data) {
-        setReport(data);
-      } else {
-        setError('Failed to load audit report. Please try again.');
+
+      try {
+        // Query 1: Fetch session details
+        const { data: session, error: sessionError } = await supabase
+          .from('audit_sessions')
+          .select('factory_name, location, audit_period, created_at')
+          .eq('id', sessionId)
+          .single();
+
+        if (sessionError) throw new Error(`Session fetch failed: ${sessionError.message}`);
+
+        // Query 2: Fetch all AI results for this session
+        const { data: results, error: resultsError } = await supabase
+          .from('audit_agent_submissions')
+          .select('*')
+          .eq('session_id', sessionId)
+          .order('created_at', { ascending: true });
+
+        if (resultsError) throw new Error(`AI results fetch failed: ${resultsError.message}`);
+
+        setSessionData(session);
+        setAiResults(results || []);
+      } catch (err) {
+        console.error('[AuditReport] Error fetching data:', err);
+        setError(err.message || 'Failed to load report data');
+      } finally {
+        setLoading(false);
       }
-      
-      setLoading(false);
     };
 
-    loadReport();
+    if (sessionId) {
+      fetchReportData();
+    }
   }, [sessionId]);
 
-  // PDF Export Handler
-  const handlePrint = useReactToPrint({
-    content: () => reportRef.current,
-    documentTitle: `Audit_Report_${sessionId}`,
-  });
+  // Calculate summary statistics
+  const calculateStats = () => {
+    if (!aiResults || aiResults.length === 0) {
+      return {
+        complianceScore: 0,
+        criticalIssues: 0,
+        aiConfidence: 0,
+        totalItems: 0
+      };
+    }
+
+    // Compliance Score: Average of all ai_score values
+    const scoresWithValues = aiResults.filter(item => item.ai_score != null);
+    const complianceScore = scoresWithValues.length > 0
+      ? Math.round(scoresWithValues.reduce((sum, item) => sum + item.ai_score, 0) / scoresWithValues.length)
+      : 0;
+
+    // Critical Issues: Count where risk_level is 'Critical' AND ai_score < 50
+    const criticalIssues = aiResults.filter(
+      item => item.risk_level === 'Critical' && item.ai_score != null && item.ai_score < 50
+    ).length;
+
+    // AI Confidence: Average of ai_score (same as compliance for now)
+    const aiConfidence = complianceScore;
+
+    return {
+      complianceScore,
+      criticalIssues,
+      aiConfidence,
+      totalItems: aiResults.length
+    };
+  };
+
+  // Get color for risk level badge
+  const getRiskColor = (riskLevel) => {
+    const level = riskLevel?.toLowerCase();
+    if (level === 'critical') return 'bg-red-100 text-red-800 border-red-200';
+    if (level === 'high') return 'bg-orange-100 text-orange-800 border-orange-200';
+    if (level === 'medium') return 'bg-yellow-100 text-yellow-800 border-yellow-200';
+    return 'bg-green-100 text-green-800 border-green-200';
+  };
+
+  // Get color for category badge
+  const getCategoryColor = (category) => {
+    const colors = {
+      environment: 'bg-emerald-100 text-emerald-800',
+      safety: 'bg-blue-100 text-blue-800',
+      compliance: 'bg-purple-100 text-purple-800',
+      labour: 'bg-pink-100 text-pink-800',
+      documentation: 'bg-indigo-100 text-indigo-800'
+    };
+    return colors[category?.toLowerCase()] || 'bg-gray-100 text-gray-800';
+  };
+
+  // Get score color for progress bar
+  const getScoreColor = (score) => {
+    if (score >= 80) return 'bg-green-500';
+    if (score >= 60) return 'bg-yellow-500';
+    if (score >= 40) return 'bg-orange-500';
+    return 'bg-red-500';
+  };
+
+  // Handle PDF download
+  const handleDownloadPDF = () => {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.getWidth();
+    const pageHeight = doc.internal.pageSize.getHeight();
+    let yPosition = 20;
+
+    // Header
+    doc.setFontSize(18);
+    doc.setFont('helvetica', 'bold');
+    doc.text('SHA Innovations - Audit Report', pageWidth / 2, yPosition, { align: 'center' });
+    
+    yPosition += 10;
+    doc.setFontSize(12);
+    doc.setFont('helvetica', 'normal');
+    doc.text(`Client: ${sessionData?.factory_name || 'Unknown'}`, 14, yPosition);
+    
+    yPosition += 6;
+    doc.text(`Location: ${sessionData?.location || 'N/A'}`, 14, yPosition);
+    
+    yPosition += 6;
+    doc.text(`Date: ${new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}`, 14, yPosition);
+    
+    yPosition += 12;
+
+    // Executive Summary
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Executive Summary', 14, yPosition);
+    yPosition += 8;
+
+    doc.autoTable({
+      startY: yPosition,
+      head: [['Metric', 'Value']],
+      body: [
+        ['Compliance Score', `${stats.complianceScore}%`],
+        ['Critical Issues', `${stats.criticalIssues}`],
+        ['Total Items Analyzed', `${stats.totalItems}`]
+      ],
+      theme: 'grid',
+      headStyles: { fillColor: [59, 130, 246], fontStyle: 'bold' },
+      margin: { left: 14, right: 14 }
+    });
+
+    yPosition = doc.lastAutoTable.finalY + 12;
+
+    // Findings Table (The Core)
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    
+    // Check if we need a new page
+    if (yPosition > pageHeight - 40) {
+      doc.addPage();
+      yPosition = 20;
+    }
+    
+    doc.text('Detailed Findings', 14, yPosition);
+    yPosition += 8;
+
+    // Prepare findings data
+    const findingsData = aiResults.map((item, index) => {
+      return [
+        `Q${index + 1}: ${item.question_text || 'N/A'}`,
+        item.risk_level || 'Medium',
+        item.user_status || 'Not Answered',
+        item.ai_analysis || 'No AI analysis available',
+        item.ai_score != null ? `${item.ai_score}%` : 'N/A'
+      ];
+    });
+
+    doc.autoTable({
+      startY: yPosition,
+      head: [['Question', 'Risk Level', 'Intern Status', 'AI Analysis', 'Score']],
+      body: findingsData,
+      theme: 'striped',
+      headStyles: { 
+        fillColor: [59, 130, 246], 
+        fontStyle: 'bold',
+        halign: 'center'
+      },
+      columnStyles: {
+        0: { cellWidth: 35, fontSize: 9 }, // Question
+        1: { cellWidth: 20, fontSize: 9, halign: 'center' }, // Risk Level
+        2: { cellWidth: 25, fontSize: 9, halign: 'center' }, // Intern Status
+        3: { cellWidth: 80, fontSize: 8 }, // AI Analysis (wide, wrap text)
+        4: { cellWidth: 15, fontSize: 9, halign: 'center' } // Score
+      },
+      styles: {
+        overflow: 'linebreak',
+        cellPadding: 3,
+        fontSize: 9
+      },
+      margin: { left: 14, right: 14 },
+      didParseCell: function(data) {
+        // Color rows with low scores (< 50) in red
+        const rowIndex = data.row.index;
+        if (data.section === 'body' && aiResults[rowIndex]) {
+          const score = aiResults[rowIndex].ai_score;
+          if (score != null && score < 50) {
+            data.cell.styles.textColor = [220, 38, 38]; // Red color
+            data.cell.styles.fontStyle = 'bold';
+          }
+        }
+      }
+    });
+
+    // Footer
+    const finalY = doc.lastAutoTable.finalY || yPosition;
+    const footerY = pageHeight - 15;
+    
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'italic');
+    doc.setTextColor(100, 100, 100);
+    doc.text('Generated by SHA Audit Agent', pageWidth / 2, footerY, { align: 'center' });
+
+    // Save the PDF
+    const fileName = `Audit_Report_${sessionData?.factory_name?.replace(/\s+/g, '_')}_${new Date().toISOString().split('T')[0]}.pdf`;
+    doc.save(fileName);
+  };
+
+  const stats = calculateStats();
 
   // Loading State
   if (loading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center">
-        <div className="text-center space-y-4">
-          <Loader2 size={48} className="animate-spin text-indigo-600 mx-auto" />
-          <p className="text-slate-600 font-semibold">Loading audit report...</p>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="text-center">
+          <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
+          <p className="text-gray-600 font-medium">Loading Report...</p>
         </div>
       </div>
     );
   }
 
   // Error State
-  if (error || !report) {
+  if (error) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-6">
-        <div className="bg-white rounded-xl shadow-lg border border-rose-200 p-8 max-w-md text-center">
-          <XCircle size={48} className="text-rose-600 mx-auto mb-4" />
-          <h2 className="text-xl font-bold text-slate-900 mb-2">Report Error</h2>
-          <p className="text-slate-600">{error}</p>
+      <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-8 text-center">
+          <AlertTriangle className="w-16 h-16 text-red-500 mx-auto mb-4" />
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Error Loading Report</h2>
+          <p className="text-gray-600 mb-6">{error}</p>
+          {onBack && (
+            <button
+              onClick={onBack}
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-medium"
+            >
+              Go Back
+            </button>
+          )}
         </div>
       </div>
     );
   }
 
-  const { summary, raw_details } = report;
-  
-  // Color coding for compliance score
-  const getComplianceColor = (score) => {
-    if (score >= 90) return { bg: 'bg-emerald-500', text: 'text-emerald-600', ring: 'ring-emerald-200' };
-    if (score >= 70) return { bg: 'bg-amber-500', text: 'text-amber-600', ring: 'ring-amber-200' };
-    return { bg: 'bg-rose-500', text: 'text-rose-600', ring: 'ring-rose-200' };
-  };
-
-  const complianceColors = getComplianceColor(summary.overall_compliance);
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {/* Print-friendly wrapper */}
-      <div ref={reportRef} className="print:bg-white">
-        
-        {/* Header */}
-        <header className="bg-white border-b border-slate-200 shadow-sm print:shadow-none">
-          <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-              <h1 className="text-2xl font-black text-slate-900">SHA Innovations</h1>
-              <p className="text-sm text-slate-600 mt-0.5">
-                Audit Date: {new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-              </p>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Top Header */}
+        <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div className="flex items-start justify-between">
+            <div className="flex items-start gap-4">
+              {onBack && (
+                <button
+                  onClick={onBack}
+                  className="p-2 hover:bg-gray-100 rounded-lg transition"
+                  title="Go Back"
+                >
+                  <ArrowLeft className="w-5 h-5 text-gray-600" />
+                </button>
+              )}
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <FileText className="w-8 h-8 text-blue-600" />
+                  <h1 className="text-3xl font-bold text-gray-900">Audit Report</h1>
+                </div>
+                <div className="space-y-1">
+                  <p className="text-lg font-semibold text-gray-800">
+                    {sessionData?.factory_name || 'Unknown Factory'}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    📍 {sessionData?.location || 'Location N/A'}
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    Audit Period: {sessionData?.audit_period || new Date(sessionData?.created_at).toLocaleDateString() || 'N/A'}
+                  </p>
+                </div>
+              </div>
             </div>
             <button
-              onClick={handlePrint}
-              className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 text-white rounded-lg font-bold text-sm shadow hover:bg-indigo-700 transition-all print:hidden"
+              onClick={handleDownloadPDF}
+              className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:shadow-lg transition-all"
             >
-              <FileText size={18} />
+              <Download size={20} />
               Download PDF
             </button>
           </div>
-        </header>
+        </div>
 
-        {/* Hero Section - The Scorecard */}
-        <section className="bg-white border-b border-slate-200">
-          <div className="max-w-7xl mx-auto px-6 py-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              
-              {/* Left: Radial Progress Bar */}
-              <div className="flex flex-col items-center justify-center">
-                <div className="relative w-64 h-64">
-                  {/* SVG Radial Progress */}
-                  <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                    {/* Background circle */}
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="40"
-                      fill="none"
-                      stroke="#e2e8f0"
-                      strokeWidth="8"
-                    />
-                    {/* Progress circle */}
-                    <circle
-                      cx="50"
-                      cy="50"
-                      r="40"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      className={complianceColors.text}
-                      strokeDasharray={`${summary.overall_compliance * 2.51} 251.2`}
-                    />
-                  </svg>
-                  {/* Center text */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <span className={`text-5xl font-black ${complianceColors.text}`}>
-                      {summary.overall_compliance}%
-                    </span>
-                    <span className="text-sm font-semibold text-slate-600 mt-1">Compliance</span>
-                  </div>
-                </div>
-                <h2 className="text-2xl font-bold text-slate-900 mt-6">Overall Compliance Score</h2>
+        {/* Summary Stats */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+          {/* Compliance Score */}
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-3 bg-green-100 rounded-lg">
+                <CheckCircle className="w-6 h-6 text-green-600" />
               </div>
-
-              {/* Right: Stat Cards */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4">
-                {/* Critical Risks */}
-                <div className="bg-gradient-to-br from-rose-50 to-rose-100 border border-rose-200 rounded-xl p-5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-rose-500 flex items-center justify-center shadow">
-                      <AlertCircle size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-rose-700">Critical Risks</p>
-                      <p className="text-3xl font-black text-rose-900">{summary.critical_risk_count}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Non-Compliant Items */}
-                <div className="bg-gradient-to-br from-amber-50 to-amber-100 border border-amber-200 rounded-xl p-5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-amber-500 flex items-center justify-center shadow">
-                      <XCircle size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-amber-700">Non-Compliant</p>
-                      <p className="text-3xl font-black text-amber-900">{summary.non_compliant_items}</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Total Assessed */}
-                <div className="bg-gradient-to-br from-indigo-50 to-indigo-100 border border-indigo-200 rounded-xl p-5 shadow-sm">
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-lg bg-indigo-500 flex items-center justify-center shadow">
-                      <TrendingUp size={24} className="text-white" />
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-indigo-700">Total Assessed</p>
-                      <p className="text-3xl font-black text-indigo-900">{summary.total_items}</p>
-                    </div>
-                  </div>
-                </div>
+              <div>
+                <p className="text-sm font-medium text-gray-600">Compliance Score</p>
+                <p className="text-3xl font-bold text-gray-900">{stats.complianceScore}%</p>
               </div>
             </div>
-          </div>
-        </section>
-
-        {/* Detailed Findings - Compliance Breakdown */}
-        <section className="max-w-7xl mx-auto px-6 py-12">
-          <div className="mb-8">
-            <h2 className="text-3xl font-black text-slate-900 mb-2">Compliance Breakdown</h2>
-            <p className="text-slate-600">Detailed findings from the audit assessment</p>
+            <div className="w-full bg-gray-200 rounded-full h-2">
+              <div
+                className={`h-2 rounded-full transition-all ${getScoreColor(stats.complianceScore)}`}
+                style={{ width: `${stats.complianceScore}%` }}
+              ></div>
+            </div>
           </div>
 
-          <div className="space-y-4">
-            {raw_details && raw_details.length > 0 ? (
-              raw_details.map((item, index) => (
+          {/* Critical Issues */}
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-3 bg-red-100 rounded-lg">
+                <AlertTriangle className="w-6 h-6 text-red-600" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-gray-600">Critical Issues</p>
+                <p className="text-3xl font-bold text-gray-900">{stats.criticalIssues}</p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-500">Requiring immediate attention</p>
+          </div>
+
+          {/* AI Confidence */}
+          <div className="bg-white rounded-xl shadow-lg p-6">
+            <div className="flex items-center gap-3 mb-3">
+              <div className="p-3 bg-blue-100 rounded-lg">
+                <Shield className="w-6 h-6 text-blue-600" />
+              </div>
+              <div>
+                <p className="text-sm font-medium text-gray-600">AI Confidence</p>
+                <p className="text-3xl font-bold text-gray-900">
+                  {stats.aiConfidence >= 80 ? 'High' : stats.aiConfidence >= 60 ? 'Medium' : 'Low'}
+                </p>
+              </div>
+            </div>
+            <p className="text-xs text-gray-500">Based on {stats.totalItems} items analyzed</p>
+          </div>
+        </div>
+
+        {/* Detailed Findings */}
+        <div className="bg-white rounded-2xl shadow-lg p-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+            <FileText className="w-6 h-6 text-blue-600" />
+            Detailed Findings
+          </h2>
+
+          {aiResults.length === 0 ? (
+            <div className="text-center py-12">
+              <p className="text-gray-500">No AI analysis results found for this session.</p>
+            </div>
+          ) : (
+            <div className="space-y-6">
+              {aiResults.map((item, index) => (
                 <div
                   key={item.id || index}
-                  className="bg-white rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow overflow-hidden"
+                  className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow"
                 >
-                  {/* Card Header */}
-                  <div className="p-6 border-b border-slate-200">
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <span className="text-xs font-bold text-slate-500 uppercase">Q{index + 1}</span>
-                          {item.status === 'Compliant' && (
-                            <span className="px-3 py-1 bg-emerald-100 text-emerald-800 text-xs font-bold rounded-full border border-emerald-200 flex items-center gap-1">
-                              <CheckCircle size={14} />
-                              Compliant
-                            </span>
-                          )}
-                          {item.status === 'Non-Compliant' && (
-                            <span className="px-3 py-1 bg-rose-100 text-rose-800 text-xs font-bold rounded-full border border-rose-200 flex items-center gap-1">
-                              <XCircle size={14} />
-                              Non-Compliant
-                            </span>
-                          )}
-                          {item.status === 'Not Applicable' && (
-                            <span className="px-3 py-1 bg-slate-100 text-slate-800 text-xs font-bold rounded-full border border-slate-200">
-                              N/A
-                            </span>
-                          )}
-                          {item.risk_level && (
-                            <span className={`px-2 py-1 text-xs font-bold rounded ${
-                              item.risk_level === 'Critical' ? 'bg-rose-50 text-rose-700 border border-rose-200' :
-                              item.risk_level === 'High' ? 'bg-orange-50 text-orange-700 border border-orange-200' :
-                              item.risk_level === 'Medium' ? 'bg-amber-50 text-amber-700 border border-amber-200' :
-                              'bg-blue-50 text-blue-700 border border-blue-200'
-                            }`}>
-                              {item.risk_level} Risk
-                            </span>
-                          )}
-                        </div>
-                        <h3 className="text-base font-bold text-slate-900 leading-snug">
-                          {item.question_text || 'Question text not available'}
-                        </h3>
-                      </div>
+                  {/* Header */}
+                  <div className="mb-4">
+                    <div className="flex items-start justify-between mb-3">
+                      <h3 className="text-lg font-bold text-gray-900 flex-1">
+                        {item.question_text || 'Question N/A'}
+                      </h3>
+                      <span className="text-sm font-semibold text-gray-500 ml-4">
+                        #{index + 1}
+                      </span>
+                    </div>
+
+                    {/* Badges */}
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getCategoryColor(item.category)}`}>
+                        {item.category || 'Uncategorized'}
+                      </span>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${getRiskColor(item.risk_level)}`}>
+                        {item.risk_level || 'Medium'} Risk
+                      </span>
                     </div>
                   </div>
 
-                  {/* Card Body */}
-                  <div className="p-6 space-y-4">
-                    {/* AI Analysis Box - Only show for Non-Compliant items */}
-                    {item.status === 'Non-Compliant' && item.ai_analysis && (
-                      <div className="bg-slate-50 border border-slate-200 rounded-lg p-4">
-                        <div className="flex items-center gap-2 mb-2">
-                          <span className="text-sm font-bold text-slate-900">🤖 AI Gap Analysis</span>
-                        </div>
-                        <p className="text-sm text-slate-700 leading-relaxed whitespace-pre-wrap">
-                          {item.ai_analysis}
-                        </p>
-                        {item.ai_score != null && (
-                          <div className="mt-3 flex items-center gap-2">
-                            <span className="text-xs font-semibold text-slate-600">AI Score:</span>
-                            <span className={`text-xs font-bold px-2 py-1 rounded ${
-                              item.ai_score >= 80 ? 'bg-emerald-100 text-emerald-800' :
-                              item.ai_score >= 60 ? 'bg-amber-100 text-amber-800' :
-                              'bg-rose-100 text-rose-800'
-                            }`}>
-                              {item.ai_score}/100
-                            </span>
-                          </div>
-                        )}
-                      </div>
+                  {/* Intern Input */}
+                  <div className="mb-4 p-4 bg-gray-50 rounded-lg">
+                    <p className="text-xs font-bold text-gray-500 uppercase tracking-wider mb-2">
+                      Intern Assessment
+                    </p>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-sm font-semibold text-gray-700">Status:</span>
+                      <span className={`px-2 py-1 rounded text-xs font-medium ${
+                        item.user_status === 'Compliant' 
+                          ? 'bg-green-100 text-green-800'
+                          : item.user_status === 'Non-Compliant'
+                          ? 'bg-red-100 text-red-800'
+                          : 'bg-gray-100 text-gray-800'
+                      }`}>
+                        {item.user_status || 'Not Answered'}
+                      </span>
+                    </div>
+                    {item.user_comment && (
+                      <p className="text-sm text-gray-700 italic">"{item.user_comment}"</p>
                     )}
-
-                    {/* Evidence Section */}
                     {item.evidence_url && (
-                      <div className="flex items-center gap-4">
-                        <div className="w-20 h-20 rounded-lg border-2 border-slate-200 overflow-hidden bg-slate-100 flex-shrink-0">
-                          <img
-                            src={item.evidence_url}
-                            alt="Evidence"
-                            className="w-full h-full object-cover"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                              e.target.parentElement.innerHTML = '<div class="w-full h-full flex items-center justify-center text-slate-400 text-xs">📄</div>';
-                            }}
-                          />
-                        </div>
-                        <div className="flex-1">
-                          <p className="text-xs font-semibold text-slate-600 mb-1">Evidence Attached</p>
-                          <a
-                            href={item.evidence_url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-sm font-bold text-indigo-600 hover:text-indigo-800 hover:underline"
-                          >
-                            <Eye size={14} />
-                            View Evidence
-                          </a>
-                        </div>
-                      </div>
+                      <p className="text-xs text-blue-600 mt-2">
+                        📎 Evidence: {item.evidence_url}
+                      </p>
                     )}
+                  </div>
 
-                    {/* Agent Attribution */}
-                    {item.ai_agent_name && (
-                      <div className="pt-3 border-t border-slate-200">
-                        <p className="text-xs text-slate-500">
-                          Analyzed by: <span className="font-semibold text-slate-700">{item.ai_agent_name}</span>
-                        </p>
+                  {/* AI Verdict - The Gold */}
+                  <div className="mb-4 p-5 bg-blue-50 border-l-4 border-blue-500 rounded-lg">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Shield className="w-5 h-5 text-blue-600" />
+                      <p className="text-sm font-bold text-blue-900 uppercase tracking-wider">
+                        AI Analysis
+                      </p>
+                    </div>
+                    {item.ai_analysis ? (
+                      <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">
+                        {item.ai_analysis}
+                      </p>
+                    ) : (
+                      <p className="text-sm text-gray-500 italic">AI analysis not available</p>
+                    )}
+                  </div>
+
+                  {/* AI Score Progress Bar */}
+                  <div>
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-sm font-semibold text-gray-700">AI Confidence Score</span>
+                      <span className="text-lg font-bold text-gray-900">
+                        {item.ai_score != null ? `${item.ai_score}%` : 'N/A'}
+                      </span>
+                    </div>
+                    {item.ai_score != null && (
+                      <div className="w-full bg-gray-200 rounded-full h-3">
+                        <div
+                          className={`h-3 rounded-full transition-all ${getScoreColor(item.ai_score)}`}
+                          style={{ width: `${item.ai_score}%` }}
+                        ></div>
                       </div>
                     )}
                   </div>
                 </div>
-              ))
-            ) : (
-              <div className="bg-white rounded-xl border border-slate-200 p-12 text-center">
-                <p className="text-slate-600">No audit findings available for this session.</p>
-              </div>
-            )}
-          </div>
-        </section>
-
-        {/* Print Styles */}
-        <style jsx>{`
-          @media print {
-            @page {
-              margin: 1cm;
-            }
-            body {
-              print-color-adjust: exact;
-              -webkit-print-color-adjust: exact;
-            }
-            .print\\:hidden {
-              display: none !important;
-            }
-          }
-        `}</style>
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
