@@ -26,6 +26,9 @@ import riskWeights from '../config/riskWeights.json';
 // Act registry
 import { getActData, getActById } from '../data/actRegistry';
 
+// Storage key for auto-save persistence
+const STORAGE_KEY = 'sha_intern_session_v1';
+
 export default function InternPortal({ session, userRole, onLogout }) {
   // Top Navigation Bar State
   const [viewState, setViewState] = useState('dashboard'); // 'dashboard' | 'active-audit' | 'reports-list' | 'view-report'
@@ -70,6 +73,32 @@ export default function InternPortal({ session, userRole, onLogout }) {
   const currentActData = currentActId ? getActById(currentActId) : null;
   const isLastQuestion = auditData && auditData.length > 0 ? currentQuestionIndex === auditData.length - 1 : false;
   const isLastAct = selectedActIds && selectedActIds.length > 0 ? currentActIndex === selectedActIds.length - 1 : false;
+
+  // Auto-Restore State on Mount
+  useEffect(() => {
+    const savedState = localStorage.getItem(STORAGE_KEY);
+    if (savedState) {
+      try {
+        const state = JSON.parse(savedState);
+        console.log('[InternPortal] Restoring state from localStorage:', state);
+        
+        setViewState(state.viewState || 'dashboard');
+        setDashboardTab(state.dashboardTab || 'new');
+        setCurrentSessionId(state.currentSessionId || null);
+        setCurrentScreen(state.currentScreen || 'dashboard');
+        setCurrentStep(state.currentStep || 'dashboard');
+        setFactoryName(state.factoryName || null);
+        setCurrentActIndex(state.currentActIndex || 0);
+        
+        if (state.selectedActIds && state.selectedActIds.length > 0) {
+          setSelectedActIds(state.selectedActIds);
+        }
+      } catch (err) {
+        console.error('[InternPortal] Error restoring state:', err);
+        localStorage.removeItem(STORAGE_KEY);
+      }
+    }
+  }, []);
 
   // Fetch factory history for dashboard
   useEffect(() => {
@@ -122,6 +151,27 @@ export default function InternPortal({ session, userRole, onLogout }) {
     
     if (session) checkMigration();
   }, [session]);
+
+  // Auto-Save State to localStorage
+  useEffect(() => {
+    const stateToSave = {
+      viewState,
+      dashboardTab,
+      currentSessionId,
+      currentScreen,
+      currentStep,
+      factoryName,
+      currentActIndex,
+      selectedActIds
+    };
+    
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(stateToSave));
+      console.log('[InternPortal] State saved to localStorage');
+    } catch (err) {
+      console.error('[InternPortal] Error saving state:', err);
+    }
+  }, [viewState, dashboardTab, currentSessionId, currentScreen, currentStep, factoryName, currentActIndex, selectedActIds]);
 
   // 1. FETCH DATA - Load from JSON based on current act
   useEffect(() => {
@@ -327,18 +377,21 @@ export default function InternPortal({ session, userRole, onLogout }) {
   const handleFinalSubmit = () => {
     console.log('Audit submitted successfully. Redirecting to Completed tab...');
 
-    // 1. Reset Session State
+    // 1. Clear persisted state
+    localStorage.removeItem(STORAGE_KEY);
+
+    // 2. Reset Session State
     setCurrentSessionId(null);
     setFactoryName(null);
     setFactoryLocation(null);
     setSelectedActIds([]);
 
-    // 2. Navigate to Dashboard -> Completed Tab
+    // 3. Navigate to Dashboard -> Completed Tab
     setViewState('dashboard');
     setCurrentStep('dashboard');
     setDashboardTab('completed'); // <--- Switches the tab automatically
 
-    // 3. Optional: Show Success Modal
+    // 4. Optional: Show Success Modal
     // alert('Audit moved to Completed History'); 
   };
 
@@ -455,6 +508,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
   // Logout handler with guard
   const handleLogoutWithGuard = async () => {
     initiateNavigationGuard(() => {
+      localStorage.removeItem(STORAGE_KEY);
       onLogout();
     });
   };
@@ -694,7 +748,8 @@ export default function InternPortal({ session, userRole, onLogout }) {
       const currentActData = getActById(currentActId);
       const currentQuestion = auditData[currentQuestionIndex];
 
-      if (loading) {
+      // Show loader if explicitly loading OR if data hasn't arrived yet
+      if (loading || !auditData || auditData.length === 0) {
         return (
           <div className="flex h-[calc(100vh-64px)] items-center justify-center gap-3 text-blue-600">
             <Loader2 className="animate-spin" size={32} />
@@ -782,6 +837,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
                 <button 
                   onClick={async () => {
                     await saveProgress(true);
+                    localStorage.removeItem(STORAGE_KEY);
                     setViewState('dashboard');
                     setCurrentStep('dashboard');
                     setCurrentScreen('dashboard');

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ClientManagement from './ClientManagement';
 import AssignmentManager from './AssignmentManager';
 import UserManagement from './UserManagement';
@@ -6,8 +6,24 @@ import AuditHistory from './AuditHistory';
 import AdminNavbar from './AdminNavbar';
 import { FileText } from 'lucide-react';
 
+// Storage key for admin tab state
+const ADMIN_STORAGE_KEY = 'sha_admin_tab_state';
+
 const AdminPortal = ({ userEmail, onLogout }) => {
-  const [currentView, setCurrentView] = useState('clients');
+  const [currentView, setCurrentView] = useState(() => {
+    return localStorage.getItem(ADMIN_STORAGE_KEY) || 'clients';
+  });
+
+  // Persist active tab to localStorage
+  useEffect(() => {
+    localStorage.setItem(ADMIN_STORAGE_KEY, currentView);
+  }, [currentView]);
+
+  // Logout handler with cleanup
+  const handleLogout = () => {
+    localStorage.removeItem(ADMIN_STORAGE_KEY);
+    onLogout();
+  };
 
   const renderContent = () => {
     switch (currentView) {
@@ -44,7 +60,7 @@ const AdminPortal = ({ userEmail, onLogout }) => {
         activeTab={currentView}
         onNavigate={setCurrentView}
         userEmail={userEmail}
-        onLogout={onLogout}
+        onLogout={handleLogout}
       />
 
       {/* Main Content Area with top padding for fixed navbar */}
