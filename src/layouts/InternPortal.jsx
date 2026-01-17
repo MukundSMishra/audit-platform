@@ -18,6 +18,10 @@ import ReportDashboard from '../components/ReportDashboard';
 import TopNavbar from '../components/TopNavbar';
 import Modal from '../components/shared/Modal';
 import InternDashboard from '../components/InternDashboard';
+import ActiveAuditView from '../components/views/ActiveAuditView';
+
+// Custom Hooks
+import { useAuditSession } from '../hooks/useAuditSession';
 
 // Risk scoring
 import { computeSessionScore } from '../utils/riskScoring';
@@ -53,26 +57,26 @@ export default function InternPortal({ session, userRole, onLogout }) {
   const [auditType, setAuditType] = useState(null); // 'regulatory' | 'business'
   const [selectedActIds, setSelectedActIds] = useState([]); // Multiple acts
   const [currentActIndex, setCurrentActIndex] = useState(0); // Which act we're currently auditing
-  const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); 
-  const [isMapOpen, setIsMapOpen] = useState(false);
   const [migrationComplete, setMigrationComplete] = useState(false); // Track if DB migration is done
-
-  // Audit State
-  const [auditData, setAuditData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [answers, setAnswers] = useState({}); 
-  const [riskScore, setRiskScore] = useState(0);
+  
+  // Initialization Guard State
+  const [isInitialized, setIsInitialized] = useState(false);
   
   // Exit Guard State
   const [showExitModal, setShowExitModal] = useState(false);
   const [pendingNavigation, setPendingNavigation] = useState(null);
 
+  // ============================================================================
+  // AUDIT SESSION HOOK - Manages all audit data and operations
+  // ============================================================================
+  const auditSession = useAuditSession(currentSessionId, selectedActIds, currentActIndex);
+
   // Derived audit UI state for navbar
   const isAuditActive = viewState === 'active-audit' || currentScreen === 'audit';
-  const currentActId = isAuditActive && selectedActIds.length ? selectedActIds[currentActIndex] : null;
+  const currentActId = auditSession.currentActId;
   const currentActData = currentActId ? getActById(currentActId) : null;
-  const isLastQuestion = auditData && auditData.length > 0 ? currentQuestionIndex === auditData.length - 1 : false;
-  const isLastAct = selectedActIds && selectedActIds.length > 0 ? currentActIndex === selectedActIds.length - 1 : false;
+  const isLastQuestion = auditSession.isLastQuestion;
+  const isLastAct = auditSession.isLastAct;
 
   // Auto-Restore State on Mount
   useEffect(() => {
@@ -98,6 +102,9 @@ export default function InternPortal({ session, userRole, onLogout }) {
         localStorage.removeItem(STORAGE_KEY);
       }
     }
+    
+    // Mark initialization complete (whether we restored state or not)
+    setIsInitialized(true);
   }, []);
 
   // Fetch factory history for dashboard
@@ -154,6 +161,9 @@ export default function InternPortal({ session, userRole, onLogout }) {
 
   // Auto-Save State to localStorage
   useEffect(() => {
+    // Guard: Don't save until initialization is complete
+    if (!isInitialized) return;
+    
     const stateToSave = {
       viewState,
       dashboardTab,
@@ -162,7 +172,8 @@ export default function InternPortal({ session, userRole, onLogout }) {
       currentStep,
       factoryName,
       currentActIndex,
-      selectedActIds
+      selectedActIds,
+      currentQuestionIndex: auditSession.currentQuestionIndex
     };
     
     try {
@@ -171,129 +182,22 @@ export default function InternPortal({ session, userRole, onLogout }) {
     } catch (err) {
       console.error('[InternPortal] Error saving state:', err);
     }
-  }, [viewState, dashboardTab, currentSessionId, currentScreen, currentStep, factoryName, currentActIndex, selectedActIds]);
+  }, [isInitialized, viewState, dashboardTab, currentSessionId, currentScreen, currentStep, factoryName, currentActIndex, selectedActIds, auditSession.currentQuestionIndex]);
 
-  // 1. FETCH DATA - Load from JSON based on current act
-  useEffect(() => {
-    if (!session || !currentSessionId || selectedActIds.length === 0 || currentScreen !== 'audit') return;
-
-    const currentActId = selectedActIds[currentActIndex];
-
-    const fetchAuditSession = async () => {
-      setLoading(true);
-      try {
-        // Load questions from the appropriate JSON file based on current act_id
-        const questions = getActData(currentActId);
-
-        // Fetch saved progress from audit_sessions (including per-act question indices)
-        const { data: sessionData } = await supabase
-          .from('audit_sessions')
-          .select('current_act_index, current_question_index, last_saved_at, act_question_indices')
-          .eq('id', currentSessionId)
-          .single();
-
-        let savedAnswers;
-        let answersError;
-        
-        try {
-          const result = await supabase
-            .from('session_answers')
-            .select('*')
-            .eq('session_id', currentSessionId)
-            .eq('act_id', currentActId);
-          
-          savedAnswers = result.data;
-          answersError = result.error;
-        } catch (err) {
-          answersError = err;
-        }
-
-        // Handle case where act_id column doesn't exist yet
-        if (answersError && answersError.message.includes('act_id')) {
-          console.warn('[Data Fetch] act_id column missing, falling back to legacy query');
-          const { data: legacyAnswers } = await supabase
-            .from('session_answers')
-            .select('*')
-            .eq('session_id', currentSessionId);
-          savedAnswers = legacyAnswers;
-        }
-
-        console.log(`[Data Fetch] Query: session_id=${currentSessionId}, act_id=${currentActId}`);
-
-        if (questions) {
-          setAuditData(questions);
-          
-          // Restore progress if resuming session
-          if (sessionData && sessionData.current_question_index !== null) {
-            // Use per-act question index if available, otherwise fall back to global
-            let questionIndexToRestore = sessionData.current_question_index || 0;
-            
-            if (sessionData.act_question_indices && sessionData.act_question_indices[currentActId] !== undefined) {
-              questionIndexToRestore = sessionData.act_question_indices[currentActId];
-              console.log(`[Progress Restore] Using per-act index for ${currentActId}: Question ${questionIndexToRestore + 1}`);
-            } else {
-              console.log(`[Progress Restore] No per-act index found, using global: Question ${questionIndexToRestore + 1}`);
-            }
-            
-            setCurrentQuestionIndex(questionIndexToRestore);
-            console.log(`[Progress Restore] Resuming from Question ${questionIndexToRestore + 1}, Act ${currentActIndex + 1}`);
-          } else {
-            setCurrentQuestionIndex(0); // Reset to first question for new sessions
-          }
-
-          const answerMap = {};
-          if (savedAnswers) {
-            console.log(`[Answer Restore] Loading ${savedAnswers.length} saved answers for act: ${currentActId}`);
-            savedAnswers.forEach(row => {
-              answerMap[row.question_id] = { 
-                status: row.status, 
-                evidenceUrl: row.evidence_url,
-                comment: row.remarks 
-              };
-              console.log(`[Answer Restore] Q${row.question_id}: ${row.status || 'null'}`);
-            });
-            console.log(`[Answer Restore] Loaded answers:`, answerMap);
-          } else {
-            console.log(`[Answer Restore] No saved answers found for act: ${currentActId}`);
-          }
-          setAnswers(answerMap);
-        }
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchAuditSession();
-  }, [session, currentSessionId, selectedActIds, currentActIndex, currentScreen]);
-
-  // Recompute risk score whenever answers or questions change
-  useEffect(() => {
-    if (!auditData || auditData.length === 0) { setRiskScore(0); return; }
-    setRiskScore(computeSessionScore(auditData, answers, riskWeights));
-  }, [auditData, answers]);
-
-  // Auto-save progress every 30 seconds and on answer changes
+  // Auto-save progress every 30 seconds
   useEffect(() => {
     if (currentScreen !== 'audit' || !currentSessionId) return;
 
     const autoSaveInterval = setInterval(() => {
-      saveProgress(false); // Silent auto-save
+      auditSession.saveProgress(false); // Silent auto-save
     }, 30000); // 30 seconds
 
     return () => clearInterval(autoSaveInterval);
-  }, [currentScreen, currentSessionId, currentActIndex, currentQuestionIndex]);
+  }, [currentScreen, currentSessionId, currentActIndex, auditSession]);
 
-  // 2. UPDATE ANSWER
+  // 1. UPDATE ANSWER - Delegate to hook with auto-save
   const handleUpdateAnswer = async (questionId, newAnswerData) => {
-    console.log(`[Answer Save] Saving Q${questionId}:`, newAnswerData);
-    
-    setAnswers(prev => ({
-      ...prev,
-      [questionId]: newAnswerData
-    }));
-
-    const currentActId = selectedActIds[currentActIndex];
+    await auditSession.updateAnswer(questionId, newAnswerData);
     
     // Prepare data for saving - handle missing act_id column gracefully
     const saveData = {
@@ -344,25 +248,11 @@ export default function InternPortal({ session, userRole, onLogout }) {
     setTimeout(() => saveProgress(false), 500);
   };
 
-  // 3. NAVIGATION HELPERS
-  const nextQuestion = () => {
-    if (currentQuestionIndex < auditData.length - 1) {
-      setCurrentQuestionIndex(prev => prev + 1);
-      window.scrollTo(0,0);
-    }
-  };
-
-  const prevQuestion = () => {
-    if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(prev => prev - 1);
-      window.scrollTo(0,0);
-    }
-  };
-
+  // 2. NAVIGATION HELPERS
   const nextAct = () => {
     if (currentActIndex < selectedActIds.length - 1) {
       setCurrentActIndex(prev => prev + 1);
-      setAnswers({});
+      auditSession.setAnswers({}); // Clear answers for new act
     } else {
       // All acts completed
       alert('All audits completed!');
@@ -395,103 +285,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
     // alert('Audit moved to Completed History'); 
   };
 
-  // 4. SAVE PROGRESS
-  const saveProgress = async (showNotification = true) => {
-    if (!currentSessionId) {
-      if (showNotification) alert('No active session found. Please start an audit first.');
-      return false;
-    }
 
-    try {
-      // Fetch existing act_question_indices to preserve progress for all acts
-      const { data: existingSession } = await supabase
-        .from('audit_sessions')
-        .select('act_question_indices')
-        .eq('id', currentSessionId)
-        .single();
-
-      // Build per-act question index tracking - MERGE with existing data
-      const act_question_indices = existingSession?.act_question_indices || {};
-      if (currentActIndex < selectedActIds.length) {
-        act_question_indices[selectedActIds[currentActIndex]] = currentQuestionIndex;
-      }
-
-      console.log('[Save Progress] Saving act_question_indices:', act_question_indices);
-
-      // Try to save with act_ids and per-act tracking first
-      let error;
-      try {
-        const result = await supabase
-          .from('audit_sessions')
-          .update({
-            act_ids: selectedActIds,
-            current_act_index: currentActIndex,
-            current_question_index: currentQuestionIndex,
-            act_question_indices: act_question_indices,
-            last_saved_at: new Date().toISOString()
-          })
-          .eq('id', currentSessionId);
-        error = result.error;
-      } catch (err) {
-        error = err;
-      }
-
-      // If act_question_indices column doesn't exist, fall back to saving without it
-      if (error && error.message?.includes('act_question_indices')) {
-        console.warn('[Save Progress] act_question_indices column not found, saving without it');
-        const fallbackResult = await supabase
-          .from('audit_sessions')
-          .update({
-            act_ids: selectedActIds,
-            current_act_index: currentActIndex,
-            current_question_index: currentQuestionIndex,
-            last_saved_at: new Date().toISOString()
-          })
-          .eq('id', currentSessionId);
-        error = fallbackResult.error;
-      }
-
-      // If act_ids column doesn't exist, fall back further
-      if (error && error.message?.includes('act_ids')) {
-        console.warn('[Save Progress] act_ids column not found, saving without it');
-        const fallbackResult2 = await supabase
-          .from('audit_sessions')
-          .update({
-            current_act_index: currentActIndex,
-            current_question_index: currentQuestionIndex,
-            last_saved_at: new Date().toISOString()
-          })
-          .eq('id', currentSessionId);
-        error = fallbackResult2.error;
-      }
-
-      if (error) {
-        console.error('Error saving progress:', error);
-        if (showNotification) alert('Database not updated. Please run the migration SQL first. Check console for details.');
-        return false;
-      }
-
-      if (showNotification) {
-        // Show success message briefly
-        const message = document.createElement('div');
-        message.innerHTML = `✅ Progress saved successfully!<br><small>Question ${currentQuestionIndex + 1}, Act ${currentActIndex + 1}</small>`;
-        message.style.cssText = `
-          position: fixed; top: 20px; right: 20px; z-index: 9999;
-          background: #10B981; color: white; padding: 12px 20px;
-          border-radius: 8px; font-weight: bold; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-          line-height: 1.4; font-size: 14px;
-        `;
-        document.body.appendChild(message);
-        setTimeout(() => message.remove(), 3000);
-      }
-
-      return true;
-    } catch (error) {
-      console.error('Save progress error:', error);
-      if (showNotification) alert('Error saving progress. Please try again.');
-      return false;
-    }
-  };
 
   // Navigation guard - uses custom confirmation modal
   const initiateNavigationGuard = (actionCallback) => {
@@ -554,7 +348,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
     if (sessionData?.act_ids) {
       setSelectedActIds(sessionData.act_ids);
       setCurrentActIndex(sessionData.current_act_index || 0);
-      setCurrentQuestionIndex(sessionData.current_question_index || 0);
+      // Note: current_question_index is now managed by useAuditSession hook
     }
     
     // Set both viewState and currentScreen for proper rendering
@@ -607,6 +401,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
         <InternDashboard 
           userEmail={session?.user?.email}
           activeTab={dashboardTab}
+          onTabChange={setDashboardTab}
           onStartRegulatoryAudit={handleStartRegulatoryAudit}
           onStartBusinessAudit={handleStartBusinessAudit}
           onResumeSession={handleResumeSession}
@@ -702,11 +497,15 @@ export default function InternPortal({ session, userRole, onLogout }) {
       return (
         <SubmitForReview
           sessionId={currentSessionId}
-          factoryName={factoryName}
-          factoryLocation={factoryLocation}
-          selectedActIds={selectedActIds}
+          company={{ 
+            company_name: factoryName, 
+            location: factoryLocation 
+          }}
+          auditData={auditSession.auditData}
+          answers={auditSession.answers}
+          selectedActs={selectedActIds}
           onSubmitSuccess={handleFinalSubmit}
-          onBack={() => setCurrentScreen('audit')}
+          onCancel={() => setCurrentScreen('audit')}
         />
       );
     }
@@ -743,167 +542,52 @@ export default function InternPortal({ session, userRole, onLogout }) {
 
     // ACTIVE AUDIT VIEW (Regulatory Audit Questions)
     if (currentScreen === 'audit') {
-      // Define variables needed for the audit interface
-      const currentActId = selectedActIds[currentActIndex];
-      const currentActData = getActById(currentActId);
-      const currentQuestion = auditData[currentQuestionIndex];
-
-      // Show loader if explicitly loading OR if data hasn't arrived yet
-      if (loading || !auditData || auditData.length === 0) {
+      // Guard against premature rendering - ensure session is loaded
+      if (!currentSessionId) {
         return (
           <div className="flex h-[calc(100vh-64px)] items-center justify-center gap-3 text-blue-600">
             <Loader2 className="animate-spin" size={32} />
-            <span className="font-bold text-lg">Loading Audit Questions...</span>
+            <span className="font-bold text-lg">Loading Session...</span>
           </div>
         );
       }
 
       return (
-        <div className="w-full flex flex-col">
-          {/* Audit Control Ribbon - Consolidated Navigation, Status & Actions */}
-          <div className="w-full bg-white border-b border-gray-200">
-            <div className="px-6 py-3 flex justify-between items-center">
-              {/* Left Section: Status & Navigation */}
-              <div className="flex items-center gap-4">
-                <div className="text-sm font-bold text-gray-800">
-                  Question {currentQuestionIndex + 1} of {auditData.length}
-                </div>
-                <div className="h-4 w-px bg-gray-300"></div>
-                <div className="text-sm text-gray-500">
-                  {Object.keys(answers).length} Answered
-                </div>
-                
-                {/* Navigation Buttons */}
-                <div className="flex items-center gap-2 ml-4">
-                  <button
-                    onClick={prevQuestion}
-                    disabled={currentQuestionIndex === 0}
-                    className="px-4 py-2 bg-white border border-slate-300 rounded hover:bg-slate-50 font-medium transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-2"
-                    title="Previous Question"
-                  >
-                    <ChevronLeft size={18} />
-                    Previous
-                  </button>
-                  <button
-                    onClick={async () => {
-                      if (currentQuestionIndex === auditData.length - 1) {
-                        await saveProgress(false);
-                        
-                        if (currentActIndex === selectedActIds.length - 1) {
-                          setCurrentScreen('submit-review');
-                        } else {
-                          if (window.confirm(`${currentActData?.shortName} audit complete. Ready to audit the next act?`)) {
-                            nextAct();
-                          }
-                        }
-                      } else {
-                        nextQuestion();
-                      }
-                    }}
-                    className="px-6 py-2 bg-blue-600 text-white border border-blue-700 rounded hover:bg-blue-700 font-medium transition shadow-sm hover:shadow-md flex items-center gap-2"
-                    title="Next Question"
-                  >
-                    {currentQuestionIndex === auditData.length - 1 
-                      ? (currentActIndex === selectedActIds.length - 1 
-                        ? <>Complete & Review <FileText size={18} /></> 
-                        : <>Next Act <ArrowLeft size={18} /></>)
-                      : <>Next <ChevronRight size={18} /></>
-                    }
-                  </button>
-                </div>
-              </div>
-
-              {/* Right Section: Actions */}
-              <div className="flex items-center gap-2">
-                {/* Question Map Toggle */}
-                <button
-                  onClick={() => setIsMapOpen(!isMapOpen)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50 border border-gray-200 rounded-lg transition"
-                >
-                  {isMapOpen ? 'Hide' : 'Show'} Question Map
-                  <ChevronDown size={16} className={`transition-transform ${isMapOpen ? 'rotate-180' : ''}`} />
-                </button>
-
-                {/* Save Button */}
-                <button
-                  onClick={() => saveProgress(true)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 border border-blue-200 rounded-lg transition"
-                >
-                  <Save size={16} />
-                  Save
-                </button>
-
-                {/* Save & Exit Button */}
-                <button 
-                  onClick={async () => {
-                    await saveProgress(true);
-                    localStorage.removeItem(STORAGE_KEY);
-                    setViewState('dashboard');
-                    setCurrentStep('dashboard');
-                    setCurrentScreen('dashboard');
-                  }}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 border border-red-200 rounded-lg transition"
-                >
-                  <LogOut size={16} />
-                  Save & Exit
-                </button>
-              </div>
-            </div>
-
-            {/* Expanded View: Question Grid */}
-            {isMapOpen && (
-              <div className="p-4 bg-gray-50 border-t border-gray-200">
-                <div className="max-w-5xl mx-auto">
-                  <div className="grid grid-cols-10 gap-2">
-                    {auditData.map((q, idx) => {
-                      const isAnswered = answers[q.id]?.status;
-                      const isActive = idx === currentQuestionIndex;
-                      return (
-                        <button
-                          key={q.id}
-                          onClick={() => {
-                            setCurrentQuestionIndex(idx);
-                            setIsMapOpen(false);
-                          }}
-                          className={`h-10 w-10 rounded-lg text-xs font-bold transition-all flex items-center justify-center
-                            ${isActive ? 'ring-2 ring-blue-600 ring-offset-1 z-10 scale-105' : 'hover:scale-105'}
-                            ${isAnswered 
-                              ? (answers[q.id].status === 'Non-Compliant' 
-                                  ? 'bg-red-100 text-red-700 border border-red-200' 
-                                  : answers[q.id].status === 'Delayed'
-                                    ? 'bg-orange-100 text-orange-700 border border-orange-200'
-                                    : 'bg-emerald-100 text-emerald-700 border border-emerald-200') 
-                              : 'bg-white text-gray-400 border border-gray-200 hover:border-gray-300'
-                            }
-                          `}
-                        >
-                          {idx + 1}
-                        </button>
-                      )
-                    })}
-                  </div>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Audit Card Container - Centered and Wide */}
-          <div className="flex-1 overflow-y-auto p-4 lg:p-8 flex justify-center bg-gray-100/50">
-            <div className="w-full max-w-5xl mx-auto h-fit pb-10">
-              {currentQuestion && (
-                <AuditCard 
-                  key={currentQuestion.id}
-                  item={currentQuestion}
-                  index={currentQuestionIndex}
-                  answerData={answers[currentQuestion.id]}
-                  onUpdateAnswer={handleUpdateAnswerWithProgress}
-                />
-              )}
-            </div>
-          </div>
-
-          {/* Bottom Navigation Bar - REMOVED: Navigation now in top ribbon */}
-        </div>
+        <ActiveAuditView
+          auditData={auditSession.auditData}
+          answers={auditSession.answers}
+          currentQuestionIndex={auditSession.currentQuestionIndex}
+          currentActIndex={currentActIndex}
+          selectedActIds={selectedActIds}
+          onUpdateAnswer={handleUpdateAnswer}
+          onNextQuestion={auditSession.nextQuestion}
+          onPrevQuestion={auditSession.prevQuestion}
+          onSaveProgress={auditSession.saveProgress}
+          onSaveAndExit={async () => {
+            await auditSession.saveProgress(true);
+            localStorage.removeItem(STORAGE_KEY);
+            setViewState('dashboard');
+            setCurrentStep('dashboard');
+            setCurrentScreen('dashboard');
+          }}
+          onFinishAct={async () => {
+            if (auditSession.isLastQuestion) {
+              await auditSession.saveProgress(false);
+              if (isLastAct) {
+                setCurrentScreen('submit-review');
+              } else {
+                if (window.confirm(`${currentActData?.shortName} audit complete. Ready to audit the next act?`)) {
+                  nextAct();
+                }
+              }
+            } else {
+              auditSession.nextQuestion();
+            }
+          }}
+          onJumpToQuestion={auditSession.jumpToQuestion}
+          loading={auditSession.loading}
+          isReady={auditSession.isReady}
+        />
       );
     }
 
@@ -957,7 +641,7 @@ export default function InternPortal({ session, userRole, onLogout }) {
           actProgress: `${currentActIndex + 1}/${selectedActIds.length}`
         }}
         auditActions={{
-          onSave: () => saveProgress(true),
+          onSave: () => auditSession.saveProgress(true),
           showSubmit: isLastQuestion && isLastAct,
           onSubmit: handleFinalSubmit
         }}

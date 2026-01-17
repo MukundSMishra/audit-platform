@@ -1,5 +1,5 @@
 ﻿import React, { useState, useRef } from 'react';
-import { BookOpen, Shield, Check, Camera, Loader2, CheckCircle, Ban, AlertCircle, XCircle, ChevronDown } from 'lucide-react';
+import { BookOpen, Shield, Check, Camera, Loader2, CheckCircle, Ban, AlertCircle, XCircle, ChevronDown, Trash2 } from 'lucide-react';
 import { uploadEvidence } from '../services/storageClient';
 import { supabase } from '../services/supabaseClient';
 import { computeQuestionWeight, getStatusFactor } from '../utils/riskScoring';
@@ -515,15 +515,35 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                               </div>
                               <p className="text-sm font-semibold text-emerald-900">✅ Quality Verified</p>
                               <p className="text-xs text-emerald-700 font-medium">Document meets quality standards</p>
-                              <a
-                                href={evidenceUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="text-xs font-semibold text-indigo-700 hover:underline"
-                              >
-                                View Document
-                              </a>
+                              <div className="flex items-center justify-center gap-3">
+                                <a
+                                  href={evidenceUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="text-xs font-semibold text-indigo-700 hover:underline"
+                                >
+                                  View Document
+                                </a>
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsValidated(false);
+                                    setValidationError(null);
+                                    onUpdateAnswer(item.id, {
+                                      ...answerData,
+                                      evidenceUrl: null,
+                                      files: [],
+                                      status: null,
+                                    });
+                                  }}
+                                  className="text-xs font-semibold text-rose-600 hover:text-rose-700 flex items-center gap-1 hover:underline"
+                                  title="Delete and re-upload"
+                                >
+                                  <Trash2 size={14} />
+                                  Remove
+                                </button>
+                              </div>
                             </div>
                           )}
 
@@ -534,15 +554,35 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                                 <CheckCircle size={24} className="text-white" />
                               </div>
                               <p className="text-sm font-semibold text-purple-900">Evidence Submitted</p>
-                              <a
-                                href={evidenceUrl}
-                                target="_blank"
-                                rel="noreferrer"
-                                onClick={(e) => e.stopPropagation()}
-                                className="text-xs font-semibold text-indigo-700 hover:underline"
-                              >
-                                View Document
-                              </a>
+                              <div className="flex items-center justify-center gap-3">
+                                <a
+                                  href={evidenceUrl}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={(e) => e.stopPropagation()}
+                                  className="text-xs font-semibold text-indigo-700 hover:underline"
+                                >
+                                  View Document
+                                </a>
+                                <button
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setIsValidated(false);
+                                    setValidationError(null);
+                                    onUpdateAnswer(item.id, {
+                                      ...answerData,
+                                      evidenceUrl: null,
+                                      files: [],
+                                      status: null,
+                                    });
+                                  }}
+                                  className="text-xs font-semibold text-rose-600 hover:text-rose-700 flex items-center gap-1 hover:underline"
+                                  title="Delete and re-upload"
+                                >
+                                  <Trash2 size={14} />
+                                  Remove
+                                </button>
+                              </div>
                             </div>
                           )}
 
@@ -562,32 +602,6 @@ const AuditCard = ({ item, index, answerData, onUpdateAnswer }) => {
                             <p className="text-xs font-semibold text-rose-900 mb-1">Quality Check Failed</p>
                             <p className="text-xs text-rose-800">{validationError}</p>
                             <p className="text-xs text-rose-700 mt-2 font-medium">Please upload a clearer document to proceed.</p>
-                          </div>
-                        )}
-
-                        {/* Proceed Button - Disabled during validation */}
-                        {evidenceUrl && (
-                          <div className="mt-4">
-                            <button
-                              disabled={isValidating}
-                              className={`w-full h-12 rounded-lg font-semibold text-sm transition-all flex items-center justify-center gap-2 ${
-                                isValidating
-                                  ? 'bg-slate-200 text-slate-500 cursor-not-allowed'
-                                  : 'bg-gradient-to-r from-indigo-500 to-blue-600 text-white hover:from-indigo-600 hover:to-blue-700 shadow hover:shadow-lg'
-                              }`}
-                            >
-                              {isValidating ? (
-                                <>
-                                  <Loader2 size={16} className="animate-spin" />
-                                  Validating...
-                                </>
-                              ) : (
-                                <>
-                                  <Check size={16} strokeWidth={3} />
-                                  Proceed with Review
-                                </>
-                              )}
-                            </button>
                           </div>
                         )}
                       </div>

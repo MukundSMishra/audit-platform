@@ -4,10 +4,10 @@ import Modal from '../shared/Modal';
 import { 
   Search, Building2, Shield, Briefcase, 
   Clock, CheckCircle, AlertCircle, Loader2, Calendar, 
-  ChevronDown, Trash2, MapPin, User
+  ChevronDown, Trash2, MapPin, User, FileText
 } from 'lucide-react';
 
-const AuditHistory = () => {
+const AuditHistory = ({ onViewReport }) => {
   const [audits, setAudits] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
@@ -406,8 +406,23 @@ const AuditHistory = () => {
                         </div>
                       </div>
 
-                      {/* Delete Button - Bottom Right */}
-                      <div className="flex items-center justify-end pt-4 border-t border-slate-200">
+                      {/* Action Buttons - Bottom Right */}
+                      <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
+                        {/* View Report Button - Only for completed/submitted audits */}
+                        {(audit.status === 'completed' || audit.status === 'submitted') && onViewReport && (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              onViewReport(audit.id);
+                            }}
+                            className="flex items-center gap-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-bold transition-colors"
+                          >
+                            <FileText size={16} />
+                            View Report
+                          </button>
+                        )}
+                        
+                        {/* Delete Button */}
                         <button
                           onClick={(e) => {
                             e.stopPropagation();

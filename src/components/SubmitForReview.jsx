@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Send, Loader2, CheckCircle, AlertCircle, FileCheck, Database } from 'lucide-react';
 import { supabase } from '../services/supabaseClient'; // Ensure this path is correct
 
@@ -22,12 +22,58 @@ const SubmitForReview = ({
   const compliantCount = Object.values(answers).filter(a => a.status === 'Compliant').length;
   const nonCompliantCount = Object.values(answers).filter(a => a.status === 'Non-Compliant').length;
 
+  // Memory Logic: Check session status on mount to restore UI state
+  useEffect(() => {
+    const checkSessionStatus = async () => {
+      if (!sessionId) return;
+      
+      try {
+        const { data, error } = await supabase
+          .from('audit_sessions')
+          .select('status')
+          .eq('id', sessionId)
+          .single();
+
+        if (error) {
+          console.error('[SubmitForReview] Error checking status:', error);
+          return;
+        }
+
+        console.log('[SubmitForReview] Session status:', data.status);
+
+        if (data.status === 'submitted') {
+          // AI is reviewing - show persistent analyzing state
+          setStatusStep('analyzing');
+          setSubmitting(true);
+          console.log('[SubmitForReview] Restored to analyzing state');
+        } else if (data.status === 'completed') {
+          // AI has completed - show success
+          setStatusStep('done');
+          setSuccessMessage('Analysis Complete! Review your audit report.');
+          console.log('[SubmitForReview] Restored to completed state');
+        }
+      } catch (err) {
+        console.error('[SubmitForReview] Status check failed:', err);
+      }
+    };
+
+    checkSessionStatus();
+  }, [sessionId]);
+
   const handleSubmit = async () => {
     setSubmitting(true);
     setError(null);
     setStatusStep('saving');
 
     try {
+      // CLEAN SLATE: Delete previous attempts to prevent duplicates
+      console.log('[SubmitForReview] Cleaning up previous submissions...');
+      await supabase
+        .from('audit_agent_submissions')
+        .delete()
+        .eq('session_id', sessionId);
+      console.log('[SubmitForReview] Previous submissions cleared');
+
       // 1. SAVE DATA TO SUPABASE
       console.log('[SubmitForReview] Step 1: Saving to DB...');
       const batchId = `BATCH-${Date.now()}`;
@@ -123,7 +169,7 @@ const SubmitForReview = ({
         </div>
 
         {/* Status Indicators */}
-        {submitting && (
+        {(submitting || statusStep === 'analyzing') && (
            <div className="mb-8 flex justify-center items-center gap-4">
               <div className={`flex items-center gap-2 ${statusStep === 'saving' ? 'text-blue-600 font-bold' : 'text-green-600'}`}>
                  {statusStep === 'saving' ? <Loader2 className="animate-spin" size={20} /> : <CheckCircle size={20} />}
@@ -132,7 +178,7 @@ const SubmitForReview = ({
               <div className="w-8 h-0.5 bg-gray-200"></div>
               <div className={`flex items-center gap-2 ${statusStep === 'analyzing' ? 'text-purple-600 font-bold' : (statusStep === 'done' ? 'text-green-600' : 'text-gray-400')}`}>
                  {statusStep === 'analyzing' ? <Loader2 className="animate-spin" size={20} /> : <Database size={20} />}
-                 <span>AI Analysis...</span>
+                 <span>{statusStep === 'analyzing' ? 'AI is reviewing your audit...' : 'AI Analysis...'}</span>
               </div>
            </div>
         )}
@@ -159,11 +205,23 @@ const SubmitForReview = ({
         )}
 
         <div className="flex gap-4 mt-6">
-          <button onClick={onCancel} disabled={submitting} className="flex-1 py-3 px-6 rounded-xl border-2 border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all">Cancel</button>
-          <button onClick={handleSubmit} disabled={submitting || answeredQuestions === 0} className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2">
-            {submitting ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
-            {submitting ? 'Processing...' : 'Submit for AI Review'}
+          <button 
+            onClick={onCancel} 
+            disabled={submitting || statusStep === 'analyzing'} 
+            className="flex-1 py-3 px-6 rounded-xl border-2 border-gray-300 text-gray-700 font-bold hover:bg-gray-50 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Cancel
           </button>
+          {statusStep !== 'analyzing' && statusStep !== 'done' && (
+            <button 
+              onClick={handleSubmit} 
+              disabled={submitting || answeredQuestions === 0} 
+              className="flex-1 py-3 px-6 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-bold hover:shadow-lg transition-all flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {submitting ? <Loader2 className="animate-spin" size={20} /> : <Send size={20} />}
+              {submitting ? 'Processing...' : 'Submit for AI Review'}
+            </button>
+          )}
         </div>
       </div>
     </div>

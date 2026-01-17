@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchAllAuditSessions } from '../services/reportService';
+import { supabase } from '../services/supabaseClient';
 
 /**
  * ReportDashboard Component
@@ -16,9 +16,24 @@ export default function ReportDashboard({ onViewReport }) {
   useEffect(() => {
     const loadSessions = async () => {
       setLoading(true);
-      const data = await fetchAllAuditSessions();
-      setSessions(data || []);
-      setLoading(false);
+      try {
+        const { data, error } = await supabase
+          .from('audit_sessions')
+          .select('id, factory_name, location, assigned_to, audit_type, risk_score, status, submitted_at')
+          .order('submitted_at', { ascending: false });
+
+        if (error) {
+          console.error('Error fetching audit sessions:', error);
+          setSessions([]);
+        } else {
+          setSessions(data || []);
+        }
+      } catch (err) {
+        console.error('Unexpected error:', err);
+        setSessions([]);
+      } finally {
+        setLoading(false);
+      }
     };
 
     loadSessions();
